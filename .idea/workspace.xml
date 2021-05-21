@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:erikd" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:topic" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac924fcb-1ddf-481e-a001-a82ab274927f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9B051FFBA00CZF]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1sgsDhBYtNuIYt4ySWOY0xWTZeK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/assets" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example/assets" />
+      <recent name="$PROJECT_DIR$/bridging" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bridging" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac924fcb-1ddf-481e-a001-a82ab274927f" name="Default Changelist" comment="" />
+      <created>1621305448458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621305448458</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="296" key="GridCell.Tab.0.bottom" timestamp="1621564522141">
+      <screen x="0" y="25" width="1920" height="997" />
+    </state>
+    <state width="1878" height="529" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1621563684783" />
+    <state width="1878" height="296" key="GridCell.Tab.0.bottom/0.25.1920.997@0.25.1920.997" timestamp="1621564522141" />
+    <state width="1878" height="296" key="GridCell.Tab.0.center" timestamp="1621564522140">
+      <screen x="0" y="25" width="1920" height="997" />
+    </state>
+    <state width="1878" height="529" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1621563684781" />
+    <state width="1878" height="296" key="GridCell.Tab.0.center/0.25.1920.997@0.25.1920.997" timestamp="1621564522140" />
+    <state width="1878" height="296" key="GridCell.Tab.0.left" timestamp="1621564522139">
+      <screen x="0" y="25" width="1920" height="997" />
+    </state>
+    <state width="1878" height="529" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1621563684780" />
+    <state width="1878" height="296" key="GridCell.Tab.0.left/0.25.1920.997@0.25.1920.997" timestamp="1621564522139" />
+    <state width="1878" height="296" key="GridCell.Tab.0.right" timestamp="1621564522140">
+      <screen x="0" y="25" width="1920" height="997" />
+    </state>
+    <state width="1878" height="529" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1621563684782" />
+    <state width="1878" height="296" key="GridCell.Tab.0.right/0.25.1920.997@0.25.1920.997" timestamp="1621564522140" />
+    <state x="461" y="176" key="SettingsEditor" timestamp="1621395103420">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="176" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1621395103420" />
+    <state x="286" y="295" width="981" height="582" key="find.popup" timestamp="1621563121601">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="286" y="295" width="981" height="582" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1621563121601" />
+    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1621561279666">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="547" y="234" width="670" height="658" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1621413643591" />
+    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1621561279666" />
+  </component>
+</project>
