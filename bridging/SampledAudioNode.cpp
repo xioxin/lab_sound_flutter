@@ -4,11 +4,15 @@
 using namespace lab;
 
 extern "C" DART_CALL
-int createAudioSampleNode(AudioContext* context,int busIndex) {
+int createAudioSampleNode(AudioContext* context) {
     auto sample = std::make_shared<SampledAudioNode>(*context);
-    ContextRenderLock r(context,"sample");
-    sample->setBus(r, audioBuffers.find(busIndex)->second);
     return keepNode(sample);
+}
+
+extern "C" DART_CALL
+void SampledAudioNode_setBus(int nodeIndex, AudioContext* context, int busIndex) {
+    ContextRenderLock r(context,"setBus");
+    std::dynamic_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->setBus(r, audioBuffers.find(busIndex)->second);
 }
 
 extern "C" DART_CALL

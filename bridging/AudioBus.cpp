@@ -1,16 +1,9 @@
 #define DART_CALL __attribute__((visibility("default"))) __attribute__((used))
 #include "LabSound/LabSound.h"
+#include "Port.cpp"
+
 using namespace lab;
-#include "dart_api/dart_api.h"
-#include "dart_api/dart_native_api.h"
-#include "dart_api/dart_api_dl.h"
 
-Dart_Port decodeAudioSendPort;
-
-
-DART_EXPORT void RegisterDecodeAudioSendPort(Dart_Port sendPort) {
-    decodeAudioSendPort = sendPort;
-}
 
 int bufferCount;
 std::map<int,std::shared_ptr<AudioBus>> audioBuffers;
@@ -19,6 +12,7 @@ void decodeAudioDataRun(const int id, const char *file)
 {
     std::shared_ptr<AudioBus> audioBus = MakeBusFromFile(file, false);
     audioBuffers.insert(std::pair<int,std::shared_ptr<AudioBus>>(id, audioBus));
+    sendAudioAusStatus(id, 1);
 	return;
 }
 
@@ -90,4 +84,5 @@ DART_EXPORT void AudioBus_setSampleRate(int busIndex, float sampleRate){
 
 DART_EXPORT void releaseAudioBus(int index){
     audioBuffers.erase(index);
+    sendAudioAusStatus(index, -1);
 }

@@ -1,3 +1,11 @@
+#include "struct.h"
+
+/// PORT
+
+intptr_t InitDartApiDL(void* data);
+
+void registerDecodeAudioSendPort(int sendPort);
+
 
 /// AudioContext
 
@@ -88,7 +96,9 @@ int AudioScheduledSourceNode_playbackState(int nodeId);
 
 /// SampledAudioNode
 
-int createAudioSampleNode(AudioContext* context,int busIndex);
+int createAudioSampleNode(AudioContext* context);
+
+void SampledAudioNode_setBus(int nodeIndex, AudioContext* context, int busIndex);
 
 void SampledAudioNode_schedule(int nodeId, double when);
 
@@ -145,3 +155,31 @@ int GainNode_gain(int nodeId);
 /// RecorderNode
 
 int createRecorderNode(AudioContext* context, int channels, float sampleRate);
+
+
+/// AnalyserNode
+
+
+int createAnalyserNode(AudioContext* context);
+
+int createAnalyserNodeFftSize(AudioContext* context, int fftSize);
+
+void AnalyserNode_setFftSize(int nodeIndex, AudioContext* context, int fftSize);
+
+int AnalyserNode_fftSize(int nodeIndex);
+
+int AnalyserNode_frequencyBinCount(int nodeIndex);
+
+void AnalyserNode_setMinDecibels(int nodeIndex, double k);
+
+int AnalyserNode_minDecibels(int nodeIndex);
+
+void AnalyserNode_setMaxDecibels(int nodeIndex, double k);
+
+int AnalyserNode_maxDecibels(int nodeIndex);
+
+void AnalyserNode_setSmoothingTimeConstant(int nodeIndex, double k);
+
+int AnalyserNode_smoothingTimeConstant(int nodeIndex);
+
+AnalyserNode_getFloatFrequencyData(int nodeIndex, float* array);

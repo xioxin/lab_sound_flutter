@@ -3,6 +3,10 @@
 #include "LabSound/LabSound.h"
 #include <thread>
 
+#include "dart_api/dart_api.h"
+#include "dart_api/dart_native_api.h"
+#include "dart_api/dart_api_dl.h"
+
 #if defined(__ANDROID__) 
 #include <android/log.h>
 #define LOG(fmt, args...) __android_log_print(ANDROID_LOG_INFO, "LabSound", fmt, ##args)
@@ -21,6 +25,7 @@ using namespace lab;
 #include "GainNode.cpp"
 #include "RecorderNode.cpp"
 #include "SampledAudioNode.cpp"
+#include "AnalyserNode.cpp"
 
 extern "C" DART_CALL
 void labTest() {
