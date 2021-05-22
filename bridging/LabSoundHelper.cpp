@@ -1,5 +1,3 @@
-#define DART_CALL __attribute__((visibility("default"))) __attribute__((used))
-
 #include "LabSound/LabSound.h"
 #include <thread>
 
@@ -26,9 +24,10 @@ using namespace lab;
 #include "RecorderNode.cpp"
 #include "SampledAudioNode.cpp"
 #include "AnalyserNode.cpp"
+#include "OscillatorNode.cpp"
+#include "BiquadFilterNode.cpp"
 
-extern "C" DART_CALL
-void labTest() {
+DART_EXPORT void labTest() {
     LOG_INFO("test");
     const std::vector<AudioDeviceInfo> audioDevices = lab::MakeAudioDeviceList();
     for (std::vector<AudioDeviceInfo>::size_type ind = 0;ind != audioDevices.size(); ++ind) {

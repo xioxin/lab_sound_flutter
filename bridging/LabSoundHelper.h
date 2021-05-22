@@ -58,6 +58,8 @@ void AudioParam_linearRampToValueAtTime(int nodeId, int paramIndex, float value,
 void AudioParam_setTargetAtTime(int nodeId, int paramIndex, float target, float time, float timeConstant);
 
 float AudioParam_minValue(int nodeId, int paramIndex);
+float AudioParam_maxValue(int nodeId, int paramIndex);
+float AudioParam_defaultValue(int nodeId, int paramIndex);
 
 void AudioParam_resetSmoothedValue(int nodeId, int paramIndex);
 
@@ -77,6 +79,8 @@ int AudioNode_numberOfOutputs(int nodeId);
 int AudioNode_channelCount(int nodeId);
 
 void AudioNode_reset(int nodeId, AudioContext* context);
+
+char * AudioNode_name(int nodeId);
 
 void releaseNode(int nodeId);
 
@@ -182,4 +186,29 @@ void AnalyserNode_setSmoothingTimeConstant(int nodeIndex, double k);
 
 int AnalyserNode_smoothingTimeConstant(int nodeIndex);
 
-AnalyserNode_getFloatFrequencyData(int nodeIndex, float* array);
+void AnalyserNode_getFloatFrequencyData(int nodeIndex, float* array);
+
+void AnalyserNode_getByteFrequencyData(int nodeIndex, uint8_t* array, bool resample);
+
+void AnalyserNode_getFloatTimeDomainData(int nodeIndex, float* array);
+
+void AnalyserNode_getByteTimeDomainData(int nodeIndex, uint8_t* array);
+
+
+/// OscillatorNode
+int createOscillatorNode(AudioContext* context);
+int OscillatorNode_type(int nodeIndex);
+void OscillatorNode_setType(int nodeIndex, int type);
+int OscillatorNode_amplitude(int nodeId);
+int OscillatorNode_frequency(int nodeId);
+int OscillatorNode_detune(int nodeId);
+int OscillatorNode_bias(int nodeId);
+
+/// BiquadFilterNode
+int createBiquadFilterNode(AudioContext* context);
+int BiquadFilterNode_type(int nodeIndex);
+void BiquadFilterNode_setType(int nodeIndex, int type);
+int BiquadFilterNode_frequency(int nodeId);
+int BiquadFilterNode_q(int nodeId);
+int BiquadFilterNode_gain(int nodeId);
+int BiquadFilterNode_detune(int nodeId);

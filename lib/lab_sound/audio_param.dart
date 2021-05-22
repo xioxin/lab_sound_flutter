@@ -8,6 +8,11 @@ class AudioParam {
   // final Pointer paramPointer;
   AudioParam(this.ctx, this.nodeIndex, this.paramIndex);
   double get value => LabSound().AudioParam_value(this.nodeIndex, this.paramIndex);
+
+  double get minValue => LabSound().AudioParam_minValue(this.nodeIndex, this.paramIndex);
+  // double get maxValue => LabSound().AudioParam_maxValue(this.nodeIndex, this.paramIndex);
+  // double get defaultValue => LabSound().AudioParam_defaultValue(this.nodeIndex, this.paramIndex);
+
   setValue(double value) {
     print('setValue: node: $nodeIndex, param: $paramIndex, val: $value');
     LabSound().AudioParam_setValue(this.nodeIndex, this.paramIndex, value);
@@ -28,4 +33,21 @@ class AudioParam {
     LabSound().AudioParam_setTargetAtTime(this.nodeIndex, this.paramIndex, value, this.ctx.correctionTime(time), timeConstant);
   }
 
+  cancelScheduledValues(double time) {
+    LabSound().AudioParam_cancelScheduledValues(this.nodeIndex, this.paramIndex, this.ctx.correctionTime(time));
+  }
+
 }
+
+/*
+*
+*
+
+
+void AudioParam_resetSmoothedValue(int nodeId, int paramIndex);
+
+void AudioParam_setSmoothingConstant(int nodeId, int paramIndex, double k);
+
+int AudioParam_hasSampleAccurateValues(int nodeId, int paramIndex);
+
+* */

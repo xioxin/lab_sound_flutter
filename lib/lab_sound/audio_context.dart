@@ -11,7 +11,7 @@ class AudioContext {
   final int channels;
   final bool offline;
 
-  double get correctionRate => initSampleRate / 24000.0;
+  // double get correctionRate => initSampleRate / 24000.0;
 
   double correctionTime(double time) {
     // return time * correctionRate;

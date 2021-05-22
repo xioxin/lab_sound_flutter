@@ -1,10 +1,9 @@
-#define DART_CALL __attribute__((visibility("default"))) __attribute__((used))
+#include "dart_api/dart_api.h"
 #include "LabSound/LabSound.h"
 #include "KeepNode.cpp"
 using namespace lab;
 
-extern "C" DART_CALL
-int createRecorderNode(AudioContext* context, int channels, float sampleRate) {
+DART_EXPORT int createRecorderNode(AudioContext* context, int channels, float sampleRate) {
     AudioStreamConfig offlineConfig = AudioStreamConfig();
     offlineConfig.desired_channels = channels;
     offlineConfig.desired_samplerate = sampleRate;

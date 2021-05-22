@@ -1309,7 +1309,7 @@ class LabSoundBind {
       _AnalyserNode_smoothingTimeConstant_ptr.asFunction<
           _dart_AnalyserNode_smoothingTimeConstant>();
 
-  int AnalyserNode_getFloatFrequencyData(
+  void AnalyserNode_getFloatFrequencyData(
     int nodeIndex,
     ffi.Pointer<ffi.Float> array,
   ) {
@@ -1326,6 +1326,267 @@ class LabSoundBind {
       _AnalyserNode_getFloatFrequencyData =
       _AnalyserNode_getFloatFrequencyData_ptr.asFunction<
           _dart_AnalyserNode_getFloatFrequencyData>();
+
+  void AnalyserNode_getByteFrequencyData(
+    int nodeIndex,
+    ffi.Pointer<ffi.Uint8> array,
+    int resample,
+  ) {
+    return _AnalyserNode_getByteFrequencyData(
+      nodeIndex,
+      array,
+      resample,
+    );
+  }
+
+  late final _AnalyserNode_getByteFrequencyData_ptr =
+      _lookup<ffi.NativeFunction<_c_AnalyserNode_getByteFrequencyData>>(
+          'AnalyserNode_getByteFrequencyData');
+  late final _dart_AnalyserNode_getByteFrequencyData
+      _AnalyserNode_getByteFrequencyData =
+      _AnalyserNode_getByteFrequencyData_ptr.asFunction<
+          _dart_AnalyserNode_getByteFrequencyData>();
+
+  void AnalyserNode_getFloatTimeDomainData(
+    int nodeIndex,
+    ffi.Pointer<ffi.Float> array,
+  ) {
+    return _AnalyserNode_getFloatTimeDomainData(
+      nodeIndex,
+      array,
+    );
+  }
+
+  late final _AnalyserNode_getFloatTimeDomainData_ptr =
+      _lookup<ffi.NativeFunction<_c_AnalyserNode_getFloatTimeDomainData>>(
+          'AnalyserNode_getFloatTimeDomainData');
+  late final _dart_AnalyserNode_getFloatTimeDomainData
+      _AnalyserNode_getFloatTimeDomainData =
+      _AnalyserNode_getFloatTimeDomainData_ptr.asFunction<
+          _dart_AnalyserNode_getFloatTimeDomainData>();
+
+  void AnalyserNode_getByteTimeDomainData(
+    int nodeIndex,
+    ffi.Pointer<ffi.Uint8> array,
+  ) {
+    return _AnalyserNode_getByteTimeDomainData(
+      nodeIndex,
+      array,
+    );
+  }
+
+  late final _AnalyserNode_getByteTimeDomainData_ptr =
+      _lookup<ffi.NativeFunction<_c_AnalyserNode_getByteTimeDomainData>>(
+          'AnalyserNode_getByteTimeDomainData');
+  late final _dart_AnalyserNode_getByteTimeDomainData
+      _AnalyserNode_getByteTimeDomainData =
+      _AnalyserNode_getByteTimeDomainData_ptr.asFunction<
+          _dart_AnalyserNode_getByteTimeDomainData>();
+
+  /// OscillatorNode
+  int createOscillatorNode(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _createOscillatorNode(
+      context,
+    );
+  }
+
+  late final _createOscillatorNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createOscillatorNode>>(
+          'createOscillatorNode');
+  late final _dart_createOscillatorNode _createOscillatorNode =
+      _createOscillatorNode_ptr.asFunction<_dart_createOscillatorNode>();
+
+  int OscillatorNode_type(
+    int nodeIndex,
+  ) {
+    return _OscillatorNode_type(
+      nodeIndex,
+    );
+  }
+
+  late final _OscillatorNode_type_ptr =
+      _lookup<ffi.NativeFunction<_c_OscillatorNode_type>>(
+          'OscillatorNode_type');
+  late final _dart_OscillatorNode_type _OscillatorNode_type =
+      _OscillatorNode_type_ptr.asFunction<_dart_OscillatorNode_type>();
+
+  void OscillatorNode_setType(
+    int nodeIndex,
+    int type,
+  ) {
+    return _OscillatorNode_setType(
+      nodeIndex,
+      type,
+    );
+  }
+
+  late final _OscillatorNode_setType_ptr =
+      _lookup<ffi.NativeFunction<_c_OscillatorNode_setType>>(
+          'OscillatorNode_setType');
+  late final _dart_OscillatorNode_setType _OscillatorNode_setType =
+      _OscillatorNode_setType_ptr.asFunction<_dart_OscillatorNode_setType>();
+
+  int OscillatorNode_amplitude(
+    int nodeId,
+  ) {
+    return _OscillatorNode_amplitude(
+      nodeId,
+    );
+  }
+
+  late final _OscillatorNode_amplitude_ptr =
+      _lookup<ffi.NativeFunction<_c_OscillatorNode_amplitude>>(
+          'OscillatorNode_amplitude');
+  late final _dart_OscillatorNode_amplitude _OscillatorNode_amplitude =
+      _OscillatorNode_amplitude_ptr.asFunction<
+          _dart_OscillatorNode_amplitude>();
+
+  int OscillatorNode_frequency(
+    int nodeId,
+  ) {
+    return _OscillatorNode_frequency(
+      nodeId,
+    );
+  }
+
+  late final _OscillatorNode_frequency_ptr =
+      _lookup<ffi.NativeFunction<_c_OscillatorNode_frequency>>(
+          'OscillatorNode_frequency');
+  late final _dart_OscillatorNode_frequency _OscillatorNode_frequency =
+      _OscillatorNode_frequency_ptr.asFunction<
+          _dart_OscillatorNode_frequency>();
+
+  int OscillatorNode_detune(
+    int nodeId,
+  ) {
+    return _OscillatorNode_detune(
+      nodeId,
+    );
+  }
+
+  late final _OscillatorNode_detune_ptr =
+      _lookup<ffi.NativeFunction<_c_OscillatorNode_detune>>(
+          'OscillatorNode_detune');
+  late final _dart_OscillatorNode_detune _OscillatorNode_detune =
+      _OscillatorNode_detune_ptr.asFunction<_dart_OscillatorNode_detune>();
+
+  int OscillatorNode_bias(
+    int nodeId,
+  ) {
+    return _OscillatorNode_bias(
+      nodeId,
+    );
+  }
+
+  late final _OscillatorNode_bias_ptr =
+      _lookup<ffi.NativeFunction<_c_OscillatorNode_bias>>(
+          'OscillatorNode_bias');
+  late final _dart_OscillatorNode_bias _OscillatorNode_bias =
+      _OscillatorNode_bias_ptr.asFunction<_dart_OscillatorNode_bias>();
+
+  /// BiquadFilterNode
+  int createBiquadFilterNode(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _createBiquadFilterNode(
+      context,
+    );
+  }
+
+  late final _createBiquadFilterNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createBiquadFilterNode>>(
+          'createBiquadFilterNode');
+  late final _dart_createBiquadFilterNode _createBiquadFilterNode =
+      _createBiquadFilterNode_ptr.asFunction<_dart_createBiquadFilterNode>();
+
+  int BiquadFilterNode_type(
+    int nodeIndex,
+  ) {
+    return _BiquadFilterNode_type(
+      nodeIndex,
+    );
+  }
+
+  late final _BiquadFilterNode_type_ptr =
+      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_type>>(
+          'BiquadFilterNode_type');
+  late final _dart_BiquadFilterNode_type _BiquadFilterNode_type =
+      _BiquadFilterNode_type_ptr.asFunction<_dart_BiquadFilterNode_type>();
+
+  void BiquadFilterNode_setType(
+    int nodeIndex,
+    int type,
+  ) {
+    return _BiquadFilterNode_setType(
+      nodeIndex,
+      type,
+    );
+  }
+
+  late final _BiquadFilterNode_setType_ptr =
+      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_setType>>(
+          'BiquadFilterNode_setType');
+  late final _dart_BiquadFilterNode_setType _BiquadFilterNode_setType =
+      _BiquadFilterNode_setType_ptr.asFunction<
+          _dart_BiquadFilterNode_setType>();
+
+  int BiquadFilterNode_frequency(
+    int nodeId,
+  ) {
+    return _BiquadFilterNode_frequency(
+      nodeId,
+    );
+  }
+
+  late final _BiquadFilterNode_frequency_ptr =
+      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_frequency>>(
+          'BiquadFilterNode_frequency');
+  late final _dart_BiquadFilterNode_frequency _BiquadFilterNode_frequency =
+      _BiquadFilterNode_frequency_ptr.asFunction<
+          _dart_BiquadFilterNode_frequency>();
+
+  int BiquadFilterNode_q(
+    int nodeId,
+  ) {
+    return _BiquadFilterNode_q(
+      nodeId,
+    );
+  }
+
+  late final _BiquadFilterNode_q_ptr =
+      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_q>>('BiquadFilterNode_q');
+  late final _dart_BiquadFilterNode_q _BiquadFilterNode_q =
+      _BiquadFilterNode_q_ptr.asFunction<_dart_BiquadFilterNode_q>();
+
+  int BiquadFilterNode_gain(
+    int nodeId,
+  ) {
+    return _BiquadFilterNode_gain(
+      nodeId,
+    );
+  }
+
+  late final _BiquadFilterNode_gain_ptr =
+      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_gain>>(
+          'BiquadFilterNode_gain');
+  late final _dart_BiquadFilterNode_gain _BiquadFilterNode_gain =
+      _BiquadFilterNode_gain_ptr.asFunction<_dart_BiquadFilterNode_gain>();
+
+  int BiquadFilterNode_detune(
+    int nodeId,
+  ) {
+    return _BiquadFilterNode_detune(
+      nodeId,
+    );
+  }
+
+  late final _BiquadFilterNode_detune_ptr =
+      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_detune>>(
+          'BiquadFilterNode_detune');
+  late final _dart_BiquadFilterNode_detune _BiquadFilterNode_detune =
+      _BiquadFilterNode_detune_ptr.asFunction<_dart_BiquadFilterNode_detune>();
 }
 
 class FloatArray extends ffi.Struct {
@@ -2102,12 +2363,160 @@ typedef _dart_AnalyserNode_smoothingTimeConstant = int Function(
   int nodeIndex,
 );
 
-typedef _c_AnalyserNode_getFloatFrequencyData = ffi.Int32 Function(
+typedef _c_AnalyserNode_getFloatFrequencyData = ffi.Void Function(
   ffi.Int32 nodeIndex,
   ffi.Pointer<ffi.Float> array,
 );
 
-typedef _dart_AnalyserNode_getFloatFrequencyData = int Function(
+typedef _dart_AnalyserNode_getFloatFrequencyData = void Function(
   int nodeIndex,
   ffi.Pointer<ffi.Float> array,
+);
+
+typedef _c_AnalyserNode_getByteFrequencyData = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Pointer<ffi.Uint8> array,
+  ffi.Int32 resample,
+);
+
+typedef _dart_AnalyserNode_getByteFrequencyData = void Function(
+  int nodeIndex,
+  ffi.Pointer<ffi.Uint8> array,
+  int resample,
+);
+
+typedef _c_AnalyserNode_getFloatTimeDomainData = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Pointer<ffi.Float> array,
+);
+
+typedef _dart_AnalyserNode_getFloatTimeDomainData = void Function(
+  int nodeIndex,
+  ffi.Pointer<ffi.Float> array,
+);
+
+typedef _c_AnalyserNode_getByteTimeDomainData = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Pointer<ffi.Uint8> array,
+);
+
+typedef _dart_AnalyserNode_getByteTimeDomainData = void Function(
+  int nodeIndex,
+  ffi.Pointer<ffi.Uint8> array,
+);
+
+typedef _c_createOscillatorNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_createOscillatorNode = int Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_OscillatorNode_type = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_OscillatorNode_type = int Function(
+  int nodeIndex,
+);
+
+typedef _c_OscillatorNode_setType = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 type,
+);
+
+typedef _dart_OscillatorNode_setType = void Function(
+  int nodeIndex,
+  int type,
+);
+
+typedef _c_OscillatorNode_amplitude = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_OscillatorNode_amplitude = int Function(
+  int nodeId,
+);
+
+typedef _c_OscillatorNode_frequency = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_OscillatorNode_frequency = int Function(
+  int nodeId,
+);
+
+typedef _c_OscillatorNode_detune = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_OscillatorNode_detune = int Function(
+  int nodeId,
+);
+
+typedef _c_OscillatorNode_bias = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_OscillatorNode_bias = int Function(
+  int nodeId,
+);
+
+typedef _c_createBiquadFilterNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_createBiquadFilterNode = int Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_BiquadFilterNode_type = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_BiquadFilterNode_type = int Function(
+  int nodeIndex,
+);
+
+typedef _c_BiquadFilterNode_setType = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 type,
+);
+
+typedef _dart_BiquadFilterNode_setType = void Function(
+  int nodeIndex,
+  int type,
+);
+
+typedef _c_BiquadFilterNode_frequency = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_BiquadFilterNode_frequency = int Function(
+  int nodeId,
+);
+
+typedef _c_BiquadFilterNode_q = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_BiquadFilterNode_q = int Function(
+  int nodeId,
+);
+
+typedef _c_BiquadFilterNode_gain = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_BiquadFilterNode_gain = int Function(
+  int nodeId,
+);
+
+typedef _c_BiquadFilterNode_detune = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_BiquadFilterNode_detune = int Function(
+  int nodeId,
 );

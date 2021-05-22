@@ -1,36 +1,34 @@
-#define DART_CALL __attribute__((visibility("default"))) __attribute__((used))
+#include "dart_api/dart_api.h"
 #include "LabSound/LabSound.h"
 #include "KeepNode.cpp"
 using namespace lab;
 
-extern "C" DART_CALL
-int AudioNode_isScheduledNode(int nodeId) {
+DART_EXPORT int AudioNode_isScheduledNode(int nodeId) {
     return audioNodes.find(nodeId)->second->isScheduledNode();
 }
 
-extern "C" DART_CALL
-int AudioNode_numberOfInputs(int nodeId) {
+DART_EXPORT int AudioNode_numberOfInputs(int nodeId) {
     return audioNodes.find(nodeId)->second->numberOfInputs();
 }
 
-extern "C" DART_CALL
-int AudioNode_numberOfOutputs(int nodeId) {
+DART_EXPORT int AudioNode_numberOfOutputs(int nodeId) {
     return audioNodes.find(nodeId)->second->numberOfOutputs();
 }
 
-extern "C" DART_CALL
-int AudioNode_channelCount(int nodeId) {
+DART_EXPORT int AudioNode_channelCount(int nodeId) {
     return audioNodes.find(nodeId)->second->channelCount();
 }
 
-extern "C" DART_CALL
-void AudioNode_reset(int nodeId, AudioContext* context) {
+DART_EXPORT const char * AudioNode_name(int nodeId) {
+    return audioNodes.find(nodeId)->second->name();
+}
+
+DART_EXPORT void AudioNode_reset(int nodeId, AudioContext* context) {
     ContextRenderLock r(context, "reset");
     audioNodes.find(nodeId)->second->reset(r);
 }
 
-extern "C" DART_CALL
-void releaseNode(int nodeId){
+DART_EXPORT void releaseNode(int nodeId){
     audioNodes.erase(nodeId);
     audioParams.erase(nodeId);
 }

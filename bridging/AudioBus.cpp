@@ -1,4 +1,4 @@
-#define DART_CALL __attribute__((visibility("default"))) __attribute__((used))
+#include "dart_api/dart_api.h"
 #include "LabSound/LabSound.h"
 #include "Port.cpp"
 

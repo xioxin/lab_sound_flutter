@@ -46,11 +46,14 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     });
   }
 
-
   Duration? get position => this.resource == null ? null : Duration(milliseconds: (this.cursor / this.resource!.sampleRate * 1000).toInt());
   Duration? get duration => this.resource?.duration;
 
-  start({double? when, double? offset, double? duration, int? loopCount}) {
+  // start({double? when, double? offset, double? duration, int? loopCount}) {
+  //   schedule(when: when, offset: offset, duration: duration, loopCount: loopCount);
+  // }
+
+  schedule({double? when, double? offset, double? duration, int? loopCount}) {
     if(when != null && offset != null && duration != null && loopCount != null) {
       LabSound().SampledAudioNode_schedule4(this.nodeId, ctx.correctionTime(when), offset, duration, loopCount);
     } else if(when != null && offset != null && duration != null) {
@@ -61,6 +64,10 @@ class AudioSampleNode extends AudioScheduledSourceNode {
       LabSound().SampledAudioNode_schedule(this.nodeId, ctx.correctionTime(when ?? 0.0));
     }
     _startCheckTimer();
+  }
+
+  clearSchedules() {
+    LabSound().SampledAudioNode_clearSchedules(nodeId);
   }
 
   @override

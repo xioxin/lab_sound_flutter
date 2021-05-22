@@ -9,3 +9,5 @@ export 'gain_node.dart';
 export 'lab.dart';
 export 'recorder_node.dart';
 export 'analyser_node.dart';
+export 'oscillator_node.dart';
+export 'biquad_filter_node.dart';
