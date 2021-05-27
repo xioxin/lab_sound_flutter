@@ -13,57 +13,69 @@ DART_EXPORT int createAudioSampleNode(AudioContext* context) {
     return nodeId;
 }
 
-DART_EXPORT void SampledAudioNode_setBus(int nodeIndex, AudioContext* context, int busIndex) {
+DART_EXPORT void SampledAudioNode_setBus(int nodeId, AudioContext* context, int busId) {
     ContextRenderLock r(context,"setBus");
-    std::dynamic_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->setBus(r, audioBuffers.find(busIndex)->second);
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    auto bus = getBus(busId);
+    if(node && bus) node->setBus(r, bus);
 }
 
-DART_EXPORT void SampledAudioNode_schedule(int nodeIndex, double when) {
-    std::dynamic_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->schedule(when);
+DART_EXPORT void SampledAudioNode_schedule(int nodeId, double when) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->schedule(bus);
 }
 
-DART_EXPORT void SampledAudioNode_schedule2(int nodeIndex, double when, int loopCount) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->schedule(when, loopCount);
+DART_EXPORT void SampledAudioNode_schedule2(int nodeId, double when, int loopCount) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->schedule(when, loopCount);
 }
 
-DART_EXPORT void SampledAudioNode_schedule3(int nodeIndex, double when, double grainOffset, int loopCount) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->schedule(when, grainOffset, loopCount);
+DART_EXPORT void SampledAudioNode_schedule3(int nodeId, double when, double grainOffset, int loopCount) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->schedule(when, grainOffset, loopCount);
 }
 
-DART_EXPORT void SampledAudioNode_schedule4(int nodeIndex, double when, double grainOffset, double grainDuration, int loopCount) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->schedule(when, grainOffset, grainDuration, loopCount);
+DART_EXPORT void SampledAudioNode_schedule4(int nodeId, double when, double grainOffset, double grainDuration, int loopCount) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->schedule(when, grainOffset, grainDuration, loopCount);
 }
 
-DART_EXPORT void SampledAudioNode_start(int nodeIndex, double when) {
-    std::dynamic_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->start(when);
+DART_EXPORT void SampledAudioNode_start(int nodeId, double when) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->start(when);
 }
 
-DART_EXPORT void SampledAudioNode_start2(int nodeIndex, double when, int loopCount) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->start(when, loopCount);
+DART_EXPORT void SampledAudioNode_start2(int nodeId, double when, int loopCount) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->start(when, loopCount);
 }
 
-DART_EXPORT void SampledAudioNode_start3(int nodeIndex, double when, double grainOffset, int loopCount) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->start(when, grainOffset, loopCount);
+DART_EXPORT void SampledAudioNode_start3(int nodeId, double when, double grainOffset, int loopCount) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->start(when, grainOffset, loopCount);
 }
 
-DART_EXPORT void SampledAudioNode_start4(int nodeIndex, double when, double grainOffset, double grainDuration, int loopCount) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->start(when, grainOffset, grainDuration, loopCount);
+DART_EXPORT void SampledAudioNode_start4(int nodeId, double when, double grainOffset, double grainDuration, int loopCount) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->start(when, grainOffset, grainDuration, loopCount);
 }
 
-DART_EXPORT void SampledAudioNode_clearSchedules(int nodeIndex) {
-    std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeIndex)->second)->clearSchedules();
+DART_EXPORT void SampledAudioNode_clearSchedules(int nodeId) {
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    if(node) node->clearSchedules();
 }
 
 DART_EXPORT int SampledAudioNode_getCursor(int nodeId) {
-    return std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeId)->second)->getCursor();
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    return node ? node->getCursor() : -1;
 }
 
 DART_EXPORT int SampledAudioNode_playbackRate(int nodeId) {
-    return keepAudioParam(nodeId, 0 , std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeId)->second)->playbackRate());
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 0 , node->playbackRate()) : -1;
 }
 
 DART_EXPORT int SampledAudioNode_detune(int nodeId) {
-    return keepAudioParam(nodeId, 1 , std::static_pointer_cast<SampledAudioNode>(audioNodes.find(nodeId)->second)->detune());
+    auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 1 , node->detune()) : -1;
 }
-
-

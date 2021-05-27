@@ -8,6 +8,14 @@ using namespace lab;
 int bufferCount;
 std::map<int,std::shared_ptr<AudioBus>> audioBuffers;
 
+std::shared_ptr<AudioBus> getBus(int busId) {
+    std::map<int,std::shared_ptr<AudioBus>>::iterator ite = audioBuffers.find(nodeId);
+    if (ite != audioBuffers.end()) {
+        return ite->second;
+    }
+    return nullptr;
+}
+
 void decodeAudioDataRun(const int id, const char *file)
 {
     std::shared_ptr<AudioBus> audioBus = MakeBusFromFile(file, false);
