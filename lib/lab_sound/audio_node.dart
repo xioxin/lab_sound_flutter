@@ -23,17 +23,17 @@ class AudioNode {
 
   List<AudioNode> linked = [];
 
-  connect(AudioNode dst) {
+  connect(AudioNode dst, [destIdx = 0, int srcIdx = 0]) {
     linked.add(dst);
-    this.ctx.connect(dst, this);
+    LabSound().AudioContext_connect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
   }
-  disconnect(AudioNode dst) {
+  disconnect(AudioNode dst, [destIdx = 0, int srcIdx = 0]) {
     linked.remove(dst);
-    this.ctx.disconnect(dst, this);
+    LabSound().AudioContext_disconnect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
   }
   disconnectAll() {
     linked.toList().forEach((element) {
-      this.ctx.disconnect(element, this);
+      LabSound().AudioContext_disconnect(ctx.pointer, element.nodeId, nodeId, 0, 0);
     });
     linked.clear();
   }

@@ -19,6 +19,15 @@ DART_EXPORT void AudioParam_setValue(int nodeIndex, int paramIndex, float value)
     }
 }
 
+DART_EXPORT float AudioParam_finalValue(int nodeIndex, int paramIndex, AudioContext* context) {
+    auto param = getKeepAudioParam(nodeIndex, paramIndex);
+    if(param) {
+        ContextRenderLock r(context,"finalValue");
+        return param->finalValue(r);
+    }
+    return 0.0;
+}
+
 DART_EXPORT void AudioParam_setValueCurveAtTime(int nodeIndex, int paramIndex, float curve[],float time,float duration) {
     auto param = getKeepAudioParam(nodeIndex, paramIndex);
     if(param) {

@@ -4,33 +4,42 @@
 using namespace lab;
 
 DART_EXPORT int AudioNode_isScheduledNode(int nodeId) {
-    return audioNodes.find(nodeId)->second->isScheduledNode();
+    auto node = getNode(nodeId);
+    return node ? node->isScheduledNode() : 0;
 }
 
 DART_EXPORT int AudioNode_numberOfInputs(int nodeId) {
-    return audioNodes.find(nodeId)->second->numberOfInputs();
+    auto node = getNode(nodeId);
+    return node ? node->numberOfInputs() : 0;
 }
 
 DART_EXPORT int AudioNode_numberOfOutputs(int nodeId) {
-    return audioNodes.find(nodeId)->second->numberOfOutputs();
+    auto node = getNode(nodeId);
+    return node ? node->numberOfOutputs() : 0;
 }
 
 DART_EXPORT int AudioNode_channelCount(int nodeId) {
-    return audioNodes.find(nodeId)->second->channelCount();
+    auto node = getNode(nodeId);
+    return node ? node->channelCount() : 0;
 }
 
 DART_EXPORT const char * AudioNode_name(int nodeId) {
-    return audioNodes.find(nodeId)->second->name();
+    auto node = getNode(nodeId);
+    return node ? node->name() : "";
 }
 
 DART_EXPORT void AudioNode_reset(int nodeId, AudioContext* context) {
     ContextRenderLock r(context, "reset");
-    audioNodes.find(nodeId)->second->reset(r);
+    auto node = getNode(nodeId);
+    if(node) node->reset(r);
 }
 
 DART_EXPORT void releaseNode(int nodeId){
-    audioNodes.erase(nodeId);
-    audioParams.erase(nodeId);
+    keepNodeRelease(nodeId);
 }
 
+DART_EXPORT int hasNode(int nodeId){
+    auto node = getNode(nodeId);
+    return node ? 1 : 0;
+}
 

@@ -71,6 +71,10 @@ DART_EXPORT int AudioContext_isConnected(AudioContext* context, int destinationI
     );
 }
 
+DART_EXPORT int AudioContext_device(AudioContext* context){
+    return keepNode(context->device());
+}
+
 DART_EXPORT void AudioContext_setDeviceNode(AudioContext* context, int nodeIndex){
     context->setDeviceNode(audioNodes.find(nodeIndex)->second);
 }
@@ -83,29 +87,29 @@ DART_EXPORT uint64_t AudioContext_currentSampleFrame(AudioContext* context){
     return context->currentSampleFrame();
 }
 
-DART_EXPORT void AudioContext_connect(AudioContext* context, int destination, int source) {
+DART_EXPORT void AudioContext_connect(AudioContext* context, int destination, int source, int destIdx = 0, int srcIdx = 0) {
     std::shared_ptr<AudioNode> dst;
     if(destination == -1){
         dst = context->device();
     }else{
         dst = audioNodes.find(destination)->second;
     }
-    context->connect(dst,audioNodes.find(source)->second,0,0);
+    context->connect(dst,audioNodes.find(source)->second, destIdx, srcIdx);
 }
 
-DART_EXPORT void AudioContext_disconnect(AudioContext* context, int destination, int source) {
+DART_EXPORT void AudioContext_disconnect(AudioContext* context, int destination, int source, int destIdx = 0, int srcIdx = 0) {
     std::shared_ptr<AudioNode> dst;
     if(destination == -1){
         dst = context->device();
     }else{
         dst = audioNodes.find(destination)->second;
     }
-    context->disconnect(dst,audioNodes.find(source)->second,0,0);
+    context->disconnect(dst,audioNodes.find(source)->second, destIdx, srcIdx);
 }
 
-DART_EXPORT void AudioContext_resetDevice(AudioContext* context){
-    ContextRenderLock r(context, "reset");
-    context->device()->reset(r);
+// completely disconnect the node from the graph
+DART_EXPORT void AudioContext_disconnect2(AudioContext* context, int node, int destIdx = 0) {
+    context->disconnect(audioNodes.find(node)->second, destIdx);
 }
 
 DART_EXPORT void AudioContext_releaseContext(AudioContext* ctx) {

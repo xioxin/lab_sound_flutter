@@ -20,9 +20,9 @@ class AudioBus {
     loaded = true;
   }
 
-  static async(String filePath, {autoDispose = false}) {
+  static Future<AudioBus> async(String filePath, {autoDispose = false}) {
     final bus = AudioBus.asyncLoad(filePath, autoDispose: autoDispose);
-    return bus.complete;
+    return bus.complete!;
   }
 
   AudioBus.asyncLoad(this.filePath, {this.autoDispose = false}): resourceId = LabSound().decodeAudioDataAsync(filePath.toInt8()) {
@@ -59,7 +59,12 @@ class AudioBus {
 
   int get numberOfChannels => LabSound().AudioBus_numberOfChannels(this.resourceId);
   int get length => LabSound().AudioBus_length(this.resourceId);
-  double get sampleRate => LabSound().AudioBus_sampleRate(this.resourceId);
+
+  double? _sampleRate;
+  double get sampleRate {
+    _sampleRate ??= LabSound().AudioBus_sampleRate(this.resourceId);
+    return _sampleRate!;
+  }
   Duration get duration => Duration(milliseconds: (this.length / this.sampleRate * 1000).toInt());
 
   toString() {

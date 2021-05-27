@@ -4,25 +4,31 @@
 using namespace lab;
 
 DART_EXPORT int AudioScheduledSourceNode_isPlayingOrScheduled(int nodeId) {
-    return std::static_pointer_cast<AudioScheduledSourceNode>(audioNodes.find(nodeId)->second)->isPlayingOrScheduled();
+    auto node = std::static_pointer_cast<AudioScheduledSourceNode>(getNode(nodeId));
+    return node ? node->isPlayingOrScheduled() : 0;
 }
 
 DART_EXPORT void AudioScheduledSourceNode_stop(int nodeId, float when) {
-    std::static_pointer_cast<AudioScheduledSourceNode>(audioNodes.find(nodeId)->second)->stop(when);
+    auto node = std::static_pointer_cast<AudioScheduledSourceNode>(getNode(nodeId));
+    if(node) node->stop(when);
 }
 
 DART_EXPORT int AudioScheduledSourceNode_hasFinished(int nodeId) {
-    return std::static_pointer_cast<AudioScheduledSourceNode>(audioNodes.find(nodeId)->second)->hasFinished();
+    auto node = std::static_pointer_cast<AudioScheduledSourceNode>(getNode(nodeId));
+    return node ? node->hasFinished() : 0;
 }
 
 DART_EXPORT uint64_t AudioScheduledSourceNode_startWhen(int nodeId) {
-    return std::static_pointer_cast<AudioScheduledSourceNode>(audioNodes.find(nodeId)->second)->startWhen();
+    auto node = std::static_pointer_cast<AudioScheduledSourceNode>(getNode(nodeId));
+    return node ? node->startWhen() : 0;
 }
 
 DART_EXPORT void AudioScheduledSourceNode_start(int nodeId, float when) {
-    std::static_pointer_cast<AudioScheduledSourceNode>(audioNodes.find(nodeId)->second)->start(when);
+    auto node = std::static_pointer_cast<AudioScheduledSourceNode>(getNode(nodeId));
+    if(node) node->start(when);
 }
 
 DART_EXPORT int AudioScheduledSourceNode_playbackState(int nodeId) {
-    return static_cast<int>(std::static_pointer_cast<AudioScheduledSourceNode>(audioNodes.find(nodeId)->second)->playbackState());
+    auto node = std::static_pointer_cast<AudioScheduledSourceNode>(getNode(nodeId));
+    return node ? static_cast<int>(node->playbackState()) : 0;
 }

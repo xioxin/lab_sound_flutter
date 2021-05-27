@@ -26,13 +26,36 @@ int keepAudioParam(int nodeIndex, int key, std::shared_ptr<AudioParam> audioPara
     return key;
 }
 
-
 int nodeCount;
 std::map<int,std::shared_ptr<AudioNode>> audioNodes;
+std::map<std::shared_ptr<AudioNode>,int> audioNodeIdMap;
+
 int keepNode(std::shared_ptr<AudioNode> node){
+    std::map<std::shared_ptr<AudioNode>,int>::iterator ite = audioNodeIdMap.find(node);
+    if (ite != audioNodeIdMap.end()) {
+        return ite->second;
+    }
     nodeCount++;
     audioNodes.insert(std::pair<int,std::shared_ptr<AudioNode>>(nodeCount,node));
+    audioNodeIdMap.insert(std::pair<std::shared_ptr<AudioNode>,int>(node,nodeCount));
     return nodeCount;
+}
+
+std::shared_ptr<AudioNode> getNode(int nodeId) {
+    std::map<int,std::shared_ptr<AudioNode>>::iterator ite = audioNodes.find(nodeId);
+    if (ite != audioNodes.end()) {
+        return ite->second;
+    }
+    return nullptr;
+}
+
+void keepNodeRelease(int nodeId) {
+    std::map<int,std::shared_ptr<AudioNode>>::iterator ite = audioNodes.find(nodeId);
+    if (ite != audioNodes.end()) {
+        audioNodeIdMap.erase(ite->second);
+    }
+    audioNodes.erase(nodeId);
+    audioParams.erase(nodeId);
 }
 
 #endif

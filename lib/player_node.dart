@@ -1,0 +1,333 @@
+import 'dart:async';
+
+import 'package:lab_sound_flutter/lab_sound/audio_context.dart';
+import 'package:lab_sound_flutter/lab_sound/audio_node.dart';
+import 'package:lab_sound_flutter/lab_sound/gain_node.dart';
+import 'lab_sound/lab_sound.dart';
+
+enum PlayerNodeStatus {
+  pause, playing, ended,
+}
+
+class GainAudioSampleNode extends GainNode implements AudioSampleNode {
+  late AudioSampleNode _sample;
+
+  GainAudioSampleNode(AudioContext ctx, {
+    AudioBus? resource,
+  }) : super(ctx) {
+    _sample = AudioSampleNode(ctx, resource: resource);
+    _sample.connect(this);
+  }
+
+  @override
+  dispose() {
+    _sample.dispose();
+    return super.dispose();
+  }
+
+  @override
+  AudioParam get detune => _sample.detune;
+
+  @override
+  AudioParam get playbackRate => _sample.playbackRate;
+
+  @override
+  AudioBus? get resource => _sample.resource;
+
+  @override
+  clearSchedules() => _sample.clearSchedules();
+
+  @override
+  int get cursor => _sample.cursor;
+
+  @override
+  Duration? get duration => _sample.duration;
+
+  @override
+  endedDispose({Function? destroyed}) =>
+      _sample.endedDispose(destroyed: () {
+        this.dispose();
+        if(destroyed != null) destroyed();
+      });
+
+  @override
+  bool get hasFinished => _sample.hasFinished;
+
+  @override
+  bool get isPlayingOrScheduled => _sample.isPlayingOrScheduled;
+
+  @override
+  Stream get onEnded => _sample.onEnded;
+
+  @override
+  SchedulingState get playbackState => _sample.playbackState;
+
+  @override
+  Duration? get position => _sample.position;
+
+  @override
+  schedule(
+      {double? relativeWhen,
+      double? offset,
+      double? duration,
+      int? loopCount}) {
+    _sample.schedule(
+        relativeWhen: relativeWhen,
+        offset: offset,
+        duration: duration,
+        loopCount: loopCount);
+  }
+
+  @override
+  setBus(AudioBus resource) {
+    _sample.setBus(resource);
+  }
+
+  @override
+  start({double? when, double? offset, double? duration, int? loopCount}) {
+    _sample.start(
+        when: when, offset: offset, duration: duration, loopCount: loopCount);
+  }
+
+  @override
+  int get startWhen => _sample.startWhen;
+
+  @override
+  stop({double? when}) => _sample.stop(when: when);
+
+  @override
+  set detune(AudioParam _detune) {
+    _sample.detune = _detune;
+  }
+
+  @override
+  set playbackRate(AudioParam _playbackRate) {
+    _sample.playbackRate = _playbackRate;
+  }
+
+  @override
+  set resource(AudioBus? _resource) {
+    _sample.resource = _resource;
+  }
+}
+
+class PlayerNode extends GainNode {
+
+  PlayerNode(AudioContext ctx, {
+    Duration? clockDuration = const Duration(milliseconds: 100),
+    this.middleAudioNode,
+    this.middleInAudioNode,
+    this.middleOutAudioNode,
+  }) : super(ctx) {
+    if(clockDuration != null) {
+      _clock = Stream.periodic(clockDuration).asBroadcastStream();
+    }
+    assert(!(middleAudioNode != null && (middleInAudioNode != null || middleOutAudioNode != null)));
+    if(middleAudioNode != null) {
+      middleAudioNode!.connect(this);
+    }else if(middleInAudioNode != null || middleOutAudioNode != null) {
+      assert(middleInAudioNode != null && middleOutAudioNode != null);
+      middleOutAudioNode!.connect(this);
+    }
+  }
+
+  AudioNode get _out {
+    if(middleAudioNode != null) return middleAudioNode!;
+    if(middleInAudioNode != null) return middleInAudioNode!;
+    return this;
+  }
+  final AudioNode? middleAudioNode;
+  final AudioNode? middleInAudioNode;
+  final AudioNode? middleOutAudioNode;
+
+
+  bool get hasResource => resource != null;
+  AudioBus? resource;
+  Duration? get duration => resource?.duration;
+
+  double _playbackRate = 1.0;
+  double get playbackRate => _playbackRate;
+  set playbackRate(double val) {
+    if(sample?.released == false){
+      sample?.playbackRate.setValue(val);
+    }
+    _playbackRate = val;
+  }
+
+
+  Stream? _clock;
+
+  GainAudioSampleNode? _sample;
+  double crossFadeTime = 0.0;
+  AudioContext get audioContext => ctx;
+
+  Duration? pausePosition;
+
+  AudioBus? audioData;
+  GainAudioSampleNode? get sample => _sample;
+  set sample(GainAudioSampleNode? sample) {
+    _subscriptionEnded?.cancel();
+    _sample = sample;
+    if(sample == null)return;
+    _subscriptionEnded = sample.onEnded.listen((event) {
+      print('sample. onEnded');
+      final isOver = status == PlayerNodeStatus.playing;
+      status = PlayerNodeStatus.ended;
+      pausePosition = null;
+      this._onEndedController.add(isOver);
+    });
+  }
+
+  StreamSubscription? _subscriptionEnded;
+  StreamController<bool> _onEndedController = StreamController.broadcast();
+  Stream<bool> get onEnded => _onEndedController.stream;
+
+  bool _pauseOnPosition = false;
+  Stream<Duration> get onPosition {
+    assert(_clock != null, "_clock is null");
+    return _clock!.where((event) {
+      if(this.status == PlayerNodeStatus.playing && _sample?.playbackState == SchedulingState.PLAYING) {
+        _pauseOnPosition = false;
+        return true;
+      }
+      if(_pauseOnPosition == false) {
+        _pauseOnPosition = true;
+        return true;
+      }
+      return false;
+    })
+        .map((event) => this.position)
+        .where((event) => event != null)
+        .map((event) => event!);
+  }
+
+  Stream<SchedulingState?> get onSamplePlaybackState {
+    assert(_clock != null, "_clock is null");
+    return _clock!.map((event) => _sample?.playbackState);
+  }
+
+
+  Duration? get position {
+    if(status == PlayerNodeStatus.pause) {
+      return pausePosition ?? Duration.zero;
+    }
+    if(status == PlayerNodeStatus.ended) {
+      return resource?.duration ?? Duration.zero;
+    }
+    if(_sample == null){
+      return Duration.zero;
+    }
+    if((_sample?.playbackState == SchedulingState.SCHEDULED) && pausePosition != null) {
+      return pausePosition!;
+    }
+    if(_sample?.position?.inMilliseconds == 0) {
+      /*
+      * this.resource == null ? null : Duration(milliseconds: (this.cursor / this.resource!.sampleRate * 1000).toInt())
+      * */
+      print('_sample.playbackState: ${_sample?.playbackState}, ${_sample?.cursor}, ${this.resource!.sampleRate}');
+    }
+    final pos = _sample?.position;
+    if(_sample?.playbackState != SchedulingState.PLAYING && pos == null && pausePosition != null) {
+      return pausePosition;
+    }
+    return pos;
+  }
+
+  bool get playing => status == PlayerNodeStatus.playing;
+
+  PlayerNodeStatus _status = PlayerNodeStatus.pause;
+  PlayerNodeStatus get status => _status;
+
+  StreamController<PlayerNodeStatus> _onStatusController = StreamController.broadcast();
+  Stream<PlayerNodeStatus> get onStatus => _onStatusController.stream;
+
+  set status(PlayerNodeStatus v) {
+    this._status = v;
+    _onStatusController.add(v);
+  }
+
+  play(AudioBus bus, {double? when}) {
+    pausePosition = null;
+    _switchSample(bus, when: when);
+    status = PlayerNodeStatus.playing;
+  }
+
+  resume({double? when}) {
+    if(resource == null) return;
+    if(playing) return;
+    _switchSample(resource, when: when, offset: pausePosition ?? Duration.zero);
+    status = PlayerNodeStatus.playing;
+    pausePosition = null;
+  }
+
+  pause() {
+    if(resource == null) return;
+    if(sample == null) return null;
+    pausePosition = sample?.position;
+    _switchSample(resource, pause: true);
+    status = PlayerNodeStatus.pause;
+  }
+
+  stop() {
+    pausePosition = null;
+    if(sample == null) return;
+    _switchSample(null);
+    status = PlayerNodeStatus.ended;
+  }
+
+  seekTo(Duration offset, {double? when}) {
+    pausePosition = offset;
+    if(status == PlayerNodeStatus.pause) {
+      return;
+    }
+    if(resource == null) return;
+    if (playing) {
+      _switchSample(resource, when: when, offset: offset);
+      status = PlayerNodeStatus.playing;
+    }
+  }
+
+  _switchSample(AudioBus? bus, { double? when, Duration offset = Duration.zero, bool pause = false}) {
+    final oldSample = sample;
+    resource = bus;
+    final startTime = when ?? this.audioContext.currentTime;
+    final crossFadeEndTime = startTime + crossFadeTime;
+    if(bus != null && !pause) {
+      assert(!bus.released, "Resources have been released");
+      final newSample = GainAudioSampleNode(this.ctx, resource: resource);
+      if(playbackRate != 1.0) {
+        newSample.playbackRate.setValue(playbackRate);
+      }
+      newSample.connect(_out);
+      sample = newSample;
+      if (crossFadeTime > 0.01) {
+        newSample.gain.setValue(0.001);
+        newSample.gain.setValueAtTime(0.001, startTime);
+        newSample.gain.exponentialRampToValueAtTime(1.0, crossFadeEndTime);
+        newSample.start(when: startTime, offset: offset.inMilliseconds / 1000);
+      } else {
+        newSample.start(when: startTime, offset: offset.inMilliseconds / 1000);
+      }
+    }
+    if (oldSample != null) {
+      if (crossFadeTime > 0.01) {
+        oldSample.gain.setValueAtTime(oldSample.gain.value, startTime);
+        oldSample.gain.exponentialRampToValueAtTime(0.0, crossFadeEndTime);
+        oldSample.stop(when: crossFadeEndTime);
+        oldSample.endedDispose();
+      }else {
+        oldSample.stop();
+        oldSample.dispose();
+      }
+      if(sample == oldSample) {
+        sample = null;
+      }
+    }
+  }
+
+  dispose() {
+    _sample?.dispose();
+    _onEndedController.close();
+    super.dispose();
+  }
+}

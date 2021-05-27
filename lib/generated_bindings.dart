@@ -50,6 +50,22 @@ class LabSoundBind {
       _registerDecodeAudioSendPort_ptr
           .asFunction<_dart_registerDecodeAudioSendPort>();
 
+  void registerAudioSampleOnEndedSendPort(
+    int sendPort,
+  ) {
+    return _registerAudioSampleOnEndedSendPort(
+      sendPort,
+    );
+  }
+
+  late final _registerAudioSampleOnEndedSendPort_ptr =
+      _lookup<ffi.NativeFunction<_c_registerAudioSampleOnEndedSendPort>>(
+          'registerAudioSampleOnEndedSendPort');
+  late final _dart_registerAudioSampleOnEndedSendPort
+      _registerAudioSampleOnEndedSendPort =
+      _registerAudioSampleOnEndedSendPort_ptr
+          .asFunction<_dart_registerAudioSampleOnEndedSendPort>();
+
   /// AudioContext
   ffi.Pointer<ffi.Int32> createRealtimeAudioContext(
     int channels,
@@ -203,6 +219,20 @@ class LabSoundBind {
       _AudioContext_setDeviceNode_ptr.asFunction<
           _dart_AudioContext_setDeviceNode>();
 
+  int AudioContext_device(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _AudioContext_device(
+      context,
+    );
+  }
+
+  late final _AudioContext_device_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_device>>(
+          'AudioContext_device');
+  late final _dart_AudioContext_device _AudioContext_device =
+      _AudioContext_device_ptr.asFunction<_dart_AudioContext_device>();
+
   int AudioContext_isOfflineContext(
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -237,11 +267,15 @@ class LabSoundBind {
     ffi.Pointer<ffi.Int32> context,
     int destination,
     int source,
+    int destIdx,
+    int srcIdx,
   ) {
     return _AudioContext_connect(
       context,
       destination,
       source,
+      destIdx,
+      srcIdx,
     );
   }
 
@@ -255,11 +289,15 @@ class LabSoundBind {
     ffi.Pointer<ffi.Int32> context,
     int destination,
     int source,
+    int destIdx,
+    int srcIdx,
   ) {
     return _AudioContext_disconnect(
       context,
       destination,
       source,
+      destIdx,
+      srcIdx,
     );
   }
 
@@ -269,20 +307,24 @@ class LabSoundBind {
   late final _dart_AudioContext_disconnect _AudioContext_disconnect =
       _AudioContext_disconnect_ptr.asFunction<_dart_AudioContext_disconnect>();
 
-  void AudioContext_resetDevice(
+  void AudioContext_disconnect2(
     ffi.Pointer<ffi.Int32> context,
+    int node,
+    int destIdx,
   ) {
-    return _AudioContext_resetDevice(
+    return _AudioContext_disconnect2(
       context,
+      node,
+      destIdx,
     );
   }
 
-  late final _AudioContext_resetDevice_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_resetDevice>>(
-          'AudioContext_resetDevice');
-  late final _dart_AudioContext_resetDevice _AudioContext_resetDevice =
-      _AudioContext_resetDevice_ptr.asFunction<
-          _dart_AudioContext_resetDevice>();
+  late final _AudioContext_disconnect2_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_disconnect2>>(
+          'AudioContext_disconnect2');
+  late final _dart_AudioContext_disconnect2 _AudioContext_disconnect2 =
+      _AudioContext_disconnect2_ptr.asFunction<
+          _dart_AudioContext_disconnect2>();
 
   void AudioContext_releaseContext(
     ffi.Pointer<ffi.Int32> ctx,
@@ -332,6 +374,24 @@ class LabSoundBind {
           'AudioParam_setValue');
   late final _dart_AudioParam_setValue _AudioParam_setValue =
       _AudioParam_setValue_ptr.asFunction<_dart_AudioParam_setValue>();
+
+  double AudioParam_finalValue(
+    int nodeId,
+    int paramIndex,
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _AudioParam_finalValue(
+      nodeId,
+      paramIndex,
+      context,
+    );
+  }
+
+  late final _AudioParam_finalValue_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioParam_finalValue>>(
+          'AudioParam_finalValue');
+  late final _dart_AudioParam_finalValue _AudioParam_finalValue =
+      _AudioParam_finalValue_ptr.asFunction<_dart_AudioParam_finalValue>();
 
   void AudioParam_setValueCurveAtTime(
     int nodeId,
@@ -479,6 +539,38 @@ class LabSoundBind {
   late final _dart_AudioParam_minValue _AudioParam_minValue =
       _AudioParam_minValue_ptr.asFunction<_dart_AudioParam_minValue>();
 
+  double AudioParam_maxValue(
+    int nodeId,
+    int paramIndex,
+  ) {
+    return _AudioParam_maxValue(
+      nodeId,
+      paramIndex,
+    );
+  }
+
+  late final _AudioParam_maxValue_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioParam_maxValue>>(
+          'AudioParam_maxValue');
+  late final _dart_AudioParam_maxValue _AudioParam_maxValue =
+      _AudioParam_maxValue_ptr.asFunction<_dart_AudioParam_maxValue>();
+
+  double AudioParam_defaultValue(
+    int nodeId,
+    int paramIndex,
+  ) {
+    return _AudioParam_defaultValue(
+      nodeId,
+      paramIndex,
+    );
+  }
+
+  late final _AudioParam_defaultValue_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioParam_defaultValue>>(
+          'AudioParam_defaultValue');
+  late final _dart_AudioParam_defaultValue _AudioParam_defaultValue =
+      _AudioParam_defaultValue_ptr.asFunction<_dart_AudioParam_defaultValue>();
+
   void AudioParam_resetSmoothedValue(
     int nodeId,
     int paramIndex,
@@ -607,6 +699,19 @@ class LabSoundBind {
       _lookup<ffi.NativeFunction<_c_AudioNode_reset>>('AudioNode_reset');
   late final _dart_AudioNode_reset _AudioNode_reset =
       _AudioNode_reset_ptr.asFunction<_dart_AudioNode_reset>();
+
+  ffi.Pointer<ffi.Int8> AudioNode_name(
+    int nodeId,
+  ) {
+    return _AudioNode_name(
+      nodeId,
+    );
+  }
+
+  late final _AudioNode_name_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_name>>('AudioNode_name');
+  late final _dart_AudioNode_name _AudioNode_name =
+      _AudioNode_name_ptr.asFunction<_dart_AudioNode_name>();
 
   void releaseNode(
     int nodeId,
@@ -773,12 +878,12 @@ class LabSoundBind {
   void SampledAudioNode_schedule2(
     int nodeId,
     double when,
-    double grainOffset,
+    int loopCount,
   ) {
     return _SampledAudioNode_schedule2(
       nodeId,
       when,
-      grainOffset,
+      loopCount,
     );
   }
 
@@ -793,13 +898,13 @@ class LabSoundBind {
     int nodeId,
     double when,
     double grainOffset,
-    double grainDuration,
+    int loopCount,
   ) {
     return _SampledAudioNode_schedule3(
       nodeId,
       when,
       grainOffset,
-      grainDuration,
+      loopCount,
     );
   }
 
@@ -847,6 +952,82 @@ class LabSoundBind {
   late final _dart_SampledAudioNode_clearSchedules
       _SampledAudioNode_clearSchedules = _SampledAudioNode_clearSchedules_ptr
           .asFunction<_dart_SampledAudioNode_clearSchedules>();
+
+  void SampledAudioNode_start(
+    int nodeIndex,
+    double when,
+  ) {
+    return _SampledAudioNode_start(
+      nodeIndex,
+      when,
+    );
+  }
+
+  late final _SampledAudioNode_start_ptr =
+      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start>>(
+          'SampledAudioNode_start');
+  late final _dart_SampledAudioNode_start _SampledAudioNode_start =
+      _SampledAudioNode_start_ptr.asFunction<_dart_SampledAudioNode_start>();
+
+  void SampledAudioNode_start2(
+    int nodeIndex,
+    double when,
+    int loopCount,
+  ) {
+    return _SampledAudioNode_start2(
+      nodeIndex,
+      when,
+      loopCount,
+    );
+  }
+
+  late final _SampledAudioNode_start2_ptr =
+      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start2>>(
+          'SampledAudioNode_start2');
+  late final _dart_SampledAudioNode_start2 _SampledAudioNode_start2 =
+      _SampledAudioNode_start2_ptr.asFunction<_dart_SampledAudioNode_start2>();
+
+  void SampledAudioNode_start3(
+    int nodeIndex,
+    double when,
+    double grainOffset,
+    int loopCount,
+  ) {
+    return _SampledAudioNode_start3(
+      nodeIndex,
+      when,
+      grainOffset,
+      loopCount,
+    );
+  }
+
+  late final _SampledAudioNode_start3_ptr =
+      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start3>>(
+          'SampledAudioNode_start3');
+  late final _dart_SampledAudioNode_start3 _SampledAudioNode_start3 =
+      _SampledAudioNode_start3_ptr.asFunction<_dart_SampledAudioNode_start3>();
+
+  void SampledAudioNode_start4(
+    int nodeIndex,
+    double when,
+    double grainOffset,
+    double grainDuration,
+    int loopCount,
+  ) {
+    return _SampledAudioNode_start4(
+      nodeIndex,
+      when,
+      grainOffset,
+      grainDuration,
+      loopCount,
+    );
+  }
+
+  late final _SampledAudioNode_start4_ptr =
+      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start4>>(
+          'SampledAudioNode_start4');
+  late final _dart_SampledAudioNode_start4 _SampledAudioNode_start4 =
+      _SampledAudioNode_start4_ptr.asFunction<_dart_SampledAudioNode_start4>();
 
   int SampledAudioNode_getCursor(
     int index,
@@ -1587,6 +1768,608 @@ class LabSoundBind {
           'BiquadFilterNode_detune');
   late final _dart_BiquadFilterNode_detune _BiquadFilterNode_detune =
       _BiquadFilterNode_detune_ptr.asFunction<_dart_BiquadFilterNode_detune>();
+
+  /// PannerNode
+  int createPannerNode(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _createPannerNode(
+      context,
+    );
+  }
+
+  late final _createPannerNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createPannerNode>>('createPannerNode');
+  late final _dart_createPannerNode _createPannerNode =
+      _createPannerNode_ptr.asFunction<_dart_createPannerNode>();
+
+  int PannerNode_panningModel(
+    int nodeIndex,
+  ) {
+    return _PannerNode_panningModel(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_panningModel_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_panningModel>>(
+          'PannerNode_panningModel');
+  late final _dart_PannerNode_panningModel _PannerNode_panningModel =
+      _PannerNode_panningModel_ptr.asFunction<_dart_PannerNode_panningModel>();
+
+  void PannerNode_setPanningModel(
+    int nodeIndex,
+    int m,
+  ) {
+    return _PannerNode_setPanningModel(
+      nodeIndex,
+      m,
+    );
+  }
+
+  late final _PannerNode_setPanningModel_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setPanningModel>>(
+          'PannerNode_setPanningModel');
+  late final _dart_PannerNode_setPanningModel _PannerNode_setPanningModel =
+      _PannerNode_setPanningModel_ptr.asFunction<
+          _dart_PannerNode_setPanningModel>();
+
+  int PannerNode_distanceModel(
+    int nodeIndex,
+  ) {
+    return _PannerNode_distanceModel(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_distanceModel_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_distanceModel>>(
+          'PannerNode_distanceModel');
+  late final _dart_PannerNode_distanceModel _PannerNode_distanceModel =
+      _PannerNode_distanceModel_ptr.asFunction<
+          _dart_PannerNode_distanceModel>();
+
+  void PannerNode_setDistanceModel(
+    int nodeIndex,
+    int m,
+  ) {
+    return _PannerNode_setDistanceModel(
+      nodeIndex,
+      m,
+    );
+  }
+
+  late final _PannerNode_setDistanceModel_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setDistanceModel>>(
+          'PannerNode_setDistanceModel');
+  late final _dart_PannerNode_setDistanceModel _PannerNode_setDistanceModel =
+      _PannerNode_setDistanceModel_ptr.asFunction<
+          _dart_PannerNode_setDistanceModel>();
+
+  void PannerNode_setPosition(
+    int nodeIndex,
+    double x,
+    double y,
+    double z,
+  ) {
+    return _PannerNode_setPosition(
+      nodeIndex,
+      x,
+      y,
+      z,
+    );
+  }
+
+  late final _PannerNode_setPosition_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setPosition>>(
+          'PannerNode_setPosition');
+  late final _dart_PannerNode_setPosition _PannerNode_setPosition =
+      _PannerNode_setPosition_ptr.asFunction<_dart_PannerNode_setPosition>();
+
+  void PannerNode_setOrientation(
+    int nodeIndex,
+    double x,
+    double y,
+    double z,
+  ) {
+    return _PannerNode_setOrientation(
+      nodeIndex,
+      x,
+      y,
+      z,
+    );
+  }
+
+  late final _PannerNode_setOrientation_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setOrientation>>(
+          'PannerNode_setOrientation');
+  late final _dart_PannerNode_setOrientation _PannerNode_setOrientation =
+      _PannerNode_setOrientation_ptr.asFunction<
+          _dart_PannerNode_setOrientation>();
+
+  void PannerNode_setVelocity(
+    int nodeIndex,
+    double x,
+    double y,
+    double z,
+  ) {
+    return _PannerNode_setVelocity(
+      nodeIndex,
+      x,
+      y,
+      z,
+    );
+  }
+
+  late final _PannerNode_setVelocity_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setVelocity>>(
+          'PannerNode_setVelocity');
+  late final _dart_PannerNode_setVelocity _PannerNode_setVelocity =
+      _PannerNode_setVelocity_ptr.asFunction<_dart_PannerNode_setVelocity>();
+
+  int PannerNode_positionX(
+    int nodeIndex,
+  ) {
+    return _PannerNode_positionX(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_positionX_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_positionX>>(
+          'PannerNode_positionX');
+  late final _dart_PannerNode_positionX _PannerNode_positionX =
+      _PannerNode_positionX_ptr.asFunction<_dart_PannerNode_positionX>();
+
+  int PannerNode_positionY(
+    int nodeIndex,
+  ) {
+    return _PannerNode_positionY(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_positionY_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_positionY>>(
+          'PannerNode_positionY');
+  late final _dart_PannerNode_positionY _PannerNode_positionY =
+      _PannerNode_positionY_ptr.asFunction<_dart_PannerNode_positionY>();
+
+  int PannerNode_positionZ(
+    int nodeIndex,
+  ) {
+    return _PannerNode_positionZ(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_positionZ_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_positionZ>>(
+          'PannerNode_positionZ');
+  late final _dart_PannerNode_positionZ _PannerNode_positionZ =
+      _PannerNode_positionZ_ptr.asFunction<_dart_PannerNode_positionZ>();
+
+  int PannerNode_orientationX(
+    int nodeIndex,
+  ) {
+    return _PannerNode_orientationX(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_orientationX_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_orientationX>>(
+          'PannerNode_orientationX');
+  late final _dart_PannerNode_orientationX _PannerNode_orientationX =
+      _PannerNode_orientationX_ptr.asFunction<_dart_PannerNode_orientationX>();
+
+  int PannerNode_orientationY(
+    int nodeIndex,
+  ) {
+    return _PannerNode_orientationY(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_orientationY_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_orientationY>>(
+          'PannerNode_orientationY');
+  late final _dart_PannerNode_orientationY _PannerNode_orientationY =
+      _PannerNode_orientationY_ptr.asFunction<_dart_PannerNode_orientationY>();
+
+  int PannerNode_orientationZ(
+    int nodeIndex,
+  ) {
+    return _PannerNode_orientationZ(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_orientationZ_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_orientationZ>>(
+          'PannerNode_orientationZ');
+  late final _dart_PannerNode_orientationZ _PannerNode_orientationZ =
+      _PannerNode_orientationZ_ptr.asFunction<_dart_PannerNode_orientationZ>();
+
+  int PannerNode_velocityX(
+    int nodeIndex,
+  ) {
+    return _PannerNode_velocityX(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_velocityX_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_velocityX>>(
+          'PannerNode_velocityX');
+  late final _dart_PannerNode_velocityX _PannerNode_velocityX =
+      _PannerNode_velocityX_ptr.asFunction<_dart_PannerNode_velocityX>();
+
+  int PannerNode_velocityY(
+    int nodeIndex,
+  ) {
+    return _PannerNode_velocityY(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_velocityY_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_velocityY>>(
+          'PannerNode_velocityY');
+  late final _dart_PannerNode_velocityY _PannerNode_velocityY =
+      _PannerNode_velocityY_ptr.asFunction<_dart_PannerNode_velocityY>();
+
+  int PannerNode_velocityZ(
+    int nodeIndex,
+  ) {
+    return _PannerNode_velocityZ(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_velocityZ_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_velocityZ>>(
+          'PannerNode_velocityZ');
+  late final _dart_PannerNode_velocityZ _PannerNode_velocityZ =
+      _PannerNode_velocityZ_ptr.asFunction<_dart_PannerNode_velocityZ>();
+
+  int PannerNode_distanceGain(
+    int nodeIndex,
+  ) {
+    return _PannerNode_distanceGain(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_distanceGain_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_distanceGain>>(
+          'PannerNode_distanceGain');
+  late final _dart_PannerNode_distanceGain _PannerNode_distanceGain =
+      _PannerNode_distanceGain_ptr.asFunction<_dart_PannerNode_distanceGain>();
+
+  int PannerNode_coneGain(
+    int nodeIndex,
+  ) {
+    return _PannerNode_coneGain(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_coneGain_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_coneGain>>(
+          'PannerNode_coneGain');
+  late final _dart_PannerNode_coneGain _PannerNode_coneGain =
+      _PannerNode_coneGain_ptr.asFunction<_dart_PannerNode_coneGain>();
+
+  double PannerNode_refDistance(
+    int nodeIndex,
+  ) {
+    return _PannerNode_refDistance(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_refDistance_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_refDistance>>(
+          'PannerNode_refDistance');
+  late final _dart_PannerNode_refDistance _PannerNode_refDistance =
+      _PannerNode_refDistance_ptr.asFunction<_dart_PannerNode_refDistance>();
+
+  void PannerNode_setRefDistance(
+    int nodeIndex,
+    double refDistance,
+  ) {
+    return _PannerNode_setRefDistance(
+      nodeIndex,
+      refDistance,
+    );
+  }
+
+  late final _PannerNode_setRefDistance_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setRefDistance>>(
+          'PannerNode_setRefDistance');
+  late final _dart_PannerNode_setRefDistance _PannerNode_setRefDistance =
+      _PannerNode_setRefDistance_ptr.asFunction<
+          _dart_PannerNode_setRefDistance>();
+
+  double PannerNode_maxDistance(
+    int nodeIndex,
+  ) {
+    return _PannerNode_maxDistance(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_maxDistance_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_maxDistance>>(
+          'PannerNode_maxDistance');
+  late final _dart_PannerNode_maxDistance _PannerNode_maxDistance =
+      _PannerNode_maxDistance_ptr.asFunction<_dart_PannerNode_maxDistance>();
+
+  void PannerNode_setMaxDistance(
+    int nodeIndex,
+    double maxDistance,
+  ) {
+    return _PannerNode_setMaxDistance(
+      nodeIndex,
+      maxDistance,
+    );
+  }
+
+  late final _PannerNode_setMaxDistance_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setMaxDistance>>(
+          'PannerNode_setMaxDistance');
+  late final _dart_PannerNode_setMaxDistance _PannerNode_setMaxDistance =
+      _PannerNode_setMaxDistance_ptr.asFunction<
+          _dart_PannerNode_setMaxDistance>();
+
+  double PannerNode_rolloffFactor(
+    int nodeIndex,
+  ) {
+    return _PannerNode_rolloffFactor(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_rolloffFactor_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_rolloffFactor>>(
+          'PannerNode_rolloffFactor');
+  late final _dart_PannerNode_rolloffFactor _PannerNode_rolloffFactor =
+      _PannerNode_rolloffFactor_ptr.asFunction<
+          _dart_PannerNode_rolloffFactor>();
+
+  void PannerNode_setRolloffFactor(
+    int nodeIndex,
+    double rolloffFactor,
+  ) {
+    return _PannerNode_setRolloffFactor(
+      nodeIndex,
+      rolloffFactor,
+    );
+  }
+
+  late final _PannerNode_setRolloffFactor_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setRolloffFactor>>(
+          'PannerNode_setRolloffFactor');
+  late final _dart_PannerNode_setRolloffFactor _PannerNode_setRolloffFactor =
+      _PannerNode_setRolloffFactor_ptr.asFunction<
+          _dart_PannerNode_setRolloffFactor>();
+
+  double PannerNode_coneInnerAngle(
+    int nodeIndex,
+  ) {
+    return _PannerNode_coneInnerAngle(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_coneInnerAngle_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_coneInnerAngle>>(
+          'PannerNode_coneInnerAngle');
+  late final _dart_PannerNode_coneInnerAngle _PannerNode_coneInnerAngle =
+      _PannerNode_coneInnerAngle_ptr.asFunction<
+          _dart_PannerNode_coneInnerAngle>();
+
+  void PannerNode_setConeInnerAngle(
+    int nodeIndex,
+    double angle,
+  ) {
+    return _PannerNode_setConeInnerAngle(
+      nodeIndex,
+      angle,
+    );
+  }
+
+  late final _PannerNode_setConeInnerAngle_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setConeInnerAngle>>(
+          'PannerNode_setConeInnerAngle');
+  late final _dart_PannerNode_setConeInnerAngle _PannerNode_setConeInnerAngle =
+      _PannerNode_setConeInnerAngle_ptr.asFunction<
+          _dart_PannerNode_setConeInnerAngle>();
+
+  double PannerNode_coneOuterAngle(
+    int nodeIndex,
+  ) {
+    return _PannerNode_coneOuterAngle(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_coneOuterAngle_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_coneOuterAngle>>(
+          'PannerNode_coneOuterAngle');
+  late final _dart_PannerNode_coneOuterAngle _PannerNode_coneOuterAngle =
+      _PannerNode_coneOuterAngle_ptr.asFunction<
+          _dart_PannerNode_coneOuterAngle>();
+
+  void PannerNode_setConeOuterAngle(
+    int nodeIndex,
+    double angle,
+  ) {
+    return _PannerNode_setConeOuterAngle(
+      nodeIndex,
+      angle,
+    );
+  }
+
+  late final _PannerNode_setConeOuterAngle_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setConeOuterAngle>>(
+          'PannerNode_setConeOuterAngle');
+  late final _dart_PannerNode_setConeOuterAngle _PannerNode_setConeOuterAngle =
+      _PannerNode_setConeOuterAngle_ptr.asFunction<
+          _dart_PannerNode_setConeOuterAngle>();
+
+  double PannerNode_coneOuterGain(
+    int nodeIndex,
+  ) {
+    return _PannerNode_coneOuterGain(
+      nodeIndex,
+    );
+  }
+
+  late final _PannerNode_coneOuterGain_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_coneOuterGain>>(
+          'PannerNode_coneOuterGain');
+  late final _dart_PannerNode_coneOuterGain _PannerNode_coneOuterGain =
+      _PannerNode_coneOuterGain_ptr.asFunction<
+          _dart_PannerNode_coneOuterGain>();
+
+  void PannerNode_setConeOuterGain(
+    int nodeIndex,
+    double angle,
+  ) {
+    return _PannerNode_setConeOuterGain(
+      nodeIndex,
+      angle,
+    );
+  }
+
+  late final _PannerNode_setConeOuterGain_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_setConeOuterGain>>(
+          'PannerNode_setConeOuterGain');
+  late final _dart_PannerNode_setConeOuterGain _PannerNode_setConeOuterGain =
+      _PannerNode_setConeOuterGain_ptr.asFunction<
+          _dart_PannerNode_setConeOuterGain>();
+
+  void PannerNode_getAzimuthElevation(
+    int nodeIndex,
+    ffi.Pointer<ffi.Int32> context,
+    ffi.Pointer<ffi.Double> outAzimuth,
+    ffi.Pointer<ffi.Double> outElevation,
+  ) {
+    return _PannerNode_getAzimuthElevation(
+      nodeIndex,
+      context,
+      outAzimuth,
+      outElevation,
+    );
+  }
+
+  late final _PannerNode_getAzimuthElevation_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_getAzimuthElevation>>(
+          'PannerNode_getAzimuthElevation');
+  late final _dart_PannerNode_getAzimuthElevation
+      _PannerNode_getAzimuthElevation = _PannerNode_getAzimuthElevation_ptr
+          .asFunction<_dart_PannerNode_getAzimuthElevation>();
+
+  void PannerNode_dopplerRate(
+    int nodeIndex,
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _PannerNode_dopplerRate(
+      nodeIndex,
+      context,
+    );
+  }
+
+  late final _PannerNode_dopplerRate_ptr =
+      _lookup<ffi.NativeFunction<_c_PannerNode_dopplerRate>>(
+          'PannerNode_dopplerRate');
+  late final _dart_PannerNode_dopplerRate _PannerNode_dopplerRate =
+      _PannerNode_dopplerRate_ptr.asFunction<_dart_PannerNode_dopplerRate>();
+
+  /// ChannelSplitterNode
+  int createChannelSplitterNode(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _createChannelSplitterNode(
+      context,
+    );
+  }
+
+  late final _createChannelSplitterNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createChannelSplitterNode>>(
+          'createChannelSplitterNode');
+  late final _dart_createChannelSplitterNode _createChannelSplitterNode =
+      _createChannelSplitterNode_ptr
+          .asFunction<_dart_createChannelSplitterNode>();
+
+  void ChannelSplitterNode_addOutputs(
+    int nodeIndex,
+    int n,
+  ) {
+    return _ChannelSplitterNode_addOutputs(
+      nodeIndex,
+      n,
+    );
+  }
+
+  late final _ChannelSplitterNode_addOutputs_ptr =
+      _lookup<ffi.NativeFunction<_c_ChannelSplitterNode_addOutputs>>(
+          'ChannelSplitterNode_addOutputs');
+  late final _dart_ChannelSplitterNode_addOutputs
+      _ChannelSplitterNode_addOutputs = _ChannelSplitterNode_addOutputs_ptr
+          .asFunction<_dart_ChannelSplitterNode_addOutputs>();
+
+  /// ChannelMergerNode
+  int createChannelMergerNode(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _createChannelMergerNode(
+      context,
+    );
+  }
+
+  late final _createChannelMergerNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createChannelMergerNode>>(
+          'createChannelMergerNode');
+  late final _dart_createChannelMergerNode _createChannelMergerNode =
+      _createChannelMergerNode_ptr.asFunction<_dart_createChannelMergerNode>();
+
+  void ChannelMergerNode_addInputs(
+    int nodeIndex,
+    int n,
+  ) {
+    return _ChannelMergerNode_addInputs(
+      nodeIndex,
+      n,
+    );
+  }
+
+  late final _ChannelMergerNode_addInputs_ptr =
+      _lookup<ffi.NativeFunction<_c_ChannelMergerNode_addInputs>>(
+          'ChannelMergerNode_addInputs');
+  late final _dart_ChannelMergerNode_addInputs _ChannelMergerNode_addInputs =
+      _ChannelMergerNode_addInputs_ptr.asFunction<
+          _dart_ChannelMergerNode_addInputs>();
+
+  void ChannelMergerNode_setOutputChannelCount(
+    int nodeIndex,
+    int n,
+  ) {
+    return _ChannelMergerNode_setOutputChannelCount(
+      nodeIndex,
+      n,
+    );
+  }
+
+  late final _ChannelMergerNode_setOutputChannelCount_ptr =
+      _lookup<ffi.NativeFunction<_c_ChannelMergerNode_setOutputChannelCount>>(
+          'ChannelMergerNode_setOutputChannelCount');
+  late final _dart_ChannelMergerNode_setOutputChannelCount
+      _ChannelMergerNode_setOutputChannelCount =
+      _ChannelMergerNode_setOutputChannelCount_ptr.asFunction<
+          _dart_ChannelMergerNode_setOutputChannelCount>();
 }
 
 class FloatArray extends ffi.Struct {
@@ -1616,6 +2399,14 @@ typedef _c_registerDecodeAudioSendPort = ffi.Void Function(
 );
 
 typedef _dart_registerDecodeAudioSendPort = void Function(
+  int sendPort,
+);
+
+typedef _c_registerAudioSampleOnEndedSendPort = ffi.Void Function(
+  ffi.Int32 sendPort,
+);
+
+typedef _dart_registerAudioSampleOnEndedSendPort = void Function(
   int sendPort,
 );
 
@@ -1707,6 +2498,14 @@ typedef _dart_AudioContext_setDeviceNode = void Function(
   int nodeId,
 );
 
+typedef _c_AudioContext_device = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_AudioContext_device = int Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
 typedef _c_AudioContext_isOfflineContext = ffi.Int32 Function(
   ffi.Pointer<ffi.Int32> context,
 );
@@ -1727,32 +2526,44 @@ typedef _c_AudioContext_connect = ffi.Void Function(
   ffi.Pointer<ffi.Int32> context,
   ffi.Int32 destination,
   ffi.Int32 source,
+  ffi.Int32 destIdx,
+  ffi.Int32 srcIdx,
 );
 
 typedef _dart_AudioContext_connect = void Function(
   ffi.Pointer<ffi.Int32> context,
   int destination,
   int source,
+  int destIdx,
+  int srcIdx,
 );
 
 typedef _c_AudioContext_disconnect = ffi.Void Function(
   ffi.Pointer<ffi.Int32> context,
   ffi.Int32 destination,
   ffi.Int32 source,
+  ffi.Int32 destIdx,
+  ffi.Int32 srcIdx,
 );
 
 typedef _dart_AudioContext_disconnect = void Function(
   ffi.Pointer<ffi.Int32> context,
   int destination,
   int source,
+  int destIdx,
+  int srcIdx,
 );
 
-typedef _c_AudioContext_resetDevice = ffi.Void Function(
+typedef _c_AudioContext_disconnect2 = ffi.Void Function(
   ffi.Pointer<ffi.Int32> context,
+  ffi.Int32 node,
+  ffi.Int32 destIdx,
 );
 
-typedef _dart_AudioContext_resetDevice = void Function(
+typedef _dart_AudioContext_disconnect2 = void Function(
   ffi.Pointer<ffi.Int32> context,
+  int node,
+  int destIdx,
 );
 
 typedef _c_AudioContext_releaseContext = ffi.Void Function(
@@ -1783,6 +2594,18 @@ typedef _dart_AudioParam_setValue = void Function(
   int nodeId,
   int paramIndex,
   double value,
+);
+
+typedef _c_AudioParam_finalValue = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 paramIndex,
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_AudioParam_finalValue = double Function(
+  int nodeId,
+  int paramIndex,
+  ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_AudioParam_setValueCurveAtTime = ffi.Void Function(
@@ -1881,6 +2704,26 @@ typedef _dart_AudioParam_minValue = double Function(
   int paramIndex,
 );
 
+typedef _c_AudioParam_maxValue = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 paramIndex,
+);
+
+typedef _dart_AudioParam_maxValue = double Function(
+  int nodeId,
+  int paramIndex,
+);
+
+typedef _c_AudioParam_defaultValue = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 paramIndex,
+);
+
+typedef _dart_AudioParam_defaultValue = double Function(
+  int nodeId,
+  int paramIndex,
+);
+
 typedef _c_AudioParam_resetSmoothedValue = ffi.Void Function(
   ffi.Int32 nodeId,
   ffi.Int32 paramIndex,
@@ -1953,6 +2796,14 @@ typedef _c_AudioNode_reset = ffi.Void Function(
 typedef _dart_AudioNode_reset = void Function(
   int nodeId,
   ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_AudioNode_name = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioNode_name = ffi.Pointer<ffi.Int8> Function(
+  int nodeId,
 );
 
 typedef _c_releaseNode = ffi.Void Function(
@@ -2048,27 +2899,27 @@ typedef _dart_SampledAudioNode_schedule = void Function(
 typedef _c_SampledAudioNode_schedule2 = ffi.Void Function(
   ffi.Int32 nodeId,
   ffi.Double when,
-  ffi.Double grainOffset,
+  ffi.Int32 loopCount,
 );
 
 typedef _dart_SampledAudioNode_schedule2 = void Function(
   int nodeId,
   double when,
-  double grainOffset,
+  int loopCount,
 );
 
 typedef _c_SampledAudioNode_schedule3 = ffi.Void Function(
   ffi.Int32 nodeId,
   ffi.Double when,
   ffi.Double grainOffset,
-  ffi.Double grainDuration,
+  ffi.Int32 loopCount,
 );
 
 typedef _dart_SampledAudioNode_schedule3 = void Function(
   int nodeId,
   double when,
   double grainOffset,
-  double grainDuration,
+  int loopCount,
 );
 
 typedef _c_SampledAudioNode_schedule4 = ffi.Void Function(
@@ -2093,6 +2944,58 @@ typedef _c_SampledAudioNode_clearSchedules = ffi.Void Function(
 
 typedef _dart_SampledAudioNode_clearSchedules = void Function(
   int nodeId,
+);
+
+typedef _c_SampledAudioNode_start = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Double when,
+);
+
+typedef _dart_SampledAudioNode_start = void Function(
+  int nodeIndex,
+  double when,
+);
+
+typedef _c_SampledAudioNode_start2 = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Double when,
+  ffi.Int32 loopCount,
+);
+
+typedef _dart_SampledAudioNode_start2 = void Function(
+  int nodeIndex,
+  double when,
+  int loopCount,
+);
+
+typedef _c_SampledAudioNode_start3 = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Double when,
+  ffi.Double grainOffset,
+  ffi.Int32 loopCount,
+);
+
+typedef _dart_SampledAudioNode_start3 = void Function(
+  int nodeIndex,
+  double when,
+  double grainOffset,
+  int loopCount,
+);
+
+typedef _c_SampledAudioNode_start4 = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Double when,
+  ffi.Double grainOffset,
+  ffi.Double grainDuration,
+  ffi.Int32 loopCount,
+);
+
+typedef _dart_SampledAudioNode_start4 = void Function(
+  int nodeIndex,
+  double when,
+  double grainOffset,
+  double grainDuration,
+  int loopCount,
 );
 
 typedef _c_SampledAudioNode_getCursor = ffi.Int32 Function(
@@ -2519,4 +3422,356 @@ typedef _c_BiquadFilterNode_detune = ffi.Int32 Function(
 
 typedef _dart_BiquadFilterNode_detune = int Function(
   int nodeId,
+);
+
+typedef _c_createPannerNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_createPannerNode = int Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_PannerNode_panningModel = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_panningModel = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setPanningModel = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 m,
+);
+
+typedef _dart_PannerNode_setPanningModel = void Function(
+  int nodeIndex,
+  int m,
+);
+
+typedef _c_PannerNode_distanceModel = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_distanceModel = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setDistanceModel = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 m,
+);
+
+typedef _dart_PannerNode_setDistanceModel = void Function(
+  int nodeIndex,
+  int m,
+);
+
+typedef _c_PannerNode_setPosition = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float x,
+  ffi.Float y,
+  ffi.Float z,
+);
+
+typedef _dart_PannerNode_setPosition = void Function(
+  int nodeIndex,
+  double x,
+  double y,
+  double z,
+);
+
+typedef _c_PannerNode_setOrientation = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float x,
+  ffi.Float y,
+  ffi.Float z,
+);
+
+typedef _dart_PannerNode_setOrientation = void Function(
+  int nodeIndex,
+  double x,
+  double y,
+  double z,
+);
+
+typedef _c_PannerNode_setVelocity = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float x,
+  ffi.Float y,
+  ffi.Float z,
+);
+
+typedef _dart_PannerNode_setVelocity = void Function(
+  int nodeIndex,
+  double x,
+  double y,
+  double z,
+);
+
+typedef _c_PannerNode_positionX = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_positionX = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_positionY = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_positionY = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_positionZ = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_positionZ = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_orientationX = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_orientationX = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_orientationY = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_orientationY = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_orientationZ = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_orientationZ = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_velocityX = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_velocityX = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_velocityY = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_velocityY = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_velocityZ = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_velocityZ = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_distanceGain = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_distanceGain = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_coneGain = ffi.Int32 Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_coneGain = int Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_refDistance = ffi.Float Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_refDistance = double Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setRefDistance = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float refDistance,
+);
+
+typedef _dart_PannerNode_setRefDistance = void Function(
+  int nodeIndex,
+  double refDistance,
+);
+
+typedef _c_PannerNode_maxDistance = ffi.Float Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_maxDistance = double Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setMaxDistance = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float maxDistance,
+);
+
+typedef _dart_PannerNode_setMaxDistance = void Function(
+  int nodeIndex,
+  double maxDistance,
+);
+
+typedef _c_PannerNode_rolloffFactor = ffi.Float Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_rolloffFactor = double Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setRolloffFactor = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float rolloffFactor,
+);
+
+typedef _dart_PannerNode_setRolloffFactor = void Function(
+  int nodeIndex,
+  double rolloffFactor,
+);
+
+typedef _c_PannerNode_coneInnerAngle = ffi.Float Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_coneInnerAngle = double Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setConeInnerAngle = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float angle,
+);
+
+typedef _dart_PannerNode_setConeInnerAngle = void Function(
+  int nodeIndex,
+  double angle,
+);
+
+typedef _c_PannerNode_coneOuterAngle = ffi.Float Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_coneOuterAngle = double Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setConeOuterAngle = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float angle,
+);
+
+typedef _dart_PannerNode_setConeOuterAngle = void Function(
+  int nodeIndex,
+  double angle,
+);
+
+typedef _c_PannerNode_coneOuterGain = ffi.Float Function(
+  ffi.Int32 nodeIndex,
+);
+
+typedef _dart_PannerNode_coneOuterGain = double Function(
+  int nodeIndex,
+);
+
+typedef _c_PannerNode_setConeOuterGain = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Float angle,
+);
+
+typedef _dart_PannerNode_setConeOuterGain = void Function(
+  int nodeIndex,
+  double angle,
+);
+
+typedef _c_PannerNode_getAzimuthElevation = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Pointer<ffi.Int32> context,
+  ffi.Pointer<ffi.Double> outAzimuth,
+  ffi.Pointer<ffi.Double> outElevation,
+);
+
+typedef _dart_PannerNode_getAzimuthElevation = void Function(
+  int nodeIndex,
+  ffi.Pointer<ffi.Int32> context,
+  ffi.Pointer<ffi.Double> outAzimuth,
+  ffi.Pointer<ffi.Double> outElevation,
+);
+
+typedef _c_PannerNode_dopplerRate = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_PannerNode_dopplerRate = void Function(
+  int nodeIndex,
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_createChannelSplitterNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_createChannelSplitterNode = int Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_ChannelSplitterNode_addOutputs = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 n,
+);
+
+typedef _dart_ChannelSplitterNode_addOutputs = void Function(
+  int nodeIndex,
+  int n,
+);
+
+typedef _c_createChannelMergerNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_createChannelMergerNode = int Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_ChannelMergerNode_addInputs = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 n,
+);
+
+typedef _dart_ChannelMergerNode_addInputs = void Function(
+  int nodeIndex,
+  int n,
+);
+
+typedef _c_ChannelMergerNode_setOutputChannelCount = ffi.Void Function(
+  ffi.Int32 nodeIndex,
+  ffi.Int32 n,
+);
+
+typedef _dart_ChannelMergerNode_setOutputChannelCount = void Function(
+  int nodeIndex,
+  int n,
 );

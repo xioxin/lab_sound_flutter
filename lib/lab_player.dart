@@ -1,15 +1,36 @@
 import 'dart:async';
 import 'lab_sound/lab_sound.dart';
+import 'package:rxdart/rxdart.dart';
 
-/*
 enum LabPlayerStatus {
   pause, playing, ended,
 }
 
 class LabPlayer {
-  AudioContext audioContext;
-  AudioPlayerNode _player;
-  set player (AudioPlayerNode v) {
+  late AudioContext audioContext;
+  AudioSampleNode? _player;
+  GainNode? playerGainNode;
+  AudioBus? audioData;
+  AudioBus? readyAudioData;
+  late GainNode masterGainNode;
+  double _volume = 1.0;
+  double crossfadeTime = 0.3;
+  bool get playing => status == LabPlayerStatus.playing;
+
+
+
+
+  LabPlayer({ AudioContext? audioContext, Duration? clockDuration = const Duration(milliseconds: 100) }) {
+    this.audioContext = audioContext ?? AudioContext(initSampleRate: 48000.0, channels: 2);
+    this.masterGainNode = GainNode(this.audioContext);
+    this.masterGainNode.connect(this.audioContext.destination);
+    _volume = this.masterGainNode.gain.value;
+
+
+  }
+
+  AudioSampleNode? get player => _player;
+  set player (AudioSampleNode? v) {
     print("设置新的播放器: $v");
     _subscriptionPosition?.cancel();
     _subscriptionEnded?.cancel();
@@ -18,14 +39,15 @@ class LabPlayer {
       this._onPositionController.add(Duration.zero);
       return;
     }
-    this._onPositionController.add(_player.position);
+    this._onPositionController.add(_player!.position!);
     if(_playbackRate != 1.0) {
       playbackRate = playbackRate;
     }
-    _subscriptionPosition = _player.onPosition.listen((event) {
-      this._onPositionController.add(event);
-    });
-    _subscriptionEnded = _player.onEnded.listen((event) {
+    // todo: 监听位置
+    // _subscriptionPosition = _player!.onPosition.listen((event) {
+    //   this._onPositionController.add(event);
+    // });
+    _subscriptionEnded = _player!.onEnded.listen((event) {
       final isOver = status == LabPlayerStatus.playing;
       status = LabPlayerStatus.ended;
       this._onEndedController.add(isOver);
@@ -35,21 +57,10 @@ class LabPlayer {
     });
     posWaitingPlayerSwitch = false;
   }
-  AudioPlayerNode get player {
-    return _player;
-  }
-  GainNode playerGainNode;
-  AudioBus audioData;
-  AudioBus readyAudioData;
-  GainNode masterGainNode;
-  double _volume = 1.0;
-  double crossfadeTime = 0.3;
-  bool get playing => status == LabPlayerStatus.playing;
 
-  AudioPlayerNode createBufferSource(AudioBus audio) {
-    return AudioSampleNode(this.audioContext, audio);
-    // return this.audioContext.createSoundTouch(audio, maxRate: 2.0);
-    // return this.audioContext.createSoundTouch(audio, maxRate: 2.0);
+
+  AudioSampleNode createBufferSource(AudioBus audio) {
+    return AudioSampleNode(audioContext, resource: audio);
   }
 
   bool get playerPosIsZero => (player?.position ?? Duration(milliseconds: 0)).inMilliseconds == 0;
@@ -58,26 +69,28 @@ class LabPlayer {
     if(player == null){
       return Duration.zero;
     }
-    if(startPosition != null && !player.isPlayingOrScheduled) {
-      return startPosition;
+    if(startPosition != null && !player!.isPlayingOrScheduled) {
+      return startPosition ?? Duration.zero;
     }
     if(playerPosIsZero) {
       return _startPositionLast ?? Duration.zero;
     }
-    return player.position;
+    return player!.position ?? Duration.zero;
   }
+
+
   Duration get duration => player?.duration ?? Duration(milliseconds: 0);
 
   bool posWaitingPlayerSwitch = false;
-  Duration _startPosition;
-  Duration _startPositionLast = Duration.zero;
-  set startPosition(Duration v) {
+  Duration? _startPosition;
+  Duration? _startPositionLast = Duration.zero;
+  set startPosition(Duration? v) {
     _startPosition = v;
     if(v != null) {
       _startPositionLast = v;
     }
   }
-  Duration get startPosition => _startPosition;
+  Duration? get startPosition => _startPosition;
 
   reset() {
     _startPosition = null;
@@ -88,13 +101,13 @@ class LabPlayer {
   double _playbackRate = 1.0;
   double get playbackRate => _playbackRate;
   set playbackRate(double val) {
-    if(player != null && player.released == false){
-      player.rate = val;
+    if(player?.released == false){
+      player?.playbackRate.setValue(val);
     }
     _playbackRate = val;
   }
 
-  double get percentage => (this.duration?.inMilliseconds ?? 0) == 0 ? 0 : this.position.inMilliseconds / this.duration.inMilliseconds;
+  double get percentage => this.duration.inMilliseconds == 0 ? 0 : this.position.inMilliseconds / this.duration.inMilliseconds;
 
   Duration percentageToTime(double per) => Duration(milliseconds: (this.duration.inMilliseconds * per).toInt());
 
@@ -109,20 +122,14 @@ class LabPlayer {
   StreamController<LabPlayerStatus> _onStatusController = StreamController.broadcast();
   Stream<LabPlayerStatus> get onStatus => _onStatusController.stream;
 
-  StreamSubscription _subscriptionEnded;
+  StreamSubscription? _subscriptionEnded;
   StreamController<bool> _onEndedController = StreamController.broadcast();
   Stream<bool> get onEnded => _onEndedController.stream;
 
-  StreamSubscription _subscriptionPosition;
+  StreamSubscription? _subscriptionPosition;
   StreamController<Duration> _onPositionController = StreamController.broadcast();
   Stream<Duration> get onPosition => _onPositionController.stream;
 
-  LabPlayer({ AudioContext audioContext }) {
-    this.audioContext = audioContext ?? AudioContext(initSampleRate: 48000.0, channels: 2);
-    this.masterGainNode = GainNode(this.audioContext);
-    this.masterGainNode.connect(this.audioContext.destination);
-    _volume = this.masterGainNode.gain.value;
-  }
 
   double get volume => _volume;
   set volume (double value) {
@@ -131,9 +138,7 @@ class LabPlayer {
   }
 
   loadFile(String path) {
-    if(readyAudioData != null) {
-      readyAudioData.dispose();
-    }
+    readyAudioData?.dispose();
     this.readyAudioData = AudioContext.decodeAudioFile(path);
   }
 
@@ -141,7 +146,7 @@ class LabPlayer {
     if(playing) return;
     loadFile(path);
     if (readyAudioData != null) {
-      playFromBus(readyAudioData);
+      playFromBus(readyAudioData!);
     }
   }
 
@@ -152,11 +157,11 @@ class LabPlayer {
     if(playing) {
       if(crossfadeTime > 0.1 && playerGainNode != null && player != null) {
         final startTime = this.audioContext.currentTime + 0.01;
-        oldPlayerGainNode.gain.setValueAtTime(oldPlayerGainNode.gain.value, startTime);
-        oldPlayerGainNode.gain.exponentialRampToValueAtTime(
+        oldPlayerGainNode?.gain.setValueAtTime(oldPlayerGainNode.gain.value, startTime);
+        oldPlayerGainNode?.gain.exponentialRampToValueAtTime(
             0.001, startTime + crossfadeTime);
         oldPlayer?.stop(when: startTime + crossfadeTime);
-        oldPlayer.endedDispose(destroyed: () {
+        oldPlayer?.endedDispose(destroyed: () {
           oldPlayerGainNode?.dispose();
         });
       } else {
@@ -173,7 +178,7 @@ class LabPlayer {
     startPosition = null;
   }
 
-  playFromBus(AudioBus bus, {double when}) {
+  playFromBus(AudioBus bus, {double? when}) {
 
     assert(!bus.released, "播放的资源已释放");
 
@@ -193,9 +198,9 @@ class LabPlayer {
       newGainNode.gain.exponentialRampToValueAtTime(1.0, oldEndTime);
       newPlayer.start(when: startTime);
       if(oldPlayer != null) {
-        oldGainNode.gain.setValueAtTime(oldGainNode.gain.value, startTime + 0.01);
-        oldGainNode.gain.exponentialRampToValueAtTime(0.0, oldEndTime);
-        oldPlayer?.stop(when: oldEndTime + 2.0);
+        oldGainNode?.gain.setValueAtTime(oldGainNode.gain.value, startTime + 0.01);
+        oldGainNode?.gain.exponentialRampToValueAtTime(0.0, oldEndTime);
+        oldPlayer.stop(when: oldEndTime + 2.0);
         oldPlayer.endedDispose(destroyed: () {
           oldGainNode?.dispose();
         });
@@ -210,44 +215,44 @@ class LabPlayer {
     _startPositionLast = null;
   }
 
-  resume({double when}) {
+  resume({double? when}) {
     if(player == null) return;
 
     if(crossfadeTime > 0.1 && playerGainNode != null) {
       final startTime = (when ?? this.audioContext.currentTime) + 0.01;
-      playerGainNode.gain.setValueAtTime(0.001, startTime);
-      playerGainNode.gain.exponentialRampToValueAtTime(1.0, startTime + crossfadeTime);
+      playerGainNode?.gain.setValueAtTime(0.001, startTime);
+      playerGainNode?.gain.exponentialRampToValueAtTime(1.0, startTime + crossfadeTime);
     }
     if(startPosition != null) {
       posWaitingPlayerSwitch = true;
       final oldPlayer = player;
-      final newPlayer = createBufferSource(this.player.resource);
-      newPlayer.connect(playerGainNode);
-      newPlayer.start(when: when ?? this.audioContext.currentTime, offset: startPosition.inMilliseconds / 1000);
+      final newPlayer = createBufferSource(player!.resource!);
+      newPlayer.connect(playerGainNode!);
+      newPlayer.start(when: when ?? this.audioContext.currentTime, offset: startPosition!.inMilliseconds / 1000);
       player = newPlayer;
-      oldPlayer.dispose();
+      oldPlayer?.dispose();
     } else {
-      player.start(when: when);
+      player?.start(when: when);
     }
     status = LabPlayerStatus.playing;
     startPosition = null;
   }
 
   pause() {
-    startPosition = player.position;
+    startPosition = player?.position;
     if(crossfadeTime > 0.1 && playerGainNode != null) {
       final startTime = this.audioContext.currentTime + 0.01;
-      playerGainNode.gain.setValueAtTime(playerGainNode.gain.value, startTime);
-      playerGainNode.gain.exponentialRampToValueAtTime(
+      playerGainNode?.gain.setValueAtTime(playerGainNode!.gain.value, startTime);
+      playerGainNode?.gain.exponentialRampToValueAtTime(
           0.001, startTime + crossfadeTime);
-      player.stop(when: startTime + crossfadeTime);
+      player?.stop(when: startTime + crossfadeTime);
     } else {
-      player.stop(when: 0);
+      player?.stop(when: 0);
     }
     status = LabPlayerStatus.pause;
   }
 
-  seekTo(Duration pos, {double when}) {
+  seekTo(Duration pos, {double? when}) {
     posWaitingPlayerSwitch = true;
     startPosition = pos;
     if(player == null) return;
@@ -255,8 +260,8 @@ class LabPlayer {
       if (crossfadeTime > 0.1 && playerGainNode != null) {
         final oldPlayer = player;
         final oldGainNode = playerGainNode;
-        final newPlayer = createBufferSource(this.player.resource);
-        final newGainNode = GainNode(this.audioContext);
+        final newPlayer = createBufferSource(player!.resource!);
+        final newGainNode = GainNode(audioContext);
         newPlayer.connect(newGainNode);
         newGainNode.connect(this.masterGainNode);
         final startTime = when ?? (this.audioContext.currentTime + 0.2);
@@ -267,14 +272,14 @@ class LabPlayer {
         newPlayer.start(when: startTime, offset: pos.inMilliseconds / 1000);
         player = newPlayer;
         playerGainNode = newGainNode;
-        oldGainNode.gain.setValueAtTime(oldGainNode.gain.value, startTime);
-        oldGainNode.gain.exponentialRampToValueAtTime(1.0, oldEndTime);
+        oldGainNode?.gain.setValueAtTime(oldGainNode.gain.value, startTime);
+        oldGainNode?.gain.exponentialRampToValueAtTime(1.0, oldEndTime);
         oldPlayer?.stop(when: oldEndTime);
-        oldPlayer.endedDispose(destroyed: () {
+        oldPlayer?.endedDispose(destroyed: () {
           oldGainNode?.dispose();
         });
       } else {
-        player.start(when: when ?? 0, offset: pos.inMilliseconds / 1000);
+        player?.start(when: when ?? 0, offset: pos.inMilliseconds / 1000);
       }
       status = LabPlayerStatus.playing;
     }else {
@@ -290,9 +295,9 @@ class LabPlayer {
     player?.dispose();
     _subscriptionPosition?.cancel();
     _subscriptionEnded?.cancel();
-    _onEndedController?.close();
-    _onPositionController?.close();
-    _onStatusController?.close();
+    _onEndedController.close();
+    _onPositionController.close();
+    _onStatusController.close();
   }
 
-}*/
+}

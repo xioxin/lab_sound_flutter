@@ -22,83 +22,79 @@ class AudioSampleNode extends AudioScheduledSourceNode {
   int get cursor => LabSound().SampledAudioNode_getCursor(this.nodeId);
 
   late AudioParam playbackRate;
-  // late AudioParam gain;
   late AudioParam detune;
 
-  StreamController _onEndedController = StreamController.broadcast();
-  Stream get onEnded => _onEndedController.stream;
+  Stream get onEnded => LabSound().onAudioSampleEnd.where((e) => e.nodeId == this.nodeId);
+  StreamSubscription? _endedDisposeSubscription;
 
-  StreamController<Duration> _onPositionController = StreamController.broadcast();
-  Stream<Duration> get onPosition => _onPositionController.stream;
-
-  Timer? _checkTimer;
-  _startCheckTimer(){
-    _checkTimer?.cancel();
-    _checkTimer = Timer.periodic( CHECK_TIMER_DURATION , ( timer ) {
-      if(this.position != null) {
-        _onPositionController.add(this.position!);
-        if(this.hasFinished){
-          _checkTimer?.cancel();
-          _checkTimer = null;
-          _onEndedController.add(null);
-        }
-      }
-    });
+  Duration? get position {
+    if(resource == null) return null;
+    final c = this.cursor;
+    if(c == -1) return null;
+    return Duration(milliseconds: (c / resource!.sampleRate * 1000).toInt());
   }
-
-  Duration? get position => this.resource == null ? null : Duration(milliseconds: (this.cursor / this.resource!.sampleRate * 1000).toInt());
   Duration? get duration => this.resource?.duration;
 
-  // start({double? when, double? offset, double? duration, int? loopCount}) {
-  //   schedule(when: when, offset: offset, duration: duration, loopCount: loopCount);
-  // }
-
-  schedule({double? when, double? offset, double? duration, int? loopCount}) {
-    if(when != null && offset != null && duration != null && loopCount != null) {
-      LabSound().SampledAudioNode_schedule4(this.nodeId, ctx.correctionTime(when), offset, duration, loopCount);
-    } else if(when != null && offset != null && duration != null) {
-      LabSound().SampledAudioNode_schedule3(this.nodeId, ctx.correctionTime(when), offset, duration);
-    } else if(when != null && offset != null) {
-      LabSound().SampledAudioNode_schedule2(this.nodeId, ctx.correctionTime(when), offset);
+  schedule({double? relativeWhen, double? offset, double? duration, int? loopCount}) {
+    if(relativeWhen != null && offset != null && duration != null && loopCount != null) {
+      LabSound().SampledAudioNode_schedule4(this.nodeId, relativeWhen, offset, duration, loopCount);
+    } else if(relativeWhen != null && offset != null && loopCount != null) {
+      LabSound().SampledAudioNode_schedule3(this.nodeId, relativeWhen, offset, loopCount);
+    } else if(relativeWhen != null && loopCount != null) {
+      LabSound().SampledAudioNode_schedule2(this.nodeId, relativeWhen, loopCount);
     } else {
-      LabSound().SampledAudioNode_schedule(this.nodeId, ctx.correctionTime(when ?? 0.0));
+      LabSound().SampledAudioNode_schedule(this.nodeId, relativeWhen ?? 0.0);
     }
-    _startCheckTimer();
+  }
+
+  start({double? when, double? offset, double? duration, int? loopCount}) {
+    loopCount ??= 0;
+    if(when != null && offset != null && duration != null) {
+      LabSound().SampledAudioNode_start4(this.nodeId, when, offset, duration, loopCount);
+    } else if(when != null && offset != null) {
+      LabSound().SampledAudioNode_start3(this.nodeId, when, offset, loopCount);
+    } else {
+      LabSound().SampledAudioNode_start2(this.nodeId, when ?? 0.0, loopCount);
+    }
   }
 
   clearSchedules() {
     LabSound().SampledAudioNode_clearSchedules(nodeId);
   }
 
+  stop({double? when}) {
+    start(when: when, offset: 0, duration: 0, loopCount: -2);
+    super.stop(when: when ?? ctx.currentTime);
+  }
+
   @override
   dispose() {
-    _onPositionController.close();
-    _onEndedController.close();
-    _checkTimer?.cancel();
+    // _onPositionController.close();
+    // _onEndedController.close();
+    // _checkTimer?.cancel();
+    if(playbackState == SchedulingState.PLAYING) {
+      stop();
+    }
+    _endedDisposeSubscription?.cancel();
     super.dispose();
     this.resource?.unlock(this);
     return;
   }
 
   toString() {
-    return "AudioSampleNode<${nodeId}>";
+    return "AudioSampleNode<$nodeId>";
   }
 
   endedDispose({Function? destroyed}) {
-    print('$this onEndedDispose $_checkTimer');
     if(hasFinished) {
-      print('$this hasFinished true');
       this.dispose();
       if(destroyed != null) destroyed();
     } else {
-      print('$this hasFinished false listen');
-      this.onEnded.listen((event) {
-        print('$this hasFinished false listen get');
+      this._endedDisposeSubscription = this.onEnded.listen((event) {
         this.dispose();
         if(destroyed != null) destroyed();
       });
     }
   }
-
 
 }

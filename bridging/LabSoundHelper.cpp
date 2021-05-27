@@ -26,11 +26,15 @@ using namespace lab;
 #include "AnalyserNode.cpp"
 #include "OscillatorNode.cpp"
 #include "BiquadFilterNode.cpp"
+#include "PannerNode.cpp"
 
-DART_EXPORT void labTest() {
-    LOG_INFO("test");
-    const std::vector<AudioDeviceInfo> audioDevices = lab::MakeAudioDeviceList();
-    for (std::vector<AudioDeviceInfo>::size_type ind = 0;ind != audioDevices.size(); ++ind) {
-        LOG_INFO("dev: %d, %s", audioDevices[ind].index, audioDevices[ind].identifier.c_str());
-    }
-}
+#include "ChannelMergerNode.cpp"
+#include "ChannelSplitterNode.cpp"
+
+// DART_EXPORT void labTest() {
+//     LOG_INFO("test");
+//     const std::vector<AudioDeviceInfo> audioDevices = lab::MakeAudioDeviceList();
+//     for (std::vector<AudioDeviceInfo>::size_type ind = 0;ind != audioDevices.size(); ++ind) {
+//         LOG_INFO("dev: %d, %s", audioDevices[ind].index, audioDevices[ind].identifier.c_str());
+//     }
+// }

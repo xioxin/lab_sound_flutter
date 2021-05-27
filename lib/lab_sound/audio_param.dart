@@ -10,8 +10,8 @@ class AudioParam {
   double get value => LabSound().AudioParam_value(this.nodeIndex, this.paramIndex);
 
   double get minValue => LabSound().AudioParam_minValue(this.nodeIndex, this.paramIndex);
-  // double get maxValue => LabSound().AudioParam_maxValue(this.nodeIndex, this.paramIndex);
-  // double get defaultValue => LabSound().AudioParam_defaultValue(this.nodeIndex, this.paramIndex);
+  double get maxValue => LabSound().AudioParam_maxValue(this.nodeIndex, this.paramIndex);
+  double get defaultValue => LabSound().AudioParam_defaultValue(this.nodeIndex, this.paramIndex);
 
   setValue(double value) {
     print('setValue: node: $nodeIndex, param: $paramIndex, val: $value');
@@ -33,7 +33,15 @@ class AudioParam {
     LabSound().AudioParam_setTargetAtTime(this.nodeIndex, this.paramIndex, value, this.ctx.correctionTime(time), timeConstant);
   }
 
-  cancelScheduledValues(double time) {
+  resetSmoothedValue() {
+    LabSound().AudioParam_resetSmoothedValue(this.nodeIndex, this.paramIndex);
+  }
+
+  setSmoothingConstant(double k) {
+    LabSound().AudioParam_setSmoothingConstant(this.nodeIndex, this.paramIndex, k);
+  }
+
+  cancelScheduledValues([double time = 0.0]) {
     LabSound().AudioParam_cancelScheduledValues(this.nodeIndex, this.paramIndex, this.ctx.correctionTime(time));
   }
 
