@@ -5,16 +5,16 @@
 using namespace lab;
 
 DART_EXPORT int createBiquadFilterNode(AudioContext* context) {
-    auto sample = std::make_shared<BiquadFilterNode>(*context);
-    return keepNode(sample);
+    auto node = std::make_shared<BiquadFilterNode>(*context);
+    return keepNode(node);
 }
 
-DART_EXPORT int BiquadFilterNode_type(int nodeIndex) {
+DART_EXPORT int BiquadFilterNode_type(int nodeId) {
     auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
     return node ? static_cast<int>(node->type()) : 0;
 }
 
-DART_EXPORT void BiquadFilterNode_setType(int nodeIndex, int type) {
+DART_EXPORT void BiquadFilterNode_setType(int nodeId, int type) {
     auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
     if(node) node->setType(FilterType(type));
 }

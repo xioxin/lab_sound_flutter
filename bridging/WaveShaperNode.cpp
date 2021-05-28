@@ -5,8 +5,8 @@
 using namespace lab;
 
 DART_EXPORT int createWaveShaperNode(AudioContext* context) {
-    auto sample = std::make_shared<WaveShaperNode>(*context);
-    return keepNode(sample);
+    auto node = std::make_shared<WaveShaperNode>(*context);
+    return keepNode(node);
 }
 
 DART_EXPORT void WaveShaperNode_setCurve(*float curve) {

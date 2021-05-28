@@ -3,8 +3,8 @@
 
 std::map<int, std::map<int, std::shared_ptr<AudioParam>>> audioParams;
 
-std::shared_ptr<AudioParam> getKeepAudioParam(int nodeIndex, int key) {
-    std::map<int, std::map<int, std::shared_ptr<AudioParam>>>::iterator ite = audioParams.find(nodeIndex);
+std::shared_ptr<AudioParam> getKeepAudioParam(int nodeId, int key) {
+    std::map<int, std::map<int, std::shared_ptr<AudioParam>>>::iterator ite = audioParams.find(nodeId);
     if (ite != audioParams.end()) {
        std::map<int, std::shared_ptr<AudioParam>>::iterator ite2 = ite->second.find(key);
        if(ite2 != ite->second.end()) {
@@ -14,14 +14,14 @@ std::shared_ptr<AudioParam> getKeepAudioParam(int nodeIndex, int key) {
     return nullptr;
 }
 
-int keepAudioParam(int nodeIndex, int key, std::shared_ptr<AudioParam> audioParam){
-    std::map<int, std::map<int, std::shared_ptr<AudioParam>>>::iterator ite = audioParams.find(nodeIndex);
+int keepAudioParam(int nodeId, int key, std::shared_ptr<AudioParam> audioParam){
+    std::map<int, std::map<int, std::shared_ptr<AudioParam>>>::iterator ite = audioParams.find(nodeId);
     if (ite != audioParams.end()) {
         ite->second.insert(std::pair<int,std::shared_ptr<AudioParam>>(key, audioParam));
     }else {
         std::map<int, std::shared_ptr<AudioParam>> temp;
         temp.insert(std::pair<int,std::shared_ptr<AudioParam>>(key, audioParam));
-        audioParams.insert(std::pair<int, std::map<int, std::shared_ptr<AudioParam>>>(nodeIndex, temp));
+        audioParams.insert(std::pair<int, std::map<int, std::shared_ptr<AudioParam>>>(nodeId, temp));
     }
     return key;
 }

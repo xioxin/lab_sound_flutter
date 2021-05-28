@@ -5,11 +5,11 @@
 using namespace lab;
 
 DART_EXPORT int createChannelSplitterNode(AudioContext* context) {
-    auto sample = std::make_shared<ChannelSplitterNode>(*context);
-    return keepNode(sample);
+    auto node = std::make_shared<ChannelSplitterNode>(*context);
+    return keepNode(node);
 }
 
-DART_EXPORT void ChannelSplitterNode_addOutputs(int nodeIndex, int n) {
+DART_EXPORT void ChannelSplitterNode_addOutputs(int nodeId, int n) {
     auto node = std::static_pointer_cast<ChannelSplitterNode>(getNode(nodeId));
     if(node) node->addOutputs(n);
 }

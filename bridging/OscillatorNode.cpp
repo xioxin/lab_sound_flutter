@@ -5,16 +5,16 @@
 using namespace lab;
 
 DART_EXPORT int createOscillatorNode(AudioContext* context) {
-    auto sample = std::make_shared<OscillatorNode>(*context);
-    return keepNode(sample);
+    auto node = std::make_shared<OscillatorNode>(*context);
+    return keepNode(node);
 }
 
-DART_EXPORT int OscillatorNode_type(int nodeIndex) {
+DART_EXPORT int OscillatorNode_type(int nodeId) {
     auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
     return node ? static_cast<int>(node->type()) : 0;
 }
 
-DART_EXPORT void OscillatorNode_setType(int nodeIndex, int type) {
+DART_EXPORT void OscillatorNode_setType(int nodeId, int type) {
     auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
     if(node) node->setType(OscillatorType(type));
 }

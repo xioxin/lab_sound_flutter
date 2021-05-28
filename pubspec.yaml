@@ -78,7 +78,7 @@ ffigen:
   output: 'lib/generated_bindings.dart'
   headers:
     entry-points:
-      - 'bridging/LabSoundHelper.h'
+      - 'ffigen/LabSoundHelper.h'
   use-supported-typedefs: true
   dart-bool: true
   compiler-opts-automatic:

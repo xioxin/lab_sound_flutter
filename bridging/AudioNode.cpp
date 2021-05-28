@@ -3,6 +3,16 @@
 #include "KeepNode.cpp"
 using namespace lab;
 
+DART_EXPORT void AudioNode_initialize(int nodeId) {
+    auto node = getNode(nodeId);
+    if(node) node->initialize();
+}
+
+DART_EXPORT void AudioNode_uninitialize(int nodeId) {
+    auto node = getNode(nodeId);
+    if(node) node->uninitialize();
+}
+
 DART_EXPORT int AudioNode_isScheduledNode(int nodeId) {
     auto node = getNode(nodeId);
     return node ? node->isScheduledNode() : 0;

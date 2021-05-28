@@ -123,6 +123,34 @@ class LabSoundBind {
       _AudioContext_startOfflineRendering_ptr.asFunction<
           _dart_AudioContext_startOfflineRendering>();
 
+  void AudioContext_suspend(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _AudioContext_suspend(
+      context,
+    );
+  }
+
+  late final _AudioContext_suspend_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_suspend>>(
+          'AudioContext_suspend');
+  late final _dart_AudioContext_suspend _AudioContext_suspend =
+      _AudioContext_suspend_ptr.asFunction<_dart_AudioContext_suspend>();
+
+  void AudioContext_resume(
+    ffi.Pointer<ffi.Int32> context,
+  ) {
+    return _AudioContext_resume(
+      context,
+    );
+  }
+
+  late final _AudioContext_resume_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_resume>>(
+          'AudioContext_resume');
+  late final _dart_AudioContext_resume _AudioContext_resume =
+      _AudioContext_resume_ptr.asFunction<_dart_AudioContext_resume>();
+
   double AudioContext_currentTime(
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -626,6 +654,34 @@ class LabSoundBind {
           _dart_AudioParam_hasSampleAccurateValues>();
 
   /// AudioNode
+  void AudioNode_initialize(
+    int nodeId,
+  ) {
+    return _AudioNode_initialize(
+      nodeId,
+    );
+  }
+
+  late final _AudioNode_initialize_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_initialize>>(
+          'AudioNode_initialize');
+  late final _dart_AudioNode_initialize _AudioNode_initialize =
+      _AudioNode_initialize_ptr.asFunction<_dart_AudioNode_initialize>();
+
+  void AudioNode_uninitialize(
+    int nodeId,
+  ) {
+    return _AudioNode_uninitialize(
+      nodeId,
+    );
+  }
+
+  late final _AudioNode_uninitialize_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_uninitialize>>(
+          'AudioNode_uninitialize');
+  late final _dart_AudioNode_uninitialize _AudioNode_uninitialize =
+      _AudioNode_uninitialize_ptr.asFunction<_dart_AudioNode_uninitialize>();
+
   int AudioNode_isScheduledNode(
     int nodeId,
   ) {
@@ -725,6 +781,17 @@ class LabSoundBind {
       _lookup<ffi.NativeFunction<_c_releaseNode>>('releaseNode');
   late final _dart_releaseNode _releaseNode =
       _releaseNode_ptr.asFunction<_dart_releaseNode>();
+
+  int hasNode(
+    int nodeId,
+  ) {
+    return _hasNode(
+      nodeId,
+    );
+  }
+
+  late final _hasNode_ptr = _lookup<ffi.NativeFunction<_c_hasNode>>('hasNode');
+  late final _dart_hasNode _hasNode = _hasNode_ptr.asFunction<_dart_hasNode>();
 
   /// AudioScheduledSourceNode
   int AudioScheduledSourceNode_isPlayingOrScheduled(
@@ -841,12 +908,12 @@ class LabSoundBind {
       _createAudioSampleNode_ptr.asFunction<_dart_createAudioSampleNode>();
 
   void SampledAudioNode_setBus(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Int32> context,
     int busIndex,
   ) {
     return _SampledAudioNode_setBus(
-      nodeIndex,
+      nodeId,
       context,
       busIndex,
     );
@@ -954,11 +1021,11 @@ class LabSoundBind {
           .asFunction<_dart_SampledAudioNode_clearSchedules>();
 
   void SampledAudioNode_start(
-    int nodeIndex,
+    int nodeId,
     double when,
   ) {
     return _SampledAudioNode_start(
-      nodeIndex,
+      nodeId,
       when,
     );
   }
@@ -970,12 +1037,12 @@ class LabSoundBind {
       _SampledAudioNode_start_ptr.asFunction<_dart_SampledAudioNode_start>();
 
   void SampledAudioNode_start2(
-    int nodeIndex,
+    int nodeId,
     double when,
     int loopCount,
   ) {
     return _SampledAudioNode_start2(
-      nodeIndex,
+      nodeId,
       when,
       loopCount,
     );
@@ -988,13 +1055,13 @@ class LabSoundBind {
       _SampledAudioNode_start2_ptr.asFunction<_dart_SampledAudioNode_start2>();
 
   void SampledAudioNode_start3(
-    int nodeIndex,
+    int nodeId,
     double when,
     double grainOffset,
     int loopCount,
   ) {
     return _SampledAudioNode_start3(
-      nodeIndex,
+      nodeId,
       when,
       grainOffset,
       loopCount,
@@ -1008,14 +1075,14 @@ class LabSoundBind {
       _SampledAudioNode_start3_ptr.asFunction<_dart_SampledAudioNode_start3>();
 
   void SampledAudioNode_start4(
-    int nodeIndex,
+    int nodeId,
     double when,
     double grainOffset,
     double grainDuration,
     int loopCount,
   ) {
     return _SampledAudioNode_start4(
-      nodeIndex,
+      nodeId,
       when,
       grainOffset,
       grainDuration,
@@ -1346,12 +1413,12 @@ class LabSoundBind {
           .asFunction<_dart_createAnalyserNodeFftSize>();
 
   void AnalyserNode_setFftSize(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Int32> context,
     int fftSize,
   ) {
     return _AnalyserNode_setFftSize(
-      nodeIndex,
+      nodeId,
       context,
       fftSize,
     );
@@ -1364,10 +1431,10 @@ class LabSoundBind {
       _AnalyserNode_setFftSize_ptr.asFunction<_dart_AnalyserNode_setFftSize>();
 
   int AnalyserNode_fftSize(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _AnalyserNode_fftSize(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1378,10 +1445,10 @@ class LabSoundBind {
       _AnalyserNode_fftSize_ptr.asFunction<_dart_AnalyserNode_fftSize>();
 
   int AnalyserNode_frequencyBinCount(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _AnalyserNode_frequencyBinCount(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1393,11 +1460,11 @@ class LabSoundBind {
           .asFunction<_dart_AnalyserNode_frequencyBinCount>();
 
   void AnalyserNode_setMinDecibels(
-    int nodeIndex,
+    int nodeId,
     double k,
   ) {
     return _AnalyserNode_setMinDecibels(
-      nodeIndex,
+      nodeId,
       k,
     );
   }
@@ -1410,10 +1477,10 @@ class LabSoundBind {
           _dart_AnalyserNode_setMinDecibels>();
 
   int AnalyserNode_minDecibels(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _AnalyserNode_minDecibels(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1425,11 +1492,11 @@ class LabSoundBind {
           _dart_AnalyserNode_minDecibels>();
 
   void AnalyserNode_setMaxDecibels(
-    int nodeIndex,
+    int nodeId,
     double k,
   ) {
     return _AnalyserNode_setMaxDecibels(
-      nodeIndex,
+      nodeId,
       k,
     );
   }
@@ -1442,10 +1509,10 @@ class LabSoundBind {
           _dart_AnalyserNode_setMaxDecibels>();
 
   int AnalyserNode_maxDecibels(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _AnalyserNode_maxDecibels(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1457,11 +1524,11 @@ class LabSoundBind {
           _dart_AnalyserNode_maxDecibels>();
 
   void AnalyserNode_setSmoothingTimeConstant(
-    int nodeIndex,
+    int nodeId,
     double k,
   ) {
     return _AnalyserNode_setSmoothingTimeConstant(
-      nodeIndex,
+      nodeId,
       k,
     );
   }
@@ -1475,10 +1542,10 @@ class LabSoundBind {
           _dart_AnalyserNode_setSmoothingTimeConstant>();
 
   int AnalyserNode_smoothingTimeConstant(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _AnalyserNode_smoothingTimeConstant(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1491,11 +1558,11 @@ class LabSoundBind {
           _dart_AnalyserNode_smoothingTimeConstant>();
 
   void AnalyserNode_getFloatFrequencyData(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Float> array,
   ) {
     return _AnalyserNode_getFloatFrequencyData(
-      nodeIndex,
+      nodeId,
       array,
     );
   }
@@ -1509,12 +1576,12 @@ class LabSoundBind {
           _dart_AnalyserNode_getFloatFrequencyData>();
 
   void AnalyserNode_getByteFrequencyData(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Uint8> array,
     int resample,
   ) {
     return _AnalyserNode_getByteFrequencyData(
-      nodeIndex,
+      nodeId,
       array,
       resample,
     );
@@ -1529,11 +1596,11 @@ class LabSoundBind {
           _dart_AnalyserNode_getByteFrequencyData>();
 
   void AnalyserNode_getFloatTimeDomainData(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Float> array,
   ) {
     return _AnalyserNode_getFloatTimeDomainData(
-      nodeIndex,
+      nodeId,
       array,
     );
   }
@@ -1547,11 +1614,11 @@ class LabSoundBind {
           _dart_AnalyserNode_getFloatTimeDomainData>();
 
   void AnalyserNode_getByteTimeDomainData(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Uint8> array,
   ) {
     return _AnalyserNode_getByteTimeDomainData(
-      nodeIndex,
+      nodeId,
       array,
     );
   }
@@ -1580,10 +1647,10 @@ class LabSoundBind {
       _createOscillatorNode_ptr.asFunction<_dart_createOscillatorNode>();
 
   int OscillatorNode_type(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _OscillatorNode_type(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1594,11 +1661,11 @@ class LabSoundBind {
       _OscillatorNode_type_ptr.asFunction<_dart_OscillatorNode_type>();
 
   void OscillatorNode_setType(
-    int nodeIndex,
+    int nodeId,
     int type,
   ) {
     return _OscillatorNode_setType(
-      nodeIndex,
+      nodeId,
       type,
     );
   }
@@ -1683,10 +1750,10 @@ class LabSoundBind {
       _createBiquadFilterNode_ptr.asFunction<_dart_createBiquadFilterNode>();
 
   int BiquadFilterNode_type(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _BiquadFilterNode_type(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1697,11 +1764,11 @@ class LabSoundBind {
       _BiquadFilterNode_type_ptr.asFunction<_dart_BiquadFilterNode_type>();
 
   void BiquadFilterNode_setType(
-    int nodeIndex,
+    int nodeId,
     int type,
   ) {
     return _BiquadFilterNode_setType(
-      nodeIndex,
+      nodeId,
       type,
     );
   }
@@ -1784,10 +1851,10 @@ class LabSoundBind {
       _createPannerNode_ptr.asFunction<_dart_createPannerNode>();
 
   int PannerNode_panningModel(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_panningModel(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1798,11 +1865,11 @@ class LabSoundBind {
       _PannerNode_panningModel_ptr.asFunction<_dart_PannerNode_panningModel>();
 
   void PannerNode_setPanningModel(
-    int nodeIndex,
+    int nodeId,
     int m,
   ) {
     return _PannerNode_setPanningModel(
-      nodeIndex,
+      nodeId,
       m,
     );
   }
@@ -1815,10 +1882,10 @@ class LabSoundBind {
           _dart_PannerNode_setPanningModel>();
 
   int PannerNode_distanceModel(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_distanceModel(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1830,11 +1897,11 @@ class LabSoundBind {
           _dart_PannerNode_distanceModel>();
 
   void PannerNode_setDistanceModel(
-    int nodeIndex,
+    int nodeId,
     int m,
   ) {
     return _PannerNode_setDistanceModel(
-      nodeIndex,
+      nodeId,
       m,
     );
   }
@@ -1847,13 +1914,13 @@ class LabSoundBind {
           _dart_PannerNode_setDistanceModel>();
 
   void PannerNode_setPosition(
-    int nodeIndex,
+    int nodeId,
     double x,
     double y,
     double z,
   ) {
     return _PannerNode_setPosition(
-      nodeIndex,
+      nodeId,
       x,
       y,
       z,
@@ -1867,13 +1934,13 @@ class LabSoundBind {
       _PannerNode_setPosition_ptr.asFunction<_dart_PannerNode_setPosition>();
 
   void PannerNode_setOrientation(
-    int nodeIndex,
+    int nodeId,
     double x,
     double y,
     double z,
   ) {
     return _PannerNode_setOrientation(
-      nodeIndex,
+      nodeId,
       x,
       y,
       z,
@@ -1888,13 +1955,13 @@ class LabSoundBind {
           _dart_PannerNode_setOrientation>();
 
   void PannerNode_setVelocity(
-    int nodeIndex,
+    int nodeId,
     double x,
     double y,
     double z,
   ) {
     return _PannerNode_setVelocity(
-      nodeIndex,
+      nodeId,
       x,
       y,
       z,
@@ -1908,10 +1975,10 @@ class LabSoundBind {
       _PannerNode_setVelocity_ptr.asFunction<_dart_PannerNode_setVelocity>();
 
   int PannerNode_positionX(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_positionX(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1922,10 +1989,10 @@ class LabSoundBind {
       _PannerNode_positionX_ptr.asFunction<_dart_PannerNode_positionX>();
 
   int PannerNode_positionY(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_positionY(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1936,10 +2003,10 @@ class LabSoundBind {
       _PannerNode_positionY_ptr.asFunction<_dart_PannerNode_positionY>();
 
   int PannerNode_positionZ(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_positionZ(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1950,10 +2017,10 @@ class LabSoundBind {
       _PannerNode_positionZ_ptr.asFunction<_dart_PannerNode_positionZ>();
 
   int PannerNode_orientationX(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_orientationX(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1964,10 +2031,10 @@ class LabSoundBind {
       _PannerNode_orientationX_ptr.asFunction<_dart_PannerNode_orientationX>();
 
   int PannerNode_orientationY(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_orientationY(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1978,10 +2045,10 @@ class LabSoundBind {
       _PannerNode_orientationY_ptr.asFunction<_dart_PannerNode_orientationY>();
 
   int PannerNode_orientationZ(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_orientationZ(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -1992,10 +2059,10 @@ class LabSoundBind {
       _PannerNode_orientationZ_ptr.asFunction<_dart_PannerNode_orientationZ>();
 
   int PannerNode_velocityX(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_velocityX(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2006,10 +2073,10 @@ class LabSoundBind {
       _PannerNode_velocityX_ptr.asFunction<_dart_PannerNode_velocityX>();
 
   int PannerNode_velocityY(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_velocityY(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2020,10 +2087,10 @@ class LabSoundBind {
       _PannerNode_velocityY_ptr.asFunction<_dart_PannerNode_velocityY>();
 
   int PannerNode_velocityZ(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_velocityZ(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2034,10 +2101,10 @@ class LabSoundBind {
       _PannerNode_velocityZ_ptr.asFunction<_dart_PannerNode_velocityZ>();
 
   int PannerNode_distanceGain(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_distanceGain(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2048,10 +2115,10 @@ class LabSoundBind {
       _PannerNode_distanceGain_ptr.asFunction<_dart_PannerNode_distanceGain>();
 
   int PannerNode_coneGain(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_coneGain(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2062,10 +2129,10 @@ class LabSoundBind {
       _PannerNode_coneGain_ptr.asFunction<_dart_PannerNode_coneGain>();
 
   double PannerNode_refDistance(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_refDistance(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2076,11 +2143,11 @@ class LabSoundBind {
       _PannerNode_refDistance_ptr.asFunction<_dart_PannerNode_refDistance>();
 
   void PannerNode_setRefDistance(
-    int nodeIndex,
+    int nodeId,
     double refDistance,
   ) {
     return _PannerNode_setRefDistance(
-      nodeIndex,
+      nodeId,
       refDistance,
     );
   }
@@ -2093,10 +2160,10 @@ class LabSoundBind {
           _dart_PannerNode_setRefDistance>();
 
   double PannerNode_maxDistance(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_maxDistance(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2107,11 +2174,11 @@ class LabSoundBind {
       _PannerNode_maxDistance_ptr.asFunction<_dart_PannerNode_maxDistance>();
 
   void PannerNode_setMaxDistance(
-    int nodeIndex,
+    int nodeId,
     double maxDistance,
   ) {
     return _PannerNode_setMaxDistance(
-      nodeIndex,
+      nodeId,
       maxDistance,
     );
   }
@@ -2124,10 +2191,10 @@ class LabSoundBind {
           _dart_PannerNode_setMaxDistance>();
 
   double PannerNode_rolloffFactor(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_rolloffFactor(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2139,11 +2206,11 @@ class LabSoundBind {
           _dart_PannerNode_rolloffFactor>();
 
   void PannerNode_setRolloffFactor(
-    int nodeIndex,
+    int nodeId,
     double rolloffFactor,
   ) {
     return _PannerNode_setRolloffFactor(
-      nodeIndex,
+      nodeId,
       rolloffFactor,
     );
   }
@@ -2156,10 +2223,10 @@ class LabSoundBind {
           _dart_PannerNode_setRolloffFactor>();
 
   double PannerNode_coneInnerAngle(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_coneInnerAngle(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2171,11 +2238,11 @@ class LabSoundBind {
           _dart_PannerNode_coneInnerAngle>();
 
   void PannerNode_setConeInnerAngle(
-    int nodeIndex,
+    int nodeId,
     double angle,
   ) {
     return _PannerNode_setConeInnerAngle(
-      nodeIndex,
+      nodeId,
       angle,
     );
   }
@@ -2188,10 +2255,10 @@ class LabSoundBind {
           _dart_PannerNode_setConeInnerAngle>();
 
   double PannerNode_coneOuterAngle(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_coneOuterAngle(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2203,11 +2270,11 @@ class LabSoundBind {
           _dart_PannerNode_coneOuterAngle>();
 
   void PannerNode_setConeOuterAngle(
-    int nodeIndex,
+    int nodeId,
     double angle,
   ) {
     return _PannerNode_setConeOuterAngle(
-      nodeIndex,
+      nodeId,
       angle,
     );
   }
@@ -2220,10 +2287,10 @@ class LabSoundBind {
           _dart_PannerNode_setConeOuterAngle>();
 
   double PannerNode_coneOuterGain(
-    int nodeIndex,
+    int nodeId,
   ) {
     return _PannerNode_coneOuterGain(
-      nodeIndex,
+      nodeId,
     );
   }
 
@@ -2235,11 +2302,11 @@ class LabSoundBind {
           _dart_PannerNode_coneOuterGain>();
 
   void PannerNode_setConeOuterGain(
-    int nodeIndex,
+    int nodeId,
     double angle,
   ) {
     return _PannerNode_setConeOuterGain(
-      nodeIndex,
+      nodeId,
       angle,
     );
   }
@@ -2252,13 +2319,13 @@ class LabSoundBind {
           _dart_PannerNode_setConeOuterGain>();
 
   void PannerNode_getAzimuthElevation(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Int32> context,
     ffi.Pointer<ffi.Double> outAzimuth,
     ffi.Pointer<ffi.Double> outElevation,
   ) {
     return _PannerNode_getAzimuthElevation(
-      nodeIndex,
+      nodeId,
       context,
       outAzimuth,
       outElevation,
@@ -2273,11 +2340,11 @@ class LabSoundBind {
           .asFunction<_dart_PannerNode_getAzimuthElevation>();
 
   void PannerNode_dopplerRate(
-    int nodeIndex,
+    int nodeId,
     ffi.Pointer<ffi.Int32> context,
   ) {
     return _PannerNode_dopplerRate(
-      nodeIndex,
+      nodeId,
       context,
     );
   }
@@ -2305,11 +2372,11 @@ class LabSoundBind {
           .asFunction<_dart_createChannelSplitterNode>();
 
   void ChannelSplitterNode_addOutputs(
-    int nodeIndex,
+    int nodeId,
     int n,
   ) {
     return _ChannelSplitterNode_addOutputs(
-      nodeIndex,
+      nodeId,
       n,
     );
   }
@@ -2337,11 +2404,11 @@ class LabSoundBind {
       _createChannelMergerNode_ptr.asFunction<_dart_createChannelMergerNode>();
 
   void ChannelMergerNode_addInputs(
-    int nodeIndex,
+    int nodeId,
     int n,
   ) {
     return _ChannelMergerNode_addInputs(
-      nodeIndex,
+      nodeId,
       n,
     );
   }
@@ -2354,11 +2421,11 @@ class LabSoundBind {
           _dart_ChannelMergerNode_addInputs>();
 
   void ChannelMergerNode_setOutputChannelCount(
-    int nodeIndex,
+    int nodeId,
     int n,
   ) {
     return _ChannelMergerNode_setOutputChannelCount(
-      nodeIndex,
+      nodeId,
       n,
     );
   }
@@ -2370,20 +2437,149 @@ class LabSoundBind {
       _ChannelMergerNode_setOutputChannelCount =
       _ChannelMergerNode_setOutputChannelCount_ptr.asFunction<
           _dart_ChannelMergerNode_setOutputChannelCount>();
+
+  int createAudioHardwareDeviceNode(
+    ffi.Pointer<ffi.Int32> context,
+    AudioStreamConfig outputConfig,
+    AudioStreamConfig inputConfig,
+  ) {
+    return _createAudioHardwareDeviceNode(
+      context,
+      outputConfig,
+      inputConfig,
+    );
+  }
+
+  late final _createAudioHardwareDeviceNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createAudioHardwareDeviceNode>>(
+          'createAudioHardwareDeviceNode');
+  late final _dart_createAudioHardwareDeviceNode
+      _createAudioHardwareDeviceNode = _createAudioHardwareDeviceNode_ptr
+          .asFunction<_dart_createAudioHardwareDeviceNode>();
+
+  void AudioHardwareDeviceNode_start(
+    int nodeId,
+  ) {
+    return _AudioHardwareDeviceNode_start(
+      nodeId,
+    );
+  }
+
+  late final _AudioHardwareDeviceNode_start_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_start>>(
+          'AudioHardwareDeviceNode_start');
+  late final _dart_AudioHardwareDeviceNode_start
+      _AudioHardwareDeviceNode_start = _AudioHardwareDeviceNode_start_ptr
+          .asFunction<_dart_AudioHardwareDeviceNode_start>();
+
+  void AudioHardwareDeviceNode_stop(
+    int nodeId,
+  ) {
+    return _AudioHardwareDeviceNode_stop(
+      nodeId,
+    );
+  }
+
+  late final _AudioHardwareDeviceNode_stop_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_stop>>(
+          'AudioHardwareDeviceNode_stop');
+  late final _dart_AudioHardwareDeviceNode_stop _AudioHardwareDeviceNode_stop =
+      _AudioHardwareDeviceNode_stop_ptr.asFunction<
+          _dart_AudioHardwareDeviceNode_stop>();
+
+  int AudioHardwareDeviceNode_isRunning(
+    int nodeId,
+  ) {
+    return _AudioHardwareDeviceNode_isRunning(
+      nodeId,
+    );
+  }
+
+  late final _AudioHardwareDeviceNode_isRunning_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_isRunning>>(
+          'AudioHardwareDeviceNode_isRunning');
+  late final _dart_AudioHardwareDeviceNode_isRunning
+      _AudioHardwareDeviceNode_isRunning =
+      _AudioHardwareDeviceNode_isRunning_ptr.asFunction<
+          _dart_AudioHardwareDeviceNode_isRunning>();
+
+  AudioStreamConfig AudioHardwareDeviceNode_getOutputConfig(
+    int nodeId,
+  ) {
+    return _AudioHardwareDeviceNode_getOutputConfig(
+      nodeId,
+    );
+  }
+
+  late final _AudioHardwareDeviceNode_getOutputConfig_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_getOutputConfig>>(
+          'AudioHardwareDeviceNode_getOutputConfig');
+  late final _dart_AudioHardwareDeviceNode_getOutputConfig
+      _AudioHardwareDeviceNode_getOutputConfig =
+      _AudioHardwareDeviceNode_getOutputConfig_ptr.asFunction<
+          _dart_AudioHardwareDeviceNode_getOutputConfig>();
+
+  AudioStreamConfig AudioHardwareDeviceNode_getInputConfig(
+    int nodeId,
+  ) {
+    return _AudioHardwareDeviceNode_getInputConfig(
+      nodeId,
+    );
+  }
+
+  late final _AudioHardwareDeviceNode_getInputConfig_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_getInputConfig>>(
+          'AudioHardwareDeviceNode_getInputConfig');
+  late final _dart_AudioHardwareDeviceNode_getInputConfig
+      _AudioHardwareDeviceNode_getInputConfig =
+      _AudioHardwareDeviceNode_getInputConfig_ptr.asFunction<
+          _dart_AudioHardwareDeviceNode_getInputConfig>();
+
+  AudioStreamConfig createAudioStreamConfig(
+    int device_index,
+    int desired_channels,
+    double desired_samplerate,
+  ) {
+    return _createAudioStreamConfig(
+      device_index,
+      desired_channels,
+      desired_samplerate,
+    );
+  }
+
+  late final _createAudioStreamConfig_ptr =
+      _lookup<ffi.NativeFunction<_c_createAudioStreamConfig>>(
+          'createAudioStreamConfig');
+  late final _dart_createAudioStreamConfig _createAudioStreamConfig =
+      _createAudioStreamConfig_ptr.asFunction<_dart_createAudioStreamConfig>();
+
+  void AudioHardwareDeviceNode_backendReinitialize(
+    int nodeId,
+  ) {
+    return _AudioHardwareDeviceNode_backendReinitialize(
+      nodeId,
+    );
+  }
+
+  late final _AudioHardwareDeviceNode_backendReinitialize_ptr = _lookup<
+          ffi.NativeFunction<_c_AudioHardwareDeviceNode_backendReinitialize>>(
+      'AudioHardwareDeviceNode_backendReinitialize');
+  late final _dart_AudioHardwareDeviceNode_backendReinitialize
+      _AudioHardwareDeviceNode_backendReinitialize =
+      _AudioHardwareDeviceNode_backendReinitialize_ptr.asFunction<
+          _dart_AudioHardwareDeviceNode_backendReinitialize>();
 }
 
-class FloatArray extends ffi.Struct {
-  external ffi.Pointer<ffi.Float> array;
+/// AudioHardwareDeviceNode
+class AudioStreamConfig extends ffi.Struct {
+  @ffi.Int32()
+  external int device_index;
 
   @ffi.Int32()
-  external int len;
-}
+  external int desired_channels;
 
-class IntArray extends ffi.Struct {
-  external ffi.Pointer<ffi.Int32> array;
-
-  @ffi.Int32()
-  external int len;
+  @ffi.Float()
+  external double desired_samplerate;
 }
 
 typedef _c_InitDartApiDL = ffi.Int32 Function(
@@ -2442,6 +2638,22 @@ typedef _dart_AudioContext_startOfflineRendering = void Function(
   ffi.Pointer<ffi.Int32> context,
   int recorderIndex,
   ffi.Pointer<ffi.Int8> file_path,
+);
+
+typedef _c_AudioContext_suspend = ffi.Void Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_AudioContext_suspend = void Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _c_AudioContext_resume = ffi.Void Function(
+  ffi.Pointer<ffi.Int32> context,
+);
+
+typedef _dart_AudioContext_resume = void Function(
+  ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_AudioContext_currentTime = ffi.Double Function(
@@ -2756,6 +2968,22 @@ typedef _dart_AudioParam_hasSampleAccurateValues = int Function(
   int paramIndex,
 );
 
+typedef _c_AudioNode_initialize = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioNode_initialize = void Function(
+  int nodeId,
+);
+
+typedef _c_AudioNode_uninitialize = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioNode_uninitialize = void Function(
+  int nodeId,
+);
+
 typedef _c_AudioNode_isScheduledNode = ffi.Int32 Function(
   ffi.Int32 nodeId,
 );
@@ -2811,6 +3039,14 @@ typedef _c_releaseNode = ffi.Void Function(
 );
 
 typedef _dart_releaseNode = void Function(
+  int nodeId,
+);
+
+typedef _c_hasNode = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_hasNode = int Function(
   int nodeId,
 );
 
@@ -2875,13 +3111,13 @@ typedef _dart_createAudioSampleNode = int Function(
 );
 
 typedef _c_SampledAudioNode_setBus = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Int32> context,
   ffi.Int32 busIndex,
 );
 
 typedef _dart_SampledAudioNode_setBus = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Int32> context,
   int busIndex,
 );
@@ -2947,43 +3183,43 @@ typedef _dart_SampledAudioNode_clearSchedules = void Function(
 );
 
 typedef _c_SampledAudioNode_start = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double when,
 );
 
 typedef _dart_SampledAudioNode_start = void Function(
-  int nodeIndex,
+  int nodeId,
   double when,
 );
 
 typedef _c_SampledAudioNode_start2 = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double when,
   ffi.Int32 loopCount,
 );
 
 typedef _dart_SampledAudioNode_start2 = void Function(
-  int nodeIndex,
+  int nodeId,
   double when,
   int loopCount,
 );
 
 typedef _c_SampledAudioNode_start3 = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double when,
   ffi.Double grainOffset,
   ffi.Int32 loopCount,
 );
 
 typedef _dart_SampledAudioNode_start3 = void Function(
-  int nodeIndex,
+  int nodeId,
   double when,
   double grainOffset,
   int loopCount,
 );
 
 typedef _c_SampledAudioNode_start4 = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double when,
   ffi.Double grainOffset,
   ffi.Double grainDuration,
@@ -2991,7 +3227,7 @@ typedef _c_SampledAudioNode_start4 = ffi.Void Function(
 );
 
 typedef _dart_SampledAudioNode_start4 = void Function(
-  int nodeIndex,
+  int nodeId,
   double when,
   double grainOffset,
   double grainDuration,
@@ -3185,126 +3421,126 @@ typedef _dart_createAnalyserNodeFftSize = int Function(
 );
 
 typedef _c_AnalyserNode_setFftSize = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Int32> context,
   ffi.Int32 fftSize,
 );
 
 typedef _dart_AnalyserNode_setFftSize = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Int32> context,
   int fftSize,
 );
 
 typedef _c_AnalyserNode_fftSize = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_AnalyserNode_fftSize = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_AnalyserNode_frequencyBinCount = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_AnalyserNode_frequencyBinCount = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_AnalyserNode_setMinDecibels = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double k,
 );
 
 typedef _dart_AnalyserNode_setMinDecibels = void Function(
-  int nodeIndex,
+  int nodeId,
   double k,
 );
 
 typedef _c_AnalyserNode_minDecibels = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_AnalyserNode_minDecibels = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_AnalyserNode_setMaxDecibels = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double k,
 );
 
 typedef _dart_AnalyserNode_setMaxDecibels = void Function(
-  int nodeIndex,
+  int nodeId,
   double k,
 );
 
 typedef _c_AnalyserNode_maxDecibels = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_AnalyserNode_maxDecibels = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_AnalyserNode_setSmoothingTimeConstant = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Double k,
 );
 
 typedef _dart_AnalyserNode_setSmoothingTimeConstant = void Function(
-  int nodeIndex,
+  int nodeId,
   double k,
 );
 
 typedef _c_AnalyserNode_smoothingTimeConstant = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_AnalyserNode_smoothingTimeConstant = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_AnalyserNode_getFloatFrequencyData = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Float> array,
 );
 
 typedef _dart_AnalyserNode_getFloatFrequencyData = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Float> array,
 );
 
 typedef _c_AnalyserNode_getByteFrequencyData = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Uint8> array,
   ffi.Int32 resample,
 );
 
 typedef _dart_AnalyserNode_getByteFrequencyData = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Uint8> array,
   int resample,
 );
 
 typedef _c_AnalyserNode_getFloatTimeDomainData = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Float> array,
 );
 
 typedef _dart_AnalyserNode_getFloatTimeDomainData = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Float> array,
 );
 
 typedef _c_AnalyserNode_getByteTimeDomainData = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Uint8> array,
 );
 
 typedef _dart_AnalyserNode_getByteTimeDomainData = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Uint8> array,
 );
 
@@ -3317,20 +3553,20 @@ typedef _dart_createOscillatorNode = int Function(
 );
 
 typedef _c_OscillatorNode_type = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_OscillatorNode_type = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_OscillatorNode_setType = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 type,
 );
 
 typedef _dart_OscillatorNode_setType = void Function(
-  int nodeIndex,
+  int nodeId,
   int type,
 );
 
@@ -3375,20 +3611,20 @@ typedef _dart_createBiquadFilterNode = int Function(
 );
 
 typedef _c_BiquadFilterNode_type = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_BiquadFilterNode_type = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_BiquadFilterNode_setType = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 type,
 );
 
 typedef _dart_BiquadFilterNode_setType = void Function(
-  int nodeIndex,
+  int nodeId,
   int type,
 );
 
@@ -3433,300 +3669,300 @@ typedef _dart_createPannerNode = int Function(
 );
 
 typedef _c_PannerNode_panningModel = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_panningModel = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setPanningModel = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 m,
 );
 
 typedef _dart_PannerNode_setPanningModel = void Function(
-  int nodeIndex,
+  int nodeId,
   int m,
 );
 
 typedef _c_PannerNode_distanceModel = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_distanceModel = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setDistanceModel = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 m,
 );
 
 typedef _dart_PannerNode_setDistanceModel = void Function(
-  int nodeIndex,
+  int nodeId,
   int m,
 );
 
 typedef _c_PannerNode_setPosition = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float x,
   ffi.Float y,
   ffi.Float z,
 );
 
 typedef _dart_PannerNode_setPosition = void Function(
-  int nodeIndex,
+  int nodeId,
   double x,
   double y,
   double z,
 );
 
 typedef _c_PannerNode_setOrientation = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float x,
   ffi.Float y,
   ffi.Float z,
 );
 
 typedef _dart_PannerNode_setOrientation = void Function(
-  int nodeIndex,
+  int nodeId,
   double x,
   double y,
   double z,
 );
 
 typedef _c_PannerNode_setVelocity = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float x,
   ffi.Float y,
   ffi.Float z,
 );
 
 typedef _dart_PannerNode_setVelocity = void Function(
-  int nodeIndex,
+  int nodeId,
   double x,
   double y,
   double z,
 );
 
 typedef _c_PannerNode_positionX = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_positionX = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_positionY = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_positionY = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_positionZ = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_positionZ = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_orientationX = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_orientationX = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_orientationY = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_orientationY = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_orientationZ = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_orientationZ = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_velocityX = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_velocityX = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_velocityY = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_velocityY = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_velocityZ = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_velocityZ = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_distanceGain = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_distanceGain = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_coneGain = ffi.Int32 Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_coneGain = int Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_refDistance = ffi.Float Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_refDistance = double Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setRefDistance = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float refDistance,
 );
 
 typedef _dart_PannerNode_setRefDistance = void Function(
-  int nodeIndex,
+  int nodeId,
   double refDistance,
 );
 
 typedef _c_PannerNode_maxDistance = ffi.Float Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_maxDistance = double Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setMaxDistance = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float maxDistance,
 );
 
 typedef _dart_PannerNode_setMaxDistance = void Function(
-  int nodeIndex,
+  int nodeId,
   double maxDistance,
 );
 
 typedef _c_PannerNode_rolloffFactor = ffi.Float Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_rolloffFactor = double Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setRolloffFactor = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float rolloffFactor,
 );
 
 typedef _dart_PannerNode_setRolloffFactor = void Function(
-  int nodeIndex,
+  int nodeId,
   double rolloffFactor,
 );
 
 typedef _c_PannerNode_coneInnerAngle = ffi.Float Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_coneInnerAngle = double Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setConeInnerAngle = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float angle,
 );
 
 typedef _dart_PannerNode_setConeInnerAngle = void Function(
-  int nodeIndex,
+  int nodeId,
   double angle,
 );
 
 typedef _c_PannerNode_coneOuterAngle = ffi.Float Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_coneOuterAngle = double Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setConeOuterAngle = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float angle,
 );
 
 typedef _dart_PannerNode_setConeOuterAngle = void Function(
-  int nodeIndex,
+  int nodeId,
   double angle,
 );
 
 typedef _c_PannerNode_coneOuterGain = ffi.Float Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
 );
 
 typedef _dart_PannerNode_coneOuterGain = double Function(
-  int nodeIndex,
+  int nodeId,
 );
 
 typedef _c_PannerNode_setConeOuterGain = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Float angle,
 );
 
 typedef _dart_PannerNode_setConeOuterGain = void Function(
-  int nodeIndex,
+  int nodeId,
   double angle,
 );
 
 typedef _c_PannerNode_getAzimuthElevation = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Int32> context,
   ffi.Pointer<ffi.Double> outAzimuth,
   ffi.Pointer<ffi.Double> outElevation,
 );
 
 typedef _dart_PannerNode_getAzimuthElevation = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Int32> context,
   ffi.Pointer<ffi.Double> outAzimuth,
   ffi.Pointer<ffi.Double> outElevation,
 );
 
 typedef _c_PannerNode_dopplerRate = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_PannerNode_dopplerRate = void Function(
-  int nodeIndex,
+  int nodeId,
   ffi.Pointer<ffi.Int32> context,
 );
 
@@ -3739,12 +3975,12 @@ typedef _dart_createChannelSplitterNode = int Function(
 );
 
 typedef _c_ChannelSplitterNode_addOutputs = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 n,
 );
 
 typedef _dart_ChannelSplitterNode_addOutputs = void Function(
-  int nodeIndex,
+  int nodeId,
   int n,
 );
 
@@ -3757,21 +3993,95 @@ typedef _dart_createChannelMergerNode = int Function(
 );
 
 typedef _c_ChannelMergerNode_addInputs = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 n,
 );
 
 typedef _dart_ChannelMergerNode_addInputs = void Function(
-  int nodeIndex,
+  int nodeId,
   int n,
 );
 
 typedef _c_ChannelMergerNode_setOutputChannelCount = ffi.Void Function(
-  ffi.Int32 nodeIndex,
+  ffi.Int32 nodeId,
   ffi.Int32 n,
 );
 
 typedef _dart_ChannelMergerNode_setOutputChannelCount = void Function(
-  int nodeIndex,
+  int nodeId,
   int n,
+);
+
+typedef _c_createAudioHardwareDeviceNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> context,
+  AudioStreamConfig outputConfig,
+  AudioStreamConfig inputConfig,
+);
+
+typedef _dart_createAudioHardwareDeviceNode = int Function(
+  ffi.Pointer<ffi.Int32> context,
+  AudioStreamConfig outputConfig,
+  AudioStreamConfig inputConfig,
+);
+
+typedef _c_AudioHardwareDeviceNode_start = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioHardwareDeviceNode_start = void Function(
+  int nodeId,
+);
+
+typedef _c_AudioHardwareDeviceNode_stop = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioHardwareDeviceNode_stop = void Function(
+  int nodeId,
+);
+
+typedef _c_AudioHardwareDeviceNode_isRunning = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioHardwareDeviceNode_isRunning = int Function(
+  int nodeId,
+);
+
+typedef _c_AudioHardwareDeviceNode_getOutputConfig = AudioStreamConfig Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioHardwareDeviceNode_getOutputConfig = AudioStreamConfig
+    Function(
+  int nodeId,
+);
+
+typedef _c_AudioHardwareDeviceNode_getInputConfig = AudioStreamConfig Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioHardwareDeviceNode_getInputConfig = AudioStreamConfig
+    Function(
+  int nodeId,
+);
+
+typedef _c_createAudioStreamConfig = AudioStreamConfig Function(
+  ffi.Int32 device_index,
+  ffi.Int32 desired_channels,
+  ffi.Float desired_samplerate,
+);
+
+typedef _dart_createAudioStreamConfig = AudioStreamConfig Function(
+  int device_index,
+  int desired_channels,
+  double desired_samplerate,
+);
+
+typedef _c_AudioHardwareDeviceNode_backendReinitialize = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioHardwareDeviceNode_backendReinitialize = void Function(
+  int nodeId,
 );

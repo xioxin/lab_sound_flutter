@@ -1,5 +1,8 @@
-import 'lab_sound.dart';
+import 'dart:ffi';
+import 'package:ffi/ffi.dart';
 
+import 'lab_sound.dart';
+import '../extensions/ffi_string.dart';
 
 enum SchedulingState {
 UNSCHEDULED, // Initial playback state. Created, but not yet scheduled
@@ -19,9 +22,20 @@ class AudioNode {
   AudioNode(this.ctx, this.nodeId);
 
   /// 已释放
-  bool released = false;
+  bool get released => LabSound().hasNode(nodeId) > 0;
 
   List<AudioNode> linked = [];
+
+  String get name => (LabSound().AudioNode_name(nodeId) as Pointer<Utf8>).toStr();
+
+  bool get isScheduledNode => LabSound().AudioNode_isScheduledNode(nodeId) > 0;
+
+  int get numberOfInputs => LabSound().AudioNode_numberOfInputs(nodeId);
+  int get numberOfOutputs => LabSound().AudioNode_numberOfOutputs(nodeId);
+  int get channelCount => LabSound().AudioNode_channelCount(nodeId);
+
+  initialize() => LabSound().AudioNode_initialize(nodeId);
+  uninitialize() => LabSound().AudioNode_uninitialize(nodeId);
 
   connect(AudioNode dst, [destIdx = 0, int srcIdx = 0]) {
     linked.add(dst);
@@ -38,11 +52,13 @@ class AudioNode {
     linked.clear();
   }
   dispose() {
-    released = true;
     this.disconnectAll();
     LabSound().releaseNode(this.nodeId);
   }
   reset() {
     LabSound().AudioNode_reset(nodeId, ctx.pointer);
   }
+
+  // init() =>LabSound().AudioNode_in
+
 }

@@ -31,6 +31,9 @@ using namespace lab;
 #include "ChannelMergerNode.cpp"
 #include "ChannelSplitterNode.cpp"
 
+#include "AudioHardwareDeviceNode.cpp"
+
+
 // DART_EXPORT void labTest() {
 //     LOG_INFO("test");
 //     const std::vector<AudioDeviceInfo> audioDevices = lab::MakeAudioDeviceList();

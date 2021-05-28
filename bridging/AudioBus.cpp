@@ -9,7 +9,7 @@ int bufferCount;
 std::map<int,std::shared_ptr<AudioBus>> audioBuffers;
 
 std::shared_ptr<AudioBus> getBus(int busId) {
-    std::map<int,std::shared_ptr<AudioBus>>::iterator ite = audioBuffers.find(nodeId);
+    std::map<int,std::shared_ptr<AudioBus>>::iterator ite = audioBuffers.find(busId);
     if (ite != audioBuffers.end()) {
         return ite->second;
     }

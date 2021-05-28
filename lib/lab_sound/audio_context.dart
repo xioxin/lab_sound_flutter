@@ -18,10 +18,14 @@ class AudioContext {
     return time;
   }
 
-  AudioNode? _device;
-  AudioNode get device {
-    _device ??= AudioNode(this, LabSound().AudioContext_device(this.pointer));
+  AudioHardwareDeviceNode? _device;
+  AudioHardwareDeviceNode get device {
+    _device ??= AudioHardwareDeviceNode.fromId(this, LabSound().AudioContext_device(this.pointer));
     return _device!;
+  }
+
+  setDevice(AudioNode node) {
+    LabSound().AudioContext_setDeviceNode(this.pointer, node.nodeId);
   }
 
   AudioContext(
@@ -45,8 +49,15 @@ class AudioContext {
     return LabSound().AudioContext_currentSampleFrame(this.pointer);
   }
 
-  static AudioBus decodeAudioFile(String path, {audoDispose = true}) {
-    return AudioBus(path, autoDispose: audoDispose);
+  suspend() {
+    LabSound().AudioContext_suspend(this.pointer);
+  }
+  resume() {
+    LabSound().AudioContext_resume(this.pointer);
+  }
+
+  static AudioBus decodeAudioFile(String path, {autoDispose = true}) {
+    return AudioBus(path, autoDispose: autoDispose);
   }
 
   startOfflineRendering(String filePath, RecorderNode recorder) {
@@ -54,8 +65,8 @@ class AudioContext {
   }
 
   // 音频渲染设备;
-  // AudioNode get destination => this.device;
-  AudioNode get destination => AudioNode(this, -1);
+  AudioHardwareDeviceNode get destination => this.device;
+  // AudioNode get destination => AudioNode(this, -1);
 
   /// 关闭一个音频环境, 释放任何正在使用系统资源的音频。
   dispose() {

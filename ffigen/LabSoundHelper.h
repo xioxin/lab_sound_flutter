@@ -14,7 +14,13 @@ AudioContext* createRealtimeAudioContext(int channels,float sampleRate);
 
 AudioContext* createOfflineAudioContext(int channels,float sampleRate,float timeMills);
 
-void AudioContext_startOfflineRendering(AudioContext* context,int recorderIndex,const char* file_path);
+void AudioContext_startOfflineRendering(AudioContext* context,int recorderIndex, const char* file_path);
+
+// suspend the progression of time in the audio context, any queued samples will play
+void AudioContext_suspend(AudioContext* context);
+
+// if the context was suspended, resume the progression of time and processing in the audio context
+void AudioContext_resume(AudioContext* context);
 
 double AudioContext_currentTime(AudioContext* context);
 
@@ -76,6 +82,10 @@ int AudioParam_hasSampleAccurateValues(int nodeId, int paramIndex);
 
 /// AudioNode
 
+void AudioNode_initialize(int nodeId);
+
+void AudioNode_uninitialize(int nodeId);
+
 int AudioNode_isScheduledNode(int nodeId);
 
 int AudioNode_numberOfInputs(int nodeId);
@@ -110,7 +120,7 @@ int AudioScheduledSourceNode_playbackState(int nodeId);
 
 int createAudioSampleNode(AudioContext* context);
 
-void SampledAudioNode_setBus(int nodeIndex, AudioContext* context, int busIndex);
+void SampledAudioNode_setBus(int nodeId, AudioContext* context, int busIndex);
 
 void SampledAudioNode_schedule(int nodeId, double when);
 
@@ -122,13 +132,13 @@ void SampledAudioNode_schedule4(int nodeId, double when, double grainOffset, dou
 
 void SampledAudioNode_clearSchedules(int nodeId);
 
-void SampledAudioNode_start(int nodeIndex, double when);
+void SampledAudioNode_start(int nodeId, double when);
 
-void SampledAudioNode_start2(int nodeIndex, double when, int loopCount);
+void SampledAudioNode_start2(int nodeId, double when, int loopCount);
 
-void SampledAudioNode_start3(int nodeIndex, double when, double grainOffset, int loopCount);
+void SampledAudioNode_start3(int nodeId, double when, double grainOffset, int loopCount);
 
-void SampledAudioNode_start4(int nodeIndex, double when, double grainOffset, double grainDuration, int loopCount);
+void SampledAudioNode_start4(int nodeId, double when, double grainOffset, double grainDuration, int loopCount);
 
 int SampledAudioNode_getCursor(int index);
 
@@ -184,37 +194,37 @@ int createAnalyserNode(AudioContext* context);
 
 int createAnalyserNodeFftSize(AudioContext* context, int fftSize);
 
-void AnalyserNode_setFftSize(int nodeIndex, AudioContext* context, int fftSize);
+void AnalyserNode_setFftSize(int nodeId, AudioContext* context, int fftSize);
 
-int AnalyserNode_fftSize(int nodeIndex);
+int AnalyserNode_fftSize(int nodeId);
 
-int AnalyserNode_frequencyBinCount(int nodeIndex);
+int AnalyserNode_frequencyBinCount(int nodeId);
 
-void AnalyserNode_setMinDecibels(int nodeIndex, double k);
+void AnalyserNode_setMinDecibels(int nodeId, double k);
 
-int AnalyserNode_minDecibels(int nodeIndex);
+int AnalyserNode_minDecibels(int nodeId);
 
-void AnalyserNode_setMaxDecibels(int nodeIndex, double k);
+void AnalyserNode_setMaxDecibels(int nodeId, double k);
 
-int AnalyserNode_maxDecibels(int nodeIndex);
+int AnalyserNode_maxDecibels(int nodeId);
 
-void AnalyserNode_setSmoothingTimeConstant(int nodeIndex, double k);
+void AnalyserNode_setSmoothingTimeConstant(int nodeId, double k);
 
-int AnalyserNode_smoothingTimeConstant(int nodeIndex);
+int AnalyserNode_smoothingTimeConstant(int nodeId);
 
-void AnalyserNode_getFloatFrequencyData(int nodeIndex, float* array);
+void AnalyserNode_getFloatFrequencyData(int nodeId, float* array);
 
-void AnalyserNode_getByteFrequencyData(int nodeIndex, uint8_t* array, bool resample);
+void AnalyserNode_getByteFrequencyData(int nodeId, uint8_t* array, bool resample);
 
-void AnalyserNode_getFloatTimeDomainData(int nodeIndex, float* array);
+void AnalyserNode_getFloatTimeDomainData(int nodeId, float* array);
 
-void AnalyserNode_getByteTimeDomainData(int nodeIndex, uint8_t* array);
+void AnalyserNode_getByteTimeDomainData(int nodeId, uint8_t* array);
 
 
 /// OscillatorNode
 int createOscillatorNode(AudioContext* context);
-int OscillatorNode_type(int nodeIndex);
-void OscillatorNode_setType(int nodeIndex, int type);
+int OscillatorNode_type(int nodeId);
+void OscillatorNode_setType(int nodeId, int type);
 int OscillatorNode_amplitude(int nodeId);
 int OscillatorNode_frequency(int nodeId);
 int OscillatorNode_detune(int nodeId);
@@ -222,8 +232,8 @@ int OscillatorNode_bias(int nodeId);
 
 /// BiquadFilterNode
 int createBiquadFilterNode(AudioContext* context);
-int BiquadFilterNode_type(int nodeIndex);
-void BiquadFilterNode_setType(int nodeIndex, int type);
+int BiquadFilterNode_type(int nodeId);
+void BiquadFilterNode_setType(int nodeId, int type);
 int BiquadFilterNode_frequency(int nodeId);
 int BiquadFilterNode_q(int nodeId);
 int BiquadFilterNode_gain(int nodeId);
@@ -234,58 +244,85 @@ int BiquadFilterNode_detune(int nodeId);
 
 int createPannerNode(AudioContext* context);
 
-int PannerNode_panningModel(int nodeIndex);
-void PannerNode_setPanningModel(int nodeIndex, int m);
-int PannerNode_distanceModel(int nodeIndex);
-void PannerNode_setDistanceModel(int nodeIndex, int m);
+int PannerNode_panningModel(int nodeId);
+void PannerNode_setPanningModel(int nodeId, int m);
+int PannerNode_distanceModel(int nodeId);
+void PannerNode_setDistanceModel(int nodeId, int m);
 
-void PannerNode_setPosition(int nodeIndex, float x, float y, float z);
-void PannerNode_setOrientation(int nodeIndex, float x, float y, float z);
-void PannerNode_setVelocity(int nodeIndex, float x, float y, float z);
+void PannerNode_setPosition(int nodeId, float x, float y, float z);
+void PannerNode_setOrientation(int nodeId, float x, float y, float z);
+void PannerNode_setVelocity(int nodeId, float x, float y, float z);
 
-int PannerNode_positionX(int nodeIndex);
-int PannerNode_positionY(int nodeIndex);
-int PannerNode_positionZ(int nodeIndex);
+int PannerNode_positionX(int nodeId);
+int PannerNode_positionY(int nodeId);
+int PannerNode_positionZ(int nodeId);
 
-int PannerNode_orientationX(int nodeIndex);
-int PannerNode_orientationY(int nodeIndex);
-int PannerNode_orientationZ(int nodeIndex);
+int PannerNode_orientationX(int nodeId);
+int PannerNode_orientationY(int nodeId);
+int PannerNode_orientationZ(int nodeId);
 
-int PannerNode_velocityX(int nodeIndex);
-int PannerNode_velocityY(int nodeIndex);
-int PannerNode_velocityZ(int nodeIndex);
+int PannerNode_velocityX(int nodeId);
+int PannerNode_velocityY(int nodeId);
+int PannerNode_velocityZ(int nodeId);
 
-int PannerNode_distanceGain(int nodeIndex);
-int PannerNode_coneGain(int nodeIndex);
+int PannerNode_distanceGain(int nodeId);
+int PannerNode_coneGain(int nodeId);
 
-float PannerNode_refDistance(int nodeIndex);
-void PannerNode_setRefDistance(int nodeIndex, float refDistance);
+float PannerNode_refDistance(int nodeId);
+void PannerNode_setRefDistance(int nodeId, float refDistance);
 
-float PannerNode_maxDistance(int nodeIndex);
-void PannerNode_setMaxDistance(int nodeIndex, float maxDistance);
+float PannerNode_maxDistance(int nodeId);
+void PannerNode_setMaxDistance(int nodeId, float maxDistance);
 
-float PannerNode_rolloffFactor(int nodeIndex);
-void PannerNode_setRolloffFactor(int nodeIndex, float rolloffFactor);
+float PannerNode_rolloffFactor(int nodeId);
+void PannerNode_setRolloffFactor(int nodeId, float rolloffFactor);
 
-float PannerNode_coneInnerAngle(int nodeIndex);
-void PannerNode_setConeInnerAngle(int nodeIndex, float angle);
+float PannerNode_coneInnerAngle(int nodeId);
+void PannerNode_setConeInnerAngle(int nodeId, float angle);
 
-float PannerNode_coneOuterAngle(int nodeIndex);
-void PannerNode_setConeOuterAngle(int nodeIndex, float angle);
+float PannerNode_coneOuterAngle(int nodeId);
+void PannerNode_setConeOuterAngle(int nodeId, float angle);
 
-float PannerNode_coneOuterGain(int nodeIndex);
-void PannerNode_setConeOuterGain(int nodeIndex, float angle);
+float PannerNode_coneOuterGain(int nodeId);
+void PannerNode_setConeOuterGain(int nodeId, float angle);
 
-void PannerNode_getAzimuthElevation(int nodeIndex, AudioContext* context, double * outAzimuth, double * outElevation);
-void PannerNode_dopplerRate(int nodeIndex, AudioContext* context);
+void PannerNode_getAzimuthElevation(int nodeId, AudioContext* context, double * outAzimuth, double * outElevation);
+void PannerNode_dopplerRate(int nodeId, AudioContext* context);
 
 /// ChannelSplitterNode
 
 int createChannelSplitterNode(AudioContext* context);
-void ChannelSplitterNode_addOutputs(int nodeIndex, int n);
+void ChannelSplitterNode_addOutputs(int nodeId, int n);
 
 ///ChannelMergerNode
 
 int createChannelMergerNode(AudioContext* context);
-void ChannelMergerNode_addInputs(int nodeIndex, int n);
-void ChannelMergerNode_setOutputChannelCount(int nodeIndex, int n);
+void ChannelMergerNode_addInputs(int nodeId, int n);
+void ChannelMergerNode_setOutputChannelCount(int nodeId, int n);
+
+
+///AudioHardwareDeviceNode
+
+// Input and Output
+struct AudioStreamConfig
+{
+    int32_t device_index{-1};
+    uint32_t desired_channels{0};
+    float desired_samplerate{0};
+};
+
+int createAudioHardwareDeviceNode(AudioContext* context, const AudioStreamConfig outputConfig, const AudioStreamConfig inputConfig);
+
+void AudioHardwareDeviceNode_start(int nodeId);
+
+void AudioHardwareDeviceNode_stop(int nodeId);
+
+int AudioHardwareDeviceNode_isRunning(int nodeId);
+
+AudioStreamConfig AudioHardwareDeviceNode_getOutputConfig(int nodeId);
+
+AudioStreamConfig AudioHardwareDeviceNode_getInputConfig(int nodeId);
+
+AudioStreamConfig createAudioStreamConfig(int device_index, uint32_t desired_channels, float desired_samplerate );
+
+void AudioHardwareDeviceNode_backendReinitialize(int nodeId);

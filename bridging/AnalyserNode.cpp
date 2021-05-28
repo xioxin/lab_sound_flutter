@@ -5,13 +5,13 @@
 using namespace lab;
 
 DART_EXPORT int createAnalyserNode(AudioContext* context) {
-    auto sample = std::make_shared<AnalyserNode>(*context);
-    return keepNode(sample);
+    auto node = std::make_shared<AnalyserNode>(*context);
+    return keepNode(node);
 }
 
 DART_EXPORT int createAnalyserNodeFftSize(AudioContext* context, int fftSize) {
-    auto sample = std::make_shared<AnalyserNode>(*context, fftSize);
-    return keepNode(sample);
+    auto node = std::make_shared<AnalyserNode>(*context, fftSize);
+    return keepNode(node);
 }
 
 DART_EXPORT void AnalyserNode_setFftSize(int nodeId, AudioContext* context, int fftSize) {

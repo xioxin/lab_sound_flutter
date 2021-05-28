@@ -5,9 +5,9 @@
 using namespace lab;
 
 DART_EXPORT int createAudioSampleNode(AudioContext* context) {
-    auto sample = std::make_shared<SampledAudioNode>(*context);
-    auto nodeId = keepNode(sample);
-    sample->setOnEnded([nodeId]() {
+    auto node = std::make_shared<SampledAudioNode>(*context);
+    auto nodeId = keepNode(node);
+    node->setOnEnded([nodeId]() {
         sendAudioSampleOnEnded(nodeId);
     });
     return nodeId;
@@ -22,7 +22,7 @@ DART_EXPORT void SampledAudioNode_setBus(int nodeId, AudioContext* context, int 
 
 DART_EXPORT void SampledAudioNode_schedule(int nodeId, double when) {
     auto node = std::static_pointer_cast<SampledAudioNode>(getNode(nodeId));
-    if(node) node->schedule(bus);
+    if(node) node->schedule(when);
 }
 
 DART_EXPORT void SampledAudioNode_schedule2(int nodeId, double when, int loopCount) {

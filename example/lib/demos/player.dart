@@ -157,9 +157,13 @@ class _PlayerPageState extends State<PlayerPage>
                       stream: player.onPosition,
                       initialData: player.position,
                       builder: (context, snapshot) {
-                        final pos = snapshot.data ?? Duration.zero;
+                        Duration pos = snapshot.data ?? Duration.zero;
+                        // print(pos);
                         final duration =
                             player.duration ?? Duration(minutes: 3);
+                        // print(duration);
+                        if(pos > duration) pos = duration;
+
                         return Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -297,8 +301,48 @@ class _PlayerPageState extends State<PlayerPage>
                             .synthesizerLowSample
                             .clearSchedules();
                       }),
+                  ElevatedButton(
+                      child: Text("Device reset"),
+                      onPressed: () {
+
+                        // audioContext.device.backendReinitialize();
+                        audioContext.device.start();
+
+                        // // audioContext.device.uninitialize();
+                        // // audioContext.device.start();
+                        // audioContext.suspend();
+                        // final out = AudioStreamConfig(deviceIndex: 0, desiredSampleRate: 44100.0, desiredChannels: 2);
+                        // final outDev = AudioHardwareDeviceNode(this.audioContext, outputConfig: out);
+                        // audioContext.device.linked.forEach((element) {
+                        //   element.connect(outDev);
+                        // });
+                        // audioContext.setDevice(outDev);
+                        // outDev.reset();
+                        // outDev.start();
+                        // audioContext.resume();
+                        // print("outDev.isRunning: ${outDev.isRunning}");
+
+
+
+                      }),
+                  ElevatedButton(
+                      child: Text("audioContext resume"),
+                      onPressed: () {
+                        audioContext.resume();
+                      }),
+                  ElevatedButton(
+                      child: Text("audioContext suspend"),
+                      onPressed: () {
+                        audioContext.suspend();
+                      }),
+                  ElevatedButton(
+                      child: Text("print status"),
+                      onPressed: () {
+                        print("isRun: ${audioContext.device.getOutputConfig().deviceIndex}");
+                        print("isRun: ${audioContext.device.getInputConfig().deviceIndex}");
+                      }),
                 ],
-              ),
+              )
             )
           : Center(child: Text("LOADING")),
     );
