@@ -38,8 +38,8 @@ DART_EXPORT int decodeAudioDataAsync(const char *file) {
     return busId;
 }
 
-DART_EXPORT int decodeAudioDataHasCheck(int busIndex) {
-    std::map<int,std::shared_ptr<AudioBus>>::iterator ite = audioBuffers.find(busIndex);
+DART_EXPORT int decodeAudioDataHasCheck(int busId) {
+    std::map<int,std::shared_ptr<AudioBus>>::iterator ite = audioBuffers.find(busId);
     if(ite != audioBuffers.end()){
         if(ite->second) {
             return 1;
@@ -50,47 +50,57 @@ DART_EXPORT int decodeAudioDataHasCheck(int busIndex) {
     return 0;
 }
 
-DART_EXPORT int AudioBus_numberOfChannels(int busIndex){
-    return std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->numberOfChannels();
+DART_EXPORT int AudioBus_numberOfChannels(int busId){
+    auto bus = getBus(busId);
+    return bus ? bus->numberOfChannels() : 0;
 }
 
-DART_EXPORT int AudioBus_length(int busIndex){
-    return std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->length();
+DART_EXPORT int AudioBus_length(int busId){
+    auto bus = getBus(busId);
+    return bus ? bus->length() : 0;
 }
 
-DART_EXPORT float AudioBus_sampleRate(int busIndex){
-    return std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->sampleRate();
+DART_EXPORT float AudioBus_sampleRate(int busId){
+    auto bus = getBus(busId);
+    return bus ? bus->sampleRate() : 0.;
 }
 
-DART_EXPORT void AudioBus_zero(int busIndex){
-    std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->numberOfChannels();
+DART_EXPORT void AudioBus_zero(int busId){
+    auto bus = getBus(busId);
+    if(bus)bus->zero();
 }
 
-DART_EXPORT void AudioBus_clearSilentFlag(int busIndex){
-    std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->clearSilentFlag();
+DART_EXPORT void AudioBus_clearSilentFlag(int busId){
+    auto bus = getBus(busId);
+    if(bus)bus->clearSilentFlag();
 }
 
-DART_EXPORT void AudioBus_scale(int busIndex, float scale){
-    std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->scale(scale);
+DART_EXPORT void AudioBus_scale(int busId, float scale){
+    auto bus = getBus(busId);
+    if(bus)bus->scale(scale);
 }
 
-DART_EXPORT void AudioBus_reset(int busIndex){
-    std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->reset();
+DART_EXPORT void AudioBus_reset(int busId){
+    auto bus = getBus(busId);
+    if(bus) bus->reset();
 }
 
-DART_EXPORT int AudioBus_isSilent(int busIndex){
-    return std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->isSilent();
+DART_EXPORT int AudioBus_isSilent(int busId){
+    auto bus = getBus(busId);
+    if(bus) bus->isSilent();
 }
 
-DART_EXPORT int AudioBus_isFirstTime(int busIndex){
-    return std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->isFirstTime();
+DART_EXPORT int AudioBus_isFirstTime(int busId){
+    auto bus = getBus(busId);
+    if(bus) bus->isFirstTime();
 }
 
-DART_EXPORT void AudioBus_setSampleRate(int busIndex, float sampleRate){
-    std::static_pointer_cast<AudioBus>(audioBuffers.find(busIndex)->second)->setSampleRate(sampleRate);
+DART_EXPORT void AudioBus_setSampleRate(int busId, float sampleRate){
+    auto bus = getBus(busId);
+    if(bus) bus->setSampleRate(sampleRate);
 }
 
 DART_EXPORT void releaseAudioBus(int index){
     audioBuffers.erase(index);
-    sendAudioAusStatus(index, -1);
+    // sendAudioAusStatus(index, -1);
 }

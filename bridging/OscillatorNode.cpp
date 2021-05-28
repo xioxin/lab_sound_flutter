@@ -10,25 +10,31 @@ DART_EXPORT int createOscillatorNode(AudioContext* context) {
 }
 
 DART_EXPORT int OscillatorNode_type(int nodeIndex) {
-    return static_cast<int>(std::dynamic_pointer_cast<OscillatorNode>(audioNodes.find(nodeIndex)->second)->type());
+    auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
+    return node ? static_cast<int>(node->type()) : 0;
 }
 
 DART_EXPORT void OscillatorNode_setType(int nodeIndex, int type) {
-    std::dynamic_pointer_cast<OscillatorNode>(audioNodes.find(nodeIndex)->second)->setType(OscillatorType(type));
+    auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
+    if(node) node->setType(OscillatorType(type));
 }
 
 DART_EXPORT int OscillatorNode_amplitude(int nodeId) {
-    return keepAudioParam(nodeId, 1, std::static_pointer_cast<OscillatorNode>(audioNodes.find(nodeId)->second)->amplitude());
+    auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 1, node->amplitude()) : -1;
 }
 
 DART_EXPORT int OscillatorNode_frequency(int nodeId) {
-    return keepAudioParam(nodeId, 2, std::static_pointer_cast<OscillatorNode>(audioNodes.find(nodeId)->second)->frequency());
+    auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 1, node->frequency()) : -1;
 }
 
 DART_EXPORT int OscillatorNode_detune(int nodeId) {
-    return keepAudioParam(nodeId, 3, std::static_pointer_cast<OscillatorNode>(audioNodes.find(nodeId)->second)->detune());
+    auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 1, node->detune()) : -1;
 }
 
 DART_EXPORT int OscillatorNode_bias(int nodeId) {
-    return keepAudioParam(nodeId, 4, std::static_pointer_cast<OscillatorNode>(audioNodes.find(nodeId)->second)->bias());
+    auto node = std::static_pointer_cast<OscillatorNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 1, node->bias()) : -1;
 }

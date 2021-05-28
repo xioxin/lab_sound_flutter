@@ -10,5 +10,6 @@ DART_EXPORT int createChannelSplitterNode(AudioContext* context) {
 }
 
 DART_EXPORT void ChannelSplitterNode_addOutputs(int nodeIndex, int n) {
-    std::dynamic_pointer_cast<ChannelSplitterNode>(audioNodes.find(nodeIndex)->second)->addOutputs(n);
+    auto node = std::static_pointer_cast<ChannelSplitterNode>(getNode(nodeId));
+    if(node) node->addOutputs(n);
 }

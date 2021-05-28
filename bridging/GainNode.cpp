@@ -9,5 +9,6 @@ DART_EXPORT int createGain(AudioContext* context) {
 }
 
 DART_EXPORT int GainNode_gain(int nodeId) {
-    return keepAudioParam(nodeId, 0, std::static_pointer_cast<GainNode>(audioNodes.find(nodeId)->second)->gain());
+    auto node = std::static_pointer_cast<GainNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 0, node->gain()) : -1;
 }

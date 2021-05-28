@@ -10,26 +10,31 @@ DART_EXPORT int createBiquadFilterNode(AudioContext* context) {
 }
 
 DART_EXPORT int BiquadFilterNode_type(int nodeIndex) {
-    return static_cast<int>(std::dynamic_pointer_cast<BiquadFilterNode>(audioNodes.find(nodeIndex)->second)->type());
+    auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
+    return node ? static_cast<int>(node->type()) : 0;
 }
 
 DART_EXPORT void BiquadFilterNode_setType(int nodeIndex, int type) {
-    std::dynamic_pointer_cast<BiquadFilterNode>(audioNodes.find(nodeIndex)->second)->setType(FilterType(type));
+    auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
+    if(node) node->setType(FilterType(type));
 }
 
 DART_EXPORT int BiquadFilterNode_frequency(int nodeId) {
-    return keepAudioParam(nodeId, 1, std::static_pointer_cast<BiquadFilterNode>(audioNodes.find(nodeId)->second)->frequency());
+    auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 1, node->frequency()) : -1;
 }
 
 DART_EXPORT int BiquadFilterNode_q(int nodeId) {
-    return keepAudioParam(nodeId, 2, std::static_pointer_cast<BiquadFilterNode>(audioNodes.find(nodeId)->second)->q());
+    auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 2, node->q()) : -1;
 }
 
 DART_EXPORT int BiquadFilterNode_gain(int nodeId) {
-    return keepAudioParam(nodeId, 3, std::static_pointer_cast<BiquadFilterNode>(audioNodes.find(nodeId)->second)->gain());
+    auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 3, node->gain()) : -1;
 }
 
 DART_EXPORT int BiquadFilterNode_detune(int nodeId) {
-    return keepAudioParam(nodeId, 4, std::static_pointer_cast<BiquadFilterNode>(audioNodes.find(nodeId)->second)->detune());
+    auto node = std::static_pointer_cast<BiquadFilterNode>(getNode(nodeId));
+    return node ? keepAudioParam(nodeId, 4, node->detune()) : -1;
 }
-
