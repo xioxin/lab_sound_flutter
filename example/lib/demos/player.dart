@@ -302,10 +302,9 @@ class _PlayerPageState extends State<PlayerPage>
                             .clearSchedules();
                       }),
                   ElevatedButton(
-                      child: Text("Device reset"),
+                      child: Text("Device Reinitialize"),
                       onPressed: () {
-
-                        // audioContext.device.backendReinitialize();
+                        audioContext.device.backendReinitialize();
                         audioContext.device.start();
 
                         // // audioContext.device.uninitialize();
