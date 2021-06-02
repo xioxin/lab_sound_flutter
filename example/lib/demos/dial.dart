@@ -11,24 +11,25 @@ class Dial extends StatefulWidget {
 }
 
 class _DialState extends State<Dial> {
-  AudioContext audioContext = AudioContext();
-  late OscillatorNode oscillatorHigh;
-  late OscillatorNode oscillatorLow;
+  late AudioContext audioContext;
   late AnalyserNode analyserNode;
-
+  late DynamicsCompressorNode dynamicsCompressorNode;
   Map<double, OscillatorNode> oscillatorMap = {};
 
   @override
   void initState() {
+    audioContext = AudioContext();
     analyserNode = AnalyserNode(audioContext);
+    dynamicsCompressorNode = DynamicsCompressorNode(audioContext);
+    dynamicsCompressorNode.connect(analyserNode);
     analyserNode.connect(audioContext.destination);
-    [...xHz, ...yHz].forEach((hz) {
-      oscillatorMap[hz] = OscillatorNode(audioContext);
-      oscillatorMap[hz]!.frequency.setValue(hz);
-      oscillatorMap[hz]!.frequency.resetSmoothedValue();
-      oscillatorMap[hz]!.connect(analyserNode);
-    });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    audioContext.dispose();
+    super.dispose();
   }
 
   List<double> xHz = [1209, 1336, 1477, 1633];
@@ -41,21 +42,36 @@ class _DialState extends State<Dial> {
   ];
 
   Widget button(String name, int x, int y) {
+
+    OscillatorNode? oscillatorLow;
+    OscillatorNode? oscillatorHigh;
+
     return Flexible(
       flex: 1,
       child: GestureDetector(
           onTapDown: (TapDownDetails details) {
-            print('onTapDown');
-            oscillatorMap[yHz[y]]!.start();
-            oscillatorMap[xHz[x]]!.start();
+            oscillatorLow = OscillatorNode(audioContext);
+            oscillatorLow?.frequency.setValue(xHz[x]);
+            oscillatorLow?.frequency.resetSmoothedValue();
+            oscillatorLow?.connect(dynamicsCompressorNode);
+            oscillatorLow?.start();
+            oscillatorHigh = OscillatorNode(audioContext);
+            oscillatorHigh?.frequency.setValue(yHz[y]);
+            oscillatorHigh?.frequency.resetSmoothedValue();
+            oscillatorHigh?.connect(dynamicsCompressorNode);
+            oscillatorHigh?.start();
           },
           onTapCancel: () {
-            print('onTapCancel');
-            oscillatorMap.values.forEach((e) { e.stop(); });
+            oscillatorLow?.stop();
+            oscillatorLow?.dispose();
+            oscillatorHigh?.stop();
+            oscillatorHigh?.dispose();
           },
           onTapUp: (TapUpDetails details) {
-            print('onTapUp');
-            oscillatorMap.values.forEach((e) { e.stop(); });
+            oscillatorLow?.stop();
+            oscillatorLow?.dispose();
+            oscillatorHigh?.stop();
+            oscillatorHigh?.dispose();
           },
           child: AspectRatio(
               aspectRatio: 1.0,

@@ -1,2 +1,21 @@
-// export 'lab_player.dart';
-export 'lab_sound/lab_sound.dart';
+library lab_sound_flutter;
+
+export 'src/lab_sound/lab_sound.dart';
+
+export 'src/lab_sound/analyser_node.dart';
+export 'src/lab_sound/audio_bus.dart';
+export 'src/lab_sound/audio_context.dart';
+export 'src/lab_sound/audio_hardware_device_node.dart';
+export 'src/lab_sound/audio_node.dart';
+export 'src/lab_sound/audio_param.dart';
+export 'src/lab_sound/audio_player_node.dart';
+export 'src/lab_sound/audio_sample_node.dart';
+export 'src/lab_sound/audio_scheduled_source_node.dart';
+export 'src/lab_sound/audio_stream_config.dart';
+export 'src/lab_sound/biquad_filter_node.dart';
+export 'src/lab_sound/gain_node.dart';
+export 'src/lab_sound/oscillator_node.dart';
+export 'src/lab_sound/recorder_node.dart';
+export 'src/lab_sound/dynamics_compressor_node.dart';
+
+export 'src/node/player_node.dart';

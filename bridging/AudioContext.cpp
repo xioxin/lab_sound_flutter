@@ -3,43 +3,53 @@
 #include "KeepNode.cpp"
 using namespace lab;
 
-class BoolData{
-private:
-    bool data = false;
-public:
-    bool value(){
-        return data;
-    }
-    void setValue(bool v){
-        data = v;
-    }
-};
-
-DART_EXPORT AudioContext* createRealtimeAudioContext(int channels,float sampleRate){
-    AudioStreamConfig outputConfig = AudioStreamConfig();
-    outputConfig.desired_channels = channels;
-    outputConfig.desired_samplerate = sampleRate;
+DART_EXPORT AudioContext* createRealtimeAudioContext(AudioStreamConfig outputConfig, AudioStreamConfig inputConfig){
     auto context = MakeRealtimeAudioContext(outputConfig, AudioStreamConfig()).release();
     return context;
 }
 
-DART_EXPORT void AudioContext_startOfflineRendering(AudioContext* context,int recorderIndex,const char* file_path){
-    RecorderNode* recorder = static_cast<RecorderNode*>(audioNodes.find(recorderIndex)->second.get());
-    recorder->startRecording();
-
-    BoolData* renderComplete = new BoolData();
-    context->offlineRenderCompleteCallback = [recorderIndex,&context, &recorder,file_path,renderComplete]() {
-        recorder->stopRecording();
-        context->removeAutomaticPullNode(audioNodes.find(recorderIndex)->second);
-        recorder->writeRecordingToWav(file_path, false);
-        renderComplete->setValue(true);
-    };
-
-    context->startOfflineRendering();
-    // ((NullDeviceNode*)context->device().get())->joinRenderThread();
+DART_EXPORT AudioContext* createOfflineAudioContext(AudioStreamConfig outputConfig, double recordTimeMilliseconds){
+    auto context = MakeOfflineAudioContext(outputConfig, recordTimeMilliseconds).release();
+    return context;
 }
 
+int renderCount;
+DART_EXPORT int AudioContext_startOfflineRendering(AudioContext* context){
+    int renderId = renderCount++;
+    context->offlineRenderCompleteCallback = [renderId]() {
+        sendOfflineRenderComplete(renderId, 1);
+    };
+    context->startOfflineRendering();
+    return renderId;
+}
 
+DART_EXPORT void AudioContext_addAutomaticPullNode(AudioContext* context, int nodeId){
+    auto node = getNode(nodeId);
+    if(node) context->addAutomaticPullNode(node);
+}
+
+DART_EXPORT void AudioContext_removeAutomaticPullNode(AudioContext* context, int nodeId){
+    auto node = getNode(nodeId);
+    if(node) context->removeAutomaticPullNode(node);
+}
+
+DART_EXPORT void AudioContext_processAutomaticPullNodes(AudioContext* context, int framesToProcess){
+    ContextRenderLock r(context,"processAutomaticPullNodes");
+    context->processAutomaticPullNodes(r, framesToProcess);
+}
+
+DART_EXPORT void AudioContext_handlePreRenderTasks(AudioContext* context, int framesToProcess){
+    ContextRenderLock r(context,"handlePreRenderTasks");
+    context->handlePreRenderTasks(r);
+}
+DART_EXPORT void AudioContext_handlePostRenderTasks(AudioContext* context, int framesToProcess){
+    ContextRenderLock r(context,"handlePostRenderTasks");
+    context->handlePostRenderTasks(r);
+}
+
+DART_EXPORT void AudioContext_synchronizeConnections(AudioContext* context, int timeOut_ms){
+    context->synchronizeConnections(timeOut_ms);
+}
 
 // suspend the progression of time in the audio context, any queued samples will play
 DART_EXPORT void AudioContext_suspend(AudioContext* context) {

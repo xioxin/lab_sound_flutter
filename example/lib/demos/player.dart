@@ -3,11 +3,10 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lab_sound_flutter/lab_player.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/demos/music-time.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:lab_sound_flutter/player_node.dart';
+import 'package:path/path.dart' as p;
 
 import '../draw_frequency.dart';
 import '../draw_time_domain.dart';
@@ -74,12 +73,10 @@ class _PlayerPageState extends State<PlayerPage>
       duration: Duration(milliseconds: 350),
       reverseDuration: Duration(milliseconds: 350),
     );
-    // audioContext = AudioContext(initSampleRate: 44100.0);
-    audioContext = AudioContext(initSampleRate: 44100.0);
-    player = PlayerNode(audioContext);
+    audioContext = AudioContext(outputConfig: AudioStreamConfig(desiredSampleRate: 44100.0, desiredChannels: 2));
     analyserNode = AnalyserNode(audioContext);
-    player.connect(analyserNode);
-    analyserNode.connect(audioContext.destination);
+    player = PlayerNode(audioContext, autoSleep: true, crossFadeTime: 0.3, middleAudioNode: analyserNode);
+    player.connect(audioContext.destination);
     super.initState();
     init();
   }
@@ -101,7 +98,7 @@ class _PlayerPageState extends State<PlayerPage>
     this.synthesizerHighPath = await loadAsset('synthesizer-high.wav');
     this.synthesizerLowPath = await loadAsset('synthesizer-low.wav');
 
-    final p = [
+    final promises = [
       stereoMusicClipPath,
       music1Path,
       music2Path,
@@ -109,7 +106,7 @@ class _PlayerPageState extends State<PlayerPage>
       synthesizerHighPath,
       synthesizerLowPath
     ].map((e) => AudioBus.async(e));
-    final data = (await Future.wait(p)).toList();
+    final data = (await Future.wait(promises)).toList();
 
     stereoMusicClipBus = data[0];
     music1Bus = data[1];
@@ -163,7 +160,6 @@ class _PlayerPageState extends State<PlayerPage>
                             player.duration ?? Duration(minutes: 3);
                         // print(duration);
                         if(pos > duration) pos = duration;
-
                         return Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -304,6 +300,7 @@ class _PlayerPageState extends State<PlayerPage>
                   ElevatedButton(
                       child: Text("Device Reinitialize"),
                       onPressed: () {
+                        audioContext.device.stop();
                         audioContext.device.backendReinitialize();
                         audioContext.device.start();
 
@@ -337,8 +334,7 @@ class _PlayerPageState extends State<PlayerPage>
                   ElevatedButton(
                       child: Text("print status"),
                       onPressed: () {
-                        print("isRun: ${audioContext.device.getOutputConfig().deviceIndex}");
-                        print("isRun: ${audioContext.device.getInputConfig().deviceIndex}");
+                        LabSound().printSurvivingNodes();
                       }),
                 ],
               )

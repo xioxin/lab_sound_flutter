@@ -69,12 +69,12 @@ DART_EXPORT void AnalyserNode_getFloatFrequencyData(int nodeId, float* array) {
     memcpy(array, &analyserBuffer[0], analyserBuffer.size() * sizeof(float));
 }
 
-DART_EXPORT void AnalyserNode_getByteFrequencyData(int nodeId, uint8_t* array, bool resample) {
+DART_EXPORT void AnalyserNode_getByteFrequencyData(int nodeId, uint8_t* array, int resample) {
     auto node = std::static_pointer_cast<AnalyserNode>(getNode(nodeId));
     if(!node) return;
     int bufferSize = node->frequencyBinCount();
     std::vector<uint8_t> analyserBuffer(bufferSize);
-    node->getByteFrequencyData(analyserBuffer, resample);
+    node->getByteFrequencyData(analyserBuffer, resample > 0);
     memcpy(array, &analyserBuffer[0], analyserBuffer.size() * sizeof(uint8_t));
 }
 

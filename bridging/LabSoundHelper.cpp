@@ -32,12 +32,17 @@ using namespace lab;
 #include "ChannelSplitterNode.cpp"
 
 #include "AudioHardwareDeviceNode.cpp"
+#include "DynamicsCompressorNode.cpp"
 
+DART_EXPORT void labTest() {
 
-// DART_EXPORT void labTest() {
-//     LOG_INFO("test");
-//     const std::vector<AudioDeviceInfo> audioDevices = lab::MakeAudioDeviceList();
-//     for (std::vector<AudioDeviceInfo>::size_type ind = 0;ind != audioDevices.size(); ++ind) {
-//         LOG_INFO("dev: %d, %s", audioDevices[ind].index, audioDevices[ind].identifier.c_str());
-//     }
-// }
+    LOG_INFO("test");
+    
+    {
+        auto context = MakeRealtimeAudioContext(AudioStreamConfig(), AudioStreamConfig());
+    }
+
+    {
+        auto context2 = MakeRealtimeAudioContext(AudioStreamConfig(), AudioStreamConfig()).release();
+    }
+}

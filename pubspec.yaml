@@ -75,7 +75,7 @@ flutter:
 ffigen:
   name: 'LabSoundBind'
   description: 'Bindings to LabSound'
-  output: 'lib/generated_bindings.dart'
+  output: 'lib/src/generated_bindings.dart'
   headers:
     entry-points:
       - 'ffigen/LabSoundHelper.h'

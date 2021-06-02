@@ -16,6 +16,12 @@ std::shared_ptr<AudioBus> getBus(int busId) {
     return nullptr;
 }
 
+int keepBus(std::shared_ptr<AudioBus> audioBus) {
+    int busId = bufferCount++;
+    audioBuffers.insert(std::pair<int,std::shared_ptr<AudioBus>>(busId, audioBus));
+    return busId;
+}
+
 void decodeAudioDataRun(const int id, const char *file)
 {
     std::shared_ptr<AudioBus> audioBus = MakeBusFromFile(file, false);
@@ -68,6 +74,16 @@ DART_EXPORT float AudioBus_sampleRate(int busId){
 DART_EXPORT void AudioBus_zero(int busId){
     auto bus = getBus(busId);
     if(bus)bus->zero();
+}
+
+DART_EXPORT void AudioBus_setChannelMemory(int busId, int channelIndex, float * storage, int length){
+    auto bus = getBus(busId);
+    if(bus)bus->setChannelMemory(channelIndex, storage, length);
+}
+
+DART_EXPORT void AudioBus_resizeSmaller(int busId, int newLength){
+    auto bus = getBus(busId);
+    if(bus)bus->resizeSmaller(newLength);
 }
 
 DART_EXPORT void AudioBus_clearSilentFlag(int busId){

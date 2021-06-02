@@ -48,3 +48,4 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+lib/test

@@ -13,12 +13,16 @@ DART_EXPORT intptr_t InitDartApiDL(void* data) {
 
 Dart_Port decodeAudioSendPort;
 Dart_Port audioSampleOnEndSendPort;
+Dart_Port offlineRenderCompleteSendPort;
 
 DART_EXPORT void registerDecodeAudioSendPort(Dart_Port sendPort) {
     decodeAudioSendPort = sendPort;
 }
 DART_EXPORT void registerAudioSampleOnEndedSendPort(Dart_Port sendPort) {
     audioSampleOnEndSendPort = sendPort;
+}
+DART_EXPORT void registerOfflineRenderCompleteSendPort(Dart_Port sendPort) {
+    offlineRenderCompleteSendPort = sendPort;
 }
 
 
@@ -57,5 +61,22 @@ void sendAudioSampleOnEnded(int nodeId) {
   dart_object.value.as_array.length = 1;
   Dart_PostCObject_DL(audioSampleOnEndSendPort, &dart_object);
 }
+
+void sendOfflineRenderComplete(int id, int status) {
+   if(!offlineRenderCompleteSendPort) return;
+    Dart_CObject dart_id;
+    dart_id.type = Dart_CObject_kInt32;
+    dart_id.value.as_int32 = id;
+    Dart_CObject dart_status;
+    dart_status.type = Dart_CObject_kInt32;
+    dart_status.value.as_int32 = status;
+    Dart_CObject* c_request_arr[] = {&dart_id, &dart_status};
+    Dart_CObject dart_object;
+    dart_object.type = Dart_CObject_kArray;
+    dart_object.value.as_array.values = c_request_arr;
+    dart_object.value.as_array.length = 2;
+    Dart_PostCObject_DL(offlineRenderCompleteSendPort, &dart_object);
+}
+
 
 #endif

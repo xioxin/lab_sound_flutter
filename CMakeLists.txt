@@ -4,6 +4,8 @@ include_guard()
 
 project(LabSound)
 
+set(MA_NO_AAUDIO ON)
+
 set(LABSOUND_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/LabSound")
 set(LABSOUND_BRIDGING_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/bridging")
 
