@@ -9,14 +9,7 @@ lab_sound_flutter is a wrapper for `LabSound `'s Flutter.
 * [ ] Windows
 * [ ] Linux
 
-## Binding
-Completed binding see file: <ffigen/LabSoundHelper.h>
-
-## Example
-```
-final context = AudioContext();
-
-```
+**WIP**
 
 
 <!-- * [x] AnalyserNode
