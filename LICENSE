@@ -1,3 +1,5 @@
+lab_sound_flutter is a wrapper for LabSound, using the same license as LabSound.
+
 This project incorporates third-party code under BSD 2 and 3 clause licenses. 
 As a significantly modified fork of the WebAudio engine in WebKit, LabSound
 has purged all LGPL and GPL code in order to make the engine as permissively
