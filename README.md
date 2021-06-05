@@ -1,6 +1,6 @@
 # lab_sound_flutter
 
-lab_sound_flutter is a wrapper for `LabSound `'s Flutter.
+lab_sound_flutter is the [LabSound](https://github.com/LabSound/LabSound) wrapper for Flutter.
 
 ## Platform
 * [x] Android
