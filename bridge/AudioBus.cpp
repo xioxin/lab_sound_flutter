@@ -103,12 +103,12 @@ DART_EXPORT void AudioBus_reset(int busId){
 
 DART_EXPORT int AudioBus_isSilent(int busId){
     auto bus = getBus(busId);
-    if(bus) bus->isSilent();
+    return bus ? bus->isSilent() : 0;
 }
 
 DART_EXPORT int AudioBus_isFirstTime(int busId){
     auto bus = getBus(busId);
-    if(bus) bus->isFirstTime();
+    return bus ? bus->isFirstTime() : 0;
 }
 
 DART_EXPORT void AudioBus_setSampleRate(int busId, float sampleRate){

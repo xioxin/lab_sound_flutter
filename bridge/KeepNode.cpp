@@ -1,6 +1,10 @@
 #ifndef KEEP_NODE_CPP
 #define KEEP_NODE_CPP
 
+#include "LabSound/LabSound.h"
+using namespace lab;
+
+
 std::map<int, std::map<int, std::shared_ptr<AudioParam>>> audioParams;
 
 std::shared_ptr<AudioParam> getKeepAudioParam(int nodeId, int key) {

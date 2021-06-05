@@ -1,10 +1,9 @@
-#ifndef PORT_CPP
-#define PORT_CPP
+#ifndef DART_PORT_CPP
+#define DART_PORT_CPP
 
-#include "dart_api/dart_api.h"
-#include "dart_api/dart_native_api.h"
-#include "dart_api/dart_api_dl.h"
-
+#include "./dart_api/dart_api.h"
+#include "./dart_api/dart_native_api.h"
+#include "./dart_api/dart_api_dl.h"
 
 // Initialize `dart_api_dl.h`
 DART_EXPORT intptr_t InitDartApiDL(void* data) {

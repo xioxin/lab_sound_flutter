@@ -1,56 +1,32 @@
-
 cmake_minimum_required(VERSION 3.10)
-include_guard()
+project(LabSoundBridge)
+set(CMAKE_INSTALL_MESSAGE LAZY)
 
-project(LabSound)
+SET(BUILD_EXAMPLE OFF CACHE BOOL "Build example application")
 
-set(MA_NO_AAUDIO ON)
+set(LABSOUND_BRIDGE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 
-set(LABSOUND_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/LabSound")
-set(LABSOUND_BRIDGING_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/bridging")
+add_subdirectory(LabSound)
 
-# default backend set up
+file(GLOB dart_api_h      "${LABSOUND_BRIDGE_ROOT}/bridge/dart_api/*")
 
-if (WIN32)
-elseif (APPLE)
-elseif (ANDROID)
-else()
-    if (NOT LABSOUND_JACK AND NOT LABSOUND_PULSE AND NOT LABSOUND_ASOUND)
-        message(STATUS "No Linux backend specified, defaulting to Pulse.")
-        set(LABSOUND_PULSE ON)
-    endif()
-endif()
+add_library(LabSoundBridge SHARED
+    ${dart_api_h}
+    ./bridge/LabSoundBridge.cpp
+)
 
-if (LABSOUND_ASOUND)
-    set(LIBNYQUIST_ASOUND ON)
-elseif (LABSOUND_JACK)
-    set(LIBNYQUIST_JACK ON)
-elseif (LABSOUND_PULSE)
-    set(LIBNYQUIST_PULSE ON)
-endif()
+target_link_libraries(LabSoundBridge LabSound)
 
-set(CMAKE_CXX_STANDARD 14)
+set_target_properties(LabSoundBridge
+    PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    OUTPUT_NAME_DEBUG LabSoundBridge_d
+)
 
-# turn off building libnyquist samples
-set(BUILD_EXAMPLE OFF)
-# add_subdirectory("cmake/libnyquist")
-
-include(cmake/libnyquist.cmake)
-
-#add_subdirectory("${LABSOUND_ROOT}/third_party/soundtouch")
-
-include(cmake/common.cmake)
-include(cmake/LabSound.cmake)
-
-if (NOT ANDROID AND NOT IOS)
-    include(cmake/examples.cmake)
-endif()
-
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Release")
-endif()
-
-add_definitions(${_LAB_CXX_DEFINITIONS})
-set(CMAKE_CXX_FLAGS "${_LAB_CXX_FLAGS} ${CMAKE_CXX_FLAGS}")
+install(TARGETS LabSoundBridge
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    FRAMEWORK DESTINATION lib
+)

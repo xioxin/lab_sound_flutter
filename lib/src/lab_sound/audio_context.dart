@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
-
+import 'package:rxdart/rxdart.dart';
 import '../extensions/ffi_string.dart';
 import 'recorder_node.dart';
 import 'audio_hardware_device_node.dart';
@@ -31,14 +31,12 @@ class AudioContext {
       : offline = false, pointer = LabSound().createRealtimeAudioContext(
       (outputConfig ?? AudioStreamConfig(desiredChannels: 2, desiredSampleRate: 48000.0)).ffiValue,
       (inputConfig ?? AudioStreamConfig()).ffiValue) {
-    LabSound().headsetStatusChange$.listen((event) {
-      Timer(Duration(milliseconds: 1500), () {
-        final running = this.device.isRunning;
-        this.device.stop();
-        this.device.backendReinitialize();
-        if(running)this.device.start();
-      });
-    });
+    // LabSound().onAudioDeviceStateChanged.debounceTime(Duration(milliseconds: 1000)).listen((event) {
+    //   final running = this.device.isRunning;
+    //   this.device.stop();
+    //   this.device.backendReinitialize();
+    //   if(running)this.device.start();
+    // });
   }
 
   AudioContext.offline({

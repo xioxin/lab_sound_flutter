@@ -37,7 +37,7 @@ typedef testFunc = void Function();
 
 const bool inProduction = const bool.fromEnvironment("dart.vm.product");
 final DynamicLibrary labSoundLib = Platform.isAndroid
-    ? DynamicLibrary.open(inProduction ? "libLabSound.so" : "libLabSound_d.so")
+    ? DynamicLibrary.open(inProduction ? "libLabSoundBridge.so" : "libLabSoundBridge_d.so")
     : DynamicLibrary.process();
 
 class LabSound extends LabSoundBind {
@@ -58,12 +58,21 @@ class LabSound extends LabSoundBind {
   ReceivePort _audioSampleOnEndedReceivePort = ReceivePort();
   ReceivePort _offlineRenderCompleteReceivePort = ReceivePort();
 
-  // static const MethodChannel _channel =
-  // const MethodChannel('flutter.event/lab_sound_flutter/headset_status');
+  static const MethodChannel audioManagerChannel = const MethodChannel('flutter.event/lab_sound_flutter/headset_status');
 
-  static const EventChannel _event = const EventChannel('flutter.event/lab_sound_flutter/headset_status_handler');
+  static const EventChannel eventChannel = const EventChannel('flutter.event/lab_sound_flutter/headset_status_handler');
 
-  Stream<dynamic> get headsetStatusChange$ => _event.receiveBroadcastStream();
+  Stream<dynamic>? _onAudioDeviceStateChanged;
+
+  Stream<dynamic> get onAudioDeviceStateChanged {
+    _onAudioDeviceStateChanged ??= eventChannel
+        .receiveBroadcastStream();
+    return _onAudioDeviceStateChanged!;
+  }
+
+  _parseAudioDeviceState(dynamic event) {
+    return event;
+  }
 
   StreamSubscription? _audioBusSubscription;
   StreamSubscription? _audioSampleOnEndedSubscription;
@@ -123,7 +132,13 @@ class LabSound extends LabSoundBind {
 
     _offlineRenderCompleteSubscription = _offlineRenderCompleteReceivePort.listen(_handleOfflineRenderComplete);
     registerOfflineRenderCompleteSendPort(_offlineRenderCompleteReceivePort.sendPort.nativePort);
-
+    //
+    audioManagerChannel.invokeMethod('getDevices', 1).then((value) {
+      print('getDevice: $value');
+    });
+    onAudioDeviceStateChanged.listen((event) {
+      print('onAudioDeviceStateChanged: $event');
+    });
   }
   static LabSound _sharedInstance() {
     _instance ??= LabSound._();
