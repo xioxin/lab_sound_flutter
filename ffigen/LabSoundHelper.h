@@ -1,5 +1,7 @@
-#include "struct.h"
+#include "../bridge/struct.h"
 #include "stdint.h"
+#include "string.h"
+#include <stdbool.h>
 
 #define AudioContext void
 
@@ -8,6 +10,9 @@ typedef struct AudioStreamConfig {
     uint32_t desired_channels;
     float desired_samplerate;
 } AudioStreamConfig;
+
+AudioDeviceInfoList labSoundMakeAudioDeviceList();
+
 
 ////////////
 /// PORT ///

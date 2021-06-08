@@ -46,8 +46,8 @@ public class LabSoundFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     public void onAttachedToEngine(FlutterPluginBinding flutterPluginBinding) {
         this.applicationContext = flutterPluginBinding.getApplicationContext();
 
-        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter.event/lab_sound_flutter/headset_status");
-        eventChannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(), "flutter.event/lab_sound_flutter/headset_status_handler");
+        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter.event/lab_sound_flutter/audio_manager");
+        eventChannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(), "flutter.event/lab_sound_flutter/audio_event");
         channel.setMethodCallHandler(this);
         eventChannel.setStreamHandler(this);
     }

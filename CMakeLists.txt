@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.13)
 project(LabSoundBridge)
-set(CMAKE_INSTALL_MESSAGE LAZY)
 
 SET(BUILD_EXAMPLE OFF CACHE BOOL "Build example application")
 

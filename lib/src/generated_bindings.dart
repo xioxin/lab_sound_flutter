@@ -21,6 +21,837 @@ class LabSoundBind {
           lookup)
       : _lookup = lookup;
 
+  ffi.Pointer<ffi.Void> memchr(
+    ffi.Pointer<ffi.Void> __s,
+    int __c,
+    int __n,
+  ) {
+    return _memchr(
+      __s,
+      __c,
+      __n,
+    );
+  }
+
+  late final _memchr_ptr = _lookup<ffi.NativeFunction<_c_memchr>>('memchr');
+  late final _dart_memchr _memchr = _memchr_ptr.asFunction<_dart_memchr>();
+
+  int memcmp(
+    ffi.Pointer<ffi.Void> __s1,
+    ffi.Pointer<ffi.Void> __s2,
+    int __n,
+  ) {
+    return _memcmp(
+      __s1,
+      __s2,
+      __n,
+    );
+  }
+
+  late final _memcmp_ptr = _lookup<ffi.NativeFunction<_c_memcmp>>('memcmp');
+  late final _dart_memcmp _memcmp = _memcmp_ptr.asFunction<_dart_memcmp>();
+
+  ffi.Pointer<ffi.Void> memcpy(
+    ffi.Pointer<ffi.Void> __dst,
+    ffi.Pointer<ffi.Void> __src,
+    int __n,
+  ) {
+    return _memcpy(
+      __dst,
+      __src,
+      __n,
+    );
+  }
+
+  late final _memcpy_ptr = _lookup<ffi.NativeFunction<_c_memcpy>>('memcpy');
+  late final _dart_memcpy _memcpy = _memcpy_ptr.asFunction<_dart_memcpy>();
+
+  ffi.Pointer<ffi.Void> memmove(
+    ffi.Pointer<ffi.Void> __dst,
+    ffi.Pointer<ffi.Void> __src,
+    int __len,
+  ) {
+    return _memmove(
+      __dst,
+      __src,
+      __len,
+    );
+  }
+
+  late final _memmove_ptr = _lookup<ffi.NativeFunction<_c_memmove>>('memmove');
+  late final _dart_memmove _memmove = _memmove_ptr.asFunction<_dart_memmove>();
+
+  ffi.Pointer<ffi.Void> memset(
+    ffi.Pointer<ffi.Void> __b,
+    int __c,
+    int __len,
+  ) {
+    return _memset(
+      __b,
+      __c,
+      __len,
+    );
+  }
+
+  late final _memset_ptr = _lookup<ffi.NativeFunction<_c_memset>>('memset');
+  late final _dart_memset _memset = _memset_ptr.asFunction<_dart_memset>();
+
+  ffi.Pointer<ffi.Int8> strcat(
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+  ) {
+    return _strcat(
+      __s1,
+      __s2,
+    );
+  }
+
+  late final _strcat_ptr = _lookup<ffi.NativeFunction<_c_strcat>>('strcat');
+  late final _dart_strcat _strcat = _strcat_ptr.asFunction<_dart_strcat>();
+
+  ffi.Pointer<ffi.Int8> strchr(
+    ffi.Pointer<ffi.Int8> __s,
+    int __c,
+  ) {
+    return _strchr(
+      __s,
+      __c,
+    );
+  }
+
+  late final _strchr_ptr = _lookup<ffi.NativeFunction<_c_strchr>>('strchr');
+  late final _dart_strchr _strchr = _strchr_ptr.asFunction<_dart_strchr>();
+
+  int strcmp(
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+  ) {
+    return _strcmp(
+      __s1,
+      __s2,
+    );
+  }
+
+  late final _strcmp_ptr = _lookup<ffi.NativeFunction<_c_strcmp>>('strcmp');
+  late final _dart_strcmp _strcmp = _strcmp_ptr.asFunction<_dart_strcmp>();
+
+  int strcoll(
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+  ) {
+    return _strcoll(
+      __s1,
+      __s2,
+    );
+  }
+
+  late final _strcoll_ptr = _lookup<ffi.NativeFunction<_c_strcoll>>('strcoll');
+  late final _dart_strcoll _strcoll = _strcoll_ptr.asFunction<_dart_strcoll>();
+
+  ffi.Pointer<ffi.Int8> strcpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
+  ) {
+    return _strcpy(
+      __dst,
+      __src,
+    );
+  }
+
+  late final _strcpy_ptr = _lookup<ffi.NativeFunction<_c_strcpy>>('strcpy');
+  late final _dart_strcpy _strcpy = _strcpy_ptr.asFunction<_dart_strcpy>();
+
+  int strcspn(
+    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> __charset,
+  ) {
+    return _strcspn(
+      __s,
+      __charset,
+    );
+  }
+
+  late final _strcspn_ptr = _lookup<ffi.NativeFunction<_c_strcspn>>('strcspn');
+  late final _dart_strcspn _strcspn = _strcspn_ptr.asFunction<_dart_strcspn>();
+
+  ffi.Pointer<ffi.Int8> strerror(
+    int __errnum,
+  ) {
+    return _strerror(
+      __errnum,
+    );
+  }
+
+  late final _strerror_ptr =
+      _lookup<ffi.NativeFunction<_c_strerror>>('strerror');
+  late final _dart_strerror _strerror =
+      _strerror_ptr.asFunction<_dart_strerror>();
+
+  int strlen(
+    ffi.Pointer<ffi.Int8> __s,
+  ) {
+    return _strlen(
+      __s,
+    );
+  }
+
+  late final _strlen_ptr = _lookup<ffi.NativeFunction<_c_strlen>>('strlen');
+  late final _dart_strlen _strlen = _strlen_ptr.asFunction<_dart_strlen>();
+
+  ffi.Pointer<ffi.Int8> strncat(
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+    int __n,
+  ) {
+    return _strncat(
+      __s1,
+      __s2,
+      __n,
+    );
+  }
+
+  late final _strncat_ptr = _lookup<ffi.NativeFunction<_c_strncat>>('strncat');
+  late final _dart_strncat _strncat = _strncat_ptr.asFunction<_dart_strncat>();
+
+  int strncmp(
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+    int __n,
+  ) {
+    return _strncmp(
+      __s1,
+      __s2,
+      __n,
+    );
+  }
+
+  late final _strncmp_ptr = _lookup<ffi.NativeFunction<_c_strncmp>>('strncmp');
+  late final _dart_strncmp _strncmp = _strncmp_ptr.asFunction<_dart_strncmp>();
+
+  ffi.Pointer<ffi.Int8> strncpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
+    int __n,
+  ) {
+    return _strncpy(
+      __dst,
+      __src,
+      __n,
+    );
+  }
+
+  late final _strncpy_ptr = _lookup<ffi.NativeFunction<_c_strncpy>>('strncpy');
+  late final _dart_strncpy _strncpy = _strncpy_ptr.asFunction<_dart_strncpy>();
+
+  ffi.Pointer<ffi.Int8> strpbrk(
+    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> __charset,
+  ) {
+    return _strpbrk(
+      __s,
+      __charset,
+    );
+  }
+
+  late final _strpbrk_ptr = _lookup<ffi.NativeFunction<_c_strpbrk>>('strpbrk');
+  late final _dart_strpbrk _strpbrk = _strpbrk_ptr.asFunction<_dart_strpbrk>();
+
+  ffi.Pointer<ffi.Int8> strrchr(
+    ffi.Pointer<ffi.Int8> __s,
+    int __c,
+  ) {
+    return _strrchr(
+      __s,
+      __c,
+    );
+  }
+
+  late final _strrchr_ptr = _lookup<ffi.NativeFunction<_c_strrchr>>('strrchr');
+  late final _dart_strrchr _strrchr = _strrchr_ptr.asFunction<_dart_strrchr>();
+
+  int strspn(
+    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> __charset,
+  ) {
+    return _strspn(
+      __s,
+      __charset,
+    );
+  }
+
+  late final _strspn_ptr = _lookup<ffi.NativeFunction<_c_strspn>>('strspn');
+  late final _dart_strspn _strspn = _strspn_ptr.asFunction<_dart_strspn>();
+
+  ffi.Pointer<ffi.Int8> strstr(
+    ffi.Pointer<ffi.Int8> __big,
+    ffi.Pointer<ffi.Int8> __little,
+  ) {
+    return _strstr(
+      __big,
+      __little,
+    );
+  }
+
+  late final _strstr_ptr = _lookup<ffi.NativeFunction<_c_strstr>>('strstr');
+  late final _dart_strstr _strstr = _strstr_ptr.asFunction<_dart_strstr>();
+
+  ffi.Pointer<ffi.Int8> strtok(
+    ffi.Pointer<ffi.Int8> __str,
+    ffi.Pointer<ffi.Int8> __sep,
+  ) {
+    return _strtok(
+      __str,
+      __sep,
+    );
+  }
+
+  late final _strtok_ptr = _lookup<ffi.NativeFunction<_c_strtok>>('strtok');
+  late final _dart_strtok _strtok = _strtok_ptr.asFunction<_dart_strtok>();
+
+  int strxfrm(
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+    int __n,
+  ) {
+    return _strxfrm(
+      __s1,
+      __s2,
+      __n,
+    );
+  }
+
+  late final _strxfrm_ptr = _lookup<ffi.NativeFunction<_c_strxfrm>>('strxfrm');
+  late final _dart_strxfrm _strxfrm = _strxfrm_ptr.asFunction<_dart_strxfrm>();
+
+  ffi.Pointer<ffi.Int8> strtok_r(
+    ffi.Pointer<ffi.Int8> __str,
+    ffi.Pointer<ffi.Int8> __sep,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
+  ) {
+    return _strtok_r(
+      __str,
+      __sep,
+      __lasts,
+    );
+  }
+
+  late final _strtok_r_ptr =
+      _lookup<ffi.NativeFunction<_c_strtok_r>>('strtok_r');
+  late final _dart_strtok_r _strtok_r =
+      _strtok_r_ptr.asFunction<_dart_strtok_r>();
+
+  int strerror_r(
+    int __errnum,
+    ffi.Pointer<ffi.Int8> __strerrbuf,
+    int __buflen,
+  ) {
+    return _strerror_r(
+      __errnum,
+      __strerrbuf,
+      __buflen,
+    );
+  }
+
+  late final _strerror_r_ptr =
+      _lookup<ffi.NativeFunction<_c_strerror_r>>('strerror_r');
+  late final _dart_strerror_r _strerror_r =
+      _strerror_r_ptr.asFunction<_dart_strerror_r>();
+
+  ffi.Pointer<ffi.Int8> strdup(
+    ffi.Pointer<ffi.Int8> __s1,
+  ) {
+    return _strdup(
+      __s1,
+    );
+  }
+
+  late final _strdup_ptr = _lookup<ffi.NativeFunction<_c_strdup>>('strdup');
+  late final _dart_strdup _strdup = _strdup_ptr.asFunction<_dart_strdup>();
+
+  ffi.Pointer<ffi.Void> memccpy(
+    ffi.Pointer<ffi.Void> __dst,
+    ffi.Pointer<ffi.Void> __src,
+    int __c,
+    int __n,
+  ) {
+    return _memccpy(
+      __dst,
+      __src,
+      __c,
+      __n,
+    );
+  }
+
+  late final _memccpy_ptr = _lookup<ffi.NativeFunction<_c_memccpy>>('memccpy');
+  late final _dart_memccpy _memccpy = _memccpy_ptr.asFunction<_dart_memccpy>();
+
+  ffi.Pointer<ffi.Int8> stpcpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
+  ) {
+    return _stpcpy(
+      __dst,
+      __src,
+    );
+  }
+
+  late final _stpcpy_ptr = _lookup<ffi.NativeFunction<_c_stpcpy>>('stpcpy');
+  late final _dart_stpcpy _stpcpy = _stpcpy_ptr.asFunction<_dart_stpcpy>();
+
+  ffi.Pointer<ffi.Int8> stpncpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
+    int __n,
+  ) {
+    return _stpncpy(
+      __dst,
+      __src,
+      __n,
+    );
+  }
+
+  late final _stpncpy_ptr = _lookup<ffi.NativeFunction<_c_stpncpy>>('stpncpy');
+  late final _dart_stpncpy _stpncpy = _stpncpy_ptr.asFunction<_dart_stpncpy>();
+
+  ffi.Pointer<ffi.Int8> strndup(
+    ffi.Pointer<ffi.Int8> __s1,
+    int __n,
+  ) {
+    return _strndup(
+      __s1,
+      __n,
+    );
+  }
+
+  late final _strndup_ptr = _lookup<ffi.NativeFunction<_c_strndup>>('strndup');
+  late final _dart_strndup _strndup = _strndup_ptr.asFunction<_dart_strndup>();
+
+  int strnlen(
+    ffi.Pointer<ffi.Int8> __s1,
+    int __n,
+  ) {
+    return _strnlen(
+      __s1,
+      __n,
+    );
+  }
+
+  late final _strnlen_ptr = _lookup<ffi.NativeFunction<_c_strnlen>>('strnlen');
+  late final _dart_strnlen _strnlen = _strnlen_ptr.asFunction<_dart_strnlen>();
+
+  ffi.Pointer<ffi.Int8> strsignal(
+    int __sig,
+  ) {
+    return _strsignal(
+      __sig,
+    );
+  }
+
+  late final _strsignal_ptr =
+      _lookup<ffi.NativeFunction<_c_strsignal>>('strsignal');
+  late final _dart_strsignal _strsignal =
+      _strsignal_ptr.asFunction<_dart_strsignal>();
+
+  int memset_s(
+    ffi.Pointer<ffi.Void> __s,
+    int __smax,
+    int __c,
+    int __n,
+  ) {
+    return _memset_s(
+      __s,
+      __smax,
+      __c,
+      __n,
+    );
+  }
+
+  late final _memset_s_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_s>>('memset_s');
+  late final _dart_memset_s _memset_s =
+      _memset_s_ptr.asFunction<_dart_memset_s>();
+
+  ffi.Pointer<ffi.Void> memmem(
+    ffi.Pointer<ffi.Void> __big,
+    int __big_len,
+    ffi.Pointer<ffi.Void> __little,
+    int __little_len,
+  ) {
+    return _memmem(
+      __big,
+      __big_len,
+      __little,
+      __little_len,
+    );
+  }
+
+  late final _memmem_ptr = _lookup<ffi.NativeFunction<_c_memmem>>('memmem');
+  late final _dart_memmem _memmem = _memmem_ptr.asFunction<_dart_memmem>();
+
+  void memset_pattern4(
+    ffi.Pointer<ffi.Void> __b,
+    ffi.Pointer<ffi.Void> __pattern4,
+    int __len,
+  ) {
+    return _memset_pattern4(
+      __b,
+      __pattern4,
+      __len,
+    );
+  }
+
+  late final _memset_pattern4_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_pattern4>>('memset_pattern4');
+  late final _dart_memset_pattern4 _memset_pattern4 =
+      _memset_pattern4_ptr.asFunction<_dart_memset_pattern4>();
+
+  void memset_pattern8(
+    ffi.Pointer<ffi.Void> __b,
+    ffi.Pointer<ffi.Void> __pattern8,
+    int __len,
+  ) {
+    return _memset_pattern8(
+      __b,
+      __pattern8,
+      __len,
+    );
+  }
+
+  late final _memset_pattern8_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_pattern8>>('memset_pattern8');
+  late final _dart_memset_pattern8 _memset_pattern8 =
+      _memset_pattern8_ptr.asFunction<_dart_memset_pattern8>();
+
+  void memset_pattern16(
+    ffi.Pointer<ffi.Void> __b,
+    ffi.Pointer<ffi.Void> __pattern16,
+    int __len,
+  ) {
+    return _memset_pattern16(
+      __b,
+      __pattern16,
+      __len,
+    );
+  }
+
+  late final _memset_pattern16_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_pattern16>>('memset_pattern16');
+  late final _dart_memset_pattern16 _memset_pattern16 =
+      _memset_pattern16_ptr.asFunction<_dart_memset_pattern16>();
+
+  ffi.Pointer<ffi.Int8> strcasestr(
+    ffi.Pointer<ffi.Int8> __big,
+    ffi.Pointer<ffi.Int8> __little,
+  ) {
+    return _strcasestr(
+      __big,
+      __little,
+    );
+  }
+
+  late final _strcasestr_ptr =
+      _lookup<ffi.NativeFunction<_c_strcasestr>>('strcasestr');
+  late final _dart_strcasestr _strcasestr =
+      _strcasestr_ptr.asFunction<_dart_strcasestr>();
+
+  ffi.Pointer<ffi.Int8> strnstr(
+    ffi.Pointer<ffi.Int8> __big,
+    ffi.Pointer<ffi.Int8> __little,
+    int __len,
+  ) {
+    return _strnstr(
+      __big,
+      __little,
+      __len,
+    );
+  }
+
+  late final _strnstr_ptr = _lookup<ffi.NativeFunction<_c_strnstr>>('strnstr');
+  late final _dart_strnstr _strnstr = _strnstr_ptr.asFunction<_dart_strnstr>();
+
+  int strlcat(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __source,
+    int __size,
+  ) {
+    return _strlcat(
+      __dst,
+      __source,
+      __size,
+    );
+  }
+
+  late final _strlcat_ptr = _lookup<ffi.NativeFunction<_c_strlcat>>('strlcat');
+  late final _dart_strlcat _strlcat = _strlcat_ptr.asFunction<_dart_strlcat>();
+
+  int strlcpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __source,
+    int __size,
+  ) {
+    return _strlcpy(
+      __dst,
+      __source,
+      __size,
+    );
+  }
+
+  late final _strlcpy_ptr = _lookup<ffi.NativeFunction<_c_strlcpy>>('strlcpy');
+  late final _dart_strlcpy _strlcpy = _strlcpy_ptr.asFunction<_dart_strlcpy>();
+
+  void strmode(
+    int __mode,
+    ffi.Pointer<ffi.Int8> __bp,
+  ) {
+    return _strmode(
+      __mode,
+      __bp,
+    );
+  }
+
+  late final _strmode_ptr = _lookup<ffi.NativeFunction<_c_strmode>>('strmode');
+  late final _dart_strmode _strmode = _strmode_ptr.asFunction<_dart_strmode>();
+
+  ffi.Pointer<ffi.Int8> strsep(
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
+    ffi.Pointer<ffi.Int8> __delim,
+  ) {
+    return _strsep(
+      __stringp,
+      __delim,
+    );
+  }
+
+  late final _strsep_ptr = _lookup<ffi.NativeFunction<_c_strsep>>('strsep');
+  late final _dart_strsep _strsep = _strsep_ptr.asFunction<_dart_strsep>();
+
+  void swab(
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _swab(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _swab_ptr = _lookup<ffi.NativeFunction<_c_swab>>('swab');
+  late final _dart_swab _swab = _swab_ptr.asFunction<_dart_swab>();
+
+  int timingsafe_bcmp(
+    ffi.Pointer<ffi.Void> __b1,
+    ffi.Pointer<ffi.Void> __b2,
+    int __len,
+  ) {
+    return _timingsafe_bcmp(
+      __b1,
+      __b2,
+      __len,
+    );
+  }
+
+  late final _timingsafe_bcmp_ptr =
+      _lookup<ffi.NativeFunction<_c_timingsafe_bcmp>>('timingsafe_bcmp');
+  late final _dart_timingsafe_bcmp _timingsafe_bcmp =
+      _timingsafe_bcmp_ptr.asFunction<_dart_timingsafe_bcmp>();
+
+  int strsignal_r(
+    int __sig,
+    ffi.Pointer<ffi.Int8> __strsignalbuf,
+    int __buflen,
+  ) {
+    return _strsignal_r(
+      __sig,
+      __strsignalbuf,
+      __buflen,
+    );
+  }
+
+  late final _strsignal_r_ptr =
+      _lookup<ffi.NativeFunction<_c_strsignal_r>>('strsignal_r');
+  late final _dart_strsignal_r _strsignal_r =
+      _strsignal_r_ptr.asFunction<_dart_strsignal_r>();
+
+  int bcmp(
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _bcmp(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _bcmp_ptr = _lookup<ffi.NativeFunction<_c_bcmp>>('bcmp');
+  late final _dart_bcmp _bcmp = _bcmp_ptr.asFunction<_dart_bcmp>();
+
+  void bcopy(
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _bcopy(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _bcopy_ptr = _lookup<ffi.NativeFunction<_c_bcopy>>('bcopy');
+  late final _dart_bcopy _bcopy = _bcopy_ptr.asFunction<_dart_bcopy>();
+
+  void bzero(
+    ffi.Pointer<ffi.Void> arg0,
+    int arg1,
+  ) {
+    return _bzero(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _bzero_ptr = _lookup<ffi.NativeFunction<_c_bzero>>('bzero');
+  late final _dart_bzero _bzero = _bzero_ptr.asFunction<_dart_bzero>();
+
+  ffi.Pointer<ffi.Int8> index(
+    ffi.Pointer<ffi.Int8> arg0,
+    int arg1,
+  ) {
+    return _index(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _index_ptr = _lookup<ffi.NativeFunction<_c_index>>('index');
+  late final _dart_index _index = _index_ptr.asFunction<_dart_index>();
+
+  ffi.Pointer<ffi.Int8> rindex(
+    ffi.Pointer<ffi.Int8> arg0,
+    int arg1,
+  ) {
+    return _rindex(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _rindex_ptr = _lookup<ffi.NativeFunction<_c_rindex>>('rindex');
+  late final _dart_rindex _rindex = _rindex_ptr.asFunction<_dart_rindex>();
+
+  int ffs(
+    int arg0,
+  ) {
+    return _ffs(
+      arg0,
+    );
+  }
+
+  late final _ffs_ptr = _lookup<ffi.NativeFunction<_c_ffs>>('ffs');
+  late final _dart_ffs _ffs = _ffs_ptr.asFunction<_dart_ffs>();
+
+  int strcasecmp(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<ffi.Int8> arg1,
+  ) {
+    return _strcasecmp(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _strcasecmp_ptr =
+      _lookup<ffi.NativeFunction<_c_strcasecmp>>('strcasecmp');
+  late final _dart_strcasecmp _strcasecmp =
+      _strcasecmp_ptr.asFunction<_dart_strcasecmp>();
+
+  int strncasecmp(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<ffi.Int8> arg1,
+    int arg2,
+  ) {
+    return _strncasecmp(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _strncasecmp_ptr =
+      _lookup<ffi.NativeFunction<_c_strncasecmp>>('strncasecmp');
+  late final _dart_strncasecmp _strncasecmp =
+      _strncasecmp_ptr.asFunction<_dart_strncasecmp>();
+
+  int ffsl(
+    int arg0,
+  ) {
+    return _ffsl(
+      arg0,
+    );
+  }
+
+  late final _ffsl_ptr = _lookup<ffi.NativeFunction<_c_ffsl>>('ffsl');
+  late final _dart_ffsl _ffsl = _ffsl_ptr.asFunction<_dart_ffsl>();
+
+  int ffsll(
+    int arg0,
+  ) {
+    return _ffsll(
+      arg0,
+    );
+  }
+
+  late final _ffsll_ptr = _lookup<ffi.NativeFunction<_c_ffsll>>('ffsll');
+  late final _dart_ffsll _ffsll = _ffsll_ptr.asFunction<_dart_ffsll>();
+
+  int fls(
+    int arg0,
+  ) {
+    return _fls(
+      arg0,
+    );
+  }
+
+  late final _fls_ptr = _lookup<ffi.NativeFunction<_c_fls>>('fls');
+  late final _dart_fls _fls = _fls_ptr.asFunction<_dart_fls>();
+
+  int flsl(
+    int arg0,
+  ) {
+    return _flsl(
+      arg0,
+    );
+  }
+
+  late final _flsl_ptr = _lookup<ffi.NativeFunction<_c_flsl>>('flsl');
+  late final _dart_flsl _flsl = _flsl_ptr.asFunction<_dart_flsl>();
+
+  int flsll(
+    int arg0,
+  ) {
+    return _flsll(
+      arg0,
+    );
+  }
+
+  late final _flsll_ptr = _lookup<ffi.NativeFunction<_c_flsll>>('flsll');
+  late final _dart_flsll _flsll = _flsll_ptr.asFunction<_dart_flsll>();
+
+  AudioDeviceInfoList labSoundMakeAudioDeviceList() {
+    return _labSoundMakeAudioDeviceList();
+  }
+
+  late final _labSoundMakeAudioDeviceList_ptr =
+      _lookup<ffi.NativeFunction<_c_labSoundMakeAudioDeviceList>>(
+          'labSoundMakeAudioDeviceList');
+  late final _dart_labSoundMakeAudioDeviceList _labSoundMakeAudioDeviceList =
+      _labSoundMakeAudioDeviceList_ptr
+          .asFunction<_dart_labSoundMakeAudioDeviceList>();
+
   /// /////////
   /// PORT ///
   /// /////////
@@ -3001,6 +3832,61 @@ class _opaque_pthread_t extends ffi.Struct {
   external ffi.Array<ffi.Int8> __opaque;
 }
 
+class CharArray extends ffi.Struct {
+  external ffi.Pointer<ffi.Int8> string;
+
+  @ffi.Int32()
+  external int len;
+}
+
+class FloatArray extends ffi.Struct {
+  external ffi.Pointer<ffi.Float> array;
+
+  @ffi.Int32()
+  external int len;
+}
+
+class IntArray extends ffi.Struct {
+  external ffi.Pointer<ffi.Int32> array;
+
+  @ffi.Int32()
+  external int len;
+}
+
+class AudioDeviceInfoBridge extends ffi.Struct {
+  @ffi.Int32()
+  external int index;
+
+  external ffi.Pointer<ffi.Int8> identifier;
+
+  @ffi.Int32()
+  external int identifier_len;
+
+  @ffi.Int32()
+  external int num_output_channels;
+
+  @ffi.Int32()
+  external int num_input_channels;
+
+  external FloatArray supported_samplerates;
+
+  @ffi.Float()
+  external double nominal_samplerate;
+
+  @ffi.Int32()
+  external int is_default_output;
+
+  @ffi.Int32()
+  external int is_default_input;
+}
+
+class AudioDeviceInfoList extends ffi.Struct {
+  external ffi.Pointer<AudioDeviceInfoBridge> audioDeviceList;
+
+  @ffi.Int32()
+  external int length;
+}
+
 class AudioStreamConfig extends ffi.Struct {
   @ffi.Int32()
   external int device_index;
@@ -3175,6 +4061,1000 @@ const int WINT_MAX = 2147483647;
 const int SIG_ATOMIC_MIN = -2147483648;
 
 const int SIG_ATOMIC_MAX = 2147483647;
+
+const int __DARWIN_WCHAR_MAX = 2147483647;
+
+const int __DARWIN_WCHAR_MIN = -2147483648;
+
+const int __DARWIN_WEOF = -1;
+
+const int _FORTIFY_SOURCE = 2;
+
+const int __API_TO_BE_DEPRECATED = 100000;
+
+const int __MAC_10_0 = 1000;
+
+const int __MAC_10_1 = 1010;
+
+const int __MAC_10_2 = 1020;
+
+const int __MAC_10_3 = 1030;
+
+const int __MAC_10_4 = 1040;
+
+const int __MAC_10_5 = 1050;
+
+const int __MAC_10_6 = 1060;
+
+const int __MAC_10_7 = 1070;
+
+const int __MAC_10_8 = 1080;
+
+const int __MAC_10_9 = 1090;
+
+const int __MAC_10_10 = 101000;
+
+const int __MAC_10_10_2 = 101002;
+
+const int __MAC_10_10_3 = 101003;
+
+const int __MAC_10_11 = 101100;
+
+const int __MAC_10_11_2 = 101102;
+
+const int __MAC_10_11_3 = 101103;
+
+const int __MAC_10_11_4 = 101104;
+
+const int __MAC_10_12 = 101200;
+
+const int __MAC_10_12_1 = 101201;
+
+const int __MAC_10_12_2 = 101202;
+
+const int __MAC_10_12_4 = 101204;
+
+const int __MAC_10_13 = 101300;
+
+const int __MAC_10_13_1 = 101301;
+
+const int __MAC_10_13_2 = 101302;
+
+const int __MAC_10_13_4 = 101304;
+
+const int __MAC_10_14 = 101400;
+
+const int __MAC_10_14_1 = 101401;
+
+const int __MAC_10_14_4 = 101404;
+
+const int __MAC_10_14_6 = 101406;
+
+const int __MAC_10_15 = 101500;
+
+const int __MAC_10_15_1 = 101501;
+
+const int __MAC_10_15_4 = 101504;
+
+const int __MAC_10_16 = 101600;
+
+const int __MAC_11_0 = 110000;
+
+const int __MAC_11_1 = 110100;
+
+const int __MAC_11_3 = 110300;
+
+const int __IPHONE_2_0 = 20000;
+
+const int __IPHONE_2_1 = 20100;
+
+const int __IPHONE_2_2 = 20200;
+
+const int __IPHONE_3_0 = 30000;
+
+const int __IPHONE_3_1 = 30100;
+
+const int __IPHONE_3_2 = 30200;
+
+const int __IPHONE_4_0 = 40000;
+
+const int __IPHONE_4_1 = 40100;
+
+const int __IPHONE_4_2 = 40200;
+
+const int __IPHONE_4_3 = 40300;
+
+const int __IPHONE_5_0 = 50000;
+
+const int __IPHONE_5_1 = 50100;
+
+const int __IPHONE_6_0 = 60000;
+
+const int __IPHONE_6_1 = 60100;
+
+const int __IPHONE_7_0 = 70000;
+
+const int __IPHONE_7_1 = 70100;
+
+const int __IPHONE_8_0 = 80000;
+
+const int __IPHONE_8_1 = 80100;
+
+const int __IPHONE_8_2 = 80200;
+
+const int __IPHONE_8_3 = 80300;
+
+const int __IPHONE_8_4 = 80400;
+
+const int __IPHONE_9_0 = 90000;
+
+const int __IPHONE_9_1 = 90100;
+
+const int __IPHONE_9_2 = 90200;
+
+const int __IPHONE_9_3 = 90300;
+
+const int __IPHONE_10_0 = 100000;
+
+const int __IPHONE_10_1 = 100100;
+
+const int __IPHONE_10_2 = 100200;
+
+const int __IPHONE_10_3 = 100300;
+
+const int __IPHONE_11_0 = 110000;
+
+const int __IPHONE_11_1 = 110100;
+
+const int __IPHONE_11_2 = 110200;
+
+const int __IPHONE_11_3 = 110300;
+
+const int __IPHONE_11_4 = 110400;
+
+const int __IPHONE_12_0 = 120000;
+
+const int __IPHONE_12_1 = 120100;
+
+const int __IPHONE_12_2 = 120200;
+
+const int __IPHONE_12_3 = 120300;
+
+const int __IPHONE_12_4 = 120400;
+
+const int __IPHONE_13_0 = 130000;
+
+const int __IPHONE_13_1 = 130100;
+
+const int __IPHONE_13_2 = 130200;
+
+const int __IPHONE_13_3 = 130300;
+
+const int __IPHONE_13_4 = 130400;
+
+const int __IPHONE_13_5 = 130500;
+
+const int __IPHONE_13_6 = 130600;
+
+const int __IPHONE_13_7 = 130700;
+
+const int __IPHONE_14_0 = 140000;
+
+const int __IPHONE_14_1 = 140100;
+
+const int __IPHONE_14_2 = 140200;
+
+const int __IPHONE_14_3 = 140300;
+
+const int __IPHONE_14_5 = 140500;
+
+const int __TVOS_9_0 = 90000;
+
+const int __TVOS_9_1 = 90100;
+
+const int __TVOS_9_2 = 90200;
+
+const int __TVOS_10_0 = 100000;
+
+const int __TVOS_10_0_1 = 100001;
+
+const int __TVOS_10_1 = 100100;
+
+const int __TVOS_10_2 = 100200;
+
+const int __TVOS_11_0 = 110000;
+
+const int __TVOS_11_1 = 110100;
+
+const int __TVOS_11_2 = 110200;
+
+const int __TVOS_11_3 = 110300;
+
+const int __TVOS_11_4 = 110400;
+
+const int __TVOS_12_0 = 120000;
+
+const int __TVOS_12_1 = 120100;
+
+const int __TVOS_12_2 = 120200;
+
+const int __TVOS_12_3 = 120300;
+
+const int __TVOS_12_4 = 120400;
+
+const int __TVOS_13_0 = 130000;
+
+const int __TVOS_13_2 = 130200;
+
+const int __TVOS_13_3 = 130300;
+
+const int __TVOS_13_4 = 130400;
+
+const int __TVOS_14_0 = 140000;
+
+const int __TVOS_14_1 = 140100;
+
+const int __TVOS_14_2 = 140200;
+
+const int __TVOS_14_3 = 140300;
+
+const int __TVOS_14_5 = 140500;
+
+const int __WATCHOS_1_0 = 10000;
+
+const int __WATCHOS_2_0 = 20000;
+
+const int __WATCHOS_2_1 = 20100;
+
+const int __WATCHOS_2_2 = 20200;
+
+const int __WATCHOS_3_0 = 30000;
+
+const int __WATCHOS_3_1 = 30100;
+
+const int __WATCHOS_3_1_1 = 30101;
+
+const int __WATCHOS_3_2 = 30200;
+
+const int __WATCHOS_4_0 = 40000;
+
+const int __WATCHOS_4_1 = 40100;
+
+const int __WATCHOS_4_2 = 40200;
+
+const int __WATCHOS_4_3 = 40300;
+
+const int __WATCHOS_5_0 = 50000;
+
+const int __WATCHOS_5_1 = 50100;
+
+const int __WATCHOS_5_2 = 50200;
+
+const int __WATCHOS_5_3 = 50300;
+
+const int __WATCHOS_6_0 = 60000;
+
+const int __WATCHOS_6_1 = 60100;
+
+const int __WATCHOS_6_2 = 60200;
+
+const int __WATCHOS_7_0 = 70000;
+
+const int __WATCHOS_7_1 = 70100;
+
+const int __WATCHOS_7_2 = 70200;
+
+const int __WATCHOS_7_3 = 70300;
+
+const int __WATCHOS_7_4 = 70400;
+
+const int MAC_OS_X_VERSION_10_0 = 1000;
+
+const int MAC_OS_X_VERSION_10_1 = 1010;
+
+const int MAC_OS_X_VERSION_10_2 = 1020;
+
+const int MAC_OS_X_VERSION_10_3 = 1030;
+
+const int MAC_OS_X_VERSION_10_4 = 1040;
+
+const int MAC_OS_X_VERSION_10_5 = 1050;
+
+const int MAC_OS_X_VERSION_10_6 = 1060;
+
+const int MAC_OS_X_VERSION_10_7 = 1070;
+
+const int MAC_OS_X_VERSION_10_8 = 1080;
+
+const int MAC_OS_X_VERSION_10_9 = 1090;
+
+const int MAC_OS_X_VERSION_10_10 = 101000;
+
+const int MAC_OS_X_VERSION_10_10_2 = 101002;
+
+const int MAC_OS_X_VERSION_10_10_3 = 101003;
+
+const int MAC_OS_X_VERSION_10_11 = 101100;
+
+const int MAC_OS_X_VERSION_10_11_2 = 101102;
+
+const int MAC_OS_X_VERSION_10_11_3 = 101103;
+
+const int MAC_OS_X_VERSION_10_11_4 = 101104;
+
+const int MAC_OS_X_VERSION_10_12 = 101200;
+
+const int MAC_OS_X_VERSION_10_12_1 = 101201;
+
+const int MAC_OS_X_VERSION_10_12_2 = 101202;
+
+const int MAC_OS_X_VERSION_10_12_4 = 101204;
+
+const int MAC_OS_X_VERSION_10_13 = 101300;
+
+const int MAC_OS_X_VERSION_10_13_1 = 101301;
+
+const int MAC_OS_X_VERSION_10_13_2 = 101302;
+
+const int MAC_OS_X_VERSION_10_13_4 = 101304;
+
+const int MAC_OS_X_VERSION_10_14 = 101400;
+
+const int MAC_OS_X_VERSION_10_14_1 = 101401;
+
+const int MAC_OS_X_VERSION_10_14_4 = 101404;
+
+const int MAC_OS_X_VERSION_10_14_6 = 101406;
+
+const int MAC_OS_X_VERSION_10_15 = 101500;
+
+const int MAC_OS_X_VERSION_10_15_1 = 101501;
+
+const int MAC_OS_X_VERSION_10_16 = 101600;
+
+const int MAC_OS_VERSION_11_0 = 110000;
+
+const int __DRIVERKIT_19_0 = 190000;
+
+const int __DRIVERKIT_20_0 = 200000;
+
+const int __MAC_OS_X_VERSION_MIN_REQUIRED = 101600;
+
+const int __MAC_OS_X_VERSION_MAX_ALLOWED = 110300;
+
+const int __ENABLE_LEGACY_MAC_AVAILABILITY = 1;
+
+const int NULL = 0;
+
+const int true_1 = 1;
+
+const int false_1 = 0;
+
+const int __bool_true_false_are_defined = 1;
+
+typedef _c_memchr = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __s,
+  ffi.Int32 __c,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_memchr = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __s,
+  int __c,
+  int __n,
+);
+
+typedef _c_memcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> __s1,
+  ffi.Pointer<ffi.Void> __s2,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_memcmp = int Function(
+  ffi.Pointer<ffi.Void> __s1,
+  ffi.Pointer<ffi.Void> __s2,
+  int __n,
+);
+
+typedef _c_memcpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_memcpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  int __n,
+);
+
+typedef _c_memmove = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memmove = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  int __len,
+);
+
+typedef _c_memset = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Int32 __c,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __b,
+  int __c,
+  int __len,
+);
+
+typedef _c_strcat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _dart_strcat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _c_strchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Int32 __c,
+);
+
+typedef _dart_strchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  int __c,
+);
+
+typedef _c_strcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _dart_strcmp = int Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _c_strcoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _dart_strcoll = int Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _c_strcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+);
+
+typedef _dart_strcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+);
+
+typedef _c_strcspn = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _dart_strcspn = int Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _c_strerror = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 __errnum,
+);
+
+typedef _dart_strerror = ffi.Pointer<ffi.Int8> Function(
+  int __errnum,
+);
+
+typedef _c_strlen = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __s,
+);
+
+typedef _dart_strlen = int Function(
+  ffi.Pointer<ffi.Int8> __s,
+);
+
+typedef _c_strncat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_strncat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  int __n,
+);
+
+typedef _c_strncmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_strncmp = int Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  int __n,
+);
+
+typedef _c_strncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_strncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  int __n,
+);
+
+typedef _c_strpbrk = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _dart_strpbrk = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _c_strrchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Int32 __c,
+);
+
+typedef _dart_strrchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  int __c,
+);
+
+typedef _c_strspn = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _dart_strspn = int Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _c_strstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _dart_strstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _c_strtok = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
+);
+
+typedef _dart_strtok = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
+);
+
+typedef _c_strxfrm = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_strxfrm = int Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  int __n,
+);
+
+typedef _c_strtok_r = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
+);
+
+typedef _dart_strtok_r = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
+);
+
+typedef _c_strerror_r = ffi.Int32 Function(
+  ffi.Int32 __errnum,
+  ffi.Pointer<ffi.Int8> __strerrbuf,
+  ffi.Uint64 __buflen,
+);
+
+typedef _dart_strerror_r = int Function(
+  int __errnum,
+  ffi.Pointer<ffi.Int8> __strerrbuf,
+  int __buflen,
+);
+
+typedef _c_strdup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+);
+
+typedef _dart_strdup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+);
+
+typedef _c_memccpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  ffi.Int32 __c,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_memccpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  int __c,
+  int __n,
+);
+
+typedef _c_stpcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+);
+
+typedef _dart_stpcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+);
+
+typedef _c_stpncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_stpncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  int __n,
+);
+
+typedef _c_strndup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_strndup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  int __n,
+);
+
+typedef _c_strnlen = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_strnlen = int Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  int __n,
+);
+
+typedef _c_strsignal = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 __sig,
+);
+
+typedef _dart_strsignal = ffi.Pointer<ffi.Int8> Function(
+  int __sig,
+);
+
+typedef _c_memset_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> __s,
+  ffi.Uint64 __smax,
+  ffi.Int32 __c,
+  ffi.Uint64 __n,
+);
+
+typedef _dart_memset_s = int Function(
+  ffi.Pointer<ffi.Void> __s,
+  int __smax,
+  int __c,
+  int __n,
+);
+
+typedef _c_memmem = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __big,
+  ffi.Uint64 __big_len,
+  ffi.Pointer<ffi.Void> __little,
+  ffi.Uint64 __little_len,
+);
+
+typedef _dart_memmem = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __big,
+  int __big_len,
+  ffi.Pointer<ffi.Void> __little,
+  int __little_len,
+);
+
+typedef _c_memset_pattern4 = ffi.Void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern4,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset_pattern4 = void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern4,
+  int __len,
+);
+
+typedef _c_memset_pattern8 = ffi.Void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern8,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset_pattern8 = void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern8,
+  int __len,
+);
+
+typedef _c_memset_pattern16 = ffi.Void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern16,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset_pattern16 = void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern16,
+  int __len,
+);
+
+typedef _c_strcasestr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _dart_strcasestr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _c_strnstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_strnstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+  int __len,
+);
+
+typedef _c_strlcat = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  ffi.Uint64 __size,
+);
+
+typedef _dart_strlcat = int Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  int __size,
+);
+
+typedef _c_strlcpy = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  ffi.Uint64 __size,
+);
+
+typedef _dart_strlcpy = int Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  int __size,
+);
+
+typedef _c_strmode = ffi.Void Function(
+  ffi.Int32 __mode,
+  ffi.Pointer<ffi.Int8> __bp,
+);
+
+typedef _dart_strmode = void Function(
+  int __mode,
+  ffi.Pointer<ffi.Int8> __bp,
+);
+
+typedef _c_strsep = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
+  ffi.Pointer<ffi.Int8> __delim,
+);
+
+typedef _dart_strsep = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
+  ffi.Pointer<ffi.Int8> __delim,
+);
+
+typedef _c_swab = ffi.Void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  ffi.Int64 arg2,
+);
+
+typedef _dart_swab = void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  int arg2,
+);
+
+typedef _c_timingsafe_bcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> __b1,
+  ffi.Pointer<ffi.Void> __b2,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_timingsafe_bcmp = int Function(
+  ffi.Pointer<ffi.Void> __b1,
+  ffi.Pointer<ffi.Void> __b2,
+  int __len,
+);
+
+typedef _c_strsignal_r = ffi.Int32 Function(
+  ffi.Int32 __sig,
+  ffi.Pointer<ffi.Int8> __strsignalbuf,
+  ffi.Uint64 __buflen,
+);
+
+typedef _dart_strsignal_r = int Function(
+  int __sig,
+  ffi.Pointer<ffi.Int8> __strsignalbuf,
+  int __buflen,
+);
+
+typedef _c_bcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  ffi.Uint64 arg2,
+);
+
+typedef _dart_bcmp = int Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  int arg2,
+);
+
+typedef _c_bcopy = ffi.Void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  ffi.Uint64 arg2,
+);
+
+typedef _dart_bcopy = void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  int arg2,
+);
+
+typedef _c_bzero = ffi.Void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Uint64 arg1,
+);
+
+typedef _dart_bzero = void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  int arg1,
+);
+
+typedef _c_index = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Int32 arg1,
+);
+
+typedef _dart_index = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  int arg1,
+);
+
+typedef _c_rindex = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Int32 arg1,
+);
+
+typedef _dart_rindex = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  int arg1,
+);
+
+typedef _c_ffs = ffi.Int32 Function(
+  ffi.Int32 arg0,
+);
+
+typedef _dart_ffs = int Function(
+  int arg0,
+);
+
+typedef _c_strcasecmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+);
+
+typedef _dart_strcasecmp = int Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+);
+
+typedef _c_strncasecmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+  ffi.Uint64 arg2,
+);
+
+typedef _dart_strncasecmp = int Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+  int arg2,
+);
+
+typedef _c_ffsl = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_ffsl = int Function(
+  int arg0,
+);
+
+typedef _c_ffsll = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_ffsll = int Function(
+  int arg0,
+);
+
+typedef _c_fls = ffi.Int32 Function(
+  ffi.Int32 arg0,
+);
+
+typedef _dart_fls = int Function(
+  int arg0,
+);
+
+typedef _c_flsl = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_flsl = int Function(
+  int arg0,
+);
+
+typedef _c_flsll = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_flsll = int Function(
+  int arg0,
+);
+
+typedef _c_labSoundMakeAudioDeviceList = AudioDeviceInfoList Function();
+
+typedef _dart_labSoundMakeAudioDeviceList = AudioDeviceInfoList Function();
 
 typedef _c_InitDartApiDL = ffi.IntPtr Function(
   ffi.Pointer<ffi.Void> data,
