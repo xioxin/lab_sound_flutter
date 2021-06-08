@@ -1,3 +1,4 @@
 [submodule "LabSound"]
 	path = LabSound
 	url = https://github.com/xioxin/LabSound.git
+	branch = sound
