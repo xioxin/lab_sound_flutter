@@ -218,7 +218,7 @@ class PlayerNode extends GainNode {
   }
 
 
-  Duration? get position {
+  Duration get position {
     if(status == PlayerNodeStatus.pause) {
       return pausePosition ?? Duration.zero;
     }
@@ -231,17 +231,11 @@ class PlayerNode extends GainNode {
     if((_sample?.playbackState == SchedulingState.SCHEDULED) && pausePosition != null) {
       return pausePosition!;
     }
-    if(_sample?.position?.inMilliseconds == 0) {
-      /*
-      * this.resource == null ? null : Duration(milliseconds: (this.cursor / this.resource!.sampleRate * 1000).toInt())
-      * */
-      print('_sample.playbackState: ${_sample?.playbackState}, ${_sample?.cursor}, ${this.resource!.sampleRate}');
-    }
     final pos = _sample?.position;
     if(_sample?.playbackState != SchedulingState.PLAYING && pos == null && pausePosition != null) {
       return pausePosition;
     }
-    return pos;
+    return pos ?? Duration.zero;
   }
 
   bool get playing => status == PlayerNodeStatus.playing;
