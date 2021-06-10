@@ -22,29 +22,39 @@ int keepBus(std::shared_ptr<AudioBus> audioBus) {
     return busId;
 }
 
-void decodeAudioDataRun(const int id, const char *file)
+void makeBusFromFileRun(const int id, const char *file, bool mixToMono, float targetSampleRate)
 {
-    std::shared_ptr<AudioBus> audioBus = MakeBusFromFile(file, false);
+    std::shared_ptr<AudioBus> audioBus = targetSampleRate == 0. ? MakeBusFromFile(file, mixToMono) : MakeBusFromFile(file, mixToMono, targetSampleRate);
     audioBuffers.insert(std::pair<int,std::shared_ptr<AudioBus>>(id, audioBus));
     sendAudioAusStatus(id, 1);
 	return;
 }
 
-DART_EXPORT int decodeAudioData(const char *file) {
-    int busId = bufferCount++;
-    std::thread makeBus(decodeAudioDataRun, busId, file);
-    makeBus.join();
-    return busId;
+void makeBusFromMemoryRun(const int id, const uint8_t* buffer, const int bufferLen, const char* extension, int mixToMono)
+{
+    std::vector<uint8_t> vecBuffer(buffer, buffer + bufferLen);
+    std::string extensionStr(extension);
+    std::shared_ptr<AudioBus> audioBus = extensionStr.length() == 0 ? MakeBusFromMemory(vecBuffer, mixToMono > 0) : MakeBusFromMemory(vecBuffer, extensionStr, mixToMono > 0);
+    audioBuffers.insert(std::pair<int,std::shared_ptr<AudioBus>>(id, audioBus));
+    sendAudioAusStatus(id, 1);
+	return;
 }
 
-DART_EXPORT int decodeAudioDataAsync(const char *file) {
+DART_EXPORT int makeBusFromFile(const char* file, int mixToMono, float targetSampleRate) {
     int busId = bufferCount++;
-    std::thread makeBus(decodeAudioDataRun, busId, file);
+    std::thread makeBus(makeBusFromFileRun, busId, file, mixToMono > 0, targetSampleRate);
     makeBus.detach();
     return busId;
 }
 
-DART_EXPORT int decodeAudioDataHasCheck(int busId) {
+DART_EXPORT int makeBusFromMemory(const uint8_t* buffer, const int bufferLen, const char *extension, int mixToMono) {
+    int busId = bufferCount++;
+    std::thread makeBus(makeBusFromMemoryRun, busId, buffer, bufferLen, extension, mixToMono);
+    makeBus.detach();
+    return busId;
+}
+
+DART_EXPORT int audioBusHasCheck(int busId) {
     std::map<int,std::shared_ptr<AudioBus>>::iterator ite = audioBuffers.find(busId);
     if(ite != audioBuffers.end()){
         if(ite->second) {

@@ -207,9 +207,7 @@ class PlayerNode extends GainNode {
       }
       return false;
     })
-        .map((event) => this.position)
-        .where((event) => event != null)
-        .map((event) => event!);
+        .map((event) => this.position);
   }
 
   Stream<SchedulingState?> get onSamplePlaybackState {
@@ -218,24 +216,22 @@ class PlayerNode extends GainNode {
   }
 
 
+  Duration? _lastPosition;
   Duration get position {
-    if(status == PlayerNodeStatus.pause) {
-      return pausePosition ?? Duration.zero;
+    Duration? pos = _sample?.position;
+    if (status == PlayerNodeStatus.pause) {
+      pos = pausePosition ?? Duration.zero;
+    } else if (status == PlayerNodeStatus.ended) {
+      pos = resource?.duration ?? Duration.zero;
+    } else if (_sample == null){
+      pos = Duration.zero;
+    } else if ((_sample?.playbackState == SchedulingState.SCHEDULED) && pausePosition != null) {
+      pos = pausePosition;
+    } else if (_sample?.playbackState != SchedulingState.PLAYING && pos == null && pausePosition != null) {
+      pos = pausePosition;
     }
-    if(status == PlayerNodeStatus.ended) {
-      return resource?.duration ?? Duration.zero;
-    }
-    if(_sample == null){
-      return Duration.zero;
-    }
-    if((_sample?.playbackState == SchedulingState.SCHEDULED) && pausePosition != null) {
-      return pausePosition!;
-    }
-    final pos = _sample?.position;
-    if(_sample?.playbackState != SchedulingState.PLAYING && pos == null && pausePosition != null) {
-      return pausePosition;
-    }
-    return pos ?? Duration.zero;
+    if(pos != null) _lastPosition = pos;
+    return pos ?? _lastPosition ?? Duration.zero;
   }
 
   bool get playing => status == PlayerNodeStatus.playing;
