@@ -226,11 +226,11 @@ int SampledAudioNode_detune(int index);
 /// AudioBus ///
 ////////////////
 
-int decodeAudioData(const char *file);
+int makeBusFromFile(const char *file, int mixToMono, float targetSampleRate);
 
-int decodeAudioDataAsync(const char *file);
+int makeBusFromMemory(const uint8_t* buffer, const int bufferLen, const char *extension, int mixToMono);
 
-int decodeAudioDataHasCheck(int busIndex);
+int audioBusHasCheck(int busId);
 
 // Channels
 int AudioBus_numberOfChannels(int busIndex);
@@ -465,3 +465,36 @@ int DynamicsCompressorNode_release(int nodeId);
 
 // Amount by which the compressor is currently compressing the signal in decibels.
 int DynamicsCompressorNode_reduction(int nodeId);
+
+
+
+////////////////
+/// ADSRNode ///
+////////////////
+
+
+int createADSRNode(AudioContext* context);
+
+// gate signal
+int ADSRNode_gate(int nodeId);
+
+// If zero, gate controls attack and sustain, else sustainTime controls sustain
+int ADSRNode_oneShot(int nodeId);
+
+// Duration in seconds
+int ADSRNode_attackTime(int nodeId);
+
+// Level
+int ADSRNode_attackLevel(int nodeId);
+
+// Duration in seconds
+int ADSRNode_decayTime(int nodeId);
+
+// Duration in seconds
+int ADSRNode_sustainTime(int nodeId);
+
+// Level
+int ADSRNode_sustainLevel(int nodeId);
+
+// Duration in seconds
+int ADSRNode_releaseTime(int nodeId);

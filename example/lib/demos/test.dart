@@ -49,7 +49,7 @@ class _TestPageState extends State<TestPage> {
   }
 
   initPlayer() async {
-    audioBus = await AudioBus.async(this.stereoMusicClipPath);
+    audioBus = await AudioBus.fromFile(this.stereoMusicClipPath);
     audioNode = AudioSampleNode(audioContext, resource: audioBus);
     // analyserNode = AnalyserNode(audioContext, fftSize: 2080);
     // gain = GainNode(audioContext);
@@ -60,7 +60,6 @@ class _TestPageState extends State<TestPage> {
       loaded = true;
     });
   }
-
   AnalyserBuffer<int>? testAnalyser;
 
 
