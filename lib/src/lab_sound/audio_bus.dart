@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:ffi';
+import 'dart:typed_data';
 import 'package:ffi/ffi.dart';
 import 'package:path/path.dart';
 import '../extensions/ffi_string.dart';
@@ -18,28 +19,58 @@ class AudioBus {
   Future<AudioBus>? complete;
 
   StreamSubscription? _statusStreamSubscription;
-  AudioBus(this.filePath , {this.autoDispose = false, this.debugName}): resourceId = LabSound().decodeAudioData(filePath.toInt8()) {
-    loaded = true;
-  }
-
-  static Future<AudioBus> async(String filePath, {autoDispose = false, String? debugName}) {
-    debugName ??= basename(filePath);
-    final bus = AudioBus.asyncLoad(filePath, autoDispose: autoDispose, debugName: debugName);
-    return bus.complete!;
-  }
-
-  AudioBus.fromId(this.resourceId, {this.autoDispose = false, this.debugName}): filePath = '';
-
-  AudioBus.asyncLoad(this.filePath, {this.autoDispose = false, this.debugName}): resourceId = LabSound().decodeAudioDataAsync(filePath.toInt8()) {
+  AudioBus._loadByFile(this.filePath, {
+    this.autoDispose = false,
+    this.debugName,
+    bool mixToMono = false,
+    double targetSampleRate = 0.0
+  }): resourceId = LabSound().makeBusFromFile(filePath.toInt8(), mixToMono ? 1 : 0, targetSampleRate) {
     debugName ??= basename(filePath);
     Completer<AudioBus> _loadCompleter = Completer();
+    complete = _loadCompleter.future;
     _statusStreamSubscription = LabSound().onAudioBusStatus.where((event) => event.busId == this.resourceId).listen((event) {
       if(event.decoded) {
+        loaded = true;
         _loadCompleter.complete(this);
       }
     });
-    complete = _loadCompleter.future;
   }
+  AudioBus._loadByBuffer(Pointer<Uint8> bufferPtr, int bufferLen, {
+    String extension = '',
+    this.autoDispose = false,
+    this.debugName,
+    bool mixToMono = false,
+  }):filePath = '', resourceId = LabSound().makeBusFromMemory(bufferPtr, bufferLen, extension.toInt8(), mixToMono ? 1 : 0) {
+    debugName ??= basename(filePath);
+    Completer<AudioBus> _loadCompleter = Completer();
+    complete = _loadCompleter.future;
+    _statusStreamSubscription = LabSound().onAudioBusStatus.where((event) => event.busId == this.resourceId).listen((event) {
+      if(event.decoded) {
+        loaded = true;
+        _loadCompleter.complete(this);
+      }
+    });
+  }
+
+  static Future<AudioBus> fromFile(String filePath, {autoDispose = false, String? debugName, bool? mixToMono, double? targetSampleRate}) {
+    debugName ??= basename(filePath);
+    final bus = AudioBus._loadByFile(filePath, autoDispose: autoDispose, debugName: debugName, mixToMono: mixToMono ?? false, targetSampleRate: targetSampleRate ?? 0.0);
+    return bus.complete!;
+  }
+
+  static Future<AudioBus> fromBuffer(Uint8List buffer, {autoDispose = false, String? extension, String? debugName, bool mixToMono = false}) async {
+    final bufferPtr = malloc.allocate<Uint8>(buffer.length);
+    for (int i = 0; i < buffer.length; i++) {
+      bufferPtr[i] = buffer[i];
+    }
+    final bus = AudioBus._loadByBuffer(bufferPtr, buffer.length, extension: extension ?? '', autoDispose: autoDispose, debugName: debugName, mixToMono: mixToMono);
+    malloc.free(bufferPtr);
+    await bus.complete!;
+    return bus;
+  }
+
+
+  AudioBus.fromId(this.resourceId, {this.autoDispose = false, this.debugName}): filePath = '';
 
   lock(AudioNode node) {
     usedNode.add(node);

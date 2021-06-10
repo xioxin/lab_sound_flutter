@@ -90,7 +90,7 @@ class _PlayerPageState extends State<PlayerPage>
   }
 
   Future init() async {
-    int a = 0;
+    music1Bus = await AudioBus.fromBuffer((await rootBundle.load('assets/music1.mp3')).buffer.asUint8List(), extension: 'mp3');
     this.stereoMusicClipPath = await loadAsset('stereo-music-clip.wav');
     this.music1Path = await loadAsset('music1.mp3');
     this.music2Path = await loadAsset('music2.mp3');
@@ -105,15 +105,16 @@ class _PlayerPageState extends State<PlayerPage>
       music3Path,
       synthesizerHighPath,
       synthesizerLowPath
-    ].map((e) => AudioBus.async(e));
+    ].map((e) => AudioBus.fromFile(e, targetSampleRate: 48000.0));
     final data = (await Future.wait(promises)).toList();
 
     stereoMusicClipBus = data[0];
-    music1Bus = data[1];
+    // music1Bus = data[1];
     music2Bus = data[2];
     music3Bus = data[3];
     synthesizerHighBus = data[4];
     synthesizerLowBus = data[5];
+
 
     this.synthesizerHighSample =
         AudioSampleNode(audioContext, resource: synthesizerHighBus);

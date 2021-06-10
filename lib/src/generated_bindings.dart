@@ -2098,46 +2098,54 @@ class LabSoundBind {
   /// /////////////
   /// AudioBus ///
   /// /////////////
-  int decodeAudioData(
+  int makeBusFromFile(
     ffi.Pointer<ffi.Int8> file,
+    int mixToMono,
+    double targetSampleRate,
   ) {
-    return _decodeAudioData(
+    return _makeBusFromFile(
       file,
+      mixToMono,
+      targetSampleRate,
     );
   }
 
-  late final _decodeAudioData_ptr =
-      _lookup<ffi.NativeFunction<_c_decodeAudioData>>('decodeAudioData');
-  late final _dart_decodeAudioData _decodeAudioData =
-      _decodeAudioData_ptr.asFunction<_dart_decodeAudioData>();
+  late final _makeBusFromFile_ptr =
+      _lookup<ffi.NativeFunction<_c_makeBusFromFile>>('makeBusFromFile');
+  late final _dart_makeBusFromFile _makeBusFromFile =
+      _makeBusFromFile_ptr.asFunction<_dart_makeBusFromFile>();
 
-  int decodeAudioDataAsync(
-    ffi.Pointer<ffi.Int8> file,
+  int makeBusFromMemory(
+    ffi.Pointer<ffi.Uint8> buffer,
+    int bufferLen,
+    ffi.Pointer<ffi.Int8> extension_1,
+    int mixToMono,
   ) {
-    return _decodeAudioDataAsync(
-      file,
+    return _makeBusFromMemory(
+      buffer,
+      bufferLen,
+      extension_1,
+      mixToMono,
     );
   }
 
-  late final _decodeAudioDataAsync_ptr =
-      _lookup<ffi.NativeFunction<_c_decodeAudioDataAsync>>(
-          'decodeAudioDataAsync');
-  late final _dart_decodeAudioDataAsync _decodeAudioDataAsync =
-      _decodeAudioDataAsync_ptr.asFunction<_dart_decodeAudioDataAsync>();
+  late final _makeBusFromMemory_ptr =
+      _lookup<ffi.NativeFunction<_c_makeBusFromMemory>>('makeBusFromMemory');
+  late final _dart_makeBusFromMemory _makeBusFromMemory =
+      _makeBusFromMemory_ptr.asFunction<_dart_makeBusFromMemory>();
 
-  int decodeAudioDataHasCheck(
-    int busIndex,
+  int audioBusHasCheck(
+    int busId,
   ) {
-    return _decodeAudioDataHasCheck(
-      busIndex,
+    return _audioBusHasCheck(
+      busId,
     );
   }
 
-  late final _decodeAudioDataHasCheck_ptr =
-      _lookup<ffi.NativeFunction<_c_decodeAudioDataHasCheck>>(
-          'decodeAudioDataHasCheck');
-  late final _dart_decodeAudioDataHasCheck _decodeAudioDataHasCheck =
-      _decodeAudioDataHasCheck_ptr.asFunction<_dart_decodeAudioDataHasCheck>();
+  late final _audioBusHasCheck_ptr =
+      _lookup<ffi.NativeFunction<_c_audioBusHasCheck>>('audioBusHasCheck');
+  late final _dart_audioBusHasCheck _audioBusHasCheck =
+      _audioBusHasCheck_ptr.asFunction<_dart_audioBusHasCheck>();
 
   int AudioBus_numberOfChannels(
     int busIndex,
@@ -3748,6 +3756,131 @@ class LabSoundBind {
   late final _dart_DynamicsCompressorNode_reduction
       _DynamicsCompressorNode_reduction = _DynamicsCompressorNode_reduction_ptr
           .asFunction<_dart_DynamicsCompressorNode_reduction>();
+
+  /// /////////////
+  /// ADSRNode ///
+  /// /////////////
+  int createADSRNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createADSRNode(
+      context,
+    );
+  }
+
+  late final _createADSRNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createADSRNode>>('createADSRNode');
+  late final _dart_createADSRNode _createADSRNode =
+      _createADSRNode_ptr.asFunction<_dart_createADSRNode>();
+
+  int ADSRNode_gate(
+    int nodeId,
+  ) {
+    return _ADSRNode_gate(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_gate_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_gate>>('ADSRNode_gate');
+  late final _dart_ADSRNode_gate _ADSRNode_gate =
+      _ADSRNode_gate_ptr.asFunction<_dart_ADSRNode_gate>();
+
+  int ADSRNode_oneShot(
+    int nodeId,
+  ) {
+    return _ADSRNode_oneShot(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_oneShot_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_oneShot>>('ADSRNode_oneShot');
+  late final _dart_ADSRNode_oneShot _ADSRNode_oneShot =
+      _ADSRNode_oneShot_ptr.asFunction<_dart_ADSRNode_oneShot>();
+
+  int ADSRNode_attackTime(
+    int nodeId,
+  ) {
+    return _ADSRNode_attackTime(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_attackTime_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_attackTime>>(
+          'ADSRNode_attackTime');
+  late final _dart_ADSRNode_attackTime _ADSRNode_attackTime =
+      _ADSRNode_attackTime_ptr.asFunction<_dart_ADSRNode_attackTime>();
+
+  int ADSRNode_attackLevel(
+    int nodeId,
+  ) {
+    return _ADSRNode_attackLevel(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_attackLevel_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_attackLevel>>(
+          'ADSRNode_attackLevel');
+  late final _dart_ADSRNode_attackLevel _ADSRNode_attackLevel =
+      _ADSRNode_attackLevel_ptr.asFunction<_dart_ADSRNode_attackLevel>();
+
+  int ADSRNode_decayTime(
+    int nodeId,
+  ) {
+    return _ADSRNode_decayTime(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_decayTime_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_decayTime>>('ADSRNode_decayTime');
+  late final _dart_ADSRNode_decayTime _ADSRNode_decayTime =
+      _ADSRNode_decayTime_ptr.asFunction<_dart_ADSRNode_decayTime>();
+
+  int ADSRNode_sustainTime(
+    int nodeId,
+  ) {
+    return _ADSRNode_sustainTime(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_sustainTime_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_sustainTime>>(
+          'ADSRNode_sustainTime');
+  late final _dart_ADSRNode_sustainTime _ADSRNode_sustainTime =
+      _ADSRNode_sustainTime_ptr.asFunction<_dart_ADSRNode_sustainTime>();
+
+  int ADSRNode_sustainLevel(
+    int nodeId,
+  ) {
+    return _ADSRNode_sustainLevel(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_sustainLevel_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_sustainLevel>>(
+          'ADSRNode_sustainLevel');
+  late final _dart_ADSRNode_sustainLevel _ADSRNode_sustainLevel =
+      _ADSRNode_sustainLevel_ptr.asFunction<_dart_ADSRNode_sustainLevel>();
+
+  int ADSRNode_releaseTime(
+    int nodeId,
+  ) {
+    return _ADSRNode_releaseTime(
+      nodeId,
+    );
+  }
+
+  late final _ADSRNode_releaseTime_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_releaseTime>>(
+          'ADSRNode_releaseTime');
+  late final _dart_ADSRNode_releaseTime _ADSRNode_releaseTime =
+      _ADSRNode_releaseTime_ptr.asFunction<_dart_ADSRNode_releaseTime>();
 }
 
 class __darwin_pthread_handler_rec extends ffi.Struct {
@@ -5790,28 +5923,38 @@ typedef _dart_SampledAudioNode_detune = int Function(
   int index,
 );
 
-typedef _c_decodeAudioData = ffi.Int32 Function(
+typedef _c_makeBusFromFile = ffi.Int32 Function(
   ffi.Pointer<ffi.Int8> file,
+  ffi.Int32 mixToMono,
+  ffi.Float targetSampleRate,
 );
 
-typedef _dart_decodeAudioData = int Function(
+typedef _dart_makeBusFromFile = int Function(
   ffi.Pointer<ffi.Int8> file,
+  int mixToMono,
+  double targetSampleRate,
 );
 
-typedef _c_decodeAudioDataAsync = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> file,
+typedef _c_makeBusFromMemory = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> buffer,
+  ffi.Int32 bufferLen,
+  ffi.Pointer<ffi.Int8> extension_1,
+  ffi.Int32 mixToMono,
 );
 
-typedef _dart_decodeAudioDataAsync = int Function(
-  ffi.Pointer<ffi.Int8> file,
+typedef _dart_makeBusFromMemory = int Function(
+  ffi.Pointer<ffi.Uint8> buffer,
+  int bufferLen,
+  ffi.Pointer<ffi.Int8> extension_1,
+  int mixToMono,
 );
 
-typedef _c_decodeAudioDataHasCheck = ffi.Int32 Function(
-  ffi.Int32 busIndex,
+typedef _c_audioBusHasCheck = ffi.Int32 Function(
+  ffi.Int32 busId,
 );
 
-typedef _dart_decodeAudioDataHasCheck = int Function(
-  int busIndex,
+typedef _dart_audioBusHasCheck = int Function(
+  int busId,
 );
 
 typedef _c_AudioBus_numberOfChannels = ffi.Int32 Function(
@@ -6725,6 +6868,78 @@ typedef _c_DynamicsCompressorNode_reduction = ffi.Int32 Function(
 );
 
 typedef _dart_DynamicsCompressorNode_reduction = int Function(
+  int nodeId,
+);
+
+typedef _c_createADSRNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createADSRNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_ADSRNode_gate = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_gate = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_oneShot = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_oneShot = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_attackTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_attackTime = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_attackLevel = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_attackLevel = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_decayTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_decayTime = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_sustainTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_sustainTime = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_sustainLevel = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_sustainLevel = int Function(
+  int nodeId,
+);
+
+typedef _c_ADSRNode_releaseTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ADSRNode_releaseTime = int Function(
   int nodeId,
 );
 

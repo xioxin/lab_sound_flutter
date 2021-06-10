@@ -45,7 +45,7 @@ class _RenderAudioPageState extends State<RenderAudioPage> {
                     final outputConfig = AudioStreamConfig(
                         desiredChannels: 2, desiredSampleRate: 44100.0);
                     final musicBus =
-                        await AudioBus.async(await loadAsset('music3.mp3'));
+                        await AudioBus.fromFile(await loadAsset('music3.mp3'));
 
                     setState(() {
                       statusText = "Rendering";
