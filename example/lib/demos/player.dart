@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -90,6 +91,28 @@ class _PlayerPageState extends State<PlayerPage>
   }
 
   Future init() async {
+
+    const A4 = 440;
+
+    final Map<String, int> noteToScaleIndex = {
+      "cbb": -2, "cb": -1, "c": 0,  "c#": 1,  "cx": 2,
+      "dbb": 0,  "db": 1,  "d": 2,  "d#": 3,  "dx": 4,
+      "ebb": 2,  "eb": 3,  "e": 4,  "e#": 5,  "ex": 6,
+      "fbb": 3,  "fb": 4,  "f": 5,  "f#": 6,  "fx": 7,
+      "gbb": 5,  "gb": 6,  "g": 7,  "g#": 8,  "gx": 9,
+      "abb": 7,  "ab": 8,  "a": 9,  "a#": 10, "ax": 11,
+      "bbb": 9,  "bb": 10, "b": 11, "b#": 12, "bx": 13,
+    };
+
+    final RegExp note = new RegExp(r"^([a-g]{1}(?:b|#|x|bb)?)(-?[0-9]+)", caseSensitive: false);
+    final match = note.firstMatch("A#2");
+    if(match != null) {
+      final index = noteToScaleIndex[(match[1] ?? '').toLowerCase()]!;
+      final noteNumber = index + (int.parse(match[2] ?? '0') + 1) * 12;
+      final hz = A4 * pow(2, (noteNumber - 69) / 12);
+      print(" ${match[1] ?? ''} ${match[2] ?? ''} $hz ");
+    }
+
     music1Bus = await AudioBus.fromBuffer((await rootBundle.load('assets/music1.mp3')).buffer.asUint8List(), extension: 'mp3');
     this.stereoMusicClipPath = await loadAsset('stereo-music-clip.wav');
     this.music1Path = await loadAsset('music1.mp3');

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/demos/dial.dart';
 import 'package:lab_sound_flutter_example/demos/player.dart';
+import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 
 import 'demos/render-audio.dart';
 
@@ -58,6 +59,11 @@ class _MyAppState extends State<MyApp> {
                     context,
                     MaterialPageRoute(builder: (context) => RenderAudioPage()),
                   );
+                }),
+            ListTile(
+                title: Text("zelda"),
+                onTap: () {
+                  zelda.play();
                 })
           ],
         ));
