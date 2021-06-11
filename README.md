@@ -23,6 +23,7 @@ The submodules can be fetched after a clone with `git submodule update --init --
 
 # Android
 Requires cmake >= 3.13
+
 If you are using cmake version 3.18.1 and you get an invalid version number error, please try upgrading the gradle version
 
 
