@@ -3881,6 +3881,156 @@ class LabSoundBind {
           'ADSRNode_releaseTime');
   late final _dart_ADSRNode_releaseTime _ADSRNode_releaseTime =
       _ADSRNode_releaseTime_ptr.asFunction<_dart_ADSRNode_releaseTime>();
+
+  /// ///////////////////
+  /// WaveShaperNode ///
+  /// ///////////////////
+  int createWaveShaperNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createWaveShaperNode(
+      context,
+    );
+  }
+
+  late final _createWaveShaperNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createWaveShaperNode>>(
+          'createWaveShaperNode');
+  late final _dart_createWaveShaperNode _createWaveShaperNode =
+      _createWaveShaperNode_ptr.asFunction<_dart_createWaveShaperNode>();
+
+  void WaveShaperNode_setCurve(
+    int nodeId,
+    ffi.Pointer<ffi.Float> curve,
+  ) {
+    return _WaveShaperNode_setCurve(
+      nodeId,
+      curve,
+    );
+  }
+
+  late final _WaveShaperNode_setCurve_ptr =
+      _lookup<ffi.NativeFunction<_c_WaveShaperNode_setCurve>>(
+          'WaveShaperNode_setCurve');
+  late final _dart_WaveShaperNode_setCurve _WaveShaperNode_setCurve =
+      _WaveShaperNode_setCurve_ptr.asFunction<_dart_WaveShaperNode_setCurve>();
+
+  /// //////////////
+  /// NoiseNode ///
+  /// //////////////
+  int createNoiseNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createNoiseNode(
+      context,
+    );
+  }
+
+  late final _createNoiseNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createNoiseNode>>('createNoiseNode');
+  late final _dart_createNoiseNode _createNoiseNode =
+      _createNoiseNode_ptr.asFunction<_dart_createNoiseNode>();
+
+  int NoiseNode_type(
+    int nodeId,
+  ) {
+    return _NoiseNode_type(
+      nodeId,
+    );
+  }
+
+  late final _NoiseNode_type_ptr =
+      _lookup<ffi.NativeFunction<_c_NoiseNode_type>>('NoiseNode_type');
+  late final _dart_NoiseNode_type _NoiseNode_type =
+      _NoiseNode_type_ptr.asFunction<_dart_NoiseNode_type>();
+
+  void NoiseNode_setType(
+    int nodeId,
+    int type,
+  ) {
+    return _NoiseNode_setType(
+      nodeId,
+      type,
+    );
+  }
+
+  late final _NoiseNode_setType_ptr =
+      _lookup<ffi.NativeFunction<_c_NoiseNode_setType>>('NoiseNode_setType');
+  late final _dart_NoiseNode_setType _NoiseNode_setType =
+      _NoiseNode_setType_ptr.asFunction<_dart_NoiseNode_setType>();
+
+  /// /////////////////
+  /// PolyBLEPNode ///
+  /// /////////////////
+  int createPolyBLEPNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createPolyBLEPNode(
+      context,
+    );
+  }
+
+  late final _createPolyBLEPNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createPolyBLEPNode>>('createPolyBLEPNode');
+  late final _dart_createPolyBLEPNode _createPolyBLEPNode =
+      _createPolyBLEPNode_ptr.asFunction<_dart_createPolyBLEPNode>();
+
+  int PolyBLEPNode_type(
+    int nodeId,
+  ) {
+    return _PolyBLEPNode_type(
+      nodeId,
+    );
+  }
+
+  late final _PolyBLEPNode_type_ptr =
+      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_type>>('PolyBLEPNode_type');
+  late final _dart_PolyBLEPNode_type _PolyBLEPNode_type =
+      _PolyBLEPNode_type_ptr.asFunction<_dart_PolyBLEPNode_type>();
+
+  void PolyBLEPNode_setType(
+    int nodeId,
+    int type,
+  ) {
+    return _PolyBLEPNode_setType(
+      nodeId,
+      type,
+    );
+  }
+
+  late final _PolyBLEPNode_setType_ptr =
+      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_setType>>(
+          'PolyBLEPNode_setType');
+  late final _dart_PolyBLEPNode_setType _PolyBLEPNode_setType =
+      _PolyBLEPNode_setType_ptr.asFunction<_dart_PolyBLEPNode_setType>();
+
+  int PolyBLEPNode_amplitude(
+    int nodeId,
+  ) {
+    return _PolyBLEPNode_amplitude(
+      nodeId,
+    );
+  }
+
+  late final _PolyBLEPNode_amplitude_ptr =
+      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_amplitude>>(
+          'PolyBLEPNode_amplitude');
+  late final _dart_PolyBLEPNode_amplitude _PolyBLEPNode_amplitude =
+      _PolyBLEPNode_amplitude_ptr.asFunction<_dart_PolyBLEPNode_amplitude>();
+
+  int PolyBLEPNode_frequency(
+    int nodeId,
+  ) {
+    return _PolyBLEPNode_frequency(
+      nodeId,
+    );
+  }
+
+  late final _PolyBLEPNode_frequency_ptr =
+      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_frequency>>(
+          'PolyBLEPNode_frequency');
+  late final _dart_PolyBLEPNode_frequency _PolyBLEPNode_frequency =
+      _PolyBLEPNode_frequency_ptr.asFunction<_dart_PolyBLEPNode_frequency>();
 }
 
 class __darwin_pthread_handler_rec extends ffi.Struct {
@@ -6940,6 +7090,92 @@ typedef _c_ADSRNode_releaseTime = ffi.Int32 Function(
 );
 
 typedef _dart_ADSRNode_releaseTime = int Function(
+  int nodeId,
+);
+
+typedef _c_createWaveShaperNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createWaveShaperNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_WaveShaperNode_setCurve = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Pointer<ffi.Float> curve,
+);
+
+typedef _dart_WaveShaperNode_setCurve = void Function(
+  int nodeId,
+  ffi.Pointer<ffi.Float> curve,
+);
+
+typedef _c_createNoiseNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createNoiseNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_NoiseNode_type = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_NoiseNode_type = int Function(
+  int nodeId,
+);
+
+typedef _c_NoiseNode_setType = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 type,
+);
+
+typedef _dart_NoiseNode_setType = void Function(
+  int nodeId,
+  int type,
+);
+
+typedef _c_createPolyBLEPNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createPolyBLEPNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_PolyBLEPNode_type = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_PolyBLEPNode_type = int Function(
+  int nodeId,
+);
+
+typedef _c_PolyBLEPNode_setType = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 type,
+);
+
+typedef _dart_PolyBLEPNode_setType = void Function(
+  int nodeId,
+  int type,
+);
+
+typedef _c_PolyBLEPNode_amplitude = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_PolyBLEPNode_amplitude = int Function(
+  int nodeId,
+);
+
+typedef _c_PolyBLEPNode_frequency = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_PolyBLEPNode_frequency = int Function(
   int nodeId,
 );
 

@@ -9,7 +9,7 @@ DART_EXPORT int createWaveShaperNode(AudioContext* context) {
     return keepNode(node);
 }
 
-DART_EXPORT void WaveShaperNode_setCurve(const float* curve) {
+DART_EXPORT void WaveShaperNode_setCurve(const int nodeId, const float* curve) {
     auto node = std::static_pointer_cast<WaveShaperNode>(getNode(nodeId));
     if(node) {
         std::vector<float> vecCurve(curve, curve + sizeof(curve)/sizeof(float));

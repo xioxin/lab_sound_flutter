@@ -45,19 +45,19 @@ If you are using cmake version 3.18.1 and you get an invalid version number erro
 * [x] AudioParam & AudioParamTimeline
 * [ ] AudioSummingJunction
 * [x] BiquadFilterNode
-* [x] ChannelMergerNode *dart class missing*
-* [x] ChannelSplitterNode *dart class missing*
+* [x] ChannelMergerNode
+* [x] ChannelSplitterNode
 * [ ] ConvolverNode *next* <!-- 卷积 -->
 * [ ] DelayNode  *next* <!-- 延迟 -->
 * [x] DynamicsCompressorNode
 * [x] GainNode
 * [ ] NullDeviceNode
 * [x] OscillatorNode
-* [x] PannerNode *dart class missing*
+* [x] PannerNode
 * [ ] RealtimeAnalyser
 * [x] SampledAudioNode
 * [ ] StereoPannerNode *next* <!-- 声道均衡 -->
-* [ ] WaveShaperNode *dart class missing* <!-- 声道均衡 -->
+* [x] WaveShaperNode
 
 * [x] ADSRNode
 * [ ] BPMDelayNode
@@ -65,11 +65,11 @@ If you are using cmake version 3.18.1 and you get an invalid version number erro
 * [ ] DiodeNode
 * [ ] FunctionNode
 * [ ] GranulationNode <!-- 是一个音频合成 -->
-* [x] NoiseNode *dart class missing*
+* [x] NoiseNode
 * [ ] PdNode
 * [ ] PeakCompNode
 * [ ] PingPongDelayNode
-* [x] PolyBLEPNode *dart class missing*
+* [x] PolyBLEPNode
 * [ ] PowerMonitorNode *next* <!-- 电平？ -->
 * [ ] PWMNode
 * [x] RecorderNode

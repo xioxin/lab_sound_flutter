@@ -498,3 +498,39 @@ int ADSRNode_sustainLevel(int nodeId);
 
 // Duration in seconds
 int ADSRNode_releaseTime(int nodeId);
+
+
+//////////////////////
+/// WaveShaperNode ///
+//////////////////////
+
+int createWaveShaperNode(AudioContext* context);
+
+void WaveShaperNode_setCurve(const int nodeId, const float* curve);
+
+
+
+
+/////////////////
+/// NoiseNode ///
+/////////////////
+
+int createNoiseNode(AudioContext* context);
+
+int NoiseNode_type(int nodeId);
+
+void NoiseNode_setType(int nodeId, int type);
+
+
+////////////////////
+/// PolyBLEPNode ///
+////////////////////
+int createPolyBLEPNode(AudioContext* context);
+
+int PolyBLEPNode_type(int nodeId);
+
+void PolyBLEPNode_setType(int nodeId, int type);
+
+int PolyBLEPNode_amplitude(int nodeId);
+
+int PolyBLEPNode_frequency(int nodeId);
