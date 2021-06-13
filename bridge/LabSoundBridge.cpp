@@ -25,6 +25,11 @@
 #include "AudioHardwareDeviceNode.cpp"
 #include "DynamicsCompressorNode.cpp"
 
+#include "NoiseNode.cpp"
+#include "WaveShaperNode.cpp"
+#include "PolyBLEPNode.cpp"
+
+
 using namespace lab;
 
 DART_EXPORT void labTest() {
