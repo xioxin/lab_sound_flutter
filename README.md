@@ -70,7 +70,7 @@ If you are using cmake version 3.18.1 and you get an invalid version number erro
 * [ ] PeakCompNode
 * [ ] PingPongDelayNode
 * [x] PolyBLEPNode
-* [ ] PowerMonitorNode *next* <!-- 电平？ -->
+* [x] PowerMonitorNode
 * [ ] PWMNode
 * [x] RecorderNode
 * [ ] SfxrNode <!-- 一个很高级的功能 https://sfxr.me/ -->

@@ -4208,6 +4208,691 @@ class LabSoundBind {
           'StereoPannerNode_pan');
   late final _dart_StereoPannerNode_pan _StereoPannerNode_pan =
       _StereoPannerNode_pan_ptr.asFunction<_dart_StereoPannerNode_pan>();
+
+  /// /////////////////////
+  /// PowerMonitorNode ///
+  /// /////////////////////
+  int createPowerMonitorNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createPowerMonitorNode(
+      context,
+    );
+  }
+
+  late final _createPowerMonitorNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createPowerMonitorNode>>(
+          'createPowerMonitorNode');
+  late final _dart_createPowerMonitorNode _createPowerMonitorNode =
+      _createPowerMonitorNode_ptr.asFunction<_dart_createPowerMonitorNode>();
+
+  int PowerMonitorNode_windowSize(
+    int nodeId,
+  ) {
+    return _PowerMonitorNode_windowSize(
+      nodeId,
+    );
+  }
+
+  late final _PowerMonitorNode_windowSize_ptr =
+      _lookup<ffi.NativeFunction<_c_PowerMonitorNode_windowSize>>(
+          'PowerMonitorNode_windowSize');
+  late final _dart_PowerMonitorNode_windowSize _PowerMonitorNode_windowSize =
+      _PowerMonitorNode_windowSize_ptr.asFunction<
+          _dart_PowerMonitorNode_windowSize>();
+
+  double PowerMonitorNode_db(
+    int nodeId,
+  ) {
+    return _PowerMonitorNode_db(
+      nodeId,
+    );
+  }
+
+  late final _PowerMonitorNode_db_ptr =
+      _lookup<ffi.NativeFunction<_c_PowerMonitorNode_db>>(
+          'PowerMonitorNode_db');
+  late final _dart_PowerMonitorNode_db _PowerMonitorNode_db =
+      _PowerMonitorNode_db_ptr.asFunction<_dart_PowerMonitorNode_db>();
+
+  void PowerMonitorNode_setWindowSize(
+    int nodeId,
+    int ws,
+  ) {
+    return _PowerMonitorNode_setWindowSize(
+      nodeId,
+      ws,
+    );
+  }
+
+  late final _PowerMonitorNode_setWindowSize_ptr =
+      _lookup<ffi.NativeFunction<_c_PowerMonitorNode_setWindowSize>>(
+          'PowerMonitorNode_setWindowSize');
+  late final _dart_PowerMonitorNode_setWindowSize
+      _PowerMonitorNode_setWindowSize = _PowerMonitorNode_setWindowSize_ptr
+          .asFunction<_dart_PowerMonitorNode_setWindowSize>();
+
+  /// /////////////
+  /// SfxrNode ///
+  /// /////////////
+  int createSfxrNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createSfxrNode(
+      context,
+    );
+  }
+
+  late final _createSfxrNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createSfxrNode>>('createSfxrNode');
+  late final _dart_createSfxrNode _createSfxrNode =
+      _createSfxrNode_ptr.asFunction<_dart_createSfxrNode>();
+
+  int SfxrNode_attackTime(
+    int nodeId,
+  ) {
+    return _SfxrNode_attackTime(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_attackTime_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_attackTime>>(
+          'SfxrNode_attackTime');
+  late final _dart_SfxrNode_attackTime _SfxrNode_attackTime =
+      _SfxrNode_attackTime_ptr.asFunction<_dart_SfxrNode_attackTime>();
+
+  int SfxrNode_sustainTime(
+    int nodeId,
+  ) {
+    return _SfxrNode_sustainTime(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_sustainTime_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_sustainTime>>(
+          'SfxrNode_sustainTime');
+  late final _dart_SfxrNode_sustainTime _SfxrNode_sustainTime =
+      _SfxrNode_sustainTime_ptr.asFunction<_dart_SfxrNode_sustainTime>();
+
+  int SfxrNode_sustainPunch(
+    int nodeId,
+  ) {
+    return _SfxrNode_sustainPunch(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_sustainPunch_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_sustainPunch>>(
+          'SfxrNode_sustainPunch');
+  late final _dart_SfxrNode_sustainPunch _SfxrNode_sustainPunch =
+      _SfxrNode_sustainPunch_ptr.asFunction<_dart_SfxrNode_sustainPunch>();
+
+  int SfxrNode_decayTime(
+    int nodeId,
+  ) {
+    return _SfxrNode_decayTime(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_decayTime_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_decayTime>>('SfxrNode_decayTime');
+  late final _dart_SfxrNode_decayTime _SfxrNode_decayTime =
+      _SfxrNode_decayTime_ptr.asFunction<_dart_SfxrNode_decayTime>();
+
+  int SfxrNode_startFrequency(
+    int nodeId,
+  ) {
+    return _SfxrNode_startFrequency(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_startFrequency_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_startFrequency>>(
+          'SfxrNode_startFrequency');
+  late final _dart_SfxrNode_startFrequency _SfxrNode_startFrequency =
+      _SfxrNode_startFrequency_ptr.asFunction<_dart_SfxrNode_startFrequency>();
+
+  int SfxrNode_minFrequency(
+    int nodeId,
+  ) {
+    return _SfxrNode_minFrequency(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_minFrequency_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_minFrequency>>(
+          'SfxrNode_minFrequency');
+  late final _dart_SfxrNode_minFrequency _SfxrNode_minFrequency =
+      _SfxrNode_minFrequency_ptr.asFunction<_dart_SfxrNode_minFrequency>();
+
+  int SfxrNode_slide(
+    int nodeId,
+  ) {
+    return _SfxrNode_slide(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_slide_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_slide>>('SfxrNode_slide');
+  late final _dart_SfxrNode_slide _SfxrNode_slide =
+      _SfxrNode_slide_ptr.asFunction<_dart_SfxrNode_slide>();
+
+  int SfxrNode_deltaSlide(
+    int nodeId,
+  ) {
+    return _SfxrNode_deltaSlide(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_deltaSlide_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_deltaSlide>>(
+          'SfxrNode_deltaSlide');
+  late final _dart_SfxrNode_deltaSlide _SfxrNode_deltaSlide =
+      _SfxrNode_deltaSlide_ptr.asFunction<_dart_SfxrNode_deltaSlide>();
+
+  int SfxrNode_vibratoDepth(
+    int nodeId,
+  ) {
+    return _SfxrNode_vibratoDepth(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_vibratoDepth_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoDepth>>(
+          'SfxrNode_vibratoDepth');
+  late final _dart_SfxrNode_vibratoDepth _SfxrNode_vibratoDepth =
+      _SfxrNode_vibratoDepth_ptr.asFunction<_dart_SfxrNode_vibratoDepth>();
+
+  int SfxrNode_vibratoSpeed(
+    int nodeId,
+  ) {
+    return _SfxrNode_vibratoSpeed(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_vibratoSpeed_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoSpeed>>(
+          'SfxrNode_vibratoSpeed');
+  late final _dart_SfxrNode_vibratoSpeed _SfxrNode_vibratoSpeed =
+      _SfxrNode_vibratoSpeed_ptr.asFunction<_dart_SfxrNode_vibratoSpeed>();
+
+  int SfxrNode_changeAmount(
+    int nodeId,
+  ) {
+    return _SfxrNode_changeAmount(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_changeAmount_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_changeAmount>>(
+          'SfxrNode_changeAmount');
+  late final _dart_SfxrNode_changeAmount _SfxrNode_changeAmount =
+      _SfxrNode_changeAmount_ptr.asFunction<_dart_SfxrNode_changeAmount>();
+
+  int SfxrNode_changeSpeed(
+    int nodeId,
+  ) {
+    return _SfxrNode_changeSpeed(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_changeSpeed_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_changeSpeed>>(
+          'SfxrNode_changeSpeed');
+  late final _dart_SfxrNode_changeSpeed _SfxrNode_changeSpeed =
+      _SfxrNode_changeSpeed_ptr.asFunction<_dart_SfxrNode_changeSpeed>();
+
+  int SfxrNode_squareDuty(
+    int nodeId,
+  ) {
+    return _SfxrNode_squareDuty(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_squareDuty_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_squareDuty>>(
+          'SfxrNode_squareDuty');
+  late final _dart_SfxrNode_squareDuty _SfxrNode_squareDuty =
+      _SfxrNode_squareDuty_ptr.asFunction<_dart_SfxrNode_squareDuty>();
+
+  int SfxrNode_dutySweep(
+    int nodeId,
+  ) {
+    return _SfxrNode_dutySweep(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_dutySweep_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_dutySweep>>('SfxrNode_dutySweep');
+  late final _dart_SfxrNode_dutySweep _SfxrNode_dutySweep =
+      _SfxrNode_dutySweep_ptr.asFunction<_dart_SfxrNode_dutySweep>();
+
+  int SfxrNode_repeatSpeed(
+    int nodeId,
+  ) {
+    return _SfxrNode_repeatSpeed(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_repeatSpeed_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_repeatSpeed>>(
+          'SfxrNode_repeatSpeed');
+  late final _dart_SfxrNode_repeatSpeed _SfxrNode_repeatSpeed =
+      _SfxrNode_repeatSpeed_ptr.asFunction<_dart_SfxrNode_repeatSpeed>();
+
+  int SfxrNode_phaserOffset(
+    int nodeId,
+  ) {
+    return _SfxrNode_phaserOffset(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_phaserOffset_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_phaserOffset>>(
+          'SfxrNode_phaserOffset');
+  late final _dart_SfxrNode_phaserOffset _SfxrNode_phaserOffset =
+      _SfxrNode_phaserOffset_ptr.asFunction<_dart_SfxrNode_phaserOffset>();
+
+  int SfxrNode_phaserSweep(
+    int nodeId,
+  ) {
+    return _SfxrNode_phaserSweep(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_phaserSweep_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_phaserSweep>>(
+          'SfxrNode_phaserSweep');
+  late final _dart_SfxrNode_phaserSweep _SfxrNode_phaserSweep =
+      _SfxrNode_phaserSweep_ptr.asFunction<_dart_SfxrNode_phaserSweep>();
+
+  int SfxrNode_lpFilterCutoff(
+    int nodeId,
+  ) {
+    return _SfxrNode_lpFilterCutoff(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_lpFilterCutoff_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_lpFilterCutoff>>(
+          'SfxrNode_lpFilterCutoff');
+  late final _dart_SfxrNode_lpFilterCutoff _SfxrNode_lpFilterCutoff =
+      _SfxrNode_lpFilterCutoff_ptr.asFunction<_dart_SfxrNode_lpFilterCutoff>();
+
+  int SfxrNode_lpFilterCutoffSweep(
+    int nodeId,
+  ) {
+    return _SfxrNode_lpFilterCutoffSweep(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_lpFilterCutoffSweep_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_lpFilterCutoffSweep>>(
+          'SfxrNode_lpFilterCutoffSweep');
+  late final _dart_SfxrNode_lpFilterCutoffSweep _SfxrNode_lpFilterCutoffSweep =
+      _SfxrNode_lpFilterCutoffSweep_ptr.asFunction<
+          _dart_SfxrNode_lpFilterCutoffSweep>();
+
+  int SfxrNode_lpFiterResonance(
+    int nodeId,
+  ) {
+    return _SfxrNode_lpFiterResonance(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_lpFiterResonance_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_lpFiterResonance>>(
+          'SfxrNode_lpFiterResonance');
+  late final _dart_SfxrNode_lpFiterResonance _SfxrNode_lpFiterResonance =
+      _SfxrNode_lpFiterResonance_ptr.asFunction<
+          _dart_SfxrNode_lpFiterResonance>();
+
+  int SfxrNode_hpFilterCutoff(
+    int nodeId,
+  ) {
+    return _SfxrNode_hpFilterCutoff(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_hpFilterCutoff_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_hpFilterCutoff>>(
+          'SfxrNode_hpFilterCutoff');
+  late final _dart_SfxrNode_hpFilterCutoff _SfxrNode_hpFilterCutoff =
+      _SfxrNode_hpFilterCutoff_ptr.asFunction<_dart_SfxrNode_hpFilterCutoff>();
+
+  int SfxrNode_hpFilterCutoffSweep(
+    int nodeId,
+  ) {
+    return _SfxrNode_hpFilterCutoffSweep(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_hpFilterCutoffSweep_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_hpFilterCutoffSweep>>(
+          'SfxrNode_hpFilterCutoffSweep');
+  late final _dart_SfxrNode_hpFilterCutoffSweep _SfxrNode_hpFilterCutoffSweep =
+      _SfxrNode_hpFilterCutoffSweep_ptr.asFunction<
+          _dart_SfxrNode_hpFilterCutoffSweep>();
+
+  void SfxrNode_setStartFrequencyInHz(
+    int nodeId,
+    double value,
+  ) {
+    return _SfxrNode_setStartFrequencyInHz(
+      nodeId,
+      value,
+    );
+  }
+
+  late final _SfxrNode_setStartFrequencyInHz_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_setStartFrequencyInHz>>(
+          'SfxrNode_setStartFrequencyInHz');
+  late final _dart_SfxrNode_setStartFrequencyInHz
+      _SfxrNode_setStartFrequencyInHz = _SfxrNode_setStartFrequencyInHz_ptr
+          .asFunction<_dart_SfxrNode_setStartFrequencyInHz>();
+
+  void SfxrNode_setVibratoSpeedInHz(
+    int nodeId,
+    double value,
+  ) {
+    return _SfxrNode_setVibratoSpeedInHz(
+      nodeId,
+      value,
+    );
+  }
+
+  late final _SfxrNode_setVibratoSpeedInHz_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_setVibratoSpeedInHz>>(
+          'SfxrNode_setVibratoSpeedInHz');
+  late final _dart_SfxrNode_setVibratoSpeedInHz _SfxrNode_setVibratoSpeedInHz =
+      _SfxrNode_setVibratoSpeedInHz_ptr.asFunction<
+          _dart_SfxrNode_setVibratoSpeedInHz>();
+
+  double SfxrNode_envelopeTimeInSeconds(
+    int nodeId,
+    double sfxrEnvTime,
+  ) {
+    return _SfxrNode_envelopeTimeInSeconds(
+      nodeId,
+      sfxrEnvTime,
+    );
+  }
+
+  late final _SfxrNode_envelopeTimeInSeconds_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_envelopeTimeInSeconds>>(
+          'SfxrNode_envelopeTimeInSeconds');
+  late final _dart_SfxrNode_envelopeTimeInSeconds
+      _SfxrNode_envelopeTimeInSeconds = _SfxrNode_envelopeTimeInSeconds_ptr
+          .asFunction<_dart_SfxrNode_envelopeTimeInSeconds>();
+
+  double SfxrNode_envelopeTimeInSfxrUnits(
+    int nodeId,
+    double t,
+  ) {
+    return _SfxrNode_envelopeTimeInSfxrUnits(
+      nodeId,
+      t,
+    );
+  }
+
+  late final _SfxrNode_envelopeTimeInSfxrUnits_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_envelopeTimeInSfxrUnits>>(
+          'SfxrNode_envelopeTimeInSfxrUnits');
+  late final _dart_SfxrNode_envelopeTimeInSfxrUnits
+      _SfxrNode_envelopeTimeInSfxrUnits = _SfxrNode_envelopeTimeInSfxrUnits_ptr
+          .asFunction<_dart_SfxrNode_envelopeTimeInSfxrUnits>();
+
+  double SfxrNode_frequencyInSfxrUnits(
+    int nodeId,
+    double hz,
+  ) {
+    return _SfxrNode_frequencyInSfxrUnits(
+      nodeId,
+      hz,
+    );
+  }
+
+  late final _SfxrNode_frequencyInSfxrUnits_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_frequencyInSfxrUnits>>(
+          'SfxrNode_frequencyInSfxrUnits');
+  late final _dart_SfxrNode_frequencyInSfxrUnits
+      _SfxrNode_frequencyInSfxrUnits = _SfxrNode_frequencyInSfxrUnits_ptr
+          .asFunction<_dart_SfxrNode_frequencyInSfxrUnits>();
+
+  double SfxrNode_frequencyInHz(
+    int nodeId,
+    double sfxr,
+  ) {
+    return _SfxrNode_frequencyInHz(
+      nodeId,
+      sfxr,
+    );
+  }
+
+  late final _SfxrNode_frequencyInHz_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_frequencyInHz>>(
+          'SfxrNode_frequencyInHz');
+  late final _dart_SfxrNode_frequencyInHz _SfxrNode_frequencyInHz =
+      _SfxrNode_frequencyInHz_ptr.asFunction<_dart_SfxrNode_frequencyInHz>();
+
+  double SfxrNode_vibratoInSfxrUnits(
+    int nodeId,
+    double hz,
+  ) {
+    return _SfxrNode_vibratoInSfxrUnits(
+      nodeId,
+      hz,
+    );
+  }
+
+  late final _SfxrNode_vibratoInSfxrUnits_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoInSfxrUnits>>(
+          'SfxrNode_vibratoInSfxrUnits');
+  late final _dart_SfxrNode_vibratoInSfxrUnits _SfxrNode_vibratoInSfxrUnits =
+      _SfxrNode_vibratoInSfxrUnits_ptr.asFunction<
+          _dart_SfxrNode_vibratoInSfxrUnits>();
+
+  double SfxrNode_vibratoInHz(
+    int nodeId,
+    double sfxr,
+  ) {
+    return _SfxrNode_vibratoInHz(
+      nodeId,
+      sfxr,
+    );
+  }
+
+  late final _SfxrNode_vibratoInHz_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoInHz>>(
+          'SfxrNode_vibratoInHz');
+  late final _dart_SfxrNode_vibratoInHz _SfxrNode_vibratoInHz =
+      _SfxrNode_vibratoInHz_ptr.asFunction<_dart_SfxrNode_vibratoInHz>();
+
+  double SfxrNode_filterFreqInHz(
+    int nodeId,
+    double sfxr,
+  ) {
+    return _SfxrNode_filterFreqInHz(
+      nodeId,
+      sfxr,
+    );
+  }
+
+  late final _SfxrNode_filterFreqInHz_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_filterFreqInHz>>(
+          'SfxrNode_filterFreqInHz');
+  late final _dart_SfxrNode_filterFreqInHz _SfxrNode_filterFreqInHz =
+      _SfxrNode_filterFreqInHz_ptr.asFunction<_dart_SfxrNode_filterFreqInHz>();
+
+  double SfxrNode_filterFreqInSfxrUnits(
+    int nodeId,
+    double hz,
+  ) {
+    return _SfxrNode_filterFreqInSfxrUnits(
+      nodeId,
+      hz,
+    );
+  }
+
+  late final _SfxrNode_filterFreqInSfxrUnits_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_filterFreqInSfxrUnits>>(
+          'SfxrNode_filterFreqInSfxrUnits');
+  late final _dart_SfxrNode_filterFreqInSfxrUnits
+      _SfxrNode_filterFreqInSfxrUnits = _SfxrNode_filterFreqInSfxrUnits_ptr
+          .asFunction<_dart_SfxrNode_filterFreqInSfxrUnits>();
+
+  void SfxrNode_setDefaultBeep(
+    int nodeId,
+  ) {
+    return _SfxrNode_setDefaultBeep(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_setDefaultBeep_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_setDefaultBeep>>(
+          'SfxrNode_setDefaultBeep');
+  late final _dart_SfxrNode_setDefaultBeep _SfxrNode_setDefaultBeep =
+      _SfxrNode_setDefaultBeep_ptr.asFunction<_dart_SfxrNode_setDefaultBeep>();
+
+  void SfxrNode_coin(
+    int nodeId,
+  ) {
+    return _SfxrNode_coin(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_coin_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_coin>>('SfxrNode_coin');
+  late final _dart_SfxrNode_coin _SfxrNode_coin =
+      _SfxrNode_coin_ptr.asFunction<_dart_SfxrNode_coin>();
+
+  void SfxrNode_laser(
+    int nodeId,
+  ) {
+    return _SfxrNode_laser(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_laser_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_laser>>('SfxrNode_laser');
+  late final _dart_SfxrNode_laser _SfxrNode_laser =
+      _SfxrNode_laser_ptr.asFunction<_dart_SfxrNode_laser>();
+
+  void SfxrNode_explosion(
+    int nodeId,
+  ) {
+    return _SfxrNode_explosion(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_explosion_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_explosion>>('SfxrNode_explosion');
+  late final _dart_SfxrNode_explosion _SfxrNode_explosion =
+      _SfxrNode_explosion_ptr.asFunction<_dart_SfxrNode_explosion>();
+
+  void SfxrNode_powerUp(
+    int nodeId,
+  ) {
+    return _SfxrNode_powerUp(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_powerUp_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_powerUp>>('SfxrNode_powerUp');
+  late final _dart_SfxrNode_powerUp _SfxrNode_powerUp =
+      _SfxrNode_powerUp_ptr.asFunction<_dart_SfxrNode_powerUp>();
+
+  void SfxrNode_hit(
+    int nodeId,
+  ) {
+    return _SfxrNode_hit(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_hit_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_hit>>('SfxrNode_hit');
+  late final _dart_SfxrNode_hit _SfxrNode_hit =
+      _SfxrNode_hit_ptr.asFunction<_dart_SfxrNode_hit>();
+
+  void SfxrNode_jump(
+    int nodeId,
+  ) {
+    return _SfxrNode_jump(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_jump_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_jump>>('SfxrNode_jump');
+  late final _dart_SfxrNode_jump _SfxrNode_jump =
+      _SfxrNode_jump_ptr.asFunction<_dart_SfxrNode_jump>();
+
+  void SfxrNode_select(
+    int nodeId,
+  ) {
+    return _SfxrNode_select(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_select_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_select>>('SfxrNode_select');
+  late final _dart_SfxrNode_select _SfxrNode_select =
+      _SfxrNode_select_ptr.asFunction<_dart_SfxrNode_select>();
+
+  void SfxrNode_mutate(
+    int nodeId,
+  ) {
+    return _SfxrNode_mutate(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_mutate_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_mutate>>('SfxrNode_mutate');
+  late final _dart_SfxrNode_mutate _SfxrNode_mutate =
+      _SfxrNode_mutate_ptr.asFunction<_dart_SfxrNode_mutate>();
+
+  void SfxrNode_randomize(
+    int nodeId,
+  ) {
+    return _SfxrNode_randomize(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_randomize_ptr =
+      _lookup<ffi.NativeFunction<_c_SfxrNode_randomize>>('SfxrNode_randomize');
+  late final _dart_SfxrNode_randomize _SfxrNode_randomize =
+      _SfxrNode_randomize_ptr.asFunction<_dart_SfxrNode_randomize>();
 }
 
 class __darwin_pthread_handler_rec extends ffi.Struct {
@@ -7451,6 +8136,404 @@ typedef _c_StereoPannerNode_pan = ffi.Int32 Function(
 );
 
 typedef _dart_StereoPannerNode_pan = int Function(
+  int nodeId,
+);
+
+typedef _c_createPowerMonitorNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createPowerMonitorNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_PowerMonitorNode_windowSize = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_PowerMonitorNode_windowSize = int Function(
+  int nodeId,
+);
+
+typedef _c_PowerMonitorNode_db = ffi.Float Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_PowerMonitorNode_db = double Function(
+  int nodeId,
+);
+
+typedef _c_PowerMonitorNode_setWindowSize = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 ws,
+);
+
+typedef _dart_PowerMonitorNode_setWindowSize = void Function(
+  int nodeId,
+  int ws,
+);
+
+typedef _c_createSfxrNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createSfxrNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_SfxrNode_attackTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_attackTime = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_sustainTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_sustainTime = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_sustainPunch = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_sustainPunch = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_decayTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_decayTime = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_startFrequency = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_startFrequency = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_minFrequency = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_minFrequency = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_slide = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_slide = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_deltaSlide = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_deltaSlide = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_vibratoDepth = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_vibratoDepth = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_vibratoSpeed = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_vibratoSpeed = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_changeAmount = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_changeAmount = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_changeSpeed = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_changeSpeed = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_squareDuty = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_squareDuty = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_dutySweep = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_dutySweep = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_repeatSpeed = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_repeatSpeed = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_phaserOffset = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_phaserOffset = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_phaserSweep = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_phaserSweep = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_lpFilterCutoff = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_lpFilterCutoff = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_lpFilterCutoffSweep = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_lpFilterCutoffSweep = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_lpFiterResonance = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_lpFiterResonance = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_hpFilterCutoff = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_hpFilterCutoff = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_hpFilterCutoffSweep = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_hpFilterCutoffSweep = int Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_setStartFrequencyInHz = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Float value,
+);
+
+typedef _dart_SfxrNode_setStartFrequencyInHz = void Function(
+  int nodeId,
+  double value,
+);
+
+typedef _c_SfxrNode_setVibratoSpeedInHz = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Float value,
+);
+
+typedef _dart_SfxrNode_setVibratoSpeedInHz = void Function(
+  int nodeId,
+  double value,
+);
+
+typedef _c_SfxrNode_envelopeTimeInSeconds = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float sfxrEnvTime,
+);
+
+typedef _dart_SfxrNode_envelopeTimeInSeconds = double Function(
+  int nodeId,
+  double sfxrEnvTime,
+);
+
+typedef _c_SfxrNode_envelopeTimeInSfxrUnits = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float t,
+);
+
+typedef _dart_SfxrNode_envelopeTimeInSfxrUnits = double Function(
+  int nodeId,
+  double t,
+);
+
+typedef _c_SfxrNode_frequencyInSfxrUnits = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float hz,
+);
+
+typedef _dart_SfxrNode_frequencyInSfxrUnits = double Function(
+  int nodeId,
+  double hz,
+);
+
+typedef _c_SfxrNode_frequencyInHz = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float sfxr,
+);
+
+typedef _dart_SfxrNode_frequencyInHz = double Function(
+  int nodeId,
+  double sfxr,
+);
+
+typedef _c_SfxrNode_vibratoInSfxrUnits = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float hz,
+);
+
+typedef _dart_SfxrNode_vibratoInSfxrUnits = double Function(
+  int nodeId,
+  double hz,
+);
+
+typedef _c_SfxrNode_vibratoInHz = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float sfxr,
+);
+
+typedef _dart_SfxrNode_vibratoInHz = double Function(
+  int nodeId,
+  double sfxr,
+);
+
+typedef _c_SfxrNode_filterFreqInHz = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float sfxr,
+);
+
+typedef _dart_SfxrNode_filterFreqInHz = double Function(
+  int nodeId,
+  double sfxr,
+);
+
+typedef _c_SfxrNode_filterFreqInSfxrUnits = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Float hz,
+);
+
+typedef _dart_SfxrNode_filterFreqInSfxrUnits = double Function(
+  int nodeId,
+  double hz,
+);
+
+typedef _c_SfxrNode_setDefaultBeep = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_setDefaultBeep = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_coin = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_coin = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_laser = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_laser = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_explosion = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_explosion = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_powerUp = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_powerUp = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_hit = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_hit = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_jump = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_jump = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_select = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_select = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_mutate = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_mutate = void Function(
+  int nodeId,
+);
+
+typedef _c_SfxrNode_randomize = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_randomize = void Function(
   int nodeId,
 );
 

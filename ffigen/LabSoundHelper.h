@@ -575,3 +575,76 @@ void ConvolverNode_setImpulse(int nodeId, int busId);
 ////////////////////////
 int createStereoPannerNode(AudioContext* context);
 int StereoPannerNode_pan(int nodeId);
+
+
+
+////////////////////////
+/// PowerMonitorNode ///
+////////////////////////
+
+int createPowerMonitorNode(AudioContext* context);
+int PowerMonitorNode_windowSize(int nodeId);
+float PowerMonitorNode_db(int nodeId);
+void PowerMonitorNode_setWindowSize(int nodeId, int ws);
+
+
+////////////////
+/// SfxrNode ///
+////////////////
+
+
+int createSfxrNode(AudioContext* context);
+
+int SfxrNode_attackTime(int nodeId);
+int SfxrNode_sustainTime(int nodeId);
+int SfxrNode_sustainPunch(int nodeId);
+int SfxrNode_decayTime(int nodeId);
+int SfxrNode_startFrequency(int nodeId);
+int SfxrNode_minFrequency(int nodeId);
+int SfxrNode_slide(int nodeId);
+int SfxrNode_deltaSlide(int nodeId);
+int SfxrNode_vibratoDepth(int nodeId);
+int SfxrNode_vibratoSpeed(int nodeId);
+
+int SfxrNode_changeAmount(int nodeId);
+int SfxrNode_changeSpeed(int nodeId);
+
+int SfxrNode_squareDuty(int nodeId);
+int SfxrNode_dutySweep(int nodeId);
+
+int SfxrNode_repeatSpeed(int nodeId);
+int SfxrNode_phaserOffset(int nodeId);
+int SfxrNode_phaserSweep(int nodeId);
+
+
+int SfxrNode_lpFilterCutoff(int nodeId);
+int SfxrNode_lpFilterCutoffSweep(int nodeId);
+int SfxrNode_lpFiterResonance(int nodeId);
+int SfxrNode_hpFilterCutoff(int nodeId);
+int SfxrNode_hpFilterCutoffSweep(int nodeId);
+
+
+void SfxrNode_setStartFrequencyInHz(int nodeId, float value);
+void SfxrNode_setVibratoSpeedInHz(int nodeId, float value);
+float SfxrNode_envelopeTimeInSeconds(int nodeId, float sfxrEnvTime);
+float SfxrNode_envelopeTimeInSfxrUnits(int nodeId, float t);
+float SfxrNode_frequencyInSfxrUnits(int nodeId, float hz);
+float SfxrNode_frequencyInHz(int nodeId, float sfxr);
+float SfxrNode_vibratoInSfxrUnits(int nodeId, float hz);
+float SfxrNode_vibratoInHz(int nodeId, float sfxr);
+float SfxrNode_filterFreqInHz(int nodeId, float sfxr);
+
+float SfxrNode_filterFreqInSfxrUnits(int nodeId, float hz);
+
+
+void SfxrNode_setDefaultBeep(int nodeId);
+void SfxrNode_coin(int nodeId);
+void SfxrNode_laser(int nodeId);
+void SfxrNode_explosion(int nodeId);
+void SfxrNode_powerUp(int nodeId);
+void SfxrNode_hit(int nodeId);
+void SfxrNode_jump(int nodeId);
+void SfxrNode_select(int nodeId);
+
+void SfxrNode_mutate(int nodeId);
+void SfxrNode_randomize(int nodeId);

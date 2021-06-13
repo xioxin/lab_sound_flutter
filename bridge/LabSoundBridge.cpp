@@ -32,6 +32,9 @@
 #include "BPMDelayNode.cpp"
 #include "ConvolverNode.cpp"
 #include "StereoPannerNode.cpp"
+#include "PowerMonitorNode.cpp"
+#include "SfxrNode.cpp"
+
 
 
 using namespace lab;

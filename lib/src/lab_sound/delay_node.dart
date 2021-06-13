@@ -5,7 +5,7 @@ import 'lab_sound.dart';
 
 class DelayNode extends AudioNode {
   late AudioParam delayTime;
-  DelayNode(AudioContext ctx): super(ctx, LabSound().createGain(ctx.pointer)) {
+  DelayNode(AudioContext ctx): super(ctx, LabSound().createDelayNode(ctx.pointer)) {
     this.delayTime = AudioParam(this.ctx, this.nodeId, LabSound().DelayNode_delayTime(this.nodeId));
   }
 
