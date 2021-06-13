@@ -4031,6 +4031,183 @@ class LabSoundBind {
           'PolyBLEPNode_frequency');
   late final _dart_PolyBLEPNode_frequency _PolyBLEPNode_frequency =
       _PolyBLEPNode_frequency_ptr.asFunction<_dart_PolyBLEPNode_frequency>();
+
+  /// //////////////
+  /// DelayNode ///
+  /// //////////////
+  int createDelayNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createDelayNode(
+      context,
+    );
+  }
+
+  late final _createDelayNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createDelayNode>>('createDelayNode');
+  late final _dart_createDelayNode _createDelayNode =
+      _createDelayNode_ptr.asFunction<_dart_createDelayNode>();
+
+  int DelayNode_delayTime(
+    int nodeId,
+  ) {
+    return _DelayNode_delayTime(
+      nodeId,
+    );
+  }
+
+  late final _DelayNode_delayTime_ptr =
+      _lookup<ffi.NativeFunction<_c_DelayNode_delayTime>>(
+          'DelayNode_delayTime');
+  late final _dart_DelayNode_delayTime _DelayNode_delayTime =
+      _DelayNode_delayTime_ptr.asFunction<_dart_DelayNode_delayTime>();
+
+  /// /////////////////
+  /// BPMDelayNode ///
+  /// /////////////////
+  int createBPMDelayNode(
+    ffi.Pointer<ffi.Void> context,
+    double tempo,
+  ) {
+    return _createBPMDelayNode(
+      context,
+      tempo,
+    );
+  }
+
+  late final _createBPMDelayNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createBPMDelayNode>>('createBPMDelayNode');
+  late final _dart_createBPMDelayNode _createBPMDelayNode =
+      _createBPMDelayNode_ptr.asFunction<_dart_createBPMDelayNode>();
+
+  int BPMDelayNode_setTempo(
+    int nodeId,
+    double newTempo,
+  ) {
+    return _BPMDelayNode_setTempo(
+      nodeId,
+      newTempo,
+    );
+  }
+
+  late final _BPMDelayNode_setTempo_ptr =
+      _lookup<ffi.NativeFunction<_c_BPMDelayNode_setTempo>>(
+          'BPMDelayNode_setTempo');
+  late final _dart_BPMDelayNode_setTempo _BPMDelayNode_setTempo =
+      _BPMDelayNode_setTempo_ptr.asFunction<_dart_BPMDelayNode_setTempo>();
+
+  int BPMDelayNode_setDelayIndex(
+    int nodeId,
+    int value,
+  ) {
+    return _BPMDelayNode_setDelayIndex(
+      nodeId,
+      value,
+    );
+  }
+
+  late final _BPMDelayNode_setDelayIndex_ptr =
+      _lookup<ffi.NativeFunction<_c_BPMDelayNode_setDelayIndex>>(
+          'BPMDelayNode_setDelayIndex');
+  late final _dart_BPMDelayNode_setDelayIndex _BPMDelayNode_setDelayIndex =
+      _BPMDelayNode_setDelayIndex_ptr.asFunction<
+          _dart_BPMDelayNode_setDelayIndex>();
+
+  /// //////////////////
+  /// ConvolverNode ///
+  /// //////////////////
+  int createConvolverNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createConvolverNode(
+      context,
+    );
+  }
+
+  late final _createConvolverNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createConvolverNode>>(
+          'createConvolverNode');
+  late final _dart_createConvolverNode _createConvolverNode =
+      _createConvolverNode_ptr.asFunction<_dart_createConvolverNode>();
+
+  int ConvolverNode_normalize(
+    int nodeId,
+  ) {
+    return _ConvolverNode_normalize(
+      nodeId,
+    );
+  }
+
+  late final _ConvolverNode_normalize_ptr =
+      _lookup<ffi.NativeFunction<_c_ConvolverNode_normalize>>(
+          'ConvolverNode_normalize');
+  late final _dart_ConvolverNode_normalize _ConvolverNode_normalize =
+      _ConvolverNode_normalize_ptr.asFunction<_dart_ConvolverNode_normalize>();
+
+  void ConvolverNode_setNormalize(
+    int nodeId,
+    int newN,
+  ) {
+    return _ConvolverNode_setNormalize(
+      nodeId,
+      newN,
+    );
+  }
+
+  late final _ConvolverNode_setNormalize_ptr =
+      _lookup<ffi.NativeFunction<_c_ConvolverNode_setNormalize>>(
+          'ConvolverNode_setNormalize');
+  late final _dart_ConvolverNode_setNormalize _ConvolverNode_setNormalize =
+      _ConvolverNode_setNormalize_ptr.asFunction<
+          _dart_ConvolverNode_setNormalize>();
+
+  void ConvolverNode_setImpulse(
+    int nodeId,
+    int busId,
+  ) {
+    return _ConvolverNode_setImpulse(
+      nodeId,
+      busId,
+    );
+  }
+
+  late final _ConvolverNode_setImpulse_ptr =
+      _lookup<ffi.NativeFunction<_c_ConvolverNode_setImpulse>>(
+          'ConvolverNode_setImpulse');
+  late final _dart_ConvolverNode_setImpulse _ConvolverNode_setImpulse =
+      _ConvolverNode_setImpulse_ptr.asFunction<
+          _dart_ConvolverNode_setImpulse>();
+
+  /// /////////////////////
+  /// StereoPannerNode ///
+  /// /////////////////////
+  int createStereoPannerNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createStereoPannerNode(
+      context,
+    );
+  }
+
+  late final _createStereoPannerNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createStereoPannerNode>>(
+          'createStereoPannerNode');
+  late final _dart_createStereoPannerNode _createStereoPannerNode =
+      _createStereoPannerNode_ptr.asFunction<_dart_createStereoPannerNode>();
+
+  int StereoPannerNode_pan(
+    int nodeId,
+  ) {
+    return _StereoPannerNode_pan(
+      nodeId,
+    );
+  }
+
+  late final _StereoPannerNode_pan_ptr =
+      _lookup<ffi.NativeFunction<_c_StereoPannerNode_pan>>(
+          'StereoPannerNode_pan');
+  late final _dart_StereoPannerNode_pan _StereoPannerNode_pan =
+      _StereoPannerNode_pan_ptr.asFunction<_dart_StereoPannerNode_pan>();
 }
 
 class __darwin_pthread_handler_rec extends ffi.Struct {
@@ -7176,6 +7353,104 @@ typedef _c_PolyBLEPNode_frequency = ffi.Int32 Function(
 );
 
 typedef _dart_PolyBLEPNode_frequency = int Function(
+  int nodeId,
+);
+
+typedef _c_createDelayNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createDelayNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_DelayNode_delayTime = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_DelayNode_delayTime = int Function(
+  int nodeId,
+);
+
+typedef _c_createBPMDelayNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+  ffi.Float tempo,
+);
+
+typedef _dart_createBPMDelayNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+  double tempo,
+);
+
+typedef _c_BPMDelayNode_setTempo = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+  ffi.Float newTempo,
+);
+
+typedef _dart_BPMDelayNode_setTempo = int Function(
+  int nodeId,
+  double newTempo,
+);
+
+typedef _c_BPMDelayNode_setDelayIndex = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 value,
+);
+
+typedef _dart_BPMDelayNode_setDelayIndex = int Function(
+  int nodeId,
+  int value,
+);
+
+typedef _c_createConvolverNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createConvolverNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_ConvolverNode_normalize = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ConvolverNode_normalize = int Function(
+  int nodeId,
+);
+
+typedef _c_ConvolverNode_setNormalize = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 newN,
+);
+
+typedef _dart_ConvolverNode_setNormalize = void Function(
+  int nodeId,
+  int newN,
+);
+
+typedef _c_ConvolverNode_setImpulse = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 busId,
+);
+
+typedef _dart_ConvolverNode_setImpulse = void Function(
+  int nodeId,
+  int busId,
+);
+
+typedef _c_createStereoPannerNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createStereoPannerNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_StereoPannerNode_pan = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_StereoPannerNode_pan = int Function(
   int nodeId,
 );
 

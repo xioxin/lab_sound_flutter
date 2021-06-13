@@ -534,3 +534,44 @@ void PolyBLEPNode_setType(int nodeId, int type);
 int PolyBLEPNode_amplitude(int nodeId);
 
 int PolyBLEPNode_frequency(int nodeId);
+
+
+/////////////////
+/// DelayNode ///
+/////////////////
+
+int createDelayNode(AudioContext* context);
+
+int DelayNode_delayTime(int nodeId);
+
+
+////////////////////
+/// BPMDelayNode ///
+////////////////////
+
+
+int createBPMDelayNode(AudioContext* context, float tempo);
+
+int BPMDelayNode_setTempo(int nodeId, float newTempo);
+
+int BPMDelayNode_setDelayIndex(int nodeId, int value);
+
+
+/////////////////////
+/// ConvolverNode ///
+/////////////////////
+
+int createConvolverNode(AudioContext* context);
+
+int ConvolverNode_normalize(int nodeId);
+
+void ConvolverNode_setNormalize(int nodeId, int newN);
+
+void ConvolverNode_setImpulse(int nodeId, int busId);
+
+
+////////////////////////
+/// StereoPannerNode ///
+////////////////////////
+int createStereoPannerNode(AudioContext* context);
+int StereoPannerNode_pan(int nodeId);

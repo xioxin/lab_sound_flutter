@@ -28,6 +28,10 @@
 #include "NoiseNode.cpp"
 #include "WaveShaperNode.cpp"
 #include "PolyBLEPNode.cpp"
+#include "DelayNode.cpp"
+#include "BPMDelayNode.cpp"
+#include "ConvolverNode.cpp"
+#include "StereoPannerNode.cpp"
 
 
 using namespace lab;

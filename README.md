@@ -47,8 +47,8 @@ If you are using cmake version 3.18.1 and you get an invalid version number erro
 * [x] BiquadFilterNode
 * [x] ChannelMergerNode
 * [x] ChannelSplitterNode
-* [ ] ConvolverNode *next* <!-- 卷积 -->
-* [ ] DelayNode  *next* <!-- 延迟 -->
+* [x] ConvolverNode
+* [x] DelayNode
 * [x] DynamicsCompressorNode
 * [x] GainNode
 * [ ] NullDeviceNode
@@ -56,11 +56,11 @@ If you are using cmake version 3.18.1 and you get an invalid version number erro
 * [x] PannerNode
 * [ ] RealtimeAnalyser
 * [x] SampledAudioNode
-* [ ] StereoPannerNode *next* <!-- 声道均衡 -->
+* [x] StereoPannerNode
 * [x] WaveShaperNode
 
 * [x] ADSRNode
-* [ ] BPMDelayNode
+* [x] BPMDelayNode
 * [ ] ClipNode
 * [ ] DiodeNode
 * [ ] FunctionNode
