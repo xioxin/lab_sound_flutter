@@ -1,6 +1,9 @@
 # lab_sound_flutter
+**WIP**
 
 lab_sound_flutter is the [LabSound](https://github.com/LabSound/LabSound) wrapper for Flutter.
+
+Currently only the Android platform is available, other platforms have encountered some difficulties in integration, I am still working on it. If you have a good solution, please feel free to submit Issues or PR.
 
 ## Platform
 * [x] Android
@@ -9,7 +12,19 @@ lab_sound_flutter is the [LabSound](https://github.com/LabSound/LabSound) wrappe
 * [ ] Windows
 * [ ] Linux
 
-**WIP**
+
+
+
+# Building
+
+The project uses the git submodule so it is required that new users clone the repository with the `--recursive` option.
+
+The submodules can be fetched after a clone with `git submodule update --init --recursive`
+
+# Android
+Requires cmake >= 3.13
+
+If you are using cmake version 3.18.1 and you get an invalid version number error, please try upgrading the gradle version
 
 ## Binding
 
