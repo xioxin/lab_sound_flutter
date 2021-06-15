@@ -14,7 +14,7 @@ class WaveShaperNode extends AudioNode {
     for (int i = 0; i < curve.length; i++) {
       curvePtr[i] = curve[i];
     }
-    LabSound().WaveShaperNode_setCurve(nodeId, curvePtr);
+    LabSound().WaveShaperNode_setCurve(nodeId, curve.length, curvePtr);
     malloc.free(curvePtr);
   }
 }

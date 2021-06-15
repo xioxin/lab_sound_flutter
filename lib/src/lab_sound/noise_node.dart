@@ -1,5 +1,6 @@
 import 'audio_context.dart';
 import 'audio_node.dart';
+import 'audio_scheduled_source_node.dart';
 import 'lab_sound.dart';
 
 
@@ -10,7 +11,7 @@ enum NoiseType {
 }
 
 
-class NoiseNode extends AudioNode {
+class NoiseNode extends AudioScheduledSourceNode {
 
   NoiseNode(AudioContext ctx): super(ctx, LabSound().createNoiseNode(ctx.pointer));
 

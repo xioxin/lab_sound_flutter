@@ -64,4 +64,9 @@ class AudioNode {
   @override
   String toString() => "[$nodeId]$name";
 
+  operator >> (AudioNode otherNode) {
+    this.connect(otherNode);
+    return otherNode;
+  }
+
 }

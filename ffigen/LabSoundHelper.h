@@ -506,8 +506,7 @@ int ADSRNode_releaseTime(int nodeId);
 
 int createWaveShaperNode(AudioContext* context);
 
-void WaveShaperNode_setCurve(const int nodeId, const float* curve);
-
+void WaveShaperNode_setCurve(const int nodeId,  const int curveLen,  const float* curve);
 
 
 

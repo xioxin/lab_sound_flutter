@@ -6,6 +6,7 @@ import 'package:lab_sound_flutter_example/demos/player.dart';
 import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 
 import 'demos/render-audio.dart';
+import 'demos/zelda.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -63,7 +64,10 @@ class _MyAppState extends State<MyApp> {
             ListTile(
                 title: Text("zelda"),
                 onTap: () {
-                  zelda.play();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Zelda()),
+                  );
                 })
           ],
         ));
