@@ -18,6 +18,7 @@ std::shared_ptr<AudioBus> getBus(int busId) {
 
 int keepBus(std::shared_ptr<AudioBus> audioBus) {
     int busId = bufferCount++;
+    // todo: 防止重复
     audioBuffers.insert(std::pair<int,std::shared_ptr<AudioBus>>(busId, audioBus));
     return busId;
 }

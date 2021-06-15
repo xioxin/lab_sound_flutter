@@ -5,14 +5,14 @@ import 'audio_context.dart';
 import 'lab_sound.dart';
 
 enum SchedulingState {
-UNSCHEDULED, // Initial playback state. Created, but not yet scheduled
-SCHEDULED,       // Scheduled to play (via noteOn() or noteGrainOn()), but not yet playing
-FADE_IN,         // First epoch, fade in, then play
-PLAYING,         // Generating sound
-STOPPING,        // Transitioning to finished
-RESETTING,       // Node is resetting to initial, unscheduled state
-FINISHING,       // Playing has finished
-FINISHED         // Node has finished
+  UNSCHEDULED, // Initial playback state. Created, but not yet scheduled
+  SCHEDULED,       // Scheduled to play (via noteOn() or noteGrainOn()), but not yet playing
+  FADE_IN,         // First epoch, fade in, then play
+  PLAYING,         // Generating sound
+  STOPPING,        // Transitioning to finished
+  RESETTING,       // Node is resetting to initial, unscheduled state
+  FINISHING,       // Playing has finished
+  FINISHED         // Node has finished
 }
 
 class AudioNode {

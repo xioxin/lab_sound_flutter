@@ -62,4 +62,31 @@ void keepNodeRelease(int nodeId) {
     audioParams.erase(nodeId);
 }
 
+
+std::map<int, std::map<int, std::shared_ptr<AudioSetting>>> audioSettingMap;
+
+std::shared_ptr<AudioSetting> getKeepAudioSetting(int nodeId, int key) {
+    std::map<int, std::map<int, std::shared_ptr<AudioSetting>>>::iterator ite = audioSettingMap.find(nodeId);
+    if (ite != audioSettingMap.end()) {
+       std::map<int, std::shared_ptr<AudioSetting>>::iterator ite2 = ite->second.find(key);
+       if(ite2 != ite->second.end()) {
+           return ite2->second;
+       }
+    }
+    return nullptr;
+}
+
+int keepAudioSetting(int nodeId, int key, std::shared_ptr<AudioSetting> audioSetting){
+    std::map<int, std::map<int, std::shared_ptr<AudioSetting>>>::iterator ite = audioSettingMap.find(nodeId);
+    if (ite != audioSettingMap.end()) {
+        ite->second.insert(std::pair<int,std::shared_ptr<AudioSetting>>(key, audioSetting));
+    }else {
+        std::map<int, std::shared_ptr<AudioSetting>> temp;
+        temp.insert(std::pair<int,std::shared_ptr<AudioSetting>>(key, audioSetting));
+        audioSettingMap.insert(std::pair<int, std::map<int, std::shared_ptr<AudioSetting>>>(nodeId, temp));
+    }
+    return key;
+}
+
+
 #endif

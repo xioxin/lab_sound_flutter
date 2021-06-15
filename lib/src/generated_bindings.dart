@@ -4893,6 +4893,221 @@ class LabSoundBind {
       _lookup<ffi.NativeFunction<_c_SfxrNode_randomize>>('SfxrNode_randomize');
   late final _dart_SfxrNode_randomize _SfxrNode_randomize =
       _SfxrNode_randomize_ptr.asFunction<_dart_SfxrNode_randomize>();
+
+  /// /////////////////
+  /// AudioSetting ///
+  /// /////////////////
+  ffi.Pointer<ffi.Int8> AudioSetting_name(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_name(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_name_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_name>>('AudioSetting_name');
+  late final _dart_AudioSetting_name _AudioSetting_name =
+      _AudioSetting_name_ptr.asFunction<_dart_AudioSetting_name>();
+
+  ffi.Pointer<ffi.Int8> AudioSetting_shortName(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_shortName(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_shortName_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_shortName>>(
+          'AudioSetting_shortName');
+  late final _dart_AudioSetting_shortName _AudioSetting_shortName =
+      _AudioSetting_shortName_ptr.asFunction<_dart_AudioSetting_shortName>();
+
+  int AudioSetting_type(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_type(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_type_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_type>>('AudioSetting_type');
+  late final _dart_AudioSetting_type _AudioSetting_type =
+      _AudioSetting_type_ptr.asFunction<_dart_AudioSetting_type>();
+
+  int AudioSetting_valueBool(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_valueBool(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_valueBool_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_valueBool>>(
+          'AudioSetting_valueBool');
+  late final _dart_AudioSetting_valueBool _AudioSetting_valueBool =
+      _AudioSetting_valueBool_ptr.asFunction<_dart_AudioSetting_valueBool>();
+
+  double AudioSetting_valueFloat(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_valueFloat(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_valueFloat_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_valueFloat>>(
+          'AudioSetting_valueFloat');
+  late final _dart_AudioSetting_valueFloat _AudioSetting_valueFloat =
+      _AudioSetting_valueFloat_ptr.asFunction<_dart_AudioSetting_valueFloat>();
+
+  int AudioSetting_valueUint32(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_valueUint32(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_valueUint32_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_valueUint32>>(
+          'AudioSetting_valueUint32');
+  late final _dart_AudioSetting_valueUint32 _AudioSetting_valueUint32 =
+      _AudioSetting_valueUint32_ptr.asFunction<
+          _dart_AudioSetting_valueUint32>();
+
+  int AudioSetting_valueBus(
+    int nodeId,
+    int settingIndex,
+  ) {
+    return _AudioSetting_valueBus(
+      nodeId,
+      settingIndex,
+    );
+  }
+
+  late final _AudioSetting_valueBus_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_valueBus>>(
+          'AudioSetting_valueBus');
+  late final _dart_AudioSetting_valueBus _AudioSetting_valueBus =
+      _AudioSetting_valueBus_ptr.asFunction<_dart_AudioSetting_valueBus>();
+
+  void AudioSetting_setBool(
+    int nodeId,
+    int settingIndex,
+    int v,
+    int notify,
+  ) {
+    return _AudioSetting_setBool(
+      nodeId,
+      settingIndex,
+      v,
+      notify,
+    );
+  }
+
+  late final _AudioSetting_setBool_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_setBool>>(
+          'AudioSetting_setBool');
+  late final _dart_AudioSetting_setBool _AudioSetting_setBool =
+      _AudioSetting_setBool_ptr.asFunction<_dart_AudioSetting_setBool>();
+
+  void AudioSetting_setFloat(
+    int nodeId,
+    int settingIndex,
+    double v,
+    int notify,
+  ) {
+    return _AudioSetting_setFloat(
+      nodeId,
+      settingIndex,
+      v,
+      notify,
+    );
+  }
+
+  late final _AudioSetting_setFloat_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_setFloat>>(
+          'AudioSetting_setFloat');
+  late final _dart_AudioSetting_setFloat _AudioSetting_setFloat =
+      _AudioSetting_setFloat_ptr.asFunction<_dart_AudioSetting_setFloat>();
+
+  void AudioSetting_setUint32(
+    int nodeId,
+    int settingIndex,
+    int v,
+    int notify,
+  ) {
+    return _AudioSetting_setUint32(
+      nodeId,
+      settingIndex,
+      v,
+      notify,
+    );
+  }
+
+  late final _AudioSetting_setUint32_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_setUint32>>(
+          'AudioSetting_setUint32');
+  late final _dart_AudioSetting_setUint32 _AudioSetting_setUint32 =
+      _AudioSetting_setUint32_ptr.asFunction<_dart_AudioSetting_setUint32>();
+
+  void AudioSetting_setEnumeration(
+    int nodeId,
+    int settingIndex,
+    int v,
+    int notify,
+  ) {
+    return _AudioSetting_setEnumeration(
+      nodeId,
+      settingIndex,
+      v,
+      notify,
+    );
+  }
+
+  late final _AudioSetting_setEnumeration_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_setEnumeration>>(
+          'AudioSetting_setEnumeration');
+  late final _dart_AudioSetting_setEnumeration _AudioSetting_setEnumeration =
+      _AudioSetting_setEnumeration_ptr.asFunction<
+          _dart_AudioSetting_setEnumeration>();
+
+  void AudioSetting_setString(
+    int nodeId,
+    int settingIndex,
+    ffi.Pointer<ffi.Int8> v,
+    int notify,
+  ) {
+    return _AudioSetting_setString(
+      nodeId,
+      settingIndex,
+      v,
+      notify,
+    );
+  }
+
+  late final _AudioSetting_setString_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_setString>>(
+          'AudioSetting_setString');
+  late final _dart_AudioSetting_setString _AudioSetting_setString =
+      _AudioSetting_setString_ptr.asFunction<_dart_AudioSetting_setString>();
 }
 
 class __darwin_pthread_handler_rec extends ffi.Struct {
@@ -8535,6 +8750,146 @@ typedef _c_SfxrNode_randomize = ffi.Void Function(
 
 typedef _dart_SfxrNode_randomize = void Function(
   int nodeId,
+);
+
+typedef _c_AudioSetting_name = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_name = ffi.Pointer<ffi.Int8> Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_shortName = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_shortName = ffi.Pointer<ffi.Int8> Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_type = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_type = int Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_valueBool = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_valueBool = int Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_valueFloat = ffi.Float Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_valueFloat = double Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_valueUint32 = ffi.Uint32 Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_valueUint32 = int Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_valueBus = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+);
+
+typedef _dart_AudioSetting_valueBus = int Function(
+  int nodeId,
+  int settingIndex,
+);
+
+typedef _c_AudioSetting_setBool = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+  ffi.Int32 v,
+  ffi.Int32 notify,
+);
+
+typedef _dart_AudioSetting_setBool = void Function(
+  int nodeId,
+  int settingIndex,
+  int v,
+  int notify,
+);
+
+typedef _c_AudioSetting_setFloat = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+  ffi.Float v,
+  ffi.Int32 notify,
+);
+
+typedef _dart_AudioSetting_setFloat = void Function(
+  int nodeId,
+  int settingIndex,
+  double v,
+  int notify,
+);
+
+typedef _c_AudioSetting_setUint32 = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+  ffi.Uint32 v,
+  ffi.Int32 notify,
+);
+
+typedef _dart_AudioSetting_setUint32 = void Function(
+  int nodeId,
+  int settingIndex,
+  int v,
+  int notify,
+);
+
+typedef _c_AudioSetting_setEnumeration = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+  ffi.Int32 v,
+  ffi.Int32 notify,
+);
+
+typedef _dart_AudioSetting_setEnumeration = void Function(
+  int nodeId,
+  int settingIndex,
+  int v,
+  int notify,
+);
+
+typedef _c_AudioSetting_setString = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+  ffi.Pointer<ffi.Int8> v,
+  ffi.Int32 notify,
+);
+
+typedef _dart_AudioSetting_setString = void Function(
+  int nodeId,
+  int settingIndex,
+  ffi.Pointer<ffi.Int8> v,
+  int notify,
 );
 
 typedef _typedefC_1 = ffi.Void Function(

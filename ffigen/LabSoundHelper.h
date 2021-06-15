@@ -636,7 +636,6 @@ float SfxrNode_filterFreqInHz(int nodeId, float sfxr);
 
 float SfxrNode_filterFreqInSfxrUnits(int nodeId, float hz);
 
-
 void SfxrNode_setDefaultBeep(int nodeId);
 void SfxrNode_coin(int nodeId);
 void SfxrNode_laser(int nodeId);
@@ -648,3 +647,21 @@ void SfxrNode_select(int nodeId);
 
 void SfxrNode_mutate(int nodeId);
 void SfxrNode_randomize(int nodeId);
+
+
+////////////////////
+/// AudioSetting ///
+////////////////////
+
+const char * AudioSetting_name(int nodeId, int settingIndex);
+const char * AudioSetting_shortName(int nodeId, int settingIndex);
+int AudioSetting_type(int nodeId, int settingIndex);
+int AudioSetting_valueBool(int nodeId, int settingIndex);
+float AudioSetting_valueFloat(int nodeId, int settingIndex);
+uint32_t AudioSetting_valueUint32(int nodeId, int settingIndex);
+int AudioSetting_valueBus(int nodeId, int settingIndex);
+void AudioSetting_setBool(int nodeId, int settingIndex, int v, int notify);
+void AudioSetting_setFloat(int nodeId, int settingIndex, float v, int notify);
+void AudioSetting_setUint32(int nodeId, int settingIndex, uint32_t v, int notify);
+void AudioSetting_setEnumeration(int nodeId, int settingIndex, int v, int notify);
+void AudioSetting_setString(int nodeId, int settingIndex, char const*const v, int notify);

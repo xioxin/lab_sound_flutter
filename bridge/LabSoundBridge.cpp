@@ -34,7 +34,7 @@
 #include "StereoPannerNode.cpp"
 #include "PowerMonitorNode.cpp"
 #include "SfxrNode.cpp"
-
+#include "AudioSetting.cpp"
 
 
 using namespace lab;
