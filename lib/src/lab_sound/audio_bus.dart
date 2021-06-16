@@ -18,6 +18,8 @@ class AudioBus {
   bool loaded = false;
   Future<AudioBus>? complete;
 
+  int get has => LabSound().audioBusHasCheck(resourceId);
+
   StreamSubscription? _statusStreamSubscription;
   AudioBus._loadByFile(this.filePath, {
     this.autoDispose = false,

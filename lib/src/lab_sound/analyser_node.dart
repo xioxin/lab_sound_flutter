@@ -18,9 +18,18 @@ class AnalyserBuffer<T> extends IterableBase<T> {
       throw "Unsupported type: $T";
     }
   }
+  
+  AnalyserBuffer.fromAddress(this.size, int address) {
+    if(T == double) {
+      ptr = Pointer<Float>.fromAddress(address);
+    } else if(T == int) {
+      ptr = Pointer<Uint8>.fromAddress(address);
+    }else {
+      throw "Unsupported type: $T";
+    }
+  }
 
   @override
-  // TODO: implement iterator
   Iterator<T> get iterator {
     if(ptr == null) throw "ptr is null";
     return _AnalyserBufferIterator(ptr!, size);
@@ -88,6 +97,7 @@ class _AnalyserBufferIterator<T> extends Iterator<T> {
 class AnalyserNode extends AudioNode {
 
   AnalyserNode(AudioContext ctx, { int? fftSize }): super(ctx, fftSize == null ? LabSound().createAnalyserNode(ctx.pointer) : LabSound().createAnalyserNodeFftSize(ctx.pointer, fftSize));
+
 
   setFftSize(int fftSize) => LabSound().AnalyserNode_setFftSize(this.nodeId, this.ctx.pointer, fftSize);
   int get fftSize => LabSound().AnalyserNode_fftSize(this.nodeId);
