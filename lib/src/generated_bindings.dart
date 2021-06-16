@@ -2199,16 +2199,40 @@ class LabSoundBind {
   late final _strupr_ptr = _lookup<ffi.NativeFunction<_c_strupr>>('strupr');
   late final _dart_strupr _strupr_1 = _strupr_ptr.asFunction<_dart_strupr>();
 
-  AudioDeviceInfoList labSoundMakeAudioDeviceList() {
-    return _labSoundMakeAudioDeviceList();
+  AudioDeviceInfoList labSound_MakeAudioDeviceList() {
+    return _labSound_MakeAudioDeviceList();
   }
 
-  late final _labSoundMakeAudioDeviceList_ptr =
-      _lookup<ffi.NativeFunction<_c_labSoundMakeAudioDeviceList>>(
-          'labSoundMakeAudioDeviceList');
-  late final _dart_labSoundMakeAudioDeviceList _labSoundMakeAudioDeviceList =
-      _labSoundMakeAudioDeviceList_ptr
-          .asFunction<_dart_labSoundMakeAudioDeviceList>();
+  late final _labSound_MakeAudioDeviceList_ptr =
+      _lookup<ffi.NativeFunction<_c_labSound_MakeAudioDeviceList>>(
+          'labSound_MakeAudioDeviceList');
+  late final _dart_labSound_MakeAudioDeviceList _labSound_MakeAudioDeviceList =
+      _labSound_MakeAudioDeviceList_ptr
+          .asFunction<_dart_labSound_MakeAudioDeviceList>();
+
+  AudioDeviceIndex labSound_GetDefaultOutputAudioDeviceIndex() {
+    return _labSound_GetDefaultOutputAudioDeviceIndex();
+  }
+
+  late final _labSound_GetDefaultOutputAudioDeviceIndex_ptr =
+      _lookup<ffi.NativeFunction<_c_labSound_GetDefaultOutputAudioDeviceIndex>>(
+          'labSound_GetDefaultOutputAudioDeviceIndex');
+  late final _dart_labSound_GetDefaultOutputAudioDeviceIndex
+      _labSound_GetDefaultOutputAudioDeviceIndex =
+      _labSound_GetDefaultOutputAudioDeviceIndex_ptr
+          .asFunction<_dart_labSound_GetDefaultOutputAudioDeviceIndex>();
+
+  AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex() {
+    return _labSound_GetDefaultInputAudioDeviceIndex();
+  }
+
+  late final _labSound_GetDefaultInputAudioDeviceIndex_ptr =
+      _lookup<ffi.NativeFunction<_c_labSound_GetDefaultInputAudioDeviceIndex>>(
+          'labSound_GetDefaultInputAudioDeviceIndex');
+  late final _dart_labSound_GetDefaultInputAudioDeviceIndex
+      _labSound_GetDefaultInputAudioDeviceIndex =
+      _labSound_GetDefaultInputAudioDeviceIndex_ptr
+          .asFunction<_dart_labSound_GetDefaultInputAudioDeviceIndex>();
 
   /// /////////
   /// PORT ///
@@ -5131,6 +5155,46 @@ class LabSoundBind {
   late final _dart_createADSRNode _createADSRNode =
       _createADSRNode_ptr.asFunction<_dart_createADSRNode>();
 
+  int ADSRNode_finished(
+    int nodeId,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _ADSRNode_finished(
+      nodeId,
+      context,
+    );
+  }
+
+  late final _ADSRNode_finished_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_finished>>('ADSRNode_finished');
+  late final _dart_ADSRNode_finished _ADSRNode_finished =
+      _ADSRNode_finished_ptr.asFunction<_dart_ADSRNode_finished>();
+
+  void ADSRNode_set(
+    int nodeId,
+    double attack_time,
+    double attack_level,
+    double decay_time,
+    double sustain_time,
+    double sustain_level,
+    double release_time,
+  ) {
+    return _ADSRNode_set(
+      nodeId,
+      attack_time,
+      attack_level,
+      decay_time,
+      sustain_time,
+      sustain_level,
+      release_time,
+    );
+  }
+
+  late final _ADSRNode_set_ptr =
+      _lookup<ffi.NativeFunction<_c_ADSRNode_set>>('ADSRNode_set');
+  late final _dart_ADSRNode_set _ADSRNode_set =
+      _ADSRNode_set_ptr.asFunction<_dart_ADSRNode_set>();
+
   int ADSRNode_gate(
     int nodeId,
   ) {
@@ -6565,6 +6629,14 @@ class AudioStreamConfig extends ffi.Struct {
 
   @ffi.Float()
   external double desired_samplerate;
+}
+
+class AudioDeviceIndex extends ffi.Struct {
+  @ffi.Uint32()
+  external int index;
+
+  @ffi.Int32()
+  external int valid;
 }
 
 const int _VCRT_COMPILER_PREPROCESSOR = 1;
@@ -8461,9 +8533,21 @@ typedef _dart_strupr = ffi.Pointer<ffi.Int8> Function(
   ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _c_labSoundMakeAudioDeviceList = AudioDeviceInfoList Function();
+typedef _c_labSound_MakeAudioDeviceList = AudioDeviceInfoList Function();
 
-typedef _dart_labSoundMakeAudioDeviceList = AudioDeviceInfoList Function();
+typedef _dart_labSound_MakeAudioDeviceList = AudioDeviceInfoList Function();
+
+typedef _c_labSound_GetDefaultOutputAudioDeviceIndex = AudioDeviceIndex
+    Function();
+
+typedef _dart_labSound_GetDefaultOutputAudioDeviceIndex = AudioDeviceIndex
+    Function();
+
+typedef _c_labSound_GetDefaultInputAudioDeviceIndex = AudioDeviceIndex
+    Function();
+
+typedef _dart_labSound_GetDefaultInputAudioDeviceIndex = AudioDeviceIndex
+    Function();
 
 typedef _c_InitDartApiDL = ffi.IntPtr Function(
   ffi.Pointer<ffi.Void> data,
@@ -10153,6 +10237,36 @@ typedef _c_createADSRNode = ffi.Int32 Function(
 
 typedef _dart_createADSRNode = int Function(
   ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_ADSRNode_finished = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_ADSRNode_finished = int Function(
+  int nodeId,
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_ADSRNode_set = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Float attack_time,
+  ffi.Float attack_level,
+  ffi.Float decay_time,
+  ffi.Float sustain_time,
+  ffi.Float sustain_level,
+  ffi.Float release_time,
+);
+
+typedef _dart_ADSRNode_set = void Function(
+  int nodeId,
+  double attack_time,
+  double attack_level,
+  double decay_time,
+  double sustain_time,
+  double sustain_level,
+  double release_time,
 );
 
 typedef _c_ADSRNode_gate = ffi.Int32 Function(

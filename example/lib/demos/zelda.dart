@@ -68,7 +68,8 @@ class _ZeldaState extends State<Zelda> {
 
   init() {
     ctx = AudioContext();
-
+    // final adsr = ADSRNode(ctx);
+    // print("ADSRNode: ${adsr.attackLevel} ${adsr.attackTime} ${adsr.oneShot}");
     analyser1 = AnalyserNode(ctx);
     analyser2 = AnalyserNode(ctx);
     analyser3 = AnalyserNode(ctx);
@@ -76,12 +77,12 @@ class _ZeldaState extends State<Zelda> {
 
     ctx.suspend();
     triangle = OscillatorNode(ctx);
-    triangle.setType(OscillatorType.TRIANGLE);
+    triangle.setType(OscillatorType.triangle);
     noise = NoiseNode(ctx);
     noiseGain = GainNode(ctx);
     noise.type = NoiseType.WHITE;
     pulse = OscillatorNode(ctx);
-    pulse.setType(OscillatorType.SAWTOOTH);
+    pulse.setType(OscillatorType.sawtooth);
 
     final List<double> pulseCurve = List.generate(256, (i) => 0.0);
     for(var i=0;i<128;i++) {
@@ -104,7 +105,7 @@ class _ZeldaState extends State<Zelda> {
     // pulseShaper.connect(ctx.device);
 
     square = OscillatorNode(ctx);
-    square.setType(OscillatorType.SQUARE);
+    square.setType(OscillatorType.square);
 
     square >> analyser1 >> ctx.device;
     pulseShaper >> analyser2 >> ctx.device;
@@ -189,7 +190,7 @@ void play() {
   final ctx = AudioContext();
   ctx.suspend();
   final triangle = OscillatorNode(ctx);
-  triangle.setType(OscillatorType.TRIANGLE);
+  triangle.setType(OscillatorType.triangle);
 
   final noise = NoiseNode(ctx);
   final noiseGain = GainNode(ctx);
@@ -207,7 +208,7 @@ void play() {
   pulse.type = PolyBLEPType.TRIANGULAR_PULSE;
 
   final square = OscillatorNode(ctx);
-  square.setType(OscillatorType.SQUARE);
+  square.setType(OscillatorType.square);
 
   noise.connect(noiseGain);
   noiseGain.connect(ctx.device);

@@ -4,13 +4,13 @@ import 'audio_scheduled_source_node.dart';
 import 'lab_sound.dart';
 
 enum OscillatorType {
-  OSCILLATOR_NONE,
-  SINE,
-  FAST_SINE,
-  SQUARE,
-  SAWTOOTH,
-  TRIANGLE,
-  CUSTOM,
+  oscillatorNone,
+  sine,
+  fastSine,
+  square,
+  sawtooth,
+  triangle,
+  custom,
 }
 
 class OscillatorNode extends AudioScheduledSourceNode {
@@ -29,6 +29,7 @@ class OscillatorNode extends AudioScheduledSourceNode {
   }
 
   OscillatorType get type => OscillatorType.values[LabSound().OscillatorNode_type(nodeId)];
+  set type(OscillatorType type) => setType(type);
 
   setType(OscillatorType type) {
     LabSound().OscillatorNode_setType(nodeId, type.index);

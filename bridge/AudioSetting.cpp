@@ -3,17 +3,17 @@
 #include "KeepNode.cpp"
 using namespace lab;
 
-DART_EXPORT const char * AudioSetting_name(int nodeId, int settingIndex) {
+DART_EXPORT const char* AudioSetting_name(int nodeId, int settingIndex) {
     auto setting = getKeepAudioSetting(nodeId, settingIndex);
     if(setting) {
-        return setting->name().c_str();
+        return returnString(setting->name());
     }
     return "";
 }
-DART_EXPORT const char * AudioSetting_shortName(int nodeId, int settingIndex) {
+DART_EXPORT const char* AudioSetting_shortName(int nodeId, int settingIndex) {
     auto setting = getKeepAudioSetting(nodeId, settingIndex);
     if(setting) {
-        return setting->shortName().c_str();
+        return returnString(setting->shortName());
     }
     return "";
 }

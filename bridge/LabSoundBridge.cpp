@@ -35,6 +35,7 @@
 #include "PowerMonitorNode.cpp"
 #include "SfxrNode.cpp"
 #include "AudioSetting.cpp"
+#include "ADSRNode.cpp"
 
 
 using namespace lab;
@@ -44,13 +45,13 @@ DART_EXPORT void labTest() {
 }
 
 
-DART_EXPORT AudioDeviceInfoList labSoundMakeAudioDeviceList() {
+DART_EXPORT AudioDeviceInfoList labSound_MakeAudioDeviceList() {
     const std::vector<AudioDeviceInfo> audioDevices = MakeAudioDeviceList();
     AudioDeviceInfoBridge* devices = (AudioDeviceInfoBridge*)malloc(sizeof(AudioDeviceInfoBridge)*audioDevices.size());
     for (int i = 0; i < audioDevices.size(); ++i)
 	{
 		devices[i].index = audioDevices[i].index;
-		devices[i].identifier = const_cast<char*>(audioDevices[i].identifier.c_str());
+		devices[i].identifier = const_cast<char*>(returnString(audioDevices[i].identifier));
         devices[i].identifier_len = sizeof(devices[i].identifier);
 		devices[i].num_output_channels = audioDevices[i].num_output_channels;
 		devices[i].num_input_channels = audioDevices[i].num_input_channels;
@@ -71,3 +72,12 @@ DART_EXPORT AudioDeviceInfoList labSoundMakeAudioDeviceList() {
     deviceList.length = audioDevices.size();
     return deviceList;
 }
+
+DART_EXPORT AudioDeviceIndex labSound_GetDefaultOutputAudioDeviceIndex() {
+    return GetDefaultOutputAudioDeviceIndex();
+}
+DART_EXPORT AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex() {
+    return GetDefaultInputAudioDeviceIndex();
+}
+
+

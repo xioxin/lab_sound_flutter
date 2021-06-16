@@ -10,6 +10,7 @@ class AudioParam {
   // final Pointer paramPointer;
   AudioParam(this.ctx, this.nodeId, this.paramId);
   double get value => LabSound().AudioParam_value(this.nodeId, this.paramId);
+  set value(double value) => setValue(value);
 
   double get minValue => LabSound().AudioParam_minValue(this.nodeId, this.paramId);
   double get maxValue => LabSound().AudioParam_maxValue(this.nodeId, this.paramId);

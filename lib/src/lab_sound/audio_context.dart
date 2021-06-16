@@ -68,6 +68,14 @@ class AudioContext {
   synchronizeConnections(Duration timeOut) => LabSound().AudioContext_synchronizeConnections(pointer, timeOut.inMilliseconds);
 
 
+  connect(AudioNode destination, AudioNode source, [destIdx = 0, int srcIdx = 0]) {
+    LabSound().AudioContext_connect(pointer, destination.nodeId, source.nodeId, destIdx, srcIdx);
+  }
+  disconnect(AudioNode destination, AudioNode source, [destIdx = 0, int srcIdx = 0]) {
+    LabSound().AudioContext_disconnect(pointer, destination.nodeId, source.nodeId, destIdx, srcIdx);
+  }
+
+
   suspend() {
     print("audioContext-suspend");
     LabSound().AudioContext_suspend(this.pointer);

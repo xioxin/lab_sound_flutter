@@ -11,7 +11,17 @@ typedef struct AudioStreamConfig {
     float desired_samplerate;
 } AudioStreamConfig;
 
-AudioDeviceInfoList labSoundMakeAudioDeviceList();
+
+typedef struct AudioDeviceIndex
+{
+    uint32_t index;
+    int valid;
+} AudioDeviceIndex;
+
+AudioDeviceInfoList labSound_MakeAudioDeviceList();
+
+AudioDeviceIndex labSound_GetDefaultOutputAudioDeviceIndex();
+AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex();
 
 
 ////////////
@@ -475,6 +485,11 @@ int DynamicsCompressorNode_reduction(int nodeId);
 
 int createADSRNode(AudioContext* context);
 
+
+int ADSRNode_finished(int nodeId, AudioContext* context);
+
+void ADSRNode_set(int nodeId, float attack_time, float attack_level, float decay_time, float sustain_time, float sustain_level, float release_time);
+
 // gate signal
 int ADSRNode_gate(int nodeId);
 
@@ -652,8 +667,8 @@ void SfxrNode_randomize(int nodeId);
 /// AudioSetting ///
 ////////////////////
 
-const char * AudioSetting_name(int nodeId, int settingIndex);
-const char * AudioSetting_shortName(int nodeId, int settingIndex);
+const char* AudioSetting_name(int nodeId, int settingIndex);
+const char* AudioSetting_shortName(int nodeId, int settingIndex);
 int AudioSetting_type(int nodeId, int settingIndex);
 int AudioSetting_valueBool(int nodeId, int settingIndex);
 float AudioSetting_valueFloat(int nodeId, int settingIndex);

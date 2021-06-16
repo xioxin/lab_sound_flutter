@@ -9,8 +9,12 @@ extension StringExtensions on String {
   }
 }
 
-extension PointerExtensions on Pointer<Utf8> {
+extension PointerUtf8Extensions on Pointer<Utf8> {
   String toStr({int? length}) => toDartString(length: length);
+}
+
+extension PointerInt8Extensions on Pointer<Int8> {
+  String toStr({int? length}) => Pointer<Utf8>.fromAddress(this.address).toStr(length: length);
 }
 
 extension FloatArrayEx on FloatArray {

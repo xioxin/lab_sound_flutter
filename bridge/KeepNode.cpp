@@ -5,6 +5,14 @@
 using namespace lab;
 
 
+const char* returnString(std::string someString)
+{
+    char* ptr = new char[someString.size() + 1]; // +1 for terminating NUL
+    strcpy(ptr, someString.c_str());
+    return ptr;
+}
+
+
 std::map<int, std::map<int, std::shared_ptr<AudioParam>>> audioParams;
 
 std::shared_ptr<AudioParam> getKeepAudioParam(int nodeId, int key) {
@@ -53,15 +61,6 @@ std::shared_ptr<AudioNode> getNode(int nodeId) {
     return nullptr;
 }
 
-void keepNodeRelease(int nodeId) {
-    std::map<int,std::shared_ptr<AudioNode>>::iterator ite = audioNodes.find(nodeId);
-    if (ite != audioNodes.end()) {
-        audioNodeIdMap.erase(ite->second);
-    }
-    audioNodes.erase(nodeId);
-    audioParams.erase(nodeId);
-}
-
 
 std::map<int, std::map<int, std::shared_ptr<AudioSetting>>> audioSettingMap;
 
@@ -88,5 +87,14 @@ int keepAudioSetting(int nodeId, int key, std::shared_ptr<AudioSetting> audioSet
     return key;
 }
 
+void keepNodeRelease(int nodeId) {
+    std::map<int,std::shared_ptr<AudioNode>>::iterator ite = audioNodes.find(nodeId);
+    if (ite != audioNodes.end()) {
+        audioNodeIdMap.erase(ite->second);
+    }
+    audioNodes.erase(nodeId);
+    audioParams.erase(nodeId);
+    audioSettingMap.erase(nodeId);
+}
 
 #endif
