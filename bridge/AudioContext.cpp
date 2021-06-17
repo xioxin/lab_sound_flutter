@@ -1,6 +1,7 @@
 #include "./dart_api/dart_api.h"
 #include "LabSound/LabSound.h"
 #include "KeepNode.cpp"
+#include "Port.cpp"
 using namespace lab;
 
 DART_EXPORT AudioContext* createRealtimeAudioContext(AudioStreamConfig outputConfig, AudioStreamConfig inputConfig){
@@ -118,10 +119,32 @@ DART_EXPORT void AudioContext_disconnect(AudioContext* context, int destination,
 }
 
 // completely disconnect the node from the graph
-DART_EXPORT void AudioContext_disconnect2(AudioContext* context, int nodeId, int destIdx = 0) {
+DART_EXPORT void AudioContext_disconnectCompletely(AudioContext* context, int nodeId, int destIdx = 0) {
     auto node = getNode(nodeId);
     if(node) context->disconnect(node, destIdx);
 }
+
+// connect a parameter to receive the indexed output of a node
+DART_EXPORT void  AudioContext_connectParam(AudioContext* context, int paramNodeId, int paramId, int driverNodeId, int index) {
+    std::shared_ptr<AudioParam> param = getKeepAudioParam(paramNodeId, paramId);
+    std::shared_ptr<AudioNode> driverNode = getNode(driverNodeId);
+    if(param && driverNode) context->connectParam(param, driverNode, index);
+}
+
+// connect destinationNode's named parameter input to driver's indexed output
+DART_EXPORT void  AudioContext_connectParamByName(AudioContext* context, int destinationNodeId, char const*const parameterName, int driverNodeId, int index) {
+    std::shared_ptr<AudioNode> destinationNode = getNode(destinationNodeId);
+    std::shared_ptr<AudioNode> driverNode = getNode(driverNodeId);
+    if(destinationNode && driverNode) context->connectParam(destinationNode, parameterName, driverNode, index);
+}
+
+// disconnect a parameter from the indexed output of a node
+DART_EXPORT void  AudioContext_disconnectParam(AudioContext* context, int paramNodeId, int paramId, int driverNodeId, int index) {
+  std::shared_ptr<AudioParam> param = getKeepAudioParam(paramNodeId, paramId);
+    std::shared_ptr<AudioNode> driverNode = getNode(driverNodeId);
+    if(param && driverNode) context->disconnectParam(param, driverNode, index);
+}
+
 
 DART_EXPORT void AudioContext_releaseContext(AudioContext* ctx) {
     int devId = keepNode(ctx->device());

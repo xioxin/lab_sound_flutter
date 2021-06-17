@@ -2666,24 +2666,94 @@ class LabSoundBind {
   late final _dart_AudioContext_disconnect _AudioContext_disconnect =
       _AudioContext_disconnect_ptr.asFunction<_dart_AudioContext_disconnect>();
 
-  void AudioContext_disconnect2(
+  void AudioContext_disconnectCompletely(
     ffi.Pointer<ffi.Void> context,
     int node,
     int destIdx,
   ) {
-    return _AudioContext_disconnect2(
+    return _AudioContext_disconnectCompletely(
       context,
       node,
       destIdx,
     );
   }
 
-  late final _AudioContext_disconnect2_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_disconnect2>>(
-          'AudioContext_disconnect2');
-  late final _dart_AudioContext_disconnect2 _AudioContext_disconnect2 =
-      _AudioContext_disconnect2_ptr.asFunction<
-          _dart_AudioContext_disconnect2>();
+  late final _AudioContext_disconnectCompletely_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_disconnectCompletely>>(
+          'AudioContext_disconnectCompletely');
+  late final _dart_AudioContext_disconnectCompletely
+      _AudioContext_disconnectCompletely =
+      _AudioContext_disconnectCompletely_ptr.asFunction<
+          _dart_AudioContext_disconnectCompletely>();
+
+  void AudioContext_connectParam(
+    ffi.Pointer<ffi.Void> context,
+    int paramNodeId,
+    int paramId,
+    int driverNodeId,
+    int index,
+  ) {
+    return _AudioContext_connectParam(
+      context,
+      paramNodeId,
+      paramId,
+      driverNodeId,
+      index,
+    );
+  }
+
+  late final _AudioContext_connectParam_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_connectParam>>(
+          'AudioContext_connectParam');
+  late final _dart_AudioContext_connectParam _AudioContext_connectParam =
+      _AudioContext_connectParam_ptr.asFunction<
+          _dart_AudioContext_connectParam>();
+
+  void AudioContext_connectParamByName(
+    ffi.Pointer<ffi.Void> context,
+    int destinationNodeId,
+    ffi.Pointer<ffi.Int8> parameterName,
+    int driverNodeId,
+    int index,
+  ) {
+    return _AudioContext_connectParamByName(
+      context,
+      destinationNodeId,
+      parameterName,
+      driverNodeId,
+      index,
+    );
+  }
+
+  late final _AudioContext_connectParamByName_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_connectParamByName>>(
+          'AudioContext_connectParamByName');
+  late final _dart_AudioContext_connectParamByName
+      _AudioContext_connectParamByName = _AudioContext_connectParamByName_ptr
+          .asFunction<_dart_AudioContext_connectParamByName>();
+
+  void AudioContext_disconnectParam(
+    ffi.Pointer<ffi.Void> context,
+    int paramNodeId,
+    int paramId,
+    int driverNodeId,
+    int index,
+  ) {
+    return _AudioContext_disconnectParam(
+      context,
+      paramNodeId,
+      paramId,
+      driverNodeId,
+      index,
+    );
+  }
+
+  late final _AudioContext_disconnectParam_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioContext_disconnectParam>>(
+          'AudioContext_disconnectParam');
+  late final _dart_AudioContext_disconnectParam _AudioContext_disconnectParam =
+      _AudioContext_disconnectParam_ptr.asFunction<
+          _dart_AudioContext_disconnectParam>();
 
   void AudioContext_releaseContext(
     ffi.Pointer<ffi.Void> ctx,
@@ -8791,16 +8861,64 @@ typedef _dart_AudioContext_disconnect = void Function(
   int srcIdx,
 );
 
-typedef _c_AudioContext_disconnect2 = ffi.Void Function(
+typedef _c_AudioContext_disconnectCompletely = ffi.Void Function(
   ffi.Pointer<ffi.Void> context,
   ffi.Int32 node,
   ffi.Int32 destIdx,
 );
 
-typedef _dart_AudioContext_disconnect2 = void Function(
+typedef _dart_AudioContext_disconnectCompletely = void Function(
   ffi.Pointer<ffi.Void> context,
   int node,
   int destIdx,
+);
+
+typedef _c_AudioContext_connectParam = ffi.Void Function(
+  ffi.Pointer<ffi.Void> context,
+  ffi.Int32 paramNodeId,
+  ffi.Int32 paramId,
+  ffi.Int32 driverNodeId,
+  ffi.Int32 index,
+);
+
+typedef _dart_AudioContext_connectParam = void Function(
+  ffi.Pointer<ffi.Void> context,
+  int paramNodeId,
+  int paramId,
+  int driverNodeId,
+  int index,
+);
+
+typedef _c_AudioContext_connectParamByName = ffi.Void Function(
+  ffi.Pointer<ffi.Void> context,
+  ffi.Int32 destinationNodeId,
+  ffi.Pointer<ffi.Int8> parameterName,
+  ffi.Int32 driverNodeId,
+  ffi.Int32 index,
+);
+
+typedef _dart_AudioContext_connectParamByName = void Function(
+  ffi.Pointer<ffi.Void> context,
+  int destinationNodeId,
+  ffi.Pointer<ffi.Int8> parameterName,
+  int driverNodeId,
+  int index,
+);
+
+typedef _c_AudioContext_disconnectParam = ffi.Void Function(
+  ffi.Pointer<ffi.Void> context,
+  ffi.Int32 paramNodeId,
+  ffi.Int32 paramId,
+  ffi.Int32 driverNodeId,
+  ffi.Int32 index,
+);
+
+typedef _dart_AudioContext_disconnectParam = void Function(
+  ffi.Pointer<ffi.Void> context,
+  int paramNodeId,
+  int paramId,
+  int driverNodeId,
+  int index,
 );
 
 typedef _c_AudioContext_releaseContext = ffi.Void Function(

@@ -107,10 +107,21 @@ uint64_t AudioContext_currentSampleFrame(AudioContext* context);
 
 void AudioContext_connect(AudioContext* context, int destination, int source, int destIdx, int srcIdx);
 
+// completely disconnect the node from the graph
 void AudioContext_disconnect(AudioContext* context, int destination, int source, int destIdx, int srcIdx);
 
 // completely disconnect the node from the graph
-void AudioContext_disconnect2(AudioContext* context, int node, int destIdx);
+void AudioContext_disconnectCompletely(AudioContext* context, int node, int destIdx);
+
+// connect a parameter to receive the indexed output of a node
+void AudioContext_connectParam(AudioContext* context, int paramNodeId, int paramId, int driverNodeId, int index);
+
+// connect destinationNode's named parameter input to driver's indexed output
+void AudioContext_connectParamByName(AudioContext* context, int destinationNodeId, char const*const parameterName, int driverNodeId, int index);
+
+// disconnect a parameter from the indexed output of a node
+void AudioContext_disconnectParam(AudioContext* context, int paramNodeId, int paramId, int driverNodeId, int index);
+
 
 void AudioContext_releaseContext(AudioContext* ctx);
 

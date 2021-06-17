@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
+import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:rxdart/rxdart.dart';
 import '../extensions/ffi_string.dart';
 import 'recorder_node.dart';
@@ -67,7 +68,6 @@ class AudioContext {
   handlePostRenderTasks() => LabSound().AudioContext_handlePostRenderTasks(pointer);
   synchronizeConnections(Duration timeOut) => LabSound().AudioContext_synchronizeConnections(pointer, timeOut.inMilliseconds);
 
-
   connect(AudioNode destination, AudioNode source, [destIdx = 0, int srcIdx = 0]) {
     LabSound().AudioContext_connect(pointer, destination.nodeId, source.nodeId, destIdx, srcIdx);
   }
@@ -75,15 +75,28 @@ class AudioContext {
     LabSound().AudioContext_disconnect(pointer, destination.nodeId, source.nodeId, destIdx, srcIdx);
   }
 
+  disconnectCompletely(AudioNode destination, [int destIdx = 0]) {
+    LabSound().AudioContext_disconnectCompletely(pointer, destination.nodeId, destIdx);
+  }
+
+  connectParam(AudioParam param, AudioNode driverNode, [int index = 0]) {
+    LabSound().AudioContext_connectParam(pointer, param.nodeId, param.paramId, driverNode.nodeId, index);
+  }
+
+  connectParamByName(AudioNode destinationNode, String parameterName, AudioNode driverNode, [int index = 0]) {
+    LabSound().AudioContext_connectParamByName(pointer, destinationNode.nodeId, parameterName.toInt8(), driverNode.nodeId, index);
+  }
+
+  disconnectParam(AudioParam param, AudioNode driverNode, [int index = 0]) {
+    LabSound().AudioContext_disconnectParam(pointer, param.nodeId, param.paramId, driverNode.nodeId, index);
+  }
 
   suspend() {
-    print("audioContext-suspend");
     LabSound().AudioContext_suspend(this.pointer);
     _onRunning.sink.add(false);
   }
 
   resume() {
-    print("audioContext-resume");
     LabSound().AudioContext_resume(this.pointer);
     _onRunning.sink.add(true);
   }
