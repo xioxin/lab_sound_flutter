@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
+
 List<AudioStreamConfig?> getDefaultAudioDeviceConfiguration(
     [bool withInput = false]) {
   final audioDevices = Lab.makeAudioDeviceList();
@@ -106,6 +107,37 @@ class ExSimple2 {
 
     await Future.delayed(Duration(seconds: 6));
 
+    context.dispose();
+  }
+}
+
+
+class ExTremolo {
+  play() async {
+    final defaultAudioDeviceConfigurations =
+    getDefaultAudioDeviceConfiguration();
+    final context = AudioContext(
+        outputConfig: defaultAudioDeviceConfigurations.last,
+        inputConfig: defaultAudioDeviceConfigurations.first);
+    final modulator = OscillatorNode(context);
+    final modulatorGain = GainNode(context);
+    final osc = OscillatorNode(context);
+
+    modulator.type = OscillatorType.sine;
+    modulator.frequency.value = 8;
+    modulator.start();
+
+    modulatorGain.gain.value = 10;
+
+    osc.type = OscillatorType.triangle;
+    osc.frequency.value = 440;
+    osc.start();
+
+    context.connect(modulatorGain, modulator);
+    context.connectParam(osc.detune, modulatorGain);
+    context.connect(context.device, osc);
+
+    await Future.delayed(Duration(seconds: 6));
     context.dispose();
   }
 }
