@@ -74,6 +74,11 @@ class _MyAppState extends State<MyApp> {
                 title: Text("ExSimple"),
                 onTap: () {
                   ExSimple().play();
+                }),
+            ListTile(
+                title: Text("ExTremolo"),
+                onTap: () {
+                  ExTremolo().play();
                 })
           ],
         ));

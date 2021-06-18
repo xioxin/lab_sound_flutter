@@ -6,6 +6,7 @@ import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
 
+
 List<AudioStreamConfig?> getDefaultAudioDeviceConfiguration(
     [bool withInput = false]) {
   final audioDevices = Lab.makeAudioDeviceList();
@@ -148,7 +149,7 @@ class ExOscPop {
     if(file.existsSync()) file.deleteSync();
 
     recorder.writeRecordingToWav(file.path);
-    context.disconnect(context.device);
+    context.disconnectCompletely(context.device);
     await Future.delayed(Duration(milliseconds: 100));
     context.dispose();
   }
@@ -230,12 +231,35 @@ class ExOfflineRendering {
   }
 }
 
-
 // This demonstrates the use of `connectParam` as a way of modulating one node through another.
 // Params are effectively control signals that operate at audio rate.
 class ExTremolo {
   play() async {
-    // todo connectParam miss
+    final defaultAudioDeviceConfigurations =
+    getDefaultAudioDeviceConfiguration();
+    final context = AudioContext(
+        outputConfig: defaultAudioDeviceConfigurations.last,
+        inputConfig: defaultAudioDeviceConfigurations.first);
+    final modulator = OscillatorNode(context);
+    final modulatorGain = GainNode(context);
+    final osc = OscillatorNode(context);
+
+    modulator.type = OscillatorType.sine;
+    modulator.frequency.value = 8;
+    modulator.start();
+
+    modulatorGain.gain.value = 10;
+
+    osc.type = OscillatorType.triangle;
+    osc.frequency.value = 440;
+    osc.start();
+
+    context.connect(modulatorGain, modulator);
+    context.connectParam(osc.detune, modulatorGain);
+    context.connect(context.device, osc);
+
+    await Future.delayed(Duration(seconds: 6));
+    context.dispose();
   }
 }
 
