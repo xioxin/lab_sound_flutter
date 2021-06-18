@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'dart:collection';
@@ -42,7 +43,7 @@ typedef testFunc = void Function();
 const bool inProduction = const bool.fromEnvironment("dart.vm.product");
 final DynamicLibrary labSoundLib = Platform.isAndroid
     ? DynamicLibrary.open(
-        inProduction ? "libLabSoundBridge.so" : "libLabSoundBridge_d.so")
+    kDebugMode ?  "libLabSoundBridge_d.so": "libLabSoundBridge.so")
     : DynamicLibrary.process();
 
 class AudioDeviceInfo {
