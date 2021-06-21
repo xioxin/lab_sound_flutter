@@ -5,7 +5,7 @@
 using namespace lab;
 
 DART_EXPORT AudioContext* createRealtimeAudioContext(AudioStreamConfig outputConfig, AudioStreamConfig inputConfig){
-    auto context = MakeRealtimeAudioContext(outputConfig, AudioStreamConfig()).release();
+    auto context = MakeRealtimeAudioContext(outputConfig, inputConfig).release();
     return context;
 }
 
@@ -145,6 +145,10 @@ DART_EXPORT void  AudioContext_disconnectParam(AudioContext* context, int paramN
     if(param && driverNode) context->disconnectParam(param, driverNode, index);
 }
 
+DART_EXPORT int AudioContext_makeAudioHardwareInputNode(AudioContext* context) {
+    ContextRenderLock r(context, "MakeAudioHardwareInputNode");
+    return keepNode(lab::MakeAudioHardwareInputNode(r));
+}
 
 DART_EXPORT void AudioContext_releaseContext(AudioContext* ctx) {
     int devId = keepNode(ctx->device());

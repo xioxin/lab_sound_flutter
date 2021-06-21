@@ -48,6 +48,8 @@ AudioContext* createOfflineAudioContext(AudioStreamConfig outputConfig, double r
 
 int AudioContext_startOfflineRendering(AudioContext* context);
 
+int AudioContext_makeAudioHardwareInputNode(AudioContext* context);
+
 
 // AudioContext can pull node(s) at the end of each render quantum even
 // when they are not connected to any downstream nodes. These two methods
