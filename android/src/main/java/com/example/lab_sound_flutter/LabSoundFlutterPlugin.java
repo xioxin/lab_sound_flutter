@@ -59,7 +59,7 @@ public class LabSoundFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
             ArrayList<Object> list = new ArrayList();
             AudioManager am = (AudioManager) applicationContext.getSystemService(Context.AUDIO_SERVICE);
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-                AudioDeviceInfo[] devices = am.getDevices(AudioManager.GET_DEVICES_OUTPUTS);
+                AudioDeviceInfo[] devices = am.getDevices(AudioManager.GET_DEVICES_ALL);
                 for (int i = 0; i < devices.length; i++) {
                     list.add(deviceInfoToMap(devices[i]));
                 }

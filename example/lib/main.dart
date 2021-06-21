@@ -78,6 +78,12 @@ class _MyAppState extends State<MyApp> {
                 title: Text("ExTremolo"),
                 onTap: () {
                   ExTremolo().play();
+                }),
+
+            ListTile(
+                title: Text("Print device"),
+                onTap: () {
+                  LabSound().getAndroidAudioDeviceList();
                 })
           ],
         ));

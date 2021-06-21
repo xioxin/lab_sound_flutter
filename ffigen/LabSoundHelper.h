@@ -25,6 +25,10 @@ AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex();
 
 int labSound_MakeAudioHardwareInputNode(AudioContext* context);
 
+AudioStreamConfig labSound_GetDefaultInputAudioDeviceConfiguration();
+
+AudioStreamConfig labSound_GetDefaultOutputAudioDeviceConfiguration();
+
 
 ////////////
 /// PORT ///

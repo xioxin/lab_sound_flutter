@@ -31,7 +31,7 @@ class AudioContext {
   AudioContext({this.outputConfig, this.inputConfig})
       : offline = false, pointer = LabSound().createRealtimeAudioContext(
       (outputConfig ?? AudioStreamConfig(desiredChannels: 2, desiredSampleRate: 48000.0)).ffiValue,
-      (inputConfig ?? AudioStreamConfig()).ffiValue) {
+      (inputConfig ?? AudioStreamConfig.disable()).ffiValue) {
     // LabSound().onAudioDeviceStateChanged.debounceTime(Duration(milliseconds: 1000)).listen((event) {
     //   final running = this.device.isRunning;
     //   this.device.stop();

@@ -13,10 +13,7 @@ class Recorder extends StatefulWidget {
 
 class _RecorderState extends State<Recorder> {
 
-  late AudioContext audioContext;
-  late AnalyserNode analyser;
-  late RecorderNode recorder;
-  late AudioNode inputNode;
+  AnalyserNode? analyser;
 
 
   bool recording = false;
@@ -24,27 +21,26 @@ class _RecorderState extends State<Recorder> {
   @override
   void initState() {
     super.initState();
-    audioContext = AudioContext(outputConfig: AudioStreamConfig(desiredChannels: 1, desiredSampleRate: 44100.0), inputConfig: AudioStreamConfig(desiredChannels: 1, desiredSampleRate: 44100.0));
-    inputNode = audioContext.makeAudioHardwareInputNode();
-
-    analyser = AnalyserNode(audioContext);
-    recorder = RecorderNode(audioContext, 1);
-
-    inputNode >> analyser >> recorder;
-    analyser >> audioContext.device;
-
   }
 
   Future startRecording() async {
-
     if (!await Permission.microphone.request().isGranted) return;
+
+    final AudioContext audioContext = AudioContext(outputConfig: AudioStreamConfig(deviceIndex: -1, desiredSampleRate: 44100.0), inputConfig: AudioStreamConfig(deviceIndex: 22, desiredChannels: 1, desiredSampleRate: 44100.0));
+    final AudioNode inputNode = audioContext.makeAudioHardwareInputNode();
+
+    setState(() {
+      analyser = AnalyserNode(audioContext);
+    });
+    final RecorderNode recorder = RecorderNode(audioContext, 1);
+
+    inputNode.connect(analyser!);
+    analyser!.connect(recorder);
 
     audioContext.addAutomaticPullNode(recorder);
     recorder.startRecording();
 
     await Future.delayed(Duration(seconds: 5));
-
-    audioContext.removeAutomaticPullNode(recorder);
 
     recorder.stopRecording();
     audioContext.removeAutomaticPullNode(recorder);
@@ -56,14 +52,11 @@ class _RecorderState extends State<Recorder> {
     print("savePath: $savePath ");
 
     OpenFile.open(savePath);
-
+    audioContext.dispose();
+    setState(() {
+      analyser = null;
+    });
   }
-
-
-
-
-
-
 
   @override
   void dispose() {
@@ -82,7 +75,7 @@ class _RecorderState extends State<Recorder> {
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
-          Container(height: 300, child: DrawFrequency(analyser)),
+          if(analyser != null) Container(height: 300, child: DrawFrequency(analyser!)),
           ElevatedButton(
               child: Text("录音"),
               onPressed: () async {

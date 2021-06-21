@@ -85,3 +85,12 @@ DART_EXPORT int labSound_MakeAudioHardwareInputNode(AudioContext* context) {
     ContextRenderLock r(context,"setBus");
     return keepNode(MakeAudioHardwareInputNode(r));
 }
+
+
+DART_EXPORT AudioStreamConfig labSound_GetDefaultInputAudioDeviceConfiguration() {
+    return GetDefaultInputAudioDeviceConfiguration();
+}
+
+DART_EXPORT AudioStreamConfig labSound_GetDefaultOutputAudioDeviceConfiguration() {
+    return GetDefaultInputAudioDeviceConfiguration();
+}

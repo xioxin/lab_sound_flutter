@@ -15,6 +15,7 @@ import 'package:flutter/widgets.dart';
 
 import 'audio_node.dart';
 import 'audio_stream_config.dart' as ASC;
+
 const CHECK_TIMER_DURATION = const Duration(milliseconds: 200);
 
 class AudioBusStatus {
@@ -43,8 +44,41 @@ typedef testFunc = void Function();
 const bool inProduction = const bool.fromEnvironment("dart.vm.product");
 final DynamicLibrary labSoundLib = Platform.isAndroid
     ? DynamicLibrary.open(
-    kDebugMode ?  "libLabSoundBridge_d.so": "libLabSoundBridge.so")
+        kDebugMode ? "libLabSoundBridge_d.so" : "libLabSoundBridge.so")
     : DynamicLibrary.process();
+
+enum AndroidAudioDeviceType {
+  unknown, // 0
+  builtinEarpiece, // 1
+  builtinSpeaker, // 2
+  wiredHeadset, // 3
+  wiredHeadphones, // 4
+  lineAnalog, // 5
+  lineDigital, // 6
+  bluetoothSCO, // 7
+  bluetoothA2DP, // 8
+  hdmi, // 9
+  hdmiARC, // 10
+  usbDevice, // 11
+  usbAccessory, // 12
+  dock, // 13
+  fm, // 14
+  builtinMic, // 15
+  fmTuner, // 16
+  tvTuner, // 17
+  telephony, // 18
+  auxLine, // 19
+  ip, // 20
+  bus, // 21
+  usbHeadset, // 22
+  hearingAid, // 23
+  builtinSpeakerSafe, // 24
+  remoteSubmix, // 25
+  bleHeadset, // 26
+  bleSpeaker, // 27
+  unknown28, // 28
+  hdmiEARC, // 29
+}
 
 class AudioDeviceInfo {
   int index;
@@ -55,29 +89,60 @@ class AudioDeviceInfo {
   bool? isDefaultOutput;
   bool? isDefaultInput;
   List<double>? supportedSampleRates;
+  bool? isOutput;
+  bool? isInput;
 
-  AudioDeviceInfo({required this.index,
-      this.identifier,
-      this.numInputChannels,
-      this.numOutputChannels,
-      this.nominalSampleRate,
-      this.isDefaultInput,
-      this.isDefaultOutput,
-      this.supportedSampleRates});
+  AudioDeviceInfo({
+    required this.index,
+    this.identifier,
+    this.numInputChannels,
+    this.numOutputChannels,
+    this.nominalSampleRate,
+    this.isDefaultInput,
+    this.isDefaultOutput,
+    this.supportedSampleRates,
+    this.isOutput,
+    this.isInput,
+  });
 
   Map<String, dynamic> toJson() => {
-    "index": index,
-    "identifier": identifier,
-    "numInputChannels": numInputChannels,
-    "numOutputChannels": numOutputChannels,
-    "nominalSampleRate": nominalSampleRate,
-    "isDefaultInput": isDefaultInput,
-    "isDefaultOutput": isDefaultOutput,
-    "supportedSampleRates": supportedSampleRates,
-  };
+        "index": index,
+        "identifier": identifier,
+        "numInputChannels": numInputChannels,
+        "numOutputChannels": numOutputChannels,
+        "nominalSampleRate": nominalSampleRate,
+        "isDefaultInput": isDefaultInput,
+        "isDefaultOutput": isDefaultOutput,
+        "supportedSampleRates": supportedSampleRates,
+      };
 
   @override
   String toString() => "AudioDevice[$index]: ${toJson()}";
+}
+
+class AudioDeviceInfoAndroid extends AudioDeviceInfo {
+  // android
+  String? address;
+  String? productName;
+  bool? isOutput;
+  bool? isInput;
+  List<int>? supportedChannelCounts;
+  AndroidAudioDeviceType? androidType;
+  List<double>? supportedSampleRates;
+
+  AudioDeviceInfoAndroid({
+    required int index,
+    this.productName,
+    this.supportedChannelCounts,
+    this.androidType,
+    this.address,
+    this.isOutput,
+    this.isInput,
+    this.supportedSampleRates,
+  }) : super(index: index);
+
+  @override
+  String toString() => "AndroidAudioDevice[$index]: $productName - $address $androidType";
 }
 
 class LabSound extends LabSoundBind {
@@ -119,34 +184,48 @@ class LabSound extends LabSoundBind {
     for (int i = 0; i < data.length; i++) {
       final device = data.audioDeviceList.elementAt(i).ref;
       list.add(AudioDeviceInfo(
-          index: device.index,
-          identifier: device.identifier.toStr(),
-          numInputChannels: device.num_input_channels,
-          numOutputChannels: device.num_output_channels,
-          nominalSampleRate: device.nominal_samplerate,
-          isDefaultInput: device.is_default_input > 0,
-          isDefaultOutput: device.is_default_output > 0,
-          supportedSampleRates: device.supported_samplerates.toList(),
+        index: device.index,
+        identifier: device.identifier.toStr(),
+        numInputChannels: device.num_input_channels,
+        numOutputChannels: device.num_output_channels,
+        nominalSampleRate: device.nominal_samplerate,
+        isDefaultInput: device.is_default_input > 0,
+        isDefaultOutput: device.is_default_output > 0,
+        supportedSampleRates: device.supported_samplerates.toList(),
       ));
     }
     return list;
   }
 
+  AudioDeviceIndex getDefaultOutputAudioDeviceIndex() =>
+      labSound_GetDefaultOutputAudioDeviceIndex();
 
-  AudioDeviceIndex getDefaultOutputAudioDeviceIndex() => labSound_GetDefaultOutputAudioDeviceIndex();
-  AudioDeviceIndex getDefaultInputAudioDeviceIndex() => labSound_GetDefaultInputAudioDeviceIndex();
+  AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
+      labSound_GetDefaultInputAudioDeviceIndex();
 
   //
-  // Future<List<AudioDeviceInfo>> getAndroidAudioDeviceList() async {
-  //   final androidDeviceList = await androidAudioManagerChannel!.invokeMethod('getDevices', 1);
-  //   print('androidDeviceList $androidDeviceList');
-  //   // return androidDeviceList.then((value) {
-  //   //   print('getDevice: $value');
-  //   // });
-  //   return [];
-  // }
+  Future<List<AudioDeviceInfoAndroid>> getAndroidAudioDeviceList() async {
+    if (androidAudioManagerChannel == null) return [];
+    final List<dynamic> androidDeviceList =
+        await androidAudioManagerChannel!.invokeMethod('getDevices', 1);
+    print('androidDeviceList $androidDeviceList');
+    print('input ${androidDeviceList.where(((v) => v['isSource']))}');
+    final devList =  androidDeviceList.map((e) => AudioDeviceInfoAndroid(
+          index: e["id"] as int,
+          address: e["address"] as String,
+          productName: e["productName"] as String,
+          isOutput: e["isSource"] as bool,
+          isInput: e["isSink"] as bool,
+          androidType: AndroidAudioDeviceType.values[e["type"] as int],
+          supportedSampleRates: e["sampleRates"] == null ? null : (e["sampleRates"] as List)
+              .map((e) => (e as int).toDouble())
+              .toList(),
+          supportedChannelCounts: e["channelCounts"] == null ? null : (e["channelCounts"] as List).map((e) => (e as int)).toList(),
+        )).toList();
 
-
+    print(devList.map((e) => e.toString()).join("\n"));
+    return devList;
+  }
 
   Set<AudioNode> allNodes = Set();
 
@@ -236,10 +315,18 @@ class LabSound extends LabSoundBind {
   }
 }
 
-
 class Lab {
-  static List<AudioDeviceInfo> makeAudioDeviceList() => LabSound().makeAudioDeviceList();
-  static AudioDeviceIndex getDefaultOutputAudioDeviceIndex() => LabSound().getDefaultOutputAudioDeviceIndex();
-  static AudioDeviceIndex getDefaultInputAudioDeviceIndex() => LabSound().getDefaultOutputAudioDeviceIndex();
-  static AudioContext makeRealtimeAudioContext({ASC.AudioStreamConfig? outputConfig, ASC.AudioStreamConfig? inputConfig}) => AudioContext(outputConfig: outputConfig, inputConfig: inputConfig);
+  static List<AudioDeviceInfo> makeAudioDeviceList() =>
+      LabSound().makeAudioDeviceList();
+
+  static AudioDeviceIndex getDefaultOutputAudioDeviceIndex() =>
+      LabSound().getDefaultOutputAudioDeviceIndex();
+
+  static AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
+      LabSound().getDefaultOutputAudioDeviceIndex();
+
+  static AudioContext makeRealtimeAudioContext(
+          {ASC.AudioStreamConfig? outputConfig,
+          ASC.AudioStreamConfig? inputConfig}) =>
+      AudioContext(outputConfig: outputConfig, inputConfig: inputConfig);
 }
