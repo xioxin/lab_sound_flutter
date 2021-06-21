@@ -110,6 +110,8 @@ class AudioContext {
 
   AudioHardwareDeviceNode get destination => this.device;
 
+  AudioNode makeAudioHardwareInputNode() => AudioNode(this, LabSound().AudioContext_makeAudioHardwareInputNode(this.pointer));
+  
   dispose() {
     LabSound().allNodes.forEach((node) {
       if(!node.released) {

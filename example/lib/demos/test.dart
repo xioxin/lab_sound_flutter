@@ -76,41 +76,6 @@ class _TestPageState extends State<TestPage> {
         padding: EdgeInsets.all(16.0),
         children: [
           Text("音乐: "),
-          // StreamBuilder(
-          //     stream: audioNode.onPosition,
-          //     initialData: audioNode.position,
-          //     builder: (BuildContext context, AsyncSnapshot<Duration> snapshot) {
-          //       return Row(
-          //         children: [
-          //           Text("${snapshot.data}/${audioNode.resource!.duration}"),
-          //           Expanded(
-          //             child: Slider(
-          //               value: userPosition != null ? userPosition! : snapshot.data!.inMilliseconds.toDouble(),
-          //               onChangeStart: (v) {
-          //                 print('onChangeStart $v');
-          //                 userPosition = v;
-          //               },
-          //               onChangeEnd: (v) async {
-          //                 print('onChangeEnd $v');
-          //                 userPosition = null;
-          //                 audioNode.clearSchedules();
-          //                 Timer(Duration(milliseconds: 10), () {
-          //                   audioNode.start(when: 0, offset: v / 1000);
-          //                 });
-          //               },
-          //               onChanged: (v) {
-          //                 print('onChanged $v');
-          //                 setState(() {
-          //                   userPosition = v;
-          //                 });
-          //               },
-          //               max: audioNode.resource!.duration.inMilliseconds.toDouble(),
-          //               min: 0.0,
-          //             ),
-          //           ),
-          //         ],
-          //       );
-          //     }),
           ElevatedButton(
               child: Text("Play Music"),
               onPressed: () async {
@@ -123,50 +88,6 @@ class _TestPageState extends State<TestPage> {
                 audioNode.clearSchedules();
                 audioNode.stop();
               }),
-          // ElevatedButton(
-          //     child: Text("淡入"),
-          //     onPressed: () async {
-          //       gain.gain.setValueAtTime(0, audioContext.currentTime);
-          //       gain.gain.linearRampToValueAtTime(
-          //           1.0, audioContext.currentTime + 1.0);
-          //       // audioNode.clearSchedules();
-          //       audioNode.start(when: audioContext.currentTime);
-          //     }),
-          // ElevatedButton(
-          //     child: Text("淡出"),
-          //     onPressed: () async {
-          //       gain.gain.setValueAtTime(
-          //           gain.gain.value, audioContext.currentTime);
-          //       gain.gain.linearRampToValueAtTime(
-          //           0.0, audioContext.currentTime + 1.0);
-          //       audioNode.stop(when: audioContext.currentTime + 1.0);
-          //     }),
-          // Row(
-          //   children: [
-          //     Text("音量:${gain.gain.value.toStringAsFixed(2)}"),
-          //     Expanded(
-          //       child: Slider(
-          //         value: gain.gain.value,
-          //         onChanged: (v) {
-          //           setState(() {
-          //             gain.gain.cancelScheduledValues(0.0);
-          //             gain.gain.setValue(v);
-          //           });
-          //         },
-          //         max: 1.0,
-          //         min: 0.0,
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          // Text("其他"),
-          // ElevatedButton(
-          //     child: Text("重新链接设备"),
-          //     onPressed: () async {
-          //       audioContext.device.reset();
-          //     }),
-          // Container(height: 50, child: DrawTimeDomain(analyserNode)),
-          // Container(height: 200, child: DrawFrequency(analyserNode))
         ],
       )
           : Center(child: Text("LOADING")),

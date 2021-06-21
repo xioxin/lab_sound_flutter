@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/demos/dial.dart';
-import 'package:lab_sound_flutter_example/demos/player.dart';
+import 'package:lab_sound_flutter_example/demos/recorder.dart';
 import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 
 import 'demos/render-audio.dart';
@@ -37,15 +37,6 @@ class _MyAppState extends State<MyApp> {
         body: ListView(
           children: [
             ListTile(
-                title: Text("Player"),
-                subtitle: Text("A simple player wrapper"),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PlayerPage()),
-                  );
-                }),
-            ListTile(
                 title: Text("Dialpad"),
                 subtitle: Text("OscillatorNode Demo"),
                 onTap: () {
@@ -60,6 +51,14 @@ class _MyAppState extends State<MyApp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => RenderAudioPage()),
+                  );
+                }),
+            ListTile(
+                title: Text("Microphone recorder"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Recorder()),
                   );
                 }),
             ListTile(

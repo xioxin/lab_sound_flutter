@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  permission_handler: ^8.1.1
   path_provider: ^2.0.1
   lab_sound_flutter:
     # When depending on this package from a real application you should use:
