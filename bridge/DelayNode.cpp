@@ -9,6 +9,6 @@ DART_EXPORT int createDelayNode(AudioContext* context) {
 }
 
 DART_EXPORT int DelayNode_delayTime(int nodeId) {
-    // auto node = std::static_pointer_cast<DelayNode>(getNode(nodeId));
-    // return node ? keepAudioParam(nodeId, 0, node->delayTime()) : -1;
+    auto node = std::static_pointer_cast<DelayNode>(getNode(nodeId));
+    return node ? keepAudioSetting(nodeId, 0, node->delayTime()) : -1;
 }

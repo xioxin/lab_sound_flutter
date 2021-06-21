@@ -37,6 +37,7 @@
 #include "AudioSetting.cpp"
 #include "ADSRNode.cpp"
 
+#include "AudioHardwareInputNode.cpp"
 
 using namespace lab;
 
@@ -80,4 +81,7 @@ DART_EXPORT AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex() {
     return GetDefaultInputAudioDeviceIndex();
 }
 
-
+DART_EXPORT int labSound_MakeAudioHardwareInputNode(AudioContext* context) {
+    ContextRenderLock r(context,"setBus");
+    return keepNode(MakeAudioHardwareInputNode(r));
+}

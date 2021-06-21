@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:ffi/ffi.dart';
 import '../extensions/ffi_string.dart';
 import 'audio_context.dart';
+import 'audio_param.dart';
 import 'lab_sound.dart';
 
 enum SchedulingState {
@@ -47,14 +48,13 @@ class AudioNode {
     linked.remove(dst);
     LabSound().AudioContext_disconnect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
   }
-  disconnectAll() {
-    linked.toList().forEach((element) {
-      LabSound().AudioContext_disconnect(ctx.pointer, element.nodeId, nodeId, 0, 0);
-    });
-    linked.clear();
+
+  connectParam(AudioParam destination, [int output = 0]) {
+    ctx.connectParam(destination, this, output);
   }
+
   dispose() {
-    this.disconnectAll();
+    this.ctx.disconnectCompletely(this);
     LabSound().releaseNode(this.nodeId);
   }
   reset() {

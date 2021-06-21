@@ -23,6 +23,8 @@ AudioDeviceInfoList labSound_MakeAudioDeviceList();
 AudioDeviceIndex labSound_GetDefaultOutputAudioDeviceIndex();
 AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex();
 
+int labSound_MakeAudioHardwareInputNode(AudioContext* context);
+
 
 ////////////
 /// PORT ///

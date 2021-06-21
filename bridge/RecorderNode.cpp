@@ -7,7 +7,7 @@ DART_EXPORT int createRecorderNode(AudioContext* context, int channelCount ) {
     auto recorder = std::make_shared<RecorderNode>(*context, channelCount);
     return keepNode(recorder);
 }
-DART_EXPORT int createRecorderNodeConfig(AudioContext* context, AudioStreamConfig outputConfig ) {
+DART_EXPORT int createRecorderNodeByConfig(AudioContext* context, AudioStreamConfig outputConfig ) {
     auto recorder = std::make_shared<RecorderNode>(*context, outputConfig);
     return keepNode(recorder);
 }
