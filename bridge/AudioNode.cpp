@@ -44,6 +44,12 @@ DART_EXPORT void AudioNode_reset(int nodeId, AudioContext* context) {
     if(node) node->reset(r);
 }
 
+
+DART_EXPORT int AudioNode_useCount(int nodeId) {
+    auto node = getNode(nodeId);
+    return node ? node.use_count() : 0;
+}
+
 DART_EXPORT void releaseNode(int nodeId){
     keepNodeRelease(nodeId);
 }

@@ -115,7 +115,7 @@ DART_EXPORT void AudioContext_disconnect(AudioContext* context, int destination,
     std::shared_ptr<AudioNode> destinationNode = getNode(destination);
     std::shared_ptr<AudioNode> sourceNode = getNode(source);
     sourceNode = getNode(source);
-    if(destinationNode && sourceNode) context->disconnect(destinationNode, sourceNode, destIdx, srcIdx);
+    if(sourceNode) context->disconnect(destinationNode, sourceNode, destIdx, srcIdx);
 }
 
 // completely disconnect the node from the graph

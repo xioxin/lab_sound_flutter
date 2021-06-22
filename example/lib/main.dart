@@ -8,6 +8,7 @@ import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 import 'demos/render-audio.dart';
 import 'demos/zelda.dart';
 import 'labsound/ex_simple.dart';
+import 'labsound/labsound_examples.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -70,14 +71,12 @@ class _MyAppState extends State<MyApp> {
                   );
                 }),
             ListTile(
-                title: Text("ExSimple"),
+                title: Text("LabSoundExamples"),
                 onTap: () {
-                  ExSimple().play();
-                }),
-            ListTile(
-                title: Text("ExTremolo"),
-                onTap: () {
-                  ExTremolo().play();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LabSoundExamples()),
+                  );
                 }),
 
             ListTile(

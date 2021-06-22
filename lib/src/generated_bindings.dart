@@ -3232,6 +3232,19 @@ class LabSoundBind {
   late final _dart_AudioNode_name _AudioNode_name =
       _AudioNode_name_ptr.asFunction<_dart_AudioNode_name>();
 
+  int AudioNode_useCount(
+    int nodeId,
+  ) {
+    return _AudioNode_useCount(
+      nodeId,
+    );
+  }
+
+  late final _AudioNode_useCount_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_useCount>>('AudioNode_useCount');
+  late final _dart_AudioNode_useCount _AudioNode_useCount =
+      _AudioNode_useCount_ptr.asFunction<_dart_AudioNode_useCount>();
+
   void releaseNode(
     int nodeId,
   ) {
@@ -9260,6 +9273,14 @@ typedef _c_AudioNode_name = ffi.Pointer<ffi.Int8> Function(
 );
 
 typedef _dart_AudioNode_name = ffi.Pointer<ffi.Int8> Function(
+  int nodeId,
+);
+
+typedef _c_AudioNode_useCount = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioNode_useCount = int Function(
   int nodeId,
 );
 

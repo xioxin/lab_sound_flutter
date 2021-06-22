@@ -186,6 +186,8 @@ void AudioNode_reset(int nodeId, AudioContext* context);
 
 char * AudioNode_name(int nodeId);
 
+int AudioNode_useCount(int nodeId);
+
 void releaseNode(int nodeId);
 
 int hasNode(int nodeId);

@@ -27,6 +27,8 @@ class AudioNode {
   /// 已释放
   bool get released => LabSound().hasNode(nodeId) < 1;
 
+  int get useCount => LabSound().AudioNode_useCount(nodeId);
+
   List<AudioNode> linked = [];
 
   String get name => (Pointer<Utf8>.fromAddress(LabSound().AudioNode_name(nodeId).address)).toStr();
@@ -44,9 +46,9 @@ class AudioNode {
     linked.add(dst);
     LabSound().AudioContext_connect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
   }
-  disconnect(AudioNode dst, [destIdx = 0, int srcIdx = 0]) {
+  disconnect([AudioNode? dst, destIdx = 0, int srcIdx = 0]) {
     linked.remove(dst);
-    LabSound().AudioContext_disconnect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
+    LabSound().AudioContext_disconnect(ctx.pointer, dst?.nodeId ?? -1, nodeId, destIdx, srcIdx);
   }
 
   connectParam(AudioParam destination, [int output = 0]) {

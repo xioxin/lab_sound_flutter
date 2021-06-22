@@ -336,10 +336,54 @@ class ExFrequencyModulation {
 // In most examples, nodes are not disconnected during playback. This sample shows how nodes
 // can be arbitrarily connected/disconnected during runtime while the graph is live.
 class ExRuntimeGraphUpdate {
+
+
   play() async {
 
+    final defaultAudioDeviceConfigurations =
+    getDefaultAudioDeviceConfiguration();
+    final context = AudioContext(
+        outputConfig: defaultAudioDeviceConfigurations.last,
+        inputConfig: defaultAudioDeviceConfigurations.first);
 
+    final oscillator1 = OscillatorNode(context);
+    final oscillator2 = OscillatorNode(context);
+    final gain = GainNode(context);
+    gain.gain.value = 0.5;
+    oscillator1.connect(gain);
+    oscillator2.connect(gain);
+    gain.connect(context.destination);
+
+    oscillator1.type = OscillatorType.sine;
+    oscillator1.frequency.value = 220;
+    oscillator1.start();
+
+    oscillator2.type = OscillatorType.sine;
+    oscillator2.frequency.value = 440;
+    oscillator2.start();
+
+    for (int i = 0; i < 5; ++i) {
+      oscillator1.disconnect();
+      oscillator2.connect(gain);
+      print("oscillator2");
+      await Future.delayed(Duration(milliseconds: 1000));
+      oscillator2.disconnect();
+      oscillator1.connect(gain);
+      print("oscillator1");
+      await Future.delayed(Duration(milliseconds: 1000));
+    }
+
+    oscillator1.disconnect();
+    oscillator2.disconnect();
+
+    print("OscillatorNode 1 use_count: ${oscillator1.useCount}");
+    print("OscillatorNode 2 use_count: ${oscillator2.useCount}");
+    print("GainNode use_count:         ${gain.useCount}");
+
+    await Future.delayed(Duration(milliseconds: 200));
+    context.dispose();
   }
+
 }
 
 class ExMicrophone {

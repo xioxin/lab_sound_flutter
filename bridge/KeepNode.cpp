@@ -54,6 +54,7 @@ int keepNode(std::shared_ptr<AudioNode> node){
 }
 
 std::shared_ptr<AudioNode> getNode(int nodeId) {
+    if(nodeId < 0) return nullptr;
     std::map<int,std::shared_ptr<AudioNode>>::iterator ite = audioNodes.find(nodeId);
     if (ite != audioNodes.end()) {
         return ite->second;
