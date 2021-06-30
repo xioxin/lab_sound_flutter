@@ -232,7 +232,6 @@ class LabSound extends LabSoundBind {
               .toList(),
           supportedChannelCounts: e["channelCounts"] == null ? null : (e["channelCounts"] as List).map((e) => (e as int)).toList(),
         )).toList();
-
     print(devList.map((e) => e.toString()).join("\n"));
     return devList;
   }

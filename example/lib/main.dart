@@ -5,6 +5,7 @@ import 'package:lab_sound_flutter_example/demos/dial.dart';
 import 'package:lab_sound_flutter_example/demos/recorder.dart';
 import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 
+import 'demos/audio_device.dart';
 import 'demos/render-audio.dart';
 import 'demos/zelda.dart';
 import 'labsound/ex_simple.dart';
@@ -22,8 +23,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    LabSound();
-
     return Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
@@ -82,7 +81,10 @@ class _MyAppState extends State<MyApp> {
             ListTile(
                 title: Text("Print device"),
                 onTap: () {
-                  LabSound().getAndroidAudioDeviceList();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AudioDeviceList()),
+                  );
                 })
           ],
         ));
