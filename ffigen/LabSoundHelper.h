@@ -587,9 +587,9 @@ int DelayNode_delayTime(int nodeId);
 
 int createBPMDelayNode(AudioContext* context, float tempo);
 
-int BPMDelayNode_setTempo(int nodeId, float newTempo);
+void BPMDelayNode_setTempo(int nodeId, float newTempo);
 
-int BPMDelayNode_setDelayIndex(int nodeId, int value);
+void BPMDelayNode_setDelayIndex(int nodeId, int value);
 
 
 /////////////////////

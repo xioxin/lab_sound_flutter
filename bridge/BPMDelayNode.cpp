@@ -8,12 +8,12 @@ DART_EXPORT int createBPMDelayNode(AudioContext* context, float tempo) {
     return keepNode(node);
 }
 
-DART_EXPORT int BPMDelayNode_setTempo(int nodeId, float newTempo) {
+DART_EXPORT void BPMDelayNode_setTempo(int nodeId, float newTempo) {
     auto node = std::static_pointer_cast<BPMDelay>(getNode(nodeId));
     if(node)node->SetTempo(newTempo);
 }
 
-DART_EXPORT int BPMDelayNode_setDelayIndex(int nodeId, int value) {
+DART_EXPORT void BPMDelayNode_setDelayIndex(int nodeId, int value) {
     auto node = std::static_pointer_cast<BPMDelay>(getNode(nodeId));
     if(node)node->SetDelayIndex(TempoSync(value));
 }

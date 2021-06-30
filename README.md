@@ -9,7 +9,7 @@ Currently only the Android platform is available, other platforms have encounter
 * [x] Android
 * [ ] iOS
 * [ ] Mac
-* [ ] Windows
+* [x] Windows
 * [ ] Linux
 
 

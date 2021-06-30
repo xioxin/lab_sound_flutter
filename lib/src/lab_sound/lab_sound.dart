@@ -42,10 +42,19 @@ typedef test_func = Void Function();
 typedef testFunc = void Function();
 
 const bool inProduction = const bool.fromEnvironment("dart.vm.product");
-final DynamicLibrary labSoundLib = Platform.isAndroid
-    ? DynamicLibrary.open(
-        kDebugMode ? "libLabSoundBridge_d.so" : "libLabSoundBridge.so")
-    : DynamicLibrary.process();
+final DynamicLibrary labSoundLib = getLabSoundLib();
+
+getLabSoundLib() {
+  if(Platform.isAndroid)
+    return DynamicLibrary.open(
+        kDebugMode ? "libLabSoundBridge_d.so" : "libLabSoundBridge.so");
+
+  if(Platform.isWindows)
+    return DynamicLibrary.open(
+        kDebugMode ? "LabSoundBridge_d.dll" : "LabSoundBridge.dll");
+
+  return DynamicLibrary.process();
+}
 
 enum AndroidAudioDeviceType {
   unknown, // 0
@@ -150,6 +159,7 @@ class LabSound extends LabSoundBind {
   static EventChannel? androidEventChannel;
 
   LabSound._() : super(labSoundLib) {
+    print("labSoundLib: $labSoundLib");
     WidgetsFlutterBinding.ensureInitialized();
     var nativeInited = InitDartApiDL(NativeApi.initializeApiDLData);
     // According to https://dart-review.googlesource.com/c/sdk/+/151525
