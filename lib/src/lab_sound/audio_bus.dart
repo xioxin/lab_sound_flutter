@@ -66,8 +66,8 @@ class AudioBus {
       bufferPtr[i] = buffer[i];
     }
     final bus = AudioBus._loadByBuffer(bufferPtr, buffer.length, extension: extension ?? '', autoDispose: autoDispose, debugName: debugName, mixToMono: mixToMono);
-    malloc.free(bufferPtr);
     await bus.complete!;
+    malloc.free(bufferPtr);
     return bus;
   }
 
