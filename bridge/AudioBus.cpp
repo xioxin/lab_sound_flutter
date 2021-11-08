@@ -131,3 +131,17 @@ DART_EXPORT void releaseAudioBus(int index){
     audioBuffers.erase(index);
     // sendAudioAusStatus(index, -1);
 }
+
+
+DART_EXPORT AudioChannel * AudioBus_channel(int busId, int channelIndex) {
+    auto bus = getBus(busId);
+    return bus ? bus->channel(channelIndex) : nullptr;
+}
+
+DART_EXPORT int AudioChannel_length(AudioChannel * channel) {
+    return channel->length();
+}
+
+DART_EXPORT const float * AudioChannel_data(AudioChannel * channel) {
+    return channel->data();
+}

@@ -7,6 +7,7 @@ import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 
 import 'demos/audio_device.dart';
 import 'demos/render-audio.dart';
+import 'demos/wave_form.dart';
 import 'demos/zelda.dart';
 import 'labsound/ex_simple.dart';
 import 'labsound/labsound_examples.dart';
@@ -84,6 +85,14 @@ class _MyAppState extends State<MyApp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AudioDeviceList()),
+                  );
+                }),
+            ListTile(
+                title: Text("WaveFormPage"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WaveFormPage()),
                   );
                 })
           ],

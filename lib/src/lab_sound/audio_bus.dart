@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ffi';
 import 'dart:typed_data';
 import 'package:ffi/ffi.dart';
+import 'package:lab_sound_flutter/src/lab_sound/audio_channel.dart';
 import 'package:path/path.dart';
 import '../extensions/ffi_string.dart';
 import 'audio_node.dart';
@@ -108,6 +109,13 @@ class AudioBus {
   double get lengthInSeconds => this.length / this.sampleRate;
 
   Duration get duration => Duration(milliseconds: (this.lengthInSeconds * 1000).toInt());
+
+
+  AudioChannel? channel(int channelIndex) {
+    final pointer = LabSound().AudioBus_channel(resourceId, channelIndex);
+    if(pointer.address == 0) return null;
+    return AudioChannel(pointer);
+  }
 
   toString() {
     return "[$resourceId]AudioBus${debugName != null ? "($debugName)" : ''}";

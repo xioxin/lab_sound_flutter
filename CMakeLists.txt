@@ -9,6 +9,8 @@ add_subdirectory(LabSound EXCLUDE_FROM_ALL)
 
 file(GLOB dart_api_h      "${LABSOUND_BRIDGE_ROOT}/bridge/dart_api/*")
 
+set(bridge_h "${LABSOUND_ROOT}/ffigen/LabSoundHelper.h")
+
 add_library(LabSoundBridge SHARED
     ./bridge/LabSoundBridge.cpp
     ${dart_api_h}
@@ -20,6 +22,20 @@ set_target_properties(LabSoundBridge
     PROPERTIES
     OUTPUT_NAME_DEBUG LabSoundBridge_d
 )
+
+
+if (APPLE)
+    set_target_properties(LabSoundBridge PROPERTIES
+        FRAMEWORK TRUE
+        FRAMEWORK_VERSION A
+        MACOSX_FRAMEWORK_IDENTIFIER com.xioxin.LabSoundBridge
+        VERSION 0.13.0
+        SOVERSION 1.0.0
+        PUBLIC_HEADER "${bridge_h}"
+    )
+    set_property(SOURCE ${bridge_h}
+        PROPERTY MACOSX_PACKAGE_LOCATION Headers/LabSound/core)
+endif()
 
 IF (WIN32)
 	install(TARGETS LabSoundBridge

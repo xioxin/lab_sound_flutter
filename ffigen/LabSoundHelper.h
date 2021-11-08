@@ -4,6 +4,8 @@
 #include <stdbool.h>
 
 #define AudioContext void
+#define AudioChannel void
+
 
 typedef struct AudioStreamConfig {
     int32_t device_index;
@@ -292,6 +294,12 @@ int AudioBus_isSilent(int busIndex);
 int AudioBus_isFirstTime(int busIndex);
 
 void releaseAudioBus(int index);
+
+AudioChannel * AudioBus_channel(int busId, int channelIndex);
+
+int AudioChannel_length(AudioChannel * channel);
+
+const float * AudioChannel_data(AudioChannel * channel);
 
 ////////////////
 /// GainNode ///
