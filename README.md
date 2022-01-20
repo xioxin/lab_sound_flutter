@@ -8,25 +8,14 @@ There have been some difficulties with integration on Mac and iOS platforms, and
 ## Platform
 * [x] Android
 * [ ] iOS
-* [ ] Mac
+* [x] Mac
 * [x] Windows
-* [ ] Linux
+* [x] Linux
 * [ ] Web
 
-
-
-# Building
-
-The project uses the git submodule so it is required that new users clone the repository with the `--recursive` option.
-
-The submodules can be fetched after a clone with `git submodule update --init --recursive`
-
-# Android
-Requires cmake >= 3.13
-
-If you are using cmake version 3.18.1 and you get an invalid version number error, please try upgrading the gradle version
-
 ## Binding
+
+https://github.com/xioxin/lab_sound_bridge
 
 * [x] AnalyserNode
 * [ ] AudioBasicInspectorNode
