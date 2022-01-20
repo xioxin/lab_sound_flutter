@@ -50,11 +50,8 @@ getLabSoundLib() {
   print("Platform.script: ${Platform.script}");
   print("Directory.current: ${Directory.current}");
 
-
-
   if(Platform.isAndroid)
-    return DynamicLibrary.open(
-        kDebugMode ? "libLabSoundBridge_d.so" : "libLabSoundBridge.so");
+    return DynamicLibrary.open("libLabSoundBridge.so");
 
     if(Platform.isLinux){
       final libName = kDebugMode ? "libLabSoundBridge_d.so" : "libLabSoundBridge.so";
@@ -212,10 +209,12 @@ class LabSound extends LabSoundBind {
     final data = labSound_MakeAudioDeviceList();
     final List<AudioDeviceInfo> list = [];
     for (int i = 0; i < data.length; i++) {
+      print(i);
+
       final device = data.audioDeviceList.elementAt(i).ref;
       list.add(AudioDeviceInfo(
         index: device.index,
-        identifier: device.identifier.toStr(),
+        identifier: device.identifier.toStr(length: device.identifier_len),
         numInputChannels: device.num_input_channels,
         numOutputChannels: device.num_output_channels,
         nominalSampleRate: device.nominal_samplerate,

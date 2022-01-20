@@ -28,10 +28,10 @@ android {
         minSdkVersion 16
     }
 
-    externalNativeBuild {
-        cmake {
-            version "3.18.0+"
-            path file('../CMakeLists.txt')
-        }
-    }
+    // externalNativeBuild {
+    //     cmake {
+    //         version "3.18.0+"
+    //         path file('../CMakeLists.txt')
+    //     }
+    // }
 }
