@@ -13,6 +13,12 @@ There have been some difficulties with integration on Mac and iOS platforms, and
 * [x] Linux
 * [ ] Web
 
+## Todo
+* [ ] iOS support
+* [ ] Refactoring using the "endorsed federated plugin" pattern and bringing the API style closer to "dart: web_audio" to increase web support
+* [ ] Add Android backend selection (AAudio, OpenCL)
+* [ ] Continue to improve binding
+
 ## Binding
 
 https://github.com/xioxin/lab_sound_bridge
