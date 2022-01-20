@@ -67,8 +67,7 @@ getLabSoundLib() {
   }
   
   if(Platform.isWindows)
-    return DynamicLibrary.open(
-        kDebugMode ? "LabSoundBridge_d.dll" : "LabSoundBridge.dll");
+    return DynamicLibrary.open("LabSoundBridge.dll");
 
   return DynamicLibrary.process();
 }
