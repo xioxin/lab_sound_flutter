@@ -7,17 +7,17 @@ There have been some difficulties with integration on Mac and iOS platforms, and
 
 ## Platform
 * [x] Android
-* [ ] iOS
+* [x] iOS
 * [x] Mac
 * [x] Windows
 * [x] Linux
 * [ ] Web
 
 ## Todo
-* [ ] iOS support
-* [ ] Refactoring using the "endorsed federated plugin" pattern and bringing the API style closer to "dart: web_audio" to increase web support
+* [x] iOS support
 * [ ] Add Android backend selection (AAudio, OpenCL)
 * [ ] Continue to improve binding
+* [ ] Refactoring using the "endorsed federated plugin" pattern and bringing the API style closer to "dart: web_audio" to increase web support
 
 ## Binding
 

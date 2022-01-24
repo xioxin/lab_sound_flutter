@@ -14,9 +14,9 @@ lab_sound_flutter 是 [LabSound](https://github.com/LabSound/LabSound) 的Flutte
 
 ## Todo
 * [x] iOS 支持
-* [ ] 使用“受信的联合插件”模式重构，并将Api风格与"dart:web_audio"对齐，并增加Web支持。
 * [ ] 增加Android音频后端选择 (AAudio, OpenCL)
 * [ ] 继续完善绑定
+* [ ] 使用“受信的联合插件”模式重构，并将Api风格与"dart:web_audio"对齐，并增加Web支持。
 
 ## Binding
 
