@@ -47,28 +47,14 @@ const bool inProduction = const bool.fromEnvironment("dart.vm.product");
 final DynamicLibrary labSoundLib = getLabSoundLib();
 
 getLabSoundLib() {
-  print("Platform.script: ${Platform.script}");
-  print("Directory.current: ${Directory.current}");
-
   if(Platform.isAndroid)
     return DynamicLibrary.open("libLabSoundBridge.so");
 
-    if(Platform.isLinux){
-      final libName = kDebugMode ? "libLabSoundBridge_d.so" : "libLabSoundBridge.so";
-    final candidatePathList  = [
-      p.join(Directory.current.path, 'lib/${libName}'),
-      p.join(Directory.current.path, 'build/linux/x64/debug/bundle/lib/${libName}'),
-      p.join(Directory.current.path, 'build/linux/x86/debug/bundle/lib/${libName}')
-    ];
-    print("candidatePathList: $candidatePathList");
-    final libPath = candidatePathList.firstWhere((path) => File(path).existsSync(), orElse: () => "${libName}");
-    print("libPath: ${libPath}");
-    return DynamicLibrary.open(libPath);
-  }
+  if(Platform.isLinux)
+    return DynamicLibrary.open("libLabSoundBridge.so");
   
   if(Platform.isWindows)
-    return DynamicLibrary.open(
-        kDebugMode ? "LabSoundBridge_d.dll" : "LabSoundBridge.dll");
+    return DynamicLibrary.open("LabSoundBridge.dll");
 
   return DynamicLibrary.process();
 }
