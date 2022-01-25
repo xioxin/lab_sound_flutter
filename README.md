@@ -3,8 +3,6 @@
 
 lab_sound_flutter is the [LabSound](https://github.com/LabSound/LabSound) wrapper for Flutter.
 
-There have been some difficulties with integration on Mac and iOS platforms, and I'm still working on it. If you have a good solution, please feel free to submit Issues or PR.
-
 ## Platform
 * [x] Android
 * [x] iOS
