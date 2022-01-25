@@ -15,6 +15,8 @@ There have been some difficulties with integration on Mac and iOS platforms, and
 
 ## Todo
 * [x] iOS support
+* [x] iOS simulator support (x86_64)
+* [ ] macOS M1 support (arm64)
 * [ ] Add Android backend selection (AAudio, OpenCL)
 * [ ] Continue to improve binding
 * [ ] Refactoring using the "endorsed federated plugin" pattern and bringing the API style closer to "dart: web_audio" to increase web support
