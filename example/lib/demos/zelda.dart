@@ -53,6 +53,9 @@ class _ZeldaState extends State<Zelda> {
   late AnalyserNode analyser2;
   late AnalyserNode analyser3;
   late AnalyserNode analyser4;
+  late AnalyserNode analyser5;
+
+  late DynamicsCompressorNode dynamicsCompressor;
 
 
   @override
@@ -74,13 +77,15 @@ class _ZeldaState extends State<Zelda> {
     analyser2 = AnalyserNode(ctx);
     analyser3 = AnalyserNode(ctx);
     analyser4 = AnalyserNode(ctx);
+    analyser5 = AnalyserNode(ctx);
+    dynamicsCompressor = DynamicsCompressorNode(ctx);
 
     ctx.suspend();
     triangle = OscillatorNode(ctx);
     triangle.setType(OscillatorType.triangle);
     noise = NoiseNode(ctx);
     noiseGain = GainNode(ctx);
-    noise.type = NoiseType.WHITE;
+    noise.type = NoiseType.PINK;
     pulse = OscillatorNode(ctx);
     pulse.setType(OscillatorType.sawtooth);
 
@@ -107,11 +112,12 @@ class _ZeldaState extends State<Zelda> {
     square = OscillatorNode(ctx);
     square.setType(OscillatorType.square);
 
-    square >> analyser1 >> ctx.device;
-    pulseShaper >> analyser2 >> ctx.device;
-    triangle >> analyser3 >> ctx.device;
-    noise >> noiseGain >> analyser4 >> ctx.device;
+    square >> analyser1 >> dynamicsCompressor;
+    pulseShaper >> analyser2 >> dynamicsCompressor;
+    triangle >> analyser3 >> dynamicsCompressor;
+    noise >> noiseGain >> analyser4 >> dynamicsCompressor;
 
+    dynamicsCompressor >> analyser5 >> ctx.device;
   }
 
   play() {
@@ -175,6 +181,10 @@ class _ZeldaState extends State<Zelda> {
           Container(
             height: 100,
             child: DrawTimeDomain(analyser4),
+          ),
+          Container(
+            height: 100,
+            child: DrawTimeDomain(analyser5),
           ),
           TextButton(onPressed: play, child: Text('Play')),
           TextButton(onPressed: stop, child: Text('Stop')),

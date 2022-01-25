@@ -2,7 +2,7 @@
 **开发中**
 
 lab_sound_flutter 是 [LabSound](https://github.com/LabSound/LabSound) 的Flutter版封装。
-它提供了类似于WebAudioApi类似的功能。
+它提供了像WebAudioApi类似的功能。
 
 ## 支持平台
 * [x] Android
