@@ -10,7 +10,7 @@ We provide compiled binaries: <https://github.com/xioxin/lab_sound_bridge>
 
 Actions -> Select latest workflow -> Artifacts -> Download the platform you need
 
-Or you can mutate yourself.
+Or you can compile it yourself.
 
 reference: https://github.com/xioxin/lab_sound_bridge/blob/main/.github/workflows/cmake.yml
 
