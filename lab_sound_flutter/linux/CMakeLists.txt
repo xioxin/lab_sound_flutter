@@ -22,18 +22,6 @@ add_compile_options(-fPIC)
 
 # List of absolute paths to libraries that should be bundled with the plugin
 set(lab_sound_flutter_bundled_libraries
-  "./libLabSoundBridge.so"
+  "${lab_sound_flutter_SOURCE_DIR}/libLabSoundBridge.so"
   PARENT_SCOPE
 )
-
-#set(LABSOUND_PULSE 1)
-# set(LABSOUND_JACK 1)
-# set(LABSOUND_ASOUND 1)
-
-# add_subdirectory(../ LabSoundBridge)
-
-# backends/RtAudio/RtAudio.cpp:7806:10: fatal error: 'alsa/asoundlib.h' file not found
-# sudo apt-get install libasound2-dev
-
-# backends/RtAudio/RtAudio.cpp:9261:10: fatal error: 'pulse/error.h' file not found
-# sudo apt-get install libpulse-dev
