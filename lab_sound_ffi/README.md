@@ -1,4 +1,4 @@
-# lab_sound_flutter
+# lab_sound_ffi
 
 lab_sound_ffi is the [LabSound](https://github.com/LabSound/LabSound) wrapper for Dart.
 
