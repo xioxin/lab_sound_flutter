@@ -13,9 +13,9 @@ double randomFloat(double min, double max) {
 
 List<AudioStreamConfig?> getDefaultAudioDeviceConfiguration(
     [bool withInput = false]) {
-  final audioDevices = Lab.makeAudioDeviceList();
-  final defaultOutputDevice = Lab.getDefaultOutputAudioDeviceIndex();
-  final defaultInputDevice = Lab.getDefaultInputAudioDeviceIndex();
+  final audioDevices = LabSound().makeAudioDeviceList();
+  final defaultOutputDevice = LabSound().getDefaultOutputAudioDeviceIndex();
+  final defaultInputDevice = LabSound().getDefaultInputAudioDeviceIndex();
 
   AudioStreamConfig? inputConfig;
   AudioStreamConfig? outputConfig;

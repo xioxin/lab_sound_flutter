@@ -50,3 +50,6 @@ app.*.symbols
 app.*.map.json
 lib/test
 example/ios/Podfile.lock
+
+
+pubspec.lock
