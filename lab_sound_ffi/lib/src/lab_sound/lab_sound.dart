@@ -1,24 +1,12 @@
 import 'dart:ffi';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
-import 'package:path/path.dart' as p;
-
-
-import 'dart:collection';
-import 'package:ffi/ffi.dart';
-import 'package:lab_sound_flutter/lab_sound_flutter.dart';
-
+import 'dart:math';
+import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 import '../generated_bindings.dart';
 import '../extensions/ffi_string.dart';
 import 'dart:async';
 import 'dart:isolate';
-import 'package:flutter/widgets.dart';
-
-import 'audio_node.dart';
-import 'audio_stream_config.dart' as ASC;
-
-const CHECK_TIMER_DURATION = const Duration(milliseconds: 200);
+import 'audio_stream_config.dart' as asc;
 
 class AudioBusStatus {
   int busId;
@@ -40,24 +28,18 @@ class OfflineRenderStatus {
   OfflineRenderStatus(this.id, this.status);
 }
 
-typedef test_func = Void Function();
-typedef testFunc = void Function();
+typedef LoadLabSoundLib = DynamicLibrary Function();
+
+enum OperatingSystem {
+  android,
+  linux,
+  iOS,
+  macOS,
+  windows,
+  fuchsia,
+}
 
 const bool inProduction = const bool.fromEnvironment("dart.vm.product");
-final DynamicLibrary labSoundLib = getLabSoundLib();
-
-getLabSoundLib() {
-  if(Platform.isAndroid)
-    return DynamicLibrary.open("libLabSoundBridge.so");
-
-  if(Platform.isLinux)
-    return DynamicLibrary.open("libLabSoundBridge.so");
-  
-  if(Platform.isWindows)
-    return DynamicLibrary.open("LabSoundBridge.dll");
-
-  return DynamicLibrary.process();
-}
 
 enum AndroidAudioDeviceType {
   unknown, // 0
@@ -132,71 +114,64 @@ class AudioDeviceInfo {
   String toString() => "AudioDevice[$index]: ${toJson()}";
 }
 
-class AudioDeviceInfoAndroid extends AudioDeviceInfo {
-  // android
-  String? address;
-  String? productName;
-  bool? isOutput;
-  bool? isInput;
-  List<int>? supportedChannelCounts;
-  AndroidAudioDeviceType? androidType;
-  List<double>? supportedSampleRates;
-
-  AudioDeviceInfoAndroid({
-    required int index,
-    this.productName,
-    this.supportedChannelCounts,
-    this.androidType,
-    this.address,
-    this.isOutput,
-    this.isInput,
-    this.supportedSampleRates,
-  }) : super(index: index);
-
-  @override
-  String toString() => "AndroidAudioDevice[$index]: $productName - $address $androidType";
-}
-
 class LabSound extends LabSoundBind {
-  static MethodChannel? androidAudioManagerChannel;
-  static EventChannel? androidEventChannel;
+  static DynamicLibrary defaultLoadLabSoundLib() {
+    if (Platform.isAndroid) {
+      return DynamicLibrary.open("libLabSoundBridge.so");
+    }
 
-  LabSound._() : super(labSoundLib) {
-    print("labSoundLib: $labSoundLib");
-    WidgetsFlutterBinding.ensureInitialized();
+    if (Platform.isLinux) {
+      return DynamicLibrary.open("libLabSoundBridge.so");
+    }
+
+    if (Platform.isWindows) {
+      return DynamicLibrary.open("LabSoundBridge.dll");
+    }
+
+    return DynamicLibrary.process();
+  }
+
+  static LoadLabSoundLib _loadDynamicLibrary = defaultLoadLabSoundLib;
+
+  static OperatingSystem? get _os {
+    if (Platform.isAndroid) return OperatingSystem.android;
+    if (Platform.isLinux) return OperatingSystem.linux;
+    if (Platform.isIOS) return OperatingSystem.iOS;
+    if (Platform.isMacOS) return OperatingSystem.macOS;
+    if (Platform.isWindows) return OperatingSystem.windows;
+    if (Platform.isFuchsia) return OperatingSystem.fuchsia;
+    return null;
+  }
+
+  static overrideDynamicLibrary(LoadLabSoundLib func,
+      [OperatingSystem? platform]) {
+    if (platform == null || _os == platform) {
+      _loadDynamicLibrary = func;
+    }
+  }
+
+  LabSound._() : super(_loadDynamicLibrary()) {
     var nativeInited = InitDartApiDL(NativeApi.initializeApiDLData);
     // According to https://dart-review.googlesource.com/c/sdk/+/151525
     // flutter-1.24.0-10.1.pre+ has `DART_API_DL_MAJOR_VERSION = 2`
     assert(nativeInited == 0, 'DART_API_DL_MAJOR_VERSION != 2');
-    _audioBusSubscription = _audioBusReceivePort.listen(_handleAudioBusStatus);
+    audioBusSubscription = _audioBusReceivePort.listen(_handleAudioBusStatus);
     registerDecodeAudioSendPort(_audioBusReceivePort.sendPort.nativePort);
-    _audioSampleOnEndedSubscription =
+    audioSampleOnEndedSubscription =
         _audioSampleOnEndedReceivePort.listen(_handleAudioSampleOnEnded);
     registerAudioSampleOnEndedSendPort(
         _audioSampleOnEndedReceivePort.sendPort.nativePort);
 
-    _offlineRenderCompleteSubscription =
+    offlineRenderCompleteSubscription =
         _offlineRenderCompleteReceivePort.listen(_handleOfflineRenderComplete);
     registerOfflineRenderCompleteSendPort(
         _offlineRenderCompleteReceivePort.sendPort.nativePort);
-
-    if (Platform.isAndroid) {
-      androidAudioManagerChannel ??=
-          MethodChannel('flutter.event/lab_sound_flutter/audio_manager');
-      androidEventChannel ??=
-          EventChannel('flutter.event/lab_sound_flutter/audio_event');
-      // onAndroidAudioDeviceStateChanged.listen((event) {
-      //   print('onAudioDeviceStateChanged: $event');
-      // });
-    }
   }
 
   List<AudioDeviceInfo> makeAudioDeviceList() {
     final data = labSound_MakeAudioDeviceList();
     final List<AudioDeviceInfo> list = [];
     for (int i = 0; i < data.length; i++) {
-      print(i);
-
       final device = data.audioDeviceList.elementAt(i).ref;
       list.add(AudioDeviceInfo(
         index: device.index,
@@ -218,73 +193,42 @@ class LabSound extends LabSoundBind {
   AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
       labSound_GetDefaultInputAudioDeviceIndex();
 
-  //
-  Future<List<AudioDeviceInfoAndroid>> getAndroidAudioDeviceList() async {
-    if (androidAudioManagerChannel == null) return [];
-    final List<dynamic> androidDeviceList =
-        await androidAudioManagerChannel!.invokeMethod('getDevices', 1);
-    print('androidDeviceList $androidDeviceList');
-    print('input ${androidDeviceList.where(((v) => v['isSource']))}');
-    final devList =  androidDeviceList.map((e) => AudioDeviceInfoAndroid(
-          index: e["id"] as int,
-          address: e["address"] as String,
-          productName: e["productName"] as String,
-          isOutput: e["isSource"] as bool,
-          isInput: e["isSink"] as bool,
-          androidType: AndroidAudioDeviceType.values[e["type"] as int],
-          supportedSampleRates: e["sampleRates"] == null ? null : (e["sampleRates"] as List)
-              .map((e) => (e as int).toDouble())
-              .toList(),
-          supportedChannelCounts: e["channelCounts"] == null ? null : (e["channelCounts"] as List).map((e) => (e as int)).toList(),
-        )).toList();
-    print(devList.map((e) => e.toString()).join("\n"));
-    return devList;
-  }
-
   Set<AudioNode> allNodes = Set();
 
   printSurvivingNodes() {
-    allNodes.forEach((node) {
+    for (var node in allNodes) {
       if (!node.released) {
         print(node);
       }
-    });
+    }
   }
 
-  ReceivePort _audioBusReceivePort = ReceivePort();
-  ReceivePort _audioSampleOnEndedReceivePort = ReceivePort();
-  ReceivePort _offlineRenderCompleteReceivePort = ReceivePort();
-
-  Stream<dynamic>? _onAndroidAudioDeviceStateChanged;
-
-  Stream<dynamic> get onAndroidAudioDeviceStateChanged {
-    _onAndroidAudioDeviceStateChanged ??=
-        androidEventChannel!.receiveBroadcastStream();
-    return _onAndroidAudioDeviceStateChanged!;
-  }
+  final ReceivePort _audioBusReceivePort = ReceivePort();
+  final ReceivePort _audioSampleOnEndedReceivePort = ReceivePort();
+  final ReceivePort _offlineRenderCompleteReceivePort = ReceivePort();
 
   _parseAudioDeviceState(dynamic event) {
     return event;
   }
 
-  StreamSubscription? _audioBusSubscription;
-  StreamSubscription? _audioSampleOnEndedSubscription;
-  StreamSubscription? _offlineRenderCompleteSubscription;
+  StreamSubscription? audioBusSubscription;
+  StreamSubscription? audioSampleOnEndedSubscription;
+  StreamSubscription? offlineRenderCompleteSubscription;
 
-  StreamController<AudioBusStatus> _onAudioBusStatusController =
+  final StreamController<AudioBusStatus> _onAudioBusStatusController =
       StreamController.broadcast();
 
   Stream<AudioBusStatus> get onAudioBusStatus =>
       _onAudioBusStatusController.stream;
 
-  StreamController<AudioSampleEndMsg> _onAudioSampleEndController =
+  final StreamController<AudioSampleEndMsg> _onAudioSampleEndController =
       StreamController.broadcast();
 
   Stream<AudioSampleEndMsg> get onAudioSampleEnd =>
       _onAudioSampleEndController.stream;
 
-  StreamController<OfflineRenderStatus> _onOfflineRenderCompleteController =
-      StreamController.broadcast();
+  final StreamController<OfflineRenderStatus>
+      _onOfflineRenderCompleteController = StreamController.broadcast();
 
   Stream<OfflineRenderStatus> get onOfflineRenderComplete =>
       _onOfflineRenderCompleteController.stream;
@@ -310,16 +254,6 @@ class LabSound extends LabSoundBind {
     }
   }
 
-  //
-  // test() {
-  //   final testFunc test = labSoundLib
-  //       .lookup<NativeFunction<test_func>>('labTest')
-  //       .asFunction();
-  //
-  //   test();
-  //
-  // }
-
   factory LabSound() => _sharedInstance();
   static LabSound? _instance;
 
@@ -327,20 +261,17 @@ class LabSound extends LabSoundBind {
     _instance ??= LabSound._();
     return _instance!;
   }
-}
 
-class Lab {
-  static List<AudioDeviceInfo> makeAudioDeviceList() =>
-      LabSound().makeAudioDeviceList();
+  static dispose() {
+    if (_instance != null) {
+      for (var element in _instance!.allNodes) {
+        element.dispose();
+      }
+      _instance!.audioBusSubscription?.cancel();
+      _instance!.audioSampleOnEndedSubscription?.cancel();
+      _instance!.offlineRenderCompleteSubscription?.cancel();
 
-  static AudioDeviceIndex getDefaultOutputAudioDeviceIndex() =>
-      LabSound().getDefaultOutputAudioDeviceIndex();
-
-  static AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
-      LabSound().getDefaultOutputAudioDeviceIndex();
-
-  static AudioContext makeRealtimeAudioContext(
-          {ASC.AudioStreamConfig? outputConfig,
-          ASC.AudioStreamConfig? inputConfig}) =>
-      AudioContext(outputConfig: outputConfig, inputConfig: inputConfig);
+      _instance = null;
+    }
+  }
 }

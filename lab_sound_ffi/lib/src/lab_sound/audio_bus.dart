@@ -2,11 +2,12 @@ import 'dart:async';
 import 'dart:ffi';
 import 'dart:typed_data';
 import 'package:ffi/ffi.dart';
-import 'package:lab_sound_flutter/src/lab_sound/audio_channel.dart';
 import 'package:path/path.dart';
 import '../extensions/ffi_string.dart';
+
 import 'audio_node.dart';
 import 'lab_sound.dart';
+import 'audio_channel.dart';
 
 class AudioBus {
 

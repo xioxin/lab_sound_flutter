@@ -14,10 +14,9 @@ lab_sound_flutter is the [LabSound](https://github.com/LabSound/LabSound) wrappe
 ## Todo
 * [x] iOS support
 * [x] iOS simulator support (x86_64)
-* [ ] Allow no flutter
+* [ ] macOS M1 support (arm64)
 * [ ] Add Android backend selection (AAudio, OpenCL)
 * [ ] Continue to improve binding
-* [ ] macOS M1 support (arm64)
 * [ ] Refactoring using the "endorsed federated plugin" pattern and bringing the API style closer to "dart: web_audio" to increase web support
 
 ## Binding
