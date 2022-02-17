@@ -140,11 +140,11 @@ class AudioContext {
       this, LabSound().AudioContext_makeAudioHardwareInputNode(pointer));
 
   dispose() {
-    for (var node in LabSound().allNodes) {
-      if (!node.released) {
-        node.dispose();
-      }
-    }
+    // for (var node in LabSound().allNodes) {
+    //   if (!node.released) {
+    //     node.dispose();
+    //   }
+    // }
     _onRunning.close();
     LabSound().AudioContext_releaseContext(pointer);
   }
