@@ -14,7 +14,7 @@ Or you can mutate yourself.
 
 reference: https://github.com/xioxin/lab_sound_bridge/blob/main/.github/workflows/cmake.yml
 
-LabSound is a lazy-loading singleton class, You need to make the changes before executing the other methods.
+LabSound is a lazy-loading singleton class, You need to override the DynamicLibrary load method before executing other methods.
 
 ```dart
 LabSound.overrideDynamicLibrary(() => DynamicLibrary.open("LabSoundBridge.framework/LabSoundBridge"), OperatingSystem.macOS);
