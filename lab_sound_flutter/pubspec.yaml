@@ -1,5 +1,5 @@
 name: lab_sound_flutter
-description: A new flutter plugin project.
+description: graph-based audio engine
 version: 0.0.1
 
 environment:
