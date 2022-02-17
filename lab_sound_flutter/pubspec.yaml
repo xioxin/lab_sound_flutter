@@ -9,14 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  ffi: ^1.0.0
-  path: ^1.8.0
-  rxdart: ^0.27.0
+  lab_sound_ffi: ^0.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  ffigen: ^3.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -71,28 +69,3 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
-
-ffigen:
-  name: 'LabSoundBind'
-  description: 'Bindings to LabSound'
-  output: 'lib/src/generated_bindings.dart'
-  headers:
-    entry-points:
-      - 'ffigen/LabSoundHelper.h'
-  use-supported-typedefs: true
-  dart-bool: true
-  compiler-opts-automatic:
-    macos:
-      include-c-standard-library: true
-#  typedef-map:
-#    'size_t': 'Int64'
-#    'uint64_t': 'Uint64'
-#    'uint8_t': 'Uint8'
-  preamble: |
-    // ignore_for_file: non_constant_identifier_names
-  #   include-directives:
-  #     - 'bridging/**/include/**'
-  # compiler-opts: '-I./bridging/LabSound/include'
-
-# dart run ffigen
-# flutter pub run ffigen

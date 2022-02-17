@@ -4,7 +4,7 @@ import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 class AudioDeviceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final deviceList = Lab.makeAudioDeviceList();
+    final deviceList = LabSound().makeAudioDeviceList();
     print(deviceList.join("\n"));
 
     return Scaffold(
