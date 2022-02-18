@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/draw_time_domain.dart';
 
+import 'debug_scaffold.dart';
 import 'zelda_data.dart';
 
 const double A4 = 440;
@@ -57,12 +58,12 @@ class _ZeldaState extends State<Zelda> {
 
   late DynamicsCompressorNode dynamicsCompressor;
 
-
   @override
   void initState() {
     super.initState();
     init();
   }
+
   @override
   void dispose() {
     ctx.dispose();
@@ -80,7 +81,6 @@ class _ZeldaState extends State<Zelda> {
     analyser5 = AnalyserNode(ctx);
     dynamicsCompressor = DynamicsCompressorNode(ctx);
 
-    ctx.suspend();
     triangle = OscillatorNode(ctx);
     triangle.setType(OscillatorType.triangle);
     noise = NoiseNode(ctx);
@@ -139,7 +139,7 @@ class _ZeldaState extends State<Zelda> {
     square.amplitude.resetSmoothedValue();
     square.start();
     noise.start();
-    ctx.resume();
+    // ctx.resume();
   }
 
   stop() {
@@ -158,38 +158,42 @@ class _ZeldaState extends State<Zelda> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Zelda'),
+    return DebugScaffold(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Zelda'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: 100,
+                child: DrawTimeDomain(analyser1),
+              ),
+              Container(
+                height: 100,
+                child: DrawTimeDomain(analyser2),
+              ),
+              Container(
+                height: 100,
+                child: DrawTimeDomain(analyser3),
+              ),
+              Container(
+                height: 100,
+                child: DrawTimeDomain(analyser4),
+              ),
+              Container(
+                height: 100,
+                child: DrawTimeDomain(analyser5),
+              ),
+              TextButton(onPressed: play, child: Text('Play')),
+              TextButton(onPressed: stop, child: Text('Stop')),
+            ],
+          ),
+        )
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            height: 100,
-            child: DrawTimeDomain(analyser1),
-          ),
-          Container(
-            height: 100,
-            child: DrawTimeDomain(analyser2),
-          ),
-          Container(
-            height: 100,
-            child: DrawTimeDomain(analyser3),
-          ),
-          Container(
-            height: 100,
-            child: DrawTimeDomain(analyser4),
-          ),
-          Container(
-            height: 100,
-            child: DrawTimeDomain(analyser5),
-          ),
-          TextButton(onPressed: play, child: Text('Play')),
-          TextButton(onPressed: stop, child: Text('Stop')),
-        ],
-      )
     );
   }
 }
