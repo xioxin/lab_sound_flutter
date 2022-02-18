@@ -56,7 +56,14 @@ class _ZeldaState extends State<Zelda> {
   late AnalyserNode analyser4;
   late AnalyserNode analyser5;
 
+  late WaveShaperNode pulseShaper;
+  late WaveShaperNode constantOneShaper;
+
   late DynamicsCompressorNode dynamicsCompressor;
+
+  late ConvolverNode convolver;
+
+  bool loaded = false;
 
   @override
   void initState() {
@@ -66,14 +73,36 @@ class _ZeldaState extends State<Zelda> {
 
   @override
   void dispose() {
+
+    triangle.dispose();
+    noise.dispose();
+    noiseGain.dispose();
+    pulse.dispose();
+    square.dispose();
+    analyser1.dispose();
+    analyser2.dispose();
+    analyser3.dispose();
+    analyser4.dispose();
+    analyser5.dispose();
+    dynamicsCompressor.dispose();
+    convolver.dispose();
+
+
+
+
     ctx.dispose();
     super.dispose();
+
   }
 
-  init() {
+  init() async {
     ctx = AudioContext();
     // final adsr = ADSRNode(ctx);
     // print("ADSRNode: ${adsr.attackLevel} ${adsr.attackTime} ${adsr.oneShot}");
+
+    convolver = ConvolverNode(ctx);
+    convolver.setImpulse(await audioBusFromAsset("assets/impulse/cardiod-rear-levelled.wav"));
+
     analyser1 = AnalyserNode(ctx);
     analyser2 = AnalyserNode(ctx);
     analyser3 = AnalyserNode(ctx);
@@ -97,17 +126,15 @@ class _ZeldaState extends State<Zelda> {
 
     final List<double> constantOneCurve= [0.5, 0.5];
 
-    final pulseShaper = WaveShaperNode(ctx);
+    pulseShaper = WaveShaperNode(ctx);
     pulseShaper.setCurve(pulseCurve);
     pulse.connect(pulseShaper);
 
-    final constantOneShaper= WaveShaperNode(ctx);
+    constantOneShaper= WaveShaperNode(ctx);
     constantOneShaper.setCurve(constantOneCurve);
     pulse.connect(constantOneShaper);
 
     constantOneShaper.connect(pulseShaper);
-
-    // pulseShaper.connect(ctx.device);
 
     square = OscillatorNode(ctx);
     square.setType(OscillatorType.square);
@@ -116,8 +143,10 @@ class _ZeldaState extends State<Zelda> {
     pulseShaper >> analyser2 >> dynamicsCompressor;
     triangle >> analyser3 >> dynamicsCompressor;
     noise >> noiseGain >> analyser4 >> dynamicsCompressor;
-
-    dynamicsCompressor >> analyser5 >> ctx.device;
+    dynamicsCompressor >> convolver >> analyser5 >> ctx.device;
+    setState(() {
+      loaded = true;
+    });
   }
 
   play() {
@@ -153,7 +182,7 @@ class _ZeldaState extends State<Zelda> {
     pulse.reset();
     square.reset();
     noise.reset();
-    ctx.suspend();
+    //ctx.suspend();
   }
 
   @override
@@ -163,29 +192,29 @@ class _ZeldaState extends State<Zelda> {
         appBar: AppBar(
           title: const Text('Zelda'),
         ),
-        body: SingleChildScrollView(
+        body: (!loaded) ? Text("loading") : SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                height: 100,
+                height: 20,
                 child: DrawTimeDomain(analyser1),
               ),
               Container(
-                height: 100,
+                height: 20,
                 child: DrawTimeDomain(analyser2),
               ),
               Container(
-                height: 100,
+                height: 20,
                 child: DrawTimeDomain(analyser3),
               ),
               Container(
-                height: 100,
+                height: 20,
                 child: DrawTimeDomain(analyser4),
               ),
               Container(
-                height: 100,
+                height: 20,
                 child: DrawTimeDomain(analyser5),
               ),
               TextButton(onPressed: play, child: Text('Play')),
