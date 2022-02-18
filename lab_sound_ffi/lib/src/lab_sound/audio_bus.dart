@@ -73,7 +73,6 @@ class AudioBus {
     return bus;
   }
 
-
   AudioBus.fromId(this.resourceId, {this.autoDispose = false, this.debugName}): filePath = '';
 
   lock(AudioNode node) {

@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
+import 'package:lab_sound_flutter_example/demos/debug_scaffold.dart';
 
 import '../draw_frequency.dart';
 import '../draw_time_domain.dart';
+import 'debug_graph.dart';
 
 class Dial extends StatefulWidget {
   @override
@@ -28,6 +30,8 @@ class _DialState extends State<Dial> {
 
   @override
   void dispose() {
+    analyserNode.dispose();
+    dynamicsCompressorNode.dispose();
     audioContext.dispose();
     super.dispose();
   }
@@ -100,16 +104,30 @@ class _DialState extends State<Dial> {
       y++;
     });
 
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(height: 50, child: DrawTimeDomain(analyserNode)),
-          Container(height: 200, child: DrawFrequency(analyserNode)),
-          ...buttonWidgets,
-        ],
+    return DebugScaffold(
+      child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DebugGraph()),
+                  );
+                },
+                icon: Icon(Icons.bug_report))
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(height: 50, child: DrawTimeDomain(analyserNode)),
+              Container(height: 200, child: DrawFrequency(analyserNode)),
+              ...buttonWidgets,
+            ],
+          ),
+        ),
       ),
     );
   }
