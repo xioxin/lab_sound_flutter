@@ -69,16 +69,14 @@ class _MyAppState extends State<MyApp> {
                     MaterialPageRoute(builder: (context) => AudioDeviceList()),
                   );
                 }),
-
             ListTile(
-                title: Text("LayeredGraphViewPage"),
+                title: Text("Microphone recording"),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DebugGraph()),
+                    MaterialPageRoute(builder: (context) => Recorder()),
                   );
                 }),
-
             ListTile(
                 title: Text("Zelda"),
                 onTap: () {

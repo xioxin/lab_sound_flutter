@@ -33,18 +33,18 @@ class _DebugScaffoldState extends State<DebugScaffold> {
               IconButton(onPressed: () {
                 setState(() {
                   graphGlex = 1;
-                  childFlex = 100;
+                  childFlex = 50;
                 });
               }, icon: Icon(Icons.vertical_align_bottom)),
               IconButton(onPressed: () {
                 setState(() {
-                  graphGlex = 100;
-                  childFlex = 100;
+                  graphGlex = 1;
+                  childFlex = 1;
                 });
               }, icon: Icon(Icons.vertical_align_center)),
               IconButton(onPressed: () {
                 setState(() {
-                  graphGlex = 100;
+                  graphGlex = 50;
                   childFlex = 1;
                 });
               }, icon: Icon(Icons.vertical_align_top)),
