@@ -1,9 +1,20 @@
+import 'package:lab_sound_ffi/lab_sound_ffi.dart';
+
 import 'audio_context.dart';
-import 'audio_node.dart';
 import 'audio_param.dart';
+import 'audio_scheduled_source_node.dart';
 import 'lab_sound.dart';
 
-class SfxrNode extends AudioNode {
+enum WaveType {
+  square,
+  sawtooth,
+  sine,
+  noise
+}
+
+class SfxrNode extends AudioScheduledSourceNode {
+
+  late AudioSettingEnumeration _waveType;
 
   late AudioParam attackTime;
   late AudioParam sustainTime;
@@ -51,6 +62,12 @@ class SfxrNode extends AudioNode {
     lpFiterResonance = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_lpFiterResonance(this.nodeId));
     hpFilterCutoff = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_hpFilterCutoff(this.nodeId));
     hpFilterCutoffSweep = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_hpFilterCutoffSweep(this.nodeId));
+    _waveType = AudioSettingEnumeration(ctx, nodeId, LabSound().SfxrNode_waveType(this.nodeId));
+  }
+
+  WaveType get waveType => WaveType.values[_waveType.value];
+  set waveType(WaveType val)  {
+    _waveType.setValue(val.index);
   }
 
   setStartFrequencyInHz(double value) => LabSound().SfxrNode_setStartFrequencyInHz(nodeId, value);

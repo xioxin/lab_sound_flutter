@@ -9,6 +9,7 @@ import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 import 'demos/audio_device.dart';
 import 'demos/debug_graph.dart';
 import 'demos/render-audio.dart';
+import 'demos/sfxr.dart';
 import 'demos/wave_form.dart';
 import 'demos/zelda.dart';
 import 'labsound/ex_simple.dart';
@@ -85,6 +86,15 @@ class _MyAppState extends State<MyApp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Zelda()),
+                  );
+                }),
+
+            ListTile(
+                title: Text("Sfxr"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Sfxr()),
                   );
                 }),
 

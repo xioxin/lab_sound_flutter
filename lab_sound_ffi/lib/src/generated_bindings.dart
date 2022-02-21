@@ -4537,6 +4537,24 @@ class LabSoundBind {
   late final _dart_createSfxrNode _createSfxrNode =
       _createSfxrNode_ptr.asFunction<_dart_createSfxrNode>();
 
+
+
+
+
+  int SfxrNode_waveType(
+      int nodeId,
+      ) {
+    return _SfxrNode_waveType(
+      nodeId,
+    );
+  }
+
+  late final _SfxrNode_waveType_ptr =
+  _lookup<ffi.NativeFunction<_c_SfxrNode_waveType>>(
+      'SfxrNode_waveType');
+  late final _dart_SfxrNode_waveType _SfxrNode_waveType =
+  _SfxrNode_waveType_ptr.asFunction<_dart_SfxrNode_waveType>();
+
   int SfxrNode_attackTime(
     int nodeId,
   ) {
@@ -8806,6 +8824,15 @@ typedef _c_createSfxrNode = ffi.Int32 Function(
 typedef _dart_createSfxrNode = int Function(
   ffi.Pointer<ffi.Void> context,
 );
+
+
+typedef _c_SfxrNode_waveType = ffi.Int32 Function(
+    ffi.Int32 nodeId,
+    );
+
+typedef _dart_SfxrNode_waveType = int Function(
+    int nodeId,
+    );
 
 typedef _c_SfxrNode_attackTime = ffi.Int32 Function(
   ffi.Int32 nodeId,
