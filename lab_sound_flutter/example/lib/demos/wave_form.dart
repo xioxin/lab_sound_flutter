@@ -40,11 +40,11 @@ class _WaveFormPageState extends State<WaveFormPage> {
     if(channel == null) return;
     final int length = channel.length;
     final binSize = length ~/ width;
-    final data = channel.getData();
+    final list = channel.getData().toList();
 
     final List<double> wave = [];
     for(int i = 0; i < width; i += 1) {
-      final subList = data.skip(i * binSize).take(binSize).toList();
+      final subList = list.sublist(i * binSize, binSize).toList();
       final maxValue = subList.reduce((value, element) => max(element.abs(), value));
       wave.add(maxValue);
     }
@@ -53,7 +53,6 @@ class _WaveFormPageState extends State<WaveFormPage> {
        this.time = DateTime.now().difference(startTime);
      });
   }
-
 
   @override
   void initState() {

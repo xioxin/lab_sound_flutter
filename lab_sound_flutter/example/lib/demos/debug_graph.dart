@@ -7,6 +7,8 @@ import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/draw_frequency.dart';
 import 'package:lab_sound_flutter_example/draw_time_domain.dart';
 
+import '../wave_form.dart';
+
 class DebugGraph extends StatefulWidget {
   @override
   _DebugGraphState createState() => _DebugGraphState();
@@ -25,7 +27,7 @@ class _DebugGraphState extends State<DebugGraph> {
             boundaryMargin: EdgeInsets.all(100),
             minScale: 0.0001,
             maxScale: 10.6,
-            child: GraphView(
+            child: graph.nodes.isEmpty ? Text("EMPTY") : GraphView(
               graph: graph,
               algorithm: SugiyamaAlgorithm(builder),
               paint: Paint()
@@ -41,34 +43,47 @@ class _DebugGraphState extends State<DebugGraph> {
   Random r = Random();
 
   Widget audioParamWidget(String name, AudioParam param, {double step = 1}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(name + "${param.value} (Range:${param.minValue} - ${param.maxValue})"),
-        Row(
-          children: [
-            TextButton(onPressed: () {
-              setState(() {
-                param.setValue(param.value - step);
-              });
-            }, child: Text('-')),
-            Slider(
-                value: param.value,
-                min: param.minValue,
-                max: param.maxValue,
-                onChanged: (val) {
+
+    final fixed = param.maxValue.toStringAsFixed(2) == param.minValue.toStringAsFixed(2);
+
+    return SizedBox(
+      width: 200,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(name + "${param.value.toStringAsFixed(2)} (Range:${param.minValue.toStringAsFixed(2)} - ${param.maxValue.toStringAsFixed(2)}, Def: ${param.defaultValue})"),
+          if(!fixed) Column(
+            children: [
+              Slider(
+                  value: param.value,
+                  min: min(param.maxValue, param.minValue),
+                  max: max(param.maxValue, param.minValue),
+                  onChanged: (val) {
+                    setState(() {
+                      param.setValue(val);
+                    });
+                  }),
+              Row(children: [
+                TextButton(onPressed: () {
                   setState(() {
-                    param.setValue(val);
+                    param.setValue(max(param.value - step, param.minValue));
                   });
-                }),
-            TextButton(onPressed: () {
-              setState(() {
-                param.setValue(param.value + step);
-              });
-            }, child: Text('+')),
-          ],
-        )
-      ],
+                }, child: Text('-${step}')),
+                TextButton(onPressed: () {
+                  setState(() {
+                    param.setValue(param.defaultValue);
+                  });
+                }, child: Text('Default')),
+                TextButton(onPressed: () {
+                  setState(() {
+                    param.setValue(min(param.value + step, param.maxValue));
+                  });
+                }, child: Text('+${step}')),
+              ])
+            ],
+          )
+        ],
+      ),
     );
   }
 
@@ -101,18 +116,30 @@ class _DebugGraphState extends State<DebugGraph> {
   }
 
 
+  Widget startStopButton(AudioScheduledSourceNode node) {
+    return Row(
+      children: [
+        TextButton(onPressed: () {
+          node.start();
+        }, child: Text("Start")),
+        TextButton(onPressed: () {
+          node.stop();
+        }, child: Text("Stop"))
+      ],
+    );
+  }
+
   Widget labAudioWidget(dynamic node) {
-    final caption = Theme.of(context).textTheme.caption;
-
-    String name = "";
-    if (node is AudioNode) {
-      name = node.name;
-    }
-
     if (node is AudioBus) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            width: 200,
+            height: 60,
+            color: Colors.white,
+            child: WaveForm(node, key: ObjectKey(node)),
+          ),
           Text("name: ${node.debugName}"),
           Text("length: ${node.lengthInSeconds}s"),
           Text("sampleRate: ${node.sampleRate}"),
@@ -124,11 +151,10 @@ class _DebugGraphState extends State<DebugGraph> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("position: ${node.position}"),
+          SizedBox(height: 3, width: 200,child: LinearProgressIndicator(value: (node.position?.inMilliseconds ?? 0.0) / (node.duration?.inMilliseconds ?? 1.0),)),
           Text("playbackState: ${node.playbackState}"),
-          audioParamWidget("playbackRate: ", node.playbackRate),
-          TextButton(onPressed: () {
-            node.start();
-          }, child: Text("Start"))
+          audioParamWidget("playbackRate: ", node.playbackRate, step: 0.2),
+          startStopButton(node),
         ],
       );
     } else if (node is AudioHardwareDeviceNode) {
@@ -152,12 +178,7 @@ class _DebugGraphState extends State<DebugGraph> {
           audioParamWidget("detune: ", node.detune),
           audioParamWidget("amplitude: ", node.amplitude),
           audioParamWidget("bias: ", node.bias),
-          TextButton(onPressed: () {
-            node.start();
-          }, child: Text("Start")),
-          TextButton(onPressed: () {
-            node.stop();
-          }, child: Text("Stop"))
+          startStopButton(node),
         ],
       );
     } else if (node is GainNode) {
@@ -176,12 +197,13 @@ class _DebugGraphState extends State<DebugGraph> {
           Container(
               width: 200,
               height: 50,
+              color: Colors.white,
               child: DrawTimeDomain(node)
           ),
           Divider(height: 1,),
           Container(
             width: 200,
-              height: 50,
+              height: 60,
               child: DrawFrequency(node)
           ),
         ],
@@ -196,6 +218,17 @@ class _DebugGraphState extends State<DebugGraph> {
           audioParamWidget("attack: ", node.attack),
           audioParamWidget("release: ", node.release),
           audioParamWidget("reduction: ", node.reduction),
+        ],
+      );
+    } else if (node is NoiseNode) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          selectWidget("type:", NoiseType.values.map((e) => e.name).toList() , node.type.name, (String? value) {
+            setState(() {
+              if(value != null) node.type = (NoiseType.values.firstWhere((element) => element.name == value));
+            });
+          }),
         ],
       );
     }
@@ -222,7 +255,7 @@ class _DebugGraphState extends State<DebugGraph> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(name),
-            DefaultTextStyle(child: labAudioWidget(node), style: Theme.of(context).textTheme.caption!,),
+            SizedBox(width: 200, child: DefaultTextStyle(child: labAudioWidget(node), style: Theme.of(context).textTheme.caption!,)),
           ],
         ));
   }
@@ -264,16 +297,15 @@ class _DebugGraphState extends State<DebugGraph> {
       check();
     });
 
-    // graph.addEdge(Node.Id(1), Node.Id(2));
-
     builder
       ..nodeSeparation = (15)
       ..levelSeparation = (15)
-      ..orientation = SugiyamaConfiguration.ORIENTATION_TOP_BOTTOM;
+      ..orientation = SugiyamaConfiguration.ORIENTATION_LEFT_RIGHT;
   }
 
   @override
   void dispose() {
     timer.cancel();
+    super.dispose();
   }
 }

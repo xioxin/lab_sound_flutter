@@ -4,6 +4,7 @@ import 'package:lab_sound_flutter_example/draw_frequency.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'dart:io';
 
 class Recorder extends StatefulWidget {
 
@@ -15,18 +16,30 @@ class _RecorderState extends State<Recorder> {
 
   AnalyserNode? analyser;
 
-
+  bool microphoneGranted = false;
   bool recording = false;
 
   @override
   void initState() {
     super.initState();
+    if(Platform.isAndroid || Platform.isIOS) {
+      Permission.microphone.request().then((microphoneRequest) {
+        setState(() {
+          microphoneGranted = microphoneRequest.isGranted;
+        });
+      });
+    } else {
+      microphoneGranted = true;
+    }
   }
 
   Future startRecording() async {
-    if (!await Permission.microphone.request().isGranted) return;
+    print(LabSound().getDefaultInputAudioDeviceIndex().index);
 
-    final AudioContext audioContext = AudioContext(outputConfig: AudioStreamConfig(deviceIndex: -1, desiredSampleRate: 44100.0), inputConfig: AudioStreamConfig(deviceIndex: 22, desiredChannels: 1, desiredSampleRate: 44100.0));
+    final AudioContext audioContext = AudioContext(
+        outputConfig: AudioStreamConfig(deviceIndex: 0, desiredChannels: 2, desiredSampleRate: 44100.0),
+        inputConfig: AudioStreamConfig(deviceIndex: 0, desiredChannels: 1, desiredSampleRate: 44100.0)
+    );
     final AudioNode inputNode = audioContext.makeAudioHardwareInputNode();
 
     setState(() {
@@ -52,19 +65,16 @@ class _RecorderState extends State<Recorder> {
     print("savePath: $savePath ");
 
     OpenFile.open(savePath);
-    audioContext.dispose();
     setState(() {
       analyser = null;
     });
+    audioContext.dispose();
   }
 
   @override
   void dispose() {
     super.dispose();
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +86,12 @@ class _RecorderState extends State<Recorder> {
         padding: EdgeInsets.all(16.0),
         children: [
           if(analyser != null) Container(height: 300, child: DrawFrequency(analyser!)),
-          ElevatedButton(
+          if(microphoneGranted)ElevatedButton(
               child: Text("录音"),
               onPressed: () async {
                 startRecording();
               }),
+          if(!microphoneGranted) Text("No microphone permission"),
         ],
       ),
     );
