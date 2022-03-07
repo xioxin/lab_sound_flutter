@@ -5,7 +5,7 @@ import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 
 class WaveForm extends StatefulWidget {
   final AudioBus audioBus;
-  WaveForm(this.audioBus, {Key? key}) : super(key: key);
+  const WaveForm(this.audioBus, {Key? key}) : super(key: key);
   @override
   _WaveFormState createState() => _WaveFormState();
 }
@@ -44,7 +44,7 @@ class _WaveFormState extends State<WaveForm>
 
 class WaveFormPainter extends CustomPainter {
   WaveFormPainter(this.rough, {Listenable? repaint})
-      : super(repaint: repaint) {}
+      : super(repaint: repaint);
 
   List<double> rough = [];
   List<double> waveData = [];
@@ -70,19 +70,19 @@ class WaveFormPainter extends CustomPainter {
     double h = size.height;
     int n = 0;
 
-    wave.forEach((val) {
+    for (var val in wave) {
       canvas.drawRect(
           Rect.fromLTWH(
               n * w, size.height / 2 - (val * h) / 2, w, max(0.5, val * h)),
           paint);
       n++;
-    });
+    }
   }
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     if (oldDelegate is WaveFormPainter) {
-      if (oldDelegate.waveData.length != 0) {
+      if (oldDelegate.waveData.isNotEmpty) {
         return false;
       }
     }

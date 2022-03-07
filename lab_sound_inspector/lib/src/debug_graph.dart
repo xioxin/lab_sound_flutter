@@ -20,11 +20,11 @@ class _DebugGraphState extends State<DebugGraph> {
     return Scaffold(
         body: InteractiveViewer(
             constrained: false,
-            boundaryMargin: EdgeInsets.all(100),
+            boundaryMargin: const EdgeInsets.all(100),
             minScale: 0.0001,
             maxScale: 10.6,
             child: graph.nodes.isEmpty
-                ? Text("EMPTY")
+                ? const Text("EMPTY")
                 : GraphView(
                     graph: graph,
                     algorithm: SugiyamaAlgorithm(builder),
@@ -71,14 +71,14 @@ class _DebugGraphState extends State<DebugGraph> {
                               max(param.value - step, param.minValue));
                         });
                       },
-                      child: Text('-${step}')),
+                      child: Text('-$step')),
                   TextButton(
                       onPressed: () {
                         setState(() {
                           param.setValue(param.defaultValue);
                         });
                       },
-                      child: Text('Default')),
+                      child: const Text('Default')),
                   TextButton(
                       onPressed: () {
                         setState(() {
@@ -86,7 +86,7 @@ class _DebugGraphState extends State<DebugGraph> {
                               min(param.value + step, param.maxValue));
                         });
                       },
-                      child: Text('+${step}')),
+                      child: Text('+$step')),
                 ])
               ],
             )
@@ -100,7 +100,7 @@ class _DebugGraphState extends State<DebugGraph> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(name + "${value})"),
+        Text(name + "$value)"),
         DropdownButton<String>(
           value: value,
           icon: const Icon(Icons.arrow_downward),
@@ -131,12 +131,12 @@ class _DebugGraphState extends State<DebugGraph> {
             onPressed: () {
               node.start();
             },
-            child: Text("Start")),
+            child: const Text("Start")),
         TextButton(
             onPressed: () {
               node.stop();
             },
-            child: Text("Stop"))
+            child: const Text("Stop"))
       ],
     );
   }
@@ -192,9 +192,10 @@ class _DebugGraphState extends State<DebugGraph> {
               OscillatorType.values.map((e) => e.name).toList(),
               node.type.name, (String? value) {
             setState(() {
-              if (value != null)
+              if (value != null) {
                 node.setType(OscillatorType.values
                     .firstWhere((element) => element.name == value));
+              }
             });
           }),
           audioParamWidget("frequency: ", node.frequency),
@@ -216,7 +217,7 @@ class _DebugGraphState extends State<DebugGraph> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("fftSize: ${node.fftSize}"),
-          Divider(
+          const Divider(
             height: 1,
           ),
           Container(
@@ -224,10 +225,10 @@ class _DebugGraphState extends State<DebugGraph> {
               height: 50,
               color: Colors.white,
               child: DrawTimeDomain(node)),
-          Divider(
+          const Divider(
             height: 1,
           ),
-          Container(width: 200, height: 60, child: DrawFrequency(node)),
+          SizedBox(width: 200, height: 60, child: DrawFrequency(node)),
         ],
       );
     } else if (node is DynamicsCompressorNode) {
@@ -249,15 +250,16 @@ class _DebugGraphState extends State<DebugGraph> {
           selectWidget("type:", NoiseType.values.map((e) => e.name).toList(),
               node.type.name, (String? value) {
             setState(() {
-              if (value != null)
+              if (value != null) {
                 node.type = (NoiseType.values
                     .firstWhere((element) => element.name == value));
+              }
             });
           }),
         ],
       );
     }
-    return Text("No details");
+    return const Text("No details");
   }
 
   Widget rectangleWidget(dynamic node) {
@@ -269,7 +271,7 @@ class _DebugGraphState extends State<DebugGraph> {
     }
 
     return Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           boxShadow: [
@@ -296,10 +298,10 @@ class _DebugGraphState extends State<DebugGraph> {
   buildNode() {
     graph.edges.clear();
     graph.nodes.clear();
-    LabSound().allNodes.forEach((element) {
+    for (var element in LabSound().allNodes) {
       if (element.released) return;
       final node = Node.Id(element);
-      element.linked.forEach((dstNode) {
+      for (var dstNode in element.linked) {
         if (dstNode.released) return;
         graph.addEdge(node, Node.Id(dstNode));
         if (element is AudioSampleNode) {
@@ -309,8 +311,8 @@ class _DebugGraphState extends State<DebugGraph> {
             graph.addEdge(Node.Id(resource), node);
           }
         }
-      });
-    });
+      }
+    }
   }
 
   check() {
@@ -322,7 +324,7 @@ class _DebugGraphState extends State<DebugGraph> {
   @override
   void initState() {
     buildNode();
-    timer = Timer.periodic(Duration(milliseconds: 100), (Timer timer) {
+    timer = Timer.periodic(const Duration(milliseconds: 100), (Timer timer) {
       check();
     });
 

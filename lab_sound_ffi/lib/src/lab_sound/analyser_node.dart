@@ -99,25 +99,25 @@ class AnalyserNode extends AudioNode {
   AnalyserNode(AudioContext ctx, { int? fftSize }): super(ctx, fftSize == null ? LabSound().createAnalyserNode(ctx.pointer) : LabSound().createAnalyserNodeFftSize(ctx.pointer, fftSize));
 
 
-  setFftSize(int fftSize) => LabSound().AnalyserNode_setFftSize(this.nodeId, this.ctx.pointer, fftSize);
-  int get fftSize => LabSound().AnalyserNode_fftSize(this.nodeId);
+  setFftSize(int fftSize) => LabSound().AnalyserNode_setFftSize(nodeId, ctx.pointer, fftSize);
+  int get fftSize => LabSound().AnalyserNode_fftSize(nodeId);
 
-  int get frequencyBinCount => LabSound().AnalyserNode_frequencyBinCount(this.nodeId);
+  int get frequencyBinCount => LabSound().AnalyserNode_frequencyBinCount(nodeId);
 
-  setMinDecibels(double k) => LabSound().AnalyserNode_setMinDecibels(this.nodeId, k);
-  int get minDecibels => LabSound().AnalyserNode_minDecibels(this.nodeId);
+  setMinDecibels(double k) => LabSound().AnalyserNode_setMinDecibels(nodeId, k);
+  int get minDecibels => LabSound().AnalyserNode_minDecibels(nodeId);
 
-  setMaxDecibels(double k) => LabSound().AnalyserNode_setMaxDecibels(this.nodeId, k);
-  int get maxDecibels => LabSound().AnalyserNode_maxDecibels(this.nodeId);
+  setMaxDecibels(double k) => LabSound().AnalyserNode_setMaxDecibels(nodeId, k);
+  int get maxDecibels => LabSound().AnalyserNode_maxDecibels(nodeId);
 
-  setSmoothingTimeConstant(double k) => LabSound().AnalyserNode_setSmoothingTimeConstant(this.nodeId, k);
-  int get smoothingTimeConstant => LabSound().AnalyserNode_smoothingTimeConstant(this.nodeId);
+  setSmoothingTimeConstant(double k) => LabSound().AnalyserNode_setSmoothingTimeConstant(nodeId, k);
+  int get smoothingTimeConstant => LabSound().AnalyserNode_smoothingTimeConstant(nodeId);
 
   AnalyserBuffer<double>? floatFrequencyData;
   AnalyserBuffer<double> getFloatFrequencyData() {
     floatFrequencyData ??= AnalyserBuffer<double>(frequencyBinCount);
     if(floatFrequencyData!.ptr == null) throw "floatFrequencyData ptr is null";
-    LabSound().AnalyserNode_getFloatFrequencyData(this.nodeId, floatFrequencyData!.ptr! as Pointer<Float>);
+    LabSound().AnalyserNode_getFloatFrequencyData(nodeId, floatFrequencyData!.ptr! as Pointer<Float>);
     return floatFrequencyData!;
   }
 
@@ -125,7 +125,7 @@ class AnalyserNode extends AudioNode {
   AnalyserBuffer<int> getByteFrequencyData({resample = false}) {
     byteFrequencyData ??= AnalyserBuffer<int>(frequencyBinCount);
     if(byteFrequencyData!.ptr == null) throw "byteFrequencyData ptr is null";
-    LabSound().AnalyserNode_getByteFrequencyData(this.nodeId, byteFrequencyData!.ptr! as Pointer<Uint8>, resample ? 1 : 0);
+    LabSound().AnalyserNode_getByteFrequencyData(nodeId, byteFrequencyData!.ptr! as Pointer<Uint8>, resample ? 1 : 0);
     return byteFrequencyData!;
   }
 
@@ -134,7 +134,7 @@ class AnalyserNode extends AudioNode {
   AnalyserBuffer<double> getFloatTimeDomainData() {
     floatTimeDomainData ??= AnalyserBuffer<double>(frequencyBinCount);
     if(floatTimeDomainData!.ptr == null) throw "floatTimeDomainData ptr is null";
-    LabSound().AnalyserNode_getFloatTimeDomainData(this.nodeId, floatTimeDomainData!.ptr! as Pointer<Float>);
+    LabSound().AnalyserNode_getFloatTimeDomainData(nodeId, floatTimeDomainData!.ptr! as Pointer<Float>);
     return floatTimeDomainData!;
   }
 
@@ -142,7 +142,7 @@ class AnalyserNode extends AudioNode {
   AnalyserBuffer<int> getByteTimeDomainData() {
     byteTimeDomainData ??= AnalyserBuffer<int>(frequencyBinCount);
     if(byteTimeDomainData!.ptr == null) throw "byteTimeDomainData ptr is null";
-    LabSound().AnalyserNode_getByteTimeDomainData(this.nodeId, byteTimeDomainData!.ptr! as Pointer<Uint8>);
+    LabSound().AnalyserNode_getByteTimeDomainData(nodeId, byteTimeDomainData!.ptr! as Pointer<Uint8>);
     return byteTimeDomainData!;
   }
 

@@ -1,13 +1,10 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:graphview/GraphView.dart';
-import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 import './debug_graph.dart';
 
 class DebugScaffold extends StatefulWidget {
   final Widget child;
-  DebugScaffold({required this.child, Key? key}) : super(key: key);
+  const DebugScaffold({required this.child, Key? key}) : super(key: key);
 
   @override
   State<DebugScaffold> createState() => _DebugScaffoldState();
@@ -28,7 +25,7 @@ class _DebugScaffoldState extends State<DebugScaffold> {
         child: Column(
           children: [
             Flexible(flex: childFlex, child: widget.child),
-            Divider(
+            const Divider(
               height: 1,
             ),
             Row(
@@ -43,7 +40,7 @@ class _DebugScaffoldState extends State<DebugScaffold> {
                         childFlex = 100;
                       });
                     },
-                    icon: Icon(Icons.vertical_align_bottom)),
+                    icon: const Icon(Icons.vertical_align_bottom)),
                 IconButton(
                     onPressed: () {
                       setState(() {
@@ -51,7 +48,7 @@ class _DebugScaffoldState extends State<DebugScaffold> {
                         childFlex = 100;
                       });
                     },
-                    icon: Icon(Icons.vertical_align_center)),
+                    icon: const Icon(Icons.vertical_align_center)),
                 IconButton(
                     onPressed: () {
                       setState(() {
@@ -59,10 +56,10 @@ class _DebugScaffoldState extends State<DebugScaffold> {
                         childFlex = 1;
                       });
                     },
-                    icon: Icon(Icons.vertical_align_top)),
+                    icon: const Icon(Icons.vertical_align_top)),
               ],
             ),
-            Divider(
+            const Divider(
               height: 1,
             ),
             Flexible(flex: graphGlex, child: DebugGraph())

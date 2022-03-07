@@ -1,12 +1,10 @@
 import 'dart:ffi';
 import 'dart:io';
-import 'dart:math';
 import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 import '../generated_bindings.dart';
 import '../extensions/ffi_string.dart';
 import 'dart:async';
 import 'dart:isolate';
-import 'audio_stream_config.dart' as asc;
 
 class AudioBusStatus {
   int busId;
@@ -39,7 +37,7 @@ enum OperatingSystem {
   fuchsia,
 }
 
-const bool inProduction = const bool.fromEnvironment("dart.vm.product");
+const bool inProduction = bool.fromEnvironment("dart.vm.product");
 
 enum AndroidAudioDeviceType {
   unknown, // 0
@@ -193,7 +191,7 @@ class LabSound extends LabSoundBind {
   AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
       labSound_GetDefaultInputAudioDeviceIndex();
 
-  Set<AudioNode> allNodes = Set();
+  Set<AudioNode> allNodes = {};
 
   printSurvivingNodes() {
     for (var node in allNodes) {

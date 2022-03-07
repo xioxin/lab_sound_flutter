@@ -1,7 +1,5 @@
 import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 
-import 'audio_context.dart';
-import 'lab_sound.dart';
 import '../extensions/ffi_string.dart';
 
 enum AudioSettingType { None, Bool, Integer, Float, Enumeration, Bus }

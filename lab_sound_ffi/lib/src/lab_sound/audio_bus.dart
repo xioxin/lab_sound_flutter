@@ -13,7 +13,7 @@ class AudioBus {
 
   String? debugName;
   final int resourceId;
-  Set<AudioNode> usedNode = Set();
+  Set<AudioNode> usedNode = {};
   String filePath;
   bool autoDispose;
   bool released = false;
@@ -32,7 +32,7 @@ class AudioBus {
     debugName ??= basename(filePath);
     Completer<AudioBus> _loadCompleter = Completer();
     complete = _loadCompleter.future;
-    _statusStreamSubscription = LabSound().onAudioBusStatus.where((event) => event.busId == this.resourceId).listen((event) {
+    _statusStreamSubscription = LabSound().onAudioBusStatus.where((event) => event.busId == resourceId).listen((event) {
       if(event.decoded) {
         loaded = true;
         _loadCompleter.complete(this);
@@ -48,7 +48,7 @@ class AudioBus {
     debugName ??= basename(filePath);
     Completer<AudioBus> _loadCompleter = Completer();
     complete = _loadCompleter.future;
-    _statusStreamSubscription = LabSound().onAudioBusStatus.where((event) => event.busId == this.resourceId).listen((event) {
+    _statusStreamSubscription = LabSound().onAudioBusStatus.where((event) => event.busId == resourceId).listen((event) {
       if(event.decoded) {
         loaded = true;
         _loadCompleter.complete(this);
@@ -83,9 +83,9 @@ class AudioBus {
   unlock(AudioNode node) {
     usedNode.remove(node);
     print("$this 节点解锁 ${usedNode.length}, 剩余: $usedNode, audoDispose: $autoDispose");
-    if(usedNode.length == 0 && autoDispose) {
+    if(usedNode.isEmpty && autoDispose) {
       print("$this 销毁！！！");
-      this.dispose();
+      dispose();
     }
   }
 
@@ -94,21 +94,21 @@ class AudioBus {
     released = true;
     loaded = false;
     _statusStreamSubscription?.cancel();
-    LabSound().releaseAudioBus(this.resourceId);
+    LabSound().releaseAudioBus(resourceId);
   }
 
-  int get numberOfChannels => LabSound().AudioBus_numberOfChannels(this.resourceId);
-  int get length => LabSound().AudioBus_length(this.resourceId);
+  int get numberOfChannels => LabSound().AudioBus_numberOfChannels(resourceId);
+  int get length => LabSound().AudioBus_length(resourceId);
 
   double? _sampleRate;
   double get sampleRate {
-    _sampleRate ??= LabSound().AudioBus_sampleRate(this.resourceId);
+    _sampleRate ??= LabSound().AudioBus_sampleRate(resourceId);
     return _sampleRate!;
   }
 
-  double get lengthInSeconds => this.length / this.sampleRate;
+  double get lengthInSeconds => length / sampleRate;
 
-  Duration get duration => Duration(milliseconds: (this.lengthInSeconds * 1000).toInt());
+  Duration get duration => Duration(milliseconds: (lengthInSeconds * 1000).toInt());
 
 
   AudioChannel? channel(int channelIndex) {
@@ -117,6 +117,7 @@ class AudioBus {
     return AudioChannel(pointer);
   }
 
+  @override
   toString() {
     return "[$resourceId]AudioBus${debugName != null ? "($debugName)" : ''}";
   }

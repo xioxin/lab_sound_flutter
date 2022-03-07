@@ -1,5 +1,4 @@
 import 'audio_context.dart';
-import 'audio_node.dart';
 import 'audio_param.dart';
 import 'audio_scheduled_source_node.dart';
 import 'lab_sound.dart';
@@ -24,12 +23,12 @@ class PolyBLEPNode extends AudioScheduledSourceNode {
   late AudioParam amplitude;
   late AudioParam frequency;
   PolyBLEPNode(AudioContext ctx): super(ctx, LabSound().createPolyBLEPNode(ctx.pointer)) {
-    this.amplitude = AudioParam(this.ctx, this.nodeId, LabSound().PolyBLEPNode_amplitude(this.nodeId));
-    this.frequency = AudioParam(this.ctx, this.nodeId, LabSound().PolyBLEPNode_frequency(this.nodeId));
+    amplitude = AudioParam(this.ctx, nodeId, LabSound().PolyBLEPNode_amplitude(nodeId));
+    frequency = AudioParam(this.ctx, nodeId, LabSound().PolyBLEPNode_frequency(nodeId));
   }
 
-  PolyBLEPType get type => PolyBLEPType.values[LabSound().PolyBLEPNode_type(this.nodeId)];
-  set type(PolyBLEPType type) => LabSound().PolyBLEPNode_setType(this.nodeId, type.index);
+  PolyBLEPType get type => PolyBLEPType.values[LabSound().PolyBLEPNode_type(nodeId)];
+  set type(PolyBLEPType type) => LabSound().PolyBLEPNode_setType(nodeId, type.index);
 
 }
 

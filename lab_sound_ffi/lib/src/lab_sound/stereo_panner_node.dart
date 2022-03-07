@@ -6,6 +6,6 @@ import 'lab_sound.dart';
 class StereoPannerNode extends AudioNode {
   late AudioParam delayTime;
   StereoPannerNode(AudioContext ctx): super(ctx, LabSound().createStereoPannerNode(ctx.pointer)) {
-    this.delayTime = AudioParam(this.ctx, this.nodeId, LabSound().StereoPannerNode_pan(this.nodeId));
+    delayTime = AudioParam(this.ctx, nodeId, LabSound().StereoPannerNode_pan(nodeId));
   }
 }

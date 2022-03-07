@@ -6,7 +6,7 @@ import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 class DrawFrequency extends StatefulWidget {
   final AnalyserNode analyserNode;
 
-  DrawFrequency(this.analyserNode, {Key? key}) : super(key: key);
+  const DrawFrequency(this.analyserNode, {Key? key}) : super(key: key);
 
   @override
   _DrawFrequencyState createState() => _DrawFrequencyState();
@@ -57,10 +57,10 @@ class DrawFrequencyPainter extends CustomPainter {
       ..strokeWidth = 1
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
-    double w = size.width / this.analyserNode.frequencyBinCount;
+    double w = size.width / analyserNode.frequencyBinCount;
     double h = size.height / 256.0;
     int n = 0;
-    this.analyserNode.getByteFrequencyData().forEach((val) {
+    analyserNode.getByteFrequencyData().forEach((val) {
       canvas.drawRect(
           Rect.fromLTWH(n * w, size.height - val * h,
               max(w.ceil().toDouble(), 1.0), val * h),

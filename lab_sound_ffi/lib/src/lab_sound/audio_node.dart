@@ -7,13 +7,13 @@ import 'lab_sound.dart';
 
 enum SchedulingState {
   UNSCHEDULED, // Initial playback state. Created, but not yet scheduled
-  SCHEDULED,       // Scheduled to play (via noteOn() or noteGrainOn()), but not yet playing
-  FADE_IN,         // First epoch, fade in, then play
-  PLAYING,         // Generating sound
-  STOPPING,        // Transitioning to finished
-  RESETTING,       // Node is resetting to initial, unscheduled state
-  FINISHING,       // Playing has finished
-  FINISHED         // Node has finished
+  SCHEDULED, // Scheduled to play (via noteOn() or noteGrainOn()), but not yet playing
+  FADE_IN, // First epoch, fade in, then play
+  PLAYING, // Generating sound
+  STOPPING, // Transitioning to finished
+  RESETTING, // Node is resetting to initial, unscheduled state
+  FINISHING, // Playing has finished
+  FINISHED // Node has finished
 }
 
 class AudioNode {
@@ -31,7 +31,9 @@ class AudioNode {
 
   List<AudioNode> linked = [];
 
-  String get name => (Pointer<Utf8>.fromAddress(LabSound().AudioNode_name(nodeId).address)).toStr();
+  String get name =>
+      (Pointer<Utf8>.fromAddress(LabSound().AudioNode_name(nodeId).address))
+          .toStr();
 
   bool get isScheduledNode => LabSound().AudioNode_isScheduledNode(nodeId) > 0;
 
@@ -44,11 +46,14 @@ class AudioNode {
 
   connect(AudioNode dst, [destIdx = 0, int srcIdx = 0]) {
     linked.add(dst);
-    LabSound().AudioContext_connect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
+    LabSound()
+        .AudioContext_connect(ctx.pointer, dst.nodeId, nodeId, destIdx, srcIdx);
   }
+
   disconnect([AudioNode? dst, destIdx = 0, int srcIdx = 0]) {
     linked.remove(dst);
-    LabSound().AudioContext_disconnect(ctx.pointer, dst?.nodeId ?? -1, nodeId, destIdx, srcIdx);
+    LabSound().AudioContext_disconnect(
+        ctx.pointer, dst?.nodeId ?? -1, nodeId, destIdx, srcIdx);
   }
 
   connectParam(AudioParam destination, [int output = 0]) {
@@ -56,9 +61,10 @@ class AudioNode {
   }
 
   dispose() {
-    this.ctx.disconnectCompletely(this);
-    LabSound().releaseNode(this.nodeId);
+    ctx.disconnectCompletely(this);
+    LabSound().releaseNode(nodeId);
   }
+
   reset() {
     LabSound().AudioNode_reset(nodeId, ctx.pointer);
   }
@@ -66,9 +72,8 @@ class AudioNode {
   @override
   String toString() => "[$nodeId]$name";
 
-  operator >> (AudioNode otherNode) {
-    this.connect(otherNode);
+  operator >>(AudioNode otherNode) {
+    connect(otherNode);
     return otherNode;
   }
-
 }
