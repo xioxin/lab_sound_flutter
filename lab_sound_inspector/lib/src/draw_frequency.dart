@@ -1,8 +1,7 @@
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:lab_sound_flutter/lab_sound_flutter.dart';
+import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 
 class DrawFrequency extends StatefulWidget {
   final AnalyserNode analyserNode;

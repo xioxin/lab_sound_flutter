@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
-
-import 'debug_graph.dart';
-import 'debug_scaffold.dart';
+import 'package:lab_sound_inspector/lab_sound_inspector.dart';
 
 class AudioPlayback extends StatefulWidget {
   @override
@@ -19,6 +17,7 @@ class _AudioPlaybackState extends State<AudioPlayback> {
     super.initState();
     init();
   }
+
   @override
   void dispose() {
     ctx.dispose();
@@ -59,12 +58,13 @@ class _AudioPlaybackState extends State<AudioPlayback> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              if(audioBus == null) Text("loading"),
-              if(audioBus != null) TextButton(onPressed: play, child: Text('Play')),
-              if(audioBus != null) TextButton(onPressed: stop, child: Text('Stop')),
+              if (audioBus == null) Text("loading"),
+              if (audioBus != null)
+                TextButton(onPressed: play, child: Text('Play')),
+              if (audioBus != null)
+                TextButton(onPressed: stop, child: Text('Stop')),
             ],
-          )
-      ),
+          )),
     );
   }
 }

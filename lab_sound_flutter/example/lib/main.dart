@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/demos/audio_playback.dart';
 import 'package:lab_sound_flutter_example/demos/dial.dart';
 import 'package:lab_sound_flutter_example/demos/recorder.dart';
-import 'package:lab_sound_flutter_example/demos/zelda.dart' as zelda;
 
 import 'demos/audio_device.dart';
-import 'demos/debug_graph.dart';
-import 'demos/render-audio.dart';
 import 'demos/sfxr.dart';
-import 'demos/wave_form.dart';
 import 'demos/zelda.dart';
-import 'labsound/ex_simple.dart';
-import 'labsound/labsound_examples.dart';
+import 'package:lab_sound_inspector/lab_sound_inspector.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
