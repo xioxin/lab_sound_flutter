@@ -21,7 +21,14 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE PkgConfig::GTK)
 add_compile_options(-fPIC)
 
 # List of absolute paths to libraries that should be bundled with the plugin
+# set(lab_sound_flutter_bundled_libraries
+#   "${lab_sound_flutter_SOURCE_DIR}/libLabSoundBridge.so"
+#   PARENT_SCOPE
+# )
+
 set(lab_sound_flutter_bundled_libraries
-  "${lab_sound_flutter_SOURCE_DIR}/libLabSoundBridge.so"
+  "$<TARGET_FILE:LabSoundBridge>"
   PARENT_SCOPE
 )
+
+add_subdirectory(../bridge LabSoundBridge)

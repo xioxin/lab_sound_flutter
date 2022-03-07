@@ -1,0 +1,3 @@
+[submodule "lab_sound_flutter/bridge"]
+	path = lab_sound_flutter/bridge
+	url = https://github.com/xioxin/lab_sound_bridge

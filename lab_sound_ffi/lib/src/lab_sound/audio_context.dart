@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'package:lab_sound_ffi/lab_sound_ffi.dart';
+import 'package:lab_sound_ffi/src/lab_sound/audio_listener.dart';
 import '../extensions/ffi_string.dart';
 
 class AudioContext {
@@ -54,6 +55,12 @@ class AudioContext {
       LabSound().AudioContext_predictedCurrentTime(pointer);
 
   double get sampleRate => LabSound().AudioContext_sampleRate(pointer);
+
+  AudioListener get listener =>
+      AudioListener.fromId(this, LabSound().AudioContext_listener(pointer));
+
+  bool get isOfflineContext =>
+      LabSound().AudioContext_isOfflineContext(pointer) > 0;
 
   int get currentSampleFrame =>
       LabSound().AudioContext_currentSampleFrame(pointer);
