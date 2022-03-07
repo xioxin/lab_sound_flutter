@@ -22,10 +22,10 @@ class OscillatorNode extends AudioScheduledSourceNode {
 
   OscillatorNode(AudioContext ctx)
       : super(ctx, LabSound().createOscillatorNode(ctx.pointer)) {
-    amplitude = AudioParam(this.ctx, this.nodeId, LabSound().OscillatorNode_amplitude(this.nodeId));
-    frequency = AudioParam(this.ctx, this.nodeId, LabSound().OscillatorNode_frequency(this.nodeId));
-    detune = AudioParam(this.ctx, this.nodeId, LabSound().OscillatorNode_detune(this.nodeId));
-    bias = AudioParam(this.ctx, this.nodeId, LabSound().OscillatorNode_bias(this.nodeId));
+    amplitude = AudioParam(this.ctx, nodeId, LabSound().OscillatorNode_amplitude(nodeId));
+    frequency = AudioParam(this.ctx, nodeId, LabSound().OscillatorNode_frequency(nodeId));
+    detune = AudioParam(this.ctx, nodeId, LabSound().OscillatorNode_detune(nodeId));
+    bias = AudioParam(this.ctx, nodeId, LabSound().OscillatorNode_bias(nodeId));
   }
 
   OscillatorType get type => OscillatorType.values[LabSound().OscillatorNode_type(nodeId)];
@@ -35,8 +35,4 @@ class OscillatorNode extends AudioScheduledSourceNode {
     LabSound().OscillatorNode_setType(nodeId, type.index);
   }
 
-  @override
-  dispose() {
-    super.dispose();
-  }
 }

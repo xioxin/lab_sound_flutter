@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';

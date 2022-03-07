@@ -24,10 +24,10 @@ class BiquadFilterNode extends AudioNode {
 
   BiquadFilterNode(AudioContext ctx)
       : super(ctx, LabSound().createBiquadFilterNode(ctx.pointer)) {
-    frequency = AudioParam(this.ctx, this.nodeId, LabSound().BiquadFilterNode_frequency(this.nodeId));
-    q = AudioParam(this.ctx, this.nodeId, LabSound().BiquadFilterNode_q(this.nodeId));
-    gain = AudioParam(this.ctx, this.nodeId, LabSound().BiquadFilterNode_gain(this.nodeId));
-    detune = AudioParam(this.ctx, this.nodeId, LabSound().BiquadFilterNode_detune(this.nodeId));
+    frequency = AudioParam(this.ctx, nodeId, LabSound().BiquadFilterNode_frequency(nodeId));
+    q = AudioParam(this.ctx, nodeId, LabSound().BiquadFilterNode_q(nodeId));
+    gain = AudioParam(this.ctx, nodeId, LabSound().BiquadFilterNode_gain(nodeId));
+    detune = AudioParam(this.ctx, nodeId, LabSound().BiquadFilterNode_detune(nodeId));
   }
 
   FilterType get type => FilterType.values[LabSound().BiquadFilterNode_type(nodeId)];
@@ -36,8 +36,4 @@ class BiquadFilterNode extends AudioNode {
     LabSound().BiquadFilterNode_setType(nodeId, type.index);
   }
 
-  @override
-  dispose() {
-    super.dispose();
-  }
 }

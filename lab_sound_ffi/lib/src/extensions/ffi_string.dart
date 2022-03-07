@@ -5,7 +5,7 @@ import '../generated_bindings.dart';
 import 'dart:convert';
 extension StringExtensions on String {
   Pointer<Int8> toInt8() {
-    return this.toNativeUtf8().cast<Int8>();
+    return toNativeUtf8().cast<Int8>();
   }
 }
 
@@ -23,12 +23,12 @@ extension PointerUtf8Extensions on Pointer<Utf8> {
 
 extension PointerInt8Extensions on Pointer<Int8> {
   String toStr({int? length}) {
-    return Pointer<Utf8>.fromAddress(this.address).toStr(length: length);
+    return Pointer<Utf8>.fromAddress(address).toStr(length: length);
   }
 }
 
 extension PointerInt16Extensions on Pointer<Int8> {
-  String toStrUtf16() => Pointer<Utf16>.fromAddress(this.address).toDartString();
+  String toStrUtf16() => Pointer<Utf16>.fromAddress(address).toDartString();
 }
 
 extension FloatArrayEx on FloatArray {

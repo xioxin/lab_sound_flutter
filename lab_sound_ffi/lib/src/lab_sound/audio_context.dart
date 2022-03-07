@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'package:lab_sound_ffi/lab_sound_ffi.dart';
-import 'package:lab_sound_ffi/src/lab_sound/audio_listener.dart';
 import '../extensions/ffi_string.dart';
 
 class AudioContext {

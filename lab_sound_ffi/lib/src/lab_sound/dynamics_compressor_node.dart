@@ -14,12 +14,12 @@ class DynamicsCompressorNode extends AudioNode {
   late AudioParam reduction;
 
   DynamicsCompressorNode(AudioContext ctx): super(ctx, LabSound().createDynamicsCompressorNode(ctx.pointer)) {
-    threshold = AudioParam(this.ctx, this.nodeId, LabSound().DynamicsCompressorNode_threshold(this.nodeId));
-    knee = AudioParam(this.ctx, this.nodeId, LabSound().DynamicsCompressorNode_knee(this.nodeId));
-    ratio = AudioParam(this.ctx, this.nodeId, LabSound().DynamicsCompressorNode_ratio(this.nodeId));
-    attack = AudioParam(this.ctx, this.nodeId, LabSound().DynamicsCompressorNode_attack(this.nodeId));
-    release = AudioParam(this.ctx, this.nodeId, LabSound().DynamicsCompressorNode_release(this.nodeId));
-    reduction = AudioParam(this.ctx, this.nodeId, LabSound().DynamicsCompressorNode_reduction(this.nodeId));
+    threshold = AudioParam(this.ctx, nodeId, LabSound().DynamicsCompressorNode_threshold(nodeId));
+    knee = AudioParam(this.ctx, nodeId, LabSound().DynamicsCompressorNode_knee(nodeId));
+    ratio = AudioParam(this.ctx, nodeId, LabSound().DynamicsCompressorNode_ratio(nodeId));
+    attack = AudioParam(this.ctx, nodeId, LabSound().DynamicsCompressorNode_attack(nodeId));
+    release = AudioParam(this.ctx, nodeId, LabSound().DynamicsCompressorNode_release(nodeId));
+    reduction = AudioParam(this.ctx, nodeId, LabSound().DynamicsCompressorNode_reduction(nodeId));
   }
 
 }

@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:lab_sound_flutter_example/demos/music-time.dart';
 import 'package:open_file/open_file.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';

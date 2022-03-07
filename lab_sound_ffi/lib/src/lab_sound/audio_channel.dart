@@ -7,9 +7,9 @@ import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 class AudioChannel {
   final Pointer<Void> pointer;
   AudioChannel(this.pointer);
-  get length => LabSound().AudioChannel_length(this.pointer);
-  Pointer<Float> get dataPtr => LabSound().AudioChannel_data(this.pointer);
-  ChannelBuffer getData() => ChannelBuffer(this.length, this.dataPtr.address);
+  get length => LabSound().AudioChannel_length(pointer);
+  Pointer<Float> get dataPtr => LabSound().AudioChannel_data(pointer);
+  ChannelBuffer getData() => ChannelBuffer(length, dataPtr.address);
 }
 
 

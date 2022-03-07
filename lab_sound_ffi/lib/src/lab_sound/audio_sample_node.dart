@@ -12,11 +12,11 @@ class AudioSampleNode extends AudioScheduledSourceNode {
   AudioBus? resource;
   AudioSampleNode(AudioContext ctx, { AudioBus? resource }): super(ctx, LabSound().createAudioSampleNode(ctx.pointer)) {
     if(resource != null) {
-      this.setBus(resource);
+      setBus(resource);
     }
-    final pRateId = LabSound().SampledAudioNode_playbackRate(this.nodeId);
-    playbackRate = AudioParam(this.ctx, this.nodeId, pRateId);
-    detune = AudioParam(this.ctx, this.nodeId, LabSound().SampledAudioNode_detune(this.nodeId));
+    final pRateId = LabSound().SampledAudioNode_playbackRate(nodeId);
+    playbackRate = AudioParam(this.ctx, nodeId, pRateId);
+    detune = AudioParam(this.ctx, nodeId, LabSound().SampledAudioNode_detune(nodeId));
   }
 
   setBus(AudioBus resource) {
@@ -26,42 +26,43 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     this.resource!.lock(this);
   }
 
-  int get cursor => LabSound().SampledAudioNode_getCursor(this.nodeId);
+  int get cursor => LabSound().SampledAudioNode_getCursor(nodeId);
 
   late AudioParam playbackRate;
   late AudioParam detune;
 
-  Stream get onEnded => LabSound().onAudioSampleEnd.where((e) => e.nodeId == this.nodeId);
+  Stream get onEnded => LabSound().onAudioSampleEnd.where((e) => e.nodeId == nodeId);
   StreamSubscription? _endedDisposeSubscription;
 
   Duration? get position {
     if(resource == null) return null;
-    final c = this.cursor;
+    final c = cursor;
     if(c == -1) return null;
     return Duration(milliseconds: (c / resource!.sampleRate * 1000).toInt());
   }
-  Duration? get duration => this.resource?.duration;
+  Duration? get duration => resource?.duration;
 
   schedule({double? relativeWhen, double? offset, double? duration, int? loopCount}) {
     if(relativeWhen != null && offset != null && duration != null && loopCount != null) {
-      LabSound().SampledAudioNode_schedule4(this.nodeId, relativeWhen, offset, duration, loopCount);
+      LabSound().SampledAudioNode_schedule4(nodeId, relativeWhen, offset, duration, loopCount);
     } else if(relativeWhen != null && offset != null && loopCount != null) {
-      LabSound().SampledAudioNode_schedule3(this.nodeId, relativeWhen, offset, loopCount);
+      LabSound().SampledAudioNode_schedule3(nodeId, relativeWhen, offset, loopCount);
     } else if(relativeWhen != null && loopCount != null) {
-      LabSound().SampledAudioNode_schedule2(this.nodeId, relativeWhen, loopCount);
+      LabSound().SampledAudioNode_schedule2(nodeId, relativeWhen, loopCount);
     } else {
-      LabSound().SampledAudioNode_schedule(this.nodeId, relativeWhen ?? 0.0);
+      LabSound().SampledAudioNode_schedule(nodeId, relativeWhen ?? 0.0);
     }
   }
 
+  @override
   start({double? when, double? offset, double? duration, int? loopCount}) {
     loopCount ??= 0;
     if(when != null && offset != null && duration != null) {
-      LabSound().SampledAudioNode_start4(this.nodeId, when, offset, duration, loopCount);
+      LabSound().SampledAudioNode_start4(nodeId, when, offset, duration, loopCount);
     } else if(when != null && offset != null) {
-      LabSound().SampledAudioNode_start3(this.nodeId, when, offset, loopCount);
+      LabSound().SampledAudioNode_start3(nodeId, when, offset, loopCount);
     } else {
-      LabSound().SampledAudioNode_start2(this.nodeId, when ?? 0.0, loopCount);
+      LabSound().SampledAudioNode_start2(nodeId, when ?? 0.0, loopCount);
     }
   }
 
@@ -73,8 +74,9 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     }
   }
 
+  @override
   stop({double? when}) {
-    if(when != null) when = when - this.ctx.currentTime;
+    if(when != null) when = when - ctx.currentTime;
     super.stop(when: when ?? 0 );
   }
 
@@ -88,7 +90,7 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     }
     _endedDisposeSubscription?.cancel();
     super.dispose();
-    this.resource?.unlock(this);
+    resource?.unlock(this);
     return;
   }
 
@@ -97,11 +99,11 @@ class AudioSampleNode extends AudioScheduledSourceNode {
 
   endedDispose({Function? destroyed}) {
     if(hasFinished) {
-      this.dispose();
+      dispose();
       if(destroyed != null) destroyed();
     } else {
-      this._endedDisposeSubscription = this.onEnded.listen((event) {
-        this.dispose();
+      _endedDisposeSubscription = onEnded.listen((event) {
+        dispose();
         if(destroyed != null) destroyed();
       });
     }
