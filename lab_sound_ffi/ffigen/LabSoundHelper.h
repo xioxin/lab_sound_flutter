@@ -640,6 +640,7 @@ void PowerMonitorNode_setWindowSize(int nodeId, int ws);
 
 int createSfxrNode(AudioContext* context);
 
+int SfxrNode_waveType(int nodeId);
 int SfxrNode_attackTime(int nodeId);
 int SfxrNode_sustainTime(int nodeId);
 int SfxrNode_sustainPunch(int nodeId);

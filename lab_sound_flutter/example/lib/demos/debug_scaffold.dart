@@ -21,38 +21,44 @@ class _DebugScaffoldState extends State<DebugScaffold> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        children: [
-          Flexible(flex: childFlex, child: widget.child),
-          Divider(height: 1,),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(onPressed: () {
-                setState(() {
-                  graphGlex = 1;
-                  childFlex = 50;
-                });
-              }, icon: Icon(Icons.vertical_align_bottom)),
-              IconButton(onPressed: () {
-                setState(() {
-                  graphGlex = 1;
-                  childFlex = 1;
-                });
-              }, icon: Icon(Icons.vertical_align_center)),
-              IconButton(onPressed: () {
-                setState(() {
-                  graphGlex = 50;
-                  childFlex = 1;
-                });
-              }, icon: Icon(Icons.vertical_align_top)),
-            ],
-          ),
-          Divider(height: 1,),
-          Flexible(flex: graphGlex, child: DebugGraph())
-        ],
+      child: SafeArea(
+        bottom: childFlex == 100,
+        left: false,
+        right: false,
+        top: graphGlex == 100,
+        child: Column(
+          children: [
+            Flexible(flex: childFlex, child: widget.child),
+            Divider(height: 1,),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(onPressed: () {
+                  setState(() {
+                    graphGlex = 1;
+                    childFlex = 100;
+                  });
+                }, icon: Icon(Icons.vertical_align_bottom)),
+                IconButton(onPressed: () {
+                  setState(() {
+                    graphGlex = 100;
+                    childFlex = 100;
+                  });
+                }, icon: Icon(Icons.vertical_align_center)),
+                IconButton(onPressed: () {
+                  setState(() {
+                    graphGlex = 100;
+                    childFlex = 1;
+                  });
+                }, icon: Icon(Icons.vertical_align_top)),
+              ],
+            ),
+            Divider(height: 1,),
+            Flexible(flex: graphGlex, child: DebugGraph())
+          ],
+        ),
       ),
     );
   }

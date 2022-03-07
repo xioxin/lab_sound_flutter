@@ -11260,6 +11260,14 @@ typedef _dart_createSfxrNode = int Function(
   ffi.Pointer<ffi.Void> context,
 );
 
+typedef _c_SfxrNode_waveType = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_SfxrNode_waveType = int Function(
+  int nodeId,
+);
+
 typedef _c_SfxrNode_attackTime = ffi.Int32 Function(
   ffi.Int32 nodeId,
 );
