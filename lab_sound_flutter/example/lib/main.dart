@@ -5,6 +5,7 @@ import 'package:lab_sound_flutter_example/demos/dial.dart';
 import 'package:lab_sound_flutter_example/demos/recorder.dart';
 
 import 'demos/audio_device.dart';
+import 'demos/audio_listener_demo.dart';
 import 'demos/sfxr.dart';
 import 'demos/zelda.dart';
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';
@@ -78,6 +79,15 @@ class _MyAppState extends State<MyApp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Zelda()),
+                  );
+                }),
+            ListTile(
+                title: Text("3D positional sound"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AudioListenerDemo()),
                   );
                 }),
 
