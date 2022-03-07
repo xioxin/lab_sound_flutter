@@ -6,6 +6,7 @@ import 'package:lab_sound_flutter_example/demos/recorder.dart';
 
 import 'demos/audio_device.dart';
 import 'demos/audio_listener_demo.dart';
+import 'demos/convolver_demo.dart';
 import 'demos/sfxr.dart';
 import 'demos/zelda.dart';
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';
@@ -88,6 +89,14 @@ class _MyAppState extends State<MyApp> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => AudioListenerDemo()),
+                  );
+                }),
+            ListTile(
+                title: Text("Room effects and filter"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConvolverDemo()),
                   );
                 }),
 

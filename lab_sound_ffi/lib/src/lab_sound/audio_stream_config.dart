@@ -4,9 +4,14 @@ import 'lab_sound.dart';
 class AudioStreamConfig {
   final bind.AudioStreamConfig ffiValue;
 
-  AudioStreamConfig({int deviceIndex = 0, int desiredChannels = 0, double desiredSampleRate = 0.0 }): ffiValue = LabSound().createAudioStreamConfig(deviceIndex, desiredChannels, desiredSampleRate);
+  AudioStreamConfig(
+      {int deviceIndex = 0,
+      int desiredChannels = 0,
+      double desiredSampleRate = 0.0})
+      : ffiValue = LabSound().createAudioStreamConfig(
+            deviceIndex, desiredChannels, desiredSampleRate);
 
-  AudioStreamConfig.value(bind.AudioStreamConfig value): ffiValue = value;
+  AudioStreamConfig.value(bind.AudioStreamConfig value) : ffiValue = value;
 
   // static defaultInput() => AudioStreamConfig.value(LabSound().labSound_GetDefaultInputAudioDeviceConfiguration());
   // static defaultOutput() => AudioStreamConfig.value(LabSound().labSound_GetDefaultOutputAudioDeviceConfiguration());
@@ -20,6 +25,6 @@ class AudioStreamConfig {
   static disable() => AudioStreamConfig(deviceIndex: -1);
 
   @override
-  String toString() => "AudioStreamConfig<$deviceIndex, $desiredChannels, $desiredSampleRate>";
-
+  String toString() =>
+      "AudioStreamConfig<$deviceIndex, $desiredChannels, $desiredSampleRate>";
 }
