@@ -1,4 +1,4 @@
-#include "../bridge/struct.h"
+#include "./struct.h"
 #include "stdint.h"
 #include "string.h"
 #include <stdbool.h>
@@ -102,6 +102,8 @@ double AudioContext_currentTime(AudioContext* context);
 double AudioContext_predictedCurrentTime(AudioContext* context);
 
 float AudioContext_sampleRate(AudioContext* context);
+
+int AudioContext_listener(AudioContext* context);
 
 int AudioContext_isInitialized(AudioContext* context);
 
@@ -708,3 +710,53 @@ void AudioSetting_setFloat(int nodeId, int settingIndex, float v, int notify);
 void AudioSetting_setUint32(int nodeId, int settingIndex, uint32_t v, int notify);
 void AudioSetting_setEnumeration(int nodeId, int settingIndex, int v, int notify);
 void AudioSetting_setString(int nodeId, int settingIndex, char const*const v, int notify);
+
+
+
+/////////////////////////
+//////AudioListener//////
+/////////////////////////
+
+int createAudioListener(AudioContext* context);
+void AudioListener_setPosition(int id, float x, float y, float z);
+
+int AudioListener_positionX(int id);
+int AudioListener_positionY(int id);
+int AudioListener_positionZ(int id);
+
+void AudioListener_setOrientation(int id, float x, float y, float z, float upX, float upY, float upZ);
+
+void AudioListener_setForward(int id, float x, float y, float z);
+int AudioListener_forwardX(int id);
+
+int AudioListener_forwardY(int id);
+
+int AudioListener_forwardZ(int id);
+
+void AudioListener_setUpVector(int id, float x, float y, float z);
+
+int AudioListener_upX(int id);
+
+int AudioListener_upY(int id);
+int AudioListener_upZ(int id);
+void AudioListener_setVelocity(int id, float x, float y, float z);
+
+int AudioListener_velocityX(int id);
+
+int AudioListener_velocityY(int id);
+
+int AudioListener_velocityZ(int id);
+
+
+void AudioListener_setDopplerFactor(int id, float dopplerFactor);
+
+int AudioListener_dopplerFactor(int id);
+
+void AudioListener_setSpeedOfSound(int id, float speedOfSound);
+
+int AudioListener_speedOfSound(int id);
+
+void AudioListener_release(int id);
+
+int AudioListener_has(int id);
+
