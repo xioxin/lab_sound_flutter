@@ -5,15 +5,9 @@ import 'audio_param.dart';
 import 'audio_scheduled_source_node.dart';
 import 'lab_sound.dart';
 
-enum WaveType {
-  square,
-  sawtooth,
-  sine,
-  noise
-}
+enum WaveType { square, sawtooth, sine, noise }
 
 class SfxrNode extends AudioScheduledSourceNode {
-
   late AudioSettingEnumeration _waveType;
 
   late AudioParam attackTime;
@@ -39,49 +33,82 @@ class SfxrNode extends AudioScheduledSourceNode {
   late AudioParam hpFilterCutoff;
   late AudioParam hpFilterCutoffSweep;
 
-  SfxrNode(AudioContext ctx): super(ctx, LabSound().createSfxrNode(ctx.pointer)) {
-    attackTime = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_attackTime(this.nodeId));
-    sustainTime = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_sustainTime(this.nodeId));
-    sustainPunch = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_sustainPunch(this.nodeId));
-    decayTime = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_decayTime(this.nodeId));
-    startFrequency = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_startFrequency(this.nodeId));
-    minFrequency = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_minFrequency(this.nodeId));
-    slide = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_slide(this.nodeId));
-    deltaSlide = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_deltaSlide(this.nodeId));
-    vibratoDepth = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_vibratoDepth(this.nodeId));
-    vibratoSpeed = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_vibratoSpeed(this.nodeId));
-    changeAmount = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_changeAmount(this.nodeId));
-    changeSpeed = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_changeSpeed(this.nodeId));
-    squareDuty = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_squareDuty(this.nodeId));
-    dutySweep = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_dutySweep(this.nodeId));
-    repeatSpeed = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_repeatSpeed(this.nodeId));
-    phaserOffset = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_phaserOffset(this.nodeId));
-    phaserSweep = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_phaserSweep(this.nodeId));
-    lpFilterCutoff = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_lpFilterCutoff(this.nodeId));
-    lpFilterCutoffSweep = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_lpFilterCutoffSweep(this.nodeId));
-    lpFiterResonance = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_lpFiterResonance(this.nodeId));
-    hpFilterCutoff = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_hpFilterCutoff(this.nodeId));
-    hpFilterCutoffSweep = AudioParam(this.ctx, this.nodeId, LabSound().SfxrNode_hpFilterCutoffSweep(this.nodeId));
-    _waveType = AudioSettingEnumeration(ctx, nodeId, LabSound().SfxrNode_waveType(this.nodeId));
+  SfxrNode(AudioContext ctx)
+      : super(ctx, LabSound().createSfxrNode(ctx.pointer)) {
+    attackTime = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_attackTime(this.nodeId));
+    sustainTime = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_sustainTime(this.nodeId));
+    sustainPunch = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_sustainPunch(this.nodeId));
+    decayTime = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_decayTime(this.nodeId));
+    startFrequency = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_startFrequency(this.nodeId));
+    minFrequency = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_minFrequency(this.nodeId));
+    slide = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_slide(this.nodeId));
+    deltaSlide = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_deltaSlide(this.nodeId));
+    vibratoDepth = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_vibratoDepth(this.nodeId));
+    vibratoSpeed = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_vibratoSpeed(this.nodeId));
+    changeAmount = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_changeAmount(this.nodeId));
+    changeSpeed = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_changeSpeed(this.nodeId));
+    squareDuty = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_squareDuty(this.nodeId));
+    dutySweep = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_dutySweep(this.nodeId));
+    repeatSpeed = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_repeatSpeed(this.nodeId));
+    phaserOffset = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_phaserOffset(this.nodeId));
+    phaserSweep = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_phaserSweep(this.nodeId));
+    lpFilterCutoff = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_lpFilterCutoff(this.nodeId));
+    lpFilterCutoffSweep = AudioParam(this.ctx, this.nodeId,
+        LabSound().SfxrNode_lpFilterCutoffSweep(this.nodeId));
+    lpFiterResonance = AudioParam(this.ctx, this.nodeId,
+        LabSound().SfxrNode_lpFiterResonance(this.nodeId));
+    hpFilterCutoff = AudioParam(
+        this.ctx, this.nodeId, LabSound().SfxrNode_hpFilterCutoff(this.nodeId));
+    hpFilterCutoffSweep = AudioParam(this.ctx, this.nodeId,
+        LabSound().SfxrNode_hpFilterCutoffSweep(this.nodeId));
+    _waveType = AudioSettingEnumeration(
+        ctx, nodeId, LabSound().SfxrNode_waveType(this.nodeId));
   }
 
   WaveType get waveType => WaveType.values[_waveType.value];
-  set waveType(WaveType val)  {
+  set waveType(WaveType val) {
     _waveType.setValue(val.index);
   }
 
-  setStartFrequencyInHz(double value) => LabSound().SfxrNode_setStartFrequencyInHz(nodeId, value);
-  setVibratoSpeedInHz(double value) => LabSound().SfxrNode_setVibratoSpeedInHz(nodeId, value);
+  setStartFrequencyInHz(double value) =>
+      LabSound().SfxrNode_setStartFrequencyInHz(nodeId, value);
+  setVibratoSpeedInHz(double value) =>
+      LabSound().SfxrNode_setVibratoSpeedInHz(nodeId, value);
 
-  double envelopeTimeInSeconds(double sfxrEnvTime) => LabSound().SfxrNode_envelopeTimeInSeconds(nodeId, sfxrEnvTime);
-  double envelopeTimeInSfxrUnits(double t) => LabSound().SfxrNode_envelopeTimeInSfxrUnits(nodeId, t);
-  double frequencyInSfxrUnits(double hz) => LabSound().SfxrNode_frequencyInSfxrUnits(nodeId, hz);
-  double frequencyInHz(double sfxr) => LabSound().SfxrNode_frequencyInHz(nodeId, sfxr);
-  double vibratoInSfxrUnits(double hz) => LabSound().SfxrNode_vibratoInSfxrUnits(nodeId, hz);
-  double vibratoInHz(double sfxr) => LabSound().SfxrNode_vibratoInHz(nodeId, sfxr);
-  double filterFreqInHz(double sfxr) => LabSound().SfxrNode_filterFreqInHz(nodeId, sfxr);
-  double filterFreqInSfxrUnits(double hz) => LabSound().SfxrNode_filterFreqInSfxrUnits(nodeId, hz);
-
+  double envelopeTimeInSeconds(double sfxrEnvTime) =>
+      LabSound().SfxrNode_envelopeTimeInSeconds(nodeId, sfxrEnvTime);
+  double envelopeTimeInSfxrUnits(double t) =>
+      LabSound().SfxrNode_envelopeTimeInSfxrUnits(nodeId, t);
+  double frequencyInSfxrUnits(double hz) =>
+      LabSound().SfxrNode_frequencyInSfxrUnits(nodeId, hz);
+  double frequencyInHz(double sfxr) =>
+      LabSound().SfxrNode_frequencyInHz(nodeId, sfxr);
+  double vibratoInSfxrUnits(double hz) =>
+      LabSound().SfxrNode_vibratoInSfxrUnits(nodeId, hz);
+  double vibratoInHz(double sfxr) =>
+      LabSound().SfxrNode_vibratoInHz(nodeId, sfxr);
+  double filterFreqInHz(double sfxr) =>
+      LabSound().SfxrNode_filterFreqInHz(nodeId, sfxr);
+  double filterFreqInSfxrUnits(double hz) =>
+      LabSound().SfxrNode_filterFreqInSfxrUnits(nodeId, hz);
 
   setDefaultBeep() => LabSound().SfxrNode_setDefaultBeep(nodeId);
   coin() => LabSound().SfxrNode_coin(nodeId);
@@ -93,5 +120,4 @@ class SfxrNode extends AudioScheduledSourceNode {
   select() => LabSound().SfxrNode_select(nodeId);
   mutate() => LabSound().SfxrNode_mutate(nodeId);
   randomize() => LabSound().SfxrNode_randomize(nodeId);
-
 }

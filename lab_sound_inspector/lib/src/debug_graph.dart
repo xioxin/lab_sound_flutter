@@ -1,13 +1,11 @@
 import 'dart:async';
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:graphview/GraphView.dart';
-import 'package:lab_sound_flutter/lab_sound_flutter.dart';
-import 'package:lab_sound_flutter_example/draw_frequency.dart';
-import 'package:lab_sound_flutter_example/draw_time_domain.dart';
-
-import '../wave_form.dart';
+import 'package:lab_sound_ffi/lab_sound_ffi.dart';
+import './draw_frequency.dart';
+import './draw_time_domain.dart';
+import './wave_form.dart';
 
 class DebugGraph extends StatefulWidget {
   @override
@@ -15,9 +13,7 @@ class DebugGraph extends StatefulWidget {
 }
 
 class _DebugGraphState extends State<DebugGraph> {
-
   late Timer timer;
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,67 +23,80 @@ class _DebugGraphState extends State<DebugGraph> {
             boundaryMargin: EdgeInsets.all(100),
             minScale: 0.0001,
             maxScale: 10.6,
-            child: graph.nodes.isEmpty ? Text("EMPTY") : GraphView(
-              graph: graph,
-              algorithm: SugiyamaAlgorithm(builder),
-              paint: Paint()
-                ..color = Colors.green
-                ..strokeWidth = 1
-                ..style = PaintingStyle.stroke,
-              builder: (Node node) {
-                return rectangleWidget(node.key!.value);
-              },
-            )));
+            child: graph.nodes.isEmpty
+                ? Text("EMPTY")
+                : GraphView(
+                    graph: graph,
+                    algorithm: SugiyamaAlgorithm(builder),
+                    paint: Paint()
+                      ..color = Colors.green
+                      ..strokeWidth = 1
+                      ..style = PaintingStyle.stroke,
+                    builder: (Node node) {
+                      return rectangleWidget(node.key!.value);
+                    },
+                  )));
   }
 
   Random r = Random();
 
   Widget audioParamWidget(String name, AudioParam param, {double step = 1}) {
-
-    final fixed = param.maxValue.toStringAsFixed(2) == param.minValue.toStringAsFixed(2);
+    final fixed =
+        param.maxValue.toStringAsFixed(2) == param.minValue.toStringAsFixed(2);
 
     return SizedBox(
       width: 200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(name + "${param.value.toStringAsFixed(2)} (Range:${param.minValue.toStringAsFixed(2)} - ${param.maxValue.toStringAsFixed(2)}, Def: ${param.defaultValue})"),
-          if(!fixed) Column(
-            children: [
-              Slider(
-                  value: param.value,
-                  min: min(param.maxValue, param.minValue),
-                  max: max(param.maxValue, param.minValue),
-                  onChanged: (val) {
-                    setState(() {
-                      param.setValue(val);
-                    });
-                  }),
-              Row(children: [
-                TextButton(onPressed: () {
-                  setState(() {
-                    param.setValue(max(param.value - step, param.minValue));
-                  });
-                }, child: Text('-${step}')),
-                TextButton(onPressed: () {
-                  setState(() {
-                    param.setValue(param.defaultValue);
-                  });
-                }, child: Text('Default')),
-                TextButton(onPressed: () {
-                  setState(() {
-                    param.setValue(min(param.value + step, param.maxValue));
-                  });
-                }, child: Text('+${step}')),
-              ])
-            ],
-          )
+          Text(name +
+              "${param.value.toStringAsFixed(2)} (Range:${param.minValue.toStringAsFixed(2)} - ${param.maxValue.toStringAsFixed(2)}, Def: ${param.defaultValue})"),
+          if (!fixed)
+            Column(
+              children: [
+                Slider(
+                    value: param.value,
+                    min: min(param.maxValue, param.minValue),
+                    max: max(param.maxValue, param.minValue),
+                    onChanged: (val) {
+                      setState(() {
+                        param.setValue(val);
+                      });
+                    }),
+                Row(children: [
+                  TextButton(
+                      onPressed: () {
+                        setState(() {
+                          param.setValue(
+                              max(param.value - step, param.minValue));
+                        });
+                      },
+                      child: Text('-${step}')),
+                  TextButton(
+                      onPressed: () {
+                        setState(() {
+                          param.setValue(param.defaultValue);
+                        });
+                      },
+                      child: Text('Default')),
+                  TextButton(
+                      onPressed: () {
+                        setState(() {
+                          param.setValue(
+                              min(param.value + step, param.maxValue));
+                        });
+                      },
+                      child: Text('+${step}')),
+                ])
+              ],
+            )
         ],
       ),
     );
   }
 
-  Widget selectWidget(String name, List<String> list, String value, ValueChanged<String?> onChanged ) {
+  Widget selectWidget(String name, List<String> list, String value,
+      ValueChanged<String?> onChanged) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -115,16 +124,19 @@ class _DebugGraphState extends State<DebugGraph> {
     );
   }
 
-
   Widget startStopButton(AudioScheduledSourceNode node) {
     return Row(
       children: [
-        TextButton(onPressed: () {
-          node.start();
-        }, child: Text("Start")),
-        TextButton(onPressed: () {
-          node.stop();
-        }, child: Text("Stop"))
+        TextButton(
+            onPressed: () {
+              node.start();
+            },
+            child: Text("Start")),
+        TextButton(
+            onPressed: () {
+              node.stop();
+            },
+            child: Text("Stop"))
       ],
     );
   }
@@ -151,7 +163,13 @@ class _DebugGraphState extends State<DebugGraph> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("position: ${node.position}"),
-          SizedBox(height: 3, width: 200,child: LinearProgressIndicator(value: (node.position?.inMilliseconds ?? 0.0) / (node.duration?.inMilliseconds ?? 1.0),)),
+          SizedBox(
+              height: 3,
+              width: 200,
+              child: LinearProgressIndicator(
+                value: (node.position?.inMilliseconds ?? 0.0) /
+                    (node.duration?.inMilliseconds ?? 1.0),
+              )),
           Text("playbackState: ${node.playbackState}"),
           audioParamWidget("playbackRate: ", node.playbackRate, step: 0.2),
           startStopButton(node),
@@ -169,9 +187,14 @@ class _DebugGraphState extends State<DebugGraph> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          selectWidget("type:", OscillatorType.values.map((e) => e.name).toList() , node.type.name, (String? value) {
+          selectWidget(
+              "type:",
+              OscillatorType.values.map((e) => e.name).toList(),
+              node.type.name, (String? value) {
             setState(() {
-              if(value != null) node.setType(OscillatorType.values.firstWhere((element) => element.name == value));
+              if (value != null)
+                node.setType(OscillatorType.values
+                    .firstWhere((element) => element.name == value));
             });
           }),
           audioParamWidget("frequency: ", node.frequency),
@@ -193,19 +216,18 @@ class _DebugGraphState extends State<DebugGraph> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("fftSize: ${node.fftSize}"),
-          Divider(height: 1,),
+          Divider(
+            height: 1,
+          ),
           Container(
               width: 200,
               height: 50,
               color: Colors.white,
-              child: DrawTimeDomain(node)
+              child: DrawTimeDomain(node)),
+          Divider(
+            height: 1,
           ),
-          Divider(height: 1,),
-          Container(
-            width: 200,
-              height: 60,
-              child: DrawFrequency(node)
-          ),
+          Container(width: 200, height: 60, child: DrawFrequency(node)),
         ],
       );
     } else if (node is DynamicsCompressorNode) {
@@ -224,9 +246,12 @@ class _DebugGraphState extends State<DebugGraph> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          selectWidget("type:", NoiseType.values.map((e) => e.name).toList() , node.type.name, (String? value) {
+          selectWidget("type:", NoiseType.values.map((e) => e.name).toList(),
+              node.type.name, (String? value) {
             setState(() {
-              if(value != null) node.type = (NoiseType.values.firstWhere((element) => element.name == value));
+              if (value != null)
+                node.type = (NoiseType.values
+                    .firstWhere((element) => element.name == value));
             });
           }),
         ],
@@ -255,7 +280,12 @@ class _DebugGraphState extends State<DebugGraph> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(name),
-            SizedBox(width: 200, child: DefaultTextStyle(child: labAudioWidget(node), style: Theme.of(context).textTheme.caption!,)),
+            SizedBox(
+                width: 200,
+                child: DefaultTextStyle(
+                  child: labAudioWidget(node),
+                  style: Theme.of(context).textTheme.caption!,
+                )),
           ],
         ));
   }
@@ -267,15 +297,15 @@ class _DebugGraphState extends State<DebugGraph> {
     graph.edges.clear();
     graph.nodes.clear();
     LabSound().allNodes.forEach((element) {
-      if(element.released) return;
+      if (element.released) return;
       final node = Node.Id(element);
       element.linked.forEach((dstNode) {
-        if(dstNode.released) return;
+        if (dstNode.released) return;
         graph.addEdge(node, Node.Id(dstNode));
         if (element is AudioSampleNode) {
           final resource = element.resource;
           if (resource != null) {
-            if(resource.released) return;
+            if (resource.released) return;
             graph.addEdge(Node.Id(resource), node);
           }
         }
@@ -291,7 +321,6 @@ class _DebugGraphState extends State<DebugGraph> {
 
   @override
   void initState() {
-
     buildNode();
     timer = Timer.periodic(Duration(milliseconds: 100), (Timer timer) {
       check();

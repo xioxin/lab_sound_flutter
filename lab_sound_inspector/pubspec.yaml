@@ -10,7 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  lab_sound_ffi: 0.0.1
+  open_file: ^3.2.1
+  graphview: ^1.1.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

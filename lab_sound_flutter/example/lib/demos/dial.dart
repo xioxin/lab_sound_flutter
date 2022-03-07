@@ -1,11 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
-import 'package:lab_sound_flutter_example/demos/debug_scaffold.dart';
-
-import '../draw_frequency.dart';
-import '../draw_time_domain.dart';
-import 'debug_graph.dart';
+import 'package:lab_sound_inspector/lab_sound_inspector.dart';
 
 class Dial extends StatefulWidget {
   @override
@@ -46,7 +42,6 @@ class _DialState extends State<Dial> {
   ];
 
   Widget button(String name, int x, int y) {
-
     OscillatorNode? oscillatorLow;
     OscillatorNode? oscillatorHigh;
 
@@ -96,11 +91,9 @@ class _DialState extends State<Dial> {
         buttonLine.add(button(name, x, y));
         x++;
       });
-      buttonWidgets.add(
-        Row(
-          children: buttonLine,
-        )
-      );
+      buttonWidgets.add(Row(
+        children: buttonLine,
+      ));
       y++;
     });
 

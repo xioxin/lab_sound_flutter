@@ -7,8 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../draw_frequency.dart';
-import '../draw_time_domain.dart';
+import 'package:lab_sound_inspector/lab_sound_inspector.dart';
 
 class TestPage extends StatefulWidget {
   @override
@@ -60,8 +59,8 @@ class _TestPageState extends State<TestPage> {
       loaded = true;
     });
   }
-  AnalyserBuffer<int>? testAnalyser;
 
+  AnalyserBuffer<int>? testAnalyser;
 
   double? userPosition;
 
@@ -73,23 +72,23 @@ class _TestPageState extends State<TestPage> {
       ),
       body: loaded
           ? ListView(
-        padding: EdgeInsets.all(16.0),
-        children: [
-          Text("音乐: "),
-          ElevatedButton(
-              child: Text("Play Music"),
-              onPressed: () async {
-                // audioNode.clearSchedules();
-                audioNode.schedule();
-              }),
-          ElevatedButton(
-              child: Text("Stop Music"),
-              onPressed: () async {
-                audioNode.clearSchedules();
-                audioNode.stop();
-              }),
-        ],
-      )
+              padding: EdgeInsets.all(16.0),
+              children: [
+                Text("音乐: "),
+                ElevatedButton(
+                    child: Text("Play Music"),
+                    onPressed: () async {
+                      // audioNode.clearSchedules();
+                      audioNode.schedule();
+                    }),
+                ElevatedButton(
+                    child: Text("Stop Music"),
+                    onPressed: () async {
+                      audioNode.clearSchedules();
+                      audioNode.stop();
+                    }),
+              ],
+            )
           : Center(child: Text("LOADING")),
     );
   }
