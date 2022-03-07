@@ -30,3 +30,4 @@ export 'src/lab_sound/chanel_splitter_node.dart';
 export 'src/lab_sound/audio_setting.dart';
 export 'src/lab_sound/ADSR_node.dart';
 export 'src/lab_sound/convolver_node.dart';
+export 'src/lab_sound/audio_listener.dart';
