@@ -333,6 +333,13 @@ class _DebugGraphState extends State<DebugGraph> {
             graph.addEdge(Node.Id(resource), node);
           }
         }
+        if (element is ConvolverNode) {
+          final resource = element.impulse;
+          if (resource != null) {
+            if (resource.released) return;
+            graph.addEdge(Node.Id(resource), node);
+          }
+        }
       }
     }
   }
