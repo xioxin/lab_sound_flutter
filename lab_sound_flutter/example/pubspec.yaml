@@ -23,6 +23,9 @@ dependencies:
     # the parent directory to use the current plugin's version.
     path: ../
 
+  lab_sound_inspector:
+    path: ../../lab_sound_inspector
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -32,6 +35,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  lab_sound_ffi:
+    path: ../../lab_sound_ffi/
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
