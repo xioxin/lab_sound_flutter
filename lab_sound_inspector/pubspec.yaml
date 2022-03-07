@@ -19,6 +19,11 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^1.0.0
 
+
+dependency_overrides:
+  lab_sound_ffi:
+    path: ../lab_sound_ffi/
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

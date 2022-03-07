@@ -258,6 +258,26 @@ class _DebugGraphState extends State<DebugGraph> {
           }),
         ],
       );
+    } else if (node is PannerNode) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          audioParamWidget("positionX: ", node.positionX),
+          audioParamWidget("positionY: ", node.positionY),
+          audioParamWidget("positionZ: ", node.positionZ),
+          const Divider(height: 1),
+          audioParamWidget("orientationX: ", node.orientationX),
+          audioParamWidget("orientationY: ", node.orientationY),
+          audioParamWidget("orientationZ: ", node.orientationZ),
+          const Divider(height: 1),
+          audioParamWidget("velocityX: ", node.velocityX),
+          audioParamWidget("velocityY: ", node.velocityY),
+          audioParamWidget("velocityZ: ", node.velocityZ),
+          const Divider(height: 1),
+          audioParamWidget("coneGain: ", node.coneGain),
+          audioParamWidget("distanceGain: ", node.distanceGain),
+        ],
+      );
     }
     return const Text("No details");
   }
@@ -296,6 +316,8 @@ class _DebugGraphState extends State<DebugGraph> {
   SugiyamaConfiguration builder = SugiyamaConfiguration();
 
   buildNode() {
+    // print(LabSound().allNodes);
+
     graph.edges.clear();
     graph.nodes.clear();
     for (var element in LabSound().allNodes) {

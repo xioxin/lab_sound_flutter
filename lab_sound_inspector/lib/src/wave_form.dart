@@ -43,8 +43,7 @@ class _WaveFormState extends State<WaveForm>
 }
 
 class WaveFormPainter extends CustomPainter {
-  WaveFormPainter(this.rough, {Listenable? repaint})
-      : super(repaint: repaint);
+  WaveFormPainter(this.rough, {Listenable? repaint}) : super(repaint: repaint);
 
   List<double> rough = [];
   List<double> waveData = [];
@@ -60,13 +59,13 @@ class WaveFormPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final width = size.width.ceil();
-    final wave = getWave(width);
+    final wave = getWave(width * 5);
     var paint = Paint()
       ..color = Colors.teal
       ..strokeWidth = 1
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
-    double w = 1.0;
+    double w = 1 / 5;
     double h = size.height;
     int n = 0;
 

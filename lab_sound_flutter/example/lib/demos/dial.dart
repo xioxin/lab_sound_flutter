@@ -13,6 +13,10 @@ class _DialState extends State<Dial> {
   late DynamicsCompressorNode dynamicsCompressorNode;
   Map<double, OscillatorNode> oscillatorMap = {};
 
+  late AudioContext ctx;
+  late AudioSampleNode audioSample;
+  AudioBus? audioBus;
+
   @override
   void initState() {
     audioContext = AudioContext();

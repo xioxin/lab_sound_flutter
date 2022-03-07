@@ -82,13 +82,13 @@ class PannerNode extends AudioNode {
   set distanceModel(DistanceModel m) =>
       LabSound().PannerNode_setDistanceModel(nodeId, m.index);
 
-  setPosition(double x, double y, double, z) =>
+  setPosition(double x, double y, double z) =>
       LabSound().PannerNode_setPosition(nodeId, x, y, z);
 
-  setOrientation(double x, double y, double, z) =>
+  setOrientation(double x, double y, double z) =>
       LabSound().PannerNode_setOrientation(nodeId, x, y, z);
 
-  setVelocity(double x, double y, double, z) =>
+  setVelocity(double x, double y, double z) =>
       LabSound().PannerNode_setVelocity(nodeId, x, y, z);
 
   double get refDistance => LabSound().PannerNode_refDistance(nodeId);
