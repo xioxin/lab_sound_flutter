@@ -3283,6 +3283,51 @@ class LabSoundBind {
   late final _hasNode_ptr = _lookup<ffi.NativeFunction<_c_hasNode>>('hasNode');
   late final _dart_hasNode _hasNode = _hasNode_ptr.asFunction<_dart_hasNode>();
 
+  double AudioNode_tailTime(
+    int nodeId,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _AudioNode_tailTime(
+      nodeId,
+      context,
+    );
+  }
+
+  late final _AudioNode_tailTime_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_tailTime>>('AudioNode_tailTime');
+  late final _dart_AudioNode_tailTime _AudioNode_tailTime =
+      _AudioNode_tailTime_ptr.asFunction<_dart_AudioNode_tailTime>();
+
+  double AudioNode_latencyTime(
+    int nodeId,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _AudioNode_latencyTime(
+      nodeId,
+      context,
+    );
+  }
+
+  late final _AudioNode_latencyTime_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_latencyTime>>(
+          'AudioNode_latencyTime');
+  late final _dart_AudioNode_latencyTime _AudioNode_latencyTime =
+      _AudioNode_latencyTime_ptr.asFunction<_dart_AudioNode_latencyTime>();
+
+  int AudioNode_isInitialized(
+    int nodeId,
+  ) {
+    return _AudioNode_isInitialized(
+      nodeId,
+    );
+  }
+
+  late final _AudioNode_isInitialized_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioNode_isInitialized>>(
+          'AudioNode_isInitialized');
+  late final _dart_AudioNode_isInitialized _AudioNode_isInitialized =
+      _AudioNode_isInitialized_ptr.asFunction<_dart_AudioNode_isInitialized>();
+
   /// AudioScheduledSourceNode
   int AudioScheduledSourceNode_isPlayingOrScheduled(
     int nodeId,
@@ -6743,6 +6788,26 @@ class LabSoundBind {
   late final _dart_AudioSetting_setString _AudioSetting_setString =
       _AudioSetting_setString_ptr.asFunction<_dart_AudioSetting_setString>();
 
+  void AudioSetting_setBus(
+    int nodeId,
+    int settingIndex,
+    int busId,
+    int notify,
+  ) {
+    return _AudioSetting_setBus(
+      nodeId,
+      settingIndex,
+      busId,
+      notify,
+    );
+  }
+
+  late final _AudioSetting_setBus_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioSetting_setBus>>(
+          'AudioSetting_setBus');
+  late final _dart_AudioSetting_setBus _AudioSetting_setBus =
+      _AudioSetting_setBus_ptr.asFunction<_dart_AudioSetting_setBus>();
+
   /// //////////////////////
   /// ///AudioListener//////
   /// //////////////////////
@@ -7126,6 +7191,163 @@ class LabSoundBind {
       _lookup<ffi.NativeFunction<_c_AudioListener_has>>('AudioListener_has');
   late final _dart_AudioListener_has _AudioListener_has =
       _AudioListener_has_ptr.asFunction<_dart_AudioListener_has>();
+
+  /// //////////////////////////
+  /// /// GranulationNode //////
+  /// //////////////////////////
+  int createGranulationNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createGranulationNode(
+      context,
+    );
+  }
+
+  late final _createGranulationNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createGranulationNode>>(
+          'createGranulationNode');
+  late final _dart_createGranulationNode _createGranulationNode =
+      _createGranulationNode_ptr.asFunction<_dart_createGranulationNode>();
+
+  void GranulationNode_setGrainSource(
+    int nodeId,
+    ffi.Pointer<ffi.Void> context,
+    int busId,
+  ) {
+    return _GranulationNode_setGrainSource(
+      nodeId,
+      context,
+      busId,
+    );
+  }
+
+  late final _GranulationNode_setGrainSource_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_setGrainSource>>(
+          'GranulationNode_setGrainSource');
+  late final _dart_GranulationNode_setGrainSource
+      _GranulationNode_setGrainSource = _GranulationNode_setGrainSource_ptr
+          .asFunction<_dart_GranulationNode_setGrainSource>();
+
+  int GranulationNode_getGrainSource(
+    int nodeId,
+  ) {
+    return _GranulationNode_getGrainSource(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_getGrainSource_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_getGrainSource>>(
+          'GranulationNode_getGrainSource');
+  late final _dart_GranulationNode_getGrainSource
+      _GranulationNode_getGrainSource = _GranulationNode_getGrainSource_ptr
+          .asFunction<_dart_GranulationNode_getGrainSource>();
+
+  int GranulationNode_grainSourceBus(
+    int nodeId,
+  ) {
+    return _GranulationNode_grainSourceBus(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_grainSourceBus_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_grainSourceBus>>(
+          'GranulationNode_grainSourceBus');
+  late final _dart_GranulationNode_grainSourceBus
+      _GranulationNode_grainSourceBus = _GranulationNode_grainSourceBus_ptr
+          .asFunction<_dart_GranulationNode_grainSourceBus>();
+
+  int GranulationNode_windowFunc(
+    int nodeId,
+  ) {
+    return _GranulationNode_windowFunc(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_windowFunc_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_windowFunc>>(
+          'GranulationNode_windowFunc');
+  late final _dart_GranulationNode_windowFunc _GranulationNode_windowFunc =
+      _GranulationNode_windowFunc_ptr.asFunction<
+          _dart_GranulationNode_windowFunc>();
+
+  int GranulationNode_numGrains(
+    int nodeId,
+  ) {
+    return _GranulationNode_numGrains(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_numGrains_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_numGrains>>(
+          'GranulationNode_numGrains');
+  late final _dart_GranulationNode_numGrains _GranulationNode_numGrains =
+      _GranulationNode_numGrains_ptr.asFunction<
+          _dart_GranulationNode_numGrains>();
+
+  int GranulationNode_grainDuration(
+    int nodeId,
+  ) {
+    return _GranulationNode_grainDuration(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_grainDuration_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_grainDuration>>(
+          'GranulationNode_grainDuration');
+  late final _dart_GranulationNode_grainDuration
+      _GranulationNode_grainDuration = _GranulationNode_grainDuration_ptr
+          .asFunction<_dart_GranulationNode_grainDuration>();
+
+  int GranulationNode_grainPositionMin(
+    int nodeId,
+  ) {
+    return _GranulationNode_grainPositionMin(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_grainPositionMin_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_grainPositionMin>>(
+          'GranulationNode_grainPositionMin');
+  late final _dart_GranulationNode_grainPositionMin
+      _GranulationNode_grainPositionMin = _GranulationNode_grainPositionMin_ptr
+          .asFunction<_dart_GranulationNode_grainPositionMin>();
+
+  int GranulationNode_grainPositionMax(
+    int nodeId,
+  ) {
+    return _GranulationNode_grainPositionMax(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_grainPositionMax_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_grainPositionMax>>(
+          'GranulationNode_grainPositionMax');
+  late final _dart_GranulationNode_grainPositionMax
+      _GranulationNode_grainPositionMax = _GranulationNode_grainPositionMax_ptr
+          .asFunction<_dart_GranulationNode_grainPositionMax>();
+
+  int GranulationNode_grainPlaybackFreq(
+    int nodeId,
+  ) {
+    return _GranulationNode_grainPlaybackFreq(
+      nodeId,
+    );
+  }
+
+  late final _GranulationNode_grainPlaybackFreq_ptr =
+      _lookup<ffi.NativeFunction<_c_GranulationNode_grainPlaybackFreq>>(
+          'GranulationNode_grainPlaybackFreq');
+  late final _dart_GranulationNode_grainPlaybackFreq
+      _GranulationNode_grainPlaybackFreq =
+      _GranulationNode_grainPlaybackFreq_ptr.asFunction<
+          _dart_GranulationNode_grainPlaybackFreq>();
 }
 
 class __crt_locale_data_public extends ffi.Struct {
@@ -9761,6 +9983,34 @@ typedef _dart_hasNode = int Function(
   int nodeId,
 );
 
+typedef _c_AudioNode_tailTime = ffi.Double Function(
+  ffi.Int32 nodeId,
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_AudioNode_tailTime = double Function(
+  int nodeId,
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_AudioNode_latencyTime = ffi.Double Function(
+  ffi.Int32 nodeId,
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_AudioNode_latencyTime = double Function(
+  int nodeId,
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_AudioNode_isInitialized = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_AudioNode_isInitialized = int Function(
+  int nodeId,
+);
+
 typedef _c_AudioScheduledSourceNode_isPlayingOrScheduled = ffi.Int32 Function(
   ffi.Int32 nodeId,
 );
@@ -11777,6 +12027,20 @@ typedef _dart_AudioSetting_setString = void Function(
   int notify,
 );
 
+typedef _c_AudioSetting_setBus = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 settingIndex,
+  ffi.Int32 busId,
+  ffi.Int32 notify,
+);
+
+typedef _dart_AudioSetting_setBus = void Function(
+  int nodeId,
+  int settingIndex,
+  int busId,
+  int notify,
+);
+
 typedef _c_createAudioListener = ffi.Int32 Function(
   ffi.Pointer<ffi.Void> context,
 );
@@ -12007,4 +12271,88 @@ typedef _c_AudioListener_has = ffi.Int32 Function(
 
 typedef _dart_AudioListener_has = int Function(
   int id,
+);
+
+typedef _c_createGranulationNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createGranulationNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_GranulationNode_setGrainSource = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Pointer<ffi.Void> context,
+  ffi.Int32 busId,
+);
+
+typedef _dart_GranulationNode_setGrainSource = void Function(
+  int nodeId,
+  ffi.Pointer<ffi.Void> context,
+  int busId,
+);
+
+typedef _c_GranulationNode_getGrainSource = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_getGrainSource = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_grainSourceBus = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_grainSourceBus = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_windowFunc = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_windowFunc = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_numGrains = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_numGrains = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_grainDuration = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_grainDuration = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_grainPositionMin = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_grainPositionMin = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_grainPositionMax = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_grainPositionMax = int Function(
+  int nodeId,
+);
+
+typedef _c_GranulationNode_grainPlaybackFreq = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_GranulationNode_grainPlaybackFreq = int Function(
+  int nodeId,
 );

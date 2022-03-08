@@ -59,7 +59,7 @@ https://github.com/xioxin/lab_sound_bridge
 * [ ] ClipNode
 * [ ] DiodeNode
 * [ ] FunctionNode
-* [ ] GranulationNode <!-- 是一个音频合成 -->
+* [x] GranulationNode
 * [x] NoiseNode
 * [ ] PdNode
 * [ ] PeakCompNode
@@ -68,7 +68,7 @@ https://github.com/xioxin/lab_sound_bridge
 * [x] PowerMonitorNode
 * [ ] PWMNode
 * [x] RecorderNode
-* [ ] SfxrNode <!-- 一个很高级的功能 https://sfxr.me/ -->
+* [x] SfxrNode <!-- 一个很高级的功能 https://sfxr.me/ -->
 * [ ] SpatializationNode
 * [ ] SpectralMonitorNode
 * [ ] SupersawNode

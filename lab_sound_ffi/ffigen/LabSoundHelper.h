@@ -196,6 +196,12 @@ void releaseNode(int nodeId);
 
 int hasNode(int nodeId);
 
+double AudioNode_tailTime(int nodeId, AudioContext* context);
+
+double AudioNode_latencyTime(int nodeId, AudioContext* context);
+
+int AudioNode_isInitialized(int nodeId);
+
 /// AudioScheduledSourceNode
 
 int AudioScheduledSourceNode_isPlayingOrScheduled(int nodeId);
@@ -209,6 +215,8 @@ uint64_t AudioScheduledSourceNode_startWhen(int nodeId);
 void AudioScheduledSourceNode_start(int nodeId, float when);
 
 int AudioScheduledSourceNode_playbackState(int nodeId);
+
+
 
 ////////////////////////
 /// SampledAudioNode ///
@@ -711,8 +719,7 @@ void AudioSetting_setFloat(int nodeId, int settingIndex, float v, int notify);
 void AudioSetting_setUint32(int nodeId, int settingIndex, uint32_t v, int notify);
 void AudioSetting_setEnumeration(int nodeId, int settingIndex, int v, int notify);
 void AudioSetting_setString(int nodeId, int settingIndex, char const*const v, int notify);
-
-
+ void AudioSetting_setBus(int nodeId, int settingIndex, int busId, int notify);
 
 /////////////////////////
 //////AudioListener//////
@@ -761,3 +768,27 @@ void AudioListener_release(int id);
 
 int AudioListener_has(int id);
 
+/////////////////////////////
+////// GranulationNode //////
+/////////////////////////////
+
+
+int createGranulationNode(AudioContext* context);
+
+void GranulationNode_setGrainSource(int nodeId, AudioContext* context, int busId);
+
+int GranulationNode_getGrainSource(int nodeId);
+
+int GranulationNode_grainSourceBus(int nodeId);
+
+int GranulationNode_windowFunc(int nodeId);
+
+int GranulationNode_numGrains(int nodeId);
+
+int GranulationNode_grainDuration(int nodeId);
+
+int GranulationNode_grainPositionMin(int nodeId);
+
+int GranulationNode_grainPositionMax(int nodeId);
+
+int GranulationNode_grainPlaybackFreq(int nodeId);

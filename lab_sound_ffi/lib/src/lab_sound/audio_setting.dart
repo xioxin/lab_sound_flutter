@@ -75,7 +75,7 @@ class AudioSettingBus extends AudioSetting<AudioBus> {
 
   @override
   setValue(AudioBus val, [bool notify = true]) => LabSound()
-      .AudioSetting_setBool(nodeId, settingId, val.resourceId, notify ? 1 : 0);
+      .AudioSetting_setBus(nodeId, settingId, val.resourceId, notify ? 1 : 0);
 
   @override
   AudioBus get value =>
