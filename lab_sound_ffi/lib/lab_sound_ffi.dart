@@ -33,3 +33,7 @@ export 'src/lab_sound/convolver_node.dart';
 export 'src/lab_sound/audio_listener.dart';
 export 'src/lab_sound/panner_node.dart';
 export 'src/lab_sound/granulation_node.dart';
+
+export 'src/lab_sound/null_device_node.dart';
+export 'src/lab_sound/PWM_node.dart';
+export 'src/lab_sound/clip_node.dart';

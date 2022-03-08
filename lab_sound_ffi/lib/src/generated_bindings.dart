@@ -7348,6 +7348,96 @@ class LabSoundBind {
       _GranulationNode_grainPlaybackFreq =
       _GranulationNode_grainPlaybackFreq_ptr.asFunction<
           _dart_GranulationNode_grainPlaybackFreq>();
+
+  /// //////////////////
+  /// /   PWMNode   ////
+  /// //////////////////
+  int createPWMNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createPWMNode(
+      context,
+    );
+  }
+
+  late final _createPWMNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createPWMNode>>('createPWMNode');
+  late final _dart_createPWMNode _createPWMNode =
+      _createPWMNode_ptr.asFunction<_dart_createPWMNode>();
+
+  /// /////////////////////
+  /// / NullDeviceNode ////
+  /// /////////////////////
+  int createNullDeviceNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createNullDeviceNode(
+      context,
+    );
+  }
+
+  late final _createNullDeviceNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createNullDeviceNode>>(
+          'createNullDeviceNode');
+  late final _dart_createNullDeviceNode _createNullDeviceNode =
+      _createNullDeviceNode_ptr.asFunction<_dart_createNullDeviceNode>();
+
+  /// ///////////////
+  /// / ClipNode ////
+  /// ///////////////
+  int createClipNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createClipNode(
+      context,
+    );
+  }
+
+  late final _createClipNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createClipNode>>('createClipNode');
+  late final _dart_createClipNode _createClipNode =
+      _createClipNode_ptr.asFunction<_dart_createClipNode>();
+
+  void ClipNode_setMode(
+    int nodeId,
+    int type,
+  ) {
+    return _ClipNode_setMode(
+      nodeId,
+      type,
+    );
+  }
+
+  late final _ClipNode_setMode_ptr =
+      _lookup<ffi.NativeFunction<_c_ClipNode_setMode>>('ClipNode_setMode');
+  late final _dart_ClipNode_setMode _ClipNode_setMode =
+      _ClipNode_setMode_ptr.asFunction<_dart_ClipNode_setMode>();
+
+  int ClipNode_aVal(
+    int nodeId,
+  ) {
+    return _ClipNode_aVal(
+      nodeId,
+    );
+  }
+
+  late final _ClipNode_aVal_ptr =
+      _lookup<ffi.NativeFunction<_c_ClipNode_aVal>>('ClipNode_aVal');
+  late final _dart_ClipNode_aVal _ClipNode_aVal =
+      _ClipNode_aVal_ptr.asFunction<_dart_ClipNode_aVal>();
+
+  int ClipNode_bVal(
+    int nodeId,
+  ) {
+    return _ClipNode_bVal(
+      nodeId,
+    );
+  }
+
+  late final _ClipNode_bVal_ptr =
+      _lookup<ffi.NativeFunction<_c_ClipNode_bVal>>('ClipNode_bVal');
+  late final _dart_ClipNode_bVal _ClipNode_bVal =
+      _ClipNode_bVal_ptr.asFunction<_dart_ClipNode_bVal>();
 }
 
 class __crt_locale_data_public extends ffi.Struct {
@@ -12354,5 +12444,55 @@ typedef _c_GranulationNode_grainPlaybackFreq = ffi.Int32 Function(
 );
 
 typedef _dart_GranulationNode_grainPlaybackFreq = int Function(
+  int nodeId,
+);
+
+typedef _c_createPWMNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createPWMNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_createNullDeviceNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createNullDeviceNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_createClipNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createClipNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_ClipNode_setMode = ffi.Void Function(
+  ffi.Int32 nodeId,
+  ffi.Int32 type,
+);
+
+typedef _dart_ClipNode_setMode = void Function(
+  int nodeId,
+  int type,
+);
+
+typedef _c_ClipNode_aVal = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ClipNode_aVal = int Function(
+  int nodeId,
+);
+
+typedef _c_ClipNode_bVal = ffi.Int32 Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_ClipNode_bVal = int Function(
   int nodeId,
 );
