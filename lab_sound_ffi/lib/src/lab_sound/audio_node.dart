@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
+import 'package:path/path.dart';
 import '../extensions/ffi_string.dart';
 import 'audio_context.dart';
 import 'audio_param.dart';
@@ -40,6 +41,12 @@ class AudioNode {
   int get numberOfInputs => LabSound().AudioNode_numberOfInputs(nodeId);
   int get numberOfOutputs => LabSound().AudioNode_numberOfOutputs(nodeId);
   int get channelCount => LabSound().AudioNode_channelCount(nodeId);
+
+  double get tailTime => LabSound().AudioNode_tailTime(nodeId, ctx.pointer);
+  double get latencyTime =>
+      LabSound().AudioNode_latencyTime(nodeId, ctx.pointer);
+
+  bool get isInitialized => LabSound().AudioNode_isInitialized(nodeId) > 0;
 
   initialize() => LabSound().AudioNode_initialize(nodeId);
   uninitialize() => LabSound().AudioNode_uninitialize(nodeId);
