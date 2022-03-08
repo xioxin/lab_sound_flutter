@@ -792,3 +792,27 @@ int GranulationNode_grainPositionMin(int nodeId);
 int GranulationNode_grainPositionMax(int nodeId);
 
 int GranulationNode_grainPlaybackFreq(int nodeId);
+
+
+/////////////////////
+////   PWMNode   ////
+/////////////////////
+
+int createPWMNode(AudioContext* context);
+
+
+////////////////////////
+//// NullDeviceNode ////
+////////////////////////
+
+int createNullDeviceNode(AudioContext* context);
+
+//////////////////
+//// ClipNode ////
+//////////////////
+
+int createClipNode(AudioContext* context);
+void ClipNode_setMode(int nodeId, int type);
+int ClipNode_aVal(int nodeId);
+int ClipNode_bVal(int nodeId);
+

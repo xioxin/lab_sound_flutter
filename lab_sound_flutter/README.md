@@ -33,7 +33,7 @@ https://github.com/xioxin/lab_sound_bridge
     * [x] AudioStreamConfig
 * [x] AudioHardwareDeviceNode
 * [ ] AudioHardwareInputNode
-* [ ] AudioListener
+* [x] AudioListener
 * [x] AudioNode
 * [ ] AudioNodeInput
 * [ ] AudioNodeOutput
@@ -46,7 +46,7 @@ https://github.com/xioxin/lab_sound_bridge
 * [x] DelayNode
 * [x] DynamicsCompressorNode
 * [x] GainNode
-* [ ] NullDeviceNode
+* [x] NullDeviceNode
 * [x] OscillatorNode
 * [x] PannerNode
 * [ ] RealtimeAnalyser
@@ -56,7 +56,7 @@ https://github.com/xioxin/lab_sound_bridge
 
 * [x] ADSRNode
 * [x] BPMDelayNode
-* [ ] ClipNode
+* [x] ClipNode
 * [ ] DiodeNode
 * [ ] FunctionNode
 * [x] GranulationNode
@@ -66,9 +66,9 @@ https://github.com/xioxin/lab_sound_bridge
 * [ ] PingPongDelayNode
 * [x] PolyBLEPNode
 * [x] PowerMonitorNode
-* [ ] PWMNode
+* [x] PWMNode
 * [x] RecorderNode
-* [x] SfxrNode <!-- 一个很高级的功能 https://sfxr.me/ -->
+* [x] SfxrNode
 * [ ] SpatializationNode
 * [ ] SpectralMonitorNode
 * [ ] SupersawNode
