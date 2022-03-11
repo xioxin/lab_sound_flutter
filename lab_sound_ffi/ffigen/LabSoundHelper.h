@@ -805,7 +805,7 @@ int createPWMNode(AudioContext* context);
 //// NullDeviceNode ////
 ////////////////////////
 
-int createNullDeviceNode(AudioContext* context);
+int createNullDeviceNode(AudioContext* context, AudioStreamConfig outputConfig, const double lengthSeconds);
 
 //////////////////
 //// ClipNode ////
