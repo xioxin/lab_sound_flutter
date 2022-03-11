@@ -7370,9 +7370,13 @@ class LabSoundBind {
   /// /////////////////////
   int createNullDeviceNode(
     ffi.Pointer<ffi.Void> context,
+    AudioStreamConfig outputConfig,
+    double lengthSeconds,
   ) {
     return _createNullDeviceNode(
       context,
+      outputConfig,
+      lengthSeconds,
     );
   }
 
@@ -12457,10 +12461,14 @@ typedef _dart_createPWMNode = int Function(
 
 typedef _c_createNullDeviceNode = ffi.Int32 Function(
   ffi.Pointer<ffi.Void> context,
+  AudioStreamConfig outputConfig,
+  ffi.Double lengthSeconds,
 );
 
 typedef _dart_createNullDeviceNode = int Function(
   ffi.Pointer<ffi.Void> context,
+  AudioStreamConfig outputConfig,
+  double lengthSeconds,
 );
 
 typedef _c_createClipNode = ffi.Int32 Function(
