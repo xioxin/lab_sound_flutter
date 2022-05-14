@@ -816,3 +816,13 @@ void ClipNode_setMode(int nodeId, int type);
 int ClipNode_aVal(int nodeId);
 int ClipNode_bVal(int nodeId);
 
+
+
+//////////////////////
+//// FunctionNode ////
+//////////////////////
+
+void setFunctionNodeChannelFn(void (*fn)(int nodeId, int channel, float * values, int bufferSize));
+int createFunctionNode(AudioContext* context);
+double FunctionNode_now(int nodeId);
+void FunctionNode_setFunction(int nodeId);

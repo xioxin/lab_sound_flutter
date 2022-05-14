@@ -21,184 +21,15 @@ class LabSoundBind {
           lookup)
       : _lookup = lookup;
 
-  void __va_start(
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
-  ) {
-    return ___va_start(
-      arg0,
-    );
-  }
-
-  late final ___va_start_ptr =
-      _lookup<ffi.NativeFunction<_c___va_start>>('__va_start');
-  late final _dart___va_start ___va_start =
-      ___va_start_ptr.asFunction<_dart___va_start>();
-
-  void __security_init_cookie() {
-    return ___security_init_cookie();
-  }
-
-  late final ___security_init_cookie_ptr =
-      _lookup<ffi.NativeFunction<_c___security_init_cookie>>(
-          '__security_init_cookie');
-  late final _dart___security_init_cookie ___security_init_cookie =
-      ___security_init_cookie_ptr.asFunction<_dart___security_init_cookie>();
-
-  void __security_check_cookie(
-    int _StackCookie,
-  ) {
-    return ___security_check_cookie(
-      _StackCookie,
-    );
-  }
-
-  late final ___security_check_cookie_ptr =
-      _lookup<ffi.NativeFunction<_c___security_check_cookie>>(
-          '__security_check_cookie');
-  late final _dart___security_check_cookie ___security_check_cookie =
-      ___security_check_cookie_ptr.asFunction<_dart___security_check_cookie>();
-
-  void __report_gsfailure(
-    int _StackCookie,
-  ) {
-    return ___report_gsfailure(
-      _StackCookie,
-    );
-  }
-
-  late final ___report_gsfailure_ptr =
-      _lookup<ffi.NativeFunction<_c___report_gsfailure>>('__report_gsfailure');
-  late final _dart___report_gsfailure ___report_gsfailure =
-      ___report_gsfailure_ptr.asFunction<_dart___report_gsfailure>();
-
-  late final ffi.Pointer<ffi.Uint64> ___security_cookie =
-      _lookup<ffi.Uint64>('__security_cookie');
-
-  int get __security_cookie => ___security_cookie.value;
-
-  set __security_cookie(int value) => ___security_cookie.value = value;
-
-  void _invalid_parameter_noinfo() {
-    return __invalid_parameter_noinfo();
-  }
-
-  late final __invalid_parameter_noinfo_ptr =
-      _lookup<ffi.NativeFunction<_c__invalid_parameter_noinfo>>(
-          '_invalid_parameter_noinfo');
-  late final _dart__invalid_parameter_noinfo __invalid_parameter_noinfo =
-      __invalid_parameter_noinfo_ptr
-          .asFunction<_dart__invalid_parameter_noinfo>();
-
-  void _invalid_parameter_noinfo_noreturn() {
-    return __invalid_parameter_noinfo_noreturn();
-  }
-
-  late final __invalid_parameter_noinfo_noreturn_ptr =
-      _lookup<ffi.NativeFunction<_c__invalid_parameter_noinfo_noreturn>>(
-          '_invalid_parameter_noinfo_noreturn');
-  late final _dart__invalid_parameter_noinfo_noreturn
-      __invalid_parameter_noinfo_noreturn =
-      __invalid_parameter_noinfo_noreturn_ptr
-          .asFunction<_dart__invalid_parameter_noinfo_noreturn>();
-
-  void _invoke_watson(
-    ffi.Pointer<ffi.Uint16> _Expression,
-    ffi.Pointer<ffi.Uint16> _FunctionName,
-    ffi.Pointer<ffi.Uint16> _FileName,
-    int _LineNo,
-    int _Reserved,
-  ) {
-    return __invoke_watson(
-      _Expression,
-      _FunctionName,
-      _FileName,
-      _LineNo,
-      _Reserved,
-    );
-  }
-
-  late final __invoke_watson_ptr =
-      _lookup<ffi.NativeFunction<_c__invoke_watson>>('_invoke_watson');
-  late final _dart__invoke_watson __invoke_watson =
-      __invoke_watson_ptr.asFunction<_dart__invoke_watson>();
-
-  ffi.Pointer<ffi.Int32> _errno() {
-    return __errno();
-  }
-
-  late final __errno_ptr = _lookup<ffi.NativeFunction<_c__errno>>('_errno');
-  late final _dart__errno __errno = __errno_ptr.asFunction<_dart__errno>();
-
-  int _set_errno(
-    int _Value,
-  ) {
-    return __set_errno(
-      _Value,
-    );
-  }
-
-  late final __set_errno_ptr =
-      _lookup<ffi.NativeFunction<_c__set_errno>>('_set_errno');
-  late final _dart__set_errno __set_errno =
-      __set_errno_ptr.asFunction<_dart__set_errno>();
-
-  int _get_errno(
-    ffi.Pointer<ffi.Int32> _Value,
-  ) {
-    return __get_errno(
-      _Value,
-    );
-  }
-
-  late final __get_errno_ptr =
-      _lookup<ffi.NativeFunction<_c__get_errno>>('_get_errno');
-  late final _dart__get_errno __get_errno =
-      __get_errno_ptr.asFunction<_dart__get_errno>();
-
-  ffi.Pointer<ffi.Uint64> __doserrno() {
-    return ___doserrno();
-  }
-
-  late final ___doserrno_ptr =
-      _lookup<ffi.NativeFunction<_c___doserrno>>('__doserrno');
-  late final _dart___doserrno ___doserrno =
-      ___doserrno_ptr.asFunction<_dart___doserrno>();
-
-  int _set_doserrno(
-    int _Value,
-  ) {
-    return __set_doserrno(
-      _Value,
-    );
-  }
-
-  late final __set_doserrno_ptr =
-      _lookup<ffi.NativeFunction<_c__set_doserrno>>('_set_doserrno');
-  late final _dart__set_doserrno __set_doserrno =
-      __set_doserrno_ptr.asFunction<_dart__set_doserrno>();
-
-  int _get_doserrno(
-    ffi.Pointer<ffi.Uint64> _Value,
-  ) {
-    return __get_doserrno(
-      _Value,
-    );
-  }
-
-  late final __get_doserrno_ptr =
-      _lookup<ffi.NativeFunction<_c__get_doserrno>>('_get_doserrno');
-  late final _dart__get_doserrno __get_doserrno =
-      __get_doserrno_ptr.asFunction<_dart__get_doserrno>();
-
   ffi.Pointer<ffi.Void> memchr(
-    ffi.Pointer<ffi.Void> _Buf,
-    int _Val,
-    int _MaxCount,
+    ffi.Pointer<ffi.Void> __s,
+    int __c,
+    int __n,
   ) {
     return _memchr(
-      _Buf,
-      _Val,
-      _MaxCount,
+      __s,
+      __c,
+      __n,
     );
   }
 
@@ -206,14 +37,14 @@ class LabSoundBind {
   late final _dart_memchr _memchr = _memchr_ptr.asFunction<_dart_memchr>();
 
   int memcmp(
-    ffi.Pointer<ffi.Void> _Buf1,
-    ffi.Pointer<ffi.Void> _Buf2,
-    int _Size,
+    ffi.Pointer<ffi.Void> __s1,
+    ffi.Pointer<ffi.Void> __s2,
+    int __n,
   ) {
     return _memcmp(
-      _Buf1,
-      _Buf2,
-      _Size,
+      __s1,
+      __s2,
+      __n,
     );
   }
 
@@ -221,14 +52,14 @@ class LabSoundBind {
   late final _dart_memcmp _memcmp = _memcmp_ptr.asFunction<_dart_memcmp>();
 
   ffi.Pointer<ffi.Void> memcpy(
-    ffi.Pointer<ffi.Void> _Dst,
-    ffi.Pointer<ffi.Void> _Src,
-    int _Size,
+    ffi.Pointer<ffi.Void> __dst,
+    ffi.Pointer<ffi.Void> __src,
+    int __n,
   ) {
     return _memcpy(
-      _Dst,
-      _Src,
-      _Size,
+      __dst,
+      __src,
+      __n,
     );
   }
 
@@ -236,14 +67,14 @@ class LabSoundBind {
   late final _dart_memcpy _memcpy = _memcpy_ptr.asFunction<_dart_memcpy>();
 
   ffi.Pointer<ffi.Void> memmove(
-    ffi.Pointer<ffi.Void> _Dst,
-    ffi.Pointer<ffi.Void> _Src,
-    int _Size,
+    ffi.Pointer<ffi.Void> __dst,
+    ffi.Pointer<ffi.Void> __src,
+    int __len,
   ) {
     return _memmove(
-      _Dst,
-      _Src,
-      _Size,
+      __dst,
+      __src,
+      __len,
     );
   }
 
@@ -251,1241 +82,79 @@ class LabSoundBind {
   late final _dart_memmove _memmove = _memmove_ptr.asFunction<_dart_memmove>();
 
   ffi.Pointer<ffi.Void> memset(
-    ffi.Pointer<ffi.Void> _Dst,
-    int _Val,
-    int _Size,
+    ffi.Pointer<ffi.Void> __b,
+    int __c,
+    int __len,
   ) {
     return _memset(
-      _Dst,
-      _Val,
-      _Size,
+      __b,
+      __c,
+      __len,
     );
   }
 
   late final _memset_ptr = _lookup<ffi.NativeFunction<_c_memset>>('memset');
   late final _dart_memset _memset = _memset_ptr.asFunction<_dart_memset>();
 
-  ffi.Pointer<ffi.Int8> strchr(
-    ffi.Pointer<ffi.Int8> _Str,
-    int _Val,
-  ) {
-    return _strchr(
-      _Str,
-      _Val,
-    );
-  }
-
-  late final _strchr_ptr = _lookup<ffi.NativeFunction<_c_strchr>>('strchr');
-  late final _dart_strchr _strchr = _strchr_ptr.asFunction<_dart_strchr>();
-
-  ffi.Pointer<ffi.Int8> strrchr(
-    ffi.Pointer<ffi.Int8> _Str,
-    int _Ch,
-  ) {
-    return _strrchr(
-      _Str,
-      _Ch,
-    );
-  }
-
-  late final _strrchr_ptr = _lookup<ffi.NativeFunction<_c_strrchr>>('strrchr');
-  late final _dart_strrchr _strrchr = _strrchr_ptr.asFunction<_dart_strrchr>();
-
-  ffi.Pointer<ffi.Int8> strstr(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _SubStr,
-  ) {
-    return _strstr(
-      _Str,
-      _SubStr,
-    );
-  }
-
-  late final _strstr_ptr = _lookup<ffi.NativeFunction<_c_strstr>>('strstr');
-  late final _dart_strstr _strstr = _strstr_ptr.asFunction<_dart_strstr>();
-
-  ffi.Pointer<ffi.Uint16> wcschr(
-    ffi.Pointer<ffi.Uint16> _Str,
-    int _Ch,
-  ) {
-    return _wcschr(
-      _Str,
-      _Ch,
-    );
-  }
-
-  late final _wcschr_ptr = _lookup<ffi.NativeFunction<_c_wcschr>>('wcschr');
-  late final _dart_wcschr _wcschr = _wcschr_ptr.asFunction<_dart_wcschr>();
-
-  ffi.Pointer<ffi.Uint16> wcsrchr(
-    ffi.Pointer<ffi.Uint16> _Str,
-    int _Ch,
-  ) {
-    return _wcsrchr(
-      _Str,
-      _Ch,
-    );
-  }
-
-  late final _wcsrchr_ptr = _lookup<ffi.NativeFunction<_c_wcsrchr>>('wcsrchr');
-  late final _dart_wcsrchr _wcsrchr = _wcsrchr_ptr.asFunction<_dart_wcsrchr>();
-
-  ffi.Pointer<ffi.Uint16> wcsstr(
-    ffi.Pointer<ffi.Uint16> _Str,
-    ffi.Pointer<ffi.Uint16> _SubStr,
-  ) {
-    return _wcsstr(
-      _Str,
-      _SubStr,
-    );
-  }
-
-  late final _wcsstr_ptr = _lookup<ffi.NativeFunction<_c_wcsstr>>('wcsstr');
-  late final _dart_wcsstr _wcsstr = _wcsstr_ptr.asFunction<_dart_wcsstr>();
-
-  int _memicmp(
-    ffi.Pointer<ffi.Void> _Buf1,
-    ffi.Pointer<ffi.Void> _Buf2,
-    int _Size,
-  ) {
-    return __memicmp(
-      _Buf1,
-      _Buf2,
-      _Size,
-    );
-  }
-
-  late final __memicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__memicmp>>('_memicmp');
-  late final _dart__memicmp __memicmp =
-      __memicmp_ptr.asFunction<_dart__memicmp>();
-
-  int _memicmp_l(
-    ffi.Pointer<ffi.Void> _Buf1,
-    ffi.Pointer<ffi.Void> _Buf2,
-    int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __memicmp_l(
-      _Buf1,
-      _Buf2,
-      _Size,
-      _Locale,
-    );
-  }
-
-  late final __memicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__memicmp_l>>('_memicmp_l');
-  late final _dart__memicmp_l __memicmp_l =
-      __memicmp_l_ptr.asFunction<_dart__memicmp_l>();
-
-  ffi.Pointer<ffi.Void> memccpy(
-    ffi.Pointer<ffi.Void> _Dst,
-    ffi.Pointer<ffi.Void> _Src,
-    int _Val,
-    int _Size,
-  ) {
-    return _memccpy_1(
-      _Dst,
-      _Src,
-      _Val,
-      _Size,
-    );
-  }
-
-  late final _memccpy_ptr = _lookup<ffi.NativeFunction<_c_memccpy>>('memccpy');
-  late final _dart_memccpy _memccpy_1 =
-      _memccpy_ptr.asFunction<_dart_memccpy>();
-
-  int memicmp(
-    ffi.Pointer<ffi.Void> _Buf1,
-    ffi.Pointer<ffi.Void> _Buf2,
-    int _Size,
-  ) {
-    return _memicmp_1(
-      _Buf1,
-      _Buf2,
-      _Size,
-    );
-  }
-
-  late final _memicmp_ptr = _lookup<ffi.NativeFunction<_c_memicmp>>('memicmp');
-  late final _dart_memicmp _memicmp_1 =
-      _memicmp_ptr.asFunction<_dart_memicmp>();
-
-  int wcscat_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
-  ) {
-    return _wcscat_s(
-      _Destination,
-      _SizeInWords,
-      _Source,
-    );
-  }
-
-  late final _wcscat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcscat_s>>('wcscat_s');
-  late final _dart_wcscat_s _wcscat_s =
-      _wcscat_s_ptr.asFunction<_dart_wcscat_s>();
-
-  int wcscpy_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
-  ) {
-    return _wcscpy_s(
-      _Destination,
-      _SizeInWords,
-      _Source,
-    );
-  }
-
-  late final _wcscpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcscpy_s>>('wcscpy_s');
-  late final _dart_wcscpy_s _wcscpy_s =
-      _wcscpy_s_ptr.asFunction<_dart_wcscpy_s>();
-
-  int wcsncat_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _MaxCount,
-  ) {
-    return _wcsncat_s(
-      _Destination,
-      _SizeInWords,
-      _Source,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsncat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsncat_s>>('wcsncat_s');
-  late final _dart_wcsncat_s _wcsncat_s =
-      _wcsncat_s_ptr.asFunction<_dart_wcsncat_s>();
-
-  int wcsncpy_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _MaxCount,
-  ) {
-    return _wcsncpy_s(
-      _Destination,
-      _SizeInWords,
-      _Source,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsncpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsncpy_s>>('wcsncpy_s');
-  late final _dart_wcsncpy_s _wcsncpy_s =
-      _wcsncpy_s_ptr.asFunction<_dart_wcsncpy_s>();
-
-  ffi.Pointer<ffi.Uint16> wcstok_s(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Delimiter,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-  ) {
-    return _wcstok_s(
-      _String,
-      _Delimiter,
-      _Context,
-    );
-  }
-
-  late final _wcstok_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcstok_s>>('wcstok_s');
-  late final _dart_wcstok_s _wcstok_s =
-      _wcstok_s_ptr.asFunction<_dart_wcstok_s>();
-
-  ffi.Pointer<ffi.Uint16> _wcsdup(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return __wcsdup(
-      _String,
-    );
-  }
-
-  late final __wcsdup_ptr = _lookup<ffi.NativeFunction<_c__wcsdup>>('_wcsdup');
-  late final _dart__wcsdup __wcsdup = __wcsdup_ptr.asFunction<_dart__wcsdup>();
-
-  ffi.Pointer<ffi.Uint16> wcscat(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
-  ) {
-    return _wcscat(
-      _Destination,
-      _Source,
-    );
-  }
-
-  late final _wcscat_ptr = _lookup<ffi.NativeFunction<_c_wcscat>>('wcscat');
-  late final _dart_wcscat _wcscat = _wcscat_ptr.asFunction<_dart_wcscat>();
-
-  int wcscmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-  ) {
-    return _wcscmp(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final _wcscmp_ptr = _lookup<ffi.NativeFunction<_c_wcscmp>>('wcscmp');
-  late final _dart_wcscmp _wcscmp = _wcscmp_ptr.asFunction<_dart_wcscmp>();
-
-  ffi.Pointer<ffi.Uint16> wcscpy(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
-  ) {
-    return _wcscpy(
-      _Destination,
-      _Source,
-    );
-  }
-
-  late final _wcscpy_ptr = _lookup<ffi.NativeFunction<_c_wcscpy>>('wcscpy');
-  late final _dart_wcscpy _wcscpy = _wcscpy_ptr.asFunction<_dart_wcscpy>();
-
-  int wcscspn(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Control,
-  ) {
-    return _wcscspn(
-      _String,
-      _Control,
-    );
-  }
-
-  late final _wcscspn_ptr = _lookup<ffi.NativeFunction<_c_wcscspn>>('wcscspn');
-  late final _dart_wcscspn _wcscspn = _wcscspn_ptr.asFunction<_dart_wcscspn>();
-
-  int wcslen(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return _wcslen(
-      _String,
-    );
-  }
-
-  late final _wcslen_ptr = _lookup<ffi.NativeFunction<_c_wcslen>>('wcslen');
-  late final _dart_wcslen _wcslen = _wcslen_ptr.asFunction<_dart_wcslen>();
-
-  int wcsnlen(
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _MaxCount,
-  ) {
-    return _wcsnlen(
-      _Source,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsnlen_ptr = _lookup<ffi.NativeFunction<_c_wcsnlen>>('wcsnlen');
-  late final _dart_wcsnlen _wcsnlen = _wcsnlen_ptr.asFunction<_dart_wcsnlen>();
-
-  ffi.Pointer<ffi.Uint16> wcsncat(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _Count,
-  ) {
-    return _wcsncat(
-      _Destination,
-      _Source,
-      _Count,
-    );
-  }
-
-  late final _wcsncat_ptr = _lookup<ffi.NativeFunction<_c_wcsncat>>('wcsncat');
-  late final _dart_wcsncat _wcsncat = _wcsncat_ptr.asFunction<_dart_wcsncat>();
-
-  int wcsncmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-  ) {
-    return _wcsncmp(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsncmp_ptr = _lookup<ffi.NativeFunction<_c_wcsncmp>>('wcsncmp');
-  late final _dart_wcsncmp _wcsncmp = _wcsncmp_ptr.asFunction<_dart_wcsncmp>();
-
-  ffi.Pointer<ffi.Uint16> wcsncpy(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _Count,
-  ) {
-    return _wcsncpy(
-      _Destination,
-      _Source,
-      _Count,
-    );
-  }
-
-  late final _wcsncpy_ptr = _lookup<ffi.NativeFunction<_c_wcsncpy>>('wcsncpy');
-  late final _dart_wcsncpy _wcsncpy = _wcsncpy_ptr.asFunction<_dart_wcsncpy>();
-
-  ffi.Pointer<ffi.Uint16> wcspbrk(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Control,
-  ) {
-    return _wcspbrk(
-      _String,
-      _Control,
-    );
-  }
-
-  late final _wcspbrk_ptr = _lookup<ffi.NativeFunction<_c_wcspbrk>>('wcspbrk');
-  late final _dart_wcspbrk _wcspbrk = _wcspbrk_ptr.asFunction<_dart_wcspbrk>();
-
-  int wcsspn(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Control,
-  ) {
-    return _wcsspn(
-      _String,
-      _Control,
-    );
-  }
-
-  late final _wcsspn_ptr = _lookup<ffi.NativeFunction<_c_wcsspn>>('wcsspn');
-  late final _dart_wcsspn _wcsspn = _wcsspn_ptr.asFunction<_dart_wcsspn>();
-
-  ffi.Pointer<ffi.Uint16> wcstok(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Delimiter,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-  ) {
-    return _wcstok(
-      _String,
-      _Delimiter,
-      _Context,
-    );
-  }
-
-  late final _wcstok_ptr = _lookup<ffi.NativeFunction<_c_wcstok>>('wcstok');
-  late final _dart_wcstok _wcstok = _wcstok_ptr.asFunction<_dart_wcstok>();
-
-  ffi.Pointer<ffi.Uint16> _wcserror(
-    int _ErrorNumber,
-  ) {
-    return __wcserror_1(
-      _ErrorNumber,
-    );
-  }
-
-  late final __wcserror_ptr =
-      _lookup<ffi.NativeFunction<_c__wcserror>>('_wcserror');
-  late final _dart__wcserror __wcserror_1 =
-      __wcserror_ptr.asFunction<_dart__wcserror>();
-
-  int _wcserror_s(
-    ffi.Pointer<ffi.Uint16> _Buffer,
-    int _SizeInWords,
-    int _ErrorNumber,
-  ) {
-    return __wcserror_s_1(
-      _Buffer,
-      _SizeInWords,
-      _ErrorNumber,
-    );
-  }
-
-  late final __wcserror_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcserror_s>>('_wcserror_s');
-  late final _dart__wcserror_s __wcserror_s_1 =
-      __wcserror_s_ptr.asFunction<_dart__wcserror_s>();
-
-  ffi.Pointer<ffi.Uint16> __wcserror(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return ___wcserror(
-      _String,
-    );
-  }
-
-  late final ___wcserror_ptr =
-      _lookup<ffi.NativeFunction<_c___wcserror>>('__wcserror');
-  late final _dart___wcserror ___wcserror =
-      ___wcserror_ptr.asFunction<_dart___wcserror>();
-
-  int __wcserror_s(
-    ffi.Pointer<ffi.Uint16> _Buffer,
-    int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _ErrorMessage,
-  ) {
-    return ___wcserror_s(
-      _Buffer,
-      _SizeInWords,
-      _ErrorMessage,
-    );
-  }
-
-  late final ___wcserror_s_ptr =
-      _lookup<ffi.NativeFunction<_c___wcserror_s>>('__wcserror_s');
-  late final _dart___wcserror_s ___wcserror_s =
-      ___wcserror_s_ptr.asFunction<_dart___wcserror_s>();
-
-  int _wcsicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-  ) {
-    return __wcsicmp(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final __wcsicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicmp>>('_wcsicmp');
-  late final _dart__wcsicmp __wcsicmp =
-      __wcsicmp_ptr.asFunction<_dart__wcsicmp>();
-
-  int _wcsicmp_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsicmp_l(
-      _String1,
-      _String2,
-      _Locale,
-    );
-  }
-
-  late final __wcsicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicmp_l>>('_wcsicmp_l');
-  late final _dart__wcsicmp_l __wcsicmp_l =
-      __wcsicmp_l_ptr.asFunction<_dart__wcsicmp_l>();
-
-  int _wcsnicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-  ) {
-    return __wcsnicmp(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final __wcsnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicmp>>('_wcsnicmp');
-  late final _dart__wcsnicmp __wcsnicmp =
-      __wcsnicmp_ptr.asFunction<_dart__wcsnicmp>();
-
-  int _wcsnicmp_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsnicmp_l(
-      _String1,
-      _String2,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __wcsnicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicmp_l>>('_wcsnicmp_l');
-  late final _dart__wcsnicmp_l __wcsnicmp_l =
-      __wcsnicmp_l_ptr.asFunction<_dart__wcsnicmp_l>();
-
-  int _wcsnset_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    int _SizeInWords,
-    int _Value,
-    int _MaxCount,
-  ) {
-    return __wcsnset_s(
-      _Destination,
-      _SizeInWords,
-      _Value,
-      _MaxCount,
-    );
-  }
-
-  late final __wcsnset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnset_s>>('_wcsnset_s');
-  late final _dart__wcsnset_s __wcsnset_s =
-      __wcsnset_s_ptr.asFunction<_dart__wcsnset_s>();
-
-  ffi.Pointer<ffi.Uint16> _wcsnset(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _Value,
-    int _MaxCount,
-  ) {
-    return __wcsnset(
-      _String,
-      _Value,
-      _MaxCount,
-    );
-  }
-
-  late final __wcsnset_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnset>>('_wcsnset');
-  late final _dart__wcsnset __wcsnset =
-      __wcsnset_ptr.asFunction<_dart__wcsnset>();
-
-  ffi.Pointer<ffi.Uint16> _wcsrev(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return __wcsrev(
-      _String,
-    );
-  }
-
-  late final __wcsrev_ptr = _lookup<ffi.NativeFunction<_c__wcsrev>>('_wcsrev');
-  late final _dart__wcsrev __wcsrev = __wcsrev_ptr.asFunction<_dart__wcsrev>();
-
-  int _wcsset_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    int _SizeInWords,
-    int _Value,
-  ) {
-    return __wcsset_s(
-      _Destination,
-      _SizeInWords,
-      _Value,
-    );
-  }
-
-  late final __wcsset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsset_s>>('_wcsset_s');
-  late final _dart__wcsset_s __wcsset_s =
-      __wcsset_s_ptr.asFunction<_dart__wcsset_s>();
-
-  ffi.Pointer<ffi.Uint16> _wcsset(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _Value,
-  ) {
-    return __wcsset(
-      _String,
-      _Value,
-    );
-  }
-
-  late final __wcsset_ptr = _lookup<ffi.NativeFunction<_c__wcsset>>('_wcsset');
-  late final _dart__wcsset __wcsset = __wcsset_ptr.asFunction<_dart__wcsset>();
-
-  int _wcslwr_s(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _SizeInWords,
-  ) {
-    return __wcslwr_s(
-      _String,
-      _SizeInWords,
-    );
-  }
-
-  late final __wcslwr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcslwr_s>>('_wcslwr_s');
-  late final _dart__wcslwr_s __wcslwr_s =
-      __wcslwr_s_ptr.asFunction<_dart__wcslwr_s>();
-
-  ffi.Pointer<ffi.Uint16> _wcslwr(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return __wcslwr(
-      _String,
-    );
-  }
-
-  late final __wcslwr_ptr = _lookup<ffi.NativeFunction<_c__wcslwr>>('_wcslwr');
-  late final _dart__wcslwr __wcslwr = __wcslwr_ptr.asFunction<_dart__wcslwr>();
-
-  int _wcslwr_s_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _SizeInWords,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcslwr_s_l(
-      _String,
-      _SizeInWords,
-      _Locale,
-    );
-  }
-
-  late final __wcslwr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcslwr_s_l>>('_wcslwr_s_l');
-  late final _dart__wcslwr_s_l __wcslwr_s_l =
-      __wcslwr_s_l_ptr.asFunction<_dart__wcslwr_s_l>();
-
-  ffi.Pointer<ffi.Uint16> _wcslwr_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcslwr_l(
-      _String,
-      _Locale,
-    );
-  }
-
-  late final __wcslwr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcslwr_l>>('_wcslwr_l');
-  late final _dart__wcslwr_l __wcslwr_l =
-      __wcslwr_l_ptr.asFunction<_dart__wcslwr_l>();
-
-  int _wcsupr_s(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _Size,
-  ) {
-    return __wcsupr_s(
-      _String,
-      _Size,
-    );
-  }
-
-  late final __wcsupr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsupr_s>>('_wcsupr_s');
-  late final _dart__wcsupr_s __wcsupr_s =
-      __wcsupr_s_ptr.asFunction<_dart__wcsupr_s>();
-
-  ffi.Pointer<ffi.Uint16> _wcsupr(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return __wcsupr(
-      _String,
-    );
-  }
-
-  late final __wcsupr_ptr = _lookup<ffi.NativeFunction<_c__wcsupr>>('_wcsupr');
-  late final _dart__wcsupr __wcsupr = __wcsupr_ptr.asFunction<_dart__wcsupr>();
-
-  int _wcsupr_s_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsupr_s_l(
-      _String,
-      _Size,
-      _Locale,
-    );
-  }
-
-  late final __wcsupr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsupr_s_l>>('_wcsupr_s_l');
-  late final _dart__wcsupr_s_l __wcsupr_s_l =
-      __wcsupr_s_l_ptr.asFunction<_dart__wcsupr_s_l>();
-
-  ffi.Pointer<ffi.Uint16> _wcsupr_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsupr_l(
-      _String,
-      _Locale,
-    );
-  }
-
-  late final __wcsupr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsupr_l>>('_wcsupr_l');
-  late final _dart__wcsupr_l __wcsupr_l =
-      __wcsupr_l_ptr.asFunction<_dart__wcsupr_l>();
-
-  int wcsxfrm(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _MaxCount,
-  ) {
-    return _wcsxfrm(
-      _Destination,
-      _Source,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsxfrm_ptr = _lookup<ffi.NativeFunction<_c_wcsxfrm>>('wcsxfrm');
-  late final _dart_wcsxfrm _wcsxfrm = _wcsxfrm_ptr.asFunction<_dart_wcsxfrm>();
-
-  int _wcsxfrm_l(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsxfrm_l(
-      _Destination,
-      _Source,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __wcsxfrm_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsxfrm_l>>('_wcsxfrm_l');
-  late final _dart__wcsxfrm_l __wcsxfrm_l =
-      __wcsxfrm_l_ptr.asFunction<_dart__wcsxfrm_l>();
-
-  int wcscoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-  ) {
-    return _wcscoll(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final _wcscoll_ptr = _lookup<ffi.NativeFunction<_c_wcscoll>>('wcscoll');
-  late final _dart_wcscoll _wcscoll = _wcscoll_ptr.asFunction<_dart_wcscoll>();
-
-  int _wcscoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcscoll_l(
-      _String1,
-      _String2,
-      _Locale,
-    );
-  }
-
-  late final __wcscoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcscoll_l>>('_wcscoll_l');
-  late final _dart__wcscoll_l __wcscoll_l =
-      __wcscoll_l_ptr.asFunction<_dart__wcscoll_l>();
-
-  int _wcsicoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-  ) {
-    return __wcsicoll(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final __wcsicoll_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicoll>>('_wcsicoll');
-  late final _dart__wcsicoll __wcsicoll =
-      __wcsicoll_ptr.asFunction<_dart__wcsicoll>();
-
-  int _wcsicoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsicoll_l(
-      _String1,
-      _String2,
-      _Locale,
-    );
-  }
-
-  late final __wcsicoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicoll_l>>('_wcsicoll_l');
-  late final _dart__wcsicoll_l __wcsicoll_l =
-      __wcsicoll_l_ptr.asFunction<_dart__wcsicoll_l>();
-
-  int _wcsncoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-  ) {
-    return __wcsncoll(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final __wcsncoll_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsncoll>>('_wcsncoll');
-  late final _dart__wcsncoll __wcsncoll =
-      __wcsncoll_ptr.asFunction<_dart__wcsncoll>();
-
-  int _wcsncoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsncoll_l(
-      _String1,
-      _String2,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __wcsncoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsncoll_l>>('_wcsncoll_l');
-  late final _dart__wcsncoll_l __wcsncoll_l =
-      __wcsncoll_l_ptr.asFunction<_dart__wcsncoll_l>();
-
-  int _wcsnicoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-  ) {
-    return __wcsnicoll(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final __wcsnicoll_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicoll>>('_wcsnicoll');
-  late final _dart__wcsnicoll __wcsnicoll =
-      __wcsnicoll_ptr.asFunction<_dart__wcsnicoll>();
-
-  int _wcsnicoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __wcsnicoll_l(
-      _String1,
-      _String2,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __wcsnicoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicoll_l>>('_wcsnicoll_l');
-  late final _dart__wcsnicoll_l __wcsnicoll_l =
-      __wcsnicoll_l_ptr.asFunction<_dart__wcsnicoll_l>();
-
-  ffi.Pointer<ffi.Uint16> wcsdup(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return _wcsdup_1(
-      _String,
-    );
-  }
-
-  late final _wcsdup_ptr = _lookup<ffi.NativeFunction<_c_wcsdup>>('wcsdup');
-  late final _dart_wcsdup _wcsdup_1 = _wcsdup_ptr.asFunction<_dart_wcsdup>();
-
-  int wcsicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-  ) {
-    return _wcsicmp_1(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final _wcsicmp_ptr = _lookup<ffi.NativeFunction<_c_wcsicmp>>('wcsicmp');
-  late final _dart_wcsicmp _wcsicmp_1 =
-      _wcsicmp_ptr.asFunction<_dart_wcsicmp>();
-
-  int wcsnicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    int _MaxCount,
-  ) {
-    return _wcsnicmp_1(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsnicmp>>('wcsnicmp');
-  late final _dart_wcsnicmp _wcsnicmp_1 =
-      _wcsnicmp_ptr.asFunction<_dart_wcsnicmp>();
-
-  ffi.Pointer<ffi.Uint16> wcsnset(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _Value,
-    int _MaxCount,
-  ) {
-    return _wcsnset_1(
-      _String,
-      _Value,
-      _MaxCount,
-    );
-  }
-
-  late final _wcsnset_ptr = _lookup<ffi.NativeFunction<_c_wcsnset>>('wcsnset');
-  late final _dart_wcsnset _wcsnset_1 =
-      _wcsnset_ptr.asFunction<_dart_wcsnset>();
-
-  ffi.Pointer<ffi.Uint16> wcsrev(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return _wcsrev_1(
-      _String,
-    );
-  }
-
-  late final _wcsrev_ptr = _lookup<ffi.NativeFunction<_c_wcsrev>>('wcsrev');
-  late final _dart_wcsrev _wcsrev_1 = _wcsrev_ptr.asFunction<_dart_wcsrev>();
-
-  ffi.Pointer<ffi.Uint16> wcsset(
-    ffi.Pointer<ffi.Uint16> _String,
-    int _Value,
-  ) {
-    return _wcsset_1(
-      _String,
-      _Value,
-    );
-  }
-
-  late final _wcsset_ptr = _lookup<ffi.NativeFunction<_c_wcsset>>('wcsset');
-  late final _dart_wcsset _wcsset_1 = _wcsset_ptr.asFunction<_dart_wcsset>();
-
-  ffi.Pointer<ffi.Uint16> wcslwr(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return _wcslwr_1(
-      _String,
-    );
-  }
-
-  late final _wcslwr_ptr = _lookup<ffi.NativeFunction<_c_wcslwr>>('wcslwr');
-  late final _dart_wcslwr _wcslwr_1 = _wcslwr_ptr.asFunction<_dart_wcslwr>();
-
-  ffi.Pointer<ffi.Uint16> wcsupr(
-    ffi.Pointer<ffi.Uint16> _String,
-  ) {
-    return _wcsupr_1(
-      _String,
-    );
-  }
-
-  late final _wcsupr_ptr = _lookup<ffi.NativeFunction<_c_wcsupr>>('wcsupr');
-  late final _dart_wcsupr _wcsupr_1 = _wcsupr_ptr.asFunction<_dart_wcsupr>();
-
-  int wcsicoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-  ) {
-    return _wcsicoll_1(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final _wcsicoll_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsicoll>>('wcsicoll');
-  late final _dart_wcsicoll _wcsicoll_1 =
-      _wcsicoll_ptr.asFunction<_dart_wcsicoll>();
-
-  int strcpy_s(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
-  ) {
-    return _strcpy_s(
-      _Destination,
-      _SizeInBytes,
-      _Source,
-    );
-  }
-
-  late final _strcpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strcpy_s>>('strcpy_s');
-  late final _dart_strcpy_s _strcpy_s =
-      _strcpy_s_ptr.asFunction<_dart_strcpy_s>();
-
-  int strcat_s(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
-  ) {
-    return _strcat_s(
-      _Destination,
-      _SizeInBytes,
-      _Source,
-    );
-  }
-
-  late final _strcat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strcat_s>>('strcat_s');
-  late final _dart_strcat_s _strcat_s =
-      _strcat_s_ptr.asFunction<_dart_strcat_s>();
-
-  int strerror_s(
-    ffi.Pointer<ffi.Int8> _Buffer,
-    int _SizeInBytes,
-    int _ErrorNumber,
-  ) {
-    return _strerror_s_1(
-      _Buffer,
-      _SizeInBytes,
-      _ErrorNumber,
-    );
-  }
-
-  late final _strerror_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strerror_s>>('strerror_s');
-  late final _dart_strerror_s _strerror_s_1 =
-      _strerror_s_ptr.asFunction<_dart_strerror_s>();
-
-  int strncat_s(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
-    int _MaxCount,
-  ) {
-    return _strncat_s(
-      _Destination,
-      _SizeInBytes,
-      _Source,
-      _MaxCount,
-    );
-  }
-
-  late final _strncat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strncat_s>>('strncat_s');
-  late final _dart_strncat_s _strncat_s =
-      _strncat_s_ptr.asFunction<_dart_strncat_s>();
-
-  int strncpy_s(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
-    int _MaxCount,
-  ) {
-    return _strncpy_s(
-      _Destination,
-      _SizeInBytes,
-      _Source,
-      _MaxCount,
-    );
-  }
-
-  late final _strncpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strncpy_s>>('strncpy_s');
-  late final _dart_strncpy_s _strncpy_s =
-      _strncpy_s_ptr.asFunction<_dart_strncpy_s>();
-
-  ffi.Pointer<ffi.Int8> strtok_s(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Int8> _Delimiter,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
-  ) {
-    return _strtok_s(
-      _String,
-      _Delimiter,
-      _Context,
-    );
-  }
-
-  late final _strtok_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strtok_s>>('strtok_s');
-  late final _dart_strtok_s _strtok_s =
-      _strtok_s_ptr.asFunction<_dart_strtok_s>();
-
-  ffi.Pointer<ffi.Void> _memccpy(
-    ffi.Pointer<ffi.Void> _Dst,
-    ffi.Pointer<ffi.Void> _Src,
-    int _Val,
-    int _MaxCount,
-  ) {
-    return __memccpy(
-      _Dst,
-      _Src,
-      _Val,
-      _MaxCount,
-    );
-  }
-
-  late final __memccpy_ptr =
-      _lookup<ffi.NativeFunction<_c__memccpy>>('_memccpy');
-  late final _dart__memccpy __memccpy =
-      __memccpy_ptr.asFunction<_dart__memccpy>();
-
   ffi.Pointer<ffi.Int8> strcat(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
   ) {
     return _strcat(
-      _Destination,
-      _Source,
+      __s1,
+      __s2,
     );
   }
 
   late final _strcat_ptr = _lookup<ffi.NativeFunction<_c_strcat>>('strcat');
   late final _dart_strcat _strcat = _strcat_ptr.asFunction<_dart_strcat>();
 
+  ffi.Pointer<ffi.Int8> strchr(
+    ffi.Pointer<ffi.Int8> __s,
+    int __c,
+  ) {
+    return _strchr(
+      __s,
+      __c,
+    );
+  }
+
+  late final _strchr_ptr = _lookup<ffi.NativeFunction<_c_strchr>>('strchr');
+  late final _dart_strchr _strchr = _strchr_ptr.asFunction<_dart_strchr>();
+
   int strcmp(
-    ffi.Pointer<ffi.Int8> _Str1,
-    ffi.Pointer<ffi.Int8> _Str2,
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
   ) {
     return _strcmp(
-      _Str1,
-      _Str2,
+      __s1,
+      __s2,
     );
   }
 
   late final _strcmp_ptr = _lookup<ffi.NativeFunction<_c_strcmp>>('strcmp');
   late final _dart_strcmp _strcmp = _strcmp_ptr.asFunction<_dart_strcmp>();
 
-  int _strcmpi(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-  ) {
-    return __strcmpi(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final __strcmpi_ptr =
-      _lookup<ffi.NativeFunction<_c__strcmpi>>('_strcmpi');
-  late final _dart__strcmpi __strcmpi =
-      __strcmpi_ptr.asFunction<_dart__strcmpi>();
-
   int strcoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
   ) {
     return _strcoll(
-      _String1,
-      _String2,
+      __s1,
+      __s2,
     );
   }
 
   late final _strcoll_ptr = _lookup<ffi.NativeFunction<_c_strcoll>>('strcoll');
   late final _dart_strcoll _strcoll = _strcoll_ptr.asFunction<_dart_strcoll>();
 
-  int _strcoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strcoll_l(
-      _String1,
-      _String2,
-      _Locale,
-    );
-  }
-
-  late final __strcoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strcoll_l>>('_strcoll_l');
-  late final _dart__strcoll_l __strcoll_l =
-      __strcoll_l_ptr.asFunction<_dart__strcoll_l>();
-
   ffi.Pointer<ffi.Int8> strcpy(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
   ) {
     return _strcpy(
-      _Destination,
-      _Source,
+      __dst,
+      __src,
     );
   }
 
@@ -1493,214 +162,51 @@ class LabSoundBind {
   late final _dart_strcpy _strcpy = _strcpy_ptr.asFunction<_dart_strcpy>();
 
   int strcspn(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _Control,
+    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> __charset,
   ) {
     return _strcspn(
-      _Str,
-      _Control,
+      __s,
+      __charset,
     );
   }
 
   late final _strcspn_ptr = _lookup<ffi.NativeFunction<_c_strcspn>>('strcspn');
   late final _dart_strcspn _strcspn = _strcspn_ptr.asFunction<_dart_strcspn>();
 
-  ffi.Pointer<ffi.Int8> _strdup(
-    ffi.Pointer<ffi.Int8> _Source,
-  ) {
-    return __strdup(
-      _Source,
-    );
-  }
-
-  late final __strdup_ptr = _lookup<ffi.NativeFunction<_c__strdup>>('_strdup');
-  late final _dart__strdup __strdup = __strdup_ptr.asFunction<_dart__strdup>();
-
-  ffi.Pointer<ffi.Int8> _strerror(
-    ffi.Pointer<ffi.Int8> _ErrorMessage,
-  ) {
-    return __strerror(
-      _ErrorMessage,
-    );
-  }
-
-  late final __strerror_ptr =
-      _lookup<ffi.NativeFunction<_c__strerror>>('_strerror');
-  late final _dart__strerror __strerror =
-      __strerror_ptr.asFunction<_dart__strerror>();
-
-  int _strerror_s(
-    ffi.Pointer<ffi.Int8> _Buffer,
-    int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _ErrorMessage,
-  ) {
-    return __strerror_s(
-      _Buffer,
-      _SizeInBytes,
-      _ErrorMessage,
-    );
-  }
-
-  late final __strerror_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strerror_s>>('_strerror_s');
-  late final _dart__strerror_s __strerror_s =
-      __strerror_s_ptr.asFunction<_dart__strerror_s>();
-
   ffi.Pointer<ffi.Int8> strerror(
-    int _ErrorMessage,
+    int __errnum,
   ) {
-    return _strerror_1(
-      _ErrorMessage,
+    return _strerror(
+      __errnum,
     );
   }
 
   late final _strerror_ptr =
       _lookup<ffi.NativeFunction<_c_strerror>>('strerror');
-  late final _dart_strerror _strerror_1 =
+  late final _dart_strerror _strerror =
       _strerror_ptr.asFunction<_dart_strerror>();
 
-  int _stricmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-  ) {
-    return __stricmp(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final __stricmp_ptr =
-      _lookup<ffi.NativeFunction<_c__stricmp>>('_stricmp');
-  late final _dart__stricmp __stricmp =
-      __stricmp_ptr.asFunction<_dart__stricmp>();
-
-  int _stricoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-  ) {
-    return __stricoll(
-      _String1,
-      _String2,
-    );
-  }
-
-  late final __stricoll_ptr =
-      _lookup<ffi.NativeFunction<_c__stricoll>>('_stricoll');
-  late final _dart__stricoll __stricoll =
-      __stricoll_ptr.asFunction<_dart__stricoll>();
-
-  int _stricoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __stricoll_l(
-      _String1,
-      _String2,
-      _Locale,
-    );
-  }
-
-  late final __stricoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__stricoll_l>>('_stricoll_l');
-  late final _dart__stricoll_l __stricoll_l =
-      __stricoll_l_ptr.asFunction<_dart__stricoll_l>();
-
-  int _stricmp_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __stricmp_l(
-      _String1,
-      _String2,
-      _Locale,
-    );
-  }
-
-  late final __stricmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__stricmp_l>>('_stricmp_l');
-  late final _dart__stricmp_l __stricmp_l =
-      __stricmp_l_ptr.asFunction<_dart__stricmp_l>();
-
   int strlen(
-    ffi.Pointer<ffi.Int8> _Str,
+    ffi.Pointer<ffi.Int8> __s,
   ) {
     return _strlen(
-      _Str,
+      __s,
     );
   }
 
   late final _strlen_ptr = _lookup<ffi.NativeFunction<_c_strlen>>('strlen');
   late final _dart_strlen _strlen = _strlen_ptr.asFunction<_dart_strlen>();
 
-  int _strlwr_s(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Size,
-  ) {
-    return __strlwr_s(
-      _String,
-      _Size,
-    );
-  }
-
-  late final __strlwr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strlwr_s>>('_strlwr_s');
-  late final _dart__strlwr_s __strlwr_s =
-      __strlwr_s_ptr.asFunction<_dart__strlwr_s>();
-
-  ffi.Pointer<ffi.Int8> _strlwr(
-    ffi.Pointer<ffi.Int8> _String,
-  ) {
-    return __strlwr(
-      _String,
-    );
-  }
-
-  late final __strlwr_ptr = _lookup<ffi.NativeFunction<_c__strlwr>>('_strlwr');
-  late final _dart__strlwr __strlwr = __strlwr_ptr.asFunction<_dart__strlwr>();
-
-  int _strlwr_s_l(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strlwr_s_l(
-      _String,
-      _Size,
-      _Locale,
-    );
-  }
-
-  late final __strlwr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strlwr_s_l>>('_strlwr_s_l');
-  late final _dart__strlwr_s_l __strlwr_s_l =
-      __strlwr_s_l_ptr.asFunction<_dart__strlwr_s_l>();
-
-  ffi.Pointer<ffi.Int8> _strlwr_l(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strlwr_l(
-      _String,
-      _Locale,
-    );
-  }
-
-  late final __strlwr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strlwr_l>>('_strlwr_l');
-  late final _dart__strlwr_l __strlwr_l =
-      __strlwr_l_ptr.asFunction<_dart__strlwr_l>();
-
   ffi.Pointer<ffi.Int8> strncat(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
-    int _Count,
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+    int __n,
   ) {
     return _strncat(
-      _Destination,
-      _Source,
-      _Count,
+      __s1,
+      __s2,
+      __n,
     );
   }
 
@@ -1708,496 +214,632 @@ class LabSoundBind {
   late final _dart_strncat _strncat = _strncat_ptr.asFunction<_dart_strncat>();
 
   int strncmp(
-    ffi.Pointer<ffi.Int8> _Str1,
-    ffi.Pointer<ffi.Int8> _Str2,
-    int _MaxCount,
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+    int __n,
   ) {
     return _strncmp(
-      _Str1,
-      _Str2,
-      _MaxCount,
+      __s1,
+      __s2,
+      __n,
     );
   }
 
   late final _strncmp_ptr = _lookup<ffi.NativeFunction<_c_strncmp>>('strncmp');
   late final _dart_strncmp _strncmp = _strncmp_ptr.asFunction<_dart_strncmp>();
 
-  int _strnicmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
-  ) {
-    return __strnicmp(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final __strnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicmp>>('_strnicmp');
-  late final _dart__strnicmp __strnicmp =
-      __strnicmp_ptr.asFunction<_dart__strnicmp>();
-
-  int _strnicmp_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strnicmp_l(
-      _String1,
-      _String2,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __strnicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicmp_l>>('_strnicmp_l');
-  late final _dart__strnicmp_l __strnicmp_l =
-      __strnicmp_l_ptr.asFunction<_dart__strnicmp_l>();
-
-  int _strnicoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
-  ) {
-    return __strnicoll(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final __strnicoll_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicoll>>('_strnicoll');
-  late final _dart__strnicoll __strnicoll =
-      __strnicoll_ptr.asFunction<_dart__strnicoll>();
-
-  int _strnicoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strnicoll_l(
-      _String1,
-      _String2,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __strnicoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicoll_l>>('_strnicoll_l');
-  late final _dart__strnicoll_l __strnicoll_l =
-      __strnicoll_l_ptr.asFunction<_dart__strnicoll_l>();
-
-  int _strncoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
-  ) {
-    return __strncoll(
-      _String1,
-      _String2,
-      _MaxCount,
-    );
-  }
-
-  late final __strncoll_ptr =
-      _lookup<ffi.NativeFunction<_c__strncoll>>('_strncoll');
-  late final _dart__strncoll __strncoll =
-      __strncoll_ptr.asFunction<_dart__strncoll>();
-
-  int _strncoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strncoll_l(
-      _String1,
-      _String2,
-      _MaxCount,
-      _Locale,
-    );
-  }
-
-  late final __strncoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strncoll_l>>('_strncoll_l');
-  late final _dart__strncoll_l __strncoll_l =
-      __strncoll_l_ptr.asFunction<_dart__strncoll_l>();
-
-  int __strncnt(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Count,
-  ) {
-    return ___strncnt(
-      _String,
-      _Count,
-    );
-  }
-
-  late final ___strncnt_ptr =
-      _lookup<ffi.NativeFunction<_c___strncnt>>('__strncnt');
-  late final _dart___strncnt ___strncnt =
-      ___strncnt_ptr.asFunction<_dart___strncnt>();
-
   ffi.Pointer<ffi.Int8> strncpy(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
-    int _Count,
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
+    int __n,
   ) {
     return _strncpy(
-      _Destination,
-      _Source,
-      _Count,
+      __dst,
+      __src,
+      __n,
     );
   }
 
   late final _strncpy_ptr = _lookup<ffi.NativeFunction<_c_strncpy>>('strncpy');
   late final _dart_strncpy _strncpy = _strncpy_ptr.asFunction<_dart_strncpy>();
 
-  int strnlen(
-    ffi.Pointer<ffi.Int8> _String,
-    int _MaxCount,
-  ) {
-    return _strnlen(
-      _String,
-      _MaxCount,
-    );
-  }
-
-  late final _strnlen_ptr = _lookup<ffi.NativeFunction<_c_strnlen>>('strnlen');
-  late final _dart_strnlen _strnlen = _strnlen_ptr.asFunction<_dart_strnlen>();
-
-  int _strnset_s(
-    ffi.Pointer<ffi.Int8> _String,
-    int _SizeInBytes,
-    int _Value,
-    int _MaxCount,
-  ) {
-    return __strnset_s(
-      _String,
-      _SizeInBytes,
-      _Value,
-      _MaxCount,
-    );
-  }
-
-  late final __strnset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strnset_s>>('_strnset_s');
-  late final _dart__strnset_s __strnset_s =
-      __strnset_s_ptr.asFunction<_dart__strnset_s>();
-
-  ffi.Pointer<ffi.Int8> _strnset(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _Value,
-    int _Count,
-  ) {
-    return __strnset(
-      _Destination,
-      _Value,
-      _Count,
-    );
-  }
-
-  late final __strnset_ptr =
-      _lookup<ffi.NativeFunction<_c__strnset>>('_strnset');
-  late final _dart__strnset __strnset =
-      __strnset_ptr.asFunction<_dart__strnset>();
-
   ffi.Pointer<ffi.Int8> strpbrk(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _Control,
+    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> __charset,
   ) {
     return _strpbrk(
-      _Str,
-      _Control,
+      __s,
+      __charset,
     );
   }
 
   late final _strpbrk_ptr = _lookup<ffi.NativeFunction<_c_strpbrk>>('strpbrk');
   late final _dart_strpbrk _strpbrk = _strpbrk_ptr.asFunction<_dart_strpbrk>();
 
-  ffi.Pointer<ffi.Int8> _strrev(
-    ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> strrchr(
+    ffi.Pointer<ffi.Int8> __s,
+    int __c,
   ) {
-    return __strrev(
-      _Str,
+    return _strrchr(
+      __s,
+      __c,
     );
   }
 
-  late final __strrev_ptr = _lookup<ffi.NativeFunction<_c__strrev>>('_strrev');
-  late final _dart__strrev __strrev = __strrev_ptr.asFunction<_dart__strrev>();
-
-  int _strset_s(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _DestinationSize,
-    int _Value,
-  ) {
-    return __strset_s(
-      _Destination,
-      _DestinationSize,
-      _Value,
-    );
-  }
-
-  late final __strset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strset_s>>('_strset_s');
-  late final _dart__strset_s __strset_s =
-      __strset_s_ptr.asFunction<_dart__strset_s>();
-
-  ffi.Pointer<ffi.Int8> _strset(
-    ffi.Pointer<ffi.Int8> _Destination,
-    int _Value,
-  ) {
-    return __strset(
-      _Destination,
-      _Value,
-    );
-  }
-
-  late final __strset_ptr = _lookup<ffi.NativeFunction<_c__strset>>('_strset');
-  late final _dart__strset __strset = __strset_ptr.asFunction<_dart__strset>();
+  late final _strrchr_ptr = _lookup<ffi.NativeFunction<_c_strrchr>>('strrchr');
+  late final _dart_strrchr _strrchr = _strrchr_ptr.asFunction<_dart_strrchr>();
 
   int strspn(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _Control,
+    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> __charset,
   ) {
     return _strspn(
-      _Str,
-      _Control,
+      __s,
+      __charset,
     );
   }
 
   late final _strspn_ptr = _lookup<ffi.NativeFunction<_c_strspn>>('strspn');
   late final _dart_strspn _strspn = _strspn_ptr.asFunction<_dart_strspn>();
 
+  ffi.Pointer<ffi.Int8> strstr(
+    ffi.Pointer<ffi.Int8> __big,
+    ffi.Pointer<ffi.Int8> __little,
+  ) {
+    return _strstr(
+      __big,
+      __little,
+    );
+  }
+
+  late final _strstr_ptr = _lookup<ffi.NativeFunction<_c_strstr>>('strstr');
+  late final _dart_strstr _strstr = _strstr_ptr.asFunction<_dart_strstr>();
+
   ffi.Pointer<ffi.Int8> strtok(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Int8> _Delimiter,
+    ffi.Pointer<ffi.Int8> __str,
+    ffi.Pointer<ffi.Int8> __sep,
   ) {
     return _strtok(
-      _String,
-      _Delimiter,
+      __str,
+      __sep,
     );
   }
 
   late final _strtok_ptr = _lookup<ffi.NativeFunction<_c_strtok>>('strtok');
   late final _dart_strtok _strtok = _strtok_ptr.asFunction<_dart_strtok>();
 
-  int _strupr_s(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Size,
-  ) {
-    return __strupr_s(
-      _String,
-      _Size,
-    );
-  }
-
-  late final __strupr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strupr_s>>('_strupr_s');
-  late final _dart__strupr_s __strupr_s =
-      __strupr_s_ptr.asFunction<_dart__strupr_s>();
-
-  ffi.Pointer<ffi.Int8> _strupr(
-    ffi.Pointer<ffi.Int8> _String,
-  ) {
-    return __strupr(
-      _String,
-    );
-  }
-
-  late final __strupr_ptr = _lookup<ffi.NativeFunction<_c__strupr>>('_strupr');
-  late final _dart__strupr __strupr = __strupr_ptr.asFunction<_dart__strupr>();
-
-  int _strupr_s_l(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strupr_s_l(
-      _String,
-      _Size,
-      _Locale,
-    );
-  }
-
-  late final __strupr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strupr_s_l>>('_strupr_s_l');
-  late final _dart__strupr_s_l __strupr_s_l =
-      __strupr_s_l_ptr.asFunction<_dart__strupr_s_l>();
-
-  ffi.Pointer<ffi.Int8> _strupr_l(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
-  ) {
-    return __strupr_l(
-      _String,
-      _Locale,
-    );
-  }
-
-  late final __strupr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strupr_l>>('_strupr_l');
-  late final _dart__strupr_l __strupr_l =
-      __strupr_l_ptr.asFunction<_dart__strupr_l>();
-
   int strxfrm(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
-    int _MaxCount,
+    ffi.Pointer<ffi.Int8> __s1,
+    ffi.Pointer<ffi.Int8> __s2,
+    int __n,
   ) {
     return _strxfrm(
-      _Destination,
-      _Source,
-      _MaxCount,
+      __s1,
+      __s2,
+      __n,
     );
   }
 
   late final _strxfrm_ptr = _lookup<ffi.NativeFunction<_c_strxfrm>>('strxfrm');
   late final _dart_strxfrm _strxfrm = _strxfrm_ptr.asFunction<_dart_strxfrm>();
 
-  int _strxfrm_l(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
-    int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.Int8> strtok_r(
+    ffi.Pointer<ffi.Int8> __str,
+    ffi.Pointer<ffi.Int8> __sep,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
   ) {
-    return __strxfrm_l(
-      _Destination,
-      _Source,
-      _MaxCount,
-      _Locale,
+    return _strtok_r(
+      __str,
+      __sep,
+      __lasts,
     );
   }
 
-  late final __strxfrm_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strxfrm_l>>('_strxfrm_l');
-  late final _dart__strxfrm_l __strxfrm_l =
-      __strxfrm_l_ptr.asFunction<_dart__strxfrm_l>();
+  late final _strtok_r_ptr =
+      _lookup<ffi.NativeFunction<_c_strtok_r>>('strtok_r');
+  late final _dart_strtok_r _strtok_r =
+      _strtok_r_ptr.asFunction<_dart_strtok_r>();
+
+  int strerror_r(
+    int __errnum,
+    ffi.Pointer<ffi.Int8> __strerrbuf,
+    int __buflen,
+  ) {
+    return _strerror_r(
+      __errnum,
+      __strerrbuf,
+      __buflen,
+    );
+  }
+
+  late final _strerror_r_ptr =
+      _lookup<ffi.NativeFunction<_c_strerror_r>>('strerror_r');
+  late final _dart_strerror_r _strerror_r =
+      _strerror_r_ptr.asFunction<_dart_strerror_r>();
 
   ffi.Pointer<ffi.Int8> strdup(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Int8> __s1,
   ) {
-    return _strdup_1(
-      _String,
+    return _strdup(
+      __s1,
     );
   }
 
   late final _strdup_ptr = _lookup<ffi.NativeFunction<_c_strdup>>('strdup');
-  late final _dart_strdup _strdup_1 = _strdup_ptr.asFunction<_dart_strdup>();
+  late final _dart_strdup _strdup = _strdup_ptr.asFunction<_dart_strdup>();
 
-  int strcmpi(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<ffi.Void> memccpy(
+    ffi.Pointer<ffi.Void> __dst,
+    ffi.Pointer<ffi.Void> __src,
+    int __c,
+    int __n,
   ) {
-    return _strcmpi_1(
-      _String1,
-      _String2,
+    return _memccpy(
+      __dst,
+      __src,
+      __c,
+      __n,
     );
   }
 
-  late final _strcmpi_ptr = _lookup<ffi.NativeFunction<_c_strcmpi>>('strcmpi');
-  late final _dart_strcmpi _strcmpi_1 =
-      _strcmpi_ptr.asFunction<_dart_strcmpi>();
+  late final _memccpy_ptr = _lookup<ffi.NativeFunction<_c_memccpy>>('memccpy');
+  late final _dart_memccpy _memccpy = _memccpy_ptr.asFunction<_dart_memccpy>();
 
-  int stricmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<ffi.Int8> stpcpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
   ) {
-    return _stricmp_1(
-      _String1,
-      _String2,
+    return _stpcpy(
+      __dst,
+      __src,
     );
   }
 
-  late final _stricmp_ptr = _lookup<ffi.NativeFunction<_c_stricmp>>('stricmp');
-  late final _dart_stricmp _stricmp_1 =
-      _stricmp_ptr.asFunction<_dart_stricmp>();
+  late final _stpcpy_ptr = _lookup<ffi.NativeFunction<_c_stpcpy>>('stpcpy');
+  late final _dart_stpcpy _stpcpy = _stpcpy_ptr.asFunction<_dart_stpcpy>();
 
-  ffi.Pointer<ffi.Int8> strlwr(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> stpncpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __src,
+    int __n,
   ) {
-    return _strlwr_1(
-      _String,
+    return _stpncpy(
+      __dst,
+      __src,
+      __n,
     );
   }
 
-  late final _strlwr_ptr = _lookup<ffi.NativeFunction<_c_strlwr>>('strlwr');
-  late final _dart_strlwr _strlwr_1 = _strlwr_ptr.asFunction<_dart_strlwr>();
+  late final _stpncpy_ptr = _lookup<ffi.NativeFunction<_c_stpncpy>>('stpncpy');
+  late final _dart_stpncpy _stpncpy = _stpncpy_ptr.asFunction<_dart_stpncpy>();
 
-  int strnicmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    int _MaxCount,
+  ffi.Pointer<ffi.Int8> strndup(
+    ffi.Pointer<ffi.Int8> __s1,
+    int __n,
   ) {
-    return _strnicmp_1(
-      _String1,
-      _String2,
-      _MaxCount,
+    return _strndup(
+      __s1,
+      __n,
     );
   }
 
-  late final _strnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c_strnicmp>>('strnicmp');
-  late final _dart_strnicmp _strnicmp_1 =
-      _strnicmp_ptr.asFunction<_dart_strnicmp>();
+  late final _strndup_ptr = _lookup<ffi.NativeFunction<_c_strndup>>('strndup');
+  late final _dart_strndup _strndup = _strndup_ptr.asFunction<_dart_strndup>();
 
-  ffi.Pointer<ffi.Int8> strnset(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Value,
-    int _MaxCount,
+  int strnlen(
+    ffi.Pointer<ffi.Int8> __s1,
+    int __n,
   ) {
-    return _strnset_1(
-      _String,
-      _Value,
-      _MaxCount,
+    return _strnlen(
+      __s1,
+      __n,
     );
   }
 
-  late final _strnset_ptr = _lookup<ffi.NativeFunction<_c_strnset>>('strnset');
-  late final _dart_strnset _strnset_1 =
-      _strnset_ptr.asFunction<_dart_strnset>();
+  late final _strnlen_ptr = _lookup<ffi.NativeFunction<_c_strnlen>>('strnlen');
+  late final _dart_strnlen _strnlen = _strnlen_ptr.asFunction<_dart_strnlen>();
 
-  ffi.Pointer<ffi.Int8> strrev(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> strsignal(
+    int __sig,
   ) {
-    return _strrev_1(
-      _String,
+    return _strsignal(
+      __sig,
     );
   }
 
-  late final _strrev_ptr = _lookup<ffi.NativeFunction<_c_strrev>>('strrev');
-  late final _dart_strrev _strrev_1 = _strrev_ptr.asFunction<_dart_strrev>();
+  late final _strsignal_ptr =
+      _lookup<ffi.NativeFunction<_c_strsignal>>('strsignal');
+  late final _dart_strsignal _strsignal =
+      _strsignal_ptr.asFunction<_dart_strsignal>();
 
-  ffi.Pointer<ffi.Int8> strset(
-    ffi.Pointer<ffi.Int8> _String,
-    int _Value,
+  int memset_s(
+    ffi.Pointer<ffi.Void> __s,
+    int __smax,
+    int __c,
+    int __n,
   ) {
-    return _strset_1(
-      _String,
-      _Value,
+    return _memset_s(
+      __s,
+      __smax,
+      __c,
+      __n,
     );
   }
 
-  late final _strset_ptr = _lookup<ffi.NativeFunction<_c_strset>>('strset');
-  late final _dart_strset _strset_1 = _strset_ptr.asFunction<_dart_strset>();
+  late final _memset_s_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_s>>('memset_s');
+  late final _dart_memset_s _memset_s =
+      _memset_s_ptr.asFunction<_dart_memset_s>();
 
-  ffi.Pointer<ffi.Int8> strupr(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Void> memmem(
+    ffi.Pointer<ffi.Void> __big,
+    int __big_len,
+    ffi.Pointer<ffi.Void> __little,
+    int __little_len,
   ) {
-    return _strupr_1(
-      _String,
+    return _memmem(
+      __big,
+      __big_len,
+      __little,
+      __little_len,
     );
   }
 
-  late final _strupr_ptr = _lookup<ffi.NativeFunction<_c_strupr>>('strupr');
-  late final _dart_strupr _strupr_1 = _strupr_ptr.asFunction<_dart_strupr>();
+  late final _memmem_ptr = _lookup<ffi.NativeFunction<_c_memmem>>('memmem');
+  late final _dart_memmem _memmem = _memmem_ptr.asFunction<_dart_memmem>();
+
+  void memset_pattern4(
+    ffi.Pointer<ffi.Void> __b,
+    ffi.Pointer<ffi.Void> __pattern4,
+    int __len,
+  ) {
+    return _memset_pattern4(
+      __b,
+      __pattern4,
+      __len,
+    );
+  }
+
+  late final _memset_pattern4_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_pattern4>>('memset_pattern4');
+  late final _dart_memset_pattern4 _memset_pattern4 =
+      _memset_pattern4_ptr.asFunction<_dart_memset_pattern4>();
+
+  void memset_pattern8(
+    ffi.Pointer<ffi.Void> __b,
+    ffi.Pointer<ffi.Void> __pattern8,
+    int __len,
+  ) {
+    return _memset_pattern8(
+      __b,
+      __pattern8,
+      __len,
+    );
+  }
+
+  late final _memset_pattern8_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_pattern8>>('memset_pattern8');
+  late final _dart_memset_pattern8 _memset_pattern8 =
+      _memset_pattern8_ptr.asFunction<_dart_memset_pattern8>();
+
+  void memset_pattern16(
+    ffi.Pointer<ffi.Void> __b,
+    ffi.Pointer<ffi.Void> __pattern16,
+    int __len,
+  ) {
+    return _memset_pattern16(
+      __b,
+      __pattern16,
+      __len,
+    );
+  }
+
+  late final _memset_pattern16_ptr =
+      _lookup<ffi.NativeFunction<_c_memset_pattern16>>('memset_pattern16');
+  late final _dart_memset_pattern16 _memset_pattern16 =
+      _memset_pattern16_ptr.asFunction<_dart_memset_pattern16>();
+
+  ffi.Pointer<ffi.Int8> strcasestr(
+    ffi.Pointer<ffi.Int8> __big,
+    ffi.Pointer<ffi.Int8> __little,
+  ) {
+    return _strcasestr(
+      __big,
+      __little,
+    );
+  }
+
+  late final _strcasestr_ptr =
+      _lookup<ffi.NativeFunction<_c_strcasestr>>('strcasestr');
+  late final _dart_strcasestr _strcasestr =
+      _strcasestr_ptr.asFunction<_dart_strcasestr>();
+
+  ffi.Pointer<ffi.Int8> strnstr(
+    ffi.Pointer<ffi.Int8> __big,
+    ffi.Pointer<ffi.Int8> __little,
+    int __len,
+  ) {
+    return _strnstr(
+      __big,
+      __little,
+      __len,
+    );
+  }
+
+  late final _strnstr_ptr = _lookup<ffi.NativeFunction<_c_strnstr>>('strnstr');
+  late final _dart_strnstr _strnstr = _strnstr_ptr.asFunction<_dart_strnstr>();
+
+  int strlcat(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __source,
+    int __size,
+  ) {
+    return _strlcat(
+      __dst,
+      __source,
+      __size,
+    );
+  }
+
+  late final _strlcat_ptr = _lookup<ffi.NativeFunction<_c_strlcat>>('strlcat');
+  late final _dart_strlcat _strlcat = _strlcat_ptr.asFunction<_dart_strlcat>();
+
+  int strlcpy(
+    ffi.Pointer<ffi.Int8> __dst,
+    ffi.Pointer<ffi.Int8> __source,
+    int __size,
+  ) {
+    return _strlcpy(
+      __dst,
+      __source,
+      __size,
+    );
+  }
+
+  late final _strlcpy_ptr = _lookup<ffi.NativeFunction<_c_strlcpy>>('strlcpy');
+  late final _dart_strlcpy _strlcpy = _strlcpy_ptr.asFunction<_dart_strlcpy>();
+
+  void strmode(
+    int __mode,
+    ffi.Pointer<ffi.Int8> __bp,
+  ) {
+    return _strmode(
+      __mode,
+      __bp,
+    );
+  }
+
+  late final _strmode_ptr = _lookup<ffi.NativeFunction<_c_strmode>>('strmode');
+  late final _dart_strmode _strmode = _strmode_ptr.asFunction<_dart_strmode>();
+
+  ffi.Pointer<ffi.Int8> strsep(
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
+    ffi.Pointer<ffi.Int8> __delim,
+  ) {
+    return _strsep(
+      __stringp,
+      __delim,
+    );
+  }
+
+  late final _strsep_ptr = _lookup<ffi.NativeFunction<_c_strsep>>('strsep');
+  late final _dart_strsep _strsep = _strsep_ptr.asFunction<_dart_strsep>();
+
+  void swab(
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _swab(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _swab_ptr = _lookup<ffi.NativeFunction<_c_swab>>('swab');
+  late final _dart_swab _swab = _swab_ptr.asFunction<_dart_swab>();
+
+  int timingsafe_bcmp(
+    ffi.Pointer<ffi.Void> __b1,
+    ffi.Pointer<ffi.Void> __b2,
+    int __len,
+  ) {
+    return _timingsafe_bcmp(
+      __b1,
+      __b2,
+      __len,
+    );
+  }
+
+  late final _timingsafe_bcmp_ptr =
+      _lookup<ffi.NativeFunction<_c_timingsafe_bcmp>>('timingsafe_bcmp');
+  late final _dart_timingsafe_bcmp _timingsafe_bcmp =
+      _timingsafe_bcmp_ptr.asFunction<_dart_timingsafe_bcmp>();
+
+  int strsignal_r(
+    int __sig,
+    ffi.Pointer<ffi.Int8> __strsignalbuf,
+    int __buflen,
+  ) {
+    return _strsignal_r(
+      __sig,
+      __strsignalbuf,
+      __buflen,
+    );
+  }
+
+  late final _strsignal_r_ptr =
+      _lookup<ffi.NativeFunction<_c_strsignal_r>>('strsignal_r');
+  late final _dart_strsignal_r _strsignal_r =
+      _strsignal_r_ptr.asFunction<_dart_strsignal_r>();
+
+  int bcmp(
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _bcmp(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _bcmp_ptr = _lookup<ffi.NativeFunction<_c_bcmp>>('bcmp');
+  late final _dart_bcmp _bcmp = _bcmp_ptr.asFunction<_dart_bcmp>();
+
+  void bcopy(
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _bcopy(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _bcopy_ptr = _lookup<ffi.NativeFunction<_c_bcopy>>('bcopy');
+  late final _dart_bcopy _bcopy = _bcopy_ptr.asFunction<_dart_bcopy>();
+
+  void bzero(
+    ffi.Pointer<ffi.Void> arg0,
+    int arg1,
+  ) {
+    return _bzero(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _bzero_ptr = _lookup<ffi.NativeFunction<_c_bzero>>('bzero');
+  late final _dart_bzero _bzero = _bzero_ptr.asFunction<_dart_bzero>();
+
+  ffi.Pointer<ffi.Int8> index(
+    ffi.Pointer<ffi.Int8> arg0,
+    int arg1,
+  ) {
+    return _index(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _index_ptr = _lookup<ffi.NativeFunction<_c_index>>('index');
+  late final _dart_index _index = _index_ptr.asFunction<_dart_index>();
+
+  ffi.Pointer<ffi.Int8> rindex(
+    ffi.Pointer<ffi.Int8> arg0,
+    int arg1,
+  ) {
+    return _rindex(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _rindex_ptr = _lookup<ffi.NativeFunction<_c_rindex>>('rindex');
+  late final _dart_rindex _rindex = _rindex_ptr.asFunction<_dart_rindex>();
+
+  int ffs(
+    int arg0,
+  ) {
+    return _ffs(
+      arg0,
+    );
+  }
+
+  late final _ffs_ptr = _lookup<ffi.NativeFunction<_c_ffs>>('ffs');
+  late final _dart_ffs _ffs = _ffs_ptr.asFunction<_dart_ffs>();
+
+  int strcasecmp(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<ffi.Int8> arg1,
+  ) {
+    return _strcasecmp(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _strcasecmp_ptr =
+      _lookup<ffi.NativeFunction<_c_strcasecmp>>('strcasecmp');
+  late final _dart_strcasecmp _strcasecmp =
+      _strcasecmp_ptr.asFunction<_dart_strcasecmp>();
+
+  int strncasecmp(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<ffi.Int8> arg1,
+    int arg2,
+  ) {
+    return _strncasecmp(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _strncasecmp_ptr =
+      _lookup<ffi.NativeFunction<_c_strncasecmp>>('strncasecmp');
+  late final _dart_strncasecmp _strncasecmp =
+      _strncasecmp_ptr.asFunction<_dart_strncasecmp>();
+
+  int ffsl(
+    int arg0,
+  ) {
+    return _ffsl(
+      arg0,
+    );
+  }
+
+  late final _ffsl_ptr = _lookup<ffi.NativeFunction<_c_ffsl>>('ffsl');
+  late final _dart_ffsl _ffsl = _ffsl_ptr.asFunction<_dart_ffsl>();
+
+  int ffsll(
+    int arg0,
+  ) {
+    return _ffsll(
+      arg0,
+    );
+  }
+
+  late final _ffsll_ptr = _lookup<ffi.NativeFunction<_c_ffsll>>('ffsll');
+  late final _dart_ffsll _ffsll = _ffsll_ptr.asFunction<_dart_ffsll>();
+
+  int fls(
+    int arg0,
+  ) {
+    return _fls(
+      arg0,
+    );
+  }
+
+  late final _fls_ptr = _lookup<ffi.NativeFunction<_c_fls>>('fls');
+  late final _dart_fls _fls = _fls_ptr.asFunction<_dart_fls>();
+
+  int flsl(
+    int arg0,
+  ) {
+    return _flsl(
+      arg0,
+    );
+  }
+
+  late final _flsl_ptr = _lookup<ffi.NativeFunction<_c_flsl>>('flsl');
+  late final _dart_flsl _flsl = _flsl_ptr.asFunction<_dart_flsl>();
+
+  int flsll(
+    int arg0,
+  ) {
+    return _flsll(
+      arg0,
+    );
+  }
+
+  late final _flsll_ptr = _lookup<ffi.NativeFunction<_c_flsll>>('flsll');
+  late final _dart_flsll _flsll = _flsll_ptr.asFunction<_dart_flsll>();
 
   AudioDeviceInfoList labSound_MakeAudioDeviceList() {
     return _labSound_MakeAudioDeviceList();
@@ -7442,37 +6084,147 @@ class LabSoundBind {
       _lookup<ffi.NativeFunction<_c_ClipNode_bVal>>('ClipNode_bVal');
   late final _dart_ClipNode_bVal _ClipNode_bVal =
       _ClipNode_bVal_ptr.asFunction<_dart_ClipNode_bVal>();
+
+  /// ///////////////////
+  /// / FunctionNode ////
+  /// ///////////////////
+  void setFunctionNodeChannelFn(
+    ffi.Pointer<ffi.NativeFunction<_typedefC_2>> fn,
+  ) {
+    return _setFunctionNodeChannelFn(
+      fn,
+    );
+  }
+
+  late final _setFunctionNodeChannelFn_ptr =
+      _lookup<ffi.NativeFunction<_c_setFunctionNodeChannelFn>>(
+          'setFunctionNodeChannelFn');
+  late final _dart_setFunctionNodeChannelFn _setFunctionNodeChannelFn =
+      _setFunctionNodeChannelFn_ptr
+          .asFunction<_dart_setFunctionNodeChannelFn>();
+
+  int createFunctionNode(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _createFunctionNode(
+      context,
+    );
+  }
+
+  late final _createFunctionNode_ptr =
+      _lookup<ffi.NativeFunction<_c_createFunctionNode>>('createFunctionNode');
+  late final _dart_createFunctionNode _createFunctionNode =
+      _createFunctionNode_ptr.asFunction<_dart_createFunctionNode>();
+
+  double FunctionNode_now(
+    int nodeId,
+  ) {
+    return _FunctionNode_now(
+      nodeId,
+    );
+  }
+
+  late final _FunctionNode_now_ptr =
+      _lookup<ffi.NativeFunction<_c_FunctionNode_now>>('FunctionNode_now');
+  late final _dart_FunctionNode_now _FunctionNode_now =
+      _FunctionNode_now_ptr.asFunction<_dart_FunctionNode_now>();
+
+  void FunctionNode_setFunction(
+    int nodeId,
+  ) {
+    return _FunctionNode_setFunction(
+      nodeId,
+    );
+  }
+
+  late final _FunctionNode_setFunction_ptr =
+      _lookup<ffi.NativeFunction<_c_FunctionNode_setFunction>>(
+          'FunctionNode_setFunction');
+  late final _dart_FunctionNode_setFunction _FunctionNode_setFunction =
+      _FunctionNode_setFunction_ptr.asFunction<
+          _dart_FunctionNode_setFunction>();
 }
 
-class __crt_locale_data_public extends ffi.Struct {
-  external ffi.Pointer<ffi.Uint16> _locale_pctype;
+class __darwin_pthread_handler_rec extends ffi.Struct {
+  external ffi.Pointer<ffi.NativeFunction<_typedefC_1>> __routine;
 
-  @ffi.Int32()
-  external int _locale_mb_cur_max;
+  external ffi.Pointer<ffi.Void> __arg;
 
-  @ffi.Uint32()
-  external int _locale_lc_codepage;
+  external ffi.Pointer<__darwin_pthread_handler_rec> __next;
 }
 
-class __crt_locale_data extends ffi.Opaque {}
+class _opaque_pthread_attr_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
 
-class __crt_multibyte_data extends ffi.Opaque {}
-
-class __crt_locale_pointers extends ffi.Struct {
-  external ffi.Pointer<__crt_locale_data> locinfo;
-
-  external ffi.Pointer<__crt_multibyte_data> mbcinfo;
+  @ffi.Array.multi([56])
+  external ffi.Array<ffi.Int8> __opaque;
 }
 
-class _Mbstatet extends ffi.Struct {
-  @ffi.Uint64()
-  external int _Wchar;
+class _opaque_pthread_cond_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
 
-  @ffi.Uint16()
-  external int _Byte;
+  @ffi.Array.multi([40])
+  external ffi.Array<ffi.Int8> __opaque;
+}
 
-  @ffi.Uint16()
-  external int _State;
+class _opaque_pthread_condattr_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  @ffi.Array.multi([8])
+  external ffi.Array<ffi.Int8> __opaque;
+}
+
+class _opaque_pthread_mutex_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  @ffi.Array.multi([56])
+  external ffi.Array<ffi.Int8> __opaque;
+}
+
+class _opaque_pthread_mutexattr_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  @ffi.Array.multi([8])
+  external ffi.Array<ffi.Int8> __opaque;
+}
+
+class _opaque_pthread_once_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  @ffi.Array.multi([8])
+  external ffi.Array<ffi.Int8> __opaque;
+}
+
+class _opaque_pthread_rwlock_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  @ffi.Array.multi([192])
+  external ffi.Array<ffi.Int8> __opaque;
+}
+
+class _opaque_pthread_rwlockattr_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.Int8> __opaque;
+}
+
+class _opaque_pthread_t extends ffi.Struct {
+  @ffi.Int64()
+  external int __sig;
+
+  external ffi.Pointer<__darwin_pthread_handler_rec> __cleanup_stack;
+
+  @ffi.Array.multi([8176])
+  external ffi.Array<ffi.Int8> __opaque;
 }
 
 class CharArray extends ffi.Struct {
@@ -7549,39 +6301,67 @@ class AudioDeviceIndex extends ffi.Struct {
   external int valid;
 }
 
-const int _VCRT_COMPILER_PREPROCESSOR = 1;
+const int __WORDSIZE = 64;
 
-const int _SAL_VERSION = 20;
+const int __DARWIN_ONLY_64_BIT_INO_T = 0;
 
-const int __SAL_H_VERSION = 180000000;
+const int __DARWIN_ONLY_UNIX_CONFORMANCE = 1;
 
-const int _USE_DECLSPECS_FOR_SAL = 0;
+const int __DARWIN_ONLY_VERS_1050 = 0;
 
-const int _USE_ATTRIBUTES_FOR_SAL = 0;
+const int __DARWIN_UNIX03 = 1;
 
-const int _CRT_PACKING = 8;
+const int __DARWIN_64_BIT_INO_T = 1;
 
-const int _VCRUNTIME_DISABLED_WARNINGS = 4514;
+const int __DARWIN_VERS_1050 = 1;
 
-const int _HAS_EXCEPTIONS = 1;
+const int __DARWIN_NON_CANCELABLE = 0;
 
-const int _WCHAR_T_DEFINED = 1;
+const String __DARWIN_SUF_64_BIT_INO_T = '\$INODE64';
 
-const int NULL = 0;
+const String __DARWIN_SUF_1050 = '\$1050';
 
-const int _HAS_CXX17 = 0;
+const String __DARWIN_SUF_EXTSN = '\$DARWIN_EXTSN';
 
-const int _HAS_CXX20 = 0;
+const int __DARWIN_C_ANSI = 4096;
 
-const int _HAS_NODISCARD = 1;
+const int __DARWIN_C_FULL = 900000;
 
-const int INT8_MIN = -128;
+const int __DARWIN_C_LEVEL = 900000;
 
-const int INT16_MIN = -32768;
+const int __STDC_WANT_LIB_EXT1__ = 1;
 
-const int INT32_MIN = -2147483648;
+const int __DARWIN_NO_LONG_LONG = 0;
 
-const int INT64_MIN = -9223372036854775808;
+const int _DARWIN_FEATURE_64_BIT_INODE = 1;
+
+const int _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE = 1;
+
+const int _DARWIN_FEATURE_UNIX_CONFORMANCE = 3;
+
+const int __has_ptrcheck = 0;
+
+const int __DARWIN_NULL = 0;
+
+const int __PTHREAD_SIZE__ = 8176;
+
+const int __PTHREAD_ATTR_SIZE__ = 56;
+
+const int __PTHREAD_MUTEXATTR_SIZE__ = 8;
+
+const int __PTHREAD_MUTEX_SIZE__ = 56;
+
+const int __PTHREAD_CONDATTR_SIZE__ = 8;
+
+const int __PTHREAD_COND_SIZE__ = 40;
+
+const int __PTHREAD_ONCE_SIZE__ = 8;
+
+const int __PTHREAD_RWLOCK_SIZE__ = 192;
+
+const int __PTHREAD_RWLOCKATTR_SIZE__ = 16;
+
+const int USER_ADDR_NULL = 0;
 
 const int INT8_MAX = 127;
 
@@ -7590,6 +6370,14 @@ const int INT16_MAX = 32767;
 const int INT32_MAX = 2147483647;
 
 const int INT64_MAX = 9223372036854775807;
+
+const int INT8_MIN = -128;
+
+const int INT16_MIN = -32768;
+
+const int INT32_MIN = -2147483648;
+
+const int INT64_MIN = -9223372036854775808;
 
 const int UINT8_MAX = 255;
 
@@ -7625,7 +6413,7 @@ const int UINT_LEAST64_MAX = -1;
 
 const int INT_FAST8_MIN = -128;
 
-const int INT_FAST16_MIN = -2147483648;
+const int INT_FAST16_MIN = -32768;
 
 const int INT_FAST32_MIN = -2147483648;
 
@@ -7633,7 +6421,7 @@ const int INT_FAST64_MIN = -9223372036854775808;
 
 const int INT_FAST8_MAX = 127;
 
-const int INT_FAST16_MAX = 2147483647;
+const int INT_FAST16_MAX = 32767;
 
 const int INT_FAST32_MAX = 2147483647;
 
@@ -7641,23 +6429,23 @@ const int INT_FAST64_MAX = 9223372036854775807;
 
 const int UINT_FAST8_MAX = 255;
 
-const int UINT_FAST16_MAX = 4294967295;
+const int UINT_FAST16_MAX = 65535;
 
 const int UINT_FAST32_MAX = 4294967295;
 
 const int UINT_FAST64_MAX = -1;
 
-const int INTPTR_MIN = -9223372036854775808;
-
 const int INTPTR_MAX = 9223372036854775807;
 
-const int UINTPTR_MAX = -1;
+const int INTPTR_MIN = -9223372036854775808;
 
-const int INTMAX_MIN = -9223372036854775808;
+const int UINTPTR_MAX = -1;
 
 const int INTMAX_MAX = 9223372036854775807;
 
 const int UINTMAX_MAX = -1;
+
+const int INTMAX_MIN = -9223372036854775808;
 
 const int PTRDIFF_MIN = -9223372036854775808;
 
@@ -7665,1782 +6453,1070 @@ const int PTRDIFF_MAX = 9223372036854775807;
 
 const int SIZE_MAX = -1;
 
+const int RSIZE_MAX = 9223372036854775807;
+
+const int WCHAR_MAX = 2147483647;
+
+const int WCHAR_MIN = -2147483648;
+
+const int WINT_MIN = -2147483648;
+
+const int WINT_MAX = 2147483647;
+
 const int SIG_ATOMIC_MIN = -2147483648;
 
 const int SIG_ATOMIC_MAX = 2147483647;
 
-const int WCHAR_MIN = 0;
+const int __DARWIN_WCHAR_MAX = 2147483647;
 
-const int WCHAR_MAX = 65535;
+const int __DARWIN_WCHAR_MIN = -2147483648;
 
-const int WINT_MIN = 0;
+const int __DARWIN_WEOF = -1;
 
-const int WINT_MAX = 65535;
+const int _FORTIFY_SOURCE = 2;
 
-const int _UCRT_DISABLED_WARNINGS = 4324;
+const int __API_TO_BE_DEPRECATED = 100000;
 
-const int _ARGMAX = 100;
+const int __MAC_10_0 = 1000;
 
-const int _TRUNCATE = -1;
+const int __MAC_10_1 = 1010;
 
-const int _CRT_INT_MAX = 2147483647;
+const int __MAC_10_2 = 1020;
 
-const int _CRT_SIZE_MAX = -1;
+const int __MAC_10_3 = 1030;
 
-const String __FILEW__ = 't';
+const int __MAC_10_4 = 1040;
 
-const int _CRT_FUNCTIONS_REQUIRED = 1;
+const int __MAC_10_5 = 1050;
 
-const int _CRT_HAS_CXX17 = 0;
+const int __MAC_10_6 = 1060;
 
-const int _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE = 1;
+const int __MAC_10_7 = 1070;
 
-const int _CRT_BUILD_DESKTOP_APP = 1;
+const int __MAC_10_8 = 1080;
 
-const int _CRT_INTERNAL_NONSTDC_NAMES = 1;
+const int __MAC_10_9 = 1090;
 
-const int __STDC_SECURE_LIB__ = 200411;
+const int __MAC_10_10 = 101000;
 
-const int __GOT_SECURE_LIB__ = 200411;
+const int __MAC_10_10_2 = 101002;
 
-const int __STDC_WANT_SECURE_LIB__ = 1;
+const int __MAC_10_10_3 = 101003;
 
-const int _SECURECRT_FILL_BUFFER_PATTERN = 254;
+const int __MAC_10_11 = 101100;
 
-const int _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES = 0;
+const int __MAC_10_11_2 = 101102;
 
-const int _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT = 0;
+const int __MAC_10_11_3 = 101103;
 
-const int _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES = 1;
+const int __MAC_10_11_4 = 101104;
 
-const int _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_MEMORY = 0;
+const int __MAC_10_12 = 101200;
 
-const int _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY = 0;
+const int __MAC_10_12_1 = 101201;
 
-const int EPERM = 1;
+const int __MAC_10_12_2 = 101202;
 
-const int ENOENT = 2;
+const int __MAC_10_12_4 = 101204;
 
-const int ESRCH = 3;
+const int __MAC_10_13 = 101300;
 
-const int EINTR = 4;
+const int __MAC_10_13_1 = 101301;
 
-const int EIO = 5;
+const int __MAC_10_13_2 = 101302;
 
-const int ENXIO = 6;
+const int __MAC_10_13_4 = 101304;
 
-const int E2BIG = 7;
+const int __MAC_10_14 = 101400;
 
-const int ENOEXEC = 8;
+const int __MAC_10_14_1 = 101401;
 
-const int EBADF = 9;
+const int __MAC_10_14_4 = 101404;
 
-const int ECHILD = 10;
+const int __MAC_10_14_6 = 101406;
 
-const int EAGAIN = 11;
+const int __MAC_10_15 = 101500;
 
-const int ENOMEM = 12;
+const int __MAC_10_15_1 = 101501;
 
-const int EACCES = 13;
+const int __MAC_10_15_4 = 101504;
 
-const int EFAULT = 14;
+const int __MAC_10_16 = 101600;
 
-const int EBUSY = 16;
+const int __MAC_11_0 = 110000;
 
-const int EEXIST = 17;
+const int __MAC_11_1 = 110100;
 
-const int EXDEV = 18;
+const int __MAC_11_3 = 110300;
 
-const int ENODEV = 19;
+const int __MAC_11_4 = 110400;
 
-const int ENOTDIR = 20;
+const int __MAC_11_5 = 110500;
 
-const int EISDIR = 21;
+const int __MAC_11_6 = 110600;
 
-const int ENFILE = 23;
+const int __MAC_12_0 = 120000;
 
-const int EMFILE = 24;
+const int __MAC_12_1 = 120100;
 
-const int ENOTTY = 25;
+const int __MAC_12_2 = 120200;
 
-const int EFBIG = 27;
+const int __MAC_12_3 = 120300;
 
-const int ENOSPC = 28;
+const int __IPHONE_2_0 = 20000;
 
-const int ESPIPE = 29;
+const int __IPHONE_2_1 = 20100;
 
-const int EROFS = 30;
+const int __IPHONE_2_2 = 20200;
 
-const int EMLINK = 31;
+const int __IPHONE_3_0 = 30000;
 
-const int EPIPE = 32;
+const int __IPHONE_3_1 = 30100;
 
-const int EDOM = 33;
+const int __IPHONE_3_2 = 30200;
 
-const int EDEADLK = 36;
+const int __IPHONE_4_0 = 40000;
 
-const int ENAMETOOLONG = 38;
+const int __IPHONE_4_1 = 40100;
 
-const int ENOLCK = 39;
+const int __IPHONE_4_2 = 40200;
 
-const int ENOSYS = 40;
+const int __IPHONE_4_3 = 40300;
 
-const int ENOTEMPTY = 41;
+const int __IPHONE_5_0 = 50000;
 
-const int EINVAL = 22;
+const int __IPHONE_5_1 = 50100;
 
-const int ERANGE = 34;
+const int __IPHONE_6_0 = 60000;
 
-const int EILSEQ = 42;
+const int __IPHONE_6_1 = 60100;
 
-const int STRUNCATE = 80;
+const int __IPHONE_7_0 = 70000;
 
-const int EDEADLOCK = 36;
+const int __IPHONE_7_1 = 70100;
 
-const int EADDRINUSE = 100;
+const int __IPHONE_8_0 = 80000;
 
-const int EADDRNOTAVAIL = 101;
+const int __IPHONE_8_1 = 80100;
 
-const int EAFNOSUPPORT = 102;
+const int __IPHONE_8_2 = 80200;
 
-const int EALREADY = 103;
+const int __IPHONE_8_3 = 80300;
 
-const int EBADMSG = 104;
+const int __IPHONE_8_4 = 80400;
 
-const int ECANCELED = 105;
+const int __IPHONE_9_0 = 90000;
 
-const int ECONNABORTED = 106;
+const int __IPHONE_9_1 = 90100;
 
-const int ECONNREFUSED = 107;
+const int __IPHONE_9_2 = 90200;
 
-const int ECONNRESET = 108;
+const int __IPHONE_9_3 = 90300;
 
-const int EDESTADDRREQ = 109;
+const int __IPHONE_10_0 = 100000;
 
-const int EHOSTUNREACH = 110;
+const int __IPHONE_10_1 = 100100;
 
-const int EIDRM = 111;
+const int __IPHONE_10_2 = 100200;
 
-const int EINPROGRESS = 112;
+const int __IPHONE_10_3 = 100300;
 
-const int EISCONN = 113;
+const int __IPHONE_11_0 = 110000;
 
-const int ELOOP = 114;
+const int __IPHONE_11_1 = 110100;
 
-const int EMSGSIZE = 115;
+const int __IPHONE_11_2 = 110200;
 
-const int ENETDOWN = 116;
+const int __IPHONE_11_3 = 110300;
 
-const int ENETRESET = 117;
+const int __IPHONE_11_4 = 110400;
 
-const int ENETUNREACH = 118;
+const int __IPHONE_12_0 = 120000;
 
-const int ENOBUFS = 119;
+const int __IPHONE_12_1 = 120100;
 
-const int ENODATA = 120;
+const int __IPHONE_12_2 = 120200;
 
-const int ENOLINK = 121;
+const int __IPHONE_12_3 = 120300;
 
-const int ENOMSG = 122;
+const int __IPHONE_12_4 = 120400;
 
-const int ENOPROTOOPT = 123;
+const int __IPHONE_13_0 = 130000;
 
-const int ENOSR = 124;
+const int __IPHONE_13_1 = 130100;
 
-const int ENOSTR = 125;
+const int __IPHONE_13_2 = 130200;
 
-const int ENOTCONN = 126;
+const int __IPHONE_13_3 = 130300;
 
-const int ENOTRECOVERABLE = 127;
+const int __IPHONE_13_4 = 130400;
 
-const int ENOTSOCK = 128;
+const int __IPHONE_13_5 = 130500;
 
-const int ENOTSUP = 129;
+const int __IPHONE_13_6 = 130600;
 
-const int EOPNOTSUPP = 130;
+const int __IPHONE_13_7 = 130700;
 
-const int EOTHER = 131;
+const int __IPHONE_14_0 = 140000;
 
-const int EOVERFLOW = 132;
+const int __IPHONE_14_1 = 140100;
 
-const int EOWNERDEAD = 133;
+const int __IPHONE_14_2 = 140200;
 
-const int EPROTO = 134;
+const int __IPHONE_14_3 = 140300;
 
-const int EPROTONOSUPPORT = 135;
+const int __IPHONE_14_5 = 140500;
 
-const int EPROTOTYPE = 136;
+const int __IPHONE_14_6 = 140600;
 
-const int ETIME = 137;
+const int __IPHONE_14_7 = 140700;
 
-const int ETIMEDOUT = 138;
+const int __IPHONE_14_8 = 140800;
 
-const int ETXTBSY = 139;
+const int __IPHONE_15_0 = 150000;
 
-const int EWOULDBLOCK = 140;
+const int __IPHONE_15_1 = 150100;
 
-const int _NLSCMPERROR = 2147483647;
+const int __IPHONE_15_2 = 150200;
 
-const int __bool_true_false_are_defined = 1;
+const int __IPHONE_15_3 = 150300;
 
-const int false_1 = 0;
+const int __IPHONE_15_4 = 150400;
+
+const int __TVOS_9_0 = 90000;
+
+const int __TVOS_9_1 = 90100;
+
+const int __TVOS_9_2 = 90200;
+
+const int __TVOS_10_0 = 100000;
+
+const int __TVOS_10_0_1 = 100001;
+
+const int __TVOS_10_1 = 100100;
+
+const int __TVOS_10_2 = 100200;
+
+const int __TVOS_11_0 = 110000;
+
+const int __TVOS_11_1 = 110100;
+
+const int __TVOS_11_2 = 110200;
+
+const int __TVOS_11_3 = 110300;
+
+const int __TVOS_11_4 = 110400;
+
+const int __TVOS_12_0 = 120000;
+
+const int __TVOS_12_1 = 120100;
+
+const int __TVOS_12_2 = 120200;
+
+const int __TVOS_12_3 = 120300;
+
+const int __TVOS_12_4 = 120400;
+
+const int __TVOS_13_0 = 130000;
+
+const int __TVOS_13_2 = 130200;
+
+const int __TVOS_13_3 = 130300;
+
+const int __TVOS_13_4 = 130400;
+
+const int __TVOS_14_0 = 140000;
+
+const int __TVOS_14_1 = 140100;
+
+const int __TVOS_14_2 = 140200;
+
+const int __TVOS_14_3 = 140300;
+
+const int __TVOS_14_5 = 140500;
+
+const int __TVOS_14_6 = 140600;
+
+const int __TVOS_14_7 = 140700;
+
+const int __TVOS_15_0 = 150000;
+
+const int __TVOS_15_1 = 150100;
+
+const int __TVOS_15_2 = 150200;
+
+const int __TVOS_15_3 = 150300;
+
+const int __TVOS_15_4 = 150400;
+
+const int __WATCHOS_1_0 = 10000;
+
+const int __WATCHOS_2_0 = 20000;
+
+const int __WATCHOS_2_1 = 20100;
+
+const int __WATCHOS_2_2 = 20200;
+
+const int __WATCHOS_3_0 = 30000;
+
+const int __WATCHOS_3_1 = 30100;
+
+const int __WATCHOS_3_1_1 = 30101;
+
+const int __WATCHOS_3_2 = 30200;
+
+const int __WATCHOS_4_0 = 40000;
+
+const int __WATCHOS_4_1 = 40100;
+
+const int __WATCHOS_4_2 = 40200;
+
+const int __WATCHOS_4_3 = 40300;
+
+const int __WATCHOS_5_0 = 50000;
+
+const int __WATCHOS_5_1 = 50100;
+
+const int __WATCHOS_5_2 = 50200;
+
+const int __WATCHOS_5_3 = 50300;
+
+const int __WATCHOS_6_0 = 60000;
+
+const int __WATCHOS_6_1 = 60100;
+
+const int __WATCHOS_6_2 = 60200;
+
+const int __WATCHOS_7_0 = 70000;
+
+const int __WATCHOS_7_1 = 70100;
+
+const int __WATCHOS_7_2 = 70200;
+
+const int __WATCHOS_7_3 = 70300;
+
+const int __WATCHOS_7_4 = 70400;
+
+const int __WATCHOS_7_5 = 70500;
+
+const int __WATCHOS_7_6 = 70600;
+
+const int __WATCHOS_8_0 = 80000;
+
+const int __WATCHOS_8_1 = 80100;
+
+const int __WATCHOS_8_3 = 80300;
+
+const int __WATCHOS_8_4 = 80400;
+
+const int __WATCHOS_8_5 = 80500;
+
+const int MAC_OS_X_VERSION_10_0 = 1000;
+
+const int MAC_OS_X_VERSION_10_1 = 1010;
+
+const int MAC_OS_X_VERSION_10_2 = 1020;
+
+const int MAC_OS_X_VERSION_10_3 = 1030;
+
+const int MAC_OS_X_VERSION_10_4 = 1040;
+
+const int MAC_OS_X_VERSION_10_5 = 1050;
+
+const int MAC_OS_X_VERSION_10_6 = 1060;
+
+const int MAC_OS_X_VERSION_10_7 = 1070;
+
+const int MAC_OS_X_VERSION_10_8 = 1080;
+
+const int MAC_OS_X_VERSION_10_9 = 1090;
+
+const int MAC_OS_X_VERSION_10_10 = 101000;
+
+const int MAC_OS_X_VERSION_10_10_2 = 101002;
+
+const int MAC_OS_X_VERSION_10_10_3 = 101003;
+
+const int MAC_OS_X_VERSION_10_11 = 101100;
+
+const int MAC_OS_X_VERSION_10_11_2 = 101102;
+
+const int MAC_OS_X_VERSION_10_11_3 = 101103;
+
+const int MAC_OS_X_VERSION_10_11_4 = 101104;
+
+const int MAC_OS_X_VERSION_10_12 = 101200;
+
+const int MAC_OS_X_VERSION_10_12_1 = 101201;
+
+const int MAC_OS_X_VERSION_10_12_2 = 101202;
+
+const int MAC_OS_X_VERSION_10_12_4 = 101204;
+
+const int MAC_OS_X_VERSION_10_13 = 101300;
+
+const int MAC_OS_X_VERSION_10_13_1 = 101301;
+
+const int MAC_OS_X_VERSION_10_13_2 = 101302;
+
+const int MAC_OS_X_VERSION_10_13_4 = 101304;
+
+const int MAC_OS_X_VERSION_10_14 = 101400;
+
+const int MAC_OS_X_VERSION_10_14_1 = 101401;
+
+const int MAC_OS_X_VERSION_10_14_4 = 101404;
+
+const int MAC_OS_X_VERSION_10_14_6 = 101406;
+
+const int MAC_OS_X_VERSION_10_15 = 101500;
+
+const int MAC_OS_X_VERSION_10_15_1 = 101501;
+
+const int MAC_OS_X_VERSION_10_16 = 101600;
+
+const int MAC_OS_VERSION_11_0 = 110000;
+
+const int MAC_OS_VERSION_12_0 = 120000;
+
+const int __DRIVERKIT_19_0 = 190000;
+
+const int __DRIVERKIT_20_0 = 200000;
+
+const int __DRIVERKIT_21_0 = 210000;
+
+const int __MAC_OS_X_VERSION_MIN_REQUIRED = 120000;
+
+const int __MAC_OS_X_VERSION_MAX_ALLOWED = 120300;
+
+const int __ENABLE_LEGACY_MAC_AVAILABILITY = 1;
+
+const int NULL = 0;
 
 const int true_1 = 1;
 
-typedef _c___va_start = ffi.Void Function(
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
-);
+const int false_1 = 0;
 
-typedef _dart___va_start = void Function(
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
-);
-
-typedef _c___security_init_cookie = ffi.Void Function();
-
-typedef _dart___security_init_cookie = void Function();
-
-typedef _c___security_check_cookie = ffi.Void Function(
-  ffi.Uint64 _StackCookie,
-);
-
-typedef _dart___security_check_cookie = void Function(
-  int _StackCookie,
-);
-
-typedef _c___report_gsfailure = ffi.Void Function(
-  ffi.Uint64 _StackCookie,
-);
-
-typedef _dart___report_gsfailure = void Function(
-  int _StackCookie,
-);
-
-typedef _c__invalid_parameter_noinfo = ffi.Void Function();
-
-typedef _dart__invalid_parameter_noinfo = void Function();
-
-typedef _c__invalid_parameter_noinfo_noreturn = ffi.Void Function();
-
-typedef _dart__invalid_parameter_noinfo_noreturn = void Function();
-
-typedef _c__invoke_watson = ffi.Void Function(
-  ffi.Pointer<ffi.Uint16> _Expression,
-  ffi.Pointer<ffi.Uint16> _FunctionName,
-  ffi.Pointer<ffi.Uint16> _FileName,
-  ffi.Uint32 _LineNo,
-  ffi.Uint64 _Reserved,
-);
-
-typedef _dart__invoke_watson = void Function(
-  ffi.Pointer<ffi.Uint16> _Expression,
-  ffi.Pointer<ffi.Uint16> _FunctionName,
-  ffi.Pointer<ffi.Uint16> _FileName,
-  int _LineNo,
-  int _Reserved,
-);
-
-typedef _c__errno = ffi.Pointer<ffi.Int32> Function();
-
-typedef _dart__errno = ffi.Pointer<ffi.Int32> Function();
-
-typedef _c__set_errno = ffi.Int32 Function(
-  ffi.Int32 _Value,
-);
-
-typedef _dart__set_errno = int Function(
-  int _Value,
-);
-
-typedef _c__get_errno = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int32> _Value,
-);
-
-typedef _dart__get_errno = int Function(
-  ffi.Pointer<ffi.Int32> _Value,
-);
-
-typedef _c___doserrno = ffi.Pointer<ffi.Uint64> Function();
-
-typedef _dart___doserrno = ffi.Pointer<ffi.Uint64> Function();
-
-typedef _c__set_doserrno = ffi.Int32 Function(
-  ffi.Uint64 _Value,
-);
-
-typedef _dart__set_doserrno = int Function(
-  int _Value,
-);
-
-typedef _c__get_doserrno = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint64> _Value,
-);
-
-typedef _dart__get_doserrno = int Function(
-  ffi.Pointer<ffi.Uint64> _Value,
-);
+const int __bool_true_false_are_defined = 1;
 
 typedef _c_memchr = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Buf,
-  ffi.Int32 _Val,
-  ffi.Uint64 _MaxCount,
+  ffi.Pointer<ffi.Void> __s,
+  ffi.Int32 __c,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_memchr = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Buf,
-  int _Val,
-  int _MaxCount,
+  ffi.Pointer<ffi.Void> __s,
+  int __c,
+  int __n,
 );
 
 typedef _c_memcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
+  ffi.Pointer<ffi.Void> __s1,
+  ffi.Pointer<ffi.Void> __s2,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_memcmp = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
+  ffi.Pointer<ffi.Void> __s1,
+  ffi.Pointer<ffi.Void> __s2,
+  int __n,
 );
 
 typedef _c_memcpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Uint64 _Size,
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_memcpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Size,
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  int __n,
 );
 
 typedef _c_memmove = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Uint64 _Size,
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  ffi.Uint64 __len,
 );
 
 typedef _dart_memmove = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Size,
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  int __len,
 );
 
 typedef _c_memset = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Int32 _Val,
-  ffi.Uint64 _Size,
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Int32 __c,
+  ffi.Uint64 __len,
 );
 
 typedef _dart_memset = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  int _Val,
-  int _Size,
-);
-
-typedef _c_strchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Int32 _Val,
-);
-
-typedef _dart_strchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  int _Val,
-);
-
-typedef _c_strrchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Int32 _Ch,
-);
-
-typedef _dart_strrchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  int _Ch,
-);
-
-typedef _c_strstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _SubStr,
-);
-
-typedef _dart_strstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _SubStr,
-);
-
-typedef _c_wcschr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Uint16 _Ch,
-);
-
-typedef _dart_wcschr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  int _Ch,
-);
-
-typedef _c_wcsrchr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Uint16 _Ch,
-);
-
-typedef _dart_wcsrchr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  int _Ch,
-);
-
-typedef _c_wcsstr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Pointer<ffi.Uint16> _SubStr,
-);
-
-typedef _dart_wcsstr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Pointer<ffi.Uint16> _SubStr,
-);
-
-typedef _c__memicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__memicmp = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-);
-
-typedef _c__memicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__memicmp_l = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Int32 _Val,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Val,
-  int _Size,
-);
-
-typedef _c_memicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memicmp = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-);
-
-typedef _c_wcscat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscat_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcscpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscpy_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcsncat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsncat_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c_wcsncpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsncpy_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c_wcstok_s = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _dart_wcstok_s = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _c__wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcscat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcscmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcscmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c_wcscpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcscspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _dart_wcscspn = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _c_wcslen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcslen = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsnlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsnlen = int Function(
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c_wcsncat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart_wcsncat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _Count,
-);
-
-typedef _c_wcsncmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsncmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c_wcsncpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart_wcsncpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _Count,
-);
-
-typedef _c_wcspbrk = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _dart_wcspbrk = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _c_wcsspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _dart_wcsspn = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _c_wcstok = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _dart_wcstok = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _c__wcserror = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Int32 _ErrorNumber,
-);
-
-typedef _dart__wcserror = ffi.Pointer<ffi.Uint16> Function(
-  int _ErrorNumber,
-);
-
-typedef _c__wcserror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  ffi.Uint64 _SizeInWords,
-  ffi.Int32 _ErrorNumber,
-);
-
-typedef _dart__wcserror_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  int _SizeInWords,
-  int _ErrorNumber,
-);
-
-typedef _c___wcserror = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart___wcserror = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c___wcserror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _ErrorMessage,
-);
-
-typedef _dart___wcserror_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _ErrorMessage,
-);
-
-typedef _c__wcsicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart__wcsicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c__wcsicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsicmp_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c__wcsnicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsnicmp_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsnset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Uint16 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnset_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c__wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c__wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c__wcsset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Uint16 _Value,
-);
-
-typedef _dart__wcsset_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  int _Value,
-);
-
-typedef _c__wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-);
-
-typedef _dart__wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-);
-
-typedef _c__wcslwr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _SizeInWords,
-);
-
-typedef _dart__wcslwr_s = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _SizeInWords,
-);
-
-typedef _c__wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c__wcslwr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcslwr_s_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _SizeInWords,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcslwr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcslwr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsupr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__wcsupr_s = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Size,
-);
-
-typedef _c__wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c__wcsupr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsupr_s_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsupr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsupr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcsxfrm = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsxfrm = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c__wcsxfrm_l = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsxfrm_l = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcscoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcscoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c__wcscoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcscoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart__wcsicoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c__wcsicoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsicoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsncoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsncoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c__wcsncoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsncoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsnicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnicoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c__wcsnicoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsnicoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcsicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c_wcsnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsnicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c_wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c_wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-);
-
-typedef _dart_wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-);
-
-typedef _c_wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcsicoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c_strcpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart_strcpy_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c_strcat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart_strcat_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c_strerror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Int32 _ErrorNumber,
-);
-
-typedef _dart_strerror_s = int Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  int _SizeInBytes,
-  int _ErrorNumber,
-);
-
-typedef _c_strncat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strncat_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-);
-
-typedef _c_strncpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strncpy_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-);
-
-typedef _c_strtok_s = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
-);
-
-typedef _dart_strtok_s = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
-);
-
-typedef _c__memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Int32 _Val,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Val,
-  int _MaxCount,
+  ffi.Pointer<ffi.Void> __b,
+  int __c,
+  int __len,
 );
 
 typedef _c_strcat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
 );
 
 typedef _dart_strcat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+);
+
+typedef _c_strchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Int32 __c,
+);
+
+typedef _dart_strchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  int __c,
 );
 
 typedef _c_strcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
 );
 
 typedef _dart_strcmp = int Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-);
-
-typedef _c__strcmpi = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart__strcmpi = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
 );
 
 typedef _c_strcoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
 );
 
 typedef _dart_strcoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c__strcoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strcoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
 );
 
 typedef _c_strcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
 );
 
 typedef _dart_strcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
 );
 
 typedef _c_strcspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
 );
 
 typedef _dart_strcspn = int Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _c__strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart__strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c__strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _dart__strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _c__strerror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _dart__strerror_s = int Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
 );
 
 typedef _c_strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 _ErrorMessage,
+  ffi.Int32 __errnum,
 );
 
 typedef _dart_strerror = ffi.Pointer<ffi.Int8> Function(
-  int _ErrorMessage,
-);
-
-typedef _c__stricmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart__stricmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c__stricoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart__stricoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c__stricoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__stricoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__stricmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__stricmp_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
+  int __errnum,
 );
 
 typedef _c_strlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> __s,
 );
 
 typedef _dart_strlen = int Function(
-  ffi.Pointer<ffi.Int8> _Str,
-);
-
-typedef _c__strlwr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__strlwr_s = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-);
-
-typedef _c__strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart__strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c__strlwr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strlwr_s_l = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strlwr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strlwr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.Int8> __s,
 );
 
 typedef _c_strncat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _Count,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_strncat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _Count,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  int __n,
 );
 
 typedef _c_strncmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-  ffi.Uint64 _MaxCount,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_strncmp = int Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-  int _MaxCount,
-);
-
-typedef _c__strnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strnicmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c__strnicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strnicmp_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strnicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strnicoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c__strnicoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strnicoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strncoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strncoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c__strncoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strncoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c___strncnt = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart___strncnt = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Count,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  int __n,
 );
 
 typedef _c_strncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _Count,
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_strncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _Count,
-);
-
-typedef _c_strnlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strnlen = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _MaxCount,
-);
-
-typedef _c__strnset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Int32 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strnset_s = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _SizeInBytes,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c__strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Int32 _Value,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart__strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _Value,
-  int _Count,
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  int __n,
 );
 
 typedef _c_strpbrk = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
 );
 
 typedef _dart_strpbrk = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
 );
 
-typedef _c__strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
+typedef _c_strrchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Int32 __c,
 );
 
-typedef _dart__strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-);
-
-typedef _c__strset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _DestinationSize,
-  ffi.Int32 _Value,
-);
-
-typedef _dart__strset_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _DestinationSize,
-  int _Value,
-);
-
-typedef _c__strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Int32 _Value,
-);
-
-typedef _dart__strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _Value,
+typedef _dart_strrchr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s,
+  int __c,
 );
 
 typedef _c_strspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
 );
 
 typedef _dart_strspn = int Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
+  ffi.Pointer<ffi.Int8> __s,
+  ffi.Pointer<ffi.Int8> __charset,
+);
+
+typedef _c_strstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _dart_strstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
 );
 
 typedef _c_strtok = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
 );
 
 typedef _dart_strtok = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-);
-
-typedef _c__strupr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__strupr_s = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-);
-
-typedef _c__strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart__strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c__strupr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strupr_s_l = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strupr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strupr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
 );
 
 typedef _c_strxfrm = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Uint64 __n,
 );
 
 typedef _dart_strxfrm = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Pointer<ffi.Int8> __s2,
+  int __n,
 );
 
-typedef _c__strxfrm_l = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
+typedef _c_strtok_r = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
 );
 
-typedef _dart__strxfrm_l = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
+typedef _dart_strtok_r = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __str,
+  ffi.Pointer<ffi.Int8> __sep,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
+);
+
+typedef _c_strerror_r = ffi.Int32 Function(
+  ffi.Int32 __errnum,
+  ffi.Pointer<ffi.Int8> __strerrbuf,
+  ffi.Uint64 __buflen,
+);
+
+typedef _dart_strerror_r = int Function(
+  int __errnum,
+  ffi.Pointer<ffi.Int8> __strerrbuf,
+  int __buflen,
 );
 
 typedef _c_strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> __s1,
 );
 
 typedef _dart_strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> __s1,
 );
 
-typedef _c_strcmpi = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
+typedef _c_memccpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  ffi.Int32 __c,
+  ffi.Uint64 __n,
 );
 
-typedef _dart_strcmpi = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
+typedef _dart_memccpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __dst,
+  ffi.Pointer<ffi.Void> __src,
+  int __c,
+  int __n,
 );
 
-typedef _c_stricmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
+typedef _c_stpcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
 );
 
-typedef _dart_stricmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
+typedef _dart_stpcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
 );
 
-typedef _c_strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+typedef _c_stpncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  ffi.Uint64 __n,
 );
 
-typedef _dart_strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+typedef _dart_stpncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __src,
+  int __n,
 );
 
-typedef _c_strnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
+typedef _c_strndup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Uint64 __n,
 );
 
-typedef _dart_strnicmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
+typedef _dart_strndup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  int __n,
 );
 
-typedef _c_strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Int32 _Value,
-  ffi.Uint64 _MaxCount,
+typedef _c_strnlen = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  ffi.Uint64 __n,
 );
 
-typedef _dart_strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Value,
-  int _MaxCount,
+typedef _dart_strnlen = int Function(
+  ffi.Pointer<ffi.Int8> __s1,
+  int __n,
 );
 
-typedef _c_strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+typedef _c_strsignal = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 __sig,
 );
 
-typedef _dart_strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+typedef _dart_strsignal = ffi.Pointer<ffi.Int8> Function(
+  int __sig,
 );
 
-typedef _c_strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Int32 _Value,
+typedef _c_memset_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> __s,
+  ffi.Uint64 __smax,
+  ffi.Int32 __c,
+  ffi.Uint64 __n,
 );
 
-typedef _dart_strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Value,
+typedef _dart_memset_s = int Function(
+  ffi.Pointer<ffi.Void> __s,
+  int __smax,
+  int __c,
+  int __n,
 );
 
-typedef _c_strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+typedef _c_memmem = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __big,
+  ffi.Uint64 __big_len,
+  ffi.Pointer<ffi.Void> __little,
+  ffi.Uint64 __little_len,
 );
 
-typedef _dart_strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
+typedef _dart_memmem = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> __big,
+  int __big_len,
+  ffi.Pointer<ffi.Void> __little,
+  int __little_len,
+);
+
+typedef _c_memset_pattern4 = ffi.Void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern4,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset_pattern4 = void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern4,
+  int __len,
+);
+
+typedef _c_memset_pattern8 = ffi.Void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern8,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset_pattern8 = void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern8,
+  int __len,
+);
+
+typedef _c_memset_pattern16 = ffi.Void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern16,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_memset_pattern16 = void Function(
+  ffi.Pointer<ffi.Void> __b,
+  ffi.Pointer<ffi.Void> __pattern16,
+  int __len,
+);
+
+typedef _c_strcasestr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _dart_strcasestr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+);
+
+typedef _c_strnstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_strnstr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> __big,
+  ffi.Pointer<ffi.Int8> __little,
+  int __len,
+);
+
+typedef _c_strlcat = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  ffi.Uint64 __size,
+);
+
+typedef _dart_strlcat = int Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  int __size,
+);
+
+typedef _c_strlcpy = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  ffi.Uint64 __size,
+);
+
+typedef _dart_strlcpy = int Function(
+  ffi.Pointer<ffi.Int8> __dst,
+  ffi.Pointer<ffi.Int8> __source,
+  int __size,
+);
+
+typedef _c_strmode = ffi.Void Function(
+  ffi.Int32 __mode,
+  ffi.Pointer<ffi.Int8> __bp,
+);
+
+typedef _dart_strmode = void Function(
+  int __mode,
+  ffi.Pointer<ffi.Int8> __bp,
+);
+
+typedef _c_strsep = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
+  ffi.Pointer<ffi.Int8> __delim,
+);
+
+typedef _dart_strsep = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
+  ffi.Pointer<ffi.Int8> __delim,
+);
+
+typedef _c_swab = ffi.Void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  ffi.Int64 arg2,
+);
+
+typedef _dart_swab = void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  int arg2,
+);
+
+typedef _c_timingsafe_bcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> __b1,
+  ffi.Pointer<ffi.Void> __b2,
+  ffi.Uint64 __len,
+);
+
+typedef _dart_timingsafe_bcmp = int Function(
+  ffi.Pointer<ffi.Void> __b1,
+  ffi.Pointer<ffi.Void> __b2,
+  int __len,
+);
+
+typedef _c_strsignal_r = ffi.Int32 Function(
+  ffi.Int32 __sig,
+  ffi.Pointer<ffi.Int8> __strsignalbuf,
+  ffi.Uint64 __buflen,
+);
+
+typedef _dart_strsignal_r = int Function(
+  int __sig,
+  ffi.Pointer<ffi.Int8> __strsignalbuf,
+  int __buflen,
+);
+
+typedef _c_bcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  ffi.Uint64 arg2,
+);
+
+typedef _dart_bcmp = int Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  int arg2,
+);
+
+typedef _c_bcopy = ffi.Void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  ffi.Uint64 arg2,
+);
+
+typedef _dart_bcopy = void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> arg1,
+  int arg2,
+);
+
+typedef _c_bzero = ffi.Void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  ffi.Uint64 arg1,
+);
+
+typedef _dart_bzero = void Function(
+  ffi.Pointer<ffi.Void> arg0,
+  int arg1,
+);
+
+typedef _c_index = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Int32 arg1,
+);
+
+typedef _dart_index = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  int arg1,
+);
+
+typedef _c_rindex = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Int32 arg1,
+);
+
+typedef _dart_rindex = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  int arg1,
+);
+
+typedef _c_ffs = ffi.Int32 Function(
+  ffi.Int32 arg0,
+);
+
+typedef _dart_ffs = int Function(
+  int arg0,
+);
+
+typedef _c_strcasecmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+);
+
+typedef _dart_strcasecmp = int Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+);
+
+typedef _c_strncasecmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+  ffi.Uint64 arg2,
+);
+
+typedef _dart_strncasecmp = int Function(
+  ffi.Pointer<ffi.Int8> arg0,
+  ffi.Pointer<ffi.Int8> arg1,
+  int arg2,
+);
+
+typedef _c_ffsl = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_ffsl = int Function(
+  int arg0,
+);
+
+typedef _c_ffsll = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_ffsll = int Function(
+  int arg0,
+);
+
+typedef _c_fls = ffi.Int32 Function(
+  ffi.Int32 arg0,
+);
+
+typedef _dart_fls = int Function(
+  int arg0,
+);
+
+typedef _c_flsl = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_flsl = int Function(
+  int arg0,
+);
+
+typedef _c_flsll = ffi.Int32 Function(
+  ffi.Int64 arg0,
+);
+
+typedef _dart_flsll = int Function(
+  int arg0,
 );
 
 typedef _c_labSound_MakeAudioDeviceList = AudioDeviceInfoList Function();
@@ -12503,4 +10579,47 @@ typedef _c_ClipNode_bVal = ffi.Int32 Function(
 
 typedef _dart_ClipNode_bVal = int Function(
   int nodeId,
+);
+
+typedef _typedefC_2 = ffi.Void Function(
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Float>,
+  ffi.Int32,
+);
+
+typedef _c_setFunctionNodeChannelFn = ffi.Void Function(
+  ffi.Pointer<ffi.NativeFunction<_typedefC_2>> fn,
+);
+
+typedef _dart_setFunctionNodeChannelFn = void Function(
+  ffi.Pointer<ffi.NativeFunction<_typedefC_2>> fn,
+);
+
+typedef _c_createFunctionNode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_createFunctionNode = int Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_FunctionNode_now = ffi.Double Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_FunctionNode_now = double Function(
+  int nodeId,
+);
+
+typedef _c_FunctionNode_setFunction = ffi.Void Function(
+  ffi.Int32 nodeId,
+);
+
+typedef _dart_FunctionNode_setFunction = void Function(
+  int nodeId,
+);
+
+typedef _typedefC_1 = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
 );
