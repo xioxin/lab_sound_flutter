@@ -2,12 +2,26 @@ import 'package:lab_sound_ffi/lab_sound_ffi.dart';
 
 class ADSRNode extends AudioNode {
   late AudioParam gate;
+
+  // If false, gate controls attack and sustain, else sustainTime controls sustain
   late AudioSettingBool oneShot;
+
+  // Duration in seconds
   late AudioSettingFloat attackTime;
+
+  // Level
   late AudioSettingFloat attackLevel;
+
+  // Duration in seconds
   late AudioSettingFloat decayTime;
+
+  // Duration in seconds
   late AudioSettingFloat sustainTime;
+
+  // Level
   late AudioSettingFloat sustainLevel;
+
+  // Duration in seconds
   late AudioSettingFloat releaseTime;
   ADSRNode(AudioContext ctx) : super(ctx, LabSound().createADSRNode(ctx.pointer)) {
     gate = AudioParam(ctx, nodeId, LabSound().ADSRNode_gate(nodeId));

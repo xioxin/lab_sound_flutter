@@ -19,15 +19,56 @@ class LabSoundExamples extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            ListTile(title: Text("ExSimple"), onTap: () { ExSimple().play(); }),
-            ListTile(title: Text("ExOscPop"), onTap: () { ExOscPop().play(); }),
-            ListTile(title: Text("ExPlaybackEvents"), onTap: () { ExPlaybackEvents().play(); }),
-            ListTile(title: Text("ExOfflineRendering"), onTap: () { ExOfflineRendering().play(); }),
-            ListTile(title: Text("ExTremolo"), onTap: () { ExTremolo().play(); }),
-            ListTile(title: Text("ExFrequencyModulation"), onTap: () { ExFrequencyModulation().play(); }),
-            ListTile(title: Text("ExRuntimeGraphUpdate"), onTap: () { ExRuntimeGraphUpdate().play(); }),
-            ListTile(title: Text("ExMicrophoneLoopback"), onTap: () { ExMicrophoneLoopback().play(); }),
-            ListTile(title: Text("ExMicrophone"), onTap: () { ExMicrophone().play(); }),
+            ListTile(
+                title: Text("ExSimple"),
+                onTap: () {
+                  ExSimple().play();
+                }),
+            ListTile(
+                title: Text("ExOscPop"),
+                onTap: () {
+                  ExOscPop().play();
+                }),
+            ListTile(
+                title: Text("ExPlaybackEvents"),
+                onTap: () {
+                  ExPlaybackEvents().play();
+                }),
+            ListTile(
+                title: Text("ExOfflineRendering"),
+                onTap: () {
+                  ExOfflineRendering().play();
+                }),
+            ListTile(
+                title: Text("ExTremolo"),
+                onTap: () {
+                  ExTremolo().play();
+                }),
+            ListTile(
+                title: Text("ExFrequencyModulation"),
+                onTap: () {
+                  ExFrequencyModulation().play();
+                }),
+            ListTile(
+                title: Text("ExRuntimeGraphUpdate"),
+                onTap: () {
+                  ExRuntimeGraphUpdate().play();
+                }),
+            ListTile(
+                title: Text("ExMicrophoneLoopback"),
+                onTap: () {
+                  ExMicrophoneLoopback().play();
+                }),
+            ListTile(
+                title: Text("ExMicrophone"),
+                onTap: () {
+                  ExMicrophone().play();
+                }),
+            ListTile(
+                title: Text("ExRedalertSynthesis"),
+                onTap: () {
+                  RedalertSynthesis().play();
+                }),
           ],
         ));
   }

@@ -11,6 +11,9 @@ import 'demos/sfxr.dart';
 import 'demos/zelda.dart';
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';
 
+import 'lab808/lab808.dart';
+import 'labsound/labsound_examples.dart';
+
 void main() {
   runApp(MaterialApp(home: MyApp()));
 }
@@ -75,6 +78,15 @@ class _MyAppState extends State<MyApp> {
                   );
                 }),
             ListTile(
+                title: Text("808"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Lab808()),
+                  );
+                }),
+
+            ListTile(
                 title: Text("Zelda"),
                 onTap: () {
                   Navigator.push(
@@ -133,14 +145,14 @@ class _MyAppState extends State<MyApp> {
             //         MaterialPageRoute(builder: (context) => Zelda()),
             //       );
             //     }),
-            // ListTile(
-            //     title: Text("LabSoundExamples"),
-            //     onTap: () {
-            //       Navigator.push(
-            //         context,
-            //         MaterialPageRoute(builder: (context) => LabSoundExamples()),
-            //       );
-            //     }),
+            ListTile(
+                title: Text("LabSoundExamples"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LabSoundExamples()),
+                  );
+                }),
 
             // ListTile(
             //     title: Text("WaveFormPage"),

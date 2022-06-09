@@ -10,7 +10,7 @@ class WaveShaperNode extends AudioNode {
   WaveShaperNode(AudioContext ctx): super(ctx, LabSound().createWaveShaperNode(ctx.pointer));
 
   setCurve(List<double> curve) {
-    final curvePtr = malloc.allocate<Float>(curve.length);
+    final curvePtr = malloc.allocate<Float>(sizeOf<Float>() * curve.length);
     for (int i = 0; i < curve.length; i++) {
       curvePtr[i] = curve[i];
     }

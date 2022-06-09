@@ -4,15 +4,15 @@ import 'audio_param.dart';
 import 'lab_sound.dart';
 
 enum FilterType {
-  FILTER_NONE,
-  LOWPASS,
-  HIGHPASS,
-  BANDPASS,
-  LOWSHELF,
-  HIGHSHELF,
-  PEAKING,
-  NOTCH,
-  ALLPASS,
+  filterNone,
+  lowPass,
+  highPass,
+  bandpass,
+  lowShelf,
+  highShelf,
+  peaking,
+  notch,
+  allPass,
 }
 
 class BiquadFilterNode extends AudioNode {
@@ -31,8 +31,7 @@ class BiquadFilterNode extends AudioNode {
   }
 
   FilterType get type => FilterType.values[LabSound().BiquadFilterNode_type(nodeId)];
-
-  setType(FilterType type) {
+  set type(FilterType type) {
     LabSound().BiquadFilterNode_setType(nodeId, type.index);
   }
 

@@ -55,7 +55,7 @@ class AudioSampleNode extends AudioScheduledSourceNode {
   }
 
   @override
-  start({double? when, double? offset, double? duration, int? loopCount}) {
+  start([double? when, double? offset, double? duration, int? loopCount]) {
     loopCount ??= 0;
     if(when != null && offset != null && duration != null) {
       LabSound().SampledAudioNode_start4(nodeId, when, offset, duration, loopCount);
@@ -70,14 +70,14 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     if(when == null) {
       return LabSound().SampledAudioNode_clearSchedules(nodeId);
     }else {
-      return start(when: when, offset: 0, duration: 0, loopCount: -2);
+      return start(when, 0, 0, -2);
     }
   }
 
   @override
-  stop({double? when}) {
+  stop([double? when]) {
     if(when != null) when = when - ctx.currentTime;
-    super.stop(when: when ?? 0 );
+    super.stop(when ?? 0 );
   }
 
   @override
@@ -85,7 +85,7 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     // _onPositionController.close();
     // _onEndedController.close();
     // _checkTimer?.cancel();
-    if(playbackState == SchedulingState.PLAYING) {
+    if(playbackState == SchedulingState.playing) {
       stop();
     }
     _endedDisposeSubscription?.cancel();

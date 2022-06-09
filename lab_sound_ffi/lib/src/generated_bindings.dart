@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_element, unused_field, camel_case_types, constant_identifier_names
 
 // AUTO GENERATED FILE, DO NOT EDIT.
 //
@@ -21,15 +21,184 @@ class LabSoundBind {
           lookup)
       : _lookup = lookup;
 
+  void __va_start(
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
+  ) {
+    return ___va_start(
+      arg0,
+    );
+  }
+
+  late final ___va_start_ptr =
+      _lookup<ffi.NativeFunction<_c___va_start>>('__va_start');
+  late final _dart___va_start ___va_start =
+      ___va_start_ptr.asFunction<_dart___va_start>();
+
+  void __security_init_cookie() {
+    return ___security_init_cookie();
+  }
+
+  late final ___security_init_cookie_ptr =
+      _lookup<ffi.NativeFunction<_c___security_init_cookie>>(
+          '__security_init_cookie');
+  late final _dart___security_init_cookie ___security_init_cookie =
+      ___security_init_cookie_ptr.asFunction<_dart___security_init_cookie>();
+
+  void __security_check_cookie(
+    int _StackCookie,
+  ) {
+    return ___security_check_cookie(
+      _StackCookie,
+    );
+  }
+
+  late final ___security_check_cookie_ptr =
+      _lookup<ffi.NativeFunction<_c___security_check_cookie>>(
+          '__security_check_cookie');
+  late final _dart___security_check_cookie ___security_check_cookie =
+      ___security_check_cookie_ptr.asFunction<_dart___security_check_cookie>();
+
+  void __report_gsfailure(
+    int _StackCookie,
+  ) {
+    return ___report_gsfailure(
+      _StackCookie,
+    );
+  }
+
+  late final ___report_gsfailure_ptr =
+      _lookup<ffi.NativeFunction<_c___report_gsfailure>>('__report_gsfailure');
+  late final _dart___report_gsfailure ___report_gsfailure =
+      ___report_gsfailure_ptr.asFunction<_dart___report_gsfailure>();
+
+  late final ffi.Pointer<ffi.Uint64> ___security_cookie =
+      _lookup<ffi.Uint64>('__security_cookie');
+
+  int get __security_cookie => ___security_cookie.value;
+
+  set __security_cookie(int value) => ___security_cookie.value = value;
+
+  void _invalid_parameter_noinfo() {
+    return __invalid_parameter_noinfo();
+  }
+
+  late final __invalid_parameter_noinfo_ptr =
+      _lookup<ffi.NativeFunction<_c__invalid_parameter_noinfo>>(
+          '_invalid_parameter_noinfo');
+  late final _dart__invalid_parameter_noinfo __invalid_parameter_noinfo =
+      __invalid_parameter_noinfo_ptr
+          .asFunction<_dart__invalid_parameter_noinfo>();
+
+  void _invalid_parameter_noinfo_noreturn() {
+    return __invalid_parameter_noinfo_noreturn();
+  }
+
+  late final __invalid_parameter_noinfo_noreturn_ptr =
+      _lookup<ffi.NativeFunction<_c__invalid_parameter_noinfo_noreturn>>(
+          '_invalid_parameter_noinfo_noreturn');
+  late final _dart__invalid_parameter_noinfo_noreturn
+      __invalid_parameter_noinfo_noreturn =
+      __invalid_parameter_noinfo_noreturn_ptr
+          .asFunction<_dart__invalid_parameter_noinfo_noreturn>();
+
+  void _invoke_watson(
+    ffi.Pointer<ffi.Uint16> _Expression,
+    ffi.Pointer<ffi.Uint16> _FunctionName,
+    ffi.Pointer<ffi.Uint16> _FileName,
+    int _LineNo,
+    int _Reserved,
+  ) {
+    return __invoke_watson(
+      _Expression,
+      _FunctionName,
+      _FileName,
+      _LineNo,
+      _Reserved,
+    );
+  }
+
+  late final __invoke_watson_ptr =
+      _lookup<ffi.NativeFunction<_c__invoke_watson>>('_invoke_watson');
+  late final _dart__invoke_watson __invoke_watson =
+      __invoke_watson_ptr.asFunction<_dart__invoke_watson>();
+
+  ffi.Pointer<ffi.Int32> _errno() {
+    return __errno();
+  }
+
+  late final __errno_ptr = _lookup<ffi.NativeFunction<_c__errno>>('_errno');
+  late final _dart__errno __errno = __errno_ptr.asFunction<_dart__errno>();
+
+  int _set_errno(
+    int _Value,
+  ) {
+    return __set_errno(
+      _Value,
+    );
+  }
+
+  late final __set_errno_ptr =
+      _lookup<ffi.NativeFunction<_c__set_errno>>('_set_errno');
+  late final _dart__set_errno __set_errno =
+      __set_errno_ptr.asFunction<_dart__set_errno>();
+
+  int _get_errno(
+    ffi.Pointer<ffi.Int32> _Value,
+  ) {
+    return __get_errno(
+      _Value,
+    );
+  }
+
+  late final __get_errno_ptr =
+      _lookup<ffi.NativeFunction<_c__get_errno>>('_get_errno');
+  late final _dart__get_errno __get_errno =
+      __get_errno_ptr.asFunction<_dart__get_errno>();
+
+  ffi.Pointer<ffi.Uint64> __doserrno() {
+    return ___doserrno();
+  }
+
+  late final ___doserrno_ptr =
+      _lookup<ffi.NativeFunction<_c___doserrno>>('__doserrno');
+  late final _dart___doserrno ___doserrno =
+      ___doserrno_ptr.asFunction<_dart___doserrno>();
+
+  int _set_doserrno(
+    int _Value,
+  ) {
+    return __set_doserrno(
+      _Value,
+    );
+  }
+
+  late final __set_doserrno_ptr =
+      _lookup<ffi.NativeFunction<_c__set_doserrno>>('_set_doserrno');
+  late final _dart__set_doserrno __set_doserrno =
+      __set_doserrno_ptr.asFunction<_dart__set_doserrno>();
+
+  int _get_doserrno(
+    ffi.Pointer<ffi.Uint64> _Value,
+  ) {
+    return __get_doserrno(
+      _Value,
+    );
+  }
+
+  late final __get_doserrno_ptr =
+      _lookup<ffi.NativeFunction<_c__get_doserrno>>('_get_doserrno');
+  late final _dart__get_doserrno __get_doserrno =
+      __get_doserrno_ptr.asFunction<_dart__get_doserrno>();
+
   ffi.Pointer<ffi.Void> memchr(
-    ffi.Pointer<ffi.Void> __s,
-    int __c,
-    int __n,
+    ffi.Pointer<ffi.Void> _Buf,
+    int _Val,
+    int _MaxCount,
   ) {
     return _memchr(
-      __s,
-      __c,
-      __n,
+      _Buf,
+      _Val,
+      _MaxCount,
     );
   }
 
@@ -37,14 +206,14 @@ class LabSoundBind {
   late final _dart_memchr _memchr = _memchr_ptr.asFunction<_dart_memchr>();
 
   int memcmp(
-    ffi.Pointer<ffi.Void> __s1,
-    ffi.Pointer<ffi.Void> __s2,
-    int __n,
+    ffi.Pointer<ffi.Void> _Buf1,
+    ffi.Pointer<ffi.Void> _Buf2,
+    int _Size,
   ) {
     return _memcmp(
-      __s1,
-      __s2,
-      __n,
+      _Buf1,
+      _Buf2,
+      _Size,
     );
   }
 
@@ -52,14 +221,14 @@ class LabSoundBind {
   late final _dart_memcmp _memcmp = _memcmp_ptr.asFunction<_dart_memcmp>();
 
   ffi.Pointer<ffi.Void> memcpy(
-    ffi.Pointer<ffi.Void> __dst,
-    ffi.Pointer<ffi.Void> __src,
-    int __n,
+    ffi.Pointer<ffi.Void> _Dst,
+    ffi.Pointer<ffi.Void> _Src,
+    int _Size,
   ) {
     return _memcpy(
-      __dst,
-      __src,
-      __n,
+      _Dst,
+      _Src,
+      _Size,
     );
   }
 
@@ -67,14 +236,14 @@ class LabSoundBind {
   late final _dart_memcpy _memcpy = _memcpy_ptr.asFunction<_dart_memcpy>();
 
   ffi.Pointer<ffi.Void> memmove(
-    ffi.Pointer<ffi.Void> __dst,
-    ffi.Pointer<ffi.Void> __src,
-    int __len,
+    ffi.Pointer<ffi.Void> _Dst,
+    ffi.Pointer<ffi.Void> _Src,
+    int _Size,
   ) {
     return _memmove(
-      __dst,
-      __src,
-      __len,
+      _Dst,
+      _Src,
+      _Size,
     );
   }
 
@@ -82,79 +251,1241 @@ class LabSoundBind {
   late final _dart_memmove _memmove = _memmove_ptr.asFunction<_dart_memmove>();
 
   ffi.Pointer<ffi.Void> memset(
-    ffi.Pointer<ffi.Void> __b,
-    int __c,
-    int __len,
+    ffi.Pointer<ffi.Void> _Dst,
+    int _Val,
+    int _Size,
   ) {
     return _memset(
-      __b,
-      __c,
-      __len,
+      _Dst,
+      _Val,
+      _Size,
     );
   }
 
   late final _memset_ptr = _lookup<ffi.NativeFunction<_c_memset>>('memset');
   late final _dart_memset _memset = _memset_ptr.asFunction<_dart_memset>();
 
-  ffi.Pointer<ffi.Int8> strcat(
-    ffi.Pointer<ffi.Int8> __s1,
-    ffi.Pointer<ffi.Int8> __s2,
-  ) {
-    return _strcat(
-      __s1,
-      __s2,
-    );
-  }
-
-  late final _strcat_ptr = _lookup<ffi.NativeFunction<_c_strcat>>('strcat');
-  late final _dart_strcat _strcat = _strcat_ptr.asFunction<_dart_strcat>();
-
   ffi.Pointer<ffi.Int8> strchr(
-    ffi.Pointer<ffi.Int8> __s,
-    int __c,
+    ffi.Pointer<ffi.Int8> _Str,
+    int _Val,
   ) {
     return _strchr(
-      __s,
-      __c,
+      _Str,
+      _Val,
     );
   }
 
   late final _strchr_ptr = _lookup<ffi.NativeFunction<_c_strchr>>('strchr');
   late final _dart_strchr _strchr = _strchr_ptr.asFunction<_dart_strchr>();
 
+  ffi.Pointer<ffi.Int8> strrchr(
+    ffi.Pointer<ffi.Int8> _Str,
+    int _Ch,
+  ) {
+    return _strrchr(
+      _Str,
+      _Ch,
+    );
+  }
+
+  late final _strrchr_ptr = _lookup<ffi.NativeFunction<_c_strrchr>>('strrchr');
+  late final _dart_strrchr _strrchr = _strrchr_ptr.asFunction<_dart_strrchr>();
+
+  ffi.Pointer<ffi.Int8> strstr(
+    ffi.Pointer<ffi.Int8> _Str,
+    ffi.Pointer<ffi.Int8> _SubStr,
+  ) {
+    return _strstr(
+      _Str,
+      _SubStr,
+    );
+  }
+
+  late final _strstr_ptr = _lookup<ffi.NativeFunction<_c_strstr>>('strstr');
+  late final _dart_strstr _strstr = _strstr_ptr.asFunction<_dart_strstr>();
+
+  ffi.Pointer<ffi.Uint16> wcschr(
+    ffi.Pointer<ffi.Uint16> _Str,
+    int _Ch,
+  ) {
+    return _wcschr(
+      _Str,
+      _Ch,
+    );
+  }
+
+  late final _wcschr_ptr = _lookup<ffi.NativeFunction<_c_wcschr>>('wcschr');
+  late final _dart_wcschr _wcschr = _wcschr_ptr.asFunction<_dart_wcschr>();
+
+  ffi.Pointer<ffi.Uint16> wcsrchr(
+    ffi.Pointer<ffi.Uint16> _Str,
+    int _Ch,
+  ) {
+    return _wcsrchr(
+      _Str,
+      _Ch,
+    );
+  }
+
+  late final _wcsrchr_ptr = _lookup<ffi.NativeFunction<_c_wcsrchr>>('wcsrchr');
+  late final _dart_wcsrchr _wcsrchr = _wcsrchr_ptr.asFunction<_dart_wcsrchr>();
+
+  ffi.Pointer<ffi.Uint16> wcsstr(
+    ffi.Pointer<ffi.Uint16> _Str,
+    ffi.Pointer<ffi.Uint16> _SubStr,
+  ) {
+    return _wcsstr(
+      _Str,
+      _SubStr,
+    );
+  }
+
+  late final _wcsstr_ptr = _lookup<ffi.NativeFunction<_c_wcsstr>>('wcsstr');
+  late final _dart_wcsstr _wcsstr = _wcsstr_ptr.asFunction<_dart_wcsstr>();
+
+  int _memicmp(
+    ffi.Pointer<ffi.Void> _Buf1,
+    ffi.Pointer<ffi.Void> _Buf2,
+    int _Size,
+  ) {
+    return __memicmp(
+      _Buf1,
+      _Buf2,
+      _Size,
+    );
+  }
+
+  late final __memicmp_ptr =
+      _lookup<ffi.NativeFunction<_c__memicmp>>('_memicmp');
+  late final _dart__memicmp __memicmp =
+      __memicmp_ptr.asFunction<_dart__memicmp>();
+
+  int _memicmp_l(
+    ffi.Pointer<ffi.Void> _Buf1,
+    ffi.Pointer<ffi.Void> _Buf2,
+    int _Size,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __memicmp_l(
+      _Buf1,
+      _Buf2,
+      _Size,
+      _Locale,
+    );
+  }
+
+  late final __memicmp_l_ptr =
+      _lookup<ffi.NativeFunction<_c__memicmp_l>>('_memicmp_l');
+  late final _dart__memicmp_l __memicmp_l =
+      __memicmp_l_ptr.asFunction<_dart__memicmp_l>();
+
+  ffi.Pointer<ffi.Void> memccpy(
+    ffi.Pointer<ffi.Void> _Dst,
+    ffi.Pointer<ffi.Void> _Src,
+    int _Val,
+    int _Size,
+  ) {
+    return _memccpy_1(
+      _Dst,
+      _Src,
+      _Val,
+      _Size,
+    );
+  }
+
+  late final _memccpy_ptr = _lookup<ffi.NativeFunction<_c_memccpy>>('memccpy');
+  late final _dart_memccpy _memccpy_1 =
+      _memccpy_ptr.asFunction<_dart_memccpy>();
+
+  int memicmp(
+    ffi.Pointer<ffi.Void> _Buf1,
+    ffi.Pointer<ffi.Void> _Buf2,
+    int _Size,
+  ) {
+    return _memicmp_1(
+      _Buf1,
+      _Buf2,
+      _Size,
+    );
+  }
+
+  late final _memicmp_ptr = _lookup<ffi.NativeFunction<_c_memicmp>>('memicmp');
+  late final _dart_memicmp _memicmp_1 =
+      _memicmp_ptr.asFunction<_dart_memicmp>();
+
+  int wcscat_s(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    int _SizeInWords,
+    ffi.Pointer<ffi.Uint16> _Source,
+  ) {
+    return _wcscat_s(
+      _Destination,
+      _SizeInWords,
+      _Source,
+    );
+  }
+
+  late final _wcscat_s_ptr =
+      _lookup<ffi.NativeFunction<_c_wcscat_s>>('wcscat_s');
+  late final _dart_wcscat_s _wcscat_s =
+      _wcscat_s_ptr.asFunction<_dart_wcscat_s>();
+
+  int wcscpy_s(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    int _SizeInWords,
+    ffi.Pointer<ffi.Uint16> _Source,
+  ) {
+    return _wcscpy_s(
+      _Destination,
+      _SizeInWords,
+      _Source,
+    );
+  }
+
+  late final _wcscpy_s_ptr =
+      _lookup<ffi.NativeFunction<_c_wcscpy_s>>('wcscpy_s');
+  late final _dart_wcscpy_s _wcscpy_s =
+      _wcscpy_s_ptr.asFunction<_dart_wcscpy_s>();
+
+  int wcsncat_s(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    int _SizeInWords,
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _MaxCount,
+  ) {
+    return _wcsncat_s(
+      _Destination,
+      _SizeInWords,
+      _Source,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsncat_s_ptr =
+      _lookup<ffi.NativeFunction<_c_wcsncat_s>>('wcsncat_s');
+  late final _dart_wcsncat_s _wcsncat_s =
+      _wcsncat_s_ptr.asFunction<_dart_wcsncat_s>();
+
+  int wcsncpy_s(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    int _SizeInWords,
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _MaxCount,
+  ) {
+    return _wcsncpy_s(
+      _Destination,
+      _SizeInWords,
+      _Source,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsncpy_s_ptr =
+      _lookup<ffi.NativeFunction<_c_wcsncpy_s>>('wcsncpy_s');
+  late final _dart_wcsncpy_s _wcsncpy_s =
+      _wcsncpy_s_ptr.asFunction<_dart_wcsncpy_s>();
+
+  ffi.Pointer<ffi.Uint16> wcstok_s(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Uint16> _Delimiter,
+    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+  ) {
+    return _wcstok_s(
+      _String,
+      _Delimiter,
+      _Context,
+    );
+  }
+
+  late final _wcstok_s_ptr =
+      _lookup<ffi.NativeFunction<_c_wcstok_s>>('wcstok_s');
+  late final _dart_wcstok_s _wcstok_s =
+      _wcstok_s_ptr.asFunction<_dart_wcstok_s>();
+
+  ffi.Pointer<ffi.Uint16> _wcsdup(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return __wcsdup(
+      _String,
+    );
+  }
+
+  late final __wcsdup_ptr = _lookup<ffi.NativeFunction<_c__wcsdup>>('_wcsdup');
+  late final _dart__wcsdup __wcsdup = __wcsdup_ptr.asFunction<_dart__wcsdup>();
+
+  ffi.Pointer<ffi.Uint16> wcscat(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.Uint16> _Source,
+  ) {
+    return _wcscat(
+      _Destination,
+      _Source,
+    );
+  }
+
+  late final _wcscat_ptr = _lookup<ffi.NativeFunction<_c_wcscat>>('wcscat');
+  late final _dart_wcscat _wcscat = _wcscat_ptr.asFunction<_dart_wcscat>();
+
+  int wcscmp(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+  ) {
+    return _wcscmp(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final _wcscmp_ptr = _lookup<ffi.NativeFunction<_c_wcscmp>>('wcscmp');
+  late final _dart_wcscmp _wcscmp = _wcscmp_ptr.asFunction<_dart_wcscmp>();
+
+  ffi.Pointer<ffi.Uint16> wcscpy(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.Uint16> _Source,
+  ) {
+    return _wcscpy(
+      _Destination,
+      _Source,
+    );
+  }
+
+  late final _wcscpy_ptr = _lookup<ffi.NativeFunction<_c_wcscpy>>('wcscpy');
+  late final _dart_wcscpy _wcscpy = _wcscpy_ptr.asFunction<_dart_wcscpy>();
+
+  int wcscspn(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Uint16> _Control,
+  ) {
+    return _wcscspn(
+      _String,
+      _Control,
+    );
+  }
+
+  late final _wcscspn_ptr = _lookup<ffi.NativeFunction<_c_wcscspn>>('wcscspn');
+  late final _dart_wcscspn _wcscspn = _wcscspn_ptr.asFunction<_dart_wcscspn>();
+
+  int wcslen(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return _wcslen(
+      _String,
+    );
+  }
+
+  late final _wcslen_ptr = _lookup<ffi.NativeFunction<_c_wcslen>>('wcslen');
+  late final _dart_wcslen _wcslen = _wcslen_ptr.asFunction<_dart_wcslen>();
+
+  int wcsnlen(
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _MaxCount,
+  ) {
+    return _wcsnlen(
+      _Source,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsnlen_ptr = _lookup<ffi.NativeFunction<_c_wcsnlen>>('wcsnlen');
+  late final _dart_wcsnlen _wcsnlen = _wcsnlen_ptr.asFunction<_dart_wcsnlen>();
+
+  ffi.Pointer<ffi.Uint16> wcsncat(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _Count,
+  ) {
+    return _wcsncat(
+      _Destination,
+      _Source,
+      _Count,
+    );
+  }
+
+  late final _wcsncat_ptr = _lookup<ffi.NativeFunction<_c_wcsncat>>('wcsncat');
+  late final _dart_wcsncat _wcsncat = _wcsncat_ptr.asFunction<_dart_wcsncat>();
+
+  int wcsncmp(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+  ) {
+    return _wcsncmp(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsncmp_ptr = _lookup<ffi.NativeFunction<_c_wcsncmp>>('wcsncmp');
+  late final _dart_wcsncmp _wcsncmp = _wcsncmp_ptr.asFunction<_dart_wcsncmp>();
+
+  ffi.Pointer<ffi.Uint16> wcsncpy(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _Count,
+  ) {
+    return _wcsncpy(
+      _Destination,
+      _Source,
+      _Count,
+    );
+  }
+
+  late final _wcsncpy_ptr = _lookup<ffi.NativeFunction<_c_wcsncpy>>('wcsncpy');
+  late final _dart_wcsncpy _wcsncpy = _wcsncpy_ptr.asFunction<_dart_wcsncpy>();
+
+  ffi.Pointer<ffi.Uint16> wcspbrk(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Uint16> _Control,
+  ) {
+    return _wcspbrk(
+      _String,
+      _Control,
+    );
+  }
+
+  late final _wcspbrk_ptr = _lookup<ffi.NativeFunction<_c_wcspbrk>>('wcspbrk');
+  late final _dart_wcspbrk _wcspbrk = _wcspbrk_ptr.asFunction<_dart_wcspbrk>();
+
+  int wcsspn(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Uint16> _Control,
+  ) {
+    return _wcsspn(
+      _String,
+      _Control,
+    );
+  }
+
+  late final _wcsspn_ptr = _lookup<ffi.NativeFunction<_c_wcsspn>>('wcsspn');
+  late final _dart_wcsspn _wcsspn = _wcsspn_ptr.asFunction<_dart_wcsspn>();
+
+  ffi.Pointer<ffi.Uint16> wcstok(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Uint16> _Delimiter,
+    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+  ) {
+    return _wcstok(
+      _String,
+      _Delimiter,
+      _Context,
+    );
+  }
+
+  late final _wcstok_ptr = _lookup<ffi.NativeFunction<_c_wcstok>>('wcstok');
+  late final _dart_wcstok _wcstok = _wcstok_ptr.asFunction<_dart_wcstok>();
+
+  ffi.Pointer<ffi.Uint16> _wcserror(
+    int _ErrorNumber,
+  ) {
+    return __wcserror_1(
+      _ErrorNumber,
+    );
+  }
+
+  late final __wcserror_ptr =
+      _lookup<ffi.NativeFunction<_c__wcserror>>('_wcserror');
+  late final _dart__wcserror __wcserror_1 =
+      __wcserror_ptr.asFunction<_dart__wcserror>();
+
+  int _wcserror_s(
+    ffi.Pointer<ffi.Uint16> _Buffer,
+    int _SizeInWords,
+    int _ErrorNumber,
+  ) {
+    return __wcserror_s_1(
+      _Buffer,
+      _SizeInWords,
+      _ErrorNumber,
+    );
+  }
+
+  late final __wcserror_s_ptr =
+      _lookup<ffi.NativeFunction<_c__wcserror_s>>('_wcserror_s');
+  late final _dart__wcserror_s __wcserror_s_1 =
+      __wcserror_s_ptr.asFunction<_dart__wcserror_s>();
+
+  ffi.Pointer<ffi.Uint16> __wcserror(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return ___wcserror(
+      _String,
+    );
+  }
+
+  late final ___wcserror_ptr =
+      _lookup<ffi.NativeFunction<_c___wcserror>>('__wcserror');
+  late final _dart___wcserror ___wcserror =
+      ___wcserror_ptr.asFunction<_dart___wcserror>();
+
+  int __wcserror_s(
+    ffi.Pointer<ffi.Uint16> _Buffer,
+    int _SizeInWords,
+    ffi.Pointer<ffi.Uint16> _ErrorMessage,
+  ) {
+    return ___wcserror_s(
+      _Buffer,
+      _SizeInWords,
+      _ErrorMessage,
+    );
+  }
+
+  late final ___wcserror_s_ptr =
+      _lookup<ffi.NativeFunction<_c___wcserror_s>>('__wcserror_s');
+  late final _dart___wcserror_s ___wcserror_s =
+      ___wcserror_s_ptr.asFunction<_dart___wcserror_s>();
+
+  int _wcsicmp(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+  ) {
+    return __wcsicmp(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final __wcsicmp_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsicmp>>('_wcsicmp');
+  late final _dart__wcsicmp __wcsicmp =
+      __wcsicmp_ptr.asFunction<_dart__wcsicmp>();
+
+  int _wcsicmp_l(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsicmp_l(
+      _String1,
+      _String2,
+      _Locale,
+    );
+  }
+
+  late final __wcsicmp_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsicmp_l>>('_wcsicmp_l');
+  late final _dart__wcsicmp_l __wcsicmp_l =
+      __wcsicmp_l_ptr.asFunction<_dart__wcsicmp_l>();
+
+  int _wcsnicmp(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+  ) {
+    return __wcsnicmp(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final __wcsnicmp_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsnicmp>>('_wcsnicmp');
+  late final _dart__wcsnicmp __wcsnicmp =
+      __wcsnicmp_ptr.asFunction<_dart__wcsnicmp>();
+
+  int _wcsnicmp_l(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsnicmp_l(
+      _String1,
+      _String2,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __wcsnicmp_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsnicmp_l>>('_wcsnicmp_l');
+  late final _dart__wcsnicmp_l __wcsnicmp_l =
+      __wcsnicmp_l_ptr.asFunction<_dart__wcsnicmp_l>();
+
+  int _wcsnset_s(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    int _SizeInWords,
+    int _Value,
+    int _MaxCount,
+  ) {
+    return __wcsnset_s(
+      _Destination,
+      _SizeInWords,
+      _Value,
+      _MaxCount,
+    );
+  }
+
+  late final __wcsnset_s_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsnset_s>>('_wcsnset_s');
+  late final _dart__wcsnset_s __wcsnset_s =
+      __wcsnset_s_ptr.asFunction<_dart__wcsnset_s>();
+
+  ffi.Pointer<ffi.Uint16> _wcsnset(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _Value,
+    int _MaxCount,
+  ) {
+    return __wcsnset(
+      _String,
+      _Value,
+      _MaxCount,
+    );
+  }
+
+  late final __wcsnset_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsnset>>('_wcsnset');
+  late final _dart__wcsnset __wcsnset =
+      __wcsnset_ptr.asFunction<_dart__wcsnset>();
+
+  ffi.Pointer<ffi.Uint16> _wcsrev(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return __wcsrev(
+      _String,
+    );
+  }
+
+  late final __wcsrev_ptr = _lookup<ffi.NativeFunction<_c__wcsrev>>('_wcsrev');
+  late final _dart__wcsrev __wcsrev = __wcsrev_ptr.asFunction<_dart__wcsrev>();
+
+  int _wcsset_s(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    int _SizeInWords,
+    int _Value,
+  ) {
+    return __wcsset_s(
+      _Destination,
+      _SizeInWords,
+      _Value,
+    );
+  }
+
+  late final __wcsset_s_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsset_s>>('_wcsset_s');
+  late final _dart__wcsset_s __wcsset_s =
+      __wcsset_s_ptr.asFunction<_dart__wcsset_s>();
+
+  ffi.Pointer<ffi.Uint16> _wcsset(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _Value,
+  ) {
+    return __wcsset(
+      _String,
+      _Value,
+    );
+  }
+
+  late final __wcsset_ptr = _lookup<ffi.NativeFunction<_c__wcsset>>('_wcsset');
+  late final _dart__wcsset __wcsset = __wcsset_ptr.asFunction<_dart__wcsset>();
+
+  int _wcslwr_s(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _SizeInWords,
+  ) {
+    return __wcslwr_s(
+      _String,
+      _SizeInWords,
+    );
+  }
+
+  late final __wcslwr_s_ptr =
+      _lookup<ffi.NativeFunction<_c__wcslwr_s>>('_wcslwr_s');
+  late final _dart__wcslwr_s __wcslwr_s =
+      __wcslwr_s_ptr.asFunction<_dart__wcslwr_s>();
+
+  ffi.Pointer<ffi.Uint16> _wcslwr(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return __wcslwr(
+      _String,
+    );
+  }
+
+  late final __wcslwr_ptr = _lookup<ffi.NativeFunction<_c__wcslwr>>('_wcslwr');
+  late final _dart__wcslwr __wcslwr = __wcslwr_ptr.asFunction<_dart__wcslwr>();
+
+  int _wcslwr_s_l(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _SizeInWords,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcslwr_s_l(
+      _String,
+      _SizeInWords,
+      _Locale,
+    );
+  }
+
+  late final __wcslwr_s_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcslwr_s_l>>('_wcslwr_s_l');
+  late final _dart__wcslwr_s_l __wcslwr_s_l =
+      __wcslwr_s_l_ptr.asFunction<_dart__wcslwr_s_l>();
+
+  ffi.Pointer<ffi.Uint16> _wcslwr_l(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcslwr_l(
+      _String,
+      _Locale,
+    );
+  }
+
+  late final __wcslwr_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcslwr_l>>('_wcslwr_l');
+  late final _dart__wcslwr_l __wcslwr_l =
+      __wcslwr_l_ptr.asFunction<_dart__wcslwr_l>();
+
+  int _wcsupr_s(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _Size,
+  ) {
+    return __wcsupr_s(
+      _String,
+      _Size,
+    );
+  }
+
+  late final __wcsupr_s_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsupr_s>>('_wcsupr_s');
+  late final _dart__wcsupr_s __wcsupr_s =
+      __wcsupr_s_ptr.asFunction<_dart__wcsupr_s>();
+
+  ffi.Pointer<ffi.Uint16> _wcsupr(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return __wcsupr(
+      _String,
+    );
+  }
+
+  late final __wcsupr_ptr = _lookup<ffi.NativeFunction<_c__wcsupr>>('_wcsupr');
+  late final _dart__wcsupr __wcsupr = __wcsupr_ptr.asFunction<_dart__wcsupr>();
+
+  int _wcsupr_s_l(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _Size,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsupr_s_l(
+      _String,
+      _Size,
+      _Locale,
+    );
+  }
+
+  late final __wcsupr_s_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsupr_s_l>>('_wcsupr_s_l');
+  late final _dart__wcsupr_s_l __wcsupr_s_l =
+      __wcsupr_s_l_ptr.asFunction<_dart__wcsupr_s_l>();
+
+  ffi.Pointer<ffi.Uint16> _wcsupr_l(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsupr_l(
+      _String,
+      _Locale,
+    );
+  }
+
+  late final __wcsupr_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsupr_l>>('_wcsupr_l');
+  late final _dart__wcsupr_l __wcsupr_l =
+      __wcsupr_l_ptr.asFunction<_dart__wcsupr_l>();
+
+  int wcsxfrm(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _MaxCount,
+  ) {
+    return _wcsxfrm(
+      _Destination,
+      _Source,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsxfrm_ptr = _lookup<ffi.NativeFunction<_c_wcsxfrm>>('wcsxfrm');
+  late final _dart_wcsxfrm _wcsxfrm = _wcsxfrm_ptr.asFunction<_dart_wcsxfrm>();
+
+  int _wcsxfrm_l(
+    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.Uint16> _Source,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsxfrm_l(
+      _Destination,
+      _Source,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __wcsxfrm_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsxfrm_l>>('_wcsxfrm_l');
+  late final _dart__wcsxfrm_l __wcsxfrm_l =
+      __wcsxfrm_l_ptr.asFunction<_dart__wcsxfrm_l>();
+
+  int wcscoll(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+  ) {
+    return _wcscoll(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final _wcscoll_ptr = _lookup<ffi.NativeFunction<_c_wcscoll>>('wcscoll');
+  late final _dart_wcscoll _wcscoll = _wcscoll_ptr.asFunction<_dart_wcscoll>();
+
+  int _wcscoll_l(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcscoll_l(
+      _String1,
+      _String2,
+      _Locale,
+    );
+  }
+
+  late final __wcscoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcscoll_l>>('_wcscoll_l');
+  late final _dart__wcscoll_l __wcscoll_l =
+      __wcscoll_l_ptr.asFunction<_dart__wcscoll_l>();
+
+  int _wcsicoll(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+  ) {
+    return __wcsicoll(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final __wcsicoll_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsicoll>>('_wcsicoll');
+  late final _dart__wcsicoll __wcsicoll =
+      __wcsicoll_ptr.asFunction<_dart__wcsicoll>();
+
+  int _wcsicoll_l(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsicoll_l(
+      _String1,
+      _String2,
+      _Locale,
+    );
+  }
+
+  late final __wcsicoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsicoll_l>>('_wcsicoll_l');
+  late final _dart__wcsicoll_l __wcsicoll_l =
+      __wcsicoll_l_ptr.asFunction<_dart__wcsicoll_l>();
+
+  int _wcsncoll(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+  ) {
+    return __wcsncoll(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final __wcsncoll_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsncoll>>('_wcsncoll');
+  late final _dart__wcsncoll __wcsncoll =
+      __wcsncoll_ptr.asFunction<_dart__wcsncoll>();
+
+  int _wcsncoll_l(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsncoll_l(
+      _String1,
+      _String2,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __wcsncoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsncoll_l>>('_wcsncoll_l');
+  late final _dart__wcsncoll_l __wcsncoll_l =
+      __wcsncoll_l_ptr.asFunction<_dart__wcsncoll_l>();
+
+  int _wcsnicoll(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+  ) {
+    return __wcsnicoll(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final __wcsnicoll_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsnicoll>>('_wcsnicoll');
+  late final _dart__wcsnicoll __wcsnicoll =
+      __wcsnicoll_ptr.asFunction<_dart__wcsnicoll>();
+
+  int _wcsnicoll_l(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcsnicoll_l(
+      _String1,
+      _String2,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __wcsnicoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcsnicoll_l>>('_wcsnicoll_l');
+  late final _dart__wcsnicoll_l __wcsnicoll_l =
+      __wcsnicoll_l_ptr.asFunction<_dart__wcsnicoll_l>();
+
+  ffi.Pointer<ffi.Uint16> wcsdup(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return _wcsdup_1(
+      _String,
+    );
+  }
+
+  late final _wcsdup_ptr = _lookup<ffi.NativeFunction<_c_wcsdup>>('wcsdup');
+  late final _dart_wcsdup _wcsdup_1 = _wcsdup_ptr.asFunction<_dart_wcsdup>();
+
+  int wcsicmp(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+  ) {
+    return _wcsicmp_1(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final _wcsicmp_ptr = _lookup<ffi.NativeFunction<_c_wcsicmp>>('wcsicmp');
+  late final _dart_wcsicmp _wcsicmp_1 =
+      _wcsicmp_ptr.asFunction<_dart_wcsicmp>();
+
+  int wcsnicmp(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+    int _MaxCount,
+  ) {
+    return _wcsnicmp_1(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsnicmp_ptr =
+      _lookup<ffi.NativeFunction<_c_wcsnicmp>>('wcsnicmp');
+  late final _dart_wcsnicmp _wcsnicmp_1 =
+      _wcsnicmp_ptr.asFunction<_dart_wcsnicmp>();
+
+  ffi.Pointer<ffi.Uint16> wcsnset(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _Value,
+    int _MaxCount,
+  ) {
+    return _wcsnset_1(
+      _String,
+      _Value,
+      _MaxCount,
+    );
+  }
+
+  late final _wcsnset_ptr = _lookup<ffi.NativeFunction<_c_wcsnset>>('wcsnset');
+  late final _dart_wcsnset _wcsnset_1 =
+      _wcsnset_ptr.asFunction<_dart_wcsnset>();
+
+  ffi.Pointer<ffi.Uint16> wcsrev(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return _wcsrev_1(
+      _String,
+    );
+  }
+
+  late final _wcsrev_ptr = _lookup<ffi.NativeFunction<_c_wcsrev>>('wcsrev');
+  late final _dart_wcsrev _wcsrev_1 = _wcsrev_ptr.asFunction<_dart_wcsrev>();
+
+  ffi.Pointer<ffi.Uint16> wcsset(
+    ffi.Pointer<ffi.Uint16> _String,
+    int _Value,
+  ) {
+    return _wcsset_1(
+      _String,
+      _Value,
+    );
+  }
+
+  late final _wcsset_ptr = _lookup<ffi.NativeFunction<_c_wcsset>>('wcsset');
+  late final _dart_wcsset _wcsset_1 = _wcsset_ptr.asFunction<_dart_wcsset>();
+
+  ffi.Pointer<ffi.Uint16> wcslwr(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return _wcslwr_1(
+      _String,
+    );
+  }
+
+  late final _wcslwr_ptr = _lookup<ffi.NativeFunction<_c_wcslwr>>('wcslwr');
+  late final _dart_wcslwr _wcslwr_1 = _wcslwr_ptr.asFunction<_dart_wcslwr>();
+
+  ffi.Pointer<ffi.Uint16> wcsupr(
+    ffi.Pointer<ffi.Uint16> _String,
+  ) {
+    return _wcsupr_1(
+      _String,
+    );
+  }
+
+  late final _wcsupr_ptr = _lookup<ffi.NativeFunction<_c_wcsupr>>('wcsupr');
+  late final _dart_wcsupr _wcsupr_1 = _wcsupr_ptr.asFunction<_dart_wcsupr>();
+
+  int wcsicoll(
+    ffi.Pointer<ffi.Uint16> _String1,
+    ffi.Pointer<ffi.Uint16> _String2,
+  ) {
+    return _wcsicoll_1(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final _wcsicoll_ptr =
+      _lookup<ffi.NativeFunction<_c_wcsicoll>>('wcsicoll');
+  late final _dart_wcsicoll _wcsicoll_1 =
+      _wcsicoll_ptr.asFunction<_dart_wcsicoll>();
+
+  int strcpy_s(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _SizeInBytes,
+    ffi.Pointer<ffi.Int8> _Source,
+  ) {
+    return _strcpy_s(
+      _Destination,
+      _SizeInBytes,
+      _Source,
+    );
+  }
+
+  late final _strcpy_s_ptr =
+      _lookup<ffi.NativeFunction<_c_strcpy_s>>('strcpy_s');
+  late final _dart_strcpy_s _strcpy_s =
+      _strcpy_s_ptr.asFunction<_dart_strcpy_s>();
+
+  int strcat_s(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _SizeInBytes,
+    ffi.Pointer<ffi.Int8> _Source,
+  ) {
+    return _strcat_s(
+      _Destination,
+      _SizeInBytes,
+      _Source,
+    );
+  }
+
+  late final _strcat_s_ptr =
+      _lookup<ffi.NativeFunction<_c_strcat_s>>('strcat_s');
+  late final _dart_strcat_s _strcat_s =
+      _strcat_s_ptr.asFunction<_dart_strcat_s>();
+
+  int strerror_s(
+    ffi.Pointer<ffi.Int8> _Buffer,
+    int _SizeInBytes,
+    int _ErrorNumber,
+  ) {
+    return _strerror_s_1(
+      _Buffer,
+      _SizeInBytes,
+      _ErrorNumber,
+    );
+  }
+
+  late final _strerror_s_ptr =
+      _lookup<ffi.NativeFunction<_c_strerror_s>>('strerror_s');
+  late final _dart_strerror_s _strerror_s_1 =
+      _strerror_s_ptr.asFunction<_dart_strerror_s>();
+
+  int strncat_s(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _SizeInBytes,
+    ffi.Pointer<ffi.Int8> _Source,
+    int _MaxCount,
+  ) {
+    return _strncat_s(
+      _Destination,
+      _SizeInBytes,
+      _Source,
+      _MaxCount,
+    );
+  }
+
+  late final _strncat_s_ptr =
+      _lookup<ffi.NativeFunction<_c_strncat_s>>('strncat_s');
+  late final _dart_strncat_s _strncat_s =
+      _strncat_s_ptr.asFunction<_dart_strncat_s>();
+
+  int strncpy_s(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _SizeInBytes,
+    ffi.Pointer<ffi.Int8> _Source,
+    int _MaxCount,
+  ) {
+    return _strncpy_s(
+      _Destination,
+      _SizeInBytes,
+      _Source,
+      _MaxCount,
+    );
+  }
+
+  late final _strncpy_s_ptr =
+      _lookup<ffi.NativeFunction<_c_strncpy_s>>('strncpy_s');
+  late final _dart_strncpy_s _strncpy_s =
+      _strncpy_s_ptr.asFunction<_dart_strncpy_s>();
+
+  ffi.Pointer<ffi.Int8> strtok_s(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Int8> _Delimiter,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
+  ) {
+    return _strtok_s(
+      _String,
+      _Delimiter,
+      _Context,
+    );
+  }
+
+  late final _strtok_s_ptr =
+      _lookup<ffi.NativeFunction<_c_strtok_s>>('strtok_s');
+  late final _dart_strtok_s _strtok_s =
+      _strtok_s_ptr.asFunction<_dart_strtok_s>();
+
+  ffi.Pointer<ffi.Void> _memccpy(
+    ffi.Pointer<ffi.Void> _Dst,
+    ffi.Pointer<ffi.Void> _Src,
+    int _Val,
+    int _MaxCount,
+  ) {
+    return __memccpy(
+      _Dst,
+      _Src,
+      _Val,
+      _MaxCount,
+    );
+  }
+
+  late final __memccpy_ptr =
+      _lookup<ffi.NativeFunction<_c__memccpy>>('_memccpy');
+  late final _dart__memccpy __memccpy =
+      __memccpy_ptr.asFunction<_dart__memccpy>();
+
+  ffi.Pointer<ffi.Int8> strcat(
+    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Int8> _Source,
+  ) {
+    return _strcat(
+      _Destination,
+      _Source,
+    );
+  }
+
+  late final _strcat_ptr = _lookup<ffi.NativeFunction<_c_strcat>>('strcat');
+  late final _dart_strcat _strcat = _strcat_ptr.asFunction<_dart_strcat>();
+
   int strcmp(
-    ffi.Pointer<ffi.Int8> __s1,
-    ffi.Pointer<ffi.Int8> __s2,
+    ffi.Pointer<ffi.Int8> _Str1,
+    ffi.Pointer<ffi.Int8> _Str2,
   ) {
     return _strcmp(
-      __s1,
-      __s2,
+      _Str1,
+      _Str2,
     );
   }
 
   late final _strcmp_ptr = _lookup<ffi.NativeFunction<_c_strcmp>>('strcmp');
   late final _dart_strcmp _strcmp = _strcmp_ptr.asFunction<_dart_strcmp>();
 
+  int _strcmpi(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+  ) {
+    return __strcmpi(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final __strcmpi_ptr =
+      _lookup<ffi.NativeFunction<_c__strcmpi>>('_strcmpi');
+  late final _dart__strcmpi __strcmpi =
+      __strcmpi_ptr.asFunction<_dart__strcmpi>();
+
   int strcoll(
-    ffi.Pointer<ffi.Int8> __s1,
-    ffi.Pointer<ffi.Int8> __s2,
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
   ) {
     return _strcoll(
-      __s1,
-      __s2,
+      _String1,
+      _String2,
     );
   }
 
   late final _strcoll_ptr = _lookup<ffi.NativeFunction<_c_strcoll>>('strcoll');
   late final _dart_strcoll _strcoll = _strcoll_ptr.asFunction<_dart_strcoll>();
 
+  int _strcoll_l(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strcoll_l(
+      _String1,
+      _String2,
+      _Locale,
+    );
+  }
+
+  late final __strcoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strcoll_l>>('_strcoll_l');
+  late final _dart__strcoll_l __strcoll_l =
+      __strcoll_l_ptr.asFunction<_dart__strcoll_l>();
+
   ffi.Pointer<ffi.Int8> strcpy(
-    ffi.Pointer<ffi.Int8> __dst,
-    ffi.Pointer<ffi.Int8> __src,
+    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Int8> _Source,
   ) {
     return _strcpy(
-      __dst,
-      __src,
+      _Destination,
+      _Source,
     );
   }
 
@@ -162,51 +1493,214 @@ class LabSoundBind {
   late final _dart_strcpy _strcpy = _strcpy_ptr.asFunction<_dart_strcpy>();
 
   int strcspn(
-    ffi.Pointer<ffi.Int8> __s,
-    ffi.Pointer<ffi.Int8> __charset,
+    ffi.Pointer<ffi.Int8> _Str,
+    ffi.Pointer<ffi.Int8> _Control,
   ) {
     return _strcspn(
-      __s,
-      __charset,
+      _Str,
+      _Control,
     );
   }
 
   late final _strcspn_ptr = _lookup<ffi.NativeFunction<_c_strcspn>>('strcspn');
   late final _dart_strcspn _strcspn = _strcspn_ptr.asFunction<_dart_strcspn>();
 
-  ffi.Pointer<ffi.Int8> strerror(
-    int __errnum,
+  ffi.Pointer<ffi.Int8> _strdup(
+    ffi.Pointer<ffi.Int8> _Source,
   ) {
-    return _strerror(
-      __errnum,
+    return __strdup(
+      _Source,
+    );
+  }
+
+  late final __strdup_ptr = _lookup<ffi.NativeFunction<_c__strdup>>('_strdup');
+  late final _dart__strdup __strdup = __strdup_ptr.asFunction<_dart__strdup>();
+
+  ffi.Pointer<ffi.Int8> _strerror(
+    ffi.Pointer<ffi.Int8> _ErrorMessage,
+  ) {
+    return __strerror(
+      _ErrorMessage,
+    );
+  }
+
+  late final __strerror_ptr =
+      _lookup<ffi.NativeFunction<_c__strerror>>('_strerror');
+  late final _dart__strerror __strerror =
+      __strerror_ptr.asFunction<_dart__strerror>();
+
+  int _strerror_s(
+    ffi.Pointer<ffi.Int8> _Buffer,
+    int _SizeInBytes,
+    ffi.Pointer<ffi.Int8> _ErrorMessage,
+  ) {
+    return __strerror_s(
+      _Buffer,
+      _SizeInBytes,
+      _ErrorMessage,
+    );
+  }
+
+  late final __strerror_s_ptr =
+      _lookup<ffi.NativeFunction<_c__strerror_s>>('_strerror_s');
+  late final _dart__strerror_s __strerror_s =
+      __strerror_s_ptr.asFunction<_dart__strerror_s>();
+
+  ffi.Pointer<ffi.Int8> strerror(
+    int _ErrorMessage,
+  ) {
+    return _strerror_1(
+      _ErrorMessage,
     );
   }
 
   late final _strerror_ptr =
       _lookup<ffi.NativeFunction<_c_strerror>>('strerror');
-  late final _dart_strerror _strerror =
+  late final _dart_strerror _strerror_1 =
       _strerror_ptr.asFunction<_dart_strerror>();
 
+  int _stricmp(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+  ) {
+    return __stricmp(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final __stricmp_ptr =
+      _lookup<ffi.NativeFunction<_c__stricmp>>('_stricmp');
+  late final _dart__stricmp __stricmp =
+      __stricmp_ptr.asFunction<_dart__stricmp>();
+
+  int _stricoll(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+  ) {
+    return __stricoll(
+      _String1,
+      _String2,
+    );
+  }
+
+  late final __stricoll_ptr =
+      _lookup<ffi.NativeFunction<_c__stricoll>>('_stricoll');
+  late final _dart__stricoll __stricoll =
+      __stricoll_ptr.asFunction<_dart__stricoll>();
+
+  int _stricoll_l(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __stricoll_l(
+      _String1,
+      _String2,
+      _Locale,
+    );
+  }
+
+  late final __stricoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__stricoll_l>>('_stricoll_l');
+  late final _dart__stricoll_l __stricoll_l =
+      __stricoll_l_ptr.asFunction<_dart__stricoll_l>();
+
+  int _stricmp_l(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __stricmp_l(
+      _String1,
+      _String2,
+      _Locale,
+    );
+  }
+
+  late final __stricmp_l_ptr =
+      _lookup<ffi.NativeFunction<_c__stricmp_l>>('_stricmp_l');
+  late final _dart__stricmp_l __stricmp_l =
+      __stricmp_l_ptr.asFunction<_dart__stricmp_l>();
+
   int strlen(
-    ffi.Pointer<ffi.Int8> __s,
+    ffi.Pointer<ffi.Int8> _Str,
   ) {
     return _strlen(
-      __s,
+      _Str,
     );
   }
 
   late final _strlen_ptr = _lookup<ffi.NativeFunction<_c_strlen>>('strlen');
   late final _dart_strlen _strlen = _strlen_ptr.asFunction<_dart_strlen>();
 
+  int _strlwr_s(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Size,
+  ) {
+    return __strlwr_s(
+      _String,
+      _Size,
+    );
+  }
+
+  late final __strlwr_s_ptr =
+      _lookup<ffi.NativeFunction<_c__strlwr_s>>('_strlwr_s');
+  late final _dart__strlwr_s __strlwr_s =
+      __strlwr_s_ptr.asFunction<_dart__strlwr_s>();
+
+  ffi.Pointer<ffi.Int8> _strlwr(
+    ffi.Pointer<ffi.Int8> _String,
+  ) {
+    return __strlwr(
+      _String,
+    );
+  }
+
+  late final __strlwr_ptr = _lookup<ffi.NativeFunction<_c__strlwr>>('_strlwr');
+  late final _dart__strlwr __strlwr = __strlwr_ptr.asFunction<_dart__strlwr>();
+
+  int _strlwr_s_l(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Size,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strlwr_s_l(
+      _String,
+      _Size,
+      _Locale,
+    );
+  }
+
+  late final __strlwr_s_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strlwr_s_l>>('_strlwr_s_l');
+  late final _dart__strlwr_s_l __strlwr_s_l =
+      __strlwr_s_l_ptr.asFunction<_dart__strlwr_s_l>();
+
+  ffi.Pointer<ffi.Int8> _strlwr_l(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strlwr_l(
+      _String,
+      _Locale,
+    );
+  }
+
+  late final __strlwr_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strlwr_l>>('_strlwr_l');
+  late final _dart__strlwr_l __strlwr_l =
+      __strlwr_l_ptr.asFunction<_dart__strlwr_l>();
+
   ffi.Pointer<ffi.Int8> strncat(
-    ffi.Pointer<ffi.Int8> __s1,
-    ffi.Pointer<ffi.Int8> __s2,
-    int __n,
+    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Int8> _Source,
+    int _Count,
   ) {
     return _strncat(
-      __s1,
-      __s2,
-      __n,
+      _Destination,
+      _Source,
+      _Count,
     );
   }
 
@@ -214,632 +1708,6168 @@ class LabSoundBind {
   late final _dart_strncat _strncat = _strncat_ptr.asFunction<_dart_strncat>();
 
   int strncmp(
-    ffi.Pointer<ffi.Int8> __s1,
-    ffi.Pointer<ffi.Int8> __s2,
-    int __n,
+    ffi.Pointer<ffi.Int8> _Str1,
+    ffi.Pointer<ffi.Int8> _Str2,
+    int _MaxCount,
   ) {
     return _strncmp(
-      __s1,
-      __s2,
-      __n,
+      _Str1,
+      _Str2,
+      _MaxCount,
     );
   }
 
   late final _strncmp_ptr = _lookup<ffi.NativeFunction<_c_strncmp>>('strncmp');
   late final _dart_strncmp _strncmp = _strncmp_ptr.asFunction<_dart_strncmp>();
 
+  int _strnicmp(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
+  ) {
+    return __strnicmp(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final __strnicmp_ptr =
+      _lookup<ffi.NativeFunction<_c__strnicmp>>('_strnicmp');
+  late final _dart__strnicmp __strnicmp =
+      __strnicmp_ptr.asFunction<_dart__strnicmp>();
+
+  int _strnicmp_l(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strnicmp_l(
+      _String1,
+      _String2,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __strnicmp_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strnicmp_l>>('_strnicmp_l');
+  late final _dart__strnicmp_l __strnicmp_l =
+      __strnicmp_l_ptr.asFunction<_dart__strnicmp_l>();
+
+  int _strnicoll(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
+  ) {
+    return __strnicoll(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final __strnicoll_ptr =
+      _lookup<ffi.NativeFunction<_c__strnicoll>>('_strnicoll');
+  late final _dart__strnicoll __strnicoll =
+      __strnicoll_ptr.asFunction<_dart__strnicoll>();
+
+  int _strnicoll_l(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strnicoll_l(
+      _String1,
+      _String2,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __strnicoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strnicoll_l>>('_strnicoll_l');
+  late final _dart__strnicoll_l __strnicoll_l =
+      __strnicoll_l_ptr.asFunction<_dart__strnicoll_l>();
+
+  int _strncoll(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
+  ) {
+    return __strncoll(
+      _String1,
+      _String2,
+      _MaxCount,
+    );
+  }
+
+  late final __strncoll_ptr =
+      _lookup<ffi.NativeFunction<_c__strncoll>>('_strncoll');
+  late final _dart__strncoll __strncoll =
+      __strncoll_ptr.asFunction<_dart__strncoll>();
+
+  int _strncoll_l(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strncoll_l(
+      _String1,
+      _String2,
+      _MaxCount,
+      _Locale,
+    );
+  }
+
+  late final __strncoll_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strncoll_l>>('_strncoll_l');
+  late final _dart__strncoll_l __strncoll_l =
+      __strncoll_l_ptr.asFunction<_dart__strncoll_l>();
+
+  int __strncnt(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Count,
+  ) {
+    return ___strncnt(
+      _String,
+      _Count,
+    );
+  }
+
+  late final ___strncnt_ptr =
+      _lookup<ffi.NativeFunction<_c___strncnt>>('__strncnt');
+  late final _dart___strncnt ___strncnt =
+      ___strncnt_ptr.asFunction<_dart___strncnt>();
+
   ffi.Pointer<ffi.Int8> strncpy(
-    ffi.Pointer<ffi.Int8> __dst,
-    ffi.Pointer<ffi.Int8> __src,
-    int __n,
+    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Int8> _Source,
+    int _Count,
   ) {
     return _strncpy(
-      __dst,
-      __src,
-      __n,
+      _Destination,
+      _Source,
+      _Count,
     );
   }
 
   late final _strncpy_ptr = _lookup<ffi.NativeFunction<_c_strncpy>>('strncpy');
   late final _dart_strncpy _strncpy = _strncpy_ptr.asFunction<_dart_strncpy>();
 
-  ffi.Pointer<ffi.Int8> strpbrk(
-    ffi.Pointer<ffi.Int8> __s,
-    ffi.Pointer<ffi.Int8> __charset,
-  ) {
-    return _strpbrk(
-      __s,
-      __charset,
-    );
-  }
-
-  late final _strpbrk_ptr = _lookup<ffi.NativeFunction<_c_strpbrk>>('strpbrk');
-  late final _dart_strpbrk _strpbrk = _strpbrk_ptr.asFunction<_dart_strpbrk>();
-
-  ffi.Pointer<ffi.Int8> strrchr(
-    ffi.Pointer<ffi.Int8> __s,
-    int __c,
-  ) {
-    return _strrchr(
-      __s,
-      __c,
-    );
-  }
-
-  late final _strrchr_ptr = _lookup<ffi.NativeFunction<_c_strrchr>>('strrchr');
-  late final _dart_strrchr _strrchr = _strrchr_ptr.asFunction<_dart_strrchr>();
-
-  int strspn(
-    ffi.Pointer<ffi.Int8> __s,
-    ffi.Pointer<ffi.Int8> __charset,
-  ) {
-    return _strspn(
-      __s,
-      __charset,
-    );
-  }
-
-  late final _strspn_ptr = _lookup<ffi.NativeFunction<_c_strspn>>('strspn');
-  late final _dart_strspn _strspn = _strspn_ptr.asFunction<_dart_strspn>();
-
-  ffi.Pointer<ffi.Int8> strstr(
-    ffi.Pointer<ffi.Int8> __big,
-    ffi.Pointer<ffi.Int8> __little,
-  ) {
-    return _strstr(
-      __big,
-      __little,
-    );
-  }
-
-  late final _strstr_ptr = _lookup<ffi.NativeFunction<_c_strstr>>('strstr');
-  late final _dart_strstr _strstr = _strstr_ptr.asFunction<_dart_strstr>();
-
-  ffi.Pointer<ffi.Int8> strtok(
-    ffi.Pointer<ffi.Int8> __str,
-    ffi.Pointer<ffi.Int8> __sep,
-  ) {
-    return _strtok(
-      __str,
-      __sep,
-    );
-  }
-
-  late final _strtok_ptr = _lookup<ffi.NativeFunction<_c_strtok>>('strtok');
-  late final _dart_strtok _strtok = _strtok_ptr.asFunction<_dart_strtok>();
-
-  int strxfrm(
-    ffi.Pointer<ffi.Int8> __s1,
-    ffi.Pointer<ffi.Int8> __s2,
-    int __n,
-  ) {
-    return _strxfrm(
-      __s1,
-      __s2,
-      __n,
-    );
-  }
-
-  late final _strxfrm_ptr = _lookup<ffi.NativeFunction<_c_strxfrm>>('strxfrm');
-  late final _dart_strxfrm _strxfrm = _strxfrm_ptr.asFunction<_dart_strxfrm>();
-
-  ffi.Pointer<ffi.Int8> strtok_r(
-    ffi.Pointer<ffi.Int8> __str,
-    ffi.Pointer<ffi.Int8> __sep,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
-  ) {
-    return _strtok_r(
-      __str,
-      __sep,
-      __lasts,
-    );
-  }
-
-  late final _strtok_r_ptr =
-      _lookup<ffi.NativeFunction<_c_strtok_r>>('strtok_r');
-  late final _dart_strtok_r _strtok_r =
-      _strtok_r_ptr.asFunction<_dart_strtok_r>();
-
-  int strerror_r(
-    int __errnum,
-    ffi.Pointer<ffi.Int8> __strerrbuf,
-    int __buflen,
-  ) {
-    return _strerror_r(
-      __errnum,
-      __strerrbuf,
-      __buflen,
-    );
-  }
-
-  late final _strerror_r_ptr =
-      _lookup<ffi.NativeFunction<_c_strerror_r>>('strerror_r');
-  late final _dart_strerror_r _strerror_r =
-      _strerror_r_ptr.asFunction<_dart_strerror_r>();
-
-  ffi.Pointer<ffi.Int8> strdup(
-    ffi.Pointer<ffi.Int8> __s1,
-  ) {
-    return _strdup(
-      __s1,
-    );
-  }
-
-  late final _strdup_ptr = _lookup<ffi.NativeFunction<_c_strdup>>('strdup');
-  late final _dart_strdup _strdup = _strdup_ptr.asFunction<_dart_strdup>();
-
-  ffi.Pointer<ffi.Void> memccpy(
-    ffi.Pointer<ffi.Void> __dst,
-    ffi.Pointer<ffi.Void> __src,
-    int __c,
-    int __n,
-  ) {
-    return _memccpy(
-      __dst,
-      __src,
-      __c,
-      __n,
-    );
-  }
-
-  late final _memccpy_ptr = _lookup<ffi.NativeFunction<_c_memccpy>>('memccpy');
-  late final _dart_memccpy _memccpy = _memccpy_ptr.asFunction<_dart_memccpy>();
-
-  ffi.Pointer<ffi.Int8> stpcpy(
-    ffi.Pointer<ffi.Int8> __dst,
-    ffi.Pointer<ffi.Int8> __src,
-  ) {
-    return _stpcpy(
-      __dst,
-      __src,
-    );
-  }
-
-  late final _stpcpy_ptr = _lookup<ffi.NativeFunction<_c_stpcpy>>('stpcpy');
-  late final _dart_stpcpy _stpcpy = _stpcpy_ptr.asFunction<_dart_stpcpy>();
-
-  ffi.Pointer<ffi.Int8> stpncpy(
-    ffi.Pointer<ffi.Int8> __dst,
-    ffi.Pointer<ffi.Int8> __src,
-    int __n,
-  ) {
-    return _stpncpy(
-      __dst,
-      __src,
-      __n,
-    );
-  }
-
-  late final _stpncpy_ptr = _lookup<ffi.NativeFunction<_c_stpncpy>>('stpncpy');
-  late final _dart_stpncpy _stpncpy = _stpncpy_ptr.asFunction<_dart_stpncpy>();
-
-  ffi.Pointer<ffi.Int8> strndup(
-    ffi.Pointer<ffi.Int8> __s1,
-    int __n,
-  ) {
-    return _strndup(
-      __s1,
-      __n,
-    );
-  }
-
-  late final _strndup_ptr = _lookup<ffi.NativeFunction<_c_strndup>>('strndup');
-  late final _dart_strndup _strndup = _strndup_ptr.asFunction<_dart_strndup>();
-
   int strnlen(
-    ffi.Pointer<ffi.Int8> __s1,
-    int __n,
+    ffi.Pointer<ffi.Int8> _String,
+    int _MaxCount,
   ) {
     return _strnlen(
-      __s1,
-      __n,
+      _String,
+      _MaxCount,
     );
   }
 
   late final _strnlen_ptr = _lookup<ffi.NativeFunction<_c_strnlen>>('strnlen');
   late final _dart_strnlen _strnlen = _strnlen_ptr.asFunction<_dart_strnlen>();
 
-  ffi.Pointer<ffi.Int8> strsignal(
-    int __sig,
+  int _strnset_s(
+    ffi.Pointer<ffi.Int8> _String,
+    int _SizeInBytes,
+    int _Value,
+    int _MaxCount,
   ) {
-    return _strsignal(
-      __sig,
+    return __strnset_s(
+      _String,
+      _SizeInBytes,
+      _Value,
+      _MaxCount,
     );
   }
 
-  late final _strsignal_ptr =
-      _lookup<ffi.NativeFunction<_c_strsignal>>('strsignal');
-  late final _dart_strsignal _strsignal =
-      _strsignal_ptr.asFunction<_dart_strsignal>();
+  late final __strnset_s_ptr =
+      _lookup<ffi.NativeFunction<_c__strnset_s>>('_strnset_s');
+  late final _dart__strnset_s __strnset_s =
+      __strnset_s_ptr.asFunction<_dart__strnset_s>();
 
-  int memset_s(
-    ffi.Pointer<ffi.Void> __s,
-    int __smax,
-    int __c,
-    int __n,
+  ffi.Pointer<ffi.Int8> _strnset(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _Value,
+    int _Count,
   ) {
-    return _memset_s(
-      __s,
-      __smax,
-      __c,
-      __n,
+    return __strnset(
+      _Destination,
+      _Value,
+      _Count,
     );
   }
 
-  late final _memset_s_ptr =
-      _lookup<ffi.NativeFunction<_c_memset_s>>('memset_s');
-  late final _dart_memset_s _memset_s =
-      _memset_s_ptr.asFunction<_dart_memset_s>();
+  late final __strnset_ptr =
+      _lookup<ffi.NativeFunction<_c__strnset>>('_strnset');
+  late final _dart__strnset __strnset =
+      __strnset_ptr.asFunction<_dart__strnset>();
 
-  ffi.Pointer<ffi.Void> memmem(
-    ffi.Pointer<ffi.Void> __big,
-    int __big_len,
-    ffi.Pointer<ffi.Void> __little,
-    int __little_len,
+  ffi.Pointer<ffi.Int8> strpbrk(
+    ffi.Pointer<ffi.Int8> _Str,
+    ffi.Pointer<ffi.Int8> _Control,
   ) {
-    return _memmem(
-      __big,
-      __big_len,
-      __little,
-      __little_len,
+    return _strpbrk(
+      _Str,
+      _Control,
     );
   }
 
-  late final _memmem_ptr = _lookup<ffi.NativeFunction<_c_memmem>>('memmem');
-  late final _dart_memmem _memmem = _memmem_ptr.asFunction<_dart_memmem>();
+  late final _strpbrk_ptr = _lookup<ffi.NativeFunction<_c_strpbrk>>('strpbrk');
+  late final _dart_strpbrk _strpbrk = _strpbrk_ptr.asFunction<_dart_strpbrk>();
 
-  void memset_pattern4(
-    ffi.Pointer<ffi.Void> __b,
-    ffi.Pointer<ffi.Void> __pattern4,
-    int __len,
+  ffi.Pointer<ffi.Int8> _strrev(
+    ffi.Pointer<ffi.Int8> _Str,
   ) {
-    return _memset_pattern4(
-      __b,
-      __pattern4,
-      __len,
+    return __strrev(
+      _Str,
     );
   }
 
-  late final _memset_pattern4_ptr =
-      _lookup<ffi.NativeFunction<_c_memset_pattern4>>('memset_pattern4');
-  late final _dart_memset_pattern4 _memset_pattern4 =
-      _memset_pattern4_ptr.asFunction<_dart_memset_pattern4>();
+  late final __strrev_ptr = _lookup<ffi.NativeFunction<_c__strrev>>('_strrev');
+  late final _dart__strrev __strrev = __strrev_ptr.asFunction<_dart__strrev>();
 
-  void memset_pattern8(
-    ffi.Pointer<ffi.Void> __b,
-    ffi.Pointer<ffi.Void> __pattern8,
-    int __len,
+  int _strset_s(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _DestinationSize,
+    int _Value,
   ) {
-    return _memset_pattern8(
-      __b,
-      __pattern8,
-      __len,
+    return __strset_s(
+      _Destination,
+      _DestinationSize,
+      _Value,
     );
   }
 
-  late final _memset_pattern8_ptr =
-      _lookup<ffi.NativeFunction<_c_memset_pattern8>>('memset_pattern8');
-  late final _dart_memset_pattern8 _memset_pattern8 =
-      _memset_pattern8_ptr.asFunction<_dart_memset_pattern8>();
+  late final __strset_s_ptr =
+      _lookup<ffi.NativeFunction<_c__strset_s>>('_strset_s');
+  late final _dart__strset_s __strset_s =
+      __strset_s_ptr.asFunction<_dart__strset_s>();
 
-  void memset_pattern16(
-    ffi.Pointer<ffi.Void> __b,
-    ffi.Pointer<ffi.Void> __pattern16,
-    int __len,
+  ffi.Pointer<ffi.Int8> _strset(
+    ffi.Pointer<ffi.Int8> _Destination,
+    int _Value,
   ) {
-    return _memset_pattern16(
-      __b,
-      __pattern16,
-      __len,
+    return __strset(
+      _Destination,
+      _Value,
     );
   }
 
-  late final _memset_pattern16_ptr =
-      _lookup<ffi.NativeFunction<_c_memset_pattern16>>('memset_pattern16');
-  late final _dart_memset_pattern16 _memset_pattern16 =
-      _memset_pattern16_ptr.asFunction<_dart_memset_pattern16>();
+  late final __strset_ptr = _lookup<ffi.NativeFunction<_c__strset>>('_strset');
+  late final _dart__strset __strset = __strset_ptr.asFunction<_dart__strset>();
 
-  ffi.Pointer<ffi.Int8> strcasestr(
-    ffi.Pointer<ffi.Int8> __big,
-    ffi.Pointer<ffi.Int8> __little,
+  int strspn(
+    ffi.Pointer<ffi.Int8> _Str,
+    ffi.Pointer<ffi.Int8> _Control,
   ) {
-    return _strcasestr(
-      __big,
-      __little,
+    return _strspn(
+      _Str,
+      _Control,
     );
   }
 
-  late final _strcasestr_ptr =
-      _lookup<ffi.NativeFunction<_c_strcasestr>>('strcasestr');
-  late final _dart_strcasestr _strcasestr =
-      _strcasestr_ptr.asFunction<_dart_strcasestr>();
+  late final _strspn_ptr = _lookup<ffi.NativeFunction<_c_strspn>>('strspn');
+  late final _dart_strspn _strspn = _strspn_ptr.asFunction<_dart_strspn>();
 
-  ffi.Pointer<ffi.Int8> strnstr(
-    ffi.Pointer<ffi.Int8> __big,
-    ffi.Pointer<ffi.Int8> __little,
-    int __len,
+  ffi.Pointer<ffi.Int8> strtok(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Int8> _Delimiter,
   ) {
-    return _strnstr(
-      __big,
-      __little,
-      __len,
+    return _strtok(
+      _String,
+      _Delimiter,
     );
   }
 
-  late final _strnstr_ptr = _lookup<ffi.NativeFunction<_c_strnstr>>('strnstr');
-  late final _dart_strnstr _strnstr = _strnstr_ptr.asFunction<_dart_strnstr>();
+  late final _strtok_ptr = _lookup<ffi.NativeFunction<_c_strtok>>('strtok');
+  late final _dart_strtok _strtok = _strtok_ptr.asFunction<_dart_strtok>();
 
-  int strlcat(
-    ffi.Pointer<ffi.Int8> __dst,
-    ffi.Pointer<ffi.Int8> __source,
-    int __size,
+  int _strupr_s(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Size,
   ) {
-    return _strlcat(
-      __dst,
-      __source,
-      __size,
+    return __strupr_s(
+      _String,
+      _Size,
     );
   }
 
-  late final _strlcat_ptr = _lookup<ffi.NativeFunction<_c_strlcat>>('strlcat');
-  late final _dart_strlcat _strlcat = _strlcat_ptr.asFunction<_dart_strlcat>();
+  late final __strupr_s_ptr =
+      _lookup<ffi.NativeFunction<_c__strupr_s>>('_strupr_s');
+  late final _dart__strupr_s __strupr_s =
+      __strupr_s_ptr.asFunction<_dart__strupr_s>();
 
-  int strlcpy(
-    ffi.Pointer<ffi.Int8> __dst,
-    ffi.Pointer<ffi.Int8> __source,
-    int __size,
+  ffi.Pointer<ffi.Int8> _strupr(
+    ffi.Pointer<ffi.Int8> _String,
   ) {
-    return _strlcpy(
-      __dst,
-      __source,
-      __size,
+    return __strupr(
+      _String,
     );
   }
 
-  late final _strlcpy_ptr = _lookup<ffi.NativeFunction<_c_strlcpy>>('strlcpy');
-  late final _dart_strlcpy _strlcpy = _strlcpy_ptr.asFunction<_dart_strlcpy>();
+  late final __strupr_ptr = _lookup<ffi.NativeFunction<_c__strupr>>('_strupr');
+  late final _dart__strupr __strupr = __strupr_ptr.asFunction<_dart__strupr>();
 
-  void strmode(
-    int __mode,
-    ffi.Pointer<ffi.Int8> __bp,
+  int _strupr_s_l(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Size,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
   ) {
-    return _strmode(
-      __mode,
-      __bp,
+    return __strupr_s_l(
+      _String,
+      _Size,
+      _Locale,
     );
   }
 
-  late final _strmode_ptr = _lookup<ffi.NativeFunction<_c_strmode>>('strmode');
-  late final _dart_strmode _strmode = _strmode_ptr.asFunction<_dart_strmode>();
+  late final __strupr_s_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strupr_s_l>>('_strupr_s_l');
+  late final _dart__strupr_s_l __strupr_s_l =
+      __strupr_s_l_ptr.asFunction<_dart__strupr_s_l>();
 
-  ffi.Pointer<ffi.Int8> strsep(
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
-    ffi.Pointer<ffi.Int8> __delim,
+  ffi.Pointer<ffi.Int8> _strupr_l(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
   ) {
-    return _strsep(
-      __stringp,
-      __delim,
+    return __strupr_l(
+      _String,
+      _Locale,
     );
   }
 
-  late final _strsep_ptr = _lookup<ffi.NativeFunction<_c_strsep>>('strsep');
-  late final _dart_strsep _strsep = _strsep_ptr.asFunction<_dart_strsep>();
+  late final __strupr_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strupr_l>>('_strupr_l');
+  late final _dart__strupr_l __strupr_l =
+      __strupr_l_ptr.asFunction<_dart__strupr_l>();
 
-  void swab(
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<ffi.Void> arg1,
-    int arg2,
+  int strxfrm(
+    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Int8> _Source,
+    int _MaxCount,
   ) {
-    return _swab(
-      arg0,
-      arg1,
-      arg2,
+    return _strxfrm(
+      _Destination,
+      _Source,
+      _MaxCount,
     );
   }
 
-  late final _swab_ptr = _lookup<ffi.NativeFunction<_c_swab>>('swab');
-  late final _dart_swab _swab = _swab_ptr.asFunction<_dart_swab>();
+  late final _strxfrm_ptr = _lookup<ffi.NativeFunction<_c_strxfrm>>('strxfrm');
+  late final _dart_strxfrm _strxfrm = _strxfrm_ptr.asFunction<_dart_strxfrm>();
 
-  int timingsafe_bcmp(
-    ffi.Pointer<ffi.Void> __b1,
-    ffi.Pointer<ffi.Void> __b2,
-    int __len,
+  int _strxfrm_l(
+    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Int8> _Source,
+    int _MaxCount,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
   ) {
-    return _timingsafe_bcmp(
-      __b1,
-      __b2,
-      __len,
+    return __strxfrm_l(
+      _Destination,
+      _Source,
+      _MaxCount,
+      _Locale,
     );
   }
 
-  late final _timingsafe_bcmp_ptr =
-      _lookup<ffi.NativeFunction<_c_timingsafe_bcmp>>('timingsafe_bcmp');
-  late final _dart_timingsafe_bcmp _timingsafe_bcmp =
-      _timingsafe_bcmp_ptr.asFunction<_dart_timingsafe_bcmp>();
+  late final __strxfrm_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strxfrm_l>>('_strxfrm_l');
+  late final _dart__strxfrm_l __strxfrm_l =
+      __strxfrm_l_ptr.asFunction<_dart__strxfrm_l>();
 
-  int strsignal_r(
-    int __sig,
-    ffi.Pointer<ffi.Int8> __strsignalbuf,
-    int __buflen,
+  ffi.Pointer<ffi.Int8> strdup(
+    ffi.Pointer<ffi.Int8> _String,
   ) {
-    return _strsignal_r(
-      __sig,
-      __strsignalbuf,
-      __buflen,
+    return _strdup_1(
+      _String,
     );
   }
 
-  late final _strsignal_r_ptr =
-      _lookup<ffi.NativeFunction<_c_strsignal_r>>('strsignal_r');
-  late final _dart_strsignal_r _strsignal_r =
-      _strsignal_r_ptr.asFunction<_dart_strsignal_r>();
+  late final _strdup_ptr = _lookup<ffi.NativeFunction<_c_strdup>>('strdup');
+  late final _dart_strdup _strdup_1 = _strdup_ptr.asFunction<_dart_strdup>();
 
-  int bcmp(
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<ffi.Void> arg1,
-    int arg2,
+  int strcmpi(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
   ) {
-    return _bcmp(
-      arg0,
-      arg1,
-      arg2,
+    return _strcmpi_1(
+      _String1,
+      _String2,
     );
   }
 
-  late final _bcmp_ptr = _lookup<ffi.NativeFunction<_c_bcmp>>('bcmp');
-  late final _dart_bcmp _bcmp = _bcmp_ptr.asFunction<_dart_bcmp>();
+  late final _strcmpi_ptr = _lookup<ffi.NativeFunction<_c_strcmpi>>('strcmpi');
+  late final _dart_strcmpi _strcmpi_1 =
+      _strcmpi_ptr.asFunction<_dart_strcmpi>();
 
-  void bcopy(
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<ffi.Void> arg1,
-    int arg2,
+  int stricmp(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
   ) {
-    return _bcopy(
-      arg0,
-      arg1,
-      arg2,
+    return _stricmp_1(
+      _String1,
+      _String2,
     );
   }
 
-  late final _bcopy_ptr = _lookup<ffi.NativeFunction<_c_bcopy>>('bcopy');
-  late final _dart_bcopy _bcopy = _bcopy_ptr.asFunction<_dart_bcopy>();
+  late final _stricmp_ptr = _lookup<ffi.NativeFunction<_c_stricmp>>('stricmp');
+  late final _dart_stricmp _stricmp_1 =
+      _stricmp_ptr.asFunction<_dart_stricmp>();
 
-  void bzero(
-    ffi.Pointer<ffi.Void> arg0,
-    int arg1,
+  ffi.Pointer<ffi.Int8> strlwr(
+    ffi.Pointer<ffi.Int8> _String,
   ) {
-    return _bzero(
-      arg0,
-      arg1,
+    return _strlwr_1(
+      _String,
     );
   }
 
-  late final _bzero_ptr = _lookup<ffi.NativeFunction<_c_bzero>>('bzero');
-  late final _dart_bzero _bzero = _bzero_ptr.asFunction<_dart_bzero>();
+  late final _strlwr_ptr = _lookup<ffi.NativeFunction<_c_strlwr>>('strlwr');
+  late final _dart_strlwr _strlwr_1 = _strlwr_ptr.asFunction<_dart_strlwr>();
 
-  ffi.Pointer<ffi.Int8> index(
-    ffi.Pointer<ffi.Int8> arg0,
-    int arg1,
+  int strnicmp(
+    ffi.Pointer<ffi.Int8> _String1,
+    ffi.Pointer<ffi.Int8> _String2,
+    int _MaxCount,
   ) {
-    return _index(
-      arg0,
-      arg1,
+    return _strnicmp_1(
+      _String1,
+      _String2,
+      _MaxCount,
     );
   }
 
-  late final _index_ptr = _lookup<ffi.NativeFunction<_c_index>>('index');
-  late final _dart_index _index = _index_ptr.asFunction<_dart_index>();
+  late final _strnicmp_ptr =
+      _lookup<ffi.NativeFunction<_c_strnicmp>>('strnicmp');
+  late final _dart_strnicmp _strnicmp_1 =
+      _strnicmp_ptr.asFunction<_dart_strnicmp>();
 
-  ffi.Pointer<ffi.Int8> rindex(
-    ffi.Pointer<ffi.Int8> arg0,
-    int arg1,
+  ffi.Pointer<ffi.Int8> strnset(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Value,
+    int _MaxCount,
   ) {
-    return _rindex(
-      arg0,
-      arg1,
+    return _strnset_1(
+      _String,
+      _Value,
+      _MaxCount,
     );
   }
 
-  late final _rindex_ptr = _lookup<ffi.NativeFunction<_c_rindex>>('rindex');
-  late final _dart_rindex _rindex = _rindex_ptr.asFunction<_dart_rindex>();
+  late final _strnset_ptr = _lookup<ffi.NativeFunction<_c_strnset>>('strnset');
+  late final _dart_strnset _strnset_1 =
+      _strnset_ptr.asFunction<_dart_strnset>();
 
-  int ffs(
-    int arg0,
+  ffi.Pointer<ffi.Int8> strrev(
+    ffi.Pointer<ffi.Int8> _String,
   ) {
-    return _ffs(
-      arg0,
+    return _strrev_1(
+      _String,
     );
   }
 
-  late final _ffs_ptr = _lookup<ffi.NativeFunction<_c_ffs>>('ffs');
-  late final _dart_ffs _ffs = _ffs_ptr.asFunction<_dart_ffs>();
+  late final _strrev_ptr = _lookup<ffi.NativeFunction<_c_strrev>>('strrev');
+  late final _dart_strrev _strrev_1 = _strrev_ptr.asFunction<_dart_strrev>();
 
-  int strcasecmp(
-    ffi.Pointer<ffi.Int8> arg0,
-    ffi.Pointer<ffi.Int8> arg1,
+  ffi.Pointer<ffi.Int8> strset(
+    ffi.Pointer<ffi.Int8> _String,
+    int _Value,
   ) {
-    return _strcasecmp(
-      arg0,
-      arg1,
+    return _strset_1(
+      _String,
+      _Value,
     );
   }
 
-  late final _strcasecmp_ptr =
-      _lookup<ffi.NativeFunction<_c_strcasecmp>>('strcasecmp');
-  late final _dart_strcasecmp _strcasecmp =
-      _strcasecmp_ptr.asFunction<_dart_strcasecmp>();
+  late final _strset_ptr = _lookup<ffi.NativeFunction<_c_strset>>('strset');
+  late final _dart_strset _strset_1 = _strset_ptr.asFunction<_dart_strset>();
 
-  int strncasecmp(
-    ffi.Pointer<ffi.Int8> arg0,
-    ffi.Pointer<ffi.Int8> arg1,
-    int arg2,
+  ffi.Pointer<ffi.Int8> strupr(
+    ffi.Pointer<ffi.Int8> _String,
   ) {
-    return _strncasecmp(
-      arg0,
-      arg1,
-      arg2,
+    return _strupr_1(
+      _String,
     );
   }
 
-  late final _strncasecmp_ptr =
-      _lookup<ffi.NativeFunction<_c_strncasecmp>>('strncasecmp');
-  late final _dart_strncasecmp _strncasecmp =
-      _strncasecmp_ptr.asFunction<_dart_strncasecmp>();
+  late final _strupr_ptr = _lookup<ffi.NativeFunction<_c_strupr>>('strupr');
+  late final _dart_strupr _strupr_1 = _strupr_ptr.asFunction<_dart_strupr>();
 
-  int ffsl(
-    int arg0,
+  void _wassert(
+    ffi.Pointer<ffi.Uint16> _Message,
+    ffi.Pointer<ffi.Uint16> _File,
+    int _Line,
   ) {
-    return _ffsl(
-      arg0,
+    return __wassert(
+      _Message,
+      _File,
+      _Line,
     );
   }
 
-  late final _ffsl_ptr = _lookup<ffi.NativeFunction<_c_ffsl>>('ffsl');
-  late final _dart_ffsl _ffsl = _ffsl_ptr.asFunction<_dart_ffsl>();
+  late final __wassert_ptr =
+      _lookup<ffi.NativeFunction<_c__wassert>>('_wassert');
+  late final _dart__wassert __wassert =
+      __wassert_ptr.asFunction<_dart__wassert>();
 
-  int ffsll(
-    int arg0,
+  int imaxabs(
+    int _Number,
   ) {
-    return _ffsll(
-      arg0,
+    return _imaxabs(
+      _Number,
     );
   }
 
-  late final _ffsll_ptr = _lookup<ffi.NativeFunction<_c_ffsll>>('ffsll');
-  late final _dart_ffsll _ffsll = _ffsll_ptr.asFunction<_dart_ffsll>();
+  late final _imaxabs_ptr = _lookup<ffi.NativeFunction<_c_imaxabs>>('imaxabs');
+  late final _dart_imaxabs _imaxabs = _imaxabs_ptr.asFunction<_dart_imaxabs>();
 
-  int fls(
-    int arg0,
+  _Lldiv_t imaxdiv(
+    int _Numerator,
+    int _Denominator,
   ) {
-    return _fls(
-      arg0,
+    return _imaxdiv(
+      _Numerator,
+      _Denominator,
     );
   }
 
-  late final _fls_ptr = _lookup<ffi.NativeFunction<_c_fls>>('fls');
-  late final _dart_fls _fls = _fls_ptr.asFunction<_dart_fls>();
+  late final _imaxdiv_ptr = _lookup<ffi.NativeFunction<_c_imaxdiv>>('imaxdiv');
+  late final _dart_imaxdiv _imaxdiv = _imaxdiv_ptr.asFunction<_dart_imaxdiv>();
 
-  int flsl(
-    int arg0,
+  int strtoimax(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    int _Radix,
   ) {
-    return _flsl(
-      arg0,
+    return _strtoimax(
+      _String,
+      _EndPtr,
+      _Radix,
     );
   }
 
-  late final _flsl_ptr = _lookup<ffi.NativeFunction<_c_flsl>>('flsl');
-  late final _dart_flsl _flsl = _flsl_ptr.asFunction<_dart_flsl>();
+  late final _strtoimax_ptr =
+      _lookup<ffi.NativeFunction<_c_strtoimax>>('strtoimax');
+  late final _dart_strtoimax _strtoimax =
+      _strtoimax_ptr.asFunction<_dart_strtoimax>();
 
-  int flsll(
-    int arg0,
+  int _strtoimax_l(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    int _Radix,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
   ) {
-    return _flsll(
-      arg0,
+    return __strtoimax_l(
+      _String,
+      _EndPtr,
+      _Radix,
+      _Locale,
     );
   }
 
-  late final _flsll_ptr = _lookup<ffi.NativeFunction<_c_flsll>>('flsll');
-  late final _dart_flsll _flsll = _flsll_ptr.asFunction<_dart_flsll>();
+  late final __strtoimax_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strtoimax_l>>('_strtoimax_l');
+  late final _dart__strtoimax_l __strtoimax_l =
+      __strtoimax_l_ptr.asFunction<_dart__strtoimax_l>();
+
+  int strtoumax(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    int _Radix,
+  ) {
+    return _strtoumax(
+      _String,
+      _EndPtr,
+      _Radix,
+    );
+  }
+
+  late final _strtoumax_ptr =
+      _lookup<ffi.NativeFunction<_c_strtoumax>>('strtoumax');
+  late final _dart_strtoumax _strtoumax =
+      _strtoumax_ptr.asFunction<_dart_strtoumax>();
+
+  int _strtoumax_l(
+    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    int _Radix,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __strtoumax_l(
+      _String,
+      _EndPtr,
+      _Radix,
+      _Locale,
+    );
+  }
+
+  late final __strtoumax_l_ptr =
+      _lookup<ffi.NativeFunction<_c__strtoumax_l>>('_strtoumax_l');
+  late final _dart__strtoumax_l __strtoumax_l =
+      __strtoumax_l_ptr.asFunction<_dart__strtoumax_l>();
+
+  int wcstoimax(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    int _Radix,
+  ) {
+    return _wcstoimax(
+      _String,
+      _EndPtr,
+      _Radix,
+    );
+  }
+
+  late final _wcstoimax_ptr =
+      _lookup<ffi.NativeFunction<_c_wcstoimax>>('wcstoimax');
+  late final _dart_wcstoimax _wcstoimax =
+      _wcstoimax_ptr.asFunction<_dart_wcstoimax>();
+
+  int _wcstoimax_l(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    int _Radix,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcstoimax_l(
+      _String,
+      _EndPtr,
+      _Radix,
+      _Locale,
+    );
+  }
+
+  late final __wcstoimax_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcstoimax_l>>('_wcstoimax_l');
+  late final _dart__wcstoimax_l __wcstoimax_l =
+      __wcstoimax_l_ptr.asFunction<_dart__wcstoimax_l>();
+
+  int wcstoumax(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    int _Radix,
+  ) {
+    return _wcstoumax(
+      _String,
+      _EndPtr,
+      _Radix,
+    );
+  }
+
+  late final _wcstoumax_ptr =
+      _lookup<ffi.NativeFunction<_c_wcstoumax>>('wcstoumax');
+  late final _dart_wcstoumax _wcstoumax =
+      _wcstoumax_ptr.asFunction<_dart_wcstoumax>();
+
+  int _wcstoumax_l(
+    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    int _Radix,
+    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ) {
+    return __wcstoumax_l(
+      _String,
+      _EndPtr,
+      _Radix,
+      _Locale,
+    );
+  }
+
+  late final __wcstoumax_l_ptr =
+      _lookup<ffi.NativeFunction<_c__wcstoumax_l>>('_wcstoumax_l');
+  late final _dart__wcstoumax_l __wcstoumax_l =
+      __wcstoumax_l_ptr.asFunction<_dart__wcstoumax_l>();
+
+  /// Is this an error handle?
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsError(
+    Object handle,
+  ) {
+    return _Dart_IsError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsError>>('Dart_IsError');
+  late final _dart_Dart_IsError _Dart_IsError =
+      _Dart_IsError_ptr.asFunction<_dart_Dart_IsError>();
+
+  /// Is this an api error handle?
+  ///
+  /// Api error handles are produced when an api function is misused.
+  /// This happens when a Dart embedding api function is called with
+  /// invalid arguments or in an invalid context.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsApiError(
+    Object handle,
+  ) {
+    return _Dart_IsApiError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsApiError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsApiError>>('Dart_IsApiError');
+  late final _dart_Dart_IsApiError _Dart_IsApiError =
+      _Dart_IsApiError_ptr.asFunction<_dart_Dart_IsApiError>();
+
+  /// Is this an unhandled exception error handle?
+  ///
+  /// Unhandled exception error handles are produced when, during the
+  /// execution of Dart code, an exception is thrown but not caught.
+  /// This can occur in any function which triggers the execution of Dart
+  /// code.
+  ///
+  /// See Dart_ErrorGetException and Dart_ErrorGetStackTrace.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsUnhandledExceptionError(
+    Object handle,
+  ) {
+    return _Dart_IsUnhandledExceptionError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsUnhandledExceptionError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsUnhandledExceptionError>>(
+          'Dart_IsUnhandledExceptionError');
+  late final _dart_Dart_IsUnhandledExceptionError
+      _Dart_IsUnhandledExceptionError = _Dart_IsUnhandledExceptionError_ptr
+          .asFunction<_dart_Dart_IsUnhandledExceptionError>();
+
+  /// Is this a compilation error handle?
+  ///
+  /// Compilation error handles are produced when, during the execution
+  /// of Dart code, a compile-time error occurs.  This can occur in any
+  /// function which triggers the execution of Dart code.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsCompilationError(
+    Object handle,
+  ) {
+    return _Dart_IsCompilationError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsCompilationError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsCompilationError>>(
+          'Dart_IsCompilationError');
+  late final _dart_Dart_IsCompilationError _Dart_IsCompilationError =
+      _Dart_IsCompilationError_ptr.asFunction<_dart_Dart_IsCompilationError>();
+
+  /// Is this a fatal error handle?
+  ///
+  /// Fatal error handles are produced when the system wants to shut down
+  /// the current isolate.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsFatalError(
+    Object handle,
+  ) {
+    return _Dart_IsFatalError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFatalError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsFatalError>>('Dart_IsFatalError');
+  late final _dart_Dart_IsFatalError _Dart_IsFatalError =
+      _Dart_IsFatalError_ptr.asFunction<_dart_Dart_IsFatalError>();
+
+  /// Gets the error message from an error handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A C string containing an error message if the handle is
+  /// error. An empty C string ("") if the handle is valid. This C
+  /// String is scope allocated and is only valid until the next call
+  /// to Dart_ExitScope.
+  ffi.Pointer<ffi.Int8> Dart_GetError(
+    Object handle,
+  ) {
+    return _Dart_GetError(
+      handle,
+    );
+  }
+
+  late final _Dart_GetError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetError>>('Dart_GetError');
+  late final _dart_Dart_GetError _Dart_GetError =
+      _Dart_GetError_ptr.asFunction<_dart_Dart_GetError>();
+
+  /// Is this an error handle for an unhandled exception?
+  bool Dart_ErrorHasException(
+    Object handle,
+  ) {
+    return _Dart_ErrorHasException(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_ErrorHasException_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ErrorHasException>>(
+          'Dart_ErrorHasException');
+  late final _dart_Dart_ErrorHasException _Dart_ErrorHasException =
+      _Dart_ErrorHasException_ptr.asFunction<_dart_Dart_ErrorHasException>();
+
+  /// Gets the exception Object from an unhandled exception error handle.
+  Object Dart_ErrorGetException(
+    Object handle,
+  ) {
+    return _Dart_ErrorGetException(
+      handle,
+    );
+  }
+
+  late final _Dart_ErrorGetException_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ErrorGetException>>(
+          'Dart_ErrorGetException');
+  late final _dart_Dart_ErrorGetException _Dart_ErrorGetException =
+      _Dart_ErrorGetException_ptr.asFunction<_dart_Dart_ErrorGetException>();
+
+  /// Gets the stack trace Object from an unhandled exception error handle.
+  Object Dart_ErrorGetStackTrace(
+    Object handle,
+  ) {
+    return _Dart_ErrorGetStackTrace(
+      handle,
+    );
+  }
+
+  late final _Dart_ErrorGetStackTrace_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ErrorGetStackTrace>>(
+          'Dart_ErrorGetStackTrace');
+  late final _dart_Dart_ErrorGetStackTrace _Dart_ErrorGetStackTrace =
+      _Dart_ErrorGetStackTrace_ptr.asFunction<_dart_Dart_ErrorGetStackTrace>();
+
+  /// Produces an api error handle with the provided error message.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param error the error message.
+  Object Dart_NewApiError(
+    ffi.Pointer<ffi.Int8> error,
+  ) {
+    return _Dart_NewApiError(
+      error,
+    );
+  }
+
+  late final _Dart_NewApiError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewApiError>>('Dart_NewApiError');
+  late final _dart_Dart_NewApiError _Dart_NewApiError =
+      _Dart_NewApiError_ptr.asFunction<_dart_Dart_NewApiError>();
+
+  Object Dart_NewCompilationError(
+    ffi.Pointer<ffi.Int8> error,
+  ) {
+    return _Dart_NewCompilationError(
+      error,
+    );
+  }
+
+  late final _Dart_NewCompilationError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewCompilationError>>(
+          'Dart_NewCompilationError');
+  late final _dart_Dart_NewCompilationError _Dart_NewCompilationError =
+      _Dart_NewCompilationError_ptr.asFunction<
+          _dart_Dart_NewCompilationError>();
+
+  /// Produces a new unhandled exception error handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param exception An instance of a Dart object to be thrown or
+  /// an ApiError or CompilationError handle.
+  /// When an ApiError or CompilationError handle is passed in
+  /// a string object of the error message is created and it becomes
+  /// the Dart object to be thrown.
+  Object Dart_NewUnhandledExceptionError(
+    Object exception,
+  ) {
+    return _Dart_NewUnhandledExceptionError(
+      exception,
+    );
+  }
+
+  late final _Dart_NewUnhandledExceptionError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewUnhandledExceptionError>>(
+          'Dart_NewUnhandledExceptionError');
+  late final _dart_Dart_NewUnhandledExceptionError
+      _Dart_NewUnhandledExceptionError = _Dart_NewUnhandledExceptionError_ptr
+          .asFunction<_dart_Dart_NewUnhandledExceptionError>();
+
+  /// Propagates an error.
+  ///
+  /// If the provided handle is an unhandled exception error, this
+  /// function will cause the unhandled exception to be rethrown.  This
+  /// will proceed in the standard way, walking up Dart frames until an
+  /// appropriate 'catch' block is found, executing 'finally' blocks,
+  /// etc.
+  ///
+  /// If the error is not an unhandled exception error, we will unwind
+  /// the stack to the next C frame.  Intervening Dart frames will be
+  /// discarded; specifically, 'finally' blocks will not execute.  This
+  /// is the standard way that compilation errors (and the like) are
+  /// handled by the Dart runtime.
+  ///
+  /// In either case, when an error is propagated any current scopes
+  /// created by Dart_EnterScope will be exited.
+  ///
+  /// See the additional discussion under "Propagating Errors" at the
+  /// beginning of this file.
+  ///
+  /// \param An error handle (See Dart_IsError)
+  ///
+  /// \return On success, this function does not return.  On failure, the
+  /// process is terminated.
+  void Dart_PropagateError(
+    Object handle,
+  ) {
+    return _Dart_PropagateError(
+      handle,
+    );
+  }
+
+  late final _Dart_PropagateError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_PropagateError>>(
+          'Dart_PropagateError');
+  late final _dart_Dart_PropagateError _Dart_PropagateError =
+      _Dart_PropagateError_ptr.asFunction<_dart_Dart_PropagateError>();
+
+  /// Converts an object to a string.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return The converted string if no error occurs during
+  /// the conversion. If an error does occur, an error handle is
+  /// returned.
+  Object Dart_ToString(
+    Object object,
+  ) {
+    return _Dart_ToString(
+      object,
+    );
+  }
+
+  late final _Dart_ToString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ToString>>('Dart_ToString');
+  late final _dart_Dart_ToString _Dart_ToString =
+      _Dart_ToString_ptr.asFunction<_dart_Dart_ToString>();
+
+  /// Checks to see if two handles refer to identically equal objects.
+  ///
+  /// If both handles refer to instances, this is equivalent to using the top-level
+  /// function identical() from dart:core. Otherwise, returns whether the two
+  /// argument handles refer to the same object.
+  ///
+  /// \param obj1 An object to be compared.
+  /// \param obj2 An object to be compared.
+  ///
+  /// \return True if the objects are identically equal.  False otherwise.
+  bool Dart_IdentityEquals(
+    Object obj1,
+    Object obj2,
+  ) {
+    return _Dart_IdentityEquals(
+          obj1,
+          obj2,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IdentityEquals_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IdentityEquals>>(
+          'Dart_IdentityEquals');
+  late final _dart_Dart_IdentityEquals _Dart_IdentityEquals =
+      _Dart_IdentityEquals_ptr.asFunction<_dart_Dart_IdentityEquals>();
+
+  /// Allocates a handle in the current scope from a persistent handle.
+  Object Dart_HandleFromPersistent(
+    Object object,
+  ) {
+    return _Dart_HandleFromPersistent(
+      object,
+    );
+  }
+
+  late final _Dart_HandleFromPersistent_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HandleFromPersistent>>(
+          'Dart_HandleFromPersistent');
+  late final _dart_Dart_HandleFromPersistent _Dart_HandleFromPersistent =
+      _Dart_HandleFromPersistent_ptr.asFunction<
+          _dart_Dart_HandleFromPersistent>();
+
+  /// Allocates a handle in the current scope from a weak persistent handle.
+  ///
+  /// This will be a handle to Dart_Null if the object has been garbage collected.
+  Object Dart_HandleFromWeakPersistent(
+    ffi.Pointer<_Dart_WeakPersistentHandle> object,
+  ) {
+    return _Dart_HandleFromWeakPersistent(
+      object,
+    );
+  }
+
+  late final _Dart_HandleFromWeakPersistent_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HandleFromWeakPersistent>>(
+          'Dart_HandleFromWeakPersistent');
+  late final _dart_Dart_HandleFromWeakPersistent
+      _Dart_HandleFromWeakPersistent = _Dart_HandleFromWeakPersistent_ptr
+          .asFunction<_dart_Dart_HandleFromWeakPersistent>();
+
+  /// Allocates a persistent handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate unless it is
+  /// explicitly deallocated by calling Dart_DeletePersistentHandle.
+  ///
+  /// Requires there to be a current isolate.
+  Object Dart_NewPersistentHandle(
+    Object object,
+  ) {
+    return _Dart_NewPersistentHandle(
+      object,
+    );
+  }
+
+  late final _Dart_NewPersistentHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewPersistentHandle>>(
+          'Dart_NewPersistentHandle');
+  late final _dart_Dart_NewPersistentHandle _Dart_NewPersistentHandle =
+      _Dart_NewPersistentHandle_ptr.asFunction<
+          _dart_Dart_NewPersistentHandle>();
+
+  /// Assign value of local handle to a persistent handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param obj1 A persistent handle whose value needs to be set.
+  /// \param obj2 An object whose value needs to be set to the persistent handle.
+  ///
+  /// \return Success if the persistent handle was set
+  /// Otherwise, returns an error.
+  void Dart_SetPersistentHandle(
+    Object obj1,
+    Object obj2,
+  ) {
+    return _Dart_SetPersistentHandle(
+      obj1,
+      obj2,
+    );
+  }
+
+  late final _Dart_SetPersistentHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetPersistentHandle>>(
+          'Dart_SetPersistentHandle');
+  late final _dart_Dart_SetPersistentHandle _Dart_SetPersistentHandle =
+      _Dart_SetPersistentHandle_ptr.asFunction<
+          _dart_Dart_SetPersistentHandle>();
+
+  /// Deallocates a persistent handle.
+  ///
+  /// Requires there to be a current isolate group.
+  void Dart_DeletePersistentHandle(
+    Object object,
+  ) {
+    return _Dart_DeletePersistentHandle(
+      object,
+    );
+  }
+
+  late final _Dart_DeletePersistentHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DeletePersistentHandle>>(
+          'Dart_DeletePersistentHandle');
+  late final _dart_Dart_DeletePersistentHandle _Dart_DeletePersistentHandle =
+      _Dart_DeletePersistentHandle_ptr.asFunction<
+          _dart_Dart_DeletePersistentHandle>();
+
+  /// Allocates a weak persistent handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate. The handle can also be
+  /// explicitly deallocated by calling Dart_DeleteWeakPersistentHandle.
+  ///
+  /// If the object becomes unreachable the callback is invoked with the peer as
+  /// argument. The callback can be executed on any thread, will have a current
+  /// isolate group, but will not have a current isolate. The callback can only
+  /// call Dart_DeletePersistentHandle or Dart_DeleteWeakPersistentHandle. This
+  /// gives the embedder the ability to cleanup data associated with the object.
+  /// The handle will point to the Dart_Null object after the finalizer has been
+  /// run. It is illegal to call into the VM with any other Dart_* functions from
+  /// the callback. If the handle is deleted before the object becomes
+  /// unreachable, the callback is never invoked.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param object An object with identity.
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The weak persistent handle or NULL. NULL is returned in case of bad
+  /// parameters.
+  ffi.Pointer<_Dart_WeakPersistentHandle> Dart_NewWeakPersistentHandle(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+  ) {
+    return _Dart_NewWeakPersistentHandle(
+      object,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewWeakPersistentHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewWeakPersistentHandle>>(
+          'Dart_NewWeakPersistentHandle');
+  late final _dart_Dart_NewWeakPersistentHandle _Dart_NewWeakPersistentHandle =
+      _Dart_NewWeakPersistentHandle_ptr.asFunction<
+          _dart_Dart_NewWeakPersistentHandle>();
+
+  /// Deletes the given weak persistent [object] handle.
+  ///
+  /// Requires there to be a current isolate group.
+  void Dart_DeleteWeakPersistentHandle(
+    ffi.Pointer<_Dart_WeakPersistentHandle> object,
+  ) {
+    return _Dart_DeleteWeakPersistentHandle(
+      object,
+    );
+  }
+
+  late final _Dart_DeleteWeakPersistentHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DeleteWeakPersistentHandle>>(
+          'Dart_DeleteWeakPersistentHandle');
+  late final _dart_Dart_DeleteWeakPersistentHandle
+      _Dart_DeleteWeakPersistentHandle = _Dart_DeleteWeakPersistentHandle_ptr
+          .asFunction<_dart_Dart_DeleteWeakPersistentHandle>();
+
+  /// Updates the external memory size for the given weak persistent handle.
+  ///
+  /// May trigger garbage collection.
+  void Dart_UpdateExternalSize(
+    ffi.Pointer<_Dart_WeakPersistentHandle> object,
+    int external_allocation_size,
+  ) {
+    return _Dart_UpdateExternalSize(
+      object,
+      external_allocation_size,
+    );
+  }
+
+  late final _Dart_UpdateExternalSize_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_UpdateExternalSize>>(
+          'Dart_UpdateExternalSize');
+  late final _dart_Dart_UpdateExternalSize _Dart_UpdateExternalSize =
+      _Dart_UpdateExternalSize_ptr.asFunction<_dart_Dart_UpdateExternalSize>();
+
+  /// Allocates a finalizable handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate group unless the object
+  /// pointed to by the handle is garbage collected, in this case the VM
+  /// automatically deletes the handle after invoking the callback associated
+  /// with the handle. The handle can also be explicitly deallocated by
+  /// calling Dart_DeleteFinalizableHandle.
+  ///
+  /// If the object becomes unreachable the callback is invoked with the
+  /// the peer as argument. The callback can be executed on any thread, will have
+  /// an isolate group, but will not have a current isolate. The callback can only
+  /// call Dart_DeletePersistentHandle or Dart_DeleteWeakPersistentHandle.
+  /// This gives the embedder the ability to cleanup data associated with the
+  /// object and clear out any cached references to the handle. All references to
+  /// this handle after the callback will be invalid. It is illegal to call into
+  /// the VM with any other Dart_* functions from the callback. If the handle is
+  /// deleted before the object becomes unreachable, the callback is never
+  /// invoked.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param object An object with identity.
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The finalizable handle or NULL. NULL is returned in case of bad
+  /// parameters.
+  ffi.Pointer<_Dart_FinalizableHandle> Dart_NewFinalizableHandle(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+  ) {
+    return _Dart_NewFinalizableHandle(
+      object,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewFinalizableHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewFinalizableHandle>>(
+          'Dart_NewFinalizableHandle');
+  late final _dart_Dart_NewFinalizableHandle _Dart_NewFinalizableHandle =
+      _Dart_NewFinalizableHandle_ptr.asFunction<
+          _dart_Dart_NewFinalizableHandle>();
+
+  /// Deletes the given finalizable [object] handle.
+  ///
+  /// The caller has to provide the actual Dart object the handle was created from
+  /// to prove the object (and therefore the finalizable handle) is still alive.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_DeleteFinalizableHandle(
+    ffi.Pointer<_Dart_FinalizableHandle> object,
+    Object strong_ref_to_object,
+  ) {
+    return _Dart_DeleteFinalizableHandle(
+      object,
+      strong_ref_to_object,
+    );
+  }
+
+  late final _Dart_DeleteFinalizableHandle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DeleteFinalizableHandle>>(
+          'Dart_DeleteFinalizableHandle');
+  late final _dart_Dart_DeleteFinalizableHandle _Dart_DeleteFinalizableHandle =
+      _Dart_DeleteFinalizableHandle_ptr.asFunction<
+          _dart_Dart_DeleteFinalizableHandle>();
+
+  /// Updates the external memory size for the given finalizable handle.
+  ///
+  /// The caller has to provide the actual Dart object the handle was created from
+  /// to prove the object (and therefore the finalizable handle) is still alive.
+  ///
+  /// May trigger garbage collection.
+  void Dart_UpdateFinalizableExternalSize(
+    ffi.Pointer<_Dart_FinalizableHandle> object,
+    Object strong_ref_to_object,
+    int external_allocation_size,
+  ) {
+    return _Dart_UpdateFinalizableExternalSize(
+      object,
+      strong_ref_to_object,
+      external_allocation_size,
+    );
+  }
+
+  late final _Dart_UpdateFinalizableExternalSize_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_UpdateFinalizableExternalSize>>(
+          'Dart_UpdateFinalizableExternalSize');
+  late final _dart_Dart_UpdateFinalizableExternalSize
+      _Dart_UpdateFinalizableExternalSize =
+      _Dart_UpdateFinalizableExternalSize_ptr.asFunction<
+          _dart_Dart_UpdateFinalizableExternalSize>();
+
+  /// Gets the version string for the Dart VM.
+  ///
+  /// The version of the Dart VM can be accessed without initializing the VM.
+  ///
+  /// \return The version string for the embedded Dart VM.
+  ffi.Pointer<ffi.Int8> Dart_VersionString() {
+    return _Dart_VersionString();
+  }
+
+  late final _Dart_VersionString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_VersionString>>('Dart_VersionString');
+  late final _dart_Dart_VersionString _Dart_VersionString =
+      _Dart_VersionString_ptr.asFunction<_dart_Dart_VersionString>();
+
+  /// Initialize Dart_IsolateFlags with correct version and default values.
+  void Dart_IsolateFlagsInitialize(
+    ffi.Pointer<Dart_IsolateFlags> flags,
+  ) {
+    return _Dart_IsolateFlagsInitialize(
+      flags,
+    );
+  }
+
+  late final _Dart_IsolateFlagsInitialize_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsolateFlagsInitialize>>(
+          'Dart_IsolateFlagsInitialize');
+  late final _dart_Dart_IsolateFlagsInitialize _Dart_IsolateFlagsInitialize =
+      _Dart_IsolateFlagsInitialize_ptr.asFunction<
+          _dart_Dart_IsolateFlagsInitialize>();
+
+  /// Initializes the VM.
+  ///
+  /// \param params A struct containing initialization information. The version
+  /// field of the struct must be DART_INITIALIZE_PARAMS_CURRENT_VERSION.
+  ///
+  /// \return NULL if initialization is successful. Returns an error message
+  /// otherwise. The caller is responsible for freeing the error message.
+  ffi.Pointer<ffi.Int8> Dart_Initialize(
+    ffi.Pointer<Dart_InitializeParams> params,
+  ) {
+    return _Dart_Initialize(
+      params,
+    );
+  }
+
+  late final _Dart_Initialize_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Initialize>>('Dart_Initialize');
+  late final _dart_Dart_Initialize _Dart_Initialize =
+      _Dart_Initialize_ptr.asFunction<_dart_Dart_Initialize>();
+
+  /// Cleanup state in the VM before process termination.
+  ///
+  /// \return NULL if cleanup is successful. Returns an error message otherwise.
+  /// The caller is responsible for freeing the error message.
+  ///
+  /// NOTE: This function must not be called on a thread that was created by the VM
+  /// itself.
+  ffi.Pointer<ffi.Int8> Dart_Cleanup() {
+    return _Dart_Cleanup();
+  }
+
+  late final _Dart_Cleanup_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Cleanup>>('Dart_Cleanup');
+  late final _dart_Dart_Cleanup _Dart_Cleanup =
+      _Dart_Cleanup_ptr.asFunction<_dart_Dart_Cleanup>();
+
+  /// Sets command line flags. Should be called before Dart_Initialize.
+  ///
+  /// \param argc The length of the arguments array.
+  /// \param argv An array of arguments.
+  ///
+  /// \return NULL if successful. Returns an error message otherwise.
+  /// The caller is responsible for freeing the error message.
+  ///
+  /// NOTE: This call does not store references to the passed in c-strings.
+  ffi.Pointer<ffi.Int8> Dart_SetVMFlags(
+    int argc,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> argv,
+  ) {
+    return _Dart_SetVMFlags(
+      argc,
+      argv,
+    );
+  }
+
+  late final _Dart_SetVMFlags_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetVMFlags>>('Dart_SetVMFlags');
+  late final _dart_Dart_SetVMFlags _Dart_SetVMFlags =
+      _Dart_SetVMFlags_ptr.asFunction<_dart_Dart_SetVMFlags>();
+
+  /// Returns true if the named VM flag is of boolean type, specified, and set to
+  /// true.
+  ///
+  /// \param flag_name The name of the flag without leading punctuation
+  /// (example: "enable_asserts").
+  bool Dart_IsVMFlagSet(
+    ffi.Pointer<ffi.Int8> flag_name,
+  ) {
+    return _Dart_IsVMFlagSet(
+          flag_name,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsVMFlagSet_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsVMFlagSet>>('Dart_IsVMFlagSet');
+  late final _dart_Dart_IsVMFlagSet _Dart_IsVMFlagSet =
+      _Dart_IsVMFlagSet_ptr.asFunction<_dart_Dart_IsVMFlagSet>();
+
+  /// Creates a new isolate. The new isolate becomes the current isolate.
+  ///
+  /// A snapshot can be used to restore the VM quickly to a saved state
+  /// and is useful for fast startup. If snapshot data is provided, the
+  /// isolate will be started using that snapshot data. Requires a core snapshot or
+  /// an app snapshot created by Dart_CreateSnapshot or
+  /// Dart_CreatePrecompiledSnapshot* from a VM with the same version.
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param script_uri The main source file or snapshot this isolate will load.
+  /// The VM will provide this URI to the Dart_IsolateGroupCreateCallback when a child
+  /// isolate is created by Isolate.spawn. The embedder should use a URI that
+  /// allows it to load the same program into such a child isolate.
+  /// \param name A short name for the isolate to improve debugging messages.
+  /// Typically of the format 'foo.dart:main()'.
+  /// \param isolate_snapshot_data
+  /// \param isolate_snapshot_instructions Buffers containing a snapshot of the
+  /// isolate or NULL if no snapshot is provided. If provided, the buffers must
+  /// remain valid until the isolate shuts down.
+  /// \param flags Pointer to VM specific flags or NULL for default flags.
+  /// \param isolate_group_data Embedder group data. This data can be obtained
+  /// by calling Dart_IsolateGroupData and will be passed to the
+  /// Dart_IsolateShutdownCallback, Dart_IsolateCleanupCallback, and
+  /// Dart_IsolateGroupCleanupCallback.
+  /// \param isolate_data Embedder data.  This data will be passed to
+  /// the Dart_IsolateGroupCreateCallback when new isolates are spawned from
+  /// this parent isolate.
+  /// \param error Returns NULL if creation is successful, an error message
+  /// otherwise. The caller is responsible for calling free() on the error
+  /// message.
+  ///
+  /// \return The new isolate on success, or NULL if isolate creation failed.
+  ffi.Pointer<_Dart_Isolate> Dart_CreateIsolateGroup(
+    ffi.Pointer<ffi.Int8> script_uri,
+    ffi.Pointer<ffi.Int8> name,
+    ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
+    ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
+    ffi.Pointer<Dart_IsolateFlags> flags,
+    ffi.Pointer<ffi.Void> isolate_group_data,
+    ffi.Pointer<ffi.Void> isolate_data,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+  ) {
+    return _Dart_CreateIsolateGroup(
+      script_uri,
+      name,
+      isolate_snapshot_data,
+      isolate_snapshot_instructions,
+      flags,
+      isolate_group_data,
+      isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateGroup_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateIsolateGroup>>(
+          'Dart_CreateIsolateGroup');
+  late final _dart_Dart_CreateIsolateGroup _Dart_CreateIsolateGroup =
+      _Dart_CreateIsolateGroup_ptr.asFunction<_dart_Dart_CreateIsolateGroup>();
+
+  /// Creates a new isolate inside the isolate group of [group_member].
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param group_member An isolate from the same group into which the newly created
+  /// isolate should be born into. Other threads may not have entered / enter this
+  /// member isolate.
+  /// \param name A short name for the isolate for debugging purposes.
+  /// \param shutdown_callback A callback to be called when the isolate is being
+  /// shutdown (may be NULL).
+  /// \param cleanup_callback A callback to be called when the isolate is being
+  /// cleaned up (may be NULL).
+  /// \param isolate_data The embedder-specific data associated with this isolate.
+  /// \param error Set to NULL if creation is successful, set to an error
+  /// message otherwise. The caller is responsible for calling free() on the
+  /// error message.
+  ///
+  /// \return The newly created isolate on success, or NULL if isolate creation
+  /// failed.
+  ///
+  /// If successful, the newly created isolate will become the current isolate.
+  ffi.Pointer<_Dart_Isolate> Dart_CreateIsolateInGroup(
+    ffi.Pointer<_Dart_Isolate> group_member,
+    ffi.Pointer<ffi.Int8> name,
+    ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
+        shutdown_callback,
+    ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>>
+        cleanup_callback,
+    ffi.Pointer<ffi.Void> child_isolate_data,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+  ) {
+    return _Dart_CreateIsolateInGroup(
+      group_member,
+      name,
+      shutdown_callback,
+      cleanup_callback,
+      child_isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateInGroup_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateIsolateInGroup>>(
+          'Dart_CreateIsolateInGroup');
+  late final _dart_Dart_CreateIsolateInGroup _Dart_CreateIsolateInGroup =
+      _Dart_CreateIsolateInGroup_ptr.asFunction<
+          _dart_Dart_CreateIsolateInGroup>();
+
+  /// Creates a new isolate from a Dart Kernel file. The new isolate
+  /// becomes the current isolate.
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param script_uri The main source file or snapshot this isolate will load.
+  /// The VM will provide this URI to the Dart_IsolateGroupCreateCallback when a child
+  /// isolate is created by Isolate.spawn. The embedder should use a URI that
+  /// allows it to load the same program into such a child isolate.
+  /// \param name A short name for the isolate to improve debugging messages.
+  /// Typically of the format 'foo.dart:main()'.
+  /// \param kernel_buffer
+  /// \param kernel_buffer_size A buffer which contains a kernel/DIL program. Must
+  /// remain valid until isolate shutdown.
+  /// \param flags Pointer to VM specific flags or NULL for default flags.
+  /// \param isolate_group_data Embedder group data. This data can be obtained
+  /// by calling Dart_IsolateGroupData and will be passed to the
+  /// Dart_IsolateShutdownCallback, Dart_IsolateCleanupCallback, and
+  /// Dart_IsolateGroupCleanupCallback.
+  /// \param isolate_data Embedder data.  This data will be passed to
+  /// the Dart_IsolateGroupCreateCallback when new isolates are spawned from
+  /// this parent isolate.
+  /// \param error Returns NULL if creation is successful, an error message
+  /// otherwise. The caller is responsible for calling free() on the error
+  /// message.
+  ///
+  /// \return The new isolate on success, or NULL if isolate creation failed.
+  ffi.Pointer<_Dart_Isolate> Dart_CreateIsolateGroupFromKernel(
+    ffi.Pointer<ffi.Int8> script_uri,
+    ffi.Pointer<ffi.Int8> name,
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+    ffi.Pointer<Dart_IsolateFlags> flags,
+    ffi.Pointer<ffi.Void> isolate_group_data,
+    ffi.Pointer<ffi.Void> isolate_data,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+  ) {
+    return _Dart_CreateIsolateGroupFromKernel(
+      script_uri,
+      name,
+      kernel_buffer,
+      kernel_buffer_size,
+      flags,
+      isolate_group_data,
+      isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateGroupFromKernel_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateIsolateGroupFromKernel>>(
+          'Dart_CreateIsolateGroupFromKernel');
+  late final _dart_Dart_CreateIsolateGroupFromKernel
+      _Dart_CreateIsolateGroupFromKernel =
+      _Dart_CreateIsolateGroupFromKernel_ptr.asFunction<
+          _dart_Dart_CreateIsolateGroupFromKernel>();
+
+  /// Shuts down the current isolate. After this call, the current isolate is NULL.
+  /// Any current scopes created by Dart_EnterScope will be exited. Invokes the
+  /// shutdown callback and any callbacks of remaining weak persistent handles.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ShutdownIsolate() {
+    return _Dart_ShutdownIsolate();
+  }
+
+  late final _Dart_ShutdownIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ShutdownIsolate>>(
+          'Dart_ShutdownIsolate');
+  late final _dart_Dart_ShutdownIsolate _Dart_ShutdownIsolate =
+      _Dart_ShutdownIsolate_ptr.asFunction<_dart_Dart_ShutdownIsolate>();
+
+  /// Returns the current isolate. Will return NULL if there is no
+  /// current isolate.
+  ffi.Pointer<_Dart_Isolate> Dart_CurrentIsolate() {
+    return _Dart_CurrentIsolate();
+  }
+
+  late final _Dart_CurrentIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolate>>(
+          'Dart_CurrentIsolate');
+  late final _dart_Dart_CurrentIsolate _Dart_CurrentIsolate =
+      _Dart_CurrentIsolate_ptr.asFunction<_dart_Dart_CurrentIsolate>();
+
+  /// Returns the callback data associated with the current isolate. This
+  /// data was set when the isolate got created or initialized.
+  ffi.Pointer<ffi.Void> Dart_CurrentIsolateData() {
+    return _Dart_CurrentIsolateData();
+  }
+
+  late final _Dart_CurrentIsolateData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolateData>>(
+          'Dart_CurrentIsolateData');
+  late final _dart_Dart_CurrentIsolateData _Dart_CurrentIsolateData =
+      _Dart_CurrentIsolateData_ptr.asFunction<_dart_Dart_CurrentIsolateData>();
+
+  /// Returns the callback data associated with the given isolate. This
+  /// data was set when the isolate got created or initialized.
+  ffi.Pointer<ffi.Void> Dart_IsolateData(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_IsolateData(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsolateData>>('Dart_IsolateData');
+  late final _dart_Dart_IsolateData _Dart_IsolateData =
+      _Dart_IsolateData_ptr.asFunction<_dart_Dart_IsolateData>();
+
+  /// Returns the current isolate group. Will return NULL if there is no
+  /// current isolate group.
+  ffi.Pointer<_Dart_IsolateGroup> Dart_CurrentIsolateGroup() {
+    return _Dart_CurrentIsolateGroup();
+  }
+
+  late final _Dart_CurrentIsolateGroup_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolateGroup>>(
+          'Dart_CurrentIsolateGroup');
+  late final _dart_Dart_CurrentIsolateGroup _Dart_CurrentIsolateGroup =
+      _Dart_CurrentIsolateGroup_ptr.asFunction<
+          _dart_Dart_CurrentIsolateGroup>();
+
+  /// Returns the callback data associated with the current isolate group. This
+  /// data was passed to the isolate group when it was created.
+  ffi.Pointer<ffi.Void> Dart_CurrentIsolateGroupData() {
+    return _Dart_CurrentIsolateGroupData();
+  }
+
+  late final _Dart_CurrentIsolateGroupData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolateGroupData>>(
+          'Dart_CurrentIsolateGroupData');
+  late final _dart_Dart_CurrentIsolateGroupData _Dart_CurrentIsolateGroupData =
+      _Dart_CurrentIsolateGroupData_ptr.asFunction<
+          _dart_Dart_CurrentIsolateGroupData>();
+
+  /// Returns the callback data associated with the specified isolate group. This
+  /// data was passed to the isolate when it was created.
+  /// The embedder is responsible for ensuring the consistency of this data
+  /// with respect to the lifecycle of an isolate group.
+  ffi.Pointer<ffi.Void> Dart_IsolateGroupData(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_IsolateGroupData(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateGroupData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsolateGroupData>>(
+          'Dart_IsolateGroupData');
+  late final _dart_Dart_IsolateGroupData _Dart_IsolateGroupData =
+      _Dart_IsolateGroupData_ptr.asFunction<_dart_Dart_IsolateGroupData>();
+
+  /// Returns the debugging name for the current isolate.
+  ///
+  /// This name is unique to each isolate and should only be used to make
+  /// debugging messages more comprehensible.
+  Object Dart_DebugName() {
+    return _Dart_DebugName();
+  }
+
+  late final _Dart_DebugName_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DebugName>>('Dart_DebugName');
+  late final _dart_Dart_DebugName _Dart_DebugName =
+      _Dart_DebugName_ptr.asFunction<_dart_Dart_DebugName>();
+
+  /// Returns the ID for an isolate which is used to query the service protocol.
+  ///
+  /// It is the responsibility of the caller to free the returned ID.
+  ffi.Pointer<ffi.Int8> Dart_IsolateServiceId(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_IsolateServiceId(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateServiceId_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsolateServiceId>>(
+          'Dart_IsolateServiceId');
+  late final _dart_Dart_IsolateServiceId _Dart_IsolateServiceId =
+      _Dart_IsolateServiceId_ptr.asFunction<_dart_Dart_IsolateServiceId>();
+
+  /// Enters an isolate. After calling this function,
+  /// the current isolate will be set to the provided isolate.
+  ///
+  /// Requires there to be no current isolate. Multiple threads may not be in
+  /// the same isolate at once.
+  void Dart_EnterIsolate(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_EnterIsolate(
+      isolate,
+    );
+  }
+
+  late final _Dart_EnterIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_EnterIsolate>>('Dart_EnterIsolate');
+  late final _dart_Dart_EnterIsolate _Dart_EnterIsolate =
+      _Dart_EnterIsolate_ptr.asFunction<_dart_Dart_EnterIsolate>();
+
+  /// Kills the given isolate.
+  ///
+  /// This function has the same effect as dart:isolate's
+  /// Isolate.kill(priority:immediate).
+  /// It can interrupt ordinary Dart code but not native code. If the isolate is
+  /// in the middle of a long running native function, the isolate will not be
+  /// killed until control returns to Dart.
+  ///
+  /// Does not require a current isolate. It is safe to kill the current isolate if
+  /// there is one.
+  void Dart_KillIsolate(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_KillIsolate(
+      isolate,
+    );
+  }
+
+  late final _Dart_KillIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_KillIsolate>>('Dart_KillIsolate');
+  late final _dart_Dart_KillIsolate _Dart_KillIsolate =
+      _Dart_KillIsolate_ptr.asFunction<_dart_Dart_KillIsolate>();
+
+  /// Notifies the VM that the embedder expects |size| bytes of memory have become
+  /// unreachable. The VM may use this hint to adjust the garbage collector's
+  /// growth policy.
+  ///
+  /// Multiple calls are interpreted as increasing, not replacing, the estimate of
+  /// unreachable memory.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_HintFreed(
+    int size,
+  ) {
+    return _Dart_HintFreed(
+      size,
+    );
+  }
+
+  late final _Dart_HintFreed_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HintFreed>>('Dart_HintFreed');
+  late final _dart_Dart_HintFreed _Dart_HintFreed =
+      _Dart_HintFreed_ptr.asFunction<_dart_Dart_HintFreed>();
+
+  /// Notifies the VM that the embedder expects to be idle until |deadline|. The VM
+  /// may use this time to perform garbage collection or other tasks to avoid
+  /// delays during execution of Dart code in the future.
+  ///
+  /// |deadline| is measured in microseconds against the system's monotonic time.
+  /// This clock can be accessed via Dart_TimelineGetMicros().
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_NotifyIdle(
+    int deadline,
+  ) {
+    return _Dart_NotifyIdle(
+      deadline,
+    );
+  }
+
+  late final _Dart_NotifyIdle_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NotifyIdle>>('Dart_NotifyIdle');
+  late final _dart_Dart_NotifyIdle _Dart_NotifyIdle =
+      _Dart_NotifyIdle_ptr.asFunction<_dart_Dart_NotifyIdle>();
+
+  /// Notifies the VM that the system is running low on memory.
+  ///
+  /// Does not require a current isolate. Only valid after calling Dart_Initialize.
+  void Dart_NotifyLowMemory() {
+    return _Dart_NotifyLowMemory();
+  }
+
+  late final _Dart_NotifyLowMemory_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NotifyLowMemory>>(
+          'Dart_NotifyLowMemory');
+  late final _dart_Dart_NotifyLowMemory _Dart_NotifyLowMemory =
+      _Dart_NotifyLowMemory_ptr.asFunction<_dart_Dart_NotifyLowMemory>();
+
+  /// Starts the CPU sampling profiler.
+  void Dart_StartProfiling() {
+    return _Dart_StartProfiling();
+  }
+
+  late final _Dart_StartProfiling_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StartProfiling>>(
+          'Dart_StartProfiling');
+  late final _dart_Dart_StartProfiling _Dart_StartProfiling =
+      _Dart_StartProfiling_ptr.asFunction<_dart_Dart_StartProfiling>();
+
+  /// Stops the CPU sampling profiler.
+  ///
+  /// Note that some profile samples might still be taken after this fucntion
+  /// returns due to the asynchronous nature of the implementation on some
+  /// platforms.
+  void Dart_StopProfiling() {
+    return _Dart_StopProfiling();
+  }
+
+  late final _Dart_StopProfiling_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StopProfiling>>('Dart_StopProfiling');
+  late final _dart_Dart_StopProfiling _Dart_StopProfiling =
+      _Dart_StopProfiling_ptr.asFunction<_dart_Dart_StopProfiling>();
+
+  /// Notifies the VM that the current thread should not be profiled until a
+  /// matching call to Dart_ThreadEnableProfiling is made.
+  ///
+  /// NOTE: By default, if a thread has entered an isolate it will be profiled.
+  /// This function should be used when an embedder knows a thread is about
+  /// to make a blocking call and wants to avoid unnecessary interrupts by
+  /// the profiler.
+  void Dart_ThreadDisableProfiling() {
+    return _Dart_ThreadDisableProfiling();
+  }
+
+  late final _Dart_ThreadDisableProfiling_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ThreadDisableProfiling>>(
+          'Dart_ThreadDisableProfiling');
+  late final _dart_Dart_ThreadDisableProfiling _Dart_ThreadDisableProfiling =
+      _Dart_ThreadDisableProfiling_ptr.asFunction<
+          _dart_Dart_ThreadDisableProfiling>();
+
+  /// Notifies the VM that the current thread should be profiled.
+  ///
+  /// NOTE: It is only legal to call this function *after* calling
+  /// Dart_ThreadDisableProfiling.
+  ///
+  /// NOTE: By default, if a thread has entered an isolate it will be profiled.
+  void Dart_ThreadEnableProfiling() {
+    return _Dart_ThreadEnableProfiling();
+  }
+
+  late final _Dart_ThreadEnableProfiling_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ThreadEnableProfiling>>(
+          'Dart_ThreadEnableProfiling');
+  late final _dart_Dart_ThreadEnableProfiling _Dart_ThreadEnableProfiling =
+      _Dart_ThreadEnableProfiling_ptr.asFunction<
+          _dart_Dart_ThreadEnableProfiling>();
+
+  /// Register symbol information for the Dart VM's profiler and crash dumps.
+  ///
+  /// This consumes the output of //topaz/runtime/dart/profiler_symbols, which
+  /// should be treated as opaque.
+  void Dart_AddSymbols(
+    ffi.Pointer<ffi.Int8> dso_name,
+    ffi.Pointer<ffi.Void> buffer,
+    int buffer_size,
+  ) {
+    return _Dart_AddSymbols(
+      dso_name,
+      buffer,
+      buffer_size,
+    );
+  }
+
+  late final _Dart_AddSymbols_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_AddSymbols>>('Dart_AddSymbols');
+  late final _dart_Dart_AddSymbols _Dart_AddSymbols =
+      _Dart_AddSymbols_ptr.asFunction<_dart_Dart_AddSymbols>();
+
+  /// Exits an isolate. After this call, Dart_CurrentIsolate will
+  /// return NULL.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ExitIsolate() {
+    return _Dart_ExitIsolate();
+  }
+
+  late final _Dart_ExitIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ExitIsolate>>('Dart_ExitIsolate');
+  late final _dart_Dart_ExitIsolate _Dart_ExitIsolate =
+      _Dart_ExitIsolate_ptr.asFunction<_dart_Dart_ExitIsolate>();
+
+  /// Creates a full snapshot of the current isolate heap.
+  ///
+  /// A full snapshot is a compact representation of the dart vm isolate heap
+  /// and dart isolate heap states. These snapshots are used to initialize
+  /// the vm isolate on startup and fast initialization of an isolate.
+  /// A Snapshot of the heap is created before any dart code has executed.
+  ///
+  /// Requires there to be a current isolate. Not available in the precompiled
+  /// runtime (check Dart_IsPrecompiledRuntime).
+  ///
+  /// \param buffer Returns a pointer to a buffer containing the
+  /// snapshot. This buffer is scope allocated and is only valid
+  /// until the next call to Dart_ExitScope.
+  /// \param size Returns the size of the buffer.
+  /// \param is_core Create a snapshot containing core libraries.
+  /// Such snapshot should be agnostic to null safety mode.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateSnapshot(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    bool is_core,
+  ) {
+    return _Dart_CreateSnapshot(
+      vm_snapshot_data_buffer,
+      vm_snapshot_data_size,
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      is_core ? 1 : 0,
+    );
+  }
+
+  late final _Dart_CreateSnapshot_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateSnapshot>>(
+          'Dart_CreateSnapshot');
+  late final _dart_Dart_CreateSnapshot _Dart_CreateSnapshot =
+      _Dart_CreateSnapshot_ptr.asFunction<_dart_Dart_CreateSnapshot>();
+
+  /// Returns whether the buffer contains a kernel file.
+  ///
+  /// \param buffer Pointer to a buffer that might contain a kernel binary.
+  /// \param buffer_size Size of the buffer.
+  ///
+  /// \return Whether the buffer contains a kernel binary (full or partial).
+  bool Dart_IsKernel(
+    ffi.Pointer<ffi.Uint8> buffer,
+    int buffer_size,
+  ) {
+    return _Dart_IsKernel(
+          buffer,
+          buffer_size,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsKernel_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsKernel>>('Dart_IsKernel');
+  late final _dart_Dart_IsKernel _Dart_IsKernel =
+      _Dart_IsKernel_ptr.asFunction<_dart_Dart_IsKernel>();
+
+  /// Make isolate runnable.
+  ///
+  /// When isolates are spawned, this function is used to indicate that
+  /// the creation and initialization (including script loading) of the
+  /// isolate is complete and the isolate can start.
+  /// This function expects there to be no current isolate.
+  ///
+  /// \param isolate The isolate to be made runnable.
+  ///
+  /// \return NULL if successful. Returns an error message otherwise. The caller
+  /// is responsible for freeing the error message.
+  ffi.Pointer<ffi.Int8> Dart_IsolateMakeRunnable(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_IsolateMakeRunnable(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateMakeRunnable_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsolateMakeRunnable>>(
+          'Dart_IsolateMakeRunnable');
+  late final _dart_Dart_IsolateMakeRunnable _Dart_IsolateMakeRunnable =
+      _Dart_IsolateMakeRunnable_ptr.asFunction<
+          _dart_Dart_IsolateMakeRunnable>();
+
+  /// Allows embedders to provide an alternative wakeup mechanism for the
+  /// delivery of inter-isolate messages. This setting only applies to
+  /// the current isolate.
+  ///
+  /// Most embedders will only call this function once, before isolate
+  /// execution begins. If this function is called after isolate
+  /// execution begins, the embedder is responsible for threading issues.
+  void Dart_SetMessageNotifyCallback(
+    ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
+        message_notify_callback,
+  ) {
+    return _Dart_SetMessageNotifyCallback(
+      message_notify_callback,
+    );
+  }
+
+  late final _Dart_SetMessageNotifyCallback_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetMessageNotifyCallback>>(
+          'Dart_SetMessageNotifyCallback');
+  late final _dart_Dart_SetMessageNotifyCallback
+      _Dart_SetMessageNotifyCallback = _Dart_SetMessageNotifyCallback_ptr
+          .asFunction<_dart_Dart_SetMessageNotifyCallback>();
+
+  /// Query the current message notify callback for the isolate.
+  ///
+  /// \return The current message notify callback for the isolate.
+  ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
+      Dart_GetMessageNotifyCallback() {
+    return _Dart_GetMessageNotifyCallback();
+  }
+
+  late final _Dart_GetMessageNotifyCallback_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetMessageNotifyCallback>>(
+          'Dart_GetMessageNotifyCallback');
+  late final _dart_Dart_GetMessageNotifyCallback
+      _Dart_GetMessageNotifyCallback = _Dart_GetMessageNotifyCallback_ptr
+          .asFunction<_dart_Dart_GetMessageNotifyCallback>();
+
+  /// If the VM flag `--pause-isolates-on-start` was passed this will be true.
+  ///
+  /// \return A boolean value indicating if pause on start was requested.
+  bool Dart_ShouldPauseOnStart() {
+    return _Dart_ShouldPauseOnStart() != 0;
+  }
+
+  late final _Dart_ShouldPauseOnStart_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ShouldPauseOnStart>>(
+          'Dart_ShouldPauseOnStart');
+  late final _dart_Dart_ShouldPauseOnStart _Dart_ShouldPauseOnStart =
+      _Dart_ShouldPauseOnStart_ptr.asFunction<_dart_Dart_ShouldPauseOnStart>();
+
+  /// Override the VM flag `--pause-isolates-on-start` for the current isolate.
+  ///
+  /// \param should_pause Should the isolate be paused on start?
+  ///
+  /// NOTE: This must be called before Dart_IsolateMakeRunnable.
+  void Dart_SetShouldPauseOnStart(
+    bool should_pause,
+  ) {
+    return _Dart_SetShouldPauseOnStart(
+      should_pause ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetShouldPauseOnStart_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetShouldPauseOnStart>>(
+          'Dart_SetShouldPauseOnStart');
+  late final _dart_Dart_SetShouldPauseOnStart _Dart_SetShouldPauseOnStart =
+      _Dart_SetShouldPauseOnStart_ptr.asFunction<
+          _dart_Dart_SetShouldPauseOnStart>();
+
+  /// Is the current isolate paused on start?
+  ///
+  /// \return A boolean value indicating if the isolate is paused on start.
+  bool Dart_IsPausedOnStart() {
+    return _Dart_IsPausedOnStart() != 0;
+  }
+
+  late final _Dart_IsPausedOnStart_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsPausedOnStart>>(
+          'Dart_IsPausedOnStart');
+  late final _dart_Dart_IsPausedOnStart _Dart_IsPausedOnStart =
+      _Dart_IsPausedOnStart_ptr.asFunction<_dart_Dart_IsPausedOnStart>();
+
+  /// Called when the embedder has paused the current isolate on start and when
+  /// the embedder has resumed the isolate.
+  ///
+  /// \param paused Is the isolate paused on start?
+  void Dart_SetPausedOnStart(
+    bool paused,
+  ) {
+    return _Dart_SetPausedOnStart(
+      paused ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetPausedOnStart_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetPausedOnStart>>(
+          'Dart_SetPausedOnStart');
+  late final _dart_Dart_SetPausedOnStart _Dart_SetPausedOnStart =
+      _Dart_SetPausedOnStart_ptr.asFunction<_dart_Dart_SetPausedOnStart>();
+
+  /// If the VM flag `--pause-isolates-on-exit` was passed this will be true.
+  ///
+  /// \return A boolean value indicating if pause on exit was requested.
+  bool Dart_ShouldPauseOnExit() {
+    return _Dart_ShouldPauseOnExit() != 0;
+  }
+
+  late final _Dart_ShouldPauseOnExit_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ShouldPauseOnExit>>(
+          'Dart_ShouldPauseOnExit');
+  late final _dart_Dart_ShouldPauseOnExit _Dart_ShouldPauseOnExit =
+      _Dart_ShouldPauseOnExit_ptr.asFunction<_dart_Dart_ShouldPauseOnExit>();
+
+  /// Override the VM flag `--pause-isolates-on-exit` for the current isolate.
+  ///
+  /// \param should_pause Should the isolate be paused on exit?
+  void Dart_SetShouldPauseOnExit(
+    bool should_pause,
+  ) {
+    return _Dart_SetShouldPauseOnExit(
+      should_pause ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetShouldPauseOnExit_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetShouldPauseOnExit>>(
+          'Dart_SetShouldPauseOnExit');
+  late final _dart_Dart_SetShouldPauseOnExit _Dart_SetShouldPauseOnExit =
+      _Dart_SetShouldPauseOnExit_ptr.asFunction<
+          _dart_Dart_SetShouldPauseOnExit>();
+
+  /// Is the current isolate paused on exit?
+  ///
+  /// \return A boolean value indicating if the isolate is paused on exit.
+  bool Dart_IsPausedOnExit() {
+    return _Dart_IsPausedOnExit() != 0;
+  }
+
+  late final _Dart_IsPausedOnExit_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsPausedOnExit>>(
+          'Dart_IsPausedOnExit');
+  late final _dart_Dart_IsPausedOnExit _Dart_IsPausedOnExit =
+      _Dart_IsPausedOnExit_ptr.asFunction<_dart_Dart_IsPausedOnExit>();
+
+  /// Called when the embedder has paused the current isolate on exit and when
+  /// the embedder has resumed the isolate.
+  ///
+  /// \param paused Is the isolate paused on exit?
+  void Dart_SetPausedOnExit(
+    bool paused,
+  ) {
+    return _Dart_SetPausedOnExit(
+      paused ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetPausedOnExit_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetPausedOnExit>>(
+          'Dart_SetPausedOnExit');
+  late final _dart_Dart_SetPausedOnExit _Dart_SetPausedOnExit =
+      _Dart_SetPausedOnExit_ptr.asFunction<_dart_Dart_SetPausedOnExit>();
+
+  /// Called when the embedder has caught a top level unhandled exception error
+  /// in the current isolate.
+  ///
+  /// NOTE: It is illegal to call this twice on the same isolate without first
+  /// clearing the sticky error to null.
+  ///
+  /// \param error The unhandled exception error.
+  void Dart_SetStickyError(
+    Object error,
+  ) {
+    return _Dart_SetStickyError(
+      error,
+    );
+  }
+
+  late final _Dart_SetStickyError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetStickyError>>(
+          'Dart_SetStickyError');
+  late final _dart_Dart_SetStickyError _Dart_SetStickyError =
+      _Dart_SetStickyError_ptr.asFunction<_dart_Dart_SetStickyError>();
+
+  /// Does the current isolate have a sticky error?
+  bool Dart_HasStickyError() {
+    return _Dart_HasStickyError() != 0;
+  }
+
+  late final _Dart_HasStickyError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HasStickyError>>(
+          'Dart_HasStickyError');
+  late final _dart_Dart_HasStickyError _Dart_HasStickyError =
+      _Dart_HasStickyError_ptr.asFunction<_dart_Dart_HasStickyError>();
+
+  /// Gets the sticky error for the current isolate.
+  ///
+  /// \return A handle to the sticky error object or null.
+  Object Dart_GetStickyError() {
+    return _Dart_GetStickyError();
+  }
+
+  late final _Dart_GetStickyError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetStickyError>>(
+          'Dart_GetStickyError');
+  late final _dart_Dart_GetStickyError _Dart_GetStickyError =
+      _Dart_GetStickyError_ptr.asFunction<_dart_Dart_GetStickyError>();
+
+  /// Handles the next pending message for the current isolate.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_HandleMessage() {
+    return _Dart_HandleMessage();
+  }
+
+  late final _Dart_HandleMessage_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HandleMessage>>('Dart_HandleMessage');
+  late final _dart_Dart_HandleMessage _Dart_HandleMessage =
+      _Dart_HandleMessage_ptr.asFunction<_dart_Dart_HandleMessage>();
+
+  /// Drains the microtask queue, then blocks the calling thread until the current
+  /// isolate recieves a message, then handles all messages.
+  ///
+  /// \param timeout_millis When non-zero, the call returns after the indicated
+  /// number of milliseconds even if no message was received.
+  /// \return A valid handle if no error occurs, otherwise an error handle.
+  Object Dart_WaitForEvent(
+    int timeout_millis,
+  ) {
+    return _Dart_WaitForEvent(
+      timeout_millis,
+    );
+  }
+
+  late final _Dart_WaitForEvent_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_WaitForEvent>>('Dart_WaitForEvent');
+  late final _dart_Dart_WaitForEvent _Dart_WaitForEvent =
+      _Dart_WaitForEvent_ptr.asFunction<_dart_Dart_WaitForEvent>();
+
+  /// Handles any pending messages for the vm service for the current
+  /// isolate.
+  ///
+  /// This function may be used by an embedder at a breakpoint to avoid
+  /// pausing the vm service.
+  ///
+  /// This function can indirectly cause the message notify callback to
+  /// be called.
+  ///
+  /// \return true if the vm service requests the program resume
+  /// execution, false otherwise
+  bool Dart_HandleServiceMessages() {
+    return _Dart_HandleServiceMessages() != 0;
+  }
+
+  late final _Dart_HandleServiceMessages_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HandleServiceMessages>>(
+          'Dart_HandleServiceMessages');
+  late final _dart_Dart_HandleServiceMessages _Dart_HandleServiceMessages =
+      _Dart_HandleServiceMessages_ptr.asFunction<
+          _dart_Dart_HandleServiceMessages>();
+
+  /// Does the current isolate have pending service messages?
+  ///
+  /// \return true if the isolate has pending service messages, false otherwise.
+  bool Dart_HasServiceMessages() {
+    return _Dart_HasServiceMessages() != 0;
+  }
+
+  late final _Dart_HasServiceMessages_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HasServiceMessages>>(
+          'Dart_HasServiceMessages');
+  late final _dart_Dart_HasServiceMessages _Dart_HasServiceMessages =
+      _Dart_HasServiceMessages_ptr.asFunction<_dart_Dart_HasServiceMessages>();
+
+  /// Processes any incoming messages for the current isolate.
+  ///
+  /// This function may only be used when the embedder has not provided
+  /// an alternate message delivery mechanism with
+  /// Dart_SetMessageCallbacks. It is provided for convenience.
+  ///
+  /// This function waits for incoming messages for the current
+  /// isolate. As new messages arrive, they are handled using
+  /// Dart_HandleMessage. The routine exits when all ports to the
+  /// current isolate are closed.
+  ///
+  /// \return A valid handle if the run loop exited successfully.  If an
+  /// exception or other error occurs while processing messages, an
+  /// error handle is returned.
+  Object Dart_RunLoop() {
+    return _Dart_RunLoop();
+  }
+
+  late final _Dart_RunLoop_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_RunLoop>>('Dart_RunLoop');
+  late final _dart_Dart_RunLoop _Dart_RunLoop =
+      _Dart_RunLoop_ptr.asFunction<_dart_Dart_RunLoop>();
+
+  /// Lets the VM run message processing for the isolate.
+  ///
+  /// This function expects there to a current isolate and the current isolate
+  /// must not have an active api scope. The VM will take care of making the
+  /// isolate runnable (if not already), handles its message loop and will take
+  /// care of shutting the isolate down once it's done.
+  ///
+  /// \param errors_are_fatal Whether uncaught errors should be fatal.
+  /// \param on_error_port A port to notify on uncaught errors (or ILLEGAL_PORT).
+  /// \param on_exit_port A port to notify on exit (or ILLEGAL_PORT).
+  /// \param error A non-NULL pointer which will hold an error message if the call
+  /// fails. The error has to be free()ed by the caller.
+  ///
+  /// \return If successfull the VM takes owernship of the isolate and takes care
+  /// of its message loop. If not successful the caller retains owernship of the
+  /// isolate.
+  bool Dart_RunLoopAsync(
+    bool errors_are_fatal,
+    int on_error_port,
+    int on_exit_port,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+  ) {
+    return _Dart_RunLoopAsync(
+          errors_are_fatal ? 1 : 0,
+          on_error_port,
+          on_exit_port,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _Dart_RunLoopAsync_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_RunLoopAsync>>('Dart_RunLoopAsync');
+  late final _dart_Dart_RunLoopAsync _Dart_RunLoopAsync =
+      _Dart_RunLoopAsync_ptr.asFunction<_dart_Dart_RunLoopAsync>();
+
+  /// Gets the main port id for the current isolate.
+  int Dart_GetMainPortId() {
+    return _Dart_GetMainPortId();
+  }
+
+  late final _Dart_GetMainPortId_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetMainPortId>>('Dart_GetMainPortId');
+  late final _dart_Dart_GetMainPortId _Dart_GetMainPortId =
+      _Dart_GetMainPortId_ptr.asFunction<_dart_Dart_GetMainPortId>();
+
+  /// Does the current isolate have live ReceivePorts?
+  ///
+  /// A ReceivePort is live when it has not been closed.
+  bool Dart_HasLivePorts() {
+    return _Dart_HasLivePorts() != 0;
+  }
+
+  late final _Dart_HasLivePorts_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_HasLivePorts>>('Dart_HasLivePorts');
+  late final _dart_Dart_HasLivePorts _Dart_HasLivePorts =
+      _Dart_HasLivePorts_ptr.asFunction<_dart_Dart_HasLivePorts>();
+
+  /// Posts a message for some isolate. The message is a serialized
+  /// object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param port The destination port.
+  /// \param object An object from the current isolate.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_Post(
+    int port_id,
+    Object object,
+  ) {
+    return _Dart_Post(
+          port_id,
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_Post_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Post>>('Dart_Post');
+  late final _dart_Dart_Post _Dart_Post =
+      _Dart_Post_ptr.asFunction<_dart_Dart_Post>();
+
+  /// Returns a new SendPort with the provided port id.
+  ///
+  /// \param port_id The destination port.
+  ///
+  /// \return A new SendPort if no errors occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewSendPort(
+    int port_id,
+  ) {
+    return _Dart_NewSendPort(
+      port_id,
+    );
+  }
+
+  late final _Dart_NewSendPort_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewSendPort>>('Dart_NewSendPort');
+  late final _dart_Dart_NewSendPort _Dart_NewSendPort =
+      _Dart_NewSendPort_ptr.asFunction<_dart_Dart_NewSendPort>();
+
+  /// Gets the SendPort id for the provided SendPort.
+  /// \param port A SendPort object whose id is desired.
+  /// \param port_id Returns the id of the SendPort.
+  /// \return Success if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_SendPortGetId(
+    Object port,
+    ffi.Pointer<ffi.Int64> port_id,
+  ) {
+    return _Dart_SendPortGetId(
+      port,
+      port_id,
+    );
+  }
+
+  late final _Dart_SendPortGetId_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SendPortGetId>>('Dart_SendPortGetId');
+  late final _dart_Dart_SendPortGetId _Dart_SendPortGetId =
+      _Dart_SendPortGetId_ptr.asFunction<_dart_Dart_SendPortGetId>();
+
+  /// Enters a new scope.
+  ///
+  /// All new local handles will be created in this scope. Additionally,
+  /// some functions may return "scope allocated" memory which is only
+  /// valid within this scope.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_EnterScope() {
+    return _Dart_EnterScope();
+  }
+
+  late final _Dart_EnterScope_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_EnterScope>>('Dart_EnterScope');
+  late final _dart_Dart_EnterScope _Dart_EnterScope =
+      _Dart_EnterScope_ptr.asFunction<_dart_Dart_EnterScope>();
+
+  /// Exits a scope.
+  ///
+  /// The previous scope (if any) becomes the current scope.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ExitScope() {
+    return _Dart_ExitScope();
+  }
+
+  late final _Dart_ExitScope_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ExitScope>>('Dart_ExitScope');
+  late final _dart_Dart_ExitScope _Dart_ExitScope =
+      _Dart_ExitScope_ptr.asFunction<_dart_Dart_ExitScope>();
+
+  /// The Dart VM uses "zone allocation" for temporary structures. Zones
+  /// support very fast allocation of small chunks of memory. The chunks
+  /// cannot be deallocated individually, but instead zones support
+  /// deallocating all chunks in one fast operation.
+  ///
+  /// This function makes it possible for the embedder to allocate
+  /// temporary data in the VMs zone allocator.
+  ///
+  /// Zone allocation is possible:
+  /// 1. when inside a scope where local handles can be allocated
+  /// 2. when processing a message from a native port in a native port
+  /// handler
+  ///
+  /// All the memory allocated this way will be reclaimed either on the
+  /// next call to Dart_ExitScope or when the native port handler exits.
+  ///
+  /// \param size Size of the memory to allocate.
+  ///
+  /// \return A pointer to the allocated memory. NULL if allocation
+  /// failed. Failure might due to is no current VM zone.
+  ffi.Pointer<ffi.Uint8> Dart_ScopeAllocate(
+    int size,
+  ) {
+    return _Dart_ScopeAllocate(
+      size,
+    );
+  }
+
+  late final _Dart_ScopeAllocate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ScopeAllocate>>('Dart_ScopeAllocate');
+  late final _dart_Dart_ScopeAllocate _Dart_ScopeAllocate =
+      _Dart_ScopeAllocate_ptr.asFunction<_dart_Dart_ScopeAllocate>();
+
+  /// Returns the null object.
+  ///
+  /// \return A handle to the null object.
+  Object Dart_Null() {
+    return _Dart_Null();
+  }
+
+  late final _Dart_Null_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Null>>('Dart_Null');
+  late final _dart_Dart_Null _Dart_Null =
+      _Dart_Null_ptr.asFunction<_dart_Dart_Null>();
+
+  /// Is this object null?
+  bool Dart_IsNull(
+    Object object,
+  ) {
+    return _Dart_IsNull(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsNull_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsNull>>('Dart_IsNull');
+  late final _dart_Dart_IsNull _Dart_IsNull =
+      _Dart_IsNull_ptr.asFunction<_dart_Dart_IsNull>();
+
+  /// Returns the empty string object.
+  ///
+  /// \return A handle to the empty string object.
+  Object Dart_EmptyString() {
+    return _Dart_EmptyString();
+  }
+
+  late final _Dart_EmptyString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_EmptyString>>('Dart_EmptyString');
+  late final _dart_Dart_EmptyString _Dart_EmptyString =
+      _Dart_EmptyString_ptr.asFunction<_dart_Dart_EmptyString>();
+
+  /// Returns types that are not classes, and which therefore cannot be looked up
+  /// as library members by Dart_GetType.
+  ///
+  /// \return A handle to the dynamic, void or Never type.
+  Object Dart_TypeDynamic() {
+    return _Dart_TypeDynamic();
+  }
+
+  late final _Dart_TypeDynamic_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypeDynamic>>('Dart_TypeDynamic');
+  late final _dart_Dart_TypeDynamic _Dart_TypeDynamic =
+      _Dart_TypeDynamic_ptr.asFunction<_dart_Dart_TypeDynamic>();
+
+  Object Dart_TypeVoid() {
+    return _Dart_TypeVoid();
+  }
+
+  late final _Dart_TypeVoid_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypeVoid>>('Dart_TypeVoid');
+  late final _dart_Dart_TypeVoid _Dart_TypeVoid =
+      _Dart_TypeVoid_ptr.asFunction<_dart_Dart_TypeVoid>();
+
+  Object Dart_TypeNever() {
+    return _Dart_TypeNever();
+  }
+
+  late final _Dart_TypeNever_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypeNever>>('Dart_TypeNever');
+  late final _dart_Dart_TypeNever _Dart_TypeNever =
+      _Dart_TypeNever_ptr.asFunction<_dart_Dart_TypeNever>();
+
+  /// Checks if the two objects are equal.
+  ///
+  /// The result of the comparison is returned through the 'equal'
+  /// parameter. The return value itself is used to indicate success or
+  /// failure, not equality.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param obj1 An object to be compared.
+  /// \param obj2 An object to be compared.
+  /// \param equal Returns the result of the equality comparison.
+  ///
+  /// \return A valid handle if no error occurs during the comparison.
+  Object Dart_ObjectEquals(
+    Object obj1,
+    Object obj2,
+    ffi.Pointer<ffi.Uint8> equal,
+  ) {
+    return _Dart_ObjectEquals(
+      obj1,
+      obj2,
+      equal,
+    );
+  }
+
+  late final _Dart_ObjectEquals_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ObjectEquals>>('Dart_ObjectEquals');
+  late final _dart_Dart_ObjectEquals _Dart_ObjectEquals =
+      _Dart_ObjectEquals_ptr.asFunction<_dart_Dart_ObjectEquals>();
+
+  /// Is this object an instance of some type?
+  ///
+  /// The result of the test is returned through the 'instanceof' parameter.
+  /// The return value itself is used to indicate success or failure.
+  ///
+  /// \param object An object.
+  /// \param type A type.
+  /// \param instanceof Return true if 'object' is an instance of type 'type'.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ObjectIsType(
+    Object object,
+    Object type,
+    ffi.Pointer<ffi.Uint8> instanceof,
+  ) {
+    return _Dart_ObjectIsType(
+      object,
+      type,
+      instanceof,
+    );
+  }
+
+  late final _Dart_ObjectIsType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ObjectIsType>>('Dart_ObjectIsType');
+  late final _dart_Dart_ObjectIsType _Dart_ObjectIsType =
+      _Dart_ObjectIsType_ptr.asFunction<_dart_Dart_ObjectIsType>();
+
+  /// Query object type.
+  ///
+  /// \param object Some Object.
+  ///
+  /// \return true if Object is of the specified type.
+  bool Dart_IsInstance(
+    Object object,
+  ) {
+    return _Dart_IsInstance(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsInstance_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsInstance>>('Dart_IsInstance');
+  late final _dart_Dart_IsInstance _Dart_IsInstance =
+      _Dart_IsInstance_ptr.asFunction<_dart_Dart_IsInstance>();
+
+  bool Dart_IsNumber(
+    Object object,
+  ) {
+    return _Dart_IsNumber(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsNumber_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsNumber>>('Dart_IsNumber');
+  late final _dart_Dart_IsNumber _Dart_IsNumber =
+      _Dart_IsNumber_ptr.asFunction<_dart_Dart_IsNumber>();
+
+  bool Dart_IsInteger(
+    Object object,
+  ) {
+    return _Dart_IsInteger(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsInteger_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsInteger>>('Dart_IsInteger');
+  late final _dart_Dart_IsInteger _Dart_IsInteger =
+      _Dart_IsInteger_ptr.asFunction<_dart_Dart_IsInteger>();
+
+  bool Dart_IsDouble(
+    Object object,
+  ) {
+    return _Dart_IsDouble(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsDouble_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsDouble>>('Dart_IsDouble');
+  late final _dart_Dart_IsDouble _Dart_IsDouble =
+      _Dart_IsDouble_ptr.asFunction<_dart_Dart_IsDouble>();
+
+  bool Dart_IsBoolean(
+    Object object,
+  ) {
+    return _Dart_IsBoolean(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsBoolean_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsBoolean>>('Dart_IsBoolean');
+  late final _dart_Dart_IsBoolean _Dart_IsBoolean =
+      _Dart_IsBoolean_ptr.asFunction<_dart_Dart_IsBoolean>();
+
+  bool Dart_IsString(
+    Object object,
+  ) {
+    return _Dart_IsString(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsString>>('Dart_IsString');
+  late final _dart_Dart_IsString _Dart_IsString =
+      _Dart_IsString_ptr.asFunction<_dart_Dart_IsString>();
+
+  bool Dart_IsStringLatin1(
+    Object object,
+  ) {
+    return _Dart_IsStringLatin1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsStringLatin1_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsStringLatin1>>(
+          'Dart_IsStringLatin1');
+  late final _dart_Dart_IsStringLatin1 _Dart_IsStringLatin1 =
+      _Dart_IsStringLatin1_ptr.asFunction<_dart_Dart_IsStringLatin1>();
+
+  bool Dart_IsExternalString(
+    Object object,
+  ) {
+    return _Dart_IsExternalString(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsExternalString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsExternalString>>(
+          'Dart_IsExternalString');
+  late final _dart_Dart_IsExternalString _Dart_IsExternalString =
+      _Dart_IsExternalString_ptr.asFunction<_dart_Dart_IsExternalString>();
+
+  bool Dart_IsList(
+    Object object,
+  ) {
+    return _Dart_IsList(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsList_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsList>>('Dart_IsList');
+  late final _dart_Dart_IsList _Dart_IsList =
+      _Dart_IsList_ptr.asFunction<_dart_Dart_IsList>();
+
+  bool Dart_IsMap(
+    Object object,
+  ) {
+    return _Dart_IsMap(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsMap_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsMap>>('Dart_IsMap');
+  late final _dart_Dart_IsMap _Dart_IsMap =
+      _Dart_IsMap_ptr.asFunction<_dart_Dart_IsMap>();
+
+  bool Dart_IsLibrary(
+    Object object,
+  ) {
+    return _Dart_IsLibrary(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsLibrary_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsLibrary>>('Dart_IsLibrary');
+  late final _dart_Dart_IsLibrary _Dart_IsLibrary =
+      _Dart_IsLibrary_ptr.asFunction<_dart_Dart_IsLibrary>();
+
+  bool Dart_IsType(
+    Object handle,
+  ) {
+    return _Dart_IsType(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsType>>('Dart_IsType');
+  late final _dart_Dart_IsType _Dart_IsType =
+      _Dart_IsType_ptr.asFunction<_dart_Dart_IsType>();
+
+  bool Dart_IsFunction(
+    Object handle,
+  ) {
+    return _Dart_IsFunction(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFunction_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsFunction>>('Dart_IsFunction');
+  late final _dart_Dart_IsFunction _Dart_IsFunction =
+      _Dart_IsFunction_ptr.asFunction<_dart_Dart_IsFunction>();
+
+  bool Dart_IsVariable(
+    Object handle,
+  ) {
+    return _Dart_IsVariable(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsVariable_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsVariable>>('Dart_IsVariable');
+  late final _dart_Dart_IsVariable _Dart_IsVariable =
+      _Dart_IsVariable_ptr.asFunction<_dart_Dart_IsVariable>();
+
+  bool Dart_IsTypeVariable(
+    Object handle,
+  ) {
+    return _Dart_IsTypeVariable(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypeVariable_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsTypeVariable>>(
+          'Dart_IsTypeVariable');
+  late final _dart_Dart_IsTypeVariable _Dart_IsTypeVariable =
+      _Dart_IsTypeVariable_ptr.asFunction<_dart_Dart_IsTypeVariable>();
+
+  bool Dart_IsClosure(
+    Object object,
+  ) {
+    return _Dart_IsClosure(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsClosure_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsClosure>>('Dart_IsClosure');
+  late final _dart_Dart_IsClosure _Dart_IsClosure =
+      _Dart_IsClosure_ptr.asFunction<_dart_Dart_IsClosure>();
+
+  bool Dart_IsTypedData(
+    Object object,
+  ) {
+    return _Dart_IsTypedData(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypedData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsTypedData>>('Dart_IsTypedData');
+  late final _dart_Dart_IsTypedData _Dart_IsTypedData =
+      _Dart_IsTypedData_ptr.asFunction<_dart_Dart_IsTypedData>();
+
+  bool Dart_IsByteBuffer(
+    Object object,
+  ) {
+    return _Dart_IsByteBuffer(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsByteBuffer_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsByteBuffer>>('Dart_IsByteBuffer');
+  late final _dart_Dart_IsByteBuffer _Dart_IsByteBuffer =
+      _Dart_IsByteBuffer_ptr.asFunction<_dart_Dart_IsByteBuffer>();
+
+  bool Dart_IsFuture(
+    Object object,
+  ) {
+    return _Dart_IsFuture(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFuture_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsFuture>>('Dart_IsFuture');
+  late final _dart_Dart_IsFuture _Dart_IsFuture =
+      _Dart_IsFuture_ptr.asFunction<_dart_Dart_IsFuture>();
+
+  /// Gets the type of a Dart language object.
+  ///
+  /// \param instance Some Dart object.
+  ///
+  /// \return If no error occurs, the type is returned. Otherwise an
+  /// error handle is returned.
+  Object Dart_InstanceGetType(
+    Object instance,
+  ) {
+    return _Dart_InstanceGetType(
+      instance,
+    );
+  }
+
+  late final _Dart_InstanceGetType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_InstanceGetType>>(
+          'Dart_InstanceGetType');
+  late final _dart_Dart_InstanceGetType _Dart_InstanceGetType =
+      _Dart_InstanceGetType_ptr.asFunction<_dart_Dart_InstanceGetType>();
+
+  /// Returns the name for the provided class type.
+  ///
+  /// \return A valid string handle if no error occurs during the
+  /// operation.
+  Object Dart_ClassName(
+    Object cls_type,
+  ) {
+    return _Dart_ClassName(
+      cls_type,
+    );
+  }
+
+  late final _Dart_ClassName_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ClassName>>('Dart_ClassName');
+  late final _dart_Dart_ClassName _Dart_ClassName =
+      _Dart_ClassName_ptr.asFunction<_dart_Dart_ClassName>();
+
+  /// Returns the name for the provided function or method.
+  ///
+  /// \return A valid string handle if no error occurs during the
+  /// operation.
+  Object Dart_FunctionName(
+    Object function,
+  ) {
+    return _Dart_FunctionName(
+      function,
+    );
+  }
+
+  late final _Dart_FunctionName_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_FunctionName>>('Dart_FunctionName');
+  late final _dart_Dart_FunctionName _Dart_FunctionName =
+      _Dart_FunctionName_ptr.asFunction<_dart_Dart_FunctionName>();
+
+  /// Returns a handle to the owner of a function.
+  ///
+  /// The owner of an instance method or a static method is its defining
+  /// class. The owner of a top-level function is its defining
+  /// library. The owner of the function of a non-implicit closure is the
+  /// function of the method or closure that defines the non-implicit
+  /// closure.
+  ///
+  /// \return A valid handle to the owner of the function, or an error
+  /// handle if the argument is not a valid handle to a function.
+  Object Dart_FunctionOwner(
+    Object function,
+  ) {
+    return _Dart_FunctionOwner(
+      function,
+    );
+  }
+
+  late final _Dart_FunctionOwner_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_FunctionOwner>>('Dart_FunctionOwner');
+  late final _dart_Dart_FunctionOwner _Dart_FunctionOwner =
+      _Dart_FunctionOwner_ptr.asFunction<_dart_Dart_FunctionOwner>();
+
+  /// Determines whether a function handle referes to a static function
+  /// of method.
+  ///
+  /// For the purposes of the embedding API, a top-level function is
+  /// implicitly declared static.
+  ///
+  /// \param function A handle to a function or method declaration.
+  /// \param is_static Returns whether the function or method is declared static.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_FunctionIsStatic(
+    Object function,
+    ffi.Pointer<ffi.Uint8> is_static,
+  ) {
+    return _Dart_FunctionIsStatic(
+      function,
+      is_static,
+    );
+  }
+
+  late final _Dart_FunctionIsStatic_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_FunctionIsStatic>>(
+          'Dart_FunctionIsStatic');
+  late final _dart_Dart_FunctionIsStatic _Dart_FunctionIsStatic =
+      _Dart_FunctionIsStatic_ptr.asFunction<_dart_Dart_FunctionIsStatic>();
+
+  /// Is this object a closure resulting from a tear-off (closurized method)?
+  ///
+  /// Returns true for closures produced when an ordinary method is accessed
+  /// through a getter call. Returns false otherwise, in particular for closures
+  /// produced from local function declarations.
+  ///
+  /// \param object Some Object.
+  ///
+  /// \return true if Object is a tear-off.
+  bool Dart_IsTearOff(
+    Object object,
+  ) {
+    return _Dart_IsTearOff(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTearOff_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsTearOff>>('Dart_IsTearOff');
+  late final _dart_Dart_IsTearOff _Dart_IsTearOff =
+      _Dart_IsTearOff_ptr.asFunction<_dart_Dart_IsTearOff>();
+
+  /// Retrieves the function of a closure.
+  ///
+  /// \return A handle to the function of the closure, or an error handle if the
+  /// argument is not a closure.
+  Object Dart_ClosureFunction(
+    Object closure,
+  ) {
+    return _Dart_ClosureFunction(
+      closure,
+    );
+  }
+
+  late final _Dart_ClosureFunction_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ClosureFunction>>(
+          'Dart_ClosureFunction');
+  late final _dart_Dart_ClosureFunction _Dart_ClosureFunction =
+      _Dart_ClosureFunction_ptr.asFunction<_dart_Dart_ClosureFunction>();
+
+  /// Returns a handle to the library which contains class.
+  ///
+  /// \return A valid handle to the library with owns class, null if the class
+  /// has no library or an error handle if the argument is not a valid handle
+  /// to a class type.
+  Object Dart_ClassLibrary(
+    Object cls_type,
+  ) {
+    return _Dart_ClassLibrary(
+      cls_type,
+    );
+  }
+
+  late final _Dart_ClassLibrary_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ClassLibrary>>('Dart_ClassLibrary');
+  late final _dart_Dart_ClassLibrary _Dart_ClassLibrary =
+      _Dart_ClassLibrary_ptr.asFunction<_dart_Dart_ClassLibrary>();
+
+  /// Does this Integer fit into a 64-bit signed integer?
+  ///
+  /// \param integer An integer.
+  /// \param fits Returns true if the integer fits into a 64-bit signed integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerFitsIntoInt64(
+    Object integer,
+    ffi.Pointer<ffi.Uint8> fits,
+  ) {
+    return _Dart_IntegerFitsIntoInt64(
+      integer,
+      fits,
+    );
+  }
+
+  late final _Dart_IntegerFitsIntoInt64_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IntegerFitsIntoInt64>>(
+          'Dart_IntegerFitsIntoInt64');
+  late final _dart_Dart_IntegerFitsIntoInt64 _Dart_IntegerFitsIntoInt64 =
+      _Dart_IntegerFitsIntoInt64_ptr.asFunction<
+          _dart_Dart_IntegerFitsIntoInt64>();
+
+  /// Does this Integer fit into a 64-bit unsigned integer?
+  ///
+  /// \param integer An integer.
+  /// \param fits Returns true if the integer fits into a 64-bit unsigned integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerFitsIntoUint64(
+    Object integer,
+    ffi.Pointer<ffi.Uint8> fits,
+  ) {
+    return _Dart_IntegerFitsIntoUint64(
+      integer,
+      fits,
+    );
+  }
+
+  late final _Dart_IntegerFitsIntoUint64_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IntegerFitsIntoUint64>>(
+          'Dart_IntegerFitsIntoUint64');
+  late final _dart_Dart_IntegerFitsIntoUint64 _Dart_IntegerFitsIntoUint64 =
+      _Dart_IntegerFitsIntoUint64_ptr.asFunction<
+          _dart_Dart_IntegerFitsIntoUint64>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The value of the integer.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewInteger(
+    int value,
+  ) {
+    return _Dart_NewInteger(
+      value,
+    );
+  }
+
+  late final _Dart_NewInteger_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewInteger>>('Dart_NewInteger');
+  late final _dart_Dart_NewInteger _Dart_NewInteger =
+      _Dart_NewInteger_ptr.asFunction<_dart_Dart_NewInteger>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The unsigned value of the integer.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewIntegerFromUint64(
+    int value,
+  ) {
+    return _Dart_NewIntegerFromUint64(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerFromUint64_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewIntegerFromUint64>>(
+          'Dart_NewIntegerFromUint64');
+  late final _dart_Dart_NewIntegerFromUint64 _Dart_NewIntegerFromUint64 =
+      _Dart_NewIntegerFromUint64_ptr.asFunction<
+          _dart_Dart_NewIntegerFromUint64>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The value of the integer represented as a C string
+  /// containing a hexadecimal number.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewIntegerFromHexCString(
+    ffi.Pointer<ffi.Int8> value,
+  ) {
+    return _Dart_NewIntegerFromHexCString(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerFromHexCString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewIntegerFromHexCString>>(
+          'Dart_NewIntegerFromHexCString');
+  late final _dart_Dart_NewIntegerFromHexCString
+      _Dart_NewIntegerFromHexCString = _Dart_NewIntegerFromHexCString_ptr
+          .asFunction<_dart_Dart_NewIntegerFromHexCString>();
+
+  /// Gets the value of an Integer.
+  ///
+  /// The integer must fit into a 64-bit signed integer, otherwise an error occurs.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToInt64(
+    Object integer,
+    ffi.Pointer<ffi.Int64> value,
+  ) {
+    return _Dart_IntegerToInt64(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToInt64_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IntegerToInt64>>(
+          'Dart_IntegerToInt64');
+  late final _dart_Dart_IntegerToInt64 _Dart_IntegerToInt64 =
+      _Dart_IntegerToInt64_ptr.asFunction<_dart_Dart_IntegerToInt64>();
+
+  /// Gets the value of an Integer.
+  ///
+  /// The integer must fit into a 64-bit unsigned integer, otherwise an
+  /// error occurs.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToUint64(
+    Object integer,
+    ffi.Pointer<ffi.Uint64> value,
+  ) {
+    return _Dart_IntegerToUint64(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToUint64_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IntegerToUint64>>(
+          'Dart_IntegerToUint64');
+  late final _dart_Dart_IntegerToUint64 _Dart_IntegerToUint64 =
+      _Dart_IntegerToUint64_ptr.asFunction<_dart_Dart_IntegerToUint64>();
+
+  /// Gets the value of an integer as a hexadecimal C string.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer as a hexadecimal C
+  /// string. This C string is scope allocated and is only valid until
+  /// the next call to Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToHexCString(
+    Object integer,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
+  ) {
+    return _Dart_IntegerToHexCString(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToHexCString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IntegerToHexCString>>(
+          'Dart_IntegerToHexCString');
+  late final _dart_Dart_IntegerToHexCString _Dart_IntegerToHexCString =
+      _Dart_IntegerToHexCString_ptr.asFunction<
+          _dart_Dart_IntegerToHexCString>();
+
+  /// Returns a Double with the provided value.
+  ///
+  /// \param value A double.
+  ///
+  /// \return The Double object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewDouble(
+    double value,
+  ) {
+    return _Dart_NewDouble(
+      value,
+    );
+  }
+
+  late final _Dart_NewDouble_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewDouble>>('Dart_NewDouble');
+  late final _dart_Dart_NewDouble _Dart_NewDouble =
+      _Dart_NewDouble_ptr.asFunction<_dart_Dart_NewDouble>();
+
+  /// Gets the value of a Double
+  ///
+  /// \param double_obj A Double
+  /// \param value Returns the value of the Double.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_DoubleValue(
+    Object double_obj,
+    ffi.Pointer<ffi.Double> value,
+  ) {
+    return _Dart_DoubleValue(
+      double_obj,
+      value,
+    );
+  }
+
+  late final _Dart_DoubleValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DoubleValue>>('Dart_DoubleValue');
+  late final _dart_Dart_DoubleValue _Dart_DoubleValue =
+      _Dart_DoubleValue_ptr.asFunction<_dart_Dart_DoubleValue>();
+
+  /// Returns a closure of static function 'function_name' in the class 'class_name'
+  /// in the exported namespace of specified 'library'.
+  ///
+  /// \param library Library object
+  /// \param cls_type Type object representing a Class
+  /// \param function_name Name of the static function in the class
+  ///
+  /// \return A valid Dart instance if no error occurs during the operation.
+  Object Dart_GetStaticMethodClosure(
+    Object library_1,
+    Object cls_type,
+    Object function_name,
+  ) {
+    return _Dart_GetStaticMethodClosure(
+      library_1,
+      cls_type,
+      function_name,
+    );
+  }
+
+  late final _Dart_GetStaticMethodClosure_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetStaticMethodClosure>>(
+          'Dart_GetStaticMethodClosure');
+  late final _dart_Dart_GetStaticMethodClosure _Dart_GetStaticMethodClosure =
+      _Dart_GetStaticMethodClosure_ptr.asFunction<
+          _dart_Dart_GetStaticMethodClosure>();
+
+  /// Returns the True object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to the True object.
+  Object Dart_True() {
+    return _Dart_True();
+  }
+
+  late final _Dart_True_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_True>>('Dart_True');
+  late final _dart_Dart_True _Dart_True =
+      _Dart_True_ptr.asFunction<_dart_Dart_True>();
+
+  /// Returns the False object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to the False object.
+  Object Dart_False() {
+    return _Dart_False();
+  }
+
+  late final _Dart_False_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_False>>('Dart_False');
+  late final _dart_Dart_False _Dart_False =
+      _Dart_False_ptr.asFunction<_dart_Dart_False>();
+
+  /// Returns a Boolean with the provided value.
+  ///
+  /// \param value true or false.
+  ///
+  /// \return The Boolean object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewBoolean(
+    bool value,
+  ) {
+    return _Dart_NewBoolean(
+      value ? 1 : 0,
+    );
+  }
+
+  late final _Dart_NewBoolean_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewBoolean>>('Dart_NewBoolean');
+  late final _dart_Dart_NewBoolean _Dart_NewBoolean =
+      _Dart_NewBoolean_ptr.asFunction<_dart_Dart_NewBoolean>();
+
+  /// Gets the value of a Boolean
+  ///
+  /// \param boolean_obj A Boolean
+  /// \param value Returns the value of the Boolean.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_BooleanValue(
+    Object boolean_obj,
+    ffi.Pointer<ffi.Uint8> value,
+  ) {
+    return _Dart_BooleanValue(
+      boolean_obj,
+      value,
+    );
+  }
+
+  late final _Dart_BooleanValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_BooleanValue>>('Dart_BooleanValue');
+  late final _dart_Dart_BooleanValue _Dart_BooleanValue =
+      _Dart_BooleanValue_ptr.asFunction<_dart_Dart_BooleanValue>();
+
+  /// Gets the length of a String.
+  ///
+  /// \param str A String.
+  /// \param length Returns the length of the String.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringLength(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringLength(
+      str,
+      length,
+    );
+  }
+
+  late final _Dart_StringLength_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringLength>>('Dart_StringLength');
+  late final _dart_Dart_StringLength _Dart_StringLength =
+      _Dart_StringLength_ptr.asFunction<_dart_Dart_StringLength>();
+
+  /// Returns a String built from the provided C string
+  /// (There is an implicit assumption that the C string passed in contains
+  /// UTF-8 encoded characters and '\0' is considered as a termination
+  /// character).
+  ///
+  /// \param value A C String
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromCString(
+    ffi.Pointer<ffi.Int8> str,
+  ) {
+    return _Dart_NewStringFromCString(
+      str,
+    );
+  }
+
+  late final _Dart_NewStringFromCString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromCString>>(
+          'Dart_NewStringFromCString');
+  late final _dart_Dart_NewStringFromCString _Dart_NewStringFromCString =
+      _Dart_NewStringFromCString_ptr.asFunction<
+          _dart_Dart_NewStringFromCString>();
+
+  /// Returns a String built from an array of UTF-8 encoded characters.
+  ///
+  /// \param utf8_array An array of UTF-8 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF8(
+    ffi.Pointer<ffi.Uint8> utf8_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF8(
+      utf8_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF8_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromUTF8>>(
+          'Dart_NewStringFromUTF8');
+  late final _dart_Dart_NewStringFromUTF8 _Dart_NewStringFromUTF8 =
+      _Dart_NewStringFromUTF8_ptr.asFunction<_dart_Dart_NewStringFromUTF8>();
+
+  /// Returns a String built from an array of UTF-16 encoded characters.
+  ///
+  /// \param utf16_array An array of UTF-16 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF16(
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF16(
+      utf16_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF16_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromUTF16>>(
+          'Dart_NewStringFromUTF16');
+  late final _dart_Dart_NewStringFromUTF16 _Dart_NewStringFromUTF16 =
+      _Dart_NewStringFromUTF16_ptr.asFunction<_dart_Dart_NewStringFromUTF16>();
+
+  /// Returns a String built from an array of UTF-32 encoded characters.
+  ///
+  /// \param utf32_array An array of UTF-32 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF32(
+    ffi.Pointer<ffi.Int32> utf32_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF32(
+      utf32_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF32_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromUTF32>>(
+          'Dart_NewStringFromUTF32');
+  late final _dart_Dart_NewStringFromUTF32 _Dart_NewStringFromUTF32 =
+      _Dart_NewStringFromUTF32_ptr.asFunction<_dart_Dart_NewStringFromUTF32>();
+
+  /// Returns a String which references an external array of
+  /// Latin-1 (ISO-8859-1) encoded characters.
+  ///
+  /// \param latin1_array Array of Latin-1 encoded characters. This must not move.
+  /// \param length The length of the characters array.
+  /// \param peer An external pointer to associate with this string.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A callback to be called when this string is finalized.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalLatin1String(
+    ffi.Pointer<ffi.Uint8> latin1_array,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+  ) {
+    return _Dart_NewExternalLatin1String(
+      latin1_array,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalLatin1String_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewExternalLatin1String>>(
+          'Dart_NewExternalLatin1String');
+  late final _dart_Dart_NewExternalLatin1String _Dart_NewExternalLatin1String =
+      _Dart_NewExternalLatin1String_ptr.asFunction<
+          _dart_Dart_NewExternalLatin1String>();
+
+  /// Returns a String which references an external array of UTF-16 encoded
+  /// characters.
+  ///
+  /// \param utf16_array An array of UTF-16 encoded characters. This must not move.
+  /// \param length The length of the characters array.
+  /// \param peer An external pointer to associate with this string.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A callback to be called when this string is finalized.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalUTF16String(
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+  ) {
+    return _Dart_NewExternalUTF16String(
+      utf16_array,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalUTF16String_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewExternalUTF16String>>(
+          'Dart_NewExternalUTF16String');
+  late final _dart_Dart_NewExternalUTF16String _Dart_NewExternalUTF16String =
+      _Dart_NewExternalUTF16String_ptr.asFunction<
+          _dart_Dart_NewExternalUTF16String>();
+
+  /// Gets the C string representation of a String.
+  /// (It is a sequence of UTF-8 encoded values with a '\0' termination.)
+  ///
+  /// \param str A string.
+  /// \param cstr Returns the String represented as a C string.
+  /// This C string is scope allocated and is only valid until
+  /// the next call to Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToCString(
+    Object str,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> cstr,
+  ) {
+    return _Dart_StringToCString(
+      str,
+      cstr,
+    );
+  }
+
+  late final _Dart_StringToCString_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringToCString>>(
+          'Dart_StringToCString');
+  late final _dart_Dart_StringToCString _Dart_StringToCString =
+      _Dart_StringToCString_ptr.asFunction<_dart_Dart_StringToCString>();
+
+  /// Gets a UTF-8 encoded representation of a String.
+  ///
+  /// Any unpaired surrogate code points in the string will be converted as
+  /// replacement characters (U+FFFD, 0xEF 0xBF 0xBD in UTF-8). If you need
+  /// to preserve unpaired surrogates, use the Dart_StringToUTF16 function.
+  ///
+  /// \param str A string.
+  /// \param utf8_array Returns the String represented as UTF-8 code
+  /// units.  This UTF-8 array is scope allocated and is only valid
+  /// until the next call to Dart_ExitScope.
+  /// \param length Used to return the length of the array which was
+  /// actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToUTF8(
+    Object str,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToUTF8(
+      str,
+      utf8_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToUTF8_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringToUTF8>>('Dart_StringToUTF8');
+  late final _dart_Dart_StringToUTF8 _Dart_StringToUTF8 =
+      _Dart_StringToUTF8_ptr.asFunction<_dart_Dart_StringToUTF8>();
+
+  /// Gets the data corresponding to the string object. This function returns
+  /// the data only for Latin-1 (ISO-8859-1) string objects. For all other
+  /// string objects it returns an error.
+  ///
+  /// \param str A string.
+  /// \param latin1_array An array allocated by the caller, used to return
+  /// the string data.
+  /// \param length Used to pass in the length of the provided array.
+  /// Used to return the length of the array which was actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToLatin1(
+    Object str,
+    ffi.Pointer<ffi.Uint8> latin1_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToLatin1(
+      str,
+      latin1_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToLatin1_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringToLatin1>>(
+          'Dart_StringToLatin1');
+  late final _dart_Dart_StringToLatin1 _Dart_StringToLatin1 =
+      _Dart_StringToLatin1_ptr.asFunction<_dart_Dart_StringToLatin1>();
+
+  /// Gets the UTF-16 encoded representation of a string.
+  ///
+  /// \param str A string.
+  /// \param utf16_array An array allocated by the caller, used to return
+  /// the array of UTF-16 encoded characters.
+  /// \param length Used to pass in the length of the provided array.
+  /// Used to return the length of the array which was actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToUTF16(
+    Object str,
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToUTF16(
+      str,
+      utf16_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToUTF16_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringToUTF16>>('Dart_StringToUTF16');
+  late final _dart_Dart_StringToUTF16 _Dart_StringToUTF16 =
+      _Dart_StringToUTF16_ptr.asFunction<_dart_Dart_StringToUTF16>();
+
+  /// Gets the storage size in bytes of a String.
+  ///
+  /// \param str A String.
+  /// \param length Returns the storage size in bytes of the String.
+  /// This is the size in bytes needed to store the String.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringStorageSize(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> size,
+  ) {
+    return _Dart_StringStorageSize(
+      str,
+      size,
+    );
+  }
+
+  late final _Dart_StringStorageSize_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringStorageSize>>(
+          'Dart_StringStorageSize');
+  late final _dart_Dart_StringStorageSize _Dart_StringStorageSize =
+      _Dart_StringStorageSize_ptr.asFunction<_dart_Dart_StringStorageSize>();
+
+  /// Retrieves some properties associated with a String.
+  /// Properties retrieved are:
+  /// - character size of the string (one or two byte)
+  /// - length of the string
+  /// - peer pointer of string if it is an external string.
+  /// \param str A String.
+  /// \param char_size Returns the character size of the String.
+  /// \param str_len Returns the length of the String.
+  /// \param peer Returns the peer pointer associated with the String or 0 if
+  /// there is no peer pointer for it.
+  /// \return Success if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_StringGetProperties(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> char_size,
+    ffi.Pointer<ffi.IntPtr> str_len,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_StringGetProperties(
+      str,
+      char_size,
+      str_len,
+      peer,
+    );
+  }
+
+  late final _Dart_StringGetProperties_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_StringGetProperties>>(
+          'Dart_StringGetProperties');
+  late final _dart_Dart_StringGetProperties _Dart_StringGetProperties =
+      _Dart_StringGetProperties_ptr.asFunction<
+          _dart_Dart_StringGetProperties>();
+
+  /// Returns a List<dynamic> of the desired length.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewList(
+    int length,
+  ) {
+    return _Dart_NewList(
+      length,
+    );
+  }
+
+  late final _Dart_NewList_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewList>>('Dart_NewList');
+  late final _dart_Dart_NewList _Dart_NewList =
+      _Dart_NewList_ptr.asFunction<_dart_Dart_NewList>();
+
+  /// Returns a List of the desired length with the desired legacy element type.
+  ///
+  /// \param element_type_id The type of elements of the list.
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns an error
+  /// handle.
+  Object Dart_NewListOf(
+    int element_type_id,
+    int length,
+  ) {
+    return _Dart_NewListOf(
+      element_type_id,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOf_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewListOf>>('Dart_NewListOf');
+  late final _dart_Dart_NewListOf _Dart_NewListOf =
+      _Dart_NewListOf_ptr.asFunction<_dart_Dart_NewListOf>();
+
+  /// Returns a List of the desired length with the desired element type.
+  ///
+  /// \param element_type Handle to a nullable type object. E.g., from
+  /// Dart_GetType or Dart_GetNullableType.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewListOfType(
+    Object element_type,
+    int length,
+  ) {
+    return _Dart_NewListOfType(
+      element_type,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewListOfType>>('Dart_NewListOfType');
+  late final _dart_Dart_NewListOfType _Dart_NewListOfType =
+      _Dart_NewListOfType_ptr.asFunction<_dart_Dart_NewListOfType>();
+
+  /// Returns a List of the desired length with the desired element type, filled
+  /// with the provided object.
+  ///
+  /// \param element_type Handle to a type object. E.g., from Dart_GetType.
+  ///
+  /// \param fill_object Handle to an object of type 'element_type' that will be
+  /// used to populate the list. This parameter can only be Dart_Null() if the
+  /// length of the list is 0 or 'element_type' is a nullable type.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewListOfTypeFilled(
+    Object element_type,
+    Object fill_object,
+    int length,
+  ) {
+    return _Dart_NewListOfTypeFilled(
+      element_type,
+      fill_object,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfTypeFilled_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewListOfTypeFilled>>(
+          'Dart_NewListOfTypeFilled');
+  late final _dart_Dart_NewListOfTypeFilled _Dart_NewListOfTypeFilled =
+      _Dart_NewListOfTypeFilled_ptr.asFunction<
+          _dart_Dart_NewListOfTypeFilled>();
+
+  /// Gets the length of a List.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param length Returns the length of the List.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ListLength(
+    Object list,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_ListLength(
+      list,
+      length,
+    );
+  }
+
+  late final _Dart_ListLength_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ListLength>>('Dart_ListLength');
+  late final _dart_Dart_ListLength _Dart_ListLength =
+      _Dart_ListLength_ptr.asFunction<_dart_Dart_ListLength>();
+
+  /// Gets the Object at some index of a List.
+  ///
+  /// If the index is out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param index A valid index into the List.
+  ///
+  /// \return The Object in the List at the specified index if no error
+  /// occurs. Otherwise returns an error handle.
+  Object Dart_ListGetAt(
+    Object list,
+    int index,
+  ) {
+    return _Dart_ListGetAt(
+      list,
+      index,
+    );
+  }
+
+  late final _Dart_ListGetAt_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ListGetAt>>('Dart_ListGetAt');
+  late final _dart_Dart_ListGetAt _Dart_ListGetAt =
+      _Dart_ListGetAt_ptr.asFunction<_dart_Dart_ListGetAt>();
+
+  /// Gets a range of Objects from a List.
+  ///
+  /// If any of the requested index values are out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param offset The offset of the first item to get.
+  /// \param length The number of items to get.
+  /// \param result A pointer to fill with the objects.
+  ///
+  /// \return Success if no error occurs during the operation.
+  Object Dart_ListGetRange(
+    Object list,
+    int offset,
+    int length,
+    ffi.Pointer<ffi.Handle> result,
+  ) {
+    return _Dart_ListGetRange(
+      list,
+      offset,
+      length,
+      result,
+    );
+  }
+
+  late final _Dart_ListGetRange_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ListGetRange>>('Dart_ListGetRange');
+  late final _dart_Dart_ListGetRange _Dart_ListGetRange =
+      _Dart_ListGetRange_ptr.asFunction<_dart_Dart_ListGetRange>();
+
+  /// Sets the Object at some index of a List.
+  ///
+  /// If the index is out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param array A List.
+  /// \param index A valid index into the List.
+  /// \param value The Object to put in the List.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ListSetAt(
+    Object list,
+    int index,
+    Object value,
+  ) {
+    return _Dart_ListSetAt(
+      list,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_ListSetAt_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ListSetAt>>('Dart_ListSetAt');
+  late final _dart_Dart_ListSetAt _Dart_ListSetAt =
+      _Dart_ListSetAt_ptr.asFunction<_dart_Dart_ListSetAt>();
+
+  /// May generate an unhandled exception error.
+  Object Dart_ListGetAsBytes(
+    Object list,
+    int offset,
+    ffi.Pointer<ffi.Uint8> native_array,
+    int length,
+  ) {
+    return _Dart_ListGetAsBytes(
+      list,
+      offset,
+      native_array,
+      length,
+    );
+  }
+
+  late final _Dart_ListGetAsBytes_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ListGetAsBytes>>(
+          'Dart_ListGetAsBytes');
+  late final _dart_Dart_ListGetAsBytes _Dart_ListGetAsBytes =
+      _Dart_ListGetAsBytes_ptr.asFunction<_dart_Dart_ListGetAsBytes>();
+
+  /// May generate an unhandled exception error.
+  Object Dart_ListSetAsBytes(
+    Object list,
+    int offset,
+    ffi.Pointer<ffi.Uint8> native_array,
+    int length,
+  ) {
+    return _Dart_ListSetAsBytes(
+      list,
+      offset,
+      native_array,
+      length,
+    );
+  }
+
+  late final _Dart_ListSetAsBytes_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ListSetAsBytes>>(
+          'Dart_ListSetAsBytes');
+  late final _dart_Dart_ListSetAsBytes _Dart_ListSetAsBytes =
+      _Dart_ListSetAsBytes_ptr.asFunction<_dart_Dart_ListSetAsBytes>();
+
+  /// Gets the Object at some key of a Map.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  /// \param key An Object.
+  ///
+  /// \return The value in the map at the specified key, null if the map does not
+  /// contain the key, or an error handle.
+  Object Dart_MapGetAt(
+    Object map,
+    Object key,
+  ) {
+    return _Dart_MapGetAt(
+      map,
+      key,
+    );
+  }
+
+  late final _Dart_MapGetAt_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_MapGetAt>>('Dart_MapGetAt');
+  late final _dart_Dart_MapGetAt _Dart_MapGetAt =
+      _Dart_MapGetAt_ptr.asFunction<_dart_Dart_MapGetAt>();
+
+  /// Returns whether the Map contains a given key.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  ///
+  /// \return A handle on a boolean indicating whether map contains the key.
+  /// Otherwise returns an error handle.
+  Object Dart_MapContainsKey(
+    Object map,
+    Object key,
+  ) {
+    return _Dart_MapContainsKey(
+      map,
+      key,
+    );
+  }
+
+  late final _Dart_MapContainsKey_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_MapContainsKey>>(
+          'Dart_MapContainsKey');
+  late final _dart_Dart_MapContainsKey _Dart_MapContainsKey =
+      _Dart_MapContainsKey_ptr.asFunction<_dart_Dart_MapContainsKey>();
+
+  /// Gets the list of keys of a Map.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  ///
+  /// \return The list of key Objects if no error occurs. Otherwise returns an
+  /// error handle.
+  Object Dart_MapKeys(
+    Object map,
+  ) {
+    return _Dart_MapKeys(
+      map,
+    );
+  }
+
+  late final _Dart_MapKeys_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_MapKeys>>('Dart_MapKeys');
+  late final _dart_Dart_MapKeys _Dart_MapKeys =
+      _Dart_MapKeys_ptr.asFunction<_dart_Dart_MapKeys>();
+
+  /// Return type if this object is a TypedData object.
+  ///
+  /// \return kInvalid if the object is not a TypedData object or the appropriate
+  /// Dart_TypedData_Type.
+  int Dart_GetTypeOfTypedData(
+    Object object,
+  ) {
+    return _Dart_GetTypeOfTypedData(
+      object,
+    );
+  }
+
+  late final _Dart_GetTypeOfTypedData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetTypeOfTypedData>>(
+          'Dart_GetTypeOfTypedData');
+  late final _dart_Dart_GetTypeOfTypedData _Dart_GetTypeOfTypedData =
+      _Dart_GetTypeOfTypedData_ptr.asFunction<_dart_Dart_GetTypeOfTypedData>();
+
+  /// Return type if this object is an external TypedData object.
+  ///
+  /// \return kInvalid if the object is not an external TypedData object or
+  /// the appropriate Dart_TypedData_Type.
+  int Dart_GetTypeOfExternalTypedData(
+    Object object,
+  ) {
+    return _Dart_GetTypeOfExternalTypedData(
+      object,
+    );
+  }
+
+  late final _Dart_GetTypeOfExternalTypedData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetTypeOfExternalTypedData>>(
+          'Dart_GetTypeOfExternalTypedData');
+  late final _dart_Dart_GetTypeOfExternalTypedData
+      _Dart_GetTypeOfExternalTypedData = _Dart_GetTypeOfExternalTypedData_ptr
+          .asFunction<_dart_Dart_GetTypeOfExternalTypedData>();
+
+  /// Returns a TypedData object of the desired length and type.
+  ///
+  /// \param type The type of the TypedData object.
+  /// \param length The length of the TypedData object (length in type units).
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewTypedData(
+    int type,
+    int length,
+  ) {
+    return _Dart_NewTypedData(
+      type,
+      length,
+    );
+  }
+
+  late final _Dart_NewTypedData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewTypedData>>('Dart_NewTypedData');
+  late final _dart_Dart_NewTypedData _Dart_NewTypedData =
+      _Dart_NewTypedData_ptr.asFunction<_dart_Dart_NewTypedData>();
+
+  /// Returns a TypedData object which references an external data array.
+  ///
+  /// \param type The type of the data array.
+  /// \param data A data array. This array must not move.
+  /// \param length The length of the data array (length in type units).
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalTypedData(
+    int type,
+    ffi.Pointer<ffi.Void> data,
+    int length,
+  ) {
+    return _Dart_NewExternalTypedData(
+      type,
+      data,
+      length,
+    );
+  }
+
+  late final _Dart_NewExternalTypedData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewExternalTypedData>>(
+          'Dart_NewExternalTypedData');
+  late final _dart_Dart_NewExternalTypedData _Dart_NewExternalTypedData =
+      _Dart_NewExternalTypedData_ptr.asFunction<
+          _dart_Dart_NewExternalTypedData>();
+
+  /// Returns a TypedData object which references an external data array.
+  ///
+  /// \param type The type of the data array.
+  /// \param data A data array. This array must not move.
+  /// \param length The length of the data array (length in type units).
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalTypedDataWithFinalizer(
+    int type,
+    ffi.Pointer<ffi.Void> data,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+  ) {
+    return _Dart_NewExternalTypedDataWithFinalizer(
+      type,
+      data,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalTypedDataWithFinalizer_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewExternalTypedDataWithFinalizer>>(
+          'Dart_NewExternalTypedDataWithFinalizer');
+  late final _dart_Dart_NewExternalTypedDataWithFinalizer
+      _Dart_NewExternalTypedDataWithFinalizer =
+      _Dart_NewExternalTypedDataWithFinalizer_ptr.asFunction<
+          _dart_Dart_NewExternalTypedDataWithFinalizer>();
+
+  /// Returns a ByteBuffer object for the typed data.
+  ///
+  /// \param type_data The TypedData object.
+  ///
+  /// \return The ByteBuffer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewByteBuffer(
+    Object typed_data,
+  ) {
+    return _Dart_NewByteBuffer(
+      typed_data,
+    );
+  }
+
+  late final _Dart_NewByteBuffer_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_NewByteBuffer>>('Dart_NewByteBuffer');
+  late final _dart_Dart_NewByteBuffer _Dart_NewByteBuffer =
+      _Dart_NewByteBuffer_ptr.asFunction<_dart_Dart_NewByteBuffer>();
+
+  /// Acquires access to the internal data address of a TypedData object.
+  ///
+  /// \param object The typed data object whose internal data address is to
+  /// be accessed.
+  /// \param type The type of the object is returned here.
+  /// \param data The internal data address is returned here.
+  /// \param len Size of the typed array is returned here.
+  ///
+  /// Notes:
+  /// When the internal address of the object is acquired any calls to a
+  /// Dart API function that could potentially allocate an object or run
+  /// any Dart code will return an error.
+  ///
+  /// Any Dart API functions for accessing the data should not be called
+  /// before the corresponding release. In particular, the object should
+  /// not be acquired again before its release. This leads to undefined
+  /// behavior.
+  ///
+  /// \return Success if the internal data address is acquired successfully.
+  /// Otherwise, returns an error handle.
+  Object Dart_TypedDataAcquireData(
+    Object object,
+    ffi.Pointer<ffi.Int32> type,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> data,
+    ffi.Pointer<ffi.IntPtr> len,
+  ) {
+    return _Dart_TypedDataAcquireData(
+      object,
+      type,
+      data,
+      len,
+    );
+  }
+
+  late final _Dart_TypedDataAcquireData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypedDataAcquireData>>(
+          'Dart_TypedDataAcquireData');
+  late final _dart_Dart_TypedDataAcquireData _Dart_TypedDataAcquireData =
+      _Dart_TypedDataAcquireData_ptr.asFunction<
+          _dart_Dart_TypedDataAcquireData>();
+
+  /// Releases access to the internal data address that was acquired earlier using
+  /// Dart_TypedDataAcquireData.
+  ///
+  /// \param object The typed data object whose internal data address is to be
+  /// released.
+  ///
+  /// \return Success if the internal data address is released successfully.
+  /// Otherwise, returns an error handle.
+  Object Dart_TypedDataReleaseData(
+    Object object,
+  ) {
+    return _Dart_TypedDataReleaseData(
+      object,
+    );
+  }
+
+  late final _Dart_TypedDataReleaseData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypedDataReleaseData>>(
+          'Dart_TypedDataReleaseData');
+  late final _dart_Dart_TypedDataReleaseData _Dart_TypedDataReleaseData =
+      _Dart_TypedDataReleaseData_ptr.asFunction<
+          _dart_Dart_TypedDataReleaseData>();
+
+  /// Returns the TypedData object associated with the ByteBuffer object.
+  ///
+  /// \param byte_buffer The ByteBuffer object.
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_GetDataFromByteBuffer(
+    Object byte_buffer,
+  ) {
+    return _Dart_GetDataFromByteBuffer(
+      byte_buffer,
+    );
+  }
+
+  late final _Dart_GetDataFromByteBuffer_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetDataFromByteBuffer>>(
+          'Dart_GetDataFromByteBuffer');
+  late final _dart_Dart_GetDataFromByteBuffer _Dart_GetDataFromByteBuffer =
+      _Dart_GetDataFromByteBuffer_ptr.asFunction<
+          _dart_Dart_GetDataFromByteBuffer>();
+
+  /// Invokes a constructor, creating a new object.
+  ///
+  /// This function allows hidden constructors (constructors with leading
+  /// underscores) to be called.
+  ///
+  /// \param type Type of object to be constructed.
+  /// \param constructor_name The name of the constructor to invoke.  Use
+  /// Dart_Null() or Dart_EmptyString() to invoke the unnamed constructor.
+  /// This name should not include the name of the class.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the constructor.
+  ///
+  /// \return If the constructor is called and completes successfully,
+  /// then the new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_New(
+    Object type,
+    Object constructor_name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_New(
+      type,
+      constructor_name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_New_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_New>>('Dart_New');
+  late final _dart_Dart_New _Dart_New =
+      _Dart_New_ptr.asFunction<_dart_Dart_New>();
+
+  /// Allocate a new object without invoking a constructor.
+  ///
+  /// \param type The type of an object to be allocated.
+  ///
+  /// \return The new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_Allocate(
+    Object type,
+  ) {
+    return _Dart_Allocate(
+      type,
+    );
+  }
+
+  late final _Dart_Allocate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Allocate>>('Dart_Allocate');
+  late final _dart_Dart_Allocate _Dart_Allocate =
+      _Dart_Allocate_ptr.asFunction<_dart_Dart_Allocate>();
+
+  /// Allocate a new object without invoking a constructor, and sets specified
+  /// native fields.
+  ///
+  /// \param type The type of an object to be allocated.
+  /// \param num_native_fields The number of native fields to set.
+  /// \param native_fields An array containing the value of native fields.
+  ///
+  /// \return The new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_AllocateWithNativeFields(
+    Object type,
+    int num_native_fields,
+    ffi.Pointer<ffi.IntPtr> native_fields,
+  ) {
+    return _Dart_AllocateWithNativeFields(
+      type,
+      num_native_fields,
+      native_fields,
+    );
+  }
+
+  late final _Dart_AllocateWithNativeFields_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_AllocateWithNativeFields>>(
+          'Dart_AllocateWithNativeFields');
+  late final _dart_Dart_AllocateWithNativeFields
+      _Dart_AllocateWithNativeFields = _Dart_AllocateWithNativeFields_ptr
+          .asFunction<_dart_Dart_AllocateWithNativeFields>();
+
+  /// Invokes a method or function.
+  ///
+  /// The 'target' parameter may be an object, type, or library.  If
+  /// 'target' is an object, then this function will invoke an instance
+  /// method.  If 'target' is a type, then this function will invoke a
+  /// static method.  If 'target' is a library, then this function will
+  /// invoke a top-level function from that library.
+  /// NOTE: This API call cannot be used to invoke methods of a type object.
+  ///
+  /// This function ignores visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param target An object, type, or library.
+  /// \param name The name of the function or method to invoke.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the function.
+  ///
+  /// \return If the function or method is called and completes
+  /// successfully, then the return value is returned. If an error
+  /// occurs during execution, then an error handle is returned.
+  Object Dart_Invoke(
+    Object target,
+    Object name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_Invoke(
+      target,
+      name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_Invoke_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Invoke>>('Dart_Invoke');
+  late final _dart_Dart_Invoke _Dart_Invoke =
+      _Dart_Invoke_ptr.asFunction<_dart_Dart_Invoke>();
+
+  /// Invokes a Closure with the given arguments.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return If no error occurs during execution, then the result of
+  /// invoking the closure is returned. If an error occurs during
+  /// execution, then an error handle is returned.
+  Object Dart_InvokeClosure(
+    Object closure,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_InvokeClosure(
+      closure,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokeClosure_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_InvokeClosure>>('Dart_InvokeClosure');
+  late final _dart_Dart_InvokeClosure _Dart_InvokeClosure =
+      _Dart_InvokeClosure_ptr.asFunction<_dart_Dart_InvokeClosure>();
+
+  /// Invokes a Generative Constructor on an object that was previously
+  /// allocated using Dart_Allocate/Dart_AllocateWithNativeFields.
+  ///
+  /// The 'target' parameter must be an object.
+  ///
+  /// This function ignores visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param target An object.
+  /// \param name The name of the constructor to invoke.
+  /// Use Dart_Null() or Dart_EmptyString() to invoke the unnamed constructor.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the function.
+  ///
+  /// \return If the constructor is called and completes
+  /// successfully, then the object is returned. If an error
+  /// occurs during execution, then an error handle is returned.
+  Object Dart_InvokeConstructor(
+    Object object,
+    Object name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_InvokeConstructor(
+      object,
+      name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokeConstructor_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_InvokeConstructor>>(
+          'Dart_InvokeConstructor');
+  late final _dart_Dart_InvokeConstructor _Dart_InvokeConstructor =
+      _Dart_InvokeConstructor_ptr.asFunction<_dart_Dart_InvokeConstructor>();
+
+  /// Gets the value of a field.
+  ///
+  /// The 'container' parameter may be an object, type, or library.  If
+  /// 'container' is an object, then this function will access an
+  /// instance field.  If 'container' is a type, then this function will
+  /// access a static field.  If 'container' is a library, then this
+  /// function will access a top-level variable.
+  /// NOTE: This API call cannot be used to access fields of a type object.
+  ///
+  /// This function ignores field visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param container An object, type, or library.
+  /// \param name A field name.
+  ///
+  /// \return If no error occurs, then the value of the field is
+  /// returned. Otherwise an error handle is returned.
+  Object Dart_GetField(
+    Object container,
+    Object name,
+  ) {
+    return _Dart_GetField(
+      container,
+      name,
+    );
+  }
+
+  late final _Dart_GetField_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetField>>('Dart_GetField');
+  late final _dart_Dart_GetField _Dart_GetField =
+      _Dart_GetField_ptr.asFunction<_dart_Dart_GetField>();
+
+  /// Sets the value of a field.
+  ///
+  /// The 'container' parameter may actually be an object, type, or
+  /// library.  If 'container' is an object, then this function will
+  /// access an instance field.  If 'container' is a type, then this
+  /// function will access a static field.  If 'container' is a library,
+  /// then this function will access a top-level variable.
+  /// NOTE: This API call cannot be used to access fields of a type object.
+  ///
+  /// This function ignores field visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param container An object, type, or library.
+  /// \param name A field name.
+  /// \param value The new field value.
+  ///
+  /// \return A valid handle if no error occurs.
+  Object Dart_SetField(
+    Object container,
+    Object name,
+    Object value,
+  ) {
+    return _Dart_SetField(
+      container,
+      name,
+      value,
+    );
+  }
+
+  late final _Dart_SetField_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetField>>('Dart_SetField');
+  late final _dart_Dart_SetField _Dart_SetField =
+      _Dart_SetField_ptr.asFunction<_dart_Dart_SetField>();
+
+  /// Throws an exception.
+  ///
+  /// This function causes a Dart language exception to be thrown. This
+  /// will proceed in the standard way, walking up Dart frames until an
+  /// appropriate 'catch' block is found, executing 'finally' blocks,
+  /// etc.
+  ///
+  /// If an error handle is passed into this function, the error is
+  /// propagated immediately.  See Dart_PropagateError for a discussion
+  /// of error propagation.
+  ///
+  /// If successful, this function does not return. Note that this means
+  /// that the destructors of any stack-allocated C++ objects will not be
+  /// called. If there are no Dart frames on the stack, an error occurs.
+  ///
+  /// \return An error handle if the exception was not thrown.
+  /// Otherwise the function does not return.
+  Object Dart_ThrowException(
+    Object exception,
+  ) {
+    return _Dart_ThrowException(
+      exception,
+    );
+  }
+
+  late final _Dart_ThrowException_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ThrowException>>(
+          'Dart_ThrowException');
+  late final _dart_Dart_ThrowException _Dart_ThrowException =
+      _Dart_ThrowException_ptr.asFunction<_dart_Dart_ThrowException>();
+
+  /// Rethrows an exception.
+  ///
+  /// Rethrows an exception, unwinding all dart frames on the stack. If
+  /// successful, this function does not return. Note that this means
+  /// that the destructors of any stack-allocated C++ objects will not be
+  /// called. If there are no Dart frames on the stack, an error occurs.
+  ///
+  /// \return An error handle if the exception was not thrown.
+  /// Otherwise the function does not return.
+  Object Dart_ReThrowException(
+    Object exception,
+    Object stacktrace,
+  ) {
+    return _Dart_ReThrowException(
+      exception,
+      stacktrace,
+    );
+  }
+
+  late final _Dart_ReThrowException_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_ReThrowException>>(
+          'Dart_ReThrowException');
+  late final _dart_Dart_ReThrowException _Dart_ReThrowException =
+      _Dart_ReThrowException_ptr.asFunction<_dart_Dart_ReThrowException>();
+
+  /// Gets the number of native instance fields in an object.
+  Object Dart_GetNativeInstanceFieldCount(
+    Object obj,
+    ffi.Pointer<ffi.Int32> count,
+  ) {
+    return _Dart_GetNativeInstanceFieldCount(
+      obj,
+      count,
+    );
+  }
+
+  late final _Dart_GetNativeInstanceFieldCount_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeInstanceFieldCount>>(
+          'Dart_GetNativeInstanceFieldCount');
+  late final _dart_Dart_GetNativeInstanceFieldCount
+      _Dart_GetNativeInstanceFieldCount = _Dart_GetNativeInstanceFieldCount_ptr
+          .asFunction<_dart_Dart_GetNativeInstanceFieldCount>();
+
+  /// Gets the value of a native field.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_GetNativeInstanceField(
+    Object obj,
+    int index,
+    ffi.Pointer<ffi.IntPtr> value,
+  ) {
+    return _Dart_GetNativeInstanceField(
+      obj,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeInstanceField_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeInstanceField>>(
+          'Dart_GetNativeInstanceField');
+  late final _dart_Dart_GetNativeInstanceField _Dart_GetNativeInstanceField =
+      _Dart_GetNativeInstanceField_ptr.asFunction<
+          _dart_Dart_GetNativeInstanceField>();
+
+  /// Sets the value of a native field.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_SetNativeInstanceField(
+    Object obj,
+    int index,
+    int value,
+  ) {
+    return _Dart_SetNativeInstanceField(
+      obj,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_SetNativeInstanceField_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetNativeInstanceField>>(
+          'Dart_SetNativeInstanceField');
+  late final _dart_Dart_SetNativeInstanceField _Dart_SetNativeInstanceField =
+      _Dart_SetNativeInstanceField_ptr.asFunction<
+          _dart_Dart_SetNativeInstanceField>();
+
+  /// Extracts current isolate group data from the native arguments structure.
+  ffi.Pointer<ffi.Void> Dart_GetNativeIsolateGroupData(
+    ffi.Pointer<_Dart_NativeArguments> args,
+  ) {
+    return _Dart_GetNativeIsolateGroupData(
+      args,
+    );
+  }
+
+  late final _Dart_GetNativeIsolateGroupData_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeIsolateGroupData>>(
+          'Dart_GetNativeIsolateGroupData');
+  late final _dart_Dart_GetNativeIsolateGroupData
+      _Dart_GetNativeIsolateGroupData = _Dart_GetNativeIsolateGroupData_ptr
+          .asFunction<_dart_Dart_GetNativeIsolateGroupData>();
+
+  /// Gets the native argument at some index.
+  Object Dart_GetNativeArgument(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int index,
+  ) {
+    return _Dart_GetNativeArgument(
+      args,
+      index,
+    );
+  }
+
+  late final _Dart_GetNativeArgument_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeArgument>>(
+          'Dart_GetNativeArgument');
+  late final _dart_Dart_GetNativeArgument _Dart_GetNativeArgument =
+      _Dart_GetNativeArgument_ptr.asFunction<_dart_Dart_GetNativeArgument>();
+
+  /// Gets the number of native arguments.
+  int Dart_GetNativeArgumentCount(
+    ffi.Pointer<_Dart_NativeArguments> args,
+  ) {
+    return _Dart_GetNativeArgumentCount(
+      args,
+    );
+  }
+
+  late final _Dart_GetNativeArgumentCount_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeArgumentCount>>(
+          'Dart_GetNativeArgumentCount');
+  late final _dart_Dart_GetNativeArgumentCount _Dart_GetNativeArgumentCount =
+      _Dart_GetNativeArgumentCount_ptr.asFunction<
+          _dart_Dart_GetNativeArgumentCount>();
+
+  /// Gets all the native fields of the native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param num_fields size of the intptr_t array 'field_values' passed in.
+  /// \param field_values intptr_t array in which native field values are returned.
+  /// \return Success if the native fields where copied in successfully. Otherwise
+  /// returns an error handle. On success the native field values are copied
+  /// into the 'field_values' array, if the argument at 'arg_index' is a
+  /// null object then 0 is copied as the native field values into the
+  /// 'field_values' array.
+  Object Dart_GetNativeFieldsOfArgument(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int arg_index,
+    int num_fields,
+    ffi.Pointer<ffi.IntPtr> field_values,
+  ) {
+    return _Dart_GetNativeFieldsOfArgument(
+      args,
+      arg_index,
+      num_fields,
+      field_values,
+    );
+  }
+
+  late final _Dart_GetNativeFieldsOfArgument_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeFieldsOfArgument>>(
+          'Dart_GetNativeFieldsOfArgument');
+  late final _dart_Dart_GetNativeFieldsOfArgument
+      _Dart_GetNativeFieldsOfArgument = _Dart_GetNativeFieldsOfArgument_ptr
+          .asFunction<_dart_Dart_GetNativeFieldsOfArgument>();
+
+  /// Gets the native field of the receiver.
+  Object Dart_GetNativeReceiver(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    ffi.Pointer<ffi.IntPtr> value,
+  ) {
+    return _Dart_GetNativeReceiver(
+      args,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeReceiver_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeReceiver>>(
+          'Dart_GetNativeReceiver');
+  late final _dart_Dart_GetNativeReceiver _Dart_GetNativeReceiver =
+      _Dart_GetNativeReceiver_ptr.asFunction<_dart_Dart_GetNativeReceiver>();
+
+  /// Gets a string native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param peer Returns the peer pointer if the string argument has one.
+  /// \return Success if the string argument has a peer, if it does not
+  /// have a peer then the String object is returned. Otherwise returns
+  /// an error handle (argument is not a String object).
+  Object Dart_GetNativeStringArgument(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int arg_index,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_GetNativeStringArgument(
+      args,
+      arg_index,
+      peer,
+    );
+  }
+
+  late final _Dart_GetNativeStringArgument_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeStringArgument>>(
+          'Dart_GetNativeStringArgument');
+  late final _dart_Dart_GetNativeStringArgument _Dart_GetNativeStringArgument =
+      _Dart_GetNativeStringArgument_ptr.asFunction<
+          _dart_Dart_GetNativeStringArgument>();
+
+  /// Gets an integer native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the integer value if the argument is an Integer.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeIntegerArgument(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int index,
+    ffi.Pointer<ffi.Int64> value,
+  ) {
+    return _Dart_GetNativeIntegerArgument(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeIntegerArgument_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeIntegerArgument>>(
+          'Dart_GetNativeIntegerArgument');
+  late final _dart_Dart_GetNativeIntegerArgument
+      _Dart_GetNativeIntegerArgument = _Dart_GetNativeIntegerArgument_ptr
+          .asFunction<_dart_Dart_GetNativeIntegerArgument>();
+
+  /// Gets a boolean native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the boolean value if the argument is a Boolean.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeBooleanArgument(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int index,
+    ffi.Pointer<ffi.Uint8> value,
+  ) {
+    return _Dart_GetNativeBooleanArgument(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeBooleanArgument_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeBooleanArgument>>(
+          'Dart_GetNativeBooleanArgument');
+  late final _dart_Dart_GetNativeBooleanArgument
+      _Dart_GetNativeBooleanArgument = _Dart_GetNativeBooleanArgument_ptr
+          .asFunction<_dart_Dart_GetNativeBooleanArgument>();
+
+  /// Gets a double native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the double value if the argument is a double.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeDoubleArgument(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int index,
+    ffi.Pointer<ffi.Double> value,
+  ) {
+    return _Dart_GetNativeDoubleArgument(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeDoubleArgument_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeDoubleArgument>>(
+          'Dart_GetNativeDoubleArgument');
+  late final _dart_Dart_GetNativeDoubleArgument _Dart_GetNativeDoubleArgument =
+      _Dart_GetNativeDoubleArgument_ptr.asFunction<
+          _dart_Dart_GetNativeDoubleArgument>();
+
+  /// Sets the return value for a native function.
+  ///
+  /// If retval is an Error handle, then error will be propagated once
+  /// the native functions exits. See Dart_PropagateError for a
+  /// discussion of how different types of errors are propagated.
+  void Dart_SetReturnValue(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    Object retval,
+  ) {
+    return _Dart_SetReturnValue(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetReturnValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetReturnValue>>(
+          'Dart_SetReturnValue');
+  late final _dart_Dart_SetReturnValue _Dart_SetReturnValue =
+      _Dart_SetReturnValue_ptr.asFunction<_dart_Dart_SetReturnValue>();
+
+  void Dart_SetWeakHandleReturnValue(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    ffi.Pointer<_Dart_WeakPersistentHandle> rval,
+  ) {
+    return _Dart_SetWeakHandleReturnValue(
+      args,
+      rval,
+    );
+  }
+
+  late final _Dart_SetWeakHandleReturnValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetWeakHandleReturnValue>>(
+          'Dart_SetWeakHandleReturnValue');
+  late final _dart_Dart_SetWeakHandleReturnValue
+      _Dart_SetWeakHandleReturnValue = _Dart_SetWeakHandleReturnValue_ptr
+          .asFunction<_dart_Dart_SetWeakHandleReturnValue>();
+
+  void Dart_SetBooleanReturnValue(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    bool retval,
+  ) {
+    return _Dart_SetBooleanReturnValue(
+      args,
+      retval ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetBooleanReturnValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetBooleanReturnValue>>(
+          'Dart_SetBooleanReturnValue');
+  late final _dart_Dart_SetBooleanReturnValue _Dart_SetBooleanReturnValue =
+      _Dart_SetBooleanReturnValue_ptr.asFunction<
+          _dart_Dart_SetBooleanReturnValue>();
+
+  void Dart_SetIntegerReturnValue(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    int retval,
+  ) {
+    return _Dart_SetIntegerReturnValue(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetIntegerReturnValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetIntegerReturnValue>>(
+          'Dart_SetIntegerReturnValue');
+  late final _dart_Dart_SetIntegerReturnValue _Dart_SetIntegerReturnValue =
+      _Dart_SetIntegerReturnValue_ptr.asFunction<
+          _dart_Dart_SetIntegerReturnValue>();
+
+  void Dart_SetDoubleReturnValue(
+    ffi.Pointer<_Dart_NativeArguments> args,
+    double retval,
+  ) {
+    return _Dart_SetDoubleReturnValue(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetDoubleReturnValue_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetDoubleReturnValue>>(
+          'Dart_SetDoubleReturnValue');
+  late final _dart_Dart_SetDoubleReturnValue _Dart_SetDoubleReturnValue =
+      _Dart_SetDoubleReturnValue_ptr.asFunction<
+          _dart_Dart_SetDoubleReturnValue>();
+
+  /// Sets the environment callback for the current isolate. This
+  /// callback is used to lookup environment values by name in the
+  /// current environment. This enables the embedder to supply values for
+  /// the const constructors bool.fromEnvironment, int.fromEnvironment
+  /// and String.fromEnvironment.
+  Object Dart_SetEnvironmentCallback(
+    ffi.Pointer<ffi.NativeFunction<Dart_EnvironmentCallback>> callback,
+  ) {
+    return _Dart_SetEnvironmentCallback(
+      callback,
+    );
+  }
+
+  late final _Dart_SetEnvironmentCallback_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetEnvironmentCallback>>(
+          'Dart_SetEnvironmentCallback');
+  late final _dart_Dart_SetEnvironmentCallback _Dart_SetEnvironmentCallback =
+      _Dart_SetEnvironmentCallback_ptr.asFunction<
+          _dart_Dart_SetEnvironmentCallback>();
+
+  /// Sets the callback used to resolve native functions for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver A native entry resolver.
+  ///
+  /// \return A valid handle if the native resolver was set successfully.
+  Object Dart_SetNativeResolver(
+    Object library_1,
+    ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>> resolver,
+    ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>> symbol,
+  ) {
+    return _Dart_SetNativeResolver(
+      library_1,
+      resolver,
+      symbol,
+    );
+  }
+
+  late final _Dart_SetNativeResolver_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetNativeResolver>>(
+          'Dart_SetNativeResolver');
+  late final _dart_Dart_SetNativeResolver _Dart_SetNativeResolver =
+      _Dart_SetNativeResolver_ptr.asFunction<_dart_Dart_SetNativeResolver>();
+
+  /// Returns the callback used to resolve native functions for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver a pointer to a Dart_NativeEntryResolver
+  ///
+  /// \return A valid handle if the library was found.
+  Object Dart_GetNativeResolver(
+    Object library_1,
+    ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>>>
+        resolver,
+  ) {
+    return _Dart_GetNativeResolver(
+      library_1,
+      resolver,
+    );
+  }
+
+  late final _Dart_GetNativeResolver_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeResolver>>(
+          'Dart_GetNativeResolver');
+  late final _dart_Dart_GetNativeResolver _Dart_GetNativeResolver =
+      _Dart_GetNativeResolver_ptr.asFunction<_dart_Dart_GetNativeResolver>();
+
+  /// Returns the callback used to resolve native function symbols for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver a pointer to a Dart_NativeEntrySymbol.
+  ///
+  /// \return A valid handle if the library was found.
+  Object Dart_GetNativeSymbol(
+    Object library_1,
+    ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>>>
+        resolver,
+  ) {
+    return _Dart_GetNativeSymbol(
+      library_1,
+      resolver,
+    );
+  }
+
+  late final _Dart_GetNativeSymbol_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNativeSymbol>>(
+          'Dart_GetNativeSymbol');
+  late final _dart_Dart_GetNativeSymbol _Dart_GetNativeSymbol =
+      _Dart_GetNativeSymbol_ptr.asFunction<_dart_Dart_GetNativeSymbol>();
+
+  /// Sets the callback used to resolve FFI native functions for a library.
+  /// The resolved functions are expected to be a C function pointer of the
+  /// correct signature (as specified in the `@FfiNative<NFT>()` function
+  /// annotation in Dart code).
+  ///
+  /// NOTE: This is an experimental feature and might change in the future.
+  ///
+  /// \param library A library.
+  /// \param resolver A native function resolver.
+  ///
+  /// \return A valid handle if the native resolver was set successfully.
+  Object Dart_SetFfiNativeResolver(
+    Object library_1,
+    ffi.Pointer<ffi.NativeFunction<Dart_FfiNativeResolver>> resolver,
+  ) {
+    return _Dart_SetFfiNativeResolver(
+      library_1,
+      resolver,
+    );
+  }
+
+  late final _Dart_SetFfiNativeResolver_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetFfiNativeResolver>>(
+          'Dart_SetFfiNativeResolver');
+  late final _dart_Dart_SetFfiNativeResolver _Dart_SetFfiNativeResolver =
+      _Dart_SetFfiNativeResolver_ptr.asFunction<
+          _dart_Dart_SetFfiNativeResolver>();
+
+  /// Sets library tag handler for the current isolate. This handler is
+  /// used to handle the various tags encountered while loading libraries
+  /// or scripts in the isolate.
+  ///
+  /// \param handler Handler code to be used for handling the various tags
+  /// encountered while loading libraries or scripts in the isolate.
+  ///
+  /// \return If no error occurs, the handler is set for the isolate.
+  /// Otherwise an error handle is returned.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_SetLibraryTagHandler(
+    ffi.Pointer<ffi.NativeFunction<Dart_LibraryTagHandler>> handler,
+  ) {
+    return _Dart_SetLibraryTagHandler(
+      handler,
+    );
+  }
+
+  late final _Dart_SetLibraryTagHandler_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetLibraryTagHandler>>(
+          'Dart_SetLibraryTagHandler');
+  late final _dart_Dart_SetLibraryTagHandler _Dart_SetLibraryTagHandler =
+      _Dart_SetLibraryTagHandler_ptr.asFunction<
+          _dart_Dart_SetLibraryTagHandler>();
+
+  /// Sets the deferred load handler for the current isolate. This handler is
+  /// used to handle loading deferred imports in an AppJIT or AppAOT program.
+  Object Dart_SetDeferredLoadHandler(
+    ffi.Pointer<ffi.NativeFunction<Dart_DeferredLoadHandler>> handler,
+  ) {
+    return _Dart_SetDeferredLoadHandler(
+      handler,
+    );
+  }
+
+  late final _Dart_SetDeferredLoadHandler_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetDeferredLoadHandler>>(
+          'Dart_SetDeferredLoadHandler');
+  late final _dart_Dart_SetDeferredLoadHandler _Dart_SetDeferredLoadHandler =
+      _Dart_SetDeferredLoadHandler_ptr.asFunction<
+          _dart_Dart_SetDeferredLoadHandler>();
+
+  /// Notifies the VM that a deferred load completed successfully. This function
+  /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
+  /// complete.
+  ///
+  /// Requires the current isolate to be the same current isolate during the
+  /// invocation of the Dart_DeferredLoadHandler.
+  Object Dart_DeferredLoadComplete(
+    int loading_unit_id,
+    ffi.Pointer<ffi.Uint8> snapshot_data,
+    ffi.Pointer<ffi.Uint8> snapshot_instructions,
+  ) {
+    return _Dart_DeferredLoadComplete(
+      loading_unit_id,
+      snapshot_data,
+      snapshot_instructions,
+    );
+  }
+
+  late final _Dart_DeferredLoadComplete_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DeferredLoadComplete>>(
+          'Dart_DeferredLoadComplete');
+  late final _dart_Dart_DeferredLoadComplete _Dart_DeferredLoadComplete =
+      _Dart_DeferredLoadComplete_ptr.asFunction<
+          _dart_Dart_DeferredLoadComplete>();
+
+  /// Notifies the VM that a deferred load failed. This function
+  /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
+  /// complete with an error.
+  ///
+  /// If `transient` is true, future invocations of `prefix.loadLibrary()` will
+  /// trigger new load requests. If false, futures invocation will complete with
+  /// the same error.
+  ///
+  /// Requires the current isolate to be the same current isolate during the
+  /// invocation of the Dart_DeferredLoadHandler.
+  Object Dart_DeferredLoadCompleteError(
+    int loading_unit_id,
+    ffi.Pointer<ffi.Int8> error_message,
+    bool transient,
+  ) {
+    return _Dart_DeferredLoadCompleteError(
+      loading_unit_id,
+      error_message,
+      transient ? 1 : 0,
+    );
+  }
+
+  late final _Dart_DeferredLoadCompleteError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DeferredLoadCompleteError>>(
+          'Dart_DeferredLoadCompleteError');
+  late final _dart_Dart_DeferredLoadCompleteError
+      _Dart_DeferredLoadCompleteError = _Dart_DeferredLoadCompleteError_ptr
+          .asFunction<_dart_Dart_DeferredLoadCompleteError>();
+
+  /// Canonicalizes a url with respect to some library.
+  ///
+  /// The url is resolved with respect to the library's url and some url
+  /// normalizations are performed.
+  ///
+  /// This canonicalization function should be sufficient for most
+  /// embedders to implement the Dart_kCanonicalizeUrl tag.
+  ///
+  /// \param base_url The base url relative to which the url is
+  /// being resolved.
+  /// \param url The url being resolved and canonicalized.  This
+  /// parameter is a string handle.
+  ///
+  /// \return If no error occurs, a String object is returned.  Otherwise
+  /// an error handle is returned.
+  Object Dart_DefaultCanonicalizeUrl(
+    Object base_url,
+    Object url,
+  ) {
+    return _Dart_DefaultCanonicalizeUrl(
+      base_url,
+      url,
+    );
+  }
+
+  late final _Dart_DefaultCanonicalizeUrl_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DefaultCanonicalizeUrl>>(
+          'Dart_DefaultCanonicalizeUrl');
+  late final _dart_Dart_DefaultCanonicalizeUrl _Dart_DefaultCanonicalizeUrl =
+      _Dart_DefaultCanonicalizeUrl_ptr.asFunction<
+          _dart_Dart_DefaultCanonicalizeUrl>();
+
+  /// Loads the root library for the current isolate.
+  ///
+  /// Requires there to be no current root library.
+  ///
+  /// \param buffer A buffer which contains a kernel binary (see
+  /// pkg/kernel/binary.md). Must remain valid until isolate group shutdown.
+  /// \param buffer_size Length of the passed in buffer.
+  ///
+  /// \return A handle to the root library, or an error.
+  Object Dart_LoadScriptFromKernel(
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_size,
+  ) {
+    return _Dart_LoadScriptFromKernel(
+      kernel_buffer,
+      kernel_size,
+    );
+  }
+
+  late final _Dart_LoadScriptFromKernel_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LoadScriptFromKernel>>(
+          'Dart_LoadScriptFromKernel');
+  late final _dart_Dart_LoadScriptFromKernel _Dart_LoadScriptFromKernel =
+      _Dart_LoadScriptFromKernel_ptr.asFunction<
+          _dart_Dart_LoadScriptFromKernel>();
+
+  /// Gets the library for the root script for the current isolate.
+  ///
+  /// If the root script has not yet been set for the current isolate,
+  /// this function returns Dart_Null().  This function never returns an
+  /// error handle.
+  ///
+  /// \return Returns the root Library for the current isolate or Dart_Null().
+  Object Dart_RootLibrary() {
+    return _Dart_RootLibrary();
+  }
+
+  late final _Dart_RootLibrary_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_RootLibrary>>('Dart_RootLibrary');
+  late final _dart_Dart_RootLibrary _Dart_RootLibrary =
+      _Dart_RootLibrary_ptr.asFunction<_dart_Dart_RootLibrary>();
+
+  /// Sets the root library for the current isolate.
+  ///
+  /// \return Returns an error handle if `library` is not a library handle.
+  Object Dart_SetRootLibrary(
+    Object library_1,
+  ) {
+    return _Dart_SetRootLibrary(
+      library_1,
+    );
+  }
+
+  late final _Dart_SetRootLibrary_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetRootLibrary>>(
+          'Dart_SetRootLibrary');
+  late final _dart_Dart_SetRootLibrary _Dart_SetRootLibrary =
+      _Dart_SetRootLibrary_ptr.asFunction<_dart_Dart_SetRootLibrary>();
+
+  /// Lookup or instantiate a legacy type by name and type arguments from a
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetType(
+    Object library_1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetType(
+      library_1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetType>>('Dart_GetType');
+  late final _dart_Dart_GetType _Dart_GetType =
+      _Dart_GetType_ptr.asFunction<_dart_Dart_GetType>();
+
+  /// Lookup or instantiate a nullable type by name and type arguments from
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetNullableType(
+    Object library_1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetNullableType(
+      library_1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetNullableType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNullableType>>(
+          'Dart_GetNullableType');
+  late final _dart_Dart_GetNullableType _Dart_GetNullableType =
+      _Dart_GetNullableType_ptr.asFunction<_dart_Dart_GetNullableType>();
+
+  /// Lookup or instantiate a non-nullable type by name and type arguments from
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetNonNullableType(
+    Object library_1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetNonNullableType(
+      library_1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetNonNullableType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetNonNullableType>>(
+          'Dart_GetNonNullableType');
+  late final _dart_Dart_GetNonNullableType _Dart_GetNonNullableType =
+      _Dart_GetNonNullableType_ptr.asFunction<_dart_Dart_GetNonNullableType>();
+
+  /// Creates a nullable version of the provided type.
+  ///
+  /// \param type The type to be converted to a nullable type.
+  ///
+  /// \return If no error occurs, a nullable type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_TypeToNullableType(
+    Object type,
+  ) {
+    return _Dart_TypeToNullableType(
+      type,
+    );
+  }
+
+  late final _Dart_TypeToNullableType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypeToNullableType>>(
+          'Dart_TypeToNullableType');
+  late final _dart_Dart_TypeToNullableType _Dart_TypeToNullableType =
+      _Dart_TypeToNullableType_ptr.asFunction<_dart_Dart_TypeToNullableType>();
+
+  /// Creates a non-nullable version of the provided type.
+  ///
+  /// \param type The type to be converted to a non-nullable type.
+  ///
+  /// \return If no error occurs, a non-nullable type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_TypeToNonNullableType(
+    Object type,
+  ) {
+    return _Dart_TypeToNonNullableType(
+      type,
+    );
+  }
+
+  late final _Dart_TypeToNonNullableType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_TypeToNonNullableType>>(
+          'Dart_TypeToNonNullableType');
+  late final _dart_Dart_TypeToNonNullableType _Dart_TypeToNonNullableType =
+      _Dart_TypeToNonNullableType_ptr.asFunction<
+          _dart_Dart_TypeToNonNullableType>();
+
+  /// A type's nullability.
+  ///
+  /// \param type A Dart type.
+  /// \param result An out parameter containing the result of the check. True if
+  /// the type is of the specified nullability, false otherwise.
+  ///
+  /// \return Returns an error handle if type is not of type Type.
+  Object Dart_IsNullableType(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsNullableType(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsNullableType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsNullableType>>(
+          'Dart_IsNullableType');
+  late final _dart_Dart_IsNullableType _Dart_IsNullableType =
+      _Dart_IsNullableType_ptr.asFunction<_dart_Dart_IsNullableType>();
+
+  Object Dart_IsNonNullableType(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsNonNullableType(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsNonNullableType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsNonNullableType>>(
+          'Dart_IsNonNullableType');
+  late final _dart_Dart_IsNonNullableType _Dart_IsNonNullableType =
+      _Dart_IsNonNullableType_ptr.asFunction<_dart_Dart_IsNonNullableType>();
+
+  Object Dart_IsLegacyType(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsLegacyType(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsLegacyType_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsLegacyType>>('Dart_IsLegacyType');
+  late final _dart_Dart_IsLegacyType _Dart_IsLegacyType =
+      _Dart_IsLegacyType_ptr.asFunction<_dart_Dart_IsLegacyType>();
+
+  /// Lookup a class or interface by name from a Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The name of the class or interface.
+  ///
+  /// \return If no error occurs, the class or interface is
+  /// returned. Otherwise an error handle is returned.
+  Object Dart_GetClass(
+    Object library_1,
+    Object class_name,
+  ) {
+    return _Dart_GetClass(
+      library_1,
+      class_name,
+    );
+  }
+
+  late final _Dart_GetClass_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetClass>>('Dart_GetClass');
+  late final _dart_Dart_GetClass _Dart_GetClass =
+      _Dart_GetClass_ptr.asFunction<_dart_Dart_GetClass>();
+
+  /// Returns an import path to a Library, such as "file:///test.dart" or
+  /// "dart:core".
+  Object Dart_LibraryUrl(
+    Object library_1,
+  ) {
+    return _Dart_LibraryUrl(
+      library_1,
+    );
+  }
+
+  late final _Dart_LibraryUrl_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LibraryUrl>>('Dart_LibraryUrl');
+  late final _dart_Dart_LibraryUrl _Dart_LibraryUrl =
+      _Dart_LibraryUrl_ptr.asFunction<_dart_Dart_LibraryUrl>();
+
+  /// Returns a URL from which a Library was loaded.
+  Object Dart_LibraryResolvedUrl(
+    Object library_1,
+  ) {
+    return _Dart_LibraryResolvedUrl(
+      library_1,
+    );
+  }
+
+  late final _Dart_LibraryResolvedUrl_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LibraryResolvedUrl>>(
+          'Dart_LibraryResolvedUrl');
+  late final _dart_Dart_LibraryResolvedUrl _Dart_LibraryResolvedUrl =
+      _Dart_LibraryResolvedUrl_ptr.asFunction<_dart_Dart_LibraryResolvedUrl>();
+
+  /// \return An array of libraries.
+  Object Dart_GetLoadedLibraries() {
+    return _Dart_GetLoadedLibraries();
+  }
+
+  late final _Dart_GetLoadedLibraries_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetLoadedLibraries>>(
+          'Dart_GetLoadedLibraries');
+  late final _dart_Dart_GetLoadedLibraries _Dart_GetLoadedLibraries =
+      _Dart_GetLoadedLibraries_ptr.asFunction<_dart_Dart_GetLoadedLibraries>();
+
+  Object Dart_LookupLibrary(
+    Object url,
+  ) {
+    return _Dart_LookupLibrary(
+      url,
+    );
+  }
+
+  late final _Dart_LookupLibrary_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LookupLibrary>>('Dart_LookupLibrary');
+  late final _dart_Dart_LookupLibrary _Dart_LookupLibrary =
+      _Dart_LookupLibrary_ptr.asFunction<_dart_Dart_LookupLibrary>();
+
+  /// Report an loading error for the library.
+  ///
+  /// \param library The library that failed to load.
+  /// \param error The Dart error instance containing the load error.
+  ///
+  /// \return If the VM handles the error, the return value is
+  /// a null handle. If it doesn't handle the error, the error
+  /// object is returned.
+  Object Dart_LibraryHandleError(
+    Object library_1,
+    Object error,
+  ) {
+    return _Dart_LibraryHandleError(
+      library_1,
+      error,
+    );
+  }
+
+  late final _Dart_LibraryHandleError_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LibraryHandleError>>(
+          'Dart_LibraryHandleError');
+  late final _dart_Dart_LibraryHandleError _Dart_LibraryHandleError =
+      _Dart_LibraryHandleError_ptr.asFunction<_dart_Dart_LibraryHandleError>();
+
+  /// Called by the embedder to load a partial program. Does not set the root
+  /// library.
+  ///
+  /// \param buffer A buffer which contains a kernel binary (see
+  /// pkg/kernel/binary.md). Must remain valid until isolate shutdown.
+  /// \param buffer_size Length of the passed in buffer.
+  ///
+  /// \return A handle to the main library of the compilation unit, or an error.
+  Object Dart_LoadLibraryFromKernel(
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+  ) {
+    return _Dart_LoadLibraryFromKernel(
+      kernel_buffer,
+      kernel_buffer_size,
+    );
+  }
+
+  late final _Dart_LoadLibraryFromKernel_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LoadLibraryFromKernel>>(
+          'Dart_LoadLibraryFromKernel');
+  late final _dart_Dart_LoadLibraryFromKernel _Dart_LoadLibraryFromKernel =
+      _Dart_LoadLibraryFromKernel_ptr.asFunction<
+          _dart_Dart_LoadLibraryFromKernel>();
+
+  /// Returns a flattened list of pairs. The first element in each pair is the
+  /// importing library and and the second element is the imported library for each
+  /// import in the isolate of a library whose URI's scheme is [scheme].
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to a list of flattened pairs of importer-importee.
+  Object Dart_GetImportsOfScheme(
+    Object scheme,
+  ) {
+    return _Dart_GetImportsOfScheme(
+      scheme,
+    );
+  }
+
+  late final _Dart_GetImportsOfScheme_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetImportsOfScheme>>(
+          'Dart_GetImportsOfScheme');
+  late final _dart_Dart_GetImportsOfScheme _Dart_GetImportsOfScheme =
+      _Dart_GetImportsOfScheme_ptr.asFunction<_dart_Dart_GetImportsOfScheme>();
+
+  /// Indicates that all outstanding load requests have been satisfied.
+  /// This finalizes all the new classes loaded and optionally completes
+  /// deferred library futures.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param complete_futures Specify true if all deferred library
+  /// futures should be completed, false otherwise.
+  ///
+  /// \return Success if all classes have been finalized and deferred library
+  /// futures are completed. Otherwise, returns an error.
+  Object Dart_FinalizeLoading(
+    bool complete_futures,
+  ) {
+    return _Dart_FinalizeLoading(
+      complete_futures ? 1 : 0,
+    );
+  }
+
+  late final _Dart_FinalizeLoading_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_FinalizeLoading>>(
+          'Dart_FinalizeLoading');
+  late final _dart_Dart_FinalizeLoading _Dart_FinalizeLoading =
+      _Dart_FinalizeLoading_ptr.asFunction<_dart_Dart_FinalizeLoading>();
+
+  /// Returns the value of peer field of 'object' in 'peer'.
+  ///
+  /// \param object An object.
+  /// \param peer An out parameter that returns the value of the peer
+  /// field.
+  ///
+  /// \return Returns an error if 'object' is a subtype of Null, num, or
+  /// bool.
+  Object Dart_GetPeer(
+    Object object,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_GetPeer(
+      object,
+      peer,
+    );
+  }
+
+  late final _Dart_GetPeer_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetPeer>>('Dart_GetPeer');
+  late final _dart_Dart_GetPeer _Dart_GetPeer =
+      _Dart_GetPeer_ptr.asFunction<_dart_Dart_GetPeer>();
+
+  /// Sets the value of the peer field of 'object' to the value of
+  /// 'peer'.
+  ///
+  /// \param object An object.
+  /// \param peer A value to store in the peer field.
+  ///
+  /// \return Returns an error if 'object' is a subtype of Null, num, or
+  /// bool.
+  Object Dart_SetPeer(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+  ) {
+    return _Dart_SetPeer(
+      object,
+      peer,
+    );
+  }
+
+  late final _Dart_SetPeer_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetPeer>>('Dart_SetPeer');
+  late final _dart_Dart_SetPeer _Dart_SetPeer =
+      _Dart_SetPeer_ptr.asFunction<_dart_Dart_SetPeer>();
+
+  bool Dart_IsKernelIsolate(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_IsKernelIsolate(
+          isolate,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsKernelIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsKernelIsolate>>(
+          'Dart_IsKernelIsolate');
+  late final _dart_Dart_IsKernelIsolate _Dart_IsKernelIsolate =
+      _Dart_IsKernelIsolate_ptr.asFunction<_dart_Dart_IsKernelIsolate>();
+
+  bool Dart_KernelIsolateIsRunning() {
+    return _Dart_KernelIsolateIsRunning() != 0;
+  }
+
+  late final _Dart_KernelIsolateIsRunning_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_KernelIsolateIsRunning>>(
+          'Dart_KernelIsolateIsRunning');
+  late final _dart_Dart_KernelIsolateIsRunning _Dart_KernelIsolateIsRunning =
+      _Dart_KernelIsolateIsRunning_ptr.asFunction<
+          _dart_Dart_KernelIsolateIsRunning>();
+
+  int Dart_KernelPort() {
+    return _Dart_KernelPort();
+  }
+
+  late final _Dart_KernelPort_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_KernelPort>>('Dart_KernelPort');
+  late final _dart_Dart_KernelPort _Dart_KernelPort =
+      _Dart_KernelPort_ptr.asFunction<_dart_Dart_KernelPort>();
+
+  /// Compiles the given `script_uri` to a kernel file.
+  ///
+  /// \param platform_kernel A buffer containing the kernel of the platform (e.g.
+  /// `vm_platform_strong.dill`). The VM does not take ownership of this memory.
+  ///
+  /// \param platform_kernel_size The length of the platform_kernel buffer.
+  ///
+  /// \param snapshot_compile Set to `true` when the compilation is for a snapshot.
+  /// This is used by the frontend to determine if compilation related information
+  /// should be printed to console (e.g., null safety mode).
+  ///
+  /// \param verbosity Specifies the logging behavior of the kernel compilation
+  /// service.
+  ///
+  /// \return Returns the result of the compilation.
+  ///
+  /// On a successful compilation the returned [Dart_KernelCompilationResult] has
+  /// a status of [Dart_KernelCompilationStatus_Ok] and the `kernel`/`kernel_size`
+  /// fields are set. The caller takes ownership of the malloc()ed buffer.
+  ///
+  /// On a failed compilation the `error` might be set describing the reason for
+  /// the failed compilation. The caller takes ownership of the malloc()ed
+  /// error.
+  ///
+  /// Requires there to be a current isolate.
+  Dart_KernelCompilationResult Dart_CompileToKernel(
+    ffi.Pointer<ffi.Int8> script_uri,
+    ffi.Pointer<ffi.Uint8> platform_kernel,
+    int platform_kernel_size,
+    bool incremental_compile,
+    bool snapshot_compile,
+    ffi.Pointer<ffi.Int8> package_config,
+    int verbosity,
+  ) {
+    return _Dart_CompileToKernel(
+      script_uri,
+      platform_kernel,
+      platform_kernel_size,
+      incremental_compile ? 1 : 0,
+      snapshot_compile ? 1 : 0,
+      package_config,
+      verbosity,
+    );
+  }
+
+  late final _Dart_CompileToKernel_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CompileToKernel>>(
+          'Dart_CompileToKernel');
+  late final _dart_Dart_CompileToKernel _Dart_CompileToKernel =
+      _Dart_CompileToKernel_ptr.asFunction<_dart_Dart_CompileToKernel>();
+
+  Dart_KernelCompilationResult Dart_KernelListDependencies() {
+    return _Dart_KernelListDependencies();
+  }
+
+  late final _Dart_KernelListDependencies_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_KernelListDependencies>>(
+          'Dart_KernelListDependencies');
+  late final _dart_Dart_KernelListDependencies _Dart_KernelListDependencies =
+      _Dart_KernelListDependencies_ptr.asFunction<
+          _dart_Dart_KernelListDependencies>();
+
+  /// Sets the kernel buffer which will be used to load Dart SDK sources
+  /// dynamically at runtime.
+  ///
+  /// \param platform_kernel A buffer containing kernel which has sources for the
+  /// Dart SDK populated. Note: The VM does not take ownership of this memory.
+  ///
+  /// \param platform_kernel_size The length of the platform_kernel buffer.
+  void Dart_SetDartLibrarySourcesKernel(
+    ffi.Pointer<ffi.Uint8> platform_kernel,
+    int platform_kernel_size,
+  ) {
+    return _Dart_SetDartLibrarySourcesKernel(
+      platform_kernel,
+      platform_kernel_size,
+    );
+  }
+
+  late final _Dart_SetDartLibrarySourcesKernel_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SetDartLibrarySourcesKernel>>(
+          'Dart_SetDartLibrarySourcesKernel');
+  late final _dart_Dart_SetDartLibrarySourcesKernel
+      _Dart_SetDartLibrarySourcesKernel = _Dart_SetDartLibrarySourcesKernel_ptr
+          .asFunction<_dart_Dart_SetDartLibrarySourcesKernel>();
+
+  /// Detect the null safety opt-in status.
+  ///
+  /// When running from source, it is based on the opt-in status of `script_uri`.
+  /// When running from a kernel buffer, it is based on the mode used when
+  /// generating `kernel_buffer`.
+  /// When running from an appJIT or AOT snapshot, it is based on the mode used
+  /// when generating `snapshot_data`.
+  ///
+  /// \param script_uri Uri of the script that contains the source code
+  ///
+  /// \param package_config Uri of the package configuration file (either in format
+  /// of .packages or .dart_tool/package_config.json) for the null safety
+  /// detection to resolve package imports against. If this parameter is not
+  /// passed the package resolution of the parent isolate should be used.
+  ///
+  /// \param original_working_directory current working directory when the VM
+  /// process was launched, this is used to correctly resolve the path specified
+  /// for package_config.
+  ///
+  /// \param snapshot_data
+  ///
+  /// \param snapshot_instructions Buffers containing a snapshot of the
+  /// isolate or NULL if no snapshot is provided. If provided, the buffers must
+  /// remain valid until the isolate shuts down.
+  ///
+  /// \param kernel_buffer
+  ///
+  /// \param kernel_buffer_size A buffer which contains a kernel/DIL program. Must
+  /// remain valid until isolate shutdown.
+  ///
+  /// \return Returns true if the null safety is opted in by the input being
+  /// run `script_uri`, `snapshot_data` or `kernel_buffer`.
+  bool Dart_DetectNullSafety(
+    ffi.Pointer<ffi.Int8> script_uri,
+    ffi.Pointer<ffi.Int8> package_config,
+    ffi.Pointer<ffi.Int8> original_working_directory,
+    ffi.Pointer<ffi.Uint8> snapshot_data,
+    ffi.Pointer<ffi.Uint8> snapshot_instructions,
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+  ) {
+    return _Dart_DetectNullSafety(
+          script_uri,
+          package_config,
+          original_working_directory,
+          snapshot_data,
+          snapshot_instructions,
+          kernel_buffer,
+          kernel_buffer_size,
+        ) !=
+        0;
+  }
+
+  late final _Dart_DetectNullSafety_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DetectNullSafety>>(
+          'Dart_DetectNullSafety');
+  late final _dart_Dart_DetectNullSafety _Dart_DetectNullSafety =
+      _Dart_DetectNullSafety_ptr.asFunction<_dart_Dart_DetectNullSafety>();
+
+  /// Returns true if isolate is the service isolate.
+  ///
+  /// \param isolate An isolate
+  ///
+  /// \return Returns true if 'isolate' is the service isolate.
+  bool Dart_IsServiceIsolate(
+    ffi.Pointer<_Dart_Isolate> isolate,
+  ) {
+    return _Dart_IsServiceIsolate(
+          isolate,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsServiceIsolate_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsServiceIsolate>>(
+          'Dart_IsServiceIsolate');
+  late final _dart_Dart_IsServiceIsolate _Dart_IsServiceIsolate =
+      _Dart_IsServiceIsolate_ptr.asFunction<_dart_Dart_IsServiceIsolate>();
+
+  /// Writes the CPU profile to the timeline as a series of 'instant' events.
+  ///
+  /// Note that this is an expensive operation.
+  ///
+  /// \param main_port The main port of the Isolate whose profile samples to write.
+  /// \param error An optional error, must be free()ed by caller.
+  ///
+  /// \return Returns true if the profile is successfully written and false
+  /// otherwise.
+  bool Dart_WriteProfileToTimeline(
+    int main_port,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+  ) {
+    return _Dart_WriteProfileToTimeline(
+          main_port,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _Dart_WriteProfileToTimeline_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_WriteProfileToTimeline>>(
+          'Dart_WriteProfileToTimeline');
+  late final _dart_Dart_WriteProfileToTimeline _Dart_WriteProfileToTimeline =
+      _Dart_WriteProfileToTimeline_ptr.asFunction<
+          _dart_Dart_WriteProfileToTimeline>();
+
+  /// Compiles all functions reachable from entry points and marks
+  /// the isolate to disallow future compilation.
+  ///
+  /// Entry points should be specified using `@pragma("vm:entry-point")`
+  /// annotation.
+  ///
+  /// \return An error handle if a compilation error or runtime error running const
+  /// constructors was encountered.
+  Object Dart_Precompile() {
+    return _Dart_Precompile();
+  }
+
+  late final _Dart_Precompile_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_Precompile>>('Dart_Precompile');
+  late final _dart_Dart_Precompile _Dart_Precompile =
+      _Dart_Precompile_ptr.asFunction<_dart_Dart_Precompile>();
+
+  Object Dart_LoadingUnitLibraryUris(
+    int loading_unit_id,
+  ) {
+    return _Dart_LoadingUnitLibraryUris(
+      loading_unit_id,
+    );
+  }
+
+  late final _Dart_LoadingUnitLibraryUris_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_LoadingUnitLibraryUris>>(
+          'Dart_LoadingUnitLibraryUris');
+  late final _dart_Dart_LoadingUnitLibraryUris _Dart_LoadingUnitLibraryUris =
+      _Dart_LoadingUnitLibraryUris_ptr.asFunction<
+          _dart_Dart_LoadingUnitLibraryUris>();
+
+  /// Creates a precompiled snapshot.
+  /// - A root library must have been loaded.
+  /// - Dart_Precompile must have been called.
+  ///
+  /// Outputs an assembly file defining the symbols listed in the definitions
+  /// above.
+  ///
+  /// The assembly should be compiled as a static or shared library and linked or
+  /// loaded by the embedder. Running this snapshot requires a VM compiled with
+  /// DART_PRECOMPILED_SNAPSHOT. The kDartVmSnapshotData and
+  /// kDartVmSnapshotInstructions should be passed to Dart_Initialize. The
+  /// kDartIsolateSnapshotData and kDartIsolateSnapshotInstructions should be
+  /// passed to Dart_CreateIsolateGroup.
+  ///
+  /// The callback will be invoked one or more times to provide the assembly code.
+  ///
+  /// If stripped is true, then the assembly code will not include DWARF
+  /// debugging sections.
+  ///
+  /// If debug_callback_data is provided, debug_callback_data will be used with
+  /// the callback to provide separate debugging information.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppAOTSnapshotAsAssembly(
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+    ffi.Pointer<ffi.Void> callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.Void> debug_callback_data,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsAssembly(
+      callback,
+      callback_data,
+      stripped ? 1 : 0,
+      debug_callback_data,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsAssembly_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsAssembly>>(
+          'Dart_CreateAppAOTSnapshotAsAssembly');
+  late final _dart_Dart_CreateAppAOTSnapshotAsAssembly
+      _Dart_CreateAppAOTSnapshotAsAssembly =
+      _Dart_CreateAppAOTSnapshotAsAssembly_ptr.asFunction<
+          _dart_Dart_CreateAppAOTSnapshotAsAssembly>();
+
+  Object Dart_CreateAppAOTSnapshotAsAssemblies(
+    ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>>
+        next_callback,
+    ffi.Pointer<ffi.Void> next_callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsAssemblies(
+      next_callback,
+      next_callback_data,
+      stripped ? 1 : 0,
+      write_callback,
+      close_callback,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsAssemblies_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsAssemblies>>(
+          'Dart_CreateAppAOTSnapshotAsAssemblies');
+  late final _dart_Dart_CreateAppAOTSnapshotAsAssemblies
+      _Dart_CreateAppAOTSnapshotAsAssemblies =
+      _Dart_CreateAppAOTSnapshotAsAssemblies_ptr.asFunction<
+          _dart_Dart_CreateAppAOTSnapshotAsAssemblies>();
+
+  /// Creates a precompiled snapshot.
+  /// - A root library must have been loaded.
+  /// - Dart_Precompile must have been called.
+  ///
+  /// Outputs an ELF shared library defining the symbols
+  /// - _kDartVmSnapshotData
+  /// - _kDartVmSnapshotInstructions
+  /// - _kDartIsolateSnapshotData
+  /// - _kDartIsolateSnapshotInstructions
+  ///
+  /// The shared library should be dynamically loaded by the embedder.
+  /// Running this snapshot requires a VM compiled with DART_PRECOMPILED_SNAPSHOT.
+  /// The kDartVmSnapshotData and kDartVmSnapshotInstructions should be passed to
+  /// Dart_Initialize. The kDartIsolateSnapshotData and
+  /// kDartIsolateSnapshotInstructions should be passed to Dart_CreateIsolate.
+  ///
+  /// The callback will be invoked one or more times to provide the binary output.
+  ///
+  /// If stripped is true, then the binary output will not include DWARF
+  /// debugging sections.
+  ///
+  /// If debug_callback_data is provided, debug_callback_data will be used with
+  /// the callback to provide separate debugging information.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppAOTSnapshotAsElf(
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+    ffi.Pointer<ffi.Void> callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.Void> debug_callback_data,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsElf(
+      callback,
+      callback_data,
+      stripped ? 1 : 0,
+      debug_callback_data,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsElf_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsElf>>(
+          'Dart_CreateAppAOTSnapshotAsElf');
+  late final _dart_Dart_CreateAppAOTSnapshotAsElf
+      _Dart_CreateAppAOTSnapshotAsElf = _Dart_CreateAppAOTSnapshotAsElf_ptr
+          .asFunction<_dart_Dart_CreateAppAOTSnapshotAsElf>();
+
+  Object Dart_CreateAppAOTSnapshotAsElfs(
+    ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>>
+        next_callback,
+    ffi.Pointer<ffi.Void> next_callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsElfs(
+      next_callback,
+      next_callback_data,
+      stripped ? 1 : 0,
+      write_callback,
+      close_callback,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsElfs_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsElfs>>(
+          'Dart_CreateAppAOTSnapshotAsElfs');
+  late final _dart_Dart_CreateAppAOTSnapshotAsElfs
+      _Dart_CreateAppAOTSnapshotAsElfs = _Dart_CreateAppAOTSnapshotAsElfs_ptr
+          .asFunction<_dart_Dart_CreateAppAOTSnapshotAsElfs>();
+
+  /// Like Dart_CreateAppAOTSnapshotAsAssembly, but only includes
+  /// kDartVmSnapshotData and kDartVmSnapshotInstructions. It also does
+  /// not strip DWARF information from the generated assembly or allow for
+  /// separate debug information.
+  Object Dart_CreateVMAOTSnapshotAsAssembly(
+    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+    ffi.Pointer<ffi.Void> callback_data,
+  ) {
+    return _Dart_CreateVMAOTSnapshotAsAssembly(
+      callback,
+      callback_data,
+    );
+  }
+
+  late final _Dart_CreateVMAOTSnapshotAsAssembly_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateVMAOTSnapshotAsAssembly>>(
+          'Dart_CreateVMAOTSnapshotAsAssembly');
+  late final _dart_Dart_CreateVMAOTSnapshotAsAssembly
+      _Dart_CreateVMAOTSnapshotAsAssembly =
+      _Dart_CreateVMAOTSnapshotAsAssembly_ptr.asFunction<
+          _dart_Dart_CreateVMAOTSnapshotAsAssembly>();
+
+  /// Sorts the class-ids in depth first traversal order of the inheritance
+  /// tree. This is a costly operation, but it can make method dispatch
+  /// more efficient and is done before writing snapshots.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_SortClasses() {
+    return _Dart_SortClasses();
+  }
+
+  late final _Dart_SortClasses_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_SortClasses>>('Dart_SortClasses');
+  late final _dart_Dart_SortClasses _Dart_SortClasses =
+      _Dart_SortClasses_ptr.asFunction<_dart_Dart_SortClasses>();
+
+  /// Creates a snapshot that caches compiled code and type feedback for faster
+  /// startup and quicker warmup in a subsequent process.
+  ///
+  /// Outputs a snapshot in two pieces. The pieces should be passed to
+  /// Dart_CreateIsolateGroup in a VM using the same VM snapshot pieces used in the
+  /// current VM. The instructions piece must be loaded with read and execute
+  /// permissions; the data piece may be loaded as read-only.
+  ///
+  /// - Requires the VM to have not been started with --precompilation.
+  /// - Not supported when targeting IA32.
+  /// - The VM writing the snapshot and the VM reading the snapshot must be the
+  /// same version, must be built in the same DEBUG/RELEASE/PRODUCT mode, must
+  /// be targeting the same architecture, and must both be in checked mode or
+  /// both in unchecked mode.
+  ///
+  /// The buffers are scope allocated and are only valid until the next call to
+  /// Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppJITSnapshotAsBlobs(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+  ) {
+    return _Dart_CreateAppJITSnapshotAsBlobs(
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      isolate_snapshot_instructions_buffer,
+      isolate_snapshot_instructions_size,
+    );
+  }
+
+  late final _Dart_CreateAppJITSnapshotAsBlobs_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateAppJITSnapshotAsBlobs>>(
+          'Dart_CreateAppJITSnapshotAsBlobs');
+  late final _dart_Dart_CreateAppJITSnapshotAsBlobs
+      _Dart_CreateAppJITSnapshotAsBlobs = _Dart_CreateAppJITSnapshotAsBlobs_ptr
+          .asFunction<_dart_Dart_CreateAppJITSnapshotAsBlobs>();
+
+  /// Like Dart_CreateAppJITSnapshotAsBlobs, but also creates a new VM snapshot.
+  Object Dart_CreateCoreJITSnapshotAsBlobs(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+  ) {
+    return _Dart_CreateCoreJITSnapshotAsBlobs(
+      vm_snapshot_data_buffer,
+      vm_snapshot_data_size,
+      vm_snapshot_instructions_buffer,
+      vm_snapshot_instructions_size,
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      isolate_snapshot_instructions_buffer,
+      isolate_snapshot_instructions_size,
+    );
+  }
+
+  late final _Dart_CreateCoreJITSnapshotAsBlobs_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_CreateCoreJITSnapshotAsBlobs>>(
+          'Dart_CreateCoreJITSnapshotAsBlobs');
+  late final _dart_Dart_CreateCoreJITSnapshotAsBlobs
+      _Dart_CreateCoreJITSnapshotAsBlobs =
+      _Dart_CreateCoreJITSnapshotAsBlobs_ptr.asFunction<
+          _dart_Dart_CreateCoreJITSnapshotAsBlobs>();
+
+  /// Get obfuscation map for precompiled code.
+  ///
+  /// Obfuscation map is encoded as a JSON array of pairs (original name,
+  /// obfuscated name).
+  ///
+  /// \return Returns an error handler if the VM was built in a mode that does not
+  /// support obfuscation.
+  Object Dart_GetObfuscationMap(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
+    ffi.Pointer<ffi.IntPtr> buffer_length,
+  ) {
+    return _Dart_GetObfuscationMap(
+      buffer,
+      buffer_length,
+    );
+  }
+
+  late final _Dart_GetObfuscationMap_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_GetObfuscationMap>>(
+          'Dart_GetObfuscationMap');
+  late final _dart_Dart_GetObfuscationMap _Dart_GetObfuscationMap =
+      _Dart_GetObfuscationMap_ptr.asFunction<_dart_Dart_GetObfuscationMap>();
+
+  /// Returns whether the VM only supports running from precompiled snapshots and
+  /// not from any other kind of snapshot or from source (that is, the VM was
+  /// compiled with DART_PRECOMPILED_RUNTIME).
+  bool Dart_IsPrecompiledRuntime() {
+    return _Dart_IsPrecompiledRuntime() != 0;
+  }
+
+  late final _Dart_IsPrecompiledRuntime_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_IsPrecompiledRuntime>>(
+          'Dart_IsPrecompiledRuntime');
+  late final _dart_Dart_IsPrecompiledRuntime _Dart_IsPrecompiledRuntime =
+      _Dart_IsPrecompiledRuntime_ptr.asFunction<
+          _dart_Dart_IsPrecompiledRuntime>();
+
+  /// Print a native stack trace. Used for crash handling.
+  ///
+  /// If context is NULL, prints the current stack trace. Otherwise, context
+  /// should be a CONTEXT* (Windows) or ucontext_t* (POSIX) from a signal handler
+  /// running on the current thread.
+  void Dart_DumpNativeStackTrace(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _Dart_DumpNativeStackTrace(
+      context,
+    );
+  }
+
+  late final _Dart_DumpNativeStackTrace_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_DumpNativeStackTrace>>(
+          'Dart_DumpNativeStackTrace');
+  late final _dart_Dart_DumpNativeStackTrace _Dart_DumpNativeStackTrace =
+      _Dart_DumpNativeStackTrace_ptr.asFunction<
+          _dart_Dart_DumpNativeStackTrace>();
+
+  /// Indicate that the process is about to abort, and the Dart VM should not
+  /// attempt to cleanup resources.
+  void Dart_PrepareToAbort() {
+    return _Dart_PrepareToAbort();
+  }
+
+  late final _Dart_PrepareToAbort_ptr =
+      _lookup<ffi.NativeFunction<_c_Dart_PrepareToAbort>>(
+          'Dart_PrepareToAbort');
+  late final _dart_Dart_PrepareToAbort _Dart_PrepareToAbort =
+      _Dart_PrepareToAbort_ptr.asFunction<_dart_Dart_PrepareToAbort>();
 
   AudioDeviceInfoList labSound_MakeAudioDeviceList() {
     return _labSound_MakeAudioDeviceList();
@@ -980,6 +8010,21 @@ class LabSoundBind {
       _registerOfflineRenderCompleteSendPort =
       _registerOfflineRenderCompleteSendPort_ptr
           .asFunction<_dart_registerOfflineRenderCompleteSendPort>();
+
+  void registerFunctionNodeSendPort(
+    int sendPort,
+  ) {
+    return _registerFunctionNodeSendPort(
+      sendPort,
+    );
+  }
+
+  late final _registerFunctionNodeSendPort_ptr =
+      _lookup<ffi.NativeFunction<_c_registerFunctionNodeSendPort>>(
+          'registerFunctionNodeSendPort');
+  late final _dart_registerFunctionNodeSendPort _registerFunctionNodeSendPort =
+      _registerFunctionNodeSendPort_ptr
+          .asFunction<_dart_registerFunctionNodeSendPort>();
 
   /// /////////////////
   /// AudioContext ///
@@ -2370,6 +9415,44 @@ class LabSoundBind {
       _lookup<ffi.NativeFunction<_c_audioBusHasCheck>>('audioBusHasCheck');
   late final _dart_audioBusHasCheck _audioBusHasCheck =
       _audioBusHasCheck_ptr.asFunction<_dart_audioBusHasCheck>();
+
+  int createAudioBus(
+    int numberOfChannels,
+    int length,
+    int allocate,
+  ) {
+    return _createAudioBus(
+      numberOfChannels,
+      length,
+      allocate,
+    );
+  }
+
+  late final _createAudioBus_ptr =
+      _lookup<ffi.NativeFunction<_c_createAudioBus>>('createAudioBus');
+  late final _dart_createAudioBus _createAudioBus =
+      _createAudioBus_ptr.asFunction<_dart_createAudioBus>();
+
+  void AudioBus_setChannelMemory(
+    int busId,
+    int channelIndex,
+    ffi.Pointer<ffi.Float> storage,
+    int length,
+  ) {
+    return _AudioBus_setChannelMemory(
+      busId,
+      channelIndex,
+      storage,
+      length,
+    );
+  }
+
+  late final _AudioBus_setChannelMemory_ptr =
+      _lookup<ffi.NativeFunction<_c_AudioBus_setChannelMemory>>(
+          'AudioBus_setChannelMemory');
+  late final _dart_AudioBus_setChannelMemory _AudioBus_setChannelMemory =
+      _AudioBus_setChannelMemory_ptr.asFunction<
+          _dart_AudioBus_setChannelMemory>();
 
   int AudioBus_numberOfChannels(
     int busIndex,
@@ -4345,9 +11428,11 @@ class LabSoundBind {
   /// //////////////
   int createDelayNode(
     ffi.Pointer<ffi.Void> context,
+    double maxDelayTime,
   ) {
     return _createDelayNode(
       context,
+      maxDelayTime,
     );
   }
 
@@ -6089,7 +13174,7 @@ class LabSoundBind {
   /// / FunctionNode ////
   /// ///////////////////
   void setFunctionNodeChannelFn(
-    ffi.Pointer<ffi.NativeFunction<_typedefC_2>> fn,
+    ffi.Pointer<ffi.NativeFunction<_typedefC_1>> fn,
   ) {
     return _setFunctionNodeChannelFn(
       fn,
@@ -6105,9 +13190,11 @@ class LabSoundBind {
 
   int createFunctionNode(
     ffi.Pointer<ffi.Void> context,
+    int channels,
   ) {
     return _createFunctionNode(
       context,
+      channels,
     );
   }
 
@@ -6145,86 +13232,35 @@ class LabSoundBind {
           _dart_FunctionNode_setFunction>();
 }
 
-class __darwin_pthread_handler_rec extends ffi.Struct {
-  external ffi.Pointer<ffi.NativeFunction<_typedefC_1>> __routine;
+class __crt_locale_data_public extends ffi.Struct {
+  external ffi.Pointer<ffi.Uint16> _locale_pctype;
 
-  external ffi.Pointer<ffi.Void> __arg;
+  @ffi.Int32()
+  external int _locale_mb_cur_max;
 
-  external ffi.Pointer<__darwin_pthread_handler_rec> __next;
+  @ffi.Uint32()
+  external int _locale_lc_codepage;
 }
 
-class _opaque_pthread_attr_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
+class __crt_locale_data extends ffi.Opaque {}
 
-  @ffi.Array.multi([56])
-  external ffi.Array<ffi.Int8> __opaque;
+class __crt_multibyte_data extends ffi.Opaque {}
+
+class __crt_locale_pointers extends ffi.Struct {
+  external ffi.Pointer<__crt_locale_data> locinfo;
+
+  external ffi.Pointer<__crt_multibyte_data> mbcinfo;
 }
 
-class _opaque_pthread_cond_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
+class _Mbstatet extends ffi.Struct {
+  @ffi.Uint64()
+  external int _Wchar;
 
-  @ffi.Array.multi([40])
-  external ffi.Array<ffi.Int8> __opaque;
-}
+  @ffi.Uint16()
+  external int _Byte;
 
-class _opaque_pthread_condattr_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  @ffi.Array.multi([8])
-  external ffi.Array<ffi.Int8> __opaque;
-}
-
-class _opaque_pthread_mutex_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  @ffi.Array.multi([56])
-  external ffi.Array<ffi.Int8> __opaque;
-}
-
-class _opaque_pthread_mutexattr_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  @ffi.Array.multi([8])
-  external ffi.Array<ffi.Int8> __opaque;
-}
-
-class _opaque_pthread_once_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  @ffi.Array.multi([8])
-  external ffi.Array<ffi.Int8> __opaque;
-}
-
-class _opaque_pthread_rwlock_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  @ffi.Array.multi([192])
-  external ffi.Array<ffi.Int8> __opaque;
-}
-
-class _opaque_pthread_rwlockattr_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<ffi.Int8> __opaque;
-}
-
-class _opaque_pthread_t extends ffi.Struct {
-  @ffi.Int64()
-  external int __sig;
-
-  external ffi.Pointer<__darwin_pthread_handler_rec> __cleanup_stack;
-
-  @ffi.Array.multi([8176])
-  external ffi.Array<ffi.Int8> __opaque;
+  @ffi.Uint16()
+  external int _State;
 }
 
 class CharArray extends ffi.Struct {
@@ -6282,6 +13318,222 @@ class AudioDeviceInfoList extends ffi.Struct {
   external int length;
 }
 
+class _Lldiv_t extends ffi.Struct {
+  @ffi.Int64()
+  external int quot;
+
+  @ffi.Int64()
+  external int rem;
+}
+
+class _Dart_Isolate extends ffi.Opaque {}
+
+class _Dart_IsolateGroup extends ffi.Opaque {}
+
+class _Dart_Handle extends ffi.Opaque {}
+
+class _Dart_WeakPersistentHandle extends ffi.Opaque {}
+
+class _Dart_FinalizableHandle extends ffi.Opaque {}
+
+class Dart_IsolateFlags extends ffi.Struct {
+  @ffi.Int32()
+  external int version;
+
+  @ffi.Uint8()
+  external int enable_asserts;
+
+  @ffi.Uint8()
+  external int use_field_guards;
+
+  @ffi.Uint8()
+  external int use_osr;
+
+  @ffi.Uint8()
+  external int obfuscate;
+
+  @ffi.Uint8()
+  external int load_vmservice_library;
+
+  @ffi.Uint8()
+  external int copy_parent_code;
+
+  @ffi.Uint8()
+  external int null_safety;
+
+  @ffi.Uint8()
+  external int is_system_isolate;
+}
+
+/// Forward declaration
+class Dart_CodeObserver extends ffi.Struct {
+  external ffi.Pointer<ffi.Void> data;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_OnNewCodeCallback>> on_new_code;
+}
+
+/// Describes how to initialize the VM. Used with Dart_Initialize.
+///
+/// \param version Identifies the version of the struct used by the client.
+/// should be initialized to DART_INITIALIZE_PARAMS_CURRENT_VERSION.
+/// \param vm_isolate_snapshot A buffer containing a snapshot of the VM isolate
+/// or NULL if no snapshot is provided. If provided, the buffer must remain
+/// valid until Dart_Cleanup returns.
+/// \param instructions_snapshot A buffer containing a snapshot of precompiled
+/// instructions, or NULL if no snapshot is provided. If provided, the buffer
+/// must remain valid until Dart_Cleanup returns.
+/// \param initialize_isolate A function to be called during isolate
+/// initialization inside an existing isolate group.
+/// See Dart_InitializeIsolateCallback.
+/// \param create_group A function to be called during isolate group creation.
+/// See Dart_IsolateGroupCreateCallback.
+/// \param shutdown A function to be called right before an isolate is shutdown.
+/// See Dart_IsolateShutdownCallback.
+/// \param cleanup A function to be called after an isolate was shutdown.
+/// See Dart_IsolateCleanupCallback.
+/// \param cleanup_group A function to be called after an isolate group is shutdown.
+/// See Dart_IsolateGroupCleanupCallback.
+/// \param get_service_assets A function to be called by the service isolate when
+/// it requires the vmservice assets archive.
+/// See Dart_GetVMServiceAssetsArchive.
+/// \param code_observer An external code observer callback function.
+/// The observer can be invoked as early as during the Dart_Initialize() call.
+class Dart_InitializeParams extends ffi.Struct {
+  @ffi.Int32()
+  external int version;
+
+  external ffi.Pointer<ffi.Uint8> vm_snapshot_data;
+
+  external ffi.Pointer<ffi.Uint8> vm_snapshot_instructions;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateGroupCreateCallback>>
+      create_group;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_InitializeIsolateCallback>>
+      initialize_isolate;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
+      shutdown_isolate;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>>
+      cleanup_isolate;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateGroupCleanupCallback>>
+      cleanup_group;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_ThreadExitCallback>> thread_exit;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_FileOpenCallback>> file_open;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_FileReadCallback>> file_read;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_FileWriteCallback>> file_write;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_FileCloseCallback>> file_close;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_EntropySource>> entropy_source;
+
+  external ffi.Pointer<ffi.NativeFunction<Dart_GetVMServiceAssetsArchive>>
+      get_service_assets;
+
+  @ffi.Uint8()
+  external int start_kernel_isolate;
+
+  external ffi.Pointer<Dart_CodeObserver> code_observer;
+}
+
+abstract class Dart_CoreType_Id {
+  static const int Dart_CoreType_Dynamic = 0;
+  static const int Dart_CoreType_Int = 1;
+  static const int Dart_CoreType_String = 2;
+}
+
+abstract class Dart_TypedData_Type {
+  static const int Dart_TypedData_kByteData = 0;
+  static const int Dart_TypedData_kInt8 = 1;
+  static const int Dart_TypedData_kUint8 = 2;
+  static const int Dart_TypedData_kUint8Clamped = 3;
+  static const int Dart_TypedData_kInt16 = 4;
+  static const int Dart_TypedData_kUint16 = 5;
+  static const int Dart_TypedData_kInt32 = 6;
+  static const int Dart_TypedData_kUint32 = 7;
+  static const int Dart_TypedData_kInt64 = 8;
+  static const int Dart_TypedData_kUint64 = 9;
+  static const int Dart_TypedData_kFloat32 = 10;
+  static const int Dart_TypedData_kFloat64 = 11;
+  static const int Dart_TypedData_kInt32x4 = 12;
+  static const int Dart_TypedData_kFloat32x4 = 13;
+  static const int Dart_TypedData_kFloat64x2 = 14;
+  static const int Dart_TypedData_kInvalid = 15;
+}
+
+class _Dart_NativeArguments extends ffi.Opaque {}
+
+abstract class Dart_NativeArgument_Type {
+  static const int Dart_NativeArgument_kBool = 0;
+  static const int Dart_NativeArgument_kInt32 = 1;
+  static const int Dart_NativeArgument_kUint32 = 2;
+  static const int Dart_NativeArgument_kInt64 = 3;
+  static const int Dart_NativeArgument_kUint64 = 4;
+  static const int Dart_NativeArgument_kDouble = 5;
+  static const int Dart_NativeArgument_kString = 6;
+  static const int Dart_NativeArgument_kInstance = 7;
+  static const int Dart_NativeArgument_kNativeFields = 8;
+}
+
+class Dart_NativeArgument_Descriptor extends ffi.Struct {
+  @ffi.Uint8()
+  external int type;
+
+  @ffi.Uint8()
+  external int index;
+}
+
+abstract class Dart_LibraryTag {
+  static const int Dart_kCanonicalizeUrl = 0;
+  static const int Dart_kImportTag = 1;
+  static const int Dart_kKernelTag = 2;
+  static const int Dart_kImportExtensionTag = 3;
+}
+
+/// Experimental support for Dart to Kernel parser isolate.
+///
+/// TODO(hausner): Document finalized interface.
+abstract class Dart_KernelCompilationStatus {
+  static const int Dart_KernelCompilationStatus_Unknown = -1;
+  static const int Dart_KernelCompilationStatus_Ok = 0;
+  static const int Dart_KernelCompilationStatus_Error = 1;
+  static const int Dart_KernelCompilationStatus_Crash = 2;
+}
+
+class Dart_KernelCompilationResult extends ffi.Struct {
+  @ffi.Int32()
+  external int status;
+
+  @ffi.Uint8()
+  external int null_safety;
+
+  external ffi.Pointer<ffi.Int8> error;
+
+  external ffi.Pointer<ffi.Uint8> kernel;
+
+  @ffi.IntPtr()
+  external int kernel_size;
+}
+
+abstract class Dart_KernelCompilationVerbosityLevel {
+  static const int Dart_KernelCompilationVerbosityLevel_Error = 0;
+  static const int Dart_KernelCompilationVerbosityLevel_Warning = 1;
+  static const int Dart_KernelCompilationVerbosityLevel_Info = 2;
+  static const int Dart_KernelCompilationVerbosityLevel_All = 3;
+}
+
+class Dart_SourceFile extends ffi.Struct {
+  external ffi.Pointer<ffi.Int8> uri;
+
+  external ffi.Pointer<ffi.Int8> source;
+}
+
 class AudioStreamConfig extends ffi.Struct {
   @ffi.Int32()
   external int device_index;
@@ -6301,75 +13553,39 @@ class AudioDeviceIndex extends ffi.Struct {
   external int valid;
 }
 
-const int __WORDSIZE = 64;
+const int kNativeArgNumberPos = 0;
 
-const int __DARWIN_ONLY_64_BIT_INO_T = 0;
+const int kNativeArgNumberSize = 8;
 
-const int __DARWIN_ONLY_UNIX_CONFORMANCE = 1;
+const int kNativeArgTypePos = 8;
 
-const int __DARWIN_ONLY_VERS_1050 = 0;
+const int kNativeArgTypeSize = 8;
 
-const int __DARWIN_UNIX03 = 1;
+const int _VCRT_COMPILER_PREPROCESSOR = 1;
 
-const int __DARWIN_64_BIT_INO_T = 1;
+const int _SAL_VERSION = 20;
 
-const int __DARWIN_VERS_1050 = 1;
+const int __SAL_H_VERSION = 180000000;
 
-const int __DARWIN_NON_CANCELABLE = 0;
+const int _USE_DECLSPECS_FOR_SAL = 0;
 
-const String __DARWIN_SUF_64_BIT_INO_T = '\$INODE64';
+const int _USE_ATTRIBUTES_FOR_SAL = 0;
 
-const String __DARWIN_SUF_1050 = '\$1050';
+const int _CRT_PACKING = 8;
 
-const String __DARWIN_SUF_EXTSN = '\$DARWIN_EXTSN';
+const int _VCRUNTIME_DISABLED_WARNINGS = 4514;
 
-const int __DARWIN_C_ANSI = 4096;
+const int _HAS_EXCEPTIONS = 1;
 
-const int __DARWIN_C_FULL = 900000;
+const int _WCHAR_T_DEFINED = 1;
 
-const int __DARWIN_C_LEVEL = 900000;
+const int NULL = 0;
 
-const int __STDC_WANT_LIB_EXT1__ = 1;
+const int _HAS_CXX17 = 0;
 
-const int __DARWIN_NO_LONG_LONG = 0;
+const int _HAS_CXX20 = 0;
 
-const int _DARWIN_FEATURE_64_BIT_INODE = 1;
-
-const int _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE = 1;
-
-const int _DARWIN_FEATURE_UNIX_CONFORMANCE = 3;
-
-const int __has_ptrcheck = 0;
-
-const int __DARWIN_NULL = 0;
-
-const int __PTHREAD_SIZE__ = 8176;
-
-const int __PTHREAD_ATTR_SIZE__ = 56;
-
-const int __PTHREAD_MUTEXATTR_SIZE__ = 8;
-
-const int __PTHREAD_MUTEX_SIZE__ = 56;
-
-const int __PTHREAD_CONDATTR_SIZE__ = 8;
-
-const int __PTHREAD_COND_SIZE__ = 40;
-
-const int __PTHREAD_ONCE_SIZE__ = 8;
-
-const int __PTHREAD_RWLOCK_SIZE__ = 192;
-
-const int __PTHREAD_RWLOCKATTR_SIZE__ = 16;
-
-const int USER_ADDR_NULL = 0;
-
-const int INT8_MAX = 127;
-
-const int INT16_MAX = 32767;
-
-const int INT32_MAX = 2147483647;
-
-const int INT64_MAX = 9223372036854775807;
+const int _HAS_NODISCARD = 1;
 
 const int INT8_MIN = -128;
 
@@ -6378,6 +13594,14 @@ const int INT16_MIN = -32768;
 const int INT32_MIN = -2147483648;
 
 const int INT64_MIN = -9223372036854775808;
+
+const int INT8_MAX = 127;
+
+const int INT16_MAX = 32767;
+
+const int INT32_MAX = 2147483647;
+
+const int INT64_MAX = 9223372036854775807;
 
 const int UINT8_MAX = 255;
 
@@ -6413,7 +13637,7 @@ const int UINT_LEAST64_MAX = -1;
 
 const int INT_FAST8_MIN = -128;
 
-const int INT_FAST16_MIN = -32768;
+const int INT_FAST16_MIN = -2147483648;
 
 const int INT_FAST32_MIN = -2147483648;
 
@@ -6421,7 +13645,7 @@ const int INT_FAST64_MIN = -9223372036854775808;
 
 const int INT_FAST8_MAX = 127;
 
-const int INT_FAST16_MAX = 32767;
+const int INT_FAST16_MAX = 2147483647;
 
 const int INT_FAST32_MAX = 2147483647;
 
@@ -6429,23 +13653,23 @@ const int INT_FAST64_MAX = 9223372036854775807;
 
 const int UINT_FAST8_MAX = 255;
 
-const int UINT_FAST16_MAX = 65535;
+const int UINT_FAST16_MAX = 4294967295;
 
 const int UINT_FAST32_MAX = 4294967295;
 
 const int UINT_FAST64_MAX = -1;
 
-const int INTPTR_MAX = 9223372036854775807;
-
 const int INTPTR_MIN = -9223372036854775808;
 
+const int INTPTR_MAX = 9223372036854775807;
+
 const int UINTPTR_MAX = -1;
+
+const int INTMAX_MIN = -9223372036854775808;
 
 const int INTMAX_MAX = 9223372036854775807;
 
 const int UINTMAX_MAX = -1;
-
-const int INTMAX_MIN = -9223372036854775808;
 
 const int PTRDIFF_MIN = -9223372036854775808;
 
@@ -6453,1071 +13677,4626 @@ const int PTRDIFF_MAX = 9223372036854775807;
 
 const int SIZE_MAX = -1;
 
-const int RSIZE_MAX = 9223372036854775807;
-
-const int WCHAR_MAX = 2147483647;
-
-const int WCHAR_MIN = -2147483648;
-
-const int WINT_MIN = -2147483648;
-
-const int WINT_MAX = 2147483647;
-
 const int SIG_ATOMIC_MIN = -2147483648;
 
 const int SIG_ATOMIC_MAX = 2147483647;
 
-const int __DARWIN_WCHAR_MAX = 2147483647;
+const int WCHAR_MIN = 0;
 
-const int __DARWIN_WCHAR_MIN = -2147483648;
+const int WCHAR_MAX = 65535;
 
-const int __DARWIN_WEOF = -1;
+const int WINT_MIN = 0;
 
-const int _FORTIFY_SOURCE = 2;
+const int WINT_MAX = 65535;
 
-const int __API_TO_BE_DEPRECATED = 100000;
+const int _UCRT_DISABLED_WARNINGS = 4324;
 
-const int __MAC_10_0 = 1000;
+const int _ARGMAX = 100;
 
-const int __MAC_10_1 = 1010;
+const int _TRUNCATE = -1;
 
-const int __MAC_10_2 = 1020;
+const int _CRT_INT_MAX = 2147483647;
 
-const int __MAC_10_3 = 1030;
+const int _CRT_SIZE_MAX = -1;
 
-const int __MAC_10_4 = 1040;
+const String __FILEW__ = 't';
 
-const int __MAC_10_5 = 1050;
+const int _CRT_FUNCTIONS_REQUIRED = 1;
 
-const int __MAC_10_6 = 1060;
+const int _CRT_HAS_CXX17 = 0;
 
-const int __MAC_10_7 = 1070;
+const int _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE = 1;
 
-const int __MAC_10_8 = 1080;
+const int _CRT_BUILD_DESKTOP_APP = 1;
 
-const int __MAC_10_9 = 1090;
+const int _CRT_INTERNAL_NONSTDC_NAMES = 1;
 
-const int __MAC_10_10 = 101000;
+const int __STDC_SECURE_LIB__ = 200411;
 
-const int __MAC_10_10_2 = 101002;
+const int __GOT_SECURE_LIB__ = 200411;
 
-const int __MAC_10_10_3 = 101003;
+const int __STDC_WANT_SECURE_LIB__ = 1;
 
-const int __MAC_10_11 = 101100;
+const int _SECURECRT_FILL_BUFFER_PATTERN = 254;
 
-const int __MAC_10_11_2 = 101102;
+const int _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES = 0;
 
-const int __MAC_10_11_3 = 101103;
+const int _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT = 0;
 
-const int __MAC_10_11_4 = 101104;
+const int _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES = 1;
 
-const int __MAC_10_12 = 101200;
+const int _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_MEMORY = 0;
 
-const int __MAC_10_12_1 = 101201;
+const int _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY = 0;
 
-const int __MAC_10_12_2 = 101202;
+const int EPERM = 1;
 
-const int __MAC_10_12_4 = 101204;
+const int ENOENT = 2;
 
-const int __MAC_10_13 = 101300;
+const int ESRCH = 3;
 
-const int __MAC_10_13_1 = 101301;
+const int EINTR = 4;
 
-const int __MAC_10_13_2 = 101302;
+const int EIO = 5;
 
-const int __MAC_10_13_4 = 101304;
+const int ENXIO = 6;
 
-const int __MAC_10_14 = 101400;
+const int E2BIG = 7;
 
-const int __MAC_10_14_1 = 101401;
+const int ENOEXEC = 8;
 
-const int __MAC_10_14_4 = 101404;
+const int EBADF = 9;
 
-const int __MAC_10_14_6 = 101406;
+const int ECHILD = 10;
 
-const int __MAC_10_15 = 101500;
+const int EAGAIN = 11;
 
-const int __MAC_10_15_1 = 101501;
+const int ENOMEM = 12;
 
-const int __MAC_10_15_4 = 101504;
+const int EACCES = 13;
 
-const int __MAC_10_16 = 101600;
+const int EFAULT = 14;
 
-const int __MAC_11_0 = 110000;
+const int EBUSY = 16;
 
-const int __MAC_11_1 = 110100;
+const int EEXIST = 17;
 
-const int __MAC_11_3 = 110300;
+const int EXDEV = 18;
 
-const int __MAC_11_4 = 110400;
+const int ENODEV = 19;
 
-const int __MAC_11_5 = 110500;
+const int ENOTDIR = 20;
 
-const int __MAC_11_6 = 110600;
+const int EISDIR = 21;
 
-const int __MAC_12_0 = 120000;
+const int ENFILE = 23;
 
-const int __MAC_12_1 = 120100;
+const int EMFILE = 24;
 
-const int __MAC_12_2 = 120200;
+const int ENOTTY = 25;
 
-const int __MAC_12_3 = 120300;
+const int EFBIG = 27;
 
-const int __IPHONE_2_0 = 20000;
+const int ENOSPC = 28;
 
-const int __IPHONE_2_1 = 20100;
+const int ESPIPE = 29;
 
-const int __IPHONE_2_2 = 20200;
+const int EROFS = 30;
 
-const int __IPHONE_3_0 = 30000;
+const int EMLINK = 31;
 
-const int __IPHONE_3_1 = 30100;
+const int EPIPE = 32;
 
-const int __IPHONE_3_2 = 30200;
+const int EDOM = 33;
 
-const int __IPHONE_4_0 = 40000;
+const int EDEADLK = 36;
 
-const int __IPHONE_4_1 = 40100;
+const int ENAMETOOLONG = 38;
 
-const int __IPHONE_4_2 = 40200;
+const int ENOLCK = 39;
 
-const int __IPHONE_4_3 = 40300;
+const int ENOSYS = 40;
 
-const int __IPHONE_5_0 = 50000;
+const int ENOTEMPTY = 41;
 
-const int __IPHONE_5_1 = 50100;
+const int EINVAL = 22;
 
-const int __IPHONE_6_0 = 60000;
+const int ERANGE = 34;
 
-const int __IPHONE_6_1 = 60100;
+const int EILSEQ = 42;
 
-const int __IPHONE_7_0 = 70000;
+const int STRUNCATE = 80;
 
-const int __IPHONE_7_1 = 70100;
+const int EDEADLOCK = 36;
 
-const int __IPHONE_8_0 = 80000;
+const int EADDRINUSE = 100;
 
-const int __IPHONE_8_1 = 80100;
+const int EADDRNOTAVAIL = 101;
 
-const int __IPHONE_8_2 = 80200;
+const int EAFNOSUPPORT = 102;
 
-const int __IPHONE_8_3 = 80300;
+const int EALREADY = 103;
 
-const int __IPHONE_8_4 = 80400;
+const int EBADMSG = 104;
 
-const int __IPHONE_9_0 = 90000;
+const int ECANCELED = 105;
 
-const int __IPHONE_9_1 = 90100;
+const int ECONNABORTED = 106;
 
-const int __IPHONE_9_2 = 90200;
+const int ECONNREFUSED = 107;
 
-const int __IPHONE_9_3 = 90300;
+const int ECONNRESET = 108;
 
-const int __IPHONE_10_0 = 100000;
+const int EDESTADDRREQ = 109;
 
-const int __IPHONE_10_1 = 100100;
+const int EHOSTUNREACH = 110;
 
-const int __IPHONE_10_2 = 100200;
+const int EIDRM = 111;
 
-const int __IPHONE_10_3 = 100300;
+const int EINPROGRESS = 112;
 
-const int __IPHONE_11_0 = 110000;
+const int EISCONN = 113;
 
-const int __IPHONE_11_1 = 110100;
+const int ELOOP = 114;
 
-const int __IPHONE_11_2 = 110200;
+const int EMSGSIZE = 115;
 
-const int __IPHONE_11_3 = 110300;
+const int ENETDOWN = 116;
 
-const int __IPHONE_11_4 = 110400;
+const int ENETRESET = 117;
 
-const int __IPHONE_12_0 = 120000;
+const int ENETUNREACH = 118;
 
-const int __IPHONE_12_1 = 120100;
+const int ENOBUFS = 119;
 
-const int __IPHONE_12_2 = 120200;
+const int ENODATA = 120;
 
-const int __IPHONE_12_3 = 120300;
+const int ENOLINK = 121;
 
-const int __IPHONE_12_4 = 120400;
+const int ENOMSG = 122;
 
-const int __IPHONE_13_0 = 130000;
+const int ENOPROTOOPT = 123;
 
-const int __IPHONE_13_1 = 130100;
+const int ENOSR = 124;
 
-const int __IPHONE_13_2 = 130200;
+const int ENOSTR = 125;
 
-const int __IPHONE_13_3 = 130300;
+const int ENOTCONN = 126;
 
-const int __IPHONE_13_4 = 130400;
+const int ENOTRECOVERABLE = 127;
 
-const int __IPHONE_13_5 = 130500;
+const int ENOTSOCK = 128;
 
-const int __IPHONE_13_6 = 130600;
+const int ENOTSUP = 129;
 
-const int __IPHONE_13_7 = 130700;
+const int EOPNOTSUPP = 130;
 
-const int __IPHONE_14_0 = 140000;
+const int EOTHER = 131;
 
-const int __IPHONE_14_1 = 140100;
+const int EOVERFLOW = 132;
 
-const int __IPHONE_14_2 = 140200;
+const int EOWNERDEAD = 133;
 
-const int __IPHONE_14_3 = 140300;
+const int EPROTO = 134;
 
-const int __IPHONE_14_5 = 140500;
+const int EPROTONOSUPPORT = 135;
 
-const int __IPHONE_14_6 = 140600;
+const int EPROTOTYPE = 136;
 
-const int __IPHONE_14_7 = 140700;
+const int ETIME = 137;
 
-const int __IPHONE_14_8 = 140800;
+const int ETIMEDOUT = 138;
 
-const int __IPHONE_15_0 = 150000;
+const int ETXTBSY = 139;
 
-const int __IPHONE_15_1 = 150100;
+const int EWOULDBLOCK = 140;
 
-const int __IPHONE_15_2 = 150200;
-
-const int __IPHONE_15_3 = 150300;
-
-const int __IPHONE_15_4 = 150400;
-
-const int __TVOS_9_0 = 90000;
-
-const int __TVOS_9_1 = 90100;
-
-const int __TVOS_9_2 = 90200;
-
-const int __TVOS_10_0 = 100000;
-
-const int __TVOS_10_0_1 = 100001;
-
-const int __TVOS_10_1 = 100100;
-
-const int __TVOS_10_2 = 100200;
-
-const int __TVOS_11_0 = 110000;
-
-const int __TVOS_11_1 = 110100;
-
-const int __TVOS_11_2 = 110200;
-
-const int __TVOS_11_3 = 110300;
-
-const int __TVOS_11_4 = 110400;
-
-const int __TVOS_12_0 = 120000;
-
-const int __TVOS_12_1 = 120100;
-
-const int __TVOS_12_2 = 120200;
-
-const int __TVOS_12_3 = 120300;
-
-const int __TVOS_12_4 = 120400;
-
-const int __TVOS_13_0 = 130000;
-
-const int __TVOS_13_2 = 130200;
-
-const int __TVOS_13_3 = 130300;
-
-const int __TVOS_13_4 = 130400;
-
-const int __TVOS_14_0 = 140000;
-
-const int __TVOS_14_1 = 140100;
-
-const int __TVOS_14_2 = 140200;
-
-const int __TVOS_14_3 = 140300;
-
-const int __TVOS_14_5 = 140500;
-
-const int __TVOS_14_6 = 140600;
-
-const int __TVOS_14_7 = 140700;
-
-const int __TVOS_15_0 = 150000;
-
-const int __TVOS_15_1 = 150100;
-
-const int __TVOS_15_2 = 150200;
-
-const int __TVOS_15_3 = 150300;
-
-const int __TVOS_15_4 = 150400;
-
-const int __WATCHOS_1_0 = 10000;
-
-const int __WATCHOS_2_0 = 20000;
-
-const int __WATCHOS_2_1 = 20100;
-
-const int __WATCHOS_2_2 = 20200;
-
-const int __WATCHOS_3_0 = 30000;
-
-const int __WATCHOS_3_1 = 30100;
-
-const int __WATCHOS_3_1_1 = 30101;
-
-const int __WATCHOS_3_2 = 30200;
-
-const int __WATCHOS_4_0 = 40000;
-
-const int __WATCHOS_4_1 = 40100;
-
-const int __WATCHOS_4_2 = 40200;
-
-const int __WATCHOS_4_3 = 40300;
-
-const int __WATCHOS_5_0 = 50000;
-
-const int __WATCHOS_5_1 = 50100;
-
-const int __WATCHOS_5_2 = 50200;
-
-const int __WATCHOS_5_3 = 50300;
-
-const int __WATCHOS_6_0 = 60000;
-
-const int __WATCHOS_6_1 = 60100;
-
-const int __WATCHOS_6_2 = 60200;
-
-const int __WATCHOS_7_0 = 70000;
-
-const int __WATCHOS_7_1 = 70100;
-
-const int __WATCHOS_7_2 = 70200;
-
-const int __WATCHOS_7_3 = 70300;
-
-const int __WATCHOS_7_4 = 70400;
-
-const int __WATCHOS_7_5 = 70500;
-
-const int __WATCHOS_7_6 = 70600;
-
-const int __WATCHOS_8_0 = 80000;
-
-const int __WATCHOS_8_1 = 80100;
-
-const int __WATCHOS_8_3 = 80300;
-
-const int __WATCHOS_8_4 = 80400;
-
-const int __WATCHOS_8_5 = 80500;
-
-const int MAC_OS_X_VERSION_10_0 = 1000;
-
-const int MAC_OS_X_VERSION_10_1 = 1010;
-
-const int MAC_OS_X_VERSION_10_2 = 1020;
-
-const int MAC_OS_X_VERSION_10_3 = 1030;
-
-const int MAC_OS_X_VERSION_10_4 = 1040;
-
-const int MAC_OS_X_VERSION_10_5 = 1050;
-
-const int MAC_OS_X_VERSION_10_6 = 1060;
-
-const int MAC_OS_X_VERSION_10_7 = 1070;
-
-const int MAC_OS_X_VERSION_10_8 = 1080;
-
-const int MAC_OS_X_VERSION_10_9 = 1090;
-
-const int MAC_OS_X_VERSION_10_10 = 101000;
-
-const int MAC_OS_X_VERSION_10_10_2 = 101002;
-
-const int MAC_OS_X_VERSION_10_10_3 = 101003;
-
-const int MAC_OS_X_VERSION_10_11 = 101100;
-
-const int MAC_OS_X_VERSION_10_11_2 = 101102;
-
-const int MAC_OS_X_VERSION_10_11_3 = 101103;
-
-const int MAC_OS_X_VERSION_10_11_4 = 101104;
-
-const int MAC_OS_X_VERSION_10_12 = 101200;
-
-const int MAC_OS_X_VERSION_10_12_1 = 101201;
-
-const int MAC_OS_X_VERSION_10_12_2 = 101202;
-
-const int MAC_OS_X_VERSION_10_12_4 = 101204;
-
-const int MAC_OS_X_VERSION_10_13 = 101300;
-
-const int MAC_OS_X_VERSION_10_13_1 = 101301;
-
-const int MAC_OS_X_VERSION_10_13_2 = 101302;
-
-const int MAC_OS_X_VERSION_10_13_4 = 101304;
-
-const int MAC_OS_X_VERSION_10_14 = 101400;
-
-const int MAC_OS_X_VERSION_10_14_1 = 101401;
-
-const int MAC_OS_X_VERSION_10_14_4 = 101404;
-
-const int MAC_OS_X_VERSION_10_14_6 = 101406;
-
-const int MAC_OS_X_VERSION_10_15 = 101500;
-
-const int MAC_OS_X_VERSION_10_15_1 = 101501;
-
-const int MAC_OS_X_VERSION_10_16 = 101600;
-
-const int MAC_OS_VERSION_11_0 = 110000;
-
-const int MAC_OS_VERSION_12_0 = 120000;
-
-const int __DRIVERKIT_19_0 = 190000;
-
-const int __DRIVERKIT_20_0 = 200000;
-
-const int __DRIVERKIT_21_0 = 210000;
-
-const int __MAC_OS_X_VERSION_MIN_REQUIRED = 120000;
-
-const int __MAC_OS_X_VERSION_MAX_ALLOWED = 120300;
-
-const int __ENABLE_LEGACY_MAC_AVAILABILITY = 1;
-
-const int NULL = 0;
-
-const int true_1 = 1;
-
-const int false_1 = 0;
+const int _NLSCMPERROR = 2147483647;
 
 const int __bool_true_false_are_defined = 1;
 
+const int false_1 = 0;
+
+const int true_1 = 1;
+
+const String PRId8 = 'hhd';
+
+const String PRId16 = 'hd';
+
+const String PRId32 = 'd';
+
+const String PRId64 = 'lld';
+
+const String PRIdLEAST8 = 'hhd';
+
+const String PRIdLEAST16 = 'hd';
+
+const String PRIdLEAST32 = 'd';
+
+const String PRIdLEAST64 = 'lld';
+
+const String PRIdFAST8 = 'hhd';
+
+const String PRIdFAST16 = 'd';
+
+const String PRIdFAST32 = 'd';
+
+const String PRIdFAST64 = 'lld';
+
+const String PRIdMAX = 'lld';
+
+const String PRIdPTR = 'lld';
+
+const String PRIi8 = 'hhi';
+
+const String PRIi16 = 'hi';
+
+const String PRIi32 = 'i';
+
+const String PRIi64 = 'lli';
+
+const String PRIiLEAST8 = 'hhi';
+
+const String PRIiLEAST16 = 'hi';
+
+const String PRIiLEAST32 = 'i';
+
+const String PRIiLEAST64 = 'lli';
+
+const String PRIiFAST8 = 'hhi';
+
+const String PRIiFAST16 = 'i';
+
+const String PRIiFAST32 = 'i';
+
+const String PRIiFAST64 = 'lli';
+
+const String PRIiMAX = 'lli';
+
+const String PRIiPTR = 'lli';
+
+const String PRIo8 = 'hho';
+
+const String PRIo16 = 'ho';
+
+const String PRIo32 = 'o';
+
+const String PRIo64 = 'llo';
+
+const String PRIoLEAST8 = 'hho';
+
+const String PRIoLEAST16 = 'ho';
+
+const String PRIoLEAST32 = 'o';
+
+const String PRIoLEAST64 = 'llo';
+
+const String PRIoFAST8 = 'hho';
+
+const String PRIoFAST16 = 'o';
+
+const String PRIoFAST32 = 'o';
+
+const String PRIoFAST64 = 'llo';
+
+const String PRIoMAX = 'llo';
+
+const String PRIoPTR = 'llo';
+
+const String PRIu8 = 'hhu';
+
+const String PRIu16 = 'hu';
+
+const String PRIu32 = 'u';
+
+const String PRIu64 = 'llu';
+
+const String PRIuLEAST8 = 'hhu';
+
+const String PRIuLEAST16 = 'hu';
+
+const String PRIuLEAST32 = 'u';
+
+const String PRIuLEAST64 = 'llu';
+
+const String PRIuFAST8 = 'hhu';
+
+const String PRIuFAST16 = 'u';
+
+const String PRIuFAST32 = 'u';
+
+const String PRIuFAST64 = 'llu';
+
+const String PRIuMAX = 'llu';
+
+const String PRIuPTR = 'llu';
+
+const String PRIx8 = 'hhx';
+
+const String PRIx16 = 'hx';
+
+const String PRIx32 = 'x';
+
+const String PRIx64 = 'llx';
+
+const String PRIxLEAST8 = 'hhx';
+
+const String PRIxLEAST16 = 'hx';
+
+const String PRIxLEAST32 = 'x';
+
+const String PRIxLEAST64 = 'llx';
+
+const String PRIxFAST8 = 'hhx';
+
+const String PRIxFAST16 = 'x';
+
+const String PRIxFAST32 = 'x';
+
+const String PRIxFAST64 = 'llx';
+
+const String PRIxMAX = 'llx';
+
+const String PRIxPTR = 'llx';
+
+const String PRIX8 = 'hhX';
+
+const String PRIX16 = 'hX';
+
+const String PRIX32 = 'X';
+
+const String PRIX64 = 'llX';
+
+const String PRIXLEAST8 = 'hhX';
+
+const String PRIXLEAST16 = 'hX';
+
+const String PRIXLEAST32 = 'X';
+
+const String PRIXLEAST64 = 'llX';
+
+const String PRIXFAST8 = 'hhX';
+
+const String PRIXFAST16 = 'X';
+
+const String PRIXFAST32 = 'X';
+
+const String PRIXFAST64 = 'llX';
+
+const String PRIXMAX = 'llX';
+
+const String PRIXPTR = 'llX';
+
+const String SCNd8 = 'hhd';
+
+const String SCNd16 = 'hd';
+
+const String SCNd32 = 'd';
+
+const String SCNd64 = 'lld';
+
+const String SCNdLEAST8 = 'hhd';
+
+const String SCNdLEAST16 = 'hd';
+
+const String SCNdLEAST32 = 'd';
+
+const String SCNdLEAST64 = 'lld';
+
+const String SCNdFAST8 = 'hhd';
+
+const String SCNdFAST16 = 'd';
+
+const String SCNdFAST32 = 'd';
+
+const String SCNdFAST64 = 'lld';
+
+const String SCNdMAX = 'lld';
+
+const String SCNdPTR = 'lld';
+
+const String SCNi8 = 'hhi';
+
+const String SCNi16 = 'hi';
+
+const String SCNi32 = 'i';
+
+const String SCNi64 = 'lli';
+
+const String SCNiLEAST8 = 'hhi';
+
+const String SCNiLEAST16 = 'hi';
+
+const String SCNiLEAST32 = 'i';
+
+const String SCNiLEAST64 = 'lli';
+
+const String SCNiFAST8 = 'hhi';
+
+const String SCNiFAST16 = 'i';
+
+const String SCNiFAST32 = 'i';
+
+const String SCNiFAST64 = 'lli';
+
+const String SCNiMAX = 'lli';
+
+const String SCNiPTR = 'lli';
+
+const String SCNo8 = 'hho';
+
+const String SCNo16 = 'ho';
+
+const String SCNo32 = 'o';
+
+const String SCNo64 = 'llo';
+
+const String SCNoLEAST8 = 'hho';
+
+const String SCNoLEAST16 = 'ho';
+
+const String SCNoLEAST32 = 'o';
+
+const String SCNoLEAST64 = 'llo';
+
+const String SCNoFAST8 = 'hho';
+
+const String SCNoFAST16 = 'o';
+
+const String SCNoFAST32 = 'o';
+
+const String SCNoFAST64 = 'llo';
+
+const String SCNoMAX = 'llo';
+
+const String SCNoPTR = 'llo';
+
+const String SCNu8 = 'hhu';
+
+const String SCNu16 = 'hu';
+
+const String SCNu32 = 'u';
+
+const String SCNu64 = 'llu';
+
+const String SCNuLEAST8 = 'hhu';
+
+const String SCNuLEAST16 = 'hu';
+
+const String SCNuLEAST32 = 'u';
+
+const String SCNuLEAST64 = 'llu';
+
+const String SCNuFAST8 = 'hhu';
+
+const String SCNuFAST16 = 'u';
+
+const String SCNuFAST32 = 'u';
+
+const String SCNuFAST64 = 'llu';
+
+const String SCNuMAX = 'llu';
+
+const String SCNuPTR = 'llu';
+
+const String SCNx8 = 'hhx';
+
+const String SCNx16 = 'hx';
+
+const String SCNx32 = 'x';
+
+const String SCNx64 = 'llx';
+
+const String SCNxLEAST8 = 'hhx';
+
+const String SCNxLEAST16 = 'hx';
+
+const String SCNxLEAST32 = 'x';
+
+const String SCNxLEAST64 = 'llx';
+
+const String SCNxFAST8 = 'hhx';
+
+const String SCNxFAST16 = 'x';
+
+const String SCNxFAST32 = 'x';
+
+const String SCNxFAST64 = 'llx';
+
+const String SCNxMAX = 'llx';
+
+const String SCNxPTR = 'llx';
+
+const int DART_FLAGS_CURRENT_VERSION = 12;
+
+const int DART_INITIALIZE_PARAMS_CURRENT_VERSION = 4;
+
+const int ILLEGAL_PORT = 0;
+
+const String DART_KERNEL_ISOLATE_NAME = 'kernel-service';
+
+const String DART_VM_SERVICE_ISOLATE_NAME = 'vm-service';
+
+const String kSnapshotBuildIdCSymbol = '_kDartSnapshotBuildId';
+
+const String kVmSnapshotDataCSymbol = '_kDartVmSnapshotData';
+
+const String kVmSnapshotInstructionsCSymbol = '_kDartVmSnapshotInstructions';
+
+const String kVmSnapshotBssCSymbol = '_kDartVmSnapshotBss';
+
+const String kIsolateSnapshotDataCSymbol = '_kDartIsolateSnapshotData';
+
+const String kIsolateSnapshotInstructionsCSymbol =
+    '_kDartIsolateSnapshotInstructions';
+
+const String kIsolateSnapshotBssCSymbol = '_kDartIsolateSnapshotBss';
+
+const String kSnapshotBuildIdAsmSymbol = '_kDartSnapshotBuildId';
+
+const String kVmSnapshotDataAsmSymbol = '_kDartVmSnapshotData';
+
+const String kVmSnapshotInstructionsAsmSymbol = '_kDartVmSnapshotInstructions';
+
+const String kVmSnapshotBssAsmSymbol = '_kDartVmSnapshotBss';
+
+const String kIsolateSnapshotDataAsmSymbol = '_kDartIsolateSnapshotData';
+
+const String kIsolateSnapshotInstructionsAsmSymbol =
+    '_kDartIsolateSnapshotInstructions';
+
+const String kIsolateSnapshotBssAsmSymbol = '_kDartIsolateSnapshotBss';
+
+typedef _c___va_start = ffi.Void Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
+);
+
+typedef _dart___va_start = void Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
+);
+
+typedef _c___security_init_cookie = ffi.Void Function();
+
+typedef _dart___security_init_cookie = void Function();
+
+typedef _c___security_check_cookie = ffi.Void Function(
+  ffi.Uint64 _StackCookie,
+);
+
+typedef _dart___security_check_cookie = void Function(
+  int _StackCookie,
+);
+
+typedef _c___report_gsfailure = ffi.Void Function(
+  ffi.Uint64 _StackCookie,
+);
+
+typedef _dart___report_gsfailure = void Function(
+  int _StackCookie,
+);
+
+typedef _c__invalid_parameter_noinfo = ffi.Void Function();
+
+typedef _dart__invalid_parameter_noinfo = void Function();
+
+typedef _c__invalid_parameter_noinfo_noreturn = ffi.Void Function();
+
+typedef _dart__invalid_parameter_noinfo_noreturn = void Function();
+
+typedef _c__invoke_watson = ffi.Void Function(
+  ffi.Pointer<ffi.Uint16> _Expression,
+  ffi.Pointer<ffi.Uint16> _FunctionName,
+  ffi.Pointer<ffi.Uint16> _FileName,
+  ffi.Uint32 _LineNo,
+  ffi.Uint64 _Reserved,
+);
+
+typedef _dart__invoke_watson = void Function(
+  ffi.Pointer<ffi.Uint16> _Expression,
+  ffi.Pointer<ffi.Uint16> _FunctionName,
+  ffi.Pointer<ffi.Uint16> _FileName,
+  int _LineNo,
+  int _Reserved,
+);
+
+typedef _c__errno = ffi.Pointer<ffi.Int32> Function();
+
+typedef _dart__errno = ffi.Pointer<ffi.Int32> Function();
+
+typedef _c__set_errno = ffi.Int32 Function(
+  ffi.Int32 _Value,
+);
+
+typedef _dart__set_errno = int Function(
+  int _Value,
+);
+
+typedef _c__get_errno = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> _Value,
+);
+
+typedef _dart__get_errno = int Function(
+  ffi.Pointer<ffi.Int32> _Value,
+);
+
+typedef _c___doserrno = ffi.Pointer<ffi.Uint64> Function();
+
+typedef _dart___doserrno = ffi.Pointer<ffi.Uint64> Function();
+
+typedef _c__set_doserrno = ffi.Int32 Function(
+  ffi.Uint64 _Value,
+);
+
+typedef _dart__set_doserrno = int Function(
+  int _Value,
+);
+
+typedef _c__get_doserrno = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint64> _Value,
+);
+
+typedef _dart__get_doserrno = int Function(
+  ffi.Pointer<ffi.Uint64> _Value,
+);
+
 typedef _c_memchr = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __s,
-  ffi.Int32 __c,
-  ffi.Uint64 __n,
+  ffi.Pointer<ffi.Void> _Buf,
+  ffi.Int32 _Val,
+  ffi.Uint64 _MaxCount,
 );
 
 typedef _dart_memchr = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __s,
-  int __c,
-  int __n,
+  ffi.Pointer<ffi.Void> _Buf,
+  int _Val,
+  int _MaxCount,
 );
 
 typedef _c_memcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> __s1,
-  ffi.Pointer<ffi.Void> __s2,
-  ffi.Uint64 __n,
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  ffi.Uint64 _Size,
 );
 
 typedef _dart_memcmp = int Function(
-  ffi.Pointer<ffi.Void> __s1,
-  ffi.Pointer<ffi.Void> __s2,
-  int __n,
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  int _Size,
 );
 
 typedef _c_memcpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __dst,
-  ffi.Pointer<ffi.Void> __src,
-  ffi.Uint64 __n,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  ffi.Uint64 _Size,
 );
 
 typedef _dart_memcpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __dst,
-  ffi.Pointer<ffi.Void> __src,
-  int __n,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  int _Size,
 );
 
 typedef _c_memmove = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __dst,
-  ffi.Pointer<ffi.Void> __src,
-  ffi.Uint64 __len,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  ffi.Uint64 _Size,
 );
 
 typedef _dart_memmove = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __dst,
-  ffi.Pointer<ffi.Void> __src,
-  int __len,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  int _Size,
 );
 
 typedef _c_memset = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Int32 __c,
-  ffi.Uint64 __len,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Int32 _Val,
+  ffi.Uint64 _Size,
 );
 
 typedef _dart_memset = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __b,
-  int __c,
-  int __len,
-);
-
-typedef _c_strcat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-);
-
-typedef _dart_strcat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
+  ffi.Pointer<ffi.Void> _Dst,
+  int _Val,
+  int _Size,
 );
 
 typedef _c_strchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Int32 __c,
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Int32 _Val,
 );
 
 typedef _dart_strchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s,
-  int __c,
-);
-
-typedef _c_strcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-);
-
-typedef _dart_strcmp = int Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-);
-
-typedef _c_strcoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-);
-
-typedef _dart_strcoll = int Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-);
-
-typedef _c_strcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
-);
-
-typedef _dart_strcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
-);
-
-typedef _c_strcspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Pointer<ffi.Int8> __charset,
-);
-
-typedef _dart_strcspn = int Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Pointer<ffi.Int8> __charset,
-);
-
-typedef _c_strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 __errnum,
-);
-
-typedef _dart_strerror = ffi.Pointer<ffi.Int8> Function(
-  int __errnum,
-);
-
-typedef _c_strlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __s,
-);
-
-typedef _dart_strlen = int Function(
-  ffi.Pointer<ffi.Int8> __s,
-);
-
-typedef _c_strncat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-  ffi.Uint64 __n,
-);
-
-typedef _dart_strncat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-  int __n,
-);
-
-typedef _c_strncmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-  ffi.Uint64 __n,
-);
-
-typedef _dart_strncmp = int Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-  int __n,
-);
-
-typedef _c_strncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
-  ffi.Uint64 __n,
-);
-
-typedef _dart_strncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
-  int __n,
-);
-
-typedef _c_strpbrk = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Pointer<ffi.Int8> __charset,
-);
-
-typedef _dart_strpbrk = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Pointer<ffi.Int8> __charset,
+  ffi.Pointer<ffi.Int8> _Str,
+  int _Val,
 );
 
 typedef _c_strrchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Int32 __c,
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Int32 _Ch,
 );
 
 typedef _dart_strrchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s,
-  int __c,
-);
-
-typedef _c_strspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Pointer<ffi.Int8> __charset,
-);
-
-typedef _dart_strspn = int Function(
-  ffi.Pointer<ffi.Int8> __s,
-  ffi.Pointer<ffi.Int8> __charset,
+  ffi.Pointer<ffi.Int8> _Str,
+  int _Ch,
 );
 
 typedef _c_strstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __big,
-  ffi.Pointer<ffi.Int8> __little,
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _SubStr,
 );
 
 typedef _dart_strstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __big,
-  ffi.Pointer<ffi.Int8> __little,
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _SubStr,
 );
 
-typedef _c_strtok = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __str,
-  ffi.Pointer<ffi.Int8> __sep,
+typedef _c_wcschr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Str,
+  ffi.Uint16 _Ch,
 );
 
-typedef _dart_strtok = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __str,
-  ffi.Pointer<ffi.Int8> __sep,
+typedef _dart_wcschr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Str,
+  int _Ch,
 );
 
-typedef _c_strxfrm = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-  ffi.Uint64 __n,
+typedef _c_wcsrchr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Str,
+  ffi.Uint16 _Ch,
 );
 
-typedef _dart_strxfrm = int Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Pointer<ffi.Int8> __s2,
-  int __n,
+typedef _dart_wcsrchr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Str,
+  int _Ch,
 );
 
-typedef _c_strtok_r = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __str,
-  ffi.Pointer<ffi.Int8> __sep,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
+typedef _c_wcsstr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Str,
+  ffi.Pointer<ffi.Uint16> _SubStr,
 );
 
-typedef _dart_strtok_r = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __str,
-  ffi.Pointer<ffi.Int8> __sep,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> __lasts,
+typedef _dart_wcsstr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Str,
+  ffi.Pointer<ffi.Uint16> _SubStr,
 );
 
-typedef _c_strerror_r = ffi.Int32 Function(
-  ffi.Int32 __errnum,
-  ffi.Pointer<ffi.Int8> __strerrbuf,
-  ffi.Uint64 __buflen,
+typedef _c__memicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  ffi.Uint64 _Size,
 );
 
-typedef _dart_strerror_r = int Function(
-  int __errnum,
-  ffi.Pointer<ffi.Int8> __strerrbuf,
-  int __buflen,
+typedef _dart__memicmp = int Function(
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  int _Size,
 );
 
-typedef _c_strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
+typedef _c__memicmp_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  ffi.Uint64 _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _dart_strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
+typedef _dart__memicmp_l = int Function(
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  int _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
 typedef _c_memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __dst,
-  ffi.Pointer<ffi.Void> __src,
-  ffi.Int32 __c,
-  ffi.Uint64 __n,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  ffi.Int32 _Val,
+  ffi.Uint64 _Size,
 );
 
 typedef _dart_memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __dst,
-  ffi.Pointer<ffi.Void> __src,
-  int __c,
-  int __n,
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  int _Val,
+  int _Size,
 );
 
-typedef _c_stpcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
+typedef _c_memicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  ffi.Uint64 _Size,
 );
 
-typedef _dart_stpcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
+typedef _dart_memicmp = int Function(
+  ffi.Pointer<ffi.Void> _Buf1,
+  ffi.Pointer<ffi.Void> _Buf2,
+  int _Size,
 );
 
-typedef _c_stpncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
-  ffi.Uint64 __n,
+typedef _c_wcscat_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Uint64 _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
 );
 
-typedef _dart_stpncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __src,
-  int __n,
+typedef _dart_wcscat_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  int _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
 );
 
-typedef _c_strndup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Uint64 __n,
+typedef _c_wcscpy_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Uint64 _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
 );
 
-typedef _dart_strndup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  int __n,
+typedef _dart_wcscpy_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  int _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
+);
+
+typedef _c_wcsncat_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Uint64 _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsncat_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  int _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _MaxCount,
+);
+
+typedef _c_wcsncpy_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Uint64 _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsncpy_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  int _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _MaxCount,
+);
+
+typedef _c_wcstok_s = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Delimiter,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+);
+
+typedef _dart_wcstok_s = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Delimiter,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+);
+
+typedef _c__wcsdup = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart__wcsdup = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c_wcscat = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+);
+
+typedef _dart_wcscat = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+);
+
+typedef _c_wcscmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _dart_wcscmp = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _c_wcscpy = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+);
+
+typedef _dart_wcscpy = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+);
+
+typedef _c_wcscspn = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Control,
+);
+
+typedef _dart_wcscspn = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Control,
+);
+
+typedef _c_wcslen = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart_wcslen = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c_wcsnlen = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsnlen = int Function(
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _MaxCount,
+);
+
+typedef _c_wcsncat = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _Count,
+);
+
+typedef _dart_wcsncat = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _Count,
+);
+
+typedef _c_wcsncmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsncmp = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+);
+
+typedef _c_wcsncpy = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _Count,
+);
+
+typedef _dart_wcsncpy = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _Count,
+);
+
+typedef _c_wcspbrk = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Control,
+);
+
+typedef _dart_wcspbrk = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Control,
+);
+
+typedef _c_wcsspn = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Control,
+);
+
+typedef _dart_wcsspn = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Control,
+);
+
+typedef _c_wcstok = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Delimiter,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+);
+
+typedef _dart_wcstok = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Uint16> _Delimiter,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+);
+
+typedef _c__wcserror = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Int32 _ErrorNumber,
+);
+
+typedef _dart__wcserror = ffi.Pointer<ffi.Uint16> Function(
+  int _ErrorNumber,
+);
+
+typedef _c__wcserror_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Buffer,
+  ffi.Uint64 _SizeInWords,
+  ffi.Int32 _ErrorNumber,
+);
+
+typedef _dart__wcserror_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Buffer,
+  int _SizeInWords,
+  int _ErrorNumber,
+);
+
+typedef _c___wcserror = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart___wcserror = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c___wcserror_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Buffer,
+  ffi.Uint64 _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _ErrorMessage,
+);
+
+typedef _dart___wcserror_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Buffer,
+  int _SizeInWords,
+  ffi.Pointer<ffi.Uint16> _ErrorMessage,
+);
+
+typedef _c__wcsicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _dart__wcsicmp = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _c__wcsicmp_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsicmp_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsnicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__wcsnicmp = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+);
+
+typedef _c__wcsnicmp_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsnicmp_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsnset_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Uint64 _SizeInWords,
+  ffi.Uint16 _Value,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__wcsnset_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  int _SizeInWords,
+  int _Value,
+  int _MaxCount,
+);
+
+typedef _c__wcsnset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint16 _Value,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__wcsnset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _Value,
+  int _MaxCount,
+);
+
+typedef _c__wcsrev = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart__wcsrev = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c__wcsset_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Uint64 _SizeInWords,
+  ffi.Uint16 _Value,
+);
+
+typedef _dart__wcsset_s = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  int _SizeInWords,
+  int _Value,
+);
+
+typedef _c__wcsset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint16 _Value,
+);
+
+typedef _dart__wcsset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _Value,
+);
+
+typedef _c__wcslwr_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint64 _SizeInWords,
+);
+
+typedef _dart__wcslwr_s = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _SizeInWords,
+);
+
+typedef _c__wcslwr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart__wcslwr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c__wcslwr_s_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint64 _SizeInWords,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcslwr_s_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _SizeInWords,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcslwr_l = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcslwr_l = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsupr_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint64 _Size,
+);
+
+typedef _dart__wcsupr_s = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _Size,
+);
+
+typedef _c__wcsupr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart__wcsupr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c__wcsupr_s_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint64 _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsupr_s_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsupr_l = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsupr_l = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_wcsxfrm = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsxfrm = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _MaxCount,
+);
+
+typedef _c__wcsxfrm_l = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsxfrm_l = int Function(
+  ffi.Pointer<ffi.Uint16> _Destination,
+  ffi.Pointer<ffi.Uint16> _Source,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_wcscoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _dart_wcscoll = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _c__wcscoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcscoll_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsicoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _dart__wcsicoll = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _c__wcsicoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsicoll_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsncoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__wcsncoll = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+);
+
+typedef _c__wcsncoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsncoll_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__wcsnicoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__wcsnicoll = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+);
+
+typedef _c__wcsnicoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcsnicoll_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_wcsdup = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart_wcsdup = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c_wcsicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _dart_wcsicmp = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _c_wcsnicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsnicmp = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+  int _MaxCount,
+);
+
+typedef _c_wcsnset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint16 _Value,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_wcsnset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _Value,
+  int _MaxCount,
+);
+
+typedef _c_wcsrev = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart_wcsrev = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c_wcsset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Uint16 _Value,
+);
+
+typedef _dart_wcsset = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  int _Value,
+);
+
+typedef _c_wcslwr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart_wcslwr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c_wcsupr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _dart_wcsupr = ffi.Pointer<ffi.Uint16> Function(
+  ffi.Pointer<ffi.Uint16> _String,
+);
+
+typedef _c_wcsicoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _dart_wcsicoll = int Function(
+  ffi.Pointer<ffi.Uint16> _String1,
+  ffi.Pointer<ffi.Uint16> _String2,
+);
+
+typedef _c_strcpy_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _dart_strcpy_s = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _c_strcat_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _dart_strcat_s = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _c_strerror_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Buffer,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Int32 _ErrorNumber,
+);
+
+typedef _dart_strerror_s = int Function(
+  ffi.Pointer<ffi.Int8> _Buffer,
+  int _SizeInBytes,
+  int _ErrorNumber,
+);
+
+typedef _c_strncat_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_strncat_s = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+  int _MaxCount,
+);
+
+typedef _c_strncpy_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_strncpy_s = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _Source,
+  int _MaxCount,
+);
+
+typedef _c_strtok_s = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> _Delimiter,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
+);
+
+typedef _dart_strtok_s = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> _Delimiter,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
+);
+
+typedef _c__memccpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  ffi.Int32 _Val,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__memccpy = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> _Dst,
+  ffi.Pointer<ffi.Void> _Src,
+  int _Val,
+  int _MaxCount,
+);
+
+typedef _c_strcat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _dart_strcat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _c_strcmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Str1,
+  ffi.Pointer<ffi.Int8> _Str2,
+);
+
+typedef _dart_strcmp = int Function(
+  ffi.Pointer<ffi.Int8> _Str1,
+  ffi.Pointer<ffi.Int8> _Str2,
+);
+
+typedef _c__strcmpi = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _dart__strcmpi = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _c_strcoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _dart_strcoll = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _c__strcoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strcoll_l = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_strcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _dart_strcpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _c_strcspn = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _Control,
+);
+
+typedef _dart_strcspn = int Function(
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _Control,
+);
+
+typedef _c__strdup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _dart__strdup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Source,
+);
+
+typedef _c__strerror = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _ErrorMessage,
+);
+
+typedef _dart__strerror = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _ErrorMessage,
+);
+
+typedef _c__strerror_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Buffer,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _ErrorMessage,
+);
+
+typedef _dart__strerror_s = int Function(
+  ffi.Pointer<ffi.Int8> _Buffer,
+  int _SizeInBytes,
+  ffi.Pointer<ffi.Int8> _ErrorMessage,
+);
+
+typedef _c_strerror = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 _ErrorMessage,
+);
+
+typedef _dart_strerror = ffi.Pointer<ffi.Int8> Function(
+  int _ErrorMessage,
+);
+
+typedef _c__stricmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _dart__stricmp = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _c__stricoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _dart__stricoll = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+);
+
+typedef _c__stricoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__stricoll_l = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__stricmp_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__stricmp_l = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_strlen = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _Str,
+);
+
+typedef _dart_strlen = int Function(
+  ffi.Pointer<ffi.Int8> _Str,
+);
+
+typedef _c__strlwr_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _Size,
+);
+
+typedef _dart__strlwr_s = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Size,
+);
+
+typedef _c__strlwr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+);
+
+typedef _dart__strlwr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+);
+
+typedef _c__strlwr_s_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strlwr_s_l = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__strlwr_l = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strlwr_l = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_strncat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Uint64 _Count,
+);
+
+typedef _dart_strncat = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  int _Count,
+);
+
+typedef _c_strncmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Str1,
+  ffi.Pointer<ffi.Int8> _Str2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart_strncmp = int Function(
+  ffi.Pointer<ffi.Int8> _Str1,
+  ffi.Pointer<ffi.Int8> _Str2,
+  int _MaxCount,
+);
+
+typedef _c__strnicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__strnicmp = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
+);
+
+typedef _c__strnicmp_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strnicmp_l = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__strnicoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__strnicoll = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
+);
+
+typedef _c__strnicoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strnicoll_l = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c__strncoll = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
+);
+
+typedef _dart__strncoll = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
+);
+
+typedef _c__strncoll_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strncoll_l = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c___strncnt = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _Count,
+);
+
+typedef _dart___strncnt = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Count,
+);
+
+typedef _c_strncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Uint64 _Count,
+);
+
+typedef _dart_strncpy = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  int _Count,
 );
 
 typedef _c_strnlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  ffi.Uint64 __n,
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _MaxCount,
 );
 
 typedef _dart_strnlen = int Function(
-  ffi.Pointer<ffi.Int8> __s1,
-  int __n,
+  ffi.Pointer<ffi.Int8> _String,
+  int _MaxCount,
 );
 
-typedef _c_strsignal = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 __sig,
+typedef _c__strnset_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _SizeInBytes,
+  ffi.Int32 _Value,
+  ffi.Uint64 _MaxCount,
 );
 
-typedef _dart_strsignal = ffi.Pointer<ffi.Int8> Function(
-  int __sig,
+typedef _dart__strnset_s = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _SizeInBytes,
+  int _Value,
+  int _MaxCount,
 );
 
-typedef _c_memset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> __s,
-  ffi.Uint64 __smax,
-  ffi.Int32 __c,
-  ffi.Uint64 __n,
+typedef _c__strnset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Int32 _Value,
+  ffi.Uint64 _Count,
 );
 
-typedef _dart_memset_s = int Function(
-  ffi.Pointer<ffi.Void> __s,
-  int __smax,
-  int __c,
-  int __n,
+typedef _dart__strnset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _Value,
+  int _Count,
 );
 
-typedef _c_memmem = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __big,
-  ffi.Uint64 __big_len,
-  ffi.Pointer<ffi.Void> __little,
-  ffi.Uint64 __little_len,
+typedef _c_strpbrk = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _Control,
 );
 
-typedef _dart_memmem = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> __big,
-  int __big_len,
-  ffi.Pointer<ffi.Void> __little,
-  int __little_len,
+typedef _dart_strpbrk = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _Control,
 );
 
-typedef _c_memset_pattern4 = ffi.Void Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Pointer<ffi.Void> __pattern4,
-  ffi.Uint64 __len,
+typedef _c__strrev = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Str,
 );
 
-typedef _dart_memset_pattern4 = void Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Pointer<ffi.Void> __pattern4,
-  int __len,
+typedef _dart__strrev = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Str,
 );
 
-typedef _c_memset_pattern8 = ffi.Void Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Pointer<ffi.Void> __pattern8,
-  ffi.Uint64 __len,
+typedef _c__strset_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Uint64 _DestinationSize,
+  ffi.Int32 _Value,
 );
 
-typedef _dart_memset_pattern8 = void Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Pointer<ffi.Void> __pattern8,
-  int __len,
+typedef _dart__strset_s = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _DestinationSize,
+  int _Value,
 );
 
-typedef _c_memset_pattern16 = ffi.Void Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Pointer<ffi.Void> __pattern16,
-  ffi.Uint64 __len,
+typedef _c__strset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Int32 _Value,
 );
 
-typedef _dart_memset_pattern16 = void Function(
-  ffi.Pointer<ffi.Void> __b,
-  ffi.Pointer<ffi.Void> __pattern16,
-  int __len,
+typedef _dart__strset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  int _Value,
 );
 
-typedef _c_strcasestr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __big,
-  ffi.Pointer<ffi.Int8> __little,
+typedef _c_strspn = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _Control,
 );
 
-typedef _dart_strcasestr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __big,
-  ffi.Pointer<ffi.Int8> __little,
+typedef _dart_strspn = int Function(
+  ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Int8> _Control,
 );
 
-typedef _c_strnstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __big,
-  ffi.Pointer<ffi.Int8> __little,
-  ffi.Uint64 __len,
+typedef _c_strtok = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> _Delimiter,
 );
 
-typedef _dart_strnstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> __big,
-  ffi.Pointer<ffi.Int8> __little,
-  int __len,
+typedef _dart_strtok = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Int8> _Delimiter,
 );
 
-typedef _c_strlcat = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __source,
-  ffi.Uint64 __size,
+typedef _c__strupr_s = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _Size,
 );
 
-typedef _dart_strlcat = int Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __source,
-  int __size,
+typedef _dart__strupr_s = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Size,
 );
 
-typedef _c_strlcpy = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __source,
-  ffi.Uint64 __size,
+typedef _c__strupr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _dart_strlcpy = int Function(
-  ffi.Pointer<ffi.Int8> __dst,
-  ffi.Pointer<ffi.Int8> __source,
-  int __size,
+typedef _dart__strupr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _c_strmode = ffi.Void Function(
-  ffi.Int32 __mode,
-  ffi.Pointer<ffi.Int8> __bp,
+typedef _c__strupr_s_l = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Uint64 _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _dart_strmode = void Function(
-  int __mode,
-  ffi.Pointer<ffi.Int8> __bp,
+typedef _dart__strupr_s_l = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Size,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _c_strsep = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
-  ffi.Pointer<ffi.Int8> __delim,
+typedef _c__strupr_l = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _dart_strsep = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> __stringp,
-  ffi.Pointer<ffi.Int8> __delim,
+typedef _dart__strupr_l = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _c_swab = ffi.Void Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Pointer<ffi.Void> arg1,
-  ffi.Int64 arg2,
+typedef _c_strxfrm = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Uint64 _MaxCount,
 );
 
-typedef _dart_swab = void Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Pointer<ffi.Void> arg1,
-  int arg2,
+typedef _dart_strxfrm = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  int _MaxCount,
 );
 
-typedef _c_timingsafe_bcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> __b1,
-  ffi.Pointer<ffi.Void> __b2,
-  ffi.Uint64 __len,
+typedef _c__strxfrm_l = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  ffi.Uint64 _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _dart_timingsafe_bcmp = int Function(
-  ffi.Pointer<ffi.Void> __b1,
-  ffi.Pointer<ffi.Void> __b2,
-  int __len,
+typedef _dart__strxfrm_l = int Function(
+  ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Int8> _Source,
+  int _MaxCount,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _c_strsignal_r = ffi.Int32 Function(
-  ffi.Int32 __sig,
-  ffi.Pointer<ffi.Int8> __strsignalbuf,
-  ffi.Uint64 __buflen,
+typedef _c_strdup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _dart_strsignal_r = int Function(
-  int __sig,
-  ffi.Pointer<ffi.Int8> __strsignalbuf,
-  int __buflen,
+typedef _dart_strdup = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _c_bcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Pointer<ffi.Void> arg1,
-  ffi.Uint64 arg2,
+typedef _c_strcmpi = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
 );
 
-typedef _dart_bcmp = int Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Pointer<ffi.Void> arg1,
-  int arg2,
+typedef _dart_strcmpi = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
 );
 
-typedef _c_bcopy = ffi.Void Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Pointer<ffi.Void> arg1,
-  ffi.Uint64 arg2,
+typedef _c_stricmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
 );
 
-typedef _dart_bcopy = void Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Pointer<ffi.Void> arg1,
-  int arg2,
+typedef _dart_stricmp = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
 );
 
-typedef _c_bzero = ffi.Void Function(
-  ffi.Pointer<ffi.Void> arg0,
-  ffi.Uint64 arg1,
+typedef _c_strlwr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _dart_bzero = void Function(
-  ffi.Pointer<ffi.Void> arg0,
-  int arg1,
+typedef _dart_strlwr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _c_index = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  ffi.Int32 arg1,
+typedef _c_strnicmp = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  ffi.Uint64 _MaxCount,
 );
 
-typedef _dart_index = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  int arg1,
+typedef _dart_strnicmp = int Function(
+  ffi.Pointer<ffi.Int8> _String1,
+  ffi.Pointer<ffi.Int8> _String2,
+  int _MaxCount,
 );
 
-typedef _c_rindex = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  ffi.Int32 arg1,
+typedef _c_strnset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Int32 _Value,
+  ffi.Uint64 _MaxCount,
 );
 
-typedef _dart_rindex = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  int arg1,
+typedef _dart_strnset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Value,
+  int _MaxCount,
 );
 
-typedef _c_ffs = ffi.Int32 Function(
-  ffi.Int32 arg0,
+typedef _c_strrev = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _dart_ffs = int Function(
-  int arg0,
+typedef _dart_strrev = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _c_strcasecmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  ffi.Pointer<ffi.Int8> arg1,
+typedef _c_strset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Int32 _Value,
 );
 
-typedef _dart_strcasecmp = int Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  ffi.Pointer<ffi.Int8> arg1,
+typedef _dart_strset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
+  int _Value,
 );
 
-typedef _c_strncasecmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  ffi.Pointer<ffi.Int8> arg1,
-  ffi.Uint64 arg2,
+typedef _c_strupr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _dart_strncasecmp = int Function(
-  ffi.Pointer<ffi.Int8> arg0,
-  ffi.Pointer<ffi.Int8> arg1,
-  int arg2,
+typedef _dart_strupr = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> _String,
 );
 
-typedef _c_ffsl = ffi.Int32 Function(
-  ffi.Int64 arg0,
+typedef _c__wassert = ffi.Void Function(
+  ffi.Pointer<ffi.Uint16> _Message,
+  ffi.Pointer<ffi.Uint16> _File,
+  ffi.Uint32 _Line,
 );
 
-typedef _dart_ffsl = int Function(
-  int arg0,
+typedef _dart__wassert = void Function(
+  ffi.Pointer<ffi.Uint16> _Message,
+  ffi.Pointer<ffi.Uint16> _File,
+  int _Line,
 );
 
-typedef _c_ffsll = ffi.Int32 Function(
-  ffi.Int64 arg0,
+typedef _c_imaxabs = ffi.Int64 Function(
+  ffi.Int64 _Number,
 );
 
-typedef _dart_ffsll = int Function(
-  int arg0,
+typedef _dart_imaxabs = int Function(
+  int _Number,
 );
 
-typedef _c_fls = ffi.Int32 Function(
-  ffi.Int32 arg0,
+typedef _c_imaxdiv = _Lldiv_t Function(
+  ffi.Int64 _Numerator,
+  ffi.Int64 _Denominator,
 );
 
-typedef _dart_fls = int Function(
-  int arg0,
+typedef _dart_imaxdiv = _Lldiv_t Function(
+  int _Numerator,
+  int _Denominator,
 );
 
-typedef _c_flsl = ffi.Int32 Function(
-  ffi.Int64 arg0,
+typedef _c_strtoimax = ffi.Int64 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  ffi.Int32 _Radix,
 );
 
-typedef _dart_flsl = int Function(
-  int arg0,
+typedef _dart_strtoimax = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  int _Radix,
 );
 
-typedef _c_flsll = ffi.Int32 Function(
-  ffi.Int64 arg0,
+typedef _c__strtoimax_l = ffi.Int64 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  ffi.Int32 _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
 
-typedef _dart_flsll = int Function(
-  int arg0,
+typedef _dart__strtoimax_l = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  int _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
 );
+
+typedef _c_strtoumax = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  ffi.Int32 _Radix,
+);
+
+typedef _dart_strtoumax = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  int _Radix,
+);
+
+typedef _c__strtoumax_l = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  ffi.Int32 _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__strtoumax_l = int Function(
+  ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+  int _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_wcstoimax = ffi.Int64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  ffi.Int32 _Radix,
+);
+
+typedef _dart_wcstoimax = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  int _Radix,
+);
+
+typedef _c__wcstoimax_l = ffi.Int64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  ffi.Int32 _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcstoimax_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  int _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_wcstoumax = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  ffi.Int32 _Radix,
+);
+
+typedef _dart_wcstoumax = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  int _Radix,
+);
+
+typedef _c__wcstoumax_l = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  ffi.Int32 _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _dart__wcstoumax_l = int Function(
+  ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+  int _Radix,
+  ffi.Pointer<__crt_locale_pointers> _Locale,
+);
+
+typedef _c_Dart_IsError = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsError = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsApiError = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsApiError = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsUnhandledExceptionError = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsUnhandledExceptionError = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsCompilationError = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsCompilationError = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsFatalError = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsFatalError = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_GetError = ffi.Pointer<ffi.Int8> Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_GetError = ffi.Pointer<ffi.Int8> Function(
+  Object handle,
+);
+
+typedef _c_Dart_ErrorHasException = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_ErrorHasException = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_ErrorGetException = ffi.Handle Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_ErrorGetException = Object Function(
+  Object handle,
+);
+
+typedef _c_Dart_ErrorGetStackTrace = ffi.Handle Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_ErrorGetStackTrace = Object Function(
+  Object handle,
+);
+
+typedef _c_Dart_NewApiError = ffi.Handle Function(
+  ffi.Pointer<ffi.Int8> error,
+);
+
+typedef _dart_Dart_NewApiError = Object Function(
+  ffi.Pointer<ffi.Int8> error,
+);
+
+typedef _c_Dart_NewCompilationError = ffi.Handle Function(
+  ffi.Pointer<ffi.Int8> error,
+);
+
+typedef _dart_Dart_NewCompilationError = Object Function(
+  ffi.Pointer<ffi.Int8> error,
+);
+
+typedef _c_Dart_NewUnhandledExceptionError = ffi.Handle Function(
+  ffi.Handle exception,
+);
+
+typedef _dart_Dart_NewUnhandledExceptionError = Object Function(
+  Object exception,
+);
+
+typedef _c_Dart_PropagateError = ffi.Void Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_PropagateError = void Function(
+  Object handle,
+);
+
+typedef _c_Dart_ToString = ffi.Handle Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_ToString = Object Function(
+  Object object,
+);
+
+typedef _c_Dart_IdentityEquals = ffi.Uint8 Function(
+  ffi.Handle obj1,
+  ffi.Handle obj2,
+);
+
+typedef _dart_Dart_IdentityEquals = int Function(
+  Object obj1,
+  Object obj2,
+);
+
+typedef _c_Dart_HandleFromPersistent = ffi.Handle Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_HandleFromPersistent = Object Function(
+  Object object,
+);
+
+typedef _c_Dart_HandleFromWeakPersistent = ffi.Handle Function(
+  ffi.Pointer<_Dart_WeakPersistentHandle> object,
+);
+
+typedef _dart_Dart_HandleFromWeakPersistent = Object Function(
+  ffi.Pointer<_Dart_WeakPersistentHandle> object,
+);
+
+typedef _c_Dart_NewPersistentHandle = ffi.Handle Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_NewPersistentHandle = Object Function(
+  Object object,
+);
+
+typedef _c_Dart_SetPersistentHandle = ffi.Void Function(
+  ffi.Handle obj1,
+  ffi.Handle obj2,
+);
+
+typedef _dart_Dart_SetPersistentHandle = void Function(
+  Object obj1,
+  Object obj2,
+);
+
+typedef _c_Dart_DeletePersistentHandle = ffi.Void Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_DeletePersistentHandle = void Function(
+  Object object,
+);
+
+typedef Dart_HandleFinalizer = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef _c_Dart_NewWeakPersistentHandle
+    = ffi.Pointer<_Dart_WeakPersistentHandle> Function(
+  ffi.Handle object,
+  ffi.Pointer<ffi.Void> peer,
+  ffi.IntPtr external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _dart_Dart_NewWeakPersistentHandle
+    = ffi.Pointer<_Dart_WeakPersistentHandle> Function(
+  Object object,
+  ffi.Pointer<ffi.Void> peer,
+  int external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _c_Dart_DeleteWeakPersistentHandle = ffi.Void Function(
+  ffi.Pointer<_Dart_WeakPersistentHandle> object,
+);
+
+typedef _dart_Dart_DeleteWeakPersistentHandle = void Function(
+  ffi.Pointer<_Dart_WeakPersistentHandle> object,
+);
+
+typedef _c_Dart_UpdateExternalSize = ffi.Void Function(
+  ffi.Pointer<_Dart_WeakPersistentHandle> object,
+  ffi.IntPtr external_allocation_size,
+);
+
+typedef _dart_Dart_UpdateExternalSize = void Function(
+  ffi.Pointer<_Dart_WeakPersistentHandle> object,
+  int external_allocation_size,
+);
+
+typedef _c_Dart_NewFinalizableHandle = ffi.Pointer<_Dart_FinalizableHandle>
+    Function(
+  ffi.Handle object,
+  ffi.Pointer<ffi.Void> peer,
+  ffi.IntPtr external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _dart_Dart_NewFinalizableHandle = ffi.Pointer<_Dart_FinalizableHandle>
+    Function(
+  Object object,
+  ffi.Pointer<ffi.Void> peer,
+  int external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _c_Dart_DeleteFinalizableHandle = ffi.Void Function(
+  ffi.Pointer<_Dart_FinalizableHandle> object,
+  ffi.Handle strong_ref_to_object,
+);
+
+typedef _dart_Dart_DeleteFinalizableHandle = void Function(
+  ffi.Pointer<_Dart_FinalizableHandle> object,
+  Object strong_ref_to_object,
+);
+
+typedef _c_Dart_UpdateFinalizableExternalSize = ffi.Void Function(
+  ffi.Pointer<_Dart_FinalizableHandle> object,
+  ffi.Handle strong_ref_to_object,
+  ffi.IntPtr external_allocation_size,
+);
+
+typedef _dart_Dart_UpdateFinalizableExternalSize = void Function(
+  ffi.Pointer<_Dart_FinalizableHandle> object,
+  Object strong_ref_to_object,
+  int external_allocation_size,
+);
+
+typedef _c_Dart_VersionString = ffi.Pointer<ffi.Int8> Function();
+
+typedef _dart_Dart_VersionString = ffi.Pointer<ffi.Int8> Function();
+
+typedef _c_Dart_IsolateFlagsInitialize = ffi.Void Function(
+  ffi.Pointer<Dart_IsolateFlags> flags,
+);
+
+typedef _dart_Dart_IsolateFlagsInitialize = void Function(
+  ffi.Pointer<Dart_IsolateFlags> flags,
+);
+
+typedef _c_Dart_Initialize = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<Dart_InitializeParams> params,
+);
+
+typedef _dart_Dart_Initialize = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<Dart_InitializeParams> params,
+);
+
+typedef _c_Dart_Cleanup = ffi.Pointer<ffi.Int8> Function();
+
+typedef _dart_Dart_Cleanup = ffi.Pointer<ffi.Int8> Function();
+
+typedef _c_Dart_SetVMFlags = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 argc,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> argv,
+);
+
+typedef _dart_Dart_SetVMFlags = ffi.Pointer<ffi.Int8> Function(
+  int argc,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> argv,
+);
+
+typedef _c_Dart_IsVMFlagSet = ffi.Uint8 Function(
+  ffi.Pointer<ffi.Int8> flag_name,
+);
+
+typedef _dart_Dart_IsVMFlagSet = int Function(
+  ffi.Pointer<ffi.Int8> flag_name,
+);
+
+typedef _c_Dart_CreateIsolateGroup = ffi.Pointer<_Dart_Isolate> Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
+  ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
+  ffi.Pointer<Dart_IsolateFlags> flags,
+  ffi.Pointer<ffi.Void> isolate_group_data,
+  ffi.Pointer<ffi.Void> isolate_data,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _dart_Dart_CreateIsolateGroup = ffi.Pointer<_Dart_Isolate> Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
+  ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
+  ffi.Pointer<Dart_IsolateFlags> flags,
+  ffi.Pointer<ffi.Void> isolate_group_data,
+  ffi.Pointer<ffi.Void> isolate_data,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef Dart_IsolateShutdownCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef Dart_IsolateCleanupCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef _c_Dart_CreateIsolateInGroup = ffi.Pointer<_Dart_Isolate> Function(
+  ffi.Pointer<_Dart_Isolate> group_member,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
+      shutdown_callback,
+  ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>> cleanup_callback,
+  ffi.Pointer<ffi.Void> child_isolate_data,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _dart_Dart_CreateIsolateInGroup = ffi.Pointer<_Dart_Isolate> Function(
+  ffi.Pointer<_Dart_Isolate> group_member,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
+      shutdown_callback,
+  ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>> cleanup_callback,
+  ffi.Pointer<ffi.Void> child_isolate_data,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _c_Dart_CreateIsolateGroupFromKernel = ffi.Pointer<_Dart_Isolate>
+    Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  ffi.IntPtr kernel_buffer_size,
+  ffi.Pointer<Dart_IsolateFlags> flags,
+  ffi.Pointer<ffi.Void> isolate_group_data,
+  ffi.Pointer<ffi.Void> isolate_data,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _dart_Dart_CreateIsolateGroupFromKernel = ffi.Pointer<_Dart_Isolate>
+    Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  int kernel_buffer_size,
+  ffi.Pointer<Dart_IsolateFlags> flags,
+  ffi.Pointer<ffi.Void> isolate_group_data,
+  ffi.Pointer<ffi.Void> isolate_data,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _c_Dart_ShutdownIsolate = ffi.Void Function();
+
+typedef _dart_Dart_ShutdownIsolate = void Function();
+
+typedef _c_Dart_CurrentIsolate = ffi.Pointer<_Dart_Isolate> Function();
+
+typedef _dart_Dart_CurrentIsolate = ffi.Pointer<_Dart_Isolate> Function();
+
+typedef _c_Dart_CurrentIsolateData = ffi.Pointer<ffi.Void> Function();
+
+typedef _dart_Dart_CurrentIsolateData = ffi.Pointer<ffi.Void> Function();
+
+typedef _c_Dart_IsolateData = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_IsolateData = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_CurrentIsolateGroup = ffi.Pointer<_Dart_IsolateGroup>
+    Function();
+
+typedef _dart_Dart_CurrentIsolateGroup = ffi.Pointer<_Dart_IsolateGroup>
+    Function();
+
+typedef _c_Dart_CurrentIsolateGroupData = ffi.Pointer<ffi.Void> Function();
+
+typedef _dart_Dart_CurrentIsolateGroupData = ffi.Pointer<ffi.Void> Function();
+
+typedef _c_Dart_IsolateGroupData = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_IsolateGroupData = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_DebugName = ffi.Handle Function();
+
+typedef _dart_Dart_DebugName = Object Function();
+
+typedef _c_Dart_IsolateServiceId = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_IsolateServiceId = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_EnterIsolate = ffi.Void Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_EnterIsolate = void Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_KillIsolate = ffi.Void Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_KillIsolate = void Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_HintFreed = ffi.Void Function(
+  ffi.IntPtr size,
+);
+
+typedef _dart_Dart_HintFreed = void Function(
+  int size,
+);
+
+typedef _c_Dart_NotifyIdle = ffi.Void Function(
+  ffi.Int64 deadline,
+);
+
+typedef _dart_Dart_NotifyIdle = void Function(
+  int deadline,
+);
+
+typedef _c_Dart_NotifyLowMemory = ffi.Void Function();
+
+typedef _dart_Dart_NotifyLowMemory = void Function();
+
+typedef _c_Dart_StartProfiling = ffi.Void Function();
+
+typedef _dart_Dart_StartProfiling = void Function();
+
+typedef _c_Dart_StopProfiling = ffi.Void Function();
+
+typedef _dart_Dart_StopProfiling = void Function();
+
+typedef _c_Dart_ThreadDisableProfiling = ffi.Void Function();
+
+typedef _dart_Dart_ThreadDisableProfiling = void Function();
+
+typedef _c_Dart_ThreadEnableProfiling = ffi.Void Function();
+
+typedef _dart_Dart_ThreadEnableProfiling = void Function();
+
+typedef _c_Dart_AddSymbols = ffi.Void Function(
+  ffi.Pointer<ffi.Int8> dso_name,
+  ffi.Pointer<ffi.Void> buffer,
+  ffi.IntPtr buffer_size,
+);
+
+typedef _dart_Dart_AddSymbols = void Function(
+  ffi.Pointer<ffi.Int8> dso_name,
+  ffi.Pointer<ffi.Void> buffer,
+  int buffer_size,
+);
+
+typedef _c_Dart_ExitIsolate = ffi.Void Function();
+
+typedef _dart_Dart_ExitIsolate = void Function();
+
+typedef _c_Dart_CreateSnapshot = ffi.Handle Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+  ffi.Uint8 is_core,
+);
+
+typedef _dart_Dart_CreateSnapshot = Object Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+  int is_core,
+);
+
+typedef _c_Dart_IsKernel = ffi.Uint8 Function(
+  ffi.Pointer<ffi.Uint8> buffer,
+  ffi.IntPtr buffer_size,
+);
+
+typedef _dart_Dart_IsKernel = int Function(
+  ffi.Pointer<ffi.Uint8> buffer,
+  int buffer_size,
+);
+
+typedef _c_Dart_IsolateMakeRunnable = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_IsolateMakeRunnable = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef Dart_MessageNotifyCallback = ffi.Void Function(
+  ffi.Pointer<_Dart_Isolate>,
+);
+
+typedef _c_Dart_SetMessageNotifyCallback = ffi.Void Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
+      message_notify_callback,
+);
+
+typedef _dart_Dart_SetMessageNotifyCallback = void Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
+      message_notify_callback,
+);
+
+typedef _c_Dart_GetMessageNotifyCallback
+    = ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>> Function();
+
+typedef _dart_Dart_GetMessageNotifyCallback
+    = ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>> Function();
+
+typedef _c_Dart_ShouldPauseOnStart = ffi.Uint8 Function();
+
+typedef _dart_Dart_ShouldPauseOnStart = int Function();
+
+typedef _c_Dart_SetShouldPauseOnStart = ffi.Void Function(
+  ffi.Uint8 should_pause,
+);
+
+typedef _dart_Dart_SetShouldPauseOnStart = void Function(
+  int should_pause,
+);
+
+typedef _c_Dart_IsPausedOnStart = ffi.Uint8 Function();
+
+typedef _dart_Dart_IsPausedOnStart = int Function();
+
+typedef _c_Dart_SetPausedOnStart = ffi.Void Function(
+  ffi.Uint8 paused,
+);
+
+typedef _dart_Dart_SetPausedOnStart = void Function(
+  int paused,
+);
+
+typedef _c_Dart_ShouldPauseOnExit = ffi.Uint8 Function();
+
+typedef _dart_Dart_ShouldPauseOnExit = int Function();
+
+typedef _c_Dart_SetShouldPauseOnExit = ffi.Void Function(
+  ffi.Uint8 should_pause,
+);
+
+typedef _dart_Dart_SetShouldPauseOnExit = void Function(
+  int should_pause,
+);
+
+typedef _c_Dart_IsPausedOnExit = ffi.Uint8 Function();
+
+typedef _dart_Dart_IsPausedOnExit = int Function();
+
+typedef _c_Dart_SetPausedOnExit = ffi.Void Function(
+  ffi.Uint8 paused,
+);
+
+typedef _dart_Dart_SetPausedOnExit = void Function(
+  int paused,
+);
+
+typedef _c_Dart_SetStickyError = ffi.Void Function(
+  ffi.Handle error,
+);
+
+typedef _dart_Dart_SetStickyError = void Function(
+  Object error,
+);
+
+typedef _c_Dart_HasStickyError = ffi.Uint8 Function();
+
+typedef _dart_Dart_HasStickyError = int Function();
+
+typedef _c_Dart_GetStickyError = ffi.Handle Function();
+
+typedef _dart_Dart_GetStickyError = Object Function();
+
+typedef _c_Dart_HandleMessage = ffi.Handle Function();
+
+typedef _dart_Dart_HandleMessage = Object Function();
+
+typedef _c_Dart_WaitForEvent = ffi.Handle Function(
+  ffi.Int64 timeout_millis,
+);
+
+typedef _dart_Dart_WaitForEvent = Object Function(
+  int timeout_millis,
+);
+
+typedef _c_Dart_HandleServiceMessages = ffi.Uint8 Function();
+
+typedef _dart_Dart_HandleServiceMessages = int Function();
+
+typedef _c_Dart_HasServiceMessages = ffi.Uint8 Function();
+
+typedef _dart_Dart_HasServiceMessages = int Function();
+
+typedef _c_Dart_RunLoop = ffi.Handle Function();
+
+typedef _dart_Dart_RunLoop = Object Function();
+
+typedef _c_Dart_RunLoopAsync = ffi.Uint8 Function(
+  ffi.Uint8 errors_are_fatal,
+  ffi.Int64 on_error_port,
+  ffi.Int64 on_exit_port,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _dart_Dart_RunLoopAsync = int Function(
+  int errors_are_fatal,
+  int on_error_port,
+  int on_exit_port,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _c_Dart_GetMainPortId = ffi.Int64 Function();
+
+typedef _dart_Dart_GetMainPortId = int Function();
+
+typedef _c_Dart_HasLivePorts = ffi.Uint8 Function();
+
+typedef _dart_Dart_HasLivePorts = int Function();
+
+typedef _c_Dart_Post = ffi.Uint8 Function(
+  ffi.Int64 port_id,
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_Post = int Function(
+  int port_id,
+  Object object,
+);
+
+typedef _c_Dart_NewSendPort = ffi.Handle Function(
+  ffi.Int64 port_id,
+);
+
+typedef _dart_Dart_NewSendPort = Object Function(
+  int port_id,
+);
+
+typedef _c_Dart_SendPortGetId = ffi.Handle Function(
+  ffi.Handle port,
+  ffi.Pointer<ffi.Int64> port_id,
+);
+
+typedef _dart_Dart_SendPortGetId = Object Function(
+  Object port,
+  ffi.Pointer<ffi.Int64> port_id,
+);
+
+typedef _c_Dart_EnterScope = ffi.Void Function();
+
+typedef _dart_Dart_EnterScope = void Function();
+
+typedef _c_Dart_ExitScope = ffi.Void Function();
+
+typedef _dart_Dart_ExitScope = void Function();
+
+typedef _c_Dart_ScopeAllocate = ffi.Pointer<ffi.Uint8> Function(
+  ffi.IntPtr size,
+);
+
+typedef _dart_Dart_ScopeAllocate = ffi.Pointer<ffi.Uint8> Function(
+  int size,
+);
+
+typedef _c_Dart_Null = ffi.Handle Function();
+
+typedef _dart_Dart_Null = Object Function();
+
+typedef _c_Dart_IsNull = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsNull = int Function(
+  Object object,
+);
+
+typedef _c_Dart_EmptyString = ffi.Handle Function();
+
+typedef _dart_Dart_EmptyString = Object Function();
+
+typedef _c_Dart_TypeDynamic = ffi.Handle Function();
+
+typedef _dart_Dart_TypeDynamic = Object Function();
+
+typedef _c_Dart_TypeVoid = ffi.Handle Function();
+
+typedef _dart_Dart_TypeVoid = Object Function();
+
+typedef _c_Dart_TypeNever = ffi.Handle Function();
+
+typedef _dart_Dart_TypeNever = Object Function();
+
+typedef _c_Dart_ObjectEquals = ffi.Handle Function(
+  ffi.Handle obj1,
+  ffi.Handle obj2,
+  ffi.Pointer<ffi.Uint8> equal,
+);
+
+typedef _dart_Dart_ObjectEquals = Object Function(
+  Object obj1,
+  Object obj2,
+  ffi.Pointer<ffi.Uint8> equal,
+);
+
+typedef _c_Dart_ObjectIsType = ffi.Handle Function(
+  ffi.Handle object,
+  ffi.Handle type,
+  ffi.Pointer<ffi.Uint8> instanceof,
+);
+
+typedef _dart_Dart_ObjectIsType = Object Function(
+  Object object,
+  Object type,
+  ffi.Pointer<ffi.Uint8> instanceof,
+);
+
+typedef _c_Dart_IsInstance = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsInstance = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsNumber = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsNumber = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsInteger = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsInteger = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsDouble = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsDouble = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsBoolean = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsBoolean = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsString = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsString = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsStringLatin1 = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsStringLatin1 = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsExternalString = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsExternalString = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsList = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsList = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsMap = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsMap = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsLibrary = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsLibrary = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsType = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsType = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsFunction = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsFunction = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsVariable = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsVariable = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsTypeVariable = ffi.Uint8 Function(
+  ffi.Handle handle,
+);
+
+typedef _dart_Dart_IsTypeVariable = int Function(
+  Object handle,
+);
+
+typedef _c_Dart_IsClosure = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsClosure = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsTypedData = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsTypedData = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsByteBuffer = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsByteBuffer = int Function(
+  Object object,
+);
+
+typedef _c_Dart_IsFuture = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsFuture = int Function(
+  Object object,
+);
+
+typedef _c_Dart_InstanceGetType = ffi.Handle Function(
+  ffi.Handle instance,
+);
+
+typedef _dart_Dart_InstanceGetType = Object Function(
+  Object instance,
+);
+
+typedef _c_Dart_ClassName = ffi.Handle Function(
+  ffi.Handle cls_type,
+);
+
+typedef _dart_Dart_ClassName = Object Function(
+  Object cls_type,
+);
+
+typedef _c_Dart_FunctionName = ffi.Handle Function(
+  ffi.Handle function,
+);
+
+typedef _dart_Dart_FunctionName = Object Function(
+  Object function,
+);
+
+typedef _c_Dart_FunctionOwner = ffi.Handle Function(
+  ffi.Handle function,
+);
+
+typedef _dart_Dart_FunctionOwner = Object Function(
+  Object function,
+);
+
+typedef _c_Dart_FunctionIsStatic = ffi.Handle Function(
+  ffi.Handle function,
+  ffi.Pointer<ffi.Uint8> is_static,
+);
+
+typedef _dart_Dart_FunctionIsStatic = Object Function(
+  Object function,
+  ffi.Pointer<ffi.Uint8> is_static,
+);
+
+typedef _c_Dart_IsTearOff = ffi.Uint8 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_IsTearOff = int Function(
+  Object object,
+);
+
+typedef _c_Dart_ClosureFunction = ffi.Handle Function(
+  ffi.Handle closure,
+);
+
+typedef _dart_Dart_ClosureFunction = Object Function(
+  Object closure,
+);
+
+typedef _c_Dart_ClassLibrary = ffi.Handle Function(
+  ffi.Handle cls_type,
+);
+
+typedef _dart_Dart_ClassLibrary = Object Function(
+  Object cls_type,
+);
+
+typedef _c_Dart_IntegerFitsIntoInt64 = ffi.Handle Function(
+  ffi.Handle integer,
+  ffi.Pointer<ffi.Uint8> fits,
+);
+
+typedef _dart_Dart_IntegerFitsIntoInt64 = Object Function(
+  Object integer,
+  ffi.Pointer<ffi.Uint8> fits,
+);
+
+typedef _c_Dart_IntegerFitsIntoUint64 = ffi.Handle Function(
+  ffi.Handle integer,
+  ffi.Pointer<ffi.Uint8> fits,
+);
+
+typedef _dart_Dart_IntegerFitsIntoUint64 = Object Function(
+  Object integer,
+  ffi.Pointer<ffi.Uint8> fits,
+);
+
+typedef _c_Dart_NewInteger = ffi.Handle Function(
+  ffi.Int64 value,
+);
+
+typedef _dart_Dart_NewInteger = Object Function(
+  int value,
+);
+
+typedef _c_Dart_NewIntegerFromUint64 = ffi.Handle Function(
+  ffi.Uint64 value,
+);
+
+typedef _dart_Dart_NewIntegerFromUint64 = Object Function(
+  int value,
+);
+
+typedef _c_Dart_NewIntegerFromHexCString = ffi.Handle Function(
+  ffi.Pointer<ffi.Int8> value,
+);
+
+typedef _dart_Dart_NewIntegerFromHexCString = Object Function(
+  ffi.Pointer<ffi.Int8> value,
+);
+
+typedef _c_Dart_IntegerToInt64 = ffi.Handle Function(
+  ffi.Handle integer,
+  ffi.Pointer<ffi.Int64> value,
+);
+
+typedef _dart_Dart_IntegerToInt64 = Object Function(
+  Object integer,
+  ffi.Pointer<ffi.Int64> value,
+);
+
+typedef _c_Dart_IntegerToUint64 = ffi.Handle Function(
+  ffi.Handle integer,
+  ffi.Pointer<ffi.Uint64> value,
+);
+
+typedef _dart_Dart_IntegerToUint64 = Object Function(
+  Object integer,
+  ffi.Pointer<ffi.Uint64> value,
+);
+
+typedef _c_Dart_IntegerToHexCString = ffi.Handle Function(
+  ffi.Handle integer,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
+);
+
+typedef _dart_Dart_IntegerToHexCString = Object Function(
+  Object integer,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
+);
+
+typedef _c_Dart_NewDouble = ffi.Handle Function(
+  ffi.Double value,
+);
+
+typedef _dart_Dart_NewDouble = Object Function(
+  double value,
+);
+
+typedef _c_Dart_DoubleValue = ffi.Handle Function(
+  ffi.Handle double_obj,
+  ffi.Pointer<ffi.Double> value,
+);
+
+typedef _dart_Dart_DoubleValue = Object Function(
+  Object double_obj,
+  ffi.Pointer<ffi.Double> value,
+);
+
+typedef _c_Dart_GetStaticMethodClosure = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Handle cls_type,
+  ffi.Handle function_name,
+);
+
+typedef _dart_Dart_GetStaticMethodClosure = Object Function(
+  Object library_1,
+  Object cls_type,
+  Object function_name,
+);
+
+typedef _c_Dart_True = ffi.Handle Function();
+
+typedef _dart_Dart_True = Object Function();
+
+typedef _c_Dart_False = ffi.Handle Function();
+
+typedef _dart_Dart_False = Object Function();
+
+typedef _c_Dart_NewBoolean = ffi.Handle Function(
+  ffi.Uint8 value,
+);
+
+typedef _dart_Dart_NewBoolean = Object Function(
+  int value,
+);
+
+typedef _c_Dart_BooleanValue = ffi.Handle Function(
+  ffi.Handle boolean_obj,
+  ffi.Pointer<ffi.Uint8> value,
+);
+
+typedef _dart_Dart_BooleanValue = Object Function(
+  Object boolean_obj,
+  ffi.Pointer<ffi.Uint8> value,
+);
+
+typedef _c_Dart_StringLength = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _dart_Dart_StringLength = Object Function(
+  Object str,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _c_Dart_NewStringFromCString = ffi.Handle Function(
+  ffi.Pointer<ffi.Int8> str,
+);
+
+typedef _dart_Dart_NewStringFromCString = Object Function(
+  ffi.Pointer<ffi.Int8> str,
+);
+
+typedef _c_Dart_NewStringFromUTF8 = ffi.Handle Function(
+  ffi.Pointer<ffi.Uint8> utf8_array,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewStringFromUTF8 = Object Function(
+  ffi.Pointer<ffi.Uint8> utf8_array,
+  int length,
+);
+
+typedef _c_Dart_NewStringFromUTF16 = ffi.Handle Function(
+  ffi.Pointer<ffi.Uint16> utf16_array,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewStringFromUTF16 = Object Function(
+  ffi.Pointer<ffi.Uint16> utf16_array,
+  int length,
+);
+
+typedef _c_Dart_NewStringFromUTF32 = ffi.Handle Function(
+  ffi.Pointer<ffi.Int32> utf32_array,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewStringFromUTF32 = Object Function(
+  ffi.Pointer<ffi.Int32> utf32_array,
+  int length,
+);
+
+typedef _c_Dart_NewExternalLatin1String = ffi.Handle Function(
+  ffi.Pointer<ffi.Uint8> latin1_array,
+  ffi.IntPtr length,
+  ffi.Pointer<ffi.Void> peer,
+  ffi.IntPtr external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _dart_Dart_NewExternalLatin1String = Object Function(
+  ffi.Pointer<ffi.Uint8> latin1_array,
+  int length,
+  ffi.Pointer<ffi.Void> peer,
+  int external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _c_Dart_NewExternalUTF16String = ffi.Handle Function(
+  ffi.Pointer<ffi.Uint16> utf16_array,
+  ffi.IntPtr length,
+  ffi.Pointer<ffi.Void> peer,
+  ffi.IntPtr external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _dart_Dart_NewExternalUTF16String = Object Function(
+  ffi.Pointer<ffi.Uint16> utf16_array,
+  int length,
+  ffi.Pointer<ffi.Void> peer,
+  int external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _c_Dart_StringToCString = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> cstr,
+);
+
+typedef _dart_Dart_StringToCString = Object Function(
+  Object str,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> cstr,
+);
+
+typedef _c_Dart_StringToUTF8 = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _dart_Dart_StringToUTF8 = Object Function(
+  Object str,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _c_Dart_StringToLatin1 = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.Uint8> latin1_array,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _dart_Dart_StringToLatin1 = Object Function(
+  Object str,
+  ffi.Pointer<ffi.Uint8> latin1_array,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _c_Dart_StringToUTF16 = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.Uint16> utf16_array,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _dart_Dart_StringToUTF16 = Object Function(
+  Object str,
+  ffi.Pointer<ffi.Uint16> utf16_array,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _c_Dart_StringStorageSize = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.IntPtr> size,
+);
+
+typedef _dart_Dart_StringStorageSize = Object Function(
+  Object str,
+  ffi.Pointer<ffi.IntPtr> size,
+);
+
+typedef _c_Dart_StringGetProperties = ffi.Handle Function(
+  ffi.Handle str,
+  ffi.Pointer<ffi.IntPtr> char_size,
+  ffi.Pointer<ffi.IntPtr> str_len,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+);
+
+typedef _dart_Dart_StringGetProperties = Object Function(
+  Object str,
+  ffi.Pointer<ffi.IntPtr> char_size,
+  ffi.Pointer<ffi.IntPtr> str_len,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+);
+
+typedef _c_Dart_NewList = ffi.Handle Function(
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewList = Object Function(
+  int length,
+);
+
+typedef _c_Dart_NewListOf = ffi.Handle Function(
+  ffi.Int32 element_type_id,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewListOf = Object Function(
+  int element_type_id,
+  int length,
+);
+
+typedef _c_Dart_NewListOfType = ffi.Handle Function(
+  ffi.Handle element_type,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewListOfType = Object Function(
+  Object element_type,
+  int length,
+);
+
+typedef _c_Dart_NewListOfTypeFilled = ffi.Handle Function(
+  ffi.Handle element_type,
+  ffi.Handle fill_object,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewListOfTypeFilled = Object Function(
+  Object element_type,
+  Object fill_object,
+  int length,
+);
+
+typedef _c_Dart_ListLength = ffi.Handle Function(
+  ffi.Handle list,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _dart_Dart_ListLength = Object Function(
+  Object list,
+  ffi.Pointer<ffi.IntPtr> length,
+);
+
+typedef _c_Dart_ListGetAt = ffi.Handle Function(
+  ffi.Handle list,
+  ffi.IntPtr index,
+);
+
+typedef _dart_Dart_ListGetAt = Object Function(
+  Object list,
+  int index,
+);
+
+typedef _c_Dart_ListGetRange = ffi.Handle Function(
+  ffi.Handle list,
+  ffi.IntPtr offset,
+  ffi.IntPtr length,
+  ffi.Pointer<ffi.Handle> result,
+);
+
+typedef _dart_Dart_ListGetRange = Object Function(
+  Object list,
+  int offset,
+  int length,
+  ffi.Pointer<ffi.Handle> result,
+);
+
+typedef _c_Dart_ListSetAt = ffi.Handle Function(
+  ffi.Handle list,
+  ffi.IntPtr index,
+  ffi.Handle value,
+);
+
+typedef _dart_Dart_ListSetAt = Object Function(
+  Object list,
+  int index,
+  Object value,
+);
+
+typedef _c_Dart_ListGetAsBytes = ffi.Handle Function(
+  ffi.Handle list,
+  ffi.IntPtr offset,
+  ffi.Pointer<ffi.Uint8> native_array,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_ListGetAsBytes = Object Function(
+  Object list,
+  int offset,
+  ffi.Pointer<ffi.Uint8> native_array,
+  int length,
+);
+
+typedef _c_Dart_ListSetAsBytes = ffi.Handle Function(
+  ffi.Handle list,
+  ffi.IntPtr offset,
+  ffi.Pointer<ffi.Uint8> native_array,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_ListSetAsBytes = Object Function(
+  Object list,
+  int offset,
+  ffi.Pointer<ffi.Uint8> native_array,
+  int length,
+);
+
+typedef _c_Dart_MapGetAt = ffi.Handle Function(
+  ffi.Handle map,
+  ffi.Handle key,
+);
+
+typedef _dart_Dart_MapGetAt = Object Function(
+  Object map,
+  Object key,
+);
+
+typedef _c_Dart_MapContainsKey = ffi.Handle Function(
+  ffi.Handle map,
+  ffi.Handle key,
+);
+
+typedef _dart_Dart_MapContainsKey = Object Function(
+  Object map,
+  Object key,
+);
+
+typedef _c_Dart_MapKeys = ffi.Handle Function(
+  ffi.Handle map,
+);
+
+typedef _dart_Dart_MapKeys = Object Function(
+  Object map,
+);
+
+typedef _c_Dart_GetTypeOfTypedData = ffi.Int32 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_GetTypeOfTypedData = int Function(
+  Object object,
+);
+
+typedef _c_Dart_GetTypeOfExternalTypedData = ffi.Int32 Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_GetTypeOfExternalTypedData = int Function(
+  Object object,
+);
+
+typedef _c_Dart_NewTypedData = ffi.Handle Function(
+  ffi.Int32 type,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewTypedData = Object Function(
+  int type,
+  int length,
+);
+
+typedef _c_Dart_NewExternalTypedData = ffi.Handle Function(
+  ffi.Int32 type,
+  ffi.Pointer<ffi.Void> data,
+  ffi.IntPtr length,
+);
+
+typedef _dart_Dart_NewExternalTypedData = Object Function(
+  int type,
+  ffi.Pointer<ffi.Void> data,
+  int length,
+);
+
+typedef _c_Dart_NewExternalTypedDataWithFinalizer = ffi.Handle Function(
+  ffi.Int32 type,
+  ffi.Pointer<ffi.Void> data,
+  ffi.IntPtr length,
+  ffi.Pointer<ffi.Void> peer,
+  ffi.IntPtr external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _dart_Dart_NewExternalTypedDataWithFinalizer = Object Function(
+  int type,
+  ffi.Pointer<ffi.Void> data,
+  int length,
+  ffi.Pointer<ffi.Void> peer,
+  int external_allocation_size,
+  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+);
+
+typedef _c_Dart_NewByteBuffer = ffi.Handle Function(
+  ffi.Handle typed_data,
+);
+
+typedef _dart_Dart_NewByteBuffer = Object Function(
+  Object typed_data,
+);
+
+typedef _c_Dart_TypedDataAcquireData = ffi.Handle Function(
+  ffi.Handle object,
+  ffi.Pointer<ffi.Int32> type,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> data,
+  ffi.Pointer<ffi.IntPtr> len,
+);
+
+typedef _dart_Dart_TypedDataAcquireData = Object Function(
+  Object object,
+  ffi.Pointer<ffi.Int32> type,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> data,
+  ffi.Pointer<ffi.IntPtr> len,
+);
+
+typedef _c_Dart_TypedDataReleaseData = ffi.Handle Function(
+  ffi.Handle object,
+);
+
+typedef _dart_Dart_TypedDataReleaseData = Object Function(
+  Object object,
+);
+
+typedef _c_Dart_GetDataFromByteBuffer = ffi.Handle Function(
+  ffi.Handle byte_buffer,
+);
+
+typedef _dart_Dart_GetDataFromByteBuffer = Object Function(
+  Object byte_buffer,
+);
+
+typedef _c_Dart_New = ffi.Handle Function(
+  ffi.Handle type,
+  ffi.Handle constructor_name,
+  ffi.Int32 number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _dart_Dart_New = Object Function(
+  Object type,
+  Object constructor_name,
+  int number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _c_Dart_Allocate = ffi.Handle Function(
+  ffi.Handle type,
+);
+
+typedef _dart_Dart_Allocate = Object Function(
+  Object type,
+);
+
+typedef _c_Dart_AllocateWithNativeFields = ffi.Handle Function(
+  ffi.Handle type,
+  ffi.IntPtr num_native_fields,
+  ffi.Pointer<ffi.IntPtr> native_fields,
+);
+
+typedef _dart_Dart_AllocateWithNativeFields = Object Function(
+  Object type,
+  int num_native_fields,
+  ffi.Pointer<ffi.IntPtr> native_fields,
+);
+
+typedef _c_Dart_Invoke = ffi.Handle Function(
+  ffi.Handle target,
+  ffi.Handle name,
+  ffi.Int32 number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _dart_Dart_Invoke = Object Function(
+  Object target,
+  Object name,
+  int number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _c_Dart_InvokeClosure = ffi.Handle Function(
+  ffi.Handle closure,
+  ffi.Int32 number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _dart_Dart_InvokeClosure = Object Function(
+  Object closure,
+  int number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _c_Dart_InvokeConstructor = ffi.Handle Function(
+  ffi.Handle object,
+  ffi.Handle name,
+  ffi.Int32 number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _dart_Dart_InvokeConstructor = Object Function(
+  Object object,
+  Object name,
+  int number_of_arguments,
+  ffi.Pointer<ffi.Handle> arguments,
+);
+
+typedef _c_Dart_GetField = ffi.Handle Function(
+  ffi.Handle container,
+  ffi.Handle name,
+);
+
+typedef _dart_Dart_GetField = Object Function(
+  Object container,
+  Object name,
+);
+
+typedef _c_Dart_SetField = ffi.Handle Function(
+  ffi.Handle container,
+  ffi.Handle name,
+  ffi.Handle value,
+);
+
+typedef _dart_Dart_SetField = Object Function(
+  Object container,
+  Object name,
+  Object value,
+);
+
+typedef _c_Dart_ThrowException = ffi.Handle Function(
+  ffi.Handle exception,
+);
+
+typedef _dart_Dart_ThrowException = Object Function(
+  Object exception,
+);
+
+typedef _c_Dart_ReThrowException = ffi.Handle Function(
+  ffi.Handle exception,
+  ffi.Handle stacktrace,
+);
+
+typedef _dart_Dart_ReThrowException = Object Function(
+  Object exception,
+  Object stacktrace,
+);
+
+typedef _c_Dart_GetNativeInstanceFieldCount = ffi.Handle Function(
+  ffi.Handle obj,
+  ffi.Pointer<ffi.Int32> count,
+);
+
+typedef _dart_Dart_GetNativeInstanceFieldCount = Object Function(
+  Object obj,
+  ffi.Pointer<ffi.Int32> count,
+);
+
+typedef _c_Dart_GetNativeInstanceField = ffi.Handle Function(
+  ffi.Handle obj,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.IntPtr> value,
+);
+
+typedef _dart_Dart_GetNativeInstanceField = Object Function(
+  Object obj,
+  int index,
+  ffi.Pointer<ffi.IntPtr> value,
+);
+
+typedef _c_Dart_SetNativeInstanceField = ffi.Handle Function(
+  ffi.Handle obj,
+  ffi.Int32 index,
+  ffi.IntPtr value,
+);
+
+typedef _dart_Dart_SetNativeInstanceField = Object Function(
+  Object obj,
+  int index,
+  int value,
+);
+
+typedef _c_Dart_GetNativeIsolateGroupData = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+);
+
+typedef _dart_Dart_GetNativeIsolateGroupData = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+);
+
+typedef _c_Dart_GetNativeArgument = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int32 index,
+);
+
+typedef _dart_Dart_GetNativeArgument = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int index,
+);
+
+typedef _c_Dart_GetNativeArgumentCount = ffi.Int32 Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+);
+
+typedef _dart_Dart_GetNativeArgumentCount = int Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+);
+
+typedef _c_Dart_GetNativeFieldsOfArgument = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int32 arg_index,
+  ffi.Int32 num_fields,
+  ffi.Pointer<ffi.IntPtr> field_values,
+);
+
+typedef _dart_Dart_GetNativeFieldsOfArgument = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int arg_index,
+  int num_fields,
+  ffi.Pointer<ffi.IntPtr> field_values,
+);
+
+typedef _c_Dart_GetNativeReceiver = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Pointer<ffi.IntPtr> value,
+);
+
+typedef _dart_Dart_GetNativeReceiver = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Pointer<ffi.IntPtr> value,
+);
+
+typedef _c_Dart_GetNativeStringArgument = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int32 arg_index,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+);
+
+typedef _dart_Dart_GetNativeStringArgument = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int arg_index,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+);
+
+typedef _c_Dart_GetNativeIntegerArgument = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int64> value,
+);
+
+typedef _dart_Dart_GetNativeIntegerArgument = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int index,
+  ffi.Pointer<ffi.Int64> value,
+);
+
+typedef _c_Dart_GetNativeBooleanArgument = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Uint8> value,
+);
+
+typedef _dart_Dart_GetNativeBooleanArgument = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int index,
+  ffi.Pointer<ffi.Uint8> value,
+);
+
+typedef _c_Dart_GetNativeDoubleArgument = ffi.Handle Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Double> value,
+);
+
+typedef _dart_Dart_GetNativeDoubleArgument = Object Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int index,
+  ffi.Pointer<ffi.Double> value,
+);
+
+typedef _c_Dart_SetReturnValue = ffi.Void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Handle retval,
+);
+
+typedef _dart_Dart_SetReturnValue = void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  Object retval,
+);
+
+typedef _c_Dart_SetWeakHandleReturnValue = ffi.Void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Pointer<_Dart_WeakPersistentHandle> rval,
+);
+
+typedef _dart_Dart_SetWeakHandleReturnValue = void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Pointer<_Dart_WeakPersistentHandle> rval,
+);
+
+typedef _c_Dart_SetBooleanReturnValue = ffi.Void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Uint8 retval,
+);
+
+typedef _dart_Dart_SetBooleanReturnValue = void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int retval,
+);
+
+typedef _c_Dart_SetIntegerReturnValue = ffi.Void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Int64 retval,
+);
+
+typedef _dart_Dart_SetIntegerReturnValue = void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  int retval,
+);
+
+typedef _c_Dart_SetDoubleReturnValue = ffi.Void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  ffi.Double retval,
+);
+
+typedef _dart_Dart_SetDoubleReturnValue = void Function(
+  ffi.Pointer<_Dart_NativeArguments> args,
+  double retval,
+);
+
+typedef Dart_EnvironmentCallback = ffi.Handle Function(
+  ffi.Handle,
+);
+
+typedef _c_Dart_SetEnvironmentCallback = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_EnvironmentCallback>> callback,
+);
+
+typedef _dart_Dart_SetEnvironmentCallback = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_EnvironmentCallback>> callback,
+);
+
+typedef Dart_NativeFunction = ffi.Void Function(
+  ffi.Pointer<_Dart_NativeArguments>,
+);
+
+typedef Dart_NativeEntryResolver
+    = ffi.Pointer<ffi.NativeFunction<Dart_NativeFunction>> Function(
+  ffi.Handle,
+  ffi.Int32,
+  ffi.Pointer<ffi.Uint8>,
+);
+
+typedef Dart_NativeEntrySymbol = ffi.Pointer<ffi.Uint8> Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_NativeFunction>>,
+);
+
+typedef _c_Dart_SetNativeResolver = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>> resolver,
+  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>> symbol,
+);
+
+typedef _dart_Dart_SetNativeResolver = Object Function(
+  Object library_1,
+  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>> resolver,
+  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>> symbol,
+);
+
+typedef _c_Dart_GetNativeResolver = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>>>
+      resolver,
+);
+
+typedef _dart_Dart_GetNativeResolver = Object Function(
+  Object library_1,
+  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>>>
+      resolver,
+);
+
+typedef _c_Dart_GetNativeSymbol = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>>> resolver,
+);
+
+typedef _dart_Dart_GetNativeSymbol = Object Function(
+  Object library_1,
+  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>>> resolver,
+);
+
+typedef Dart_FfiNativeResolver = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Int8>,
+);
+
+typedef _c_Dart_SetFfiNativeResolver = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Pointer<ffi.NativeFunction<Dart_FfiNativeResolver>> resolver,
+);
+
+typedef _dart_Dart_SetFfiNativeResolver = Object Function(
+  Object library_1,
+  ffi.Pointer<ffi.NativeFunction<Dart_FfiNativeResolver>> resolver,
+);
+
+typedef Dart_LibraryTagHandler = ffi.Handle Function(
+  ffi.Int32,
+  ffi.Handle,
+  ffi.Handle,
+);
+
+typedef _c_Dart_SetLibraryTagHandler = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_LibraryTagHandler>> handler,
+);
+
+typedef _dart_Dart_SetLibraryTagHandler = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_LibraryTagHandler>> handler,
+);
+
+typedef Dart_DeferredLoadHandler = ffi.Handle Function(
+  ffi.IntPtr,
+);
+
+typedef _c_Dart_SetDeferredLoadHandler = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_DeferredLoadHandler>> handler,
+);
+
+typedef _dart_Dart_SetDeferredLoadHandler = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_DeferredLoadHandler>> handler,
+);
+
+typedef _c_Dart_DeferredLoadComplete = ffi.Handle Function(
+  ffi.IntPtr loading_unit_id,
+  ffi.Pointer<ffi.Uint8> snapshot_data,
+  ffi.Pointer<ffi.Uint8> snapshot_instructions,
+);
+
+typedef _dart_Dart_DeferredLoadComplete = Object Function(
+  int loading_unit_id,
+  ffi.Pointer<ffi.Uint8> snapshot_data,
+  ffi.Pointer<ffi.Uint8> snapshot_instructions,
+);
+
+typedef _c_Dart_DeferredLoadCompleteError = ffi.Handle Function(
+  ffi.IntPtr loading_unit_id,
+  ffi.Pointer<ffi.Int8> error_message,
+  ffi.Uint8 transient,
+);
+
+typedef _dart_Dart_DeferredLoadCompleteError = Object Function(
+  int loading_unit_id,
+  ffi.Pointer<ffi.Int8> error_message,
+  int transient,
+);
+
+typedef _c_Dart_DefaultCanonicalizeUrl = ffi.Handle Function(
+  ffi.Handle base_url,
+  ffi.Handle url,
+);
+
+typedef _dart_Dart_DefaultCanonicalizeUrl = Object Function(
+  Object base_url,
+  Object url,
+);
+
+typedef _c_Dart_LoadScriptFromKernel = ffi.Handle Function(
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  ffi.IntPtr kernel_size,
+);
+
+typedef _dart_Dart_LoadScriptFromKernel = Object Function(
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  int kernel_size,
+);
+
+typedef _c_Dart_RootLibrary = ffi.Handle Function();
+
+typedef _dart_Dart_RootLibrary = Object Function();
+
+typedef _c_Dart_SetRootLibrary = ffi.Handle Function(
+  ffi.Handle library_1,
+);
+
+typedef _dart_Dart_SetRootLibrary = Object Function(
+  Object library_1,
+);
+
+typedef _c_Dart_GetType = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Handle class_name,
+  ffi.IntPtr number_of_type_arguments,
+  ffi.Pointer<ffi.Handle> type_arguments,
+);
+
+typedef _dart_Dart_GetType = Object Function(
+  Object library_1,
+  Object class_name,
+  int number_of_type_arguments,
+  ffi.Pointer<ffi.Handle> type_arguments,
+);
+
+typedef _c_Dart_GetNullableType = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Handle class_name,
+  ffi.IntPtr number_of_type_arguments,
+  ffi.Pointer<ffi.Handle> type_arguments,
+);
+
+typedef _dart_Dart_GetNullableType = Object Function(
+  Object library_1,
+  Object class_name,
+  int number_of_type_arguments,
+  ffi.Pointer<ffi.Handle> type_arguments,
+);
+
+typedef _c_Dart_GetNonNullableType = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Handle class_name,
+  ffi.IntPtr number_of_type_arguments,
+  ffi.Pointer<ffi.Handle> type_arguments,
+);
+
+typedef _dart_Dart_GetNonNullableType = Object Function(
+  Object library_1,
+  Object class_name,
+  int number_of_type_arguments,
+  ffi.Pointer<ffi.Handle> type_arguments,
+);
+
+typedef _c_Dart_TypeToNullableType = ffi.Handle Function(
+  ffi.Handle type,
+);
+
+typedef _dart_Dart_TypeToNullableType = Object Function(
+  Object type,
+);
+
+typedef _c_Dart_TypeToNonNullableType = ffi.Handle Function(
+  ffi.Handle type,
+);
+
+typedef _dart_Dart_TypeToNonNullableType = Object Function(
+  Object type,
+);
+
+typedef _c_Dart_IsNullableType = ffi.Handle Function(
+  ffi.Handle type,
+  ffi.Pointer<ffi.Uint8> result,
+);
+
+typedef _dart_Dart_IsNullableType = Object Function(
+  Object type,
+  ffi.Pointer<ffi.Uint8> result,
+);
+
+typedef _c_Dart_IsNonNullableType = ffi.Handle Function(
+  ffi.Handle type,
+  ffi.Pointer<ffi.Uint8> result,
+);
+
+typedef _dart_Dart_IsNonNullableType = Object Function(
+  Object type,
+  ffi.Pointer<ffi.Uint8> result,
+);
+
+typedef _c_Dart_IsLegacyType = ffi.Handle Function(
+  ffi.Handle type,
+  ffi.Pointer<ffi.Uint8> result,
+);
+
+typedef _dart_Dart_IsLegacyType = Object Function(
+  Object type,
+  ffi.Pointer<ffi.Uint8> result,
+);
+
+typedef _c_Dart_GetClass = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Handle class_name,
+);
+
+typedef _dart_Dart_GetClass = Object Function(
+  Object library_1,
+  Object class_name,
+);
+
+typedef _c_Dart_LibraryUrl = ffi.Handle Function(
+  ffi.Handle library_1,
+);
+
+typedef _dart_Dart_LibraryUrl = Object Function(
+  Object library_1,
+);
+
+typedef _c_Dart_LibraryResolvedUrl = ffi.Handle Function(
+  ffi.Handle library_1,
+);
+
+typedef _dart_Dart_LibraryResolvedUrl = Object Function(
+  Object library_1,
+);
+
+typedef _c_Dart_GetLoadedLibraries = ffi.Handle Function();
+
+typedef _dart_Dart_GetLoadedLibraries = Object Function();
+
+typedef _c_Dart_LookupLibrary = ffi.Handle Function(
+  ffi.Handle url,
+);
+
+typedef _dart_Dart_LookupLibrary = Object Function(
+  Object url,
+);
+
+typedef _c_Dart_LibraryHandleError = ffi.Handle Function(
+  ffi.Handle library_1,
+  ffi.Handle error,
+);
+
+typedef _dart_Dart_LibraryHandleError = Object Function(
+  Object library_1,
+  Object error,
+);
+
+typedef _c_Dart_LoadLibraryFromKernel = ffi.Handle Function(
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  ffi.IntPtr kernel_buffer_size,
+);
+
+typedef _dart_Dart_LoadLibraryFromKernel = Object Function(
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  int kernel_buffer_size,
+);
+
+typedef _c_Dart_GetImportsOfScheme = ffi.Handle Function(
+  ffi.Handle scheme,
+);
+
+typedef _dart_Dart_GetImportsOfScheme = Object Function(
+  Object scheme,
+);
+
+typedef _c_Dart_FinalizeLoading = ffi.Handle Function(
+  ffi.Uint8 complete_futures,
+);
+
+typedef _dart_Dart_FinalizeLoading = Object Function(
+  int complete_futures,
+);
+
+typedef _c_Dart_GetPeer = ffi.Handle Function(
+  ffi.Handle object,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+);
+
+typedef _dart_Dart_GetPeer = Object Function(
+  Object object,
+  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+);
+
+typedef _c_Dart_SetPeer = ffi.Handle Function(
+  ffi.Handle object,
+  ffi.Pointer<ffi.Void> peer,
+);
+
+typedef _dart_Dart_SetPeer = Object Function(
+  Object object,
+  ffi.Pointer<ffi.Void> peer,
+);
+
+typedef _c_Dart_IsKernelIsolate = ffi.Uint8 Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_IsKernelIsolate = int Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_KernelIsolateIsRunning = ffi.Uint8 Function();
+
+typedef _dart_Dart_KernelIsolateIsRunning = int Function();
+
+typedef _c_Dart_KernelPort = ffi.Int64 Function();
+
+typedef _dart_Dart_KernelPort = int Function();
+
+typedef _c_Dart_CompileToKernel = Dart_KernelCompilationResult Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Uint8> platform_kernel,
+  ffi.IntPtr platform_kernel_size,
+  ffi.Uint8 incremental_compile,
+  ffi.Uint8 snapshot_compile,
+  ffi.Pointer<ffi.Int8> package_config,
+  ffi.Int32 verbosity,
+);
+
+typedef _dart_Dart_CompileToKernel = Dart_KernelCompilationResult Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Uint8> platform_kernel,
+  int platform_kernel_size,
+  int incremental_compile,
+  int snapshot_compile,
+  ffi.Pointer<ffi.Int8> package_config,
+  int verbosity,
+);
+
+typedef _c_Dart_KernelListDependencies = Dart_KernelCompilationResult
+    Function();
+
+typedef _dart_Dart_KernelListDependencies = Dart_KernelCompilationResult
+    Function();
+
+typedef _c_Dart_SetDartLibrarySourcesKernel = ffi.Void Function(
+  ffi.Pointer<ffi.Uint8> platform_kernel,
+  ffi.IntPtr platform_kernel_size,
+);
+
+typedef _dart_Dart_SetDartLibrarySourcesKernel = void Function(
+  ffi.Pointer<ffi.Uint8> platform_kernel,
+  int platform_kernel_size,
+);
+
+typedef _c_Dart_DetectNullSafety = ffi.Uint8 Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Int8> package_config,
+  ffi.Pointer<ffi.Int8> original_working_directory,
+  ffi.Pointer<ffi.Uint8> snapshot_data,
+  ffi.Pointer<ffi.Uint8> snapshot_instructions,
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  ffi.IntPtr kernel_buffer_size,
+);
+
+typedef _dart_Dart_DetectNullSafety = int Function(
+  ffi.Pointer<ffi.Int8> script_uri,
+  ffi.Pointer<ffi.Int8> package_config,
+  ffi.Pointer<ffi.Int8> original_working_directory,
+  ffi.Pointer<ffi.Uint8> snapshot_data,
+  ffi.Pointer<ffi.Uint8> snapshot_instructions,
+  ffi.Pointer<ffi.Uint8> kernel_buffer,
+  int kernel_buffer_size,
+);
+
+typedef _c_Dart_IsServiceIsolate = ffi.Uint8 Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _dart_Dart_IsServiceIsolate = int Function(
+  ffi.Pointer<_Dart_Isolate> isolate,
+);
+
+typedef _c_Dart_WriteProfileToTimeline = ffi.Uint8 Function(
+  ffi.Int64 main_port,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _dart_Dart_WriteProfileToTimeline = int Function(
+  int main_port,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+);
+
+typedef _c_Dart_Precompile = ffi.Handle Function();
+
+typedef _dart_Dart_Precompile = Object Function();
+
+typedef _c_Dart_LoadingUnitLibraryUris = ffi.Handle Function(
+  ffi.IntPtr loading_unit_id,
+);
+
+typedef _dart_Dart_LoadingUnitLibraryUris = Object Function(
+  int loading_unit_id,
+);
+
+typedef Dart_StreamingWriteCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+  ffi.Pointer<ffi.Uint8>,
+  ffi.IntPtr,
+);
+
+typedef _c_Dart_CreateAppAOTSnapshotAsAssembly = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+  ffi.Pointer<ffi.Void> callback_data,
+  ffi.Uint8 stripped,
+  ffi.Pointer<ffi.Void> debug_callback_data,
+);
+
+typedef _dart_Dart_CreateAppAOTSnapshotAsAssembly = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+  ffi.Pointer<ffi.Void> callback_data,
+  int stripped,
+  ffi.Pointer<ffi.Void> debug_callback_data,
+);
+
+typedef Dart_CreateLoadingUnitCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+  ffi.IntPtr,
+  ffi.Pointer<ffi.Pointer<ffi.Void>>,
+  ffi.Pointer<ffi.Pointer<ffi.Void>>,
+);
+
+typedef Dart_StreamingCloseCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef _c_Dart_CreateAppAOTSnapshotAsAssemblies = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
+  ffi.Pointer<ffi.Void> next_callback_data,
+  ffi.Uint8 stripped,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+);
+
+typedef _dart_Dart_CreateAppAOTSnapshotAsAssemblies = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
+  ffi.Pointer<ffi.Void> next_callback_data,
+  int stripped,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+);
+
+typedef _c_Dart_CreateAppAOTSnapshotAsElf = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+  ffi.Pointer<ffi.Void> callback_data,
+  ffi.Uint8 stripped,
+  ffi.Pointer<ffi.Void> debug_callback_data,
+);
+
+typedef _dart_Dart_CreateAppAOTSnapshotAsElf = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+  ffi.Pointer<ffi.Void> callback_data,
+  int stripped,
+  ffi.Pointer<ffi.Void> debug_callback_data,
+);
+
+typedef _c_Dart_CreateAppAOTSnapshotAsElfs = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
+  ffi.Pointer<ffi.Void> next_callback_data,
+  ffi.Uint8 stripped,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+);
+
+typedef _dart_Dart_CreateAppAOTSnapshotAsElfs = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
+  ffi.Pointer<ffi.Void> next_callback_data,
+  int stripped,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+);
+
+typedef _c_Dart_CreateVMAOTSnapshotAsAssembly = ffi.Handle Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+  ffi.Pointer<ffi.Void> callback_data,
+);
+
+typedef _dart_Dart_CreateVMAOTSnapshotAsAssembly = Object Function(
+  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+  ffi.Pointer<ffi.Void> callback_data,
+);
+
+typedef _c_Dart_SortClasses = ffi.Handle Function();
+
+typedef _dart_Dart_SortClasses = Object Function();
+
+typedef _c_Dart_CreateAppJITSnapshotAsBlobs = ffi.Handle Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+);
+
+typedef _dart_Dart_CreateAppJITSnapshotAsBlobs = Object Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+);
+
+typedef _c_Dart_CreateCoreJITSnapshotAsBlobs = ffi.Handle Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
+  ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+);
+
+typedef _dart_Dart_CreateCoreJITSnapshotAsBlobs = Object Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
+  ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+);
+
+typedef _c_Dart_GetObfuscationMap = ffi.Handle Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
+  ffi.Pointer<ffi.IntPtr> buffer_length,
+);
+
+typedef _dart_Dart_GetObfuscationMap = Object Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
+  ffi.Pointer<ffi.IntPtr> buffer_length,
+);
+
+typedef _c_Dart_IsPrecompiledRuntime = ffi.Uint8 Function();
+
+typedef _dart_Dart_IsPrecompiledRuntime = int Function();
+
+typedef _c_Dart_DumpNativeStackTrace = ffi.Void Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _dart_Dart_DumpNativeStackTrace = void Function(
+  ffi.Pointer<ffi.Void> context,
+);
+
+typedef _c_Dart_PrepareToAbort = ffi.Void Function();
+
+typedef _dart_Dart_PrepareToAbort = void Function();
 
 typedef _c_labSound_MakeAudioDeviceList = AudioDeviceInfoList Function();
 
@@ -7584,6 +18363,14 @@ typedef _c_registerOfflineRenderCompleteSendPort = ffi.Void Function(
 );
 
 typedef _dart_registerOfflineRenderCompleteSendPort = void Function(
+  int sendPort,
+);
+
+typedef _c_registerFunctionNodeSendPort = ffi.Void Function(
+  ffi.Int32 sendPort,
+);
+
+typedef _dart_registerFunctionNodeSendPort = void Function(
   int sendPort,
 );
 
@@ -8421,6 +19208,32 @@ typedef _c_audioBusHasCheck = ffi.Int32 Function(
 
 typedef _dart_audioBusHasCheck = int Function(
   int busId,
+);
+
+typedef _c_createAudioBus = ffi.Int32 Function(
+  ffi.Int32 numberOfChannels,
+  ffi.Int32 length,
+  ffi.Int32 allocate,
+);
+
+typedef _dart_createAudioBus = int Function(
+  int numberOfChannels,
+  int length,
+  int allocate,
+);
+
+typedef _c_AudioBus_setChannelMemory = ffi.Void Function(
+  ffi.Int32 busId,
+  ffi.Int32 channelIndex,
+  ffi.Pointer<ffi.Float> storage,
+  ffi.Int32 length,
+);
+
+typedef _dart_AudioBus_setChannelMemory = void Function(
+  int busId,
+  int channelIndex,
+  ffi.Pointer<ffi.Float> storage,
+  int length,
 );
 
 typedef _c_AudioBus_numberOfChannels = ffi.Int32 Function(
@@ -9555,10 +20368,12 @@ typedef _dart_PolyBLEPNode_frequency = int Function(
 
 typedef _c_createDelayNode = ffi.Int32 Function(
   ffi.Pointer<ffi.Void> context,
+  ffi.Double maxDelayTime,
 );
 
 typedef _dart_createDelayNode = int Function(
   ffi.Pointer<ffi.Void> context,
+  double maxDelayTime,
 );
 
 typedef _c_DelayNode_delayTime = ffi.Int32 Function(
@@ -10581,7 +21396,7 @@ typedef _dart_ClipNode_bVal = int Function(
   int nodeId,
 );
 
-typedef _typedefC_2 = ffi.Void Function(
+typedef _typedefC_1 = ffi.Void Function(
   ffi.Int32,
   ffi.Int32,
   ffi.Pointer<ffi.Float>,
@@ -10589,19 +21404,21 @@ typedef _typedefC_2 = ffi.Void Function(
 );
 
 typedef _c_setFunctionNodeChannelFn = ffi.Void Function(
-  ffi.Pointer<ffi.NativeFunction<_typedefC_2>> fn,
+  ffi.Pointer<ffi.NativeFunction<_typedefC_1>> fn,
 );
 
 typedef _dart_setFunctionNodeChannelFn = void Function(
-  ffi.Pointer<ffi.NativeFunction<_typedefC_2>> fn,
+  ffi.Pointer<ffi.NativeFunction<_typedefC_1>> fn,
 );
 
 typedef _c_createFunctionNode = ffi.Int32 Function(
   ffi.Pointer<ffi.Void> context,
+  ffi.Int32 channels,
 );
 
 typedef _dart_createFunctionNode = int Function(
   ffi.Pointer<ffi.Void> context,
+  int channels,
 );
 
 typedef _c_FunctionNode_now = ffi.Double Function(
@@ -10620,6 +21437,58 @@ typedef _dart_FunctionNode_setFunction = void Function(
   int nodeId,
 );
 
-typedef _typedefC_1 = ffi.Void Function(
+typedef Dart_OnNewCodeCallback = ffi.Void Function(
+  ffi.Pointer<Dart_CodeObserver>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Uint64,
+  ffi.Uint64,
+);
+
+typedef Dart_IsolateGroupCreateCallback = ffi.Pointer<_Dart_Isolate> Function(
+  ffi.Pointer<ffi.Int8>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Pointer<Dart_IsolateFlags>,
+  ffi.Pointer<ffi.Void>,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>>,
+);
+
+typedef Dart_InitializeIsolateCallback = ffi.Uint8 Function(
+  ffi.Pointer<ffi.Pointer<ffi.Void>>,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>>,
+);
+
+typedef Dart_IsolateGroupCleanupCallback = ffi.Void Function(
   ffi.Pointer<ffi.Void>,
 );
+
+typedef Dart_ThreadExitCallback = ffi.Void Function();
+
+typedef Dart_FileOpenCallback = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Int8>,
+  ffi.Uint8,
+);
+
+typedef Dart_FileReadCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+  ffi.Pointer<ffi.IntPtr>,
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef Dart_FileWriteCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+  ffi.IntPtr,
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef Dart_FileCloseCallback = ffi.Void Function(
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef Dart_EntropySource = ffi.Uint8 Function(
+  ffi.Pointer<ffi.Uint8>,
+  ffi.IntPtr,
+);
+
+typedef Dart_GetVMServiceAssetsArchive = ffi.Handle Function();

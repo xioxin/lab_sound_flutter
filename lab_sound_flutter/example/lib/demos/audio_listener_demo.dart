@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lab_sound_flutter/lab_sound_flutter.dart';
+import 'package:lab_sound_flutter/lab_sound_flutter.dart'
+    hide audioBusFromAsset;
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';
+
+Future<AudioBus> audioBusFromAsset(String assetName,
+    {String extension = '',
+    AssetBundle? bundle,
+    String? package,
+    String? debugName,
+    bool mixToMono = false}) async {
+  String keyName = package == null ? assetName : 'packages/$package/$assetName';
+  final AssetBundle chosenBundle = bundle ?? rootBundle;
+  final asset = await chosenBundle.load(keyName);
+  print("AudioBus.fromBuffer");
+  return await AudioBus.fromBuffer(asset.buffer.asUint8List(),
+      extension: extension,
+      debugName: debugName ?? keyName,
+      mixToMono: mixToMono);
+}
 
 class AudioListenerDemo extends StatefulWidget {
   const AudioListenerDemo({Key? key}) : super(key: key);
@@ -36,9 +54,13 @@ class _AudioListenerDemoState extends State<AudioListenerDemo> {
     pannerNode = PannerNode(ctx);
     audioSample.connect(pannerNode);
     pannerNode.connect(ctx.destination);
+    print("audioBusFromAsset stereo-music-clip.wav");
     audioBus = await audioBusFromAsset('assets/stereo-music-clip.wav');
-    audioSample.setBus(audioBus!);
-    setState(() {});
+    print("[OK]audioBusFromAsset stereo-music-clip.wav");
+
+    setState(() {
+      audioSample.setBus(audioBus!);
+    });
   }
 
   @override

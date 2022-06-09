@@ -8,7 +8,7 @@ import 'package:open_file/open_file.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 double randomFloat(double min, double max) {
-  return Random().nextDouble()* (max - min) + min;
+  return Random().nextDouble() * (max - min) + min;
 }
 
 List<AudioStreamConfig?> getDefaultAudioDeviceConfiguration(
@@ -48,8 +48,7 @@ List<AudioStreamConfig?> getDefaultAudioDeviceConfiguration(
   return [inputConfig, outputConfig];
 }
 
-
-Future<AudioBus> makeBusFromSampleFile(String path) async{
+Future<AudioBus> makeBusFromSampleFile(String path) async {
   final tempDir = await getTemporaryDirectory();
   final file = File(tempDir.path + '/' + path);
   await file.writeAsBytes(
@@ -78,7 +77,7 @@ class ExSimple {
 
     oscillator.frequency.setValue(440);
     oscillator.setType(OscillatorType.sine);
-    oscillator.start(when: 0);
+    oscillator.start(0);
 
     await Future.delayed(Duration(seconds: 6));
 
@@ -89,7 +88,7 @@ class ExSimple {
 class ExSimple2 {
   play() async {
     final defaultAudioDeviceConfigurations =
-    getDefaultAudioDeviceConfiguration();
+        getDefaultAudioDeviceConfiguration();
     final context = AudioContext(
         outputConfig: defaultAudioDeviceConfigurations.last,
         inputConfig: defaultAudioDeviceConfigurations.first);
@@ -107,7 +106,7 @@ class ExSimple2 {
 
     oscillator.frequency.value = 440;
     oscillator.type = OscillatorType.sine;
-    oscillator.start(when: 0);
+    oscillator.start(0);
 
     await Future.delayed(Duration(seconds: 6));
 
@@ -118,14 +117,16 @@ class ExSimple2 {
 class ExOscPop {
   play() async {
     final defaultAudioDeviceConfigurations =
-    getDefaultAudioDeviceConfiguration();
-    print("defaultAudioDeviceConfigurations: $defaultAudioDeviceConfigurations");
+        getDefaultAudioDeviceConfiguration();
+    print(
+        "defaultAudioDeviceConfigurations: $defaultAudioDeviceConfigurations");
     final context = AudioContext(
         outputConfig: defaultAudioDeviceConfigurations.last,
         inputConfig: defaultAudioDeviceConfigurations.first);
 
     final oscillator = OscillatorNode(context);
-    final recorder = RecorderNode.fromConfig(context, defaultAudioDeviceConfigurations.last!);
+    final recorder = RecorderNode.fromConfig(
+        context, defaultAudioDeviceConfigurations.last!);
     final gain = GainNode(context);
 
     gain.gain.value = 1;
@@ -138,10 +139,9 @@ class ExOscPop {
     recorder.startRecording();
     gain.connect(recorder);
 
-    for (double i = 0; i < 5.0; i += 1.0)
-    {
-      oscillator.start(when: 0);
-      oscillator.stop(when: 0.5);
+    for (double i = 0; i < 5.0; i += 1.0) {
+      oscillator.start(0);
+      oscillator.stop(0.5);
       await Future.delayed(Duration(seconds: 1));
     }
 
@@ -150,7 +150,7 @@ class ExOscPop {
 
     final tempDir = await getTemporaryDirectory();
     final file = File(tempDir.path + '/ex_osc_pop.wav');
-    if(file.existsSync()) file.deleteSync();
+    if (file.existsSync()) file.deleteSync();
 
     recorder.writeRecordingToWav(file.path);
     OpenFile.open(file.path);
@@ -163,7 +163,7 @@ class ExOscPop {
 class ExPlaybackEvents {
   play() async {
     final defaultAudioDeviceConfigurations =
-    getDefaultAudioDeviceConfiguration();
+        getDefaultAudioDeviceConfiguration();
     final context = AudioContext(
         outputConfig: defaultAudioDeviceConfigurations.last,
         inputConfig: defaultAudioDeviceConfigurations.first);
@@ -186,11 +186,13 @@ class ExPlaybackEvents {
 
 class ExOfflineRendering {
   play() async {
-
-    final offlineConfig = AudioStreamConfig(deviceIndex: 0, desiredSampleRate: 48000, desiredChannels: 2);
+    final offlineConfig = AudioStreamConfig(
+        deviceIndex: 0, desiredSampleRate: 48000, desiredChannels: 2);
     final int recordingTimeMs = 1000;
 
-    final context = AudioContext.offline(outputConfig: offlineConfig, duration: Duration(milliseconds: recordingTimeMs));
+    final context = AudioContext.offline(
+        outputConfig: offlineConfig,
+        duration: Duration(milliseconds: recordingTimeMs));
 
     final oscillator = OscillatorNode(context);
     final musicClip = await makeBusFromSampleFile("stereo-music-clip.wav");
@@ -221,10 +223,9 @@ class ExOfflineRendering {
     recorder.stopRecording();
     context.removeAutomaticPullNode(recorder);
 
-
     final tempDir = await getTemporaryDirectory();
     final file = File(tempDir.path + '/ex_osc_pop.wav');
-    if(file.existsSync()) file.deleteSync();
+    if (file.existsSync()) file.deleteSync();
 
     recorder.writeRecordingToWav(file.path);
 
@@ -239,7 +240,7 @@ class ExOfflineRendering {
 class ExTremolo {
   play() async {
     final defaultAudioDeviceConfigurations =
-    getDefaultAudioDeviceConfiguration();
+        getDefaultAudioDeviceConfiguration();
     final context = AudioContext(
         outputConfig: defaultAudioDeviceConfigurations.last,
         inputConfig: defaultAudioDeviceConfigurations.first);
@@ -269,7 +270,7 @@ class ExTremolo {
 class ExFrequencyModulation {
   play() async {
     final defaultAudioDeviceConfigurations =
-    getDefaultAudioDeviceConfiguration();
+        getDefaultAudioDeviceConfiguration();
     final context = AudioContext(
         outputConfig: defaultAudioDeviceConfigurations.last,
         inputConfig: defaultAudioDeviceConfigurations.first);
@@ -282,7 +283,6 @@ class ExFrequencyModulation {
     final signalGain = GainNode(context);
     final feedbackTap = GainNode(context);
     final chainDelay = DelayNode(context);
-
 
     modulator.type = OscillatorType.square;
     modulator.start();
@@ -305,7 +305,7 @@ class ExFrequencyModulation {
     chainDelay.connect(signalGain);
     signalGain.connect(context.device);
     double nowInMs = 0;
-    while (true){
+    while (true) {
       final carrierFreq = randomFloat(80, 440);
       osc.frequency.value = carrierFreq;
 
@@ -336,12 +336,9 @@ class ExFrequencyModulation {
 // In most examples, nodes are not disconnected during playback. This sample shows how nodes
 // can be arbitrarily connected/disconnected during runtime while the graph is live.
 class ExRuntimeGraphUpdate {
-
-
   play() async {
-
     final defaultAudioDeviceConfigurations =
-    getDefaultAudioDeviceConfiguration();
+        getDefaultAudioDeviceConfiguration();
     final context = AudioContext(
         outputConfig: defaultAudioDeviceConfigurations.last,
         inputConfig: defaultAudioDeviceConfigurations.first);
@@ -383,7 +380,6 @@ class ExRuntimeGraphUpdate {
     await Future.delayed(Duration(milliseconds: 200));
     context.dispose();
   }
-
 }
 
 class ExMicrophone {
@@ -393,7 +389,8 @@ class ExMicrophone {
     }
     final context = AudioContext(
         outputConfig: AudioStreamConfig(desiredChannels: 0),
-        inputConfig: AudioStreamConfig(deviceIndex: 0, desiredChannels: 1, desiredSampleRate: 44100));
+        inputConfig: AudioStreamConfig(
+            deviceIndex: 0, desiredChannels: 1, desiredSampleRate: 44100));
     final input = context.makeAudioHardwareInputNode();
 
     final recorder = RecorderNode(context, 1);
@@ -409,7 +406,7 @@ class ExMicrophone {
 
     final tempDir = await getTemporaryDirectory();
     final file = File(tempDir.path + '/ExMicrophone.wav');
-    if(file.existsSync()) file.deleteSync();
+    if (file.existsSync()) file.deleteSync();
     recorder.writeRecordingToWav(file.path);
     final bus = recorder.createBusFromRecording();
     print("bus.length: ${bus!.length}");
@@ -419,6 +416,7 @@ class ExMicrophone {
     context.dispose();
   }
 }
+
 class ExMicrophoneLoopback {
   play() async {
     if (!await Permission.microphone.request().isGranted) {
@@ -430,11 +428,112 @@ class ExMicrophoneLoopback {
     // final defaultAudioDeviceConfigurations = getDefaultAudioDeviceConfiguration(true);
     // print("defaultAudioDeviceConfigurations: $defaultAudioDeviceConfigurations");
     final context = AudioContext(
-        outputConfig: AudioStreamConfig(desiredChannels: 2, desiredSampleRate: 48000),
-        inputConfig: AudioStreamConfig(desiredChannels: 1, desiredSampleRate: 48000));
+        outputConfig:
+            AudioStreamConfig(desiredChannels: 2, desiredSampleRate: 48000),
+        inputConfig:
+            AudioStreamConfig(desiredChannels: 1, desiredSampleRate: 48000));
     final input = context.makeAudioHardwareInputNode();
     input.connect(context.device);
     await Future.delayed(Duration(seconds: 10));
+    context.dispose();
+  }
+}
+
+class RedalertSynthesis {
+  play() async {
+    final context = AudioContext(
+        outputConfig:
+            AudioStreamConfig(desiredChannels: 2, desiredSampleRate: 48000));
+    final sweep = FunctionNode(context);
+    sweep.setFunction((context, me, channel, values) {
+      print("channel, values: ${values}");
+      final dt = 1.0 / context.sampleRate;
+      double now = me.now % 1.2;
+      for (int i = 0; i < values.length; i++) {
+        if (now > 0.9) {
+          values[i] = 487.0 + 360.0;
+        } else {
+          values[i] = sqrt(now * 1.0 / 0.9) * 487.0 + 360.0;
+        }
+        now += dt;
+      }
+    });
+    sweep.start();
+
+    final outputGainFunction = FunctionNode(context);
+    outputGainFunction.setFunction((context, me, channel, values) {
+      print("channel, values: ${values}");
+      final dt = 1.0 / context.sampleRate;
+      double now = me.now % 1.2;
+      for (int i = 0; i < values.length; i++) {
+        if (now > 0.9) {
+          values[i] = 0.0;
+        } else {
+          values[i] = 0.333;
+        }
+        now += dt;
+      }
+    });
+    outputGainFunction.start();
+
+    final osc = OscillatorNode(context);
+    osc.setType(OscillatorType.sawtooth);
+    osc.frequency.setValue(220);
+    osc.start();
+
+    final oscGain = GainNode(context);
+    oscGain.gain.setValue(0.5);
+
+    final resonator = OscillatorNode(context);
+    resonator.setType(OscillatorType.sine);
+    resonator.frequency.setValue(220);
+    resonator.start();
+
+    final resonatorGain = GainNode(context);
+    resonatorGain.gain.setValue(0.0);
+
+    final resonanceSum = GainNode(context);
+    resonanceSum.gain.setValue(0.5);
+
+    context.connectParam(osc.frequency, sweep, 0);
+    context.connectParam(resonator.frequency, osc, 0);
+
+    context.connect(oscGain, osc, 0, 0);
+    context.connect(resonanceSum, oscGain, 0, 0);
+    context.connect(resonatorGain, resonator, 0, 0);
+    context.connect(resonanceSum, resonatorGain, 0, 0);
+
+    final delaySum = GainNode(context);
+    delaySum.gain.setValue(0.2);
+
+    final delaysTime = [0.015, 0.022, 0.035, 0.024, 0.011];
+    List<DelayNode> delay = delaysTime.map((time) {
+      final node = DelayNode(context, maxDelayTime: 0.04);
+      node.delayTime.setValue(time);
+      context.connect(node, resonanceSum);
+      context.connect(delaySum, node);
+      return node;
+    }).toList();
+
+    final filterSum = GainNode(context);
+    filterSum.gain.setValue(0.2);
+
+    context.connect(filterSum, delaySum);
+
+    final centerFrequencies = [740.0, 1400.0, 1500.0, 1600.0];
+    final filter = centerFrequencies.map((frequencie) {
+      final node = BiquadFilterNode(context);
+      node.frequency.setValue(frequencie);
+      node.q.setValue(1.2);
+      context.connect(node, delaySum);
+      context.connect(filterSum, node);
+    });
+
+    context.connectParam(filterSum.gain, outputGainFunction, 0);
+    context.connect(context.device, filterSum, 0, 0);
+
+    await Future.delayed(Duration(seconds: 10));
+
     context.dispose();
   }
 }

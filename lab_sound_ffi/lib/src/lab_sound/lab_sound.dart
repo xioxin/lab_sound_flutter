@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 import 'package:lab_sound_ffi/lab_sound_ffi.dart';
+import 'package:lab_sound_ffi/src/lab_sound/function_node.dart';
 import '../generated_bindings.dart';
 import '../extensions/ffi_string.dart';
 import 'dart:async';
@@ -148,22 +149,17 @@ class LabSound extends LabSoundBind {
     }
   }
 
-  LabSound._() : super(_loadDynamicLibrary()) {
-    var nativeInited = InitDartApiDL(NativeApi.initializeApiDLData);
-    // According to https://dart-review.googlesource.com/c/sdk/+/151525
-    // flutter-1.24.0-10.1.pre+ has `DART_API_DL_MAJOR_VERSION = 2`
-    assert(nativeInited == 0, 'DART_API_DL_MAJOR_VERSION != 2');
-    audioBusSubscription = _audioBusReceivePort.listen(_handleAudioBusStatus);
-    registerDecodeAudioSendPort(_audioBusReceivePort.sendPort.nativePort);
-    audioSampleOnEndedSubscription =
-        _audioSampleOnEndedReceivePort.listen(_handleAudioSampleOnEnded);
-    registerAudioSampleOnEndedSendPort(
-        _audioSampleOnEndedReceivePort.sendPort.nativePort);
-
-    offlineRenderCompleteSubscription =
-        _offlineRenderCompleteReceivePort.listen(_handleOfflineRenderComplete);
-    registerOfflineRenderCompleteSendPort(
-        _offlineRenderCompleteReceivePort.sendPort.nativePort);
+  static void functionNodeChannel(
+      int nodeId, int channel, Pointer<Float> values, int bufferSize) {
+    print("nodeId: $nodeId, bufferSize: $bufferSize, channel: $channel");
+    if (nodeId <= 0) return;
+    final node = LabSound().nodeMap[nodeId];
+    if (node != null && node is FunctionNode) {
+      if (node.fn != null) {
+        node.fn!(
+            node.ctx, node, channel, FunctionNodeBuffer(bufferSize, values));
+      }
+    }
   }
 
   List<AudioDeviceInfo> makeAudioDeviceList() {
@@ -191,10 +187,10 @@ class LabSound extends LabSoundBind {
   AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
       labSound_GetDefaultInputAudioDeviceIndex();
 
-  Set<AudioNode> allNodes = {};
+  Map<int, AudioNode> nodeMap = {};
 
   printSurvivingNodes() {
-    for (var node in allNodes) {
+    for (var node in nodeMap.values) {
       if (!node.released) {
         print(node);
       }
@@ -204,6 +200,7 @@ class LabSound extends LabSoundBind {
   final ReceivePort _audioBusReceivePort = ReceivePort();
   final ReceivePort _audioSampleOnEndedReceivePort = ReceivePort();
   final ReceivePort _offlineRenderCompleteReceivePort = ReceivePort();
+  final ReceivePort _functionNodeSendPort = ReceivePort();
 
   _parseAudioDeviceState(dynamic event) {
     return event;
@@ -212,6 +209,7 @@ class LabSound extends LabSoundBind {
   StreamSubscription? audioBusSubscription;
   StreamSubscription? audioSampleOnEndedSubscription;
   StreamSubscription? offlineRenderCompleteSubscription;
+  StreamSubscription? functionNodeSubscription;
 
   final StreamController<AudioBusStatus> _onAudioBusStatusController =
       StreamController.broadcast();
@@ -240,7 +238,6 @@ class LabSound extends LabSoundBind {
 
   void _handleAudioSampleOnEnded(dynamic message) {
     if (message is List && message.length == 1) {
-      print('onEnded: $message');
       _onAudioSampleEndController.add(AudioSampleEndMsg(message[0]));
     }
   }
@@ -252,23 +249,80 @@ class LabSound extends LabSoundBind {
     }
   }
 
-  factory LabSound() => _sharedInstance();
+  void _handleFunctionNode(dynamic message) {
+    if (message is List && message.length == 4) {
+      final nodeId = message[0] as int;
+      if (nodeId <= 0) return;
+      final node = LabSound().nodeMap[nodeId];
+      if (node != null && node is FunctionNode && !node.released) {
+        if (node.fn != null) {
+          final channel = message[1] as int;
+          final bufferPointer = Pointer<Float>.fromAddress(message[2] as int);
+          final bufferSize = message[3] as int;
+          print(
+              '_handleFunctionNode: $nodeId $channel $bufferPointer $bufferSize');
+          final buffer = FunctionNodeBuffer(bufferSize, bufferPointer);
+          print("buffer: $buffer");
+          node.fn!(node.ctx, node, channel, buffer);
+        }
+      }
+    }
+  }
+
   static LabSound? _instance;
 
   static LabSound _sharedInstance() {
-    _instance ??= LabSound._();
+    _instance ??= LabSound._init();
     return _instance!;
+  }
+
+  factory LabSound() => _sharedInstance();
+
+  LabSound._init() : super(_loadDynamicLibrary()) {
+    print("LabSound init");
+    var nativeInited = InitDartApiDL(NativeApi.initializeApiDLData);
+    // According to https://dart-review.googlesource.com/c/sdk/+/151525
+    // flutter-1.24.0-10.1.pre+ has `DART_API_DL_MAJOR_VERSION = 2`
+    assert(nativeInited == 0, 'DART_API_DL_MAJOR_VERSION != 2');
+    audioBusSubscription = _audioBusReceivePort.listen(_handleAudioBusStatus);
+    registerDecodeAudioSendPort(_audioBusReceivePort.sendPort.nativePort);
+    audioSampleOnEndedSubscription =
+        _audioSampleOnEndedReceivePort.listen(_handleAudioSampleOnEnded);
+    registerAudioSampleOnEndedSendPort(
+        _audioSampleOnEndedReceivePort.sendPort.nativePort);
+
+    offlineRenderCompleteSubscription =
+        _offlineRenderCompleteReceivePort.listen(_handleOfflineRenderComplete);
+    registerOfflineRenderCompleteSendPort(
+        _offlineRenderCompleteReceivePort.sendPort.nativePort);
+
+    functionNodeSubscription =
+        _functionNodeSendPort.listen(_handleFunctionNode);
+    registerFunctionNodeSendPort(_functionNodeSendPort.sendPort.nativePort);
+
+    setFunctionNodeChannelFn(
+        Pointer.fromFunction(LabSound.functionNodeChannel));
+
+    // print("RegisterClosureCallbackFP(closureCallbackPointer);");
+    // RegisterClosureCallbackFP(closureCallbackPointer);
+    // // C holds on to this closure through a `Dart_PersistenHandle`.
+    // print("RegisterClosureCallback(closure);");
+    // RegisterClosureCallback(closure);
+    // print("InvokeClosureCallback;");
+    // InvokeClosureCallback();
+    // print("ReleaseClosureCallback;");
+    // ReleaseClosureCallback();
   }
 
   static dispose() {
     if (_instance != null) {
-      for (var element in _instance!.allNodes) {
+      for (var element in _instance!.nodeMap.values) {
         element.dispose();
       }
       _instance!.audioBusSubscription?.cancel();
       _instance!.audioSampleOnEndedSubscription?.cancel();
       _instance!.offlineRenderCompleteSubscription?.cancel();
-
+      _instance!.functionNodeSubscription?.cancel();
       _instance = null;
     }
   }
