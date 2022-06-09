@@ -316,15 +316,13 @@ class _DebugGraphState extends State<DebugGraph> {
   SugiyamaConfiguration builder = SugiyamaConfiguration();
 
   buildNode() {
-    // print(LabSound().allNodes);
-
     graph.edges.clear();
     graph.nodes.clear();
-    for (var element in LabSound().allNodes) {
+    for (var element in LabSound().nodeMap.values) {
       if (element.released) return;
       final node = Node.Id(element);
       for (var dstNode in element.linked) {
-        if (dstNode.released) return;
+        if (dstNode is AudioNode && dstNode.released) return;
         graph.addEdge(node, Node.Id(dstNode));
         if (element is AudioSampleNode) {
           final resource = element.resource;

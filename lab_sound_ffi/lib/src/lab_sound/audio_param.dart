@@ -18,6 +18,7 @@ class AudioParam {
 
   setValue(double value) {
     LabSound().AudioParam_setValue(nodeId, paramId, value);
+    resetSmoothedValue();
   }
   setValueCurveAtTime(List<double> values, double time, double duration) {
     //todo

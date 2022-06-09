@@ -53,3 +53,12 @@ example/ios/Podfile.lock
 
 
 pubspec.lock
+
+
+windows/LabSoundBridge.dll
+macos/LabSoundBridge_macos_x64.tar.gz
+macos/LabSoundBridge.framework/
+linux/libLabSoundBridge.so
+ios/LabSoundBridge_ios.tar.gz
+ios/LabSoundBridge.framework
+android/src/main/jniLibs

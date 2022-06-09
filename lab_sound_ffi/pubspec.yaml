@@ -34,7 +34,7 @@ ffigen:
   #    'uint64_t': 'Uint64'
   #    'uint8_t': 'Uint8'
   preamble: |
-    // ignore_for_file: non_constant_identifier_names
+    // ignore_for_file: non_constant_identifier_names, unused_element, unused_field, camel_case_types, constant_identifier_names
   #   include-directives:
   #     - 'bridging/**/include/**'
   # compiler-opts: '-I./bridging/LabSound/include'

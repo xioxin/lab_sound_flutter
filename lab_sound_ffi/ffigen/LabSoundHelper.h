@@ -2,6 +2,7 @@
 #include "stdint.h"
 #include "string.h"
 #include <stdbool.h>
+#include "./dart_api/dart_api.h"
 
 #define AudioContext void
 #define AudioChannel void
@@ -43,6 +44,8 @@ void registerDecodeAudioSendPort(int sendPort);
 void registerAudioSampleOnEndedSendPort(int sendPort);
 
 void registerOfflineRenderCompleteSendPort(int sendPort);
+
+void registerFunctionNodeSendPort(int sendPort);
 
 ////////////////////
 /// AudioContext ///
@@ -274,6 +277,15 @@ int makeBusFromFile(const char *file, int mixToMono, float targetSampleRate);
 int makeBusFromMemory(const uint8_t* buffer, const int bufferLen, const char *extension, int mixToMono);
 
 int audioBusHasCheck(int busId);
+
+
+// allocate indicates whether or not to initially have the AudioChannels created with managed storage.
+// Normal usage is to pass true here, in which case the AudioChannels will memory-manage their own storage.
+// If allocate is false then setChannelMemory() has to be called later on for each channel before the AudioBus is useable...
+int createAudioBus(int numberOfChannels, int length, int allocate);
+
+// Tells the given channel to use an externally allocated buffer.
+int AudioBus_setChannelMemory(int busId, int channelIndex, float * storage, int length);
 
 // Channels
 int AudioBus_numberOfChannels(int busIndex);
@@ -593,7 +605,7 @@ int PolyBLEPNode_frequency(int nodeId);
 /// DelayNode ///
 /////////////////
 
-int createDelayNode(AudioContext* context);
+int createDelayNode(AudioContext* context, double maxDelayTime);
 
 int DelayNode_delayTime(int nodeId);
 
@@ -823,6 +835,12 @@ int ClipNode_bVal(int nodeId);
 //////////////////////
 
 void setFunctionNodeChannelFn(void (*fn)(int nodeId, int channel, float * values, int bufferSize));
-int createFunctionNode(AudioContext* context);
+int createFunctionNode(AudioContext* context, int channels);
 double FunctionNode_now(int nodeId);
 void FunctionNode_setFunction(int nodeId);
+
+// // test
+// void RegisterClosureCallbackFP(void (*callback)(Dart_Handle));
+// void RegisterClosureCallback(Dart_Handle h);
+// void InvokeClosureCallback();
+// void ReleaseClosureCallback();

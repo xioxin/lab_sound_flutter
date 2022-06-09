@@ -146,7 +146,7 @@ class AudioContext {
       this, LabSound().AudioContext_makeAudioHardwareInputNode(pointer));
 
   dispose() {
-    for (var node in LabSound().allNodes) {
+    for (var node in LabSound().nodeMap.values) {
       if (!node.released && node.ctx == this) {
         node.dispose();
       }
@@ -154,4 +154,11 @@ class AudioContext {
     _onRunning.close();
     LabSound().AudioContext_releaseContext(pointer);
   }
+
+  OscillatorNode createOscillator() => OscillatorNode(this);
+
+  GainNode createGain() => GainNode(this);
+
+  BiquadFilterNode createBiquadFilter() => BiquadFilterNode(this);
+
 }

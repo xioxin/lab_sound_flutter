@@ -54,12 +54,12 @@ class _DialState extends State<Dial> {
           onTapDown: (TapDownDetails details) {
             oscillatorLow = OscillatorNode(audioContext);
             oscillatorLow?.frequency.setValue(xHz[x]);
-            oscillatorLow?.frequency.resetSmoothedValue();
+            // oscillatorLow?.frequency.resetSmoothedValue();
             oscillatorLow?.connect(dynamicsCompressorNode);
             oscillatorLow?.start();
             oscillatorHigh = OscillatorNode(audioContext);
             oscillatorHigh?.frequency.setValue(yHz[y]);
-            oscillatorHigh?.frequency.resetSmoothedValue();
+            // oscillatorHigh?.frequency.resetSmoothedValue();
             oscillatorHigh?.connect(dynamicsCompressorNode);
             oscillatorHigh?.start();
           },
