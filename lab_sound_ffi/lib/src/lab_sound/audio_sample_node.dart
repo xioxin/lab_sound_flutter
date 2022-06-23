@@ -23,7 +23,6 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     this.resource = resource;
     if(resource.released) throw AssertionError("音频资源已被释放: $resource");
     LabSound().SampledAudioNode_setBus(nodeId, ctx.pointer, resource.resourceId);
-    this.resource!.lock(this);
   }
 
   int get cursor => LabSound().SampledAudioNode_getCursor(nodeId);
@@ -90,7 +89,6 @@ class AudioSampleNode extends AudioScheduledSourceNode {
     }
     _endedDisposeSubscription?.cancel();
     super.dispose();
-    resource?.unlock(this);
     return;
   }
 

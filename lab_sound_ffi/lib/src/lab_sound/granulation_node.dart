@@ -42,8 +42,9 @@ class GranulationNode extends AudioScheduledSourceNode {
         ctx, nodeId, LabSound().GranulationNode_grainPlaybackFreq(nodeId));
   }
 
+  AudioBus? resource;
   setGrainSource(AudioBus resource) {
-    assert(!resource.released);
+    this.resource= resource;
     LabSound().GranulationNode_setGrainSource(
         nodeId, ctx.pointer, resource.resourceId);
   }

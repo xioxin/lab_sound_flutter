@@ -73,9 +73,15 @@ class AudioSettingBus extends AudioSetting<AudioBus> {
     assert(type == AudioSettingType.Bus);
   }
 
+
+  AudioBus? resource;
+
   @override
-  setValue(AudioBus val, [bool notify = true]) => LabSound()
+  setValue(AudioBus val, [bool notify = true]) {
+    resource = val;
+    LabSound()
       .AudioSetting_setBus(nodeId, settingId, val.resourceId, notify ? 1 : 0);
+  }
 
   @override
   AudioBus get value =>
