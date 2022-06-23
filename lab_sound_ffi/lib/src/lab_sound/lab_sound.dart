@@ -153,7 +153,8 @@ class LabSound extends LabSoundBind {
       int nodeId, int channel, Pointer<Float> values, int bufferSize) {
     print("nodeId: $nodeId, bufferSize: $bufferSize, channel: $channel");
     if (nodeId <= 0) return;
-    final node = LabSound().nodeMap[nodeId];
+    final box = LabSound().nodeMap[nodeId];
+    final node = box?.target;
     if (node != null && node is FunctionNode) {
       if (node.fn != null) {
         node.fn!(
@@ -187,12 +188,12 @@ class LabSound extends LabSoundBind {
   AudioDeviceIndex getDefaultInputAudioDeviceIndex() =>
       labSound_GetDefaultInputAudioDeviceIndex();
 
-  Map<int, AudioNode> nodeMap = {};
+  Map<int, WeakReference<AudioNode>> nodeMap = {};
 
   printSurvivingNodes() {
-    for (var node in nodeMap.values) {
-      if (!node.released) {
-        print(node);
+    for (var wrNode in nodeMap.values) {
+      if (wrNode.target != null) {
+        print(wrNode.target);
       }
     }
   }
@@ -253,7 +254,8 @@ class LabSound extends LabSoundBind {
     if (message is List && message.length == 4) {
       final nodeId = message[0] as int;
       if (nodeId <= 0) return;
-      final node = LabSound().nodeMap[nodeId];
+      final box = LabSound().nodeMap[nodeId];
+      final node = box?.target;
       if (node != null && node is FunctionNode && !node.released) {
         if (node.fn != null) {
           final channel = message[1] as int;
@@ -317,7 +319,7 @@ class LabSound extends LabSoundBind {
   static dispose() {
     if (_instance != null) {
       for (var element in _instance!.nodeMap.values) {
-        element.dispose();
+        element.target?.dispose();
       }
       _instance!.audioBusSubscription?.cancel();
       _instance!.audioSampleOnEndedSubscription?.cancel();

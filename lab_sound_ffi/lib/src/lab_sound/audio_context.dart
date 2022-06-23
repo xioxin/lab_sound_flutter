@@ -147,8 +147,8 @@ class AudioContext {
 
   dispose() {
     for (var node in LabSound().nodeMap.values) {
-      if (!node.released && node.ctx == this) {
-        node.dispose();
+      if (node.target?.ctx == this) {
+        node.target?.dispose();
       }
     }
     _onRunning.close();

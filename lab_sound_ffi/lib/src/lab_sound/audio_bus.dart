@@ -10,22 +10,32 @@ import 'lab_sound.dart';
 import 'audio_channel.dart';
 
 class AudioBus {
+  static final Map<int, WeakReference<AudioBus>> busMap = {};
+
+  static final Finalizer<AudioBus> finalizer = Finalizer((bus) {
+    print('AudioBus Finalizer: $bus');
+    bus.dispose();
+  });
+
   String? debugName;
   final int resourceId;
   Set<AudioNode> usedNode = {};
   String filePath = '';
-  bool autoDispose = false;
   bool released = false;
   bool loaded = false;
   Future<AudioBus>? complete;
 
   final Map<int, Pointer> _bufferPtr = {};
 
-
   // allocate indicates whether or not to initially have the AudioChannels created with managed storage.
   // Normal usage is to pass true here, in which case the AudioChannels will memory-manage their own storage.
   // If allocate is false then setChannelMemory() has to be called later on for each channel before the AudioBus is useable...
-  AudioBus(int numberOfChannels, int length, {bool allocate = true}): resourceId = LabSound().createAudioBus(numberOfChannels, length, allocate ? 1 : 0);
+  AudioBus(int numberOfChannels, int length, {bool allocate = true})
+      : resourceId = LabSound()
+            .createAudioBus(numberOfChannels, length, allocate ? 1 : 0) {
+    finalizer.attach(this, this, detach: this);
+    busMap[resourceId] = WeakReference(this);
+  }
 
   // Tells the given channel to use an externally allocated buffer.
   setChannelMemory(int channelIndex, List<double> storage) {
@@ -34,21 +44,22 @@ class AudioBus {
     for (int i = 0; i < storage.length; i++) {
       bufferPtr[i] = storage[i];
     }
-    LabSound().AudioBus_setChannelMemory(resourceId, channelIndex, bufferPtr, storage.length);
+    LabSound().AudioBus_setChannelMemory(
+        resourceId, channelIndex, bufferPtr, storage.length);
     _bufferPtr[channelIndex] = bufferPtr;
-    if(oldPtr != null) malloc.free(oldPtr);
+    if (oldPtr != null) malloc.free(oldPtr);
   }
 
-  int get has => LabSound().audioBusHasCheck(resourceId);
+  bool get has => LabSound().audioBusHasCheck(resourceId) > 0;
 
   StreamSubscription? _statusStreamSubscription;
   AudioBus._loadByFile(this.filePath,
-      {this.autoDispose = false,
-      this.debugName,
-      bool mixToMono = false,
-      double targetSampleRate = 0.0})
+      {this.debugName, bool mixToMono = false, double targetSampleRate = 0.0})
       : resourceId = LabSound().makeBusFromFile(
             filePath.toInt8(), mixToMono ? 1 : 0, targetSampleRate) {
+    finalizer.attach(this, this, detach: this);
+    busMap[resourceId] = WeakReference(this);
+
     debugName ??= basename(filePath);
     Completer<AudioBus> _loadCompleter = Completer();
     complete = _loadCompleter.future;
@@ -62,17 +73,18 @@ class AudioBus {
       }
     });
   }
+
   AudioBus._loadByBuffer(
     Pointer<Uint8> bufferPtr,
     int bufferLen, {
     String extension = '',
-    this.autoDispose = false,
     this.debugName,
     bool mixToMono = false,
   })  : filePath = '',
         resourceId = LabSound().makeBusFromMemory(
             bufferPtr, bufferLen, extension.toInt8(), mixToMono ? 1 : 0) {
-    print('_loadByBuffer');
+    finalizer.attach(this, this, detach: this);
+    busMap[resourceId] = WeakReference(this);
 
     debugName ??= basename(filePath);
     Completer<AudioBus> _loadCompleter = Completer();
@@ -96,7 +108,6 @@ class AudioBus {
       double? targetSampleRate}) {
     debugName ??= basename(filePath);
     final bus = AudioBus._loadByFile(filePath,
-        autoDispose: autoDispose,
         debugName: debugName,
         mixToMono: mixToMono ?? false,
         targetSampleRate: targetSampleRate ?? 0.0);
@@ -114,10 +125,7 @@ class AudioBus {
       bufferPtr[i] = buffer[i];
     }
     final bus = AudioBus._loadByBuffer(bufferPtr, buffer.length,
-        extension: extension ?? '',
-        autoDispose: autoDispose,
-        debugName: debugName,
-        mixToMono: mixToMono);
+        extension: extension ?? '', debugName: debugName, mixToMono: mixToMono);
     print(' bus.complete!');
     await bus.complete!;
     print('[OK] bus.complete!');
@@ -126,21 +134,20 @@ class AudioBus {
     return bus;
   }
 
-  AudioBus.fromId(this.resourceId, {this.autoDispose = false, this.debugName})
-      : filePath = '';
-
-  lock(AudioNode node) {
-    usedNode.add(node);
+  static AudioBus fromId(int resourceId, {String? debugName}) {
+    final bus = busMap[resourceId]?.target;
+    if (bus != null) {
+      return bus;
+    }
+    if (LabSound().audioBusHasCheck(resourceId) > 0) {
+      return AudioBus._fromId(resourceId, debugName: debugName);
+    }
+    throw Exception("AudioBus Resource not exist");
   }
 
-  unlock(AudioNode node) {
-    usedNode.remove(node);
-    print(
-        "$this 节点解锁 ${usedNode.length}, 剩余: $usedNode, audoDispose: $autoDispose");
-    if (usedNode.isEmpty && autoDispose) {
-      print("$this 销毁！！！");
-      dispose();
-    }
+  AudioBus._fromId(this.resourceId, {this.debugName}) : filePath = '' {
+    finalizer.attach(this, this, detach: this);
+    busMap[resourceId] = WeakReference(this);
   }
 
   dispose() {
