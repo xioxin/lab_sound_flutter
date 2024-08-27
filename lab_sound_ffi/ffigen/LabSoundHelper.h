@@ -479,14 +479,14 @@ void PannerNode_dopplerRate(int nodeId, AudioContext* context);
 ///////////////////////////
 /// ChannelSplitterNode ///
 ///////////////////////////
-int createChannelSplitterNode(AudioContext* context);
+int createChannelSplitterNode(AudioContext* context, int numberOfOutputs);
 void ChannelSplitterNode_addOutputs(int nodeId, int n);
 
 /////////////////////////
 /// ChannelMergerNode ///
 /////////////////////////
 
-int createChannelMergerNode(AudioContext* context);
+int createChannelMergerNode(AudioContext* context, int numberOfInputs);
 void ChannelMergerNode_addInputs(int nodeId, int n);
 void ChannelMergerNode_setOutputChannelCount(int nodeId, int n);
 

@@ -306,7 +306,7 @@ class _DebugGraphState extends State<DebugGraph> {
                 width: 200,
                 child: DefaultTextStyle(
                   child: labAudioWidget(node),
-                  style: Theme.of(context).textTheme.caption!,
+                  style: Theme.of(context).textTheme.labelMedium!,
                 )),
           ],
         ));
@@ -316,30 +316,30 @@ class _DebugGraphState extends State<DebugGraph> {
   SugiyamaConfiguration builder = SugiyamaConfiguration();
 
   buildNode() {
-    graph.edges.clear();
-    graph.nodes.clear();
-    for (var element in LabSound().nodeMap.values) {
-      if (element.released) return;
-      final node = Node.Id(element);
-      for (var dstNode in element.linked) {
-        if (dstNode is AudioNode && dstNode.released) return;
-        graph.addEdge(node, Node.Id(dstNode));
-        if (element is AudioSampleNode) {
-          final resource = element.resource;
-          if (resource != null) {
-            if (resource.released) return;
-            graph.addEdge(Node.Id(resource), node);
-          }
-        }
-        if (element is ConvolverNode) {
-          final resource = element.impulse;
-          if (resource != null) {
-            if (resource.released) return;
-            graph.addEdge(Node.Id(resource), node);
-          }
-        }
-      }
-    }
+    // graph.edges.clear();
+    // graph.nodes.clear();
+    // for (var element in LabSound().nodeMap.values) {
+    //   if (element.released) return;
+    //   final node = Node.Id(element);
+    //   for (var dstNode in element.linked) {
+    //     if (dstNode is AudioNode && dstNode.released) return;
+    //     graph.addEdge(node, Node.Id(dstNode));
+    //     if (element is AudioSampleNode) {
+    //       final resource = element.resource;
+    //       if (resource != null) {
+    //         if (resource.released) return;
+    //         graph.addEdge(Node.Id(resource), node);
+    //       }
+    //     }
+    //     if (element is ConvolverNode) {
+    //       final resource = element.impulse;
+    //       if (resource != null) {
+    //         if (resource.released) return;
+    //         graph.addEdge(Node.Id(resource), node);
+    //       }
+    //     }
+    //   }
+    // }
   }
 
   check() {

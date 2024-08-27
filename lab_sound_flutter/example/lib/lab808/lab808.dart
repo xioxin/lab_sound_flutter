@@ -1,17 +1,11 @@
-import 'dart:async';
-import 'dart:ffi';
-import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/lab808/tone/hi-hat.dart';
 import 'package:lab_sound_flutter_example/lab808/tone/kick.dart';
 import 'package:lab_sound_flutter_example/lab808/tone/snare.dart';
 import 'package:lab_sound_flutter_example/lab808/tone/tone.dart';
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';
-import 'package:path_provider/path_provider.dart';
 
 import 'tone/test.dart';
 

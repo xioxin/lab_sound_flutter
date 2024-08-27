@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   lab_sound_ffi: 0.0.1
-  open_file: ^3.2.1
-  graphview: ^1.1.1
+  open_file: ^3.3.2
+  graphview: ^1.2.0
   
 dev_dependencies:
   flutter_test:

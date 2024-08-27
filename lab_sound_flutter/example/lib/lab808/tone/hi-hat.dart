@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:lab_sound_flutter/lab_sound_flutter.dart';
 import 'package:lab_sound_flutter_example/lab808/tone/tone.dart';
 

@@ -21,6 +21,6 @@ class RecorderNode extends AudioNode {
   }
 
   bool writeRecordingToWav(String filenameWithWavExtension, {bool mixToMono = false}) {
-    return LabSound().RecorderNode_writeRecordingToWav(nodeId, filenameWithWavExtension.toInt8(), mixToMono ? 1 : 0) > 0;
+    return LabSound().RecorderNode_writeRecordingToWav(nodeId, filenameWithWavExtension.toChar(), mixToMono ? 1 : 0) > 0;
   }
 }

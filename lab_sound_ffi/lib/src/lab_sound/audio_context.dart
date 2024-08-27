@@ -113,7 +113,7 @@ class AudioContext {
       AudioNode destinationNode, String parameterName, AudioNode driverNode,
       [int index = 0]) {
     LabSound().AudioContext_connectParamByName(pointer, destinationNode.nodeId,
-        parameterName.toInt8(), driverNode.nodeId, index);
+        parameterName.toChar(), driverNode.nodeId, index);
   }
 
   disconnectParam(AudioParam param, AudioNode driverNode, [int index = 0]) {

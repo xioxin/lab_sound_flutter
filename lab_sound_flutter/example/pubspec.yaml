@@ -7,14 +7,15 @@ version: 0.0.1
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=3.0.2 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
 
-  permission_handler: 9.1.0
-  path_provider: ^2.0.1
+  permission_handler: ^11.3.1
+  path_provider: ^2.1.3
+  flutter_shaders: ^0.1.2
   lab_sound_flutter:
     # When depending on this package from a real application you should use:
     #   lab_sound_flutter: ^x.y.z
@@ -29,7 +30,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  open_file: ^3.2.1
+  open_file: ^3.3.2
 
 dev_dependencies:
   flutter_test:
@@ -38,13 +39,25 @@ dev_dependencies:
 dependency_overrides:
   lab_sound_ffi:
     path: ../../lab_sound_ffi/
-
+  ffi: 2.0.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
+  shaders:
+    - shaders/audio_eclipse.frag
+    - shaders/warp.frag
+    - shaders/sound_eclipse.frag
+    - shaders/audio_surf.frag
+    - shaders/2d_led_spectrum.frag
+    - shaders/polar_react.frag
+    - shaders/2d_audio_visualizer_v2.frag
+    - shaders/mf_audio_visualizer.frag
+    - shaders/blast_radius.frag
+    - shaders/procedural_gradient_visualiser.frag
+#    - shaders/inercia_intended_one.frag
+#    - shaders/onyx_flames.frag
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

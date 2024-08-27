@@ -4,10 +4,17 @@ import 'package:ffi/ffi.dart';
 import '../generated_bindings.dart';
 import 'dart:convert';
 extension StringExtensions on String {
-  Pointer<Int8> toInt8() {
-    return toNativeUtf8().cast<Int8>();
+  Pointer<Char> toChar() {
+    return toNativeUtf8().cast<Char>();
   }
 }
+
+extension PointerCharExtensions on Pointer<Char> {
+  String toStr({int? length}) {
+    return cast<Utf8>().toDartString(length: length);
+  }
+}
+
 
 extension PointerUtf8Extensions on Pointer<Utf8> {
   String toStr({int? length}) {

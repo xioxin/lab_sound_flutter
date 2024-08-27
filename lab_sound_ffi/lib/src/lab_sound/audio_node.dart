@@ -72,9 +72,9 @@ abstract class CombinationAudioNode extends AudioConnectable {
 }
 
 
-final Finalizer<AudioNode> _audioNodeFinalizer = Finalizer((node) {
-  print('_audioNodeFinalizer: $node');
-  node.dispose();
+final Finalizer<int> _audioNodeFinalizer = Finalizer((nodeId) {
+  print('_audioNodeFinalizer: $nodeId');
+  LabSound().releaseNode(nodeId);
 });
 
 class AudioNode extends AudioConnectable {
@@ -87,7 +87,7 @@ class AudioNode extends AudioConnectable {
   int get outputNodeId => nodeId;
 
   AudioNode(this.ctx, this.nodeId) : super(ctx) {
-    _audioNodeFinalizer.attach(this, this, detach: this);
+    _audioNodeFinalizer.attach(this, nodeId, detach: this);
     LabSound().nodeMap[nodeId] = WeakReference(this);
   }
 

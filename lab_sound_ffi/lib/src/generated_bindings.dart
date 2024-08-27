@@ -22,27 +22,28 @@ class LabSoundBind {
       : _lookup = lookup;
 
   void __va_start(
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
+    ffi.Pointer<va_list> arg0,
   ) {
     return ___va_start(
       arg0,
     );
   }
 
-  late final ___va_start_ptr =
-      _lookup<ffi.NativeFunction<_c___va_start>>('__va_start');
-  late final _dart___va_start ___va_start =
-      ___va_start_ptr.asFunction<_dart___va_start>();
+  late final ___va_startPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<va_list>)>>(
+          '__va_start');
+  late final ___va_start =
+      ___va_startPtr.asFunction<void Function(ffi.Pointer<va_list>)>();
 
   void __security_init_cookie() {
     return ___security_init_cookie();
   }
 
-  late final ___security_init_cookie_ptr =
-      _lookup<ffi.NativeFunction<_c___security_init_cookie>>(
+  late final ___security_init_cookiePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
           '__security_init_cookie');
-  late final _dart___security_init_cookie ___security_init_cookie =
-      ___security_init_cookie_ptr.asFunction<_dart___security_init_cookie>();
+  late final ___security_init_cookie =
+      ___security_init_cookiePtr.asFunction<void Function()>();
 
   void __security_check_cookie(
     int _StackCookie,
@@ -52,11 +53,11 @@ class LabSoundBind {
     );
   }
 
-  late final ___security_check_cookie_ptr =
-      _lookup<ffi.NativeFunction<_c___security_check_cookie>>(
+  late final ___security_check_cookiePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.UintPtr)>>(
           '__security_check_cookie');
-  late final _dart___security_check_cookie ___security_check_cookie =
-      ___security_check_cookie_ptr.asFunction<_dart___security_check_cookie>();
+  late final ___security_check_cookie =
+      ___security_check_cookiePtr.asFunction<void Function(int)>();
 
   void __report_gsfailure(
     int _StackCookie,
@@ -66,13 +67,14 @@ class LabSoundBind {
     );
   }
 
-  late final ___report_gsfailure_ptr =
-      _lookup<ffi.NativeFunction<_c___report_gsfailure>>('__report_gsfailure');
-  late final _dart___report_gsfailure ___report_gsfailure =
-      ___report_gsfailure_ptr.asFunction<_dart___report_gsfailure>();
+  late final ___report_gsfailurePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.UintPtr)>>(
+          '__report_gsfailure');
+  late final ___report_gsfailure =
+      ___report_gsfailurePtr.asFunction<void Function(int)>();
 
-  late final ffi.Pointer<ffi.Uint64> ___security_cookie =
-      _lookup<ffi.Uint64>('__security_cookie');
+  late final ffi.Pointer<ffi.UintPtr> ___security_cookie =
+      _lookup<ffi.UintPtr>('__security_cookie');
 
   int get __security_cookie => ___security_cookie.value;
 
@@ -82,29 +84,26 @@ class LabSoundBind {
     return __invalid_parameter_noinfo();
   }
 
-  late final __invalid_parameter_noinfo_ptr =
-      _lookup<ffi.NativeFunction<_c__invalid_parameter_noinfo>>(
+  late final __invalid_parameter_noinfoPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
           '_invalid_parameter_noinfo');
-  late final _dart__invalid_parameter_noinfo __invalid_parameter_noinfo =
-      __invalid_parameter_noinfo_ptr
-          .asFunction<_dart__invalid_parameter_noinfo>();
+  late final __invalid_parameter_noinfo =
+      __invalid_parameter_noinfoPtr.asFunction<void Function()>();
 
   void _invalid_parameter_noinfo_noreturn() {
     return __invalid_parameter_noinfo_noreturn();
   }
 
-  late final __invalid_parameter_noinfo_noreturn_ptr =
-      _lookup<ffi.NativeFunction<_c__invalid_parameter_noinfo_noreturn>>(
+  late final __invalid_parameter_noinfo_noreturnPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
           '_invalid_parameter_noinfo_noreturn');
-  late final _dart__invalid_parameter_noinfo_noreturn
-      __invalid_parameter_noinfo_noreturn =
-      __invalid_parameter_noinfo_noreturn_ptr
-          .asFunction<_dart__invalid_parameter_noinfo_noreturn>();
+  late final __invalid_parameter_noinfo_noreturn =
+      __invalid_parameter_noinfo_noreturnPtr.asFunction<void Function()>();
 
   void _invoke_watson(
-    ffi.Pointer<ffi.Uint16> _Expression,
-    ffi.Pointer<ffi.Uint16> _FunctionName,
-    ffi.Pointer<ffi.Uint16> _FileName,
+    ffi.Pointer<ffi.WChar> _Expression,
+    ffi.Pointer<ffi.WChar> _FunctionName,
+    ffi.Pointer<ffi.WChar> _FileName,
     int _LineNo,
     int _Reserved,
   ) {
@@ -117,17 +116,25 @@ class LabSoundBind {
     );
   }
 
-  late final __invoke_watson_ptr =
-      _lookup<ffi.NativeFunction<_c__invoke_watson>>('_invoke_watson');
-  late final _dart__invoke_watson __invoke_watson =
-      __invoke_watson_ptr.asFunction<_dart__invoke_watson>();
+  late final __invoke_watsonPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.WChar>,
+              ffi.UnsignedInt,
+              ffi.UintPtr)>>('_invoke_watson');
+  late final __invoke_watson = __invoke_watsonPtr.asFunction<
+      void Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+          ffi.Pointer<ffi.WChar>, int, int)>();
 
-  ffi.Pointer<ffi.Int32> _errno() {
+  ffi.Pointer<ffi.Int> _errno() {
     return __errno();
   }
 
-  late final __errno_ptr = _lookup<ffi.NativeFunction<_c__errno>>('_errno');
-  late final _dart__errno __errno = __errno_ptr.asFunction<_dart__errno>();
+  late final __errnoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int> Function()>>('_errno');
+  late final __errno = __errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
 
   int _set_errno(
     int _Value,
@@ -137,32 +144,33 @@ class LabSoundBind {
     );
   }
 
-  late final __set_errno_ptr =
-      _lookup<ffi.NativeFunction<_c__set_errno>>('_set_errno');
-  late final _dart__set_errno __set_errno =
-      __set_errno_ptr.asFunction<_dart__set_errno>();
+  late final __set_errnoPtr =
+      _lookup<ffi.NativeFunction<errno_t Function(ffi.Int)>>('_set_errno');
+  late final __set_errno = __set_errnoPtr.asFunction<int Function(int)>();
 
   int _get_errno(
-    ffi.Pointer<ffi.Int32> _Value,
+    ffi.Pointer<ffi.Int> _Value,
   ) {
     return __get_errno(
       _Value,
     );
   }
 
-  late final __get_errno_ptr =
-      _lookup<ffi.NativeFunction<_c__get_errno>>('_get_errno');
-  late final _dart__get_errno __get_errno =
-      __get_errno_ptr.asFunction<_dart__get_errno>();
+  late final __get_errnoPtr =
+      _lookup<ffi.NativeFunction<errno_t Function(ffi.Pointer<ffi.Int>)>>(
+          '_get_errno');
+  late final __get_errno =
+      __get_errnoPtr.asFunction<int Function(ffi.Pointer<ffi.Int>)>();
 
-  ffi.Pointer<ffi.Uint64> __doserrno() {
+  ffi.Pointer<ffi.UnsignedLong> __doserrno() {
     return ___doserrno();
   }
 
-  late final ___doserrno_ptr =
-      _lookup<ffi.NativeFunction<_c___doserrno>>('__doserrno');
-  late final _dart___doserrno ___doserrno =
-      ___doserrno_ptr.asFunction<_dart___doserrno>();
+  late final ___doserrnoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.UnsignedLong> Function()>>(
+          '__doserrno');
+  late final ___doserrno =
+      ___doserrnoPtr.asFunction<ffi.Pointer<ffi.UnsignedLong> Function()>();
 
   int _set_doserrno(
     int _Value,
@@ -172,23 +180,24 @@ class LabSoundBind {
     );
   }
 
-  late final __set_doserrno_ptr =
-      _lookup<ffi.NativeFunction<_c__set_doserrno>>('_set_doserrno');
-  late final _dart__set_doserrno __set_doserrno =
-      __set_doserrno_ptr.asFunction<_dart__set_doserrno>();
+  late final __set_doserrnoPtr =
+      _lookup<ffi.NativeFunction<errno_t Function(ffi.UnsignedLong)>>(
+          '_set_doserrno');
+  late final __set_doserrno = __set_doserrnoPtr.asFunction<int Function(int)>();
 
   int _get_doserrno(
-    ffi.Pointer<ffi.Uint64> _Value,
+    ffi.Pointer<ffi.UnsignedLong> _Value,
   ) {
     return __get_doserrno(
       _Value,
     );
   }
 
-  late final __get_doserrno_ptr =
-      _lookup<ffi.NativeFunction<_c__get_doserrno>>('_get_doserrno');
-  late final _dart__get_doserrno __get_doserrno =
-      __get_doserrno_ptr.asFunction<_dart__get_doserrno>();
+  late final __get_doserrnoPtr = _lookup<
+          ffi.NativeFunction<errno_t Function(ffi.Pointer<ffi.UnsignedLong>)>>(
+      '_get_doserrno');
+  late final __get_doserrno = __get_doserrnoPtr
+      .asFunction<int Function(ffi.Pointer<ffi.UnsignedLong>)>();
 
   ffi.Pointer<ffi.Void> memchr(
     ffi.Pointer<ffi.Void> _Buf,
@@ -202,8 +211,12 @@ class LabSoundBind {
     );
   }
 
-  late final _memchr_ptr = _lookup<ffi.NativeFunction<_c_memchr>>('memchr');
-  late final _dart_memchr _memchr = _memchr_ptr.asFunction<_dart_memchr>();
+  late final _memchrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memchr');
+  late final _memchr = _memchrPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
   int memcmp(
     ffi.Pointer<ffi.Void> _Buf1,
@@ -217,8 +230,12 @@ class LabSoundBind {
     );
   }
 
-  late final _memcmp_ptr = _lookup<ffi.NativeFunction<_c_memcmp>>('memcmp');
-  late final _dart_memcmp _memcmp = _memcmp_ptr.asFunction<_dart_memcmp>();
+  late final _memcmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Size)>>('memcmp');
+  late final _memcmp = _memcmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memcpy(
     ffi.Pointer<ffi.Void> _Dst,
@@ -232,8 +249,13 @@ class LabSoundBind {
     );
   }
 
-  late final _memcpy_ptr = _lookup<ffi.NativeFunction<_c_memcpy>>('memcpy');
-  late final _dart_memcpy _memcpy = _memcpy_ptr.asFunction<_dart_memcpy>();
+  late final _memcpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>, ffi.Size)>>('memcpy');
+  late final _memcpy = _memcpyPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memmove(
     ffi.Pointer<ffi.Void> _Dst,
@@ -247,8 +269,13 @@ class LabSoundBind {
     );
   }
 
-  late final _memmove_ptr = _lookup<ffi.NativeFunction<_c_memmove>>('memmove');
-  late final _dart_memmove _memmove = _memmove_ptr.asFunction<_dart_memmove>();
+  late final _memmovePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>, ffi.Size)>>('memmove');
+  late final _memmove = _memmovePtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memset(
     ffi.Pointer<ffi.Void> _Dst,
@@ -262,11 +289,15 @@ class LabSoundBind {
     );
   }
 
-  late final _memset_ptr = _lookup<ffi.NativeFunction<_c_memset>>('memset');
-  late final _dart_memset _memset = _memset_ptr.asFunction<_dart_memset>();
+  late final _memsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memset');
+  late final _memset = _memsetPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  ffi.Pointer<ffi.Int8> strchr(
-    ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Char> strchr(
+    ffi.Pointer<ffi.Char> _Str,
     int _Val,
   ) {
     return _strchr(
@@ -275,11 +306,15 @@ class LabSoundBind {
     );
   }
 
-  late final _strchr_ptr = _lookup<ffi.NativeFunction<_c_strchr>>('strchr');
-  late final _dart_strchr _strchr = _strchr_ptr.asFunction<_dart_strchr>();
+  late final _strchrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int)>>('strchr');
+  late final _strchr = _strchrPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> strrchr(
-    ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Char> strrchr(
+    ffi.Pointer<ffi.Char> _Str,
     int _Ch,
   ) {
     return _strrchr(
@@ -288,12 +323,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strrchr_ptr = _lookup<ffi.NativeFunction<_c_strrchr>>('strrchr');
-  late final _dart_strrchr _strrchr = _strrchr_ptr.asFunction<_dart_strrchr>();
+  late final _strrchrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int)>>('strrchr');
+  late final _strrchr = _strrchrPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> strstr(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _SubStr,
+  ffi.Pointer<ffi.Char> strstr(
+    ffi.Pointer<ffi.Char> _Str,
+    ffi.Pointer<ffi.Char> _SubStr,
   ) {
     return _strstr(
       _Str,
@@ -301,11 +340,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strstr_ptr = _lookup<ffi.NativeFunction<_c_strstr>>('strstr');
-  late final _dart_strstr _strstr = _strstr_ptr.asFunction<_dart_strstr>();
+  late final _strstrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strstr');
+  late final _strstr = _strstrPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Uint16> wcschr(
-    ffi.Pointer<ffi.Uint16> _Str,
+  ffi.Pointer<ffi.UnsignedShort> wcschr(
+    ffi.Pointer<ffi.WChar> _Str,
     int _Ch,
   ) {
     return _wcschr(
@@ -314,11 +358,15 @@ class LabSoundBind {
     );
   }
 
-  late final _wcschr_ptr = _lookup<ffi.NativeFunction<_c_wcschr>>('wcschr');
-  late final _dart_wcschr _wcschr = _wcschr_ptr.asFunction<_dart_wcschr>();
+  late final _wcschrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.UnsignedShort> Function(
+              ffi.Pointer<ffi.WChar>, ffi.WChar)>>('wcschr');
+  late final _wcschr = _wcschrPtr.asFunction<
+      ffi.Pointer<ffi.UnsignedShort> Function(ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcsrchr(
-    ffi.Pointer<ffi.Uint16> _Str,
+  ffi.Pointer<ffi.WChar> wcsrchr(
+    ffi.Pointer<ffi.WChar> _Str,
     int _Ch,
   ) {
     return _wcsrchr(
@@ -327,12 +375,16 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsrchr_ptr = _lookup<ffi.NativeFunction<_c_wcsrchr>>('wcsrchr');
-  late final _dart_wcsrchr _wcsrchr = _wcsrchr_ptr.asFunction<_dart_wcsrchr>();
+  late final _wcsrchrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.WChar)>>('wcsrchr');
+  late final _wcsrchr = _wcsrchrPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcsstr(
-    ffi.Pointer<ffi.Uint16> _Str,
-    ffi.Pointer<ffi.Uint16> _SubStr,
+  ffi.Pointer<ffi.WChar> wcsstr(
+    ffi.Pointer<ffi.WChar> _Str,
+    ffi.Pointer<ffi.WChar> _SubStr,
   ) {
     return _wcsstr(
       _Str,
@@ -340,8 +392,13 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsstr_ptr = _lookup<ffi.NativeFunction<_c_wcsstr>>('wcsstr');
-  late final _dart_wcsstr _wcsstr = _wcsstr_ptr.asFunction<_dart_wcsstr>();
+  late final _wcsstrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcsstr');
+  late final _wcsstr = _wcsstrPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int _memicmp(
     ffi.Pointer<ffi.Void> _Buf1,
@@ -355,16 +412,18 @@ class LabSoundBind {
     );
   }
 
-  late final __memicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__memicmp>>('_memicmp');
-  late final _dart__memicmp __memicmp =
-      __memicmp_ptr.asFunction<_dart__memicmp>();
+  late final __memicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Size)>>('_memicmp');
+  late final __memicmp = __memicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   int _memicmp_l(
     ffi.Pointer<ffi.Void> _Buf1,
     ffi.Pointer<ffi.Void> _Buf2,
     int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __memicmp_l(
       _Buf1,
@@ -374,10 +433,13 @@ class LabSoundBind {
     );
   }
 
-  late final __memicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__memicmp_l>>('_memicmp_l');
-  late final _dart__memicmp_l __memicmp_l =
-      __memicmp_l_ptr.asFunction<_dart__memicmp_l>();
+  late final __memicmp_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Size, _locale_t)>>('_memicmp_l');
+  late final __memicmp_l = __memicmp_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, _locale_t)>();
 
   ffi.Pointer<ffi.Void> memccpy(
     ffi.Pointer<ffi.Void> _Dst,
@@ -385,7 +447,7 @@ class LabSoundBind {
     int _Val,
     int _Size,
   ) {
-    return _memccpy_1(
+    return _memccpy1(
       _Dst,
       _Src,
       _Val,
@@ -393,30 +455,37 @@ class LabSoundBind {
     );
   }
 
-  late final _memccpy_ptr = _lookup<ffi.NativeFunction<_c_memccpy>>('memccpy');
-  late final _dart_memccpy _memccpy_1 =
-      _memccpy_ptr.asFunction<_dart_memccpy>();
+  late final _memccpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memccpy');
+  late final _memccpy1 = _memccpyPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int)>();
 
   int memicmp(
     ffi.Pointer<ffi.Void> _Buf1,
     ffi.Pointer<ffi.Void> _Buf2,
     int _Size,
   ) {
-    return _memicmp_1(
+    return _memicmp1(
       _Buf1,
       _Buf2,
       _Size,
     );
   }
 
-  late final _memicmp_ptr = _lookup<ffi.NativeFunction<_c_memicmp>>('memicmp');
-  late final _dart_memicmp _memicmp_1 =
-      _memicmp_ptr.asFunction<_dart_memicmp>();
+  late final _memicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Size)>>('memicmp');
+  late final _memicmp1 = _memicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   int wcscat_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.WChar> _Destination,
     int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Source,
   ) {
     return _wcscat_s(
       _Destination,
@@ -425,15 +494,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcscat_s>>('wcscat_s');
-  late final _dart_wcscat_s _wcscat_s =
-      _wcscat_s_ptr.asFunction<_dart_wcscat_s>();
+  late final _wcscat_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, rsize_t,
+              ffi.Pointer<ffi.WChar>)>>('wcscat_s');
+  late final _wcscat_s = _wcscat_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, int, ffi.Pointer<ffi.WChar>)>();
 
   int wcscpy_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.WChar> _Destination,
     int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Source,
   ) {
     return _wcscpy_s(
       _Destination,
@@ -442,15 +513,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcscpy_s>>('wcscpy_s');
-  late final _dart_wcscpy_s _wcscpy_s =
-      _wcscpy_s_ptr.asFunction<_dart_wcscpy_s>();
+  late final _wcscpy_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, rsize_t,
+              ffi.Pointer<ffi.WChar>)>>('wcscpy_s');
+  late final _wcscpy_s = _wcscpy_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, int, ffi.Pointer<ffi.WChar>)>();
 
   int wcsncat_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.WChar> _Destination,
     int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Source,
     int _MaxCount,
   ) {
     return _wcsncat_s(
@@ -461,15 +534,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsncat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsncat_s>>('wcsncat_s');
-  late final _dart_wcsncat_s _wcsncat_s =
-      _wcsncat_s_ptr.asFunction<_dart_wcsncat_s>();
+  late final _wcsncat_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, rsize_t,
+              ffi.Pointer<ffi.WChar>, rsize_t)>>('wcsncat_s');
+  late final _wcsncat_s = _wcsncat_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, int, ffi.Pointer<ffi.WChar>, int)>();
 
   int wcsncpy_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.WChar> _Destination,
     int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Source,
     int _MaxCount,
   ) {
     return _wcsncpy_s(
@@ -480,15 +555,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsncpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsncpy_s>>('wcsncpy_s');
-  late final _dart_wcsncpy_s _wcsncpy_s =
-      _wcsncpy_s_ptr.asFunction<_dart_wcsncpy_s>();
+  late final _wcsncpy_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, rsize_t,
+              ffi.Pointer<ffi.WChar>, rsize_t)>>('wcsncpy_s');
+  late final _wcsncpy_s = _wcsncpy_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, int, ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcstok_s(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Delimiter,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+  ffi.Pointer<ffi.WChar> wcstok_s(
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.WChar> _Delimiter,
+    ffi.Pointer<ffi.Pointer<ffi.WChar>> _Context,
   ) {
     return _wcstok_s(
       _String,
@@ -497,25 +574,33 @@ class LabSoundBind {
     );
   }
 
-  late final _wcstok_s_ptr =
-      _lookup<ffi.NativeFunction<_c_wcstok_s>>('wcstok_s');
-  late final _dart_wcstok_s _wcstok_s =
-      _wcstok_s_ptr.asFunction<_dart_wcstok_s>();
+  late final _wcstok_sPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.Pointer<ffi.WChar>>)>>('wcstok_s');
+  late final _wcstok_s = _wcstok_sPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>,
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.Pointer<ffi.WChar>>)>();
 
-  ffi.Pointer<ffi.Uint16> _wcsdup(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> _wcsdup(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
     return __wcsdup(
       _String,
     );
   }
 
-  late final __wcsdup_ptr = _lookup<ffi.NativeFunction<_c__wcsdup>>('_wcsdup');
-  late final _dart__wcsdup __wcsdup = __wcsdup_ptr.asFunction<_dart__wcsdup>();
+  late final __wcsdupPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('_wcsdup');
+  late final __wcsdup = __wcsdupPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
-  ffi.Pointer<ffi.Uint16> wcscat(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Pointer<ffi.WChar> wcscat(
+    ffi.Pointer<ffi.WChar> _Destination,
+    ffi.Pointer<ffi.WChar> _Source,
   ) {
     return _wcscat(
       _Destination,
@@ -523,12 +608,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscat_ptr = _lookup<ffi.NativeFunction<_c_wcscat>>('wcscat');
-  late final _dart_wcscat _wcscat = _wcscat_ptr.asFunction<_dart_wcscat>();
+  late final _wcscatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcscat');
+  late final _wcscat = _wcscatPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int wcscmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
   ) {
     return _wcscmp(
       _String1,
@@ -536,12 +626,16 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscmp_ptr = _lookup<ffi.NativeFunction<_c_wcscmp>>('wcscmp');
-  late final _dart_wcscmp _wcscmp = _wcscmp_ptr.asFunction<_dart_wcscmp>();
+  late final _wcscmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcscmp');
+  late final _wcscmp = _wcscmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
-  ffi.Pointer<ffi.Uint16> wcscpy(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Pointer<ffi.WChar> wcscpy(
+    ffi.Pointer<ffi.WChar> _Destination,
+    ffi.Pointer<ffi.WChar> _Source,
   ) {
     return _wcscpy(
       _Destination,
@@ -549,12 +643,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscpy_ptr = _lookup<ffi.NativeFunction<_c_wcscpy>>('wcscpy');
-  late final _dart_wcscpy _wcscpy = _wcscpy_ptr.asFunction<_dart_wcscpy>();
+  late final _wcscpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcscpy');
+  late final _wcscpy = _wcscpyPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int wcscspn(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Control,
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.WChar> _Control,
   ) {
     return _wcscspn(
       _String,
@@ -562,22 +661,29 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscspn_ptr = _lookup<ffi.NativeFunction<_c_wcscspn>>('wcscspn');
-  late final _dart_wcscspn _wcscspn = _wcscspn_ptr.asFunction<_dart_wcscspn>();
+  late final _wcscspnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcscspn');
+  late final _wcscspn = _wcscspnPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int wcslen(
-    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.WChar> _String,
   ) {
     return _wcslen(
       _String,
     );
   }
 
-  late final _wcslen_ptr = _lookup<ffi.NativeFunction<_c_wcslen>>('wcslen');
-  late final _dart_wcslen _wcslen = _wcslen_ptr.asFunction<_dart_wcslen>();
+  late final _wcslenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(ffi.Pointer<ffi.WChar>)>>('wcslen');
+  late final _wcslen =
+      _wcslenPtr.asFunction<int Function(ffi.Pointer<ffi.WChar>)>();
 
   int wcsnlen(
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Source,
     int _MaxCount,
   ) {
     return _wcsnlen(
@@ -586,12 +692,15 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsnlen_ptr = _lookup<ffi.NativeFunction<_c_wcsnlen>>('wcsnlen');
-  late final _dart_wcsnlen _wcsnlen = _wcsnlen_ptr.asFunction<_dart_wcsnlen>();
+  late final _wcsnlenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.WChar>, ffi.Size)>>('wcsnlen');
+  late final _wcsnlen =
+      _wcsnlenPtr.asFunction<int Function(ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcsncat(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Pointer<ffi.WChar> wcsncat(
+    ffi.Pointer<ffi.WChar> _Destination,
+    ffi.Pointer<ffi.WChar> _Source,
     int _Count,
   ) {
     return _wcsncat(
@@ -601,12 +710,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsncat_ptr = _lookup<ffi.NativeFunction<_c_wcsncat>>('wcsncat');
-  late final _dart_wcsncat _wcsncat = _wcsncat_ptr.asFunction<_dart_wcsncat>();
+  late final _wcsncatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.WChar>, ffi.Size)>>('wcsncat');
+  late final _wcsncat = _wcsncatPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
   int wcsncmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
   ) {
     return _wcsncmp(
@@ -616,12 +730,16 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsncmp_ptr = _lookup<ffi.NativeFunction<_c_wcsncmp>>('wcsncmp');
-  late final _dart_wcsncmp _wcsncmp = _wcsncmp_ptr.asFunction<_dart_wcsncmp>();
+  late final _wcsncmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size)>>('wcsncmp');
+  late final _wcsncmp = _wcsncmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcsncpy(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
+  ffi.Pointer<ffi.WChar> wcsncpy(
+    ffi.Pointer<ffi.WChar> _Destination,
+    ffi.Pointer<ffi.WChar> _Source,
     int _Count,
   ) {
     return _wcsncpy(
@@ -631,12 +749,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsncpy_ptr = _lookup<ffi.NativeFunction<_c_wcsncpy>>('wcsncpy');
-  late final _dart_wcsncpy _wcsncpy = _wcsncpy_ptr.asFunction<_dart_wcsncpy>();
+  late final _wcsncpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.WChar>, ffi.Size)>>('wcsncpy');
+  late final _wcsncpy = _wcsncpyPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcspbrk(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Control,
+  ffi.Pointer<ffi.WChar> wcspbrk(
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.WChar> _Control,
   ) {
     return _wcspbrk(
       _String,
@@ -644,12 +767,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcspbrk_ptr = _lookup<ffi.NativeFunction<_c_wcspbrk>>('wcspbrk');
-  late final _dart_wcspbrk _wcspbrk = _wcspbrk_ptr.asFunction<_dart_wcspbrk>();
+  late final _wcspbrkPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcspbrk');
+  late final _wcspbrk = _wcspbrkPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int wcsspn(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Control,
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.WChar> _Control,
   ) {
     return _wcsspn(
       _String,
@@ -657,13 +785,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsspn_ptr = _lookup<ffi.NativeFunction<_c_wcsspn>>('wcsspn');
-  late final _dart_wcsspn _wcsspn = _wcsspn_ptr.asFunction<_dart_wcsspn>();
+  late final _wcsspnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcsspn');
+  late final _wcsspn = _wcsspnPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
-  ffi.Pointer<ffi.Uint16> wcstok(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Uint16> _Delimiter,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
+  ffi.Pointer<ffi.WChar> wcstok(
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.WChar> _Delimiter,
+    ffi.Pointer<ffi.Pointer<ffi.WChar>> _Context,
   ) {
     return _wcstok(
       _String,
@@ -672,56 +804,68 @@ class LabSoundBind {
     );
   }
 
-  late final _wcstok_ptr = _lookup<ffi.NativeFunction<_c_wcstok>>('wcstok');
-  late final _dart_wcstok _wcstok = _wcstok_ptr.asFunction<_dart_wcstok>();
+  late final _wcstokPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.Pointer<ffi.WChar>>)>>('wcstok');
+  late final _wcstok = _wcstokPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>,
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.Pointer<ffi.WChar>>)>();
 
-  ffi.Pointer<ffi.Uint16> _wcserror(
+  ffi.Pointer<ffi.WChar> _wcserror(
     int _ErrorNumber,
   ) {
-    return __wcserror_1(
+    return __wcserror1(
       _ErrorNumber,
     );
   }
 
-  late final __wcserror_ptr =
-      _lookup<ffi.NativeFunction<_c__wcserror>>('_wcserror');
-  late final _dart__wcserror __wcserror_1 =
-      __wcserror_ptr.asFunction<_dart__wcserror>();
+  late final __wcserrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.WChar> Function(ffi.Int)>>(
+          '_wcserror');
+  late final __wcserror1 =
+      __wcserrorPtr.asFunction<ffi.Pointer<ffi.WChar> Function(int)>();
 
   int _wcserror_s(
-    ffi.Pointer<ffi.Uint16> _Buffer,
+    ffi.Pointer<ffi.WChar> _Buffer,
     int _SizeInWords,
     int _ErrorNumber,
   ) {
-    return __wcserror_s_1(
+    return __wcserror_s1(
       _Buffer,
       _SizeInWords,
       _ErrorNumber,
     );
   }
 
-  late final __wcserror_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcserror_s>>('_wcserror_s');
-  late final _dart__wcserror_s __wcserror_s_1 =
-      __wcserror_s_ptr.asFunction<_dart__wcserror_s>();
+  late final __wcserror_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.WChar>, ffi.Size, ffi.Int)>>('_wcserror_s');
+  late final __wcserror_s1 = __wcserror_sPtr
+      .asFunction<int Function(ffi.Pointer<ffi.WChar>, int, int)>();
 
-  ffi.Pointer<ffi.Uint16> __wcserror(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> __wcserror(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
     return ___wcserror(
       _String,
     );
   }
 
-  late final ___wcserror_ptr =
-      _lookup<ffi.NativeFunction<_c___wcserror>>('__wcserror');
-  late final _dart___wcserror ___wcserror =
-      ___wcserror_ptr.asFunction<_dart___wcserror>();
+  late final ___wcserrorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>)>>('__wcserror');
+  late final ___wcserror = ___wcserrorPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
   int __wcserror_s(
-    ffi.Pointer<ffi.Uint16> _Buffer,
+    ffi.Pointer<ffi.WChar> _Buffer,
     int _SizeInWords,
-    ffi.Pointer<ffi.Uint16> _ErrorMessage,
+    ffi.Pointer<ffi.WChar> _ErrorMessage,
   ) {
     return ___wcserror_s(
       _Buffer,
@@ -730,14 +874,16 @@ class LabSoundBind {
     );
   }
 
-  late final ___wcserror_s_ptr =
-      _lookup<ffi.NativeFunction<_c___wcserror_s>>('__wcserror_s');
-  late final _dart___wcserror_s ___wcserror_s =
-      ___wcserror_s_ptr.asFunction<_dart___wcserror_s>();
+  late final ___wcserror_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, ffi.Size,
+              ffi.Pointer<ffi.WChar>)>>('__wcserror_s');
+  late final ___wcserror_s = ___wcserror_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, int, ffi.Pointer<ffi.WChar>)>();
 
   int _wcsicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
   ) {
     return __wcsicmp(
       _String1,
@@ -745,15 +891,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicmp>>('_wcsicmp');
-  late final _dart__wcsicmp __wcsicmp =
-      __wcsicmp_ptr.asFunction<_dart__wcsicmp>();
+  late final __wcsicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('_wcsicmp');
+  late final __wcsicmp = __wcsicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int _wcsicmp_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
+    _locale_t _Locale,
   ) {
     return __wcsicmp_l(
       _String1,
@@ -762,14 +910,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicmp_l>>('_wcsicmp_l');
-  late final _dart__wcsicmp_l __wcsicmp_l =
-      __wcsicmp_l_ptr.asFunction<_dart__wcsicmp_l>();
+  late final __wcsicmp_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              _locale_t)>>('_wcsicmp_l');
+  late final __wcsicmp_l = __wcsicmp_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, _locale_t)>();
 
   int _wcsnicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
   ) {
     return __wcsnicmp(
@@ -779,16 +930,18 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicmp>>('_wcsnicmp');
-  late final _dart__wcsnicmp __wcsnicmp =
-      __wcsnicmp_ptr.asFunction<_dart__wcsnicmp>();
+  late final __wcsnicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size)>>('_wcsnicmp');
+  late final __wcsnicmp = __wcsnicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
   int _wcsnicmp_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcsnicmp_l(
       _String1,
@@ -798,13 +951,16 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsnicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicmp_l>>('_wcsnicmp_l');
-  late final _dart__wcsnicmp_l __wcsnicmp_l =
-      __wcsnicmp_l_ptr.asFunction<_dart__wcsnicmp_l>();
+  late final __wcsnicmp_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size, _locale_t)>>('_wcsnicmp_l');
+  late final __wcsnicmp_l = __wcsnicmp_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int, _locale_t)>();
 
   int _wcsnset_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.WChar> _Destination,
     int _SizeInWords,
     int _Value,
     int _MaxCount,
@@ -817,13 +973,15 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsnset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnset_s>>('_wcsnset_s');
-  late final _dart__wcsnset_s __wcsnset_s =
-      __wcsnset_s_ptr.asFunction<_dart__wcsnset_s>();
+  late final __wcsnset_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, ffi.Size, ffi.WChar,
+              ffi.Size)>>('_wcsnset_s');
+  late final __wcsnset_s = __wcsnset_sPtr
+      .asFunction<int Function(ffi.Pointer<ffi.WChar>, int, int, int)>();
 
-  ffi.Pointer<ffi.Uint16> _wcsnset(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> _wcsnset(
+    ffi.Pointer<ffi.WChar> _String,
     int _Value,
     int _MaxCount,
   ) {
@@ -834,24 +992,29 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsnset_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnset>>('_wcsnset');
-  late final _dart__wcsnset __wcsnset =
-      __wcsnset_ptr.asFunction<_dart__wcsnset>();
+  late final __wcsnsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.WChar, ffi.Size)>>('_wcsnset');
+  late final __wcsnset = __wcsnsetPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, int, int)>();
 
-  ffi.Pointer<ffi.Uint16> _wcsrev(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> _wcsrev(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
     return __wcsrev(
       _String,
     );
   }
 
-  late final __wcsrev_ptr = _lookup<ffi.NativeFunction<_c__wcsrev>>('_wcsrev');
-  late final _dart__wcsrev __wcsrev = __wcsrev_ptr.asFunction<_dart__wcsrev>();
+  late final __wcsrevPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('_wcsrev');
+  late final __wcsrev = __wcsrevPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
   int _wcsset_s(
-    ffi.Pointer<ffi.Uint16> _Destination,
+    ffi.Pointer<ffi.WChar> _Destination,
     int _SizeInWords,
     int _Value,
   ) {
@@ -862,13 +1025,15 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsset_s>>('_wcsset_s');
-  late final _dart__wcsset_s __wcsset_s =
-      __wcsset_s_ptr.asFunction<_dart__wcsset_s>();
+  late final __wcsset_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.WChar>, ffi.Size, ffi.WChar)>>('_wcsset_s');
+  late final __wcsset_s = __wcsset_sPtr
+      .asFunction<int Function(ffi.Pointer<ffi.WChar>, int, int)>();
 
-  ffi.Pointer<ffi.Uint16> _wcsset(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> _wcsset(
+    ffi.Pointer<ffi.WChar> _String,
     int _Value,
   ) {
     return __wcsset(
@@ -877,11 +1042,15 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsset_ptr = _lookup<ffi.NativeFunction<_c__wcsset>>('_wcsset');
-  late final _dart__wcsset __wcsset = __wcsset_ptr.asFunction<_dart__wcsset>();
+  late final __wcssetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.WChar)>>('_wcsset');
+  late final __wcsset = __wcssetPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, int)>();
 
   int _wcslwr_s(
-    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.WChar> _String,
     int _SizeInWords,
   ) {
     return __wcslwr_s(
@@ -890,26 +1059,30 @@ class LabSoundBind {
     );
   }
 
-  late final __wcslwr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcslwr_s>>('_wcslwr_s');
-  late final _dart__wcslwr_s __wcslwr_s =
-      __wcslwr_s_ptr.asFunction<_dart__wcslwr_s>();
+  late final __wcslwr_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, ffi.Size)>>('_wcslwr_s');
+  late final __wcslwr_s =
+      __wcslwr_sPtr.asFunction<int Function(ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> _wcslwr(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> _wcslwr(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
     return __wcslwr(
       _String,
     );
   }
 
-  late final __wcslwr_ptr = _lookup<ffi.NativeFunction<_c__wcslwr>>('_wcslwr');
-  late final _dart__wcslwr __wcslwr = __wcslwr_ptr.asFunction<_dart__wcslwr>();
+  late final __wcslwrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('_wcslwr');
+  late final __wcslwr = __wcslwrPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
   int _wcslwr_s_l(
-    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.WChar> _String,
     int _SizeInWords,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcslwr_s_l(
       _String,
@@ -918,14 +1091,16 @@ class LabSoundBind {
     );
   }
 
-  late final __wcslwr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcslwr_s_l>>('_wcslwr_s_l');
-  late final _dart__wcslwr_s_l __wcslwr_s_l =
-      __wcslwr_s_l_ptr.asFunction<_dart__wcslwr_s_l>();
+  late final __wcslwr_s_lPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.WChar>, ffi.Size, _locale_t)>>('_wcslwr_s_l');
+  late final __wcslwr_s_l = __wcslwr_s_lPtr
+      .asFunction<int Function(ffi.Pointer<ffi.WChar>, int, _locale_t)>();
 
-  ffi.Pointer<ffi.Uint16> _wcslwr_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.WChar> _wcslwr_l(
+    ffi.Pointer<ffi.WChar> _String,
+    _locale_t _Locale,
   ) {
     return __wcslwr_l(
       _String,
@@ -933,13 +1108,15 @@ class LabSoundBind {
     );
   }
 
-  late final __wcslwr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcslwr_l>>('_wcslwr_l');
-  late final _dart__wcslwr_l __wcslwr_l =
-      __wcslwr_l_ptr.asFunction<_dart__wcslwr_l>();
+  late final __wcslwr_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, _locale_t)>>('_wcslwr_l');
+  late final __wcslwr_l = __wcslwr_lPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, _locale_t)>();
 
   int _wcsupr_s(
-    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.WChar> _String,
     int _Size,
   ) {
     return __wcsupr_s(
@@ -948,26 +1125,30 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsupr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsupr_s>>('_wcsupr_s');
-  late final _dart__wcsupr_s __wcsupr_s =
-      __wcsupr_s_ptr.asFunction<_dart__wcsupr_s>();
+  late final __wcsupr_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.WChar>, ffi.Size)>>('_wcsupr_s');
+  late final __wcsupr_s =
+      __wcsupr_sPtr.asFunction<int Function(ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> _wcsupr(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> _wcsupr(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
     return __wcsupr(
       _String,
     );
   }
 
-  late final __wcsupr_ptr = _lookup<ffi.NativeFunction<_c__wcsupr>>('_wcsupr');
-  late final _dart__wcsupr __wcsupr = __wcsupr_ptr.asFunction<_dart__wcsupr>();
+  late final __wcsuprPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('_wcsupr');
+  late final __wcsupr = __wcsuprPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
   int _wcsupr_s_l(
-    ffi.Pointer<ffi.Uint16> _String,
+    ffi.Pointer<ffi.WChar> _String,
     int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcsupr_s_l(
       _String,
@@ -976,14 +1157,16 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsupr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsupr_s_l>>('_wcsupr_s_l');
-  late final _dart__wcsupr_s_l __wcsupr_s_l =
-      __wcsupr_s_l_ptr.asFunction<_dart__wcsupr_s_l>();
+  late final __wcsupr_s_lPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.WChar>, ffi.Size, _locale_t)>>('_wcsupr_s_l');
+  late final __wcsupr_s_l = __wcsupr_s_lPtr
+      .asFunction<int Function(ffi.Pointer<ffi.WChar>, int, _locale_t)>();
 
-  ffi.Pointer<ffi.Uint16> _wcsupr_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.WChar> _wcsupr_l(
+    ffi.Pointer<ffi.WChar> _String,
+    _locale_t _Locale,
   ) {
     return __wcsupr_l(
       _String,
@@ -991,14 +1174,16 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsupr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsupr_l>>('_wcsupr_l');
-  late final _dart__wcsupr_l __wcsupr_l =
-      __wcsupr_l_ptr.asFunction<_dart__wcsupr_l>();
+  late final __wcsupr_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, _locale_t)>>('_wcsupr_l');
+  late final __wcsupr_l = __wcsupr_lPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, _locale_t)>();
 
   int wcsxfrm(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Destination,
+    ffi.Pointer<ffi.WChar> _Source,
     int _MaxCount,
   ) {
     return _wcsxfrm(
@@ -1008,14 +1193,18 @@ class LabSoundBind {
     );
   }
 
-  late final _wcsxfrm_ptr = _lookup<ffi.NativeFunction<_c_wcsxfrm>>('wcsxfrm');
-  late final _dart_wcsxfrm _wcsxfrm = _wcsxfrm_ptr.asFunction<_dart_wcsxfrm>();
+  late final _wcsxfrmPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size)>>('wcsxfrm');
+  late final _wcsxfrm = _wcsxfrmPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
   int _wcsxfrm_l(
-    ffi.Pointer<ffi.Uint16> _Destination,
-    ffi.Pointer<ffi.Uint16> _Source,
+    ffi.Pointer<ffi.WChar> _Destination,
+    ffi.Pointer<ffi.WChar> _Source,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcsxfrm_l(
       _Destination,
@@ -1025,14 +1214,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsxfrm_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsxfrm_l>>('_wcsxfrm_l');
-  late final _dart__wcsxfrm_l __wcsxfrm_l =
-      __wcsxfrm_l_ptr.asFunction<_dart__wcsxfrm_l>();
+  late final __wcsxfrm_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size, _locale_t)>>('_wcsxfrm_l');
+  late final __wcsxfrm_l = __wcsxfrm_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int, _locale_t)>();
 
   int wcscoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
   ) {
     return _wcscoll(
       _String1,
@@ -1040,13 +1232,17 @@ class LabSoundBind {
     );
   }
 
-  late final _wcscoll_ptr = _lookup<ffi.NativeFunction<_c_wcscoll>>('wcscoll');
-  late final _dart_wcscoll _wcscoll = _wcscoll_ptr.asFunction<_dart_wcscoll>();
+  late final _wcscollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcscoll');
+  late final _wcscoll = _wcscollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int _wcscoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
+    _locale_t _Locale,
   ) {
     return __wcscoll_l(
       _String1,
@@ -1055,14 +1251,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcscoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcscoll_l>>('_wcscoll_l');
-  late final _dart__wcscoll_l __wcscoll_l =
-      __wcscoll_l_ptr.asFunction<_dart__wcscoll_l>();
+  late final __wcscoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              _locale_t)>>('_wcscoll_l');
+  late final __wcscoll_l = __wcscoll_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, _locale_t)>();
 
   int _wcsicoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
   ) {
     return __wcsicoll(
       _String1,
@@ -1070,15 +1269,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsicoll_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicoll>>('_wcsicoll');
-  late final _dart__wcsicoll __wcsicoll =
-      __wcsicoll_ptr.asFunction<_dart__wcsicoll>();
+  late final __wcsicollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('_wcsicoll');
+  late final __wcsicoll = __wcsicollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int _wcsicoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
+    _locale_t _Locale,
   ) {
     return __wcsicoll_l(
       _String1,
@@ -1087,14 +1288,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsicoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsicoll_l>>('_wcsicoll_l');
-  late final _dart__wcsicoll_l __wcsicoll_l =
-      __wcsicoll_l_ptr.asFunction<_dart__wcsicoll_l>();
+  late final __wcsicoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              _locale_t)>>('_wcsicoll_l');
+  late final __wcsicoll_l = __wcsicoll_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, _locale_t)>();
 
   int _wcsncoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
   ) {
     return __wcsncoll(
@@ -1104,16 +1308,18 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsncoll_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsncoll>>('_wcsncoll');
-  late final _dart__wcsncoll __wcsncoll =
-      __wcsncoll_ptr.asFunction<_dart__wcsncoll>();
+  late final __wcsncollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size)>>('_wcsncoll');
+  late final __wcsncoll = __wcsncollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
   int _wcsncoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcsncoll_l(
       _String1,
@@ -1123,14 +1329,17 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsncoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsncoll_l>>('_wcsncoll_l');
-  late final _dart__wcsncoll_l __wcsncoll_l =
-      __wcsncoll_l_ptr.asFunction<_dart__wcsncoll_l>();
+  late final __wcsncoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size, _locale_t)>>('_wcsncoll_l');
+  late final __wcsncoll_l = __wcsncoll_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int, _locale_t)>();
 
   int _wcsnicoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
   ) {
     return __wcsnicoll(
@@ -1140,16 +1349,18 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsnicoll_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicoll>>('_wcsnicoll');
-  late final _dart__wcsnicoll __wcsnicoll =
-      __wcsnicoll_ptr.asFunction<_dart__wcsnicoll>();
+  late final __wcsnicollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size)>>('_wcsnicoll');
+  late final __wcsnicoll = __wcsnicollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
   int _wcsnicoll_l(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcsnicoll_l(
       _String1,
@@ -1159,134 +1370,163 @@ class LabSoundBind {
     );
   }
 
-  late final __wcsnicoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcsnicoll_l>>('_wcsnicoll_l');
-  late final _dart__wcsnicoll_l __wcsnicoll_l =
-      __wcsnicoll_l_ptr.asFunction<_dart__wcsnicoll_l>();
+  late final __wcsnicoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size, _locale_t)>>('_wcsnicoll_l');
+  late final __wcsnicoll_l = __wcsnicoll_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int, _locale_t)>();
 
-  ffi.Pointer<ffi.Uint16> wcsdup(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> wcsdup(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
-    return _wcsdup_1(
+    return _wcsdup1(
       _String,
     );
   }
 
-  late final _wcsdup_ptr = _lookup<ffi.NativeFunction<_c_wcsdup>>('wcsdup');
-  late final _dart_wcsdup _wcsdup_1 = _wcsdup_ptr.asFunction<_dart_wcsdup>();
+  late final _wcsdupPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('wcsdup');
+  late final _wcsdup1 = _wcsdupPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
   int wcsicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
   ) {
-    return _wcsicmp_1(
+    return _wcsicmp1(
       _String1,
       _String2,
     );
   }
 
-  late final _wcsicmp_ptr = _lookup<ffi.NativeFunction<_c_wcsicmp>>('wcsicmp');
-  late final _dart_wcsicmp _wcsicmp_1 =
-      _wcsicmp_ptr.asFunction<_dart_wcsicmp>();
+  late final _wcsicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcsicmp');
+  late final _wcsicmp1 = _wcsicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int wcsnicmp(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
     int _MaxCount,
   ) {
-    return _wcsnicmp_1(
+    return _wcsnicmp1(
       _String1,
       _String2,
       _MaxCount,
     );
   }
 
-  late final _wcsnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsnicmp>>('wcsnicmp');
-  late final _dart_wcsnicmp _wcsnicmp_1 =
-      _wcsnicmp_ptr.asFunction<_dart_wcsnicmp>();
+  late final _wcsnicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.Size)>>('wcsnicmp');
+  late final _wcsnicmp1 = _wcsnicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcsnset(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> wcsnset(
+    ffi.Pointer<ffi.WChar> _String,
     int _Value,
     int _MaxCount,
   ) {
-    return _wcsnset_1(
+    return _wcsnset1(
       _String,
       _Value,
       _MaxCount,
     );
   }
 
-  late final _wcsnset_ptr = _lookup<ffi.NativeFunction<_c_wcsnset>>('wcsnset');
-  late final _dart_wcsnset _wcsnset_1 =
-      _wcsnset_ptr.asFunction<_dart_wcsnset>();
+  late final _wcsnsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.WChar, ffi.Size)>>('wcsnset');
+  late final _wcsnset1 = _wcsnsetPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, int, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcsrev(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> wcsrev(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
-    return _wcsrev_1(
+    return _wcsrev1(
       _String,
     );
   }
 
-  late final _wcsrev_ptr = _lookup<ffi.NativeFunction<_c_wcsrev>>('wcsrev');
-  late final _dart_wcsrev _wcsrev_1 = _wcsrev_ptr.asFunction<_dart_wcsrev>();
+  late final _wcsrevPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('wcsrev');
+  late final _wcsrev1 = _wcsrevPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
-  ffi.Pointer<ffi.Uint16> wcsset(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> wcsset(
+    ffi.Pointer<ffi.WChar> _String,
     int _Value,
   ) {
-    return _wcsset_1(
+    return _wcsset1(
       _String,
       _Value,
     );
   }
 
-  late final _wcsset_ptr = _lookup<ffi.NativeFunction<_c_wcsset>>('wcsset');
-  late final _dart_wcsset _wcsset_1 = _wcsset_ptr.asFunction<_dart_wcsset>();
+  late final _wcssetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(
+              ffi.Pointer<ffi.WChar>, ffi.WChar)>>('wcsset');
+  late final _wcsset1 = _wcssetPtr.asFunction<
+      ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>, int)>();
 
-  ffi.Pointer<ffi.Uint16> wcslwr(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> wcslwr(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
-    return _wcslwr_1(
+    return _wcslwr1(
       _String,
     );
   }
 
-  late final _wcslwr_ptr = _lookup<ffi.NativeFunction<_c_wcslwr>>('wcslwr');
-  late final _dart_wcslwr _wcslwr_1 = _wcslwr_ptr.asFunction<_dart_wcslwr>();
+  late final _wcslwrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('wcslwr');
+  late final _wcslwr1 = _wcslwrPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
-  ffi.Pointer<ffi.Uint16> wcsupr(
-    ffi.Pointer<ffi.Uint16> _String,
+  ffi.Pointer<ffi.WChar> wcsupr(
+    ffi.Pointer<ffi.WChar> _String,
   ) {
-    return _wcsupr_1(
+    return _wcsupr1(
       _String,
     );
   }
 
-  late final _wcsupr_ptr = _lookup<ffi.NativeFunction<_c_wcsupr>>('wcsupr');
-  late final _dart_wcsupr _wcsupr_1 = _wcsupr_ptr.asFunction<_dart_wcsupr>();
+  late final _wcsuprPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>>('wcsupr');
+  late final _wcsupr1 = _wcsuprPtr
+      .asFunction<ffi.Pointer<ffi.WChar> Function(ffi.Pointer<ffi.WChar>)>();
 
   int wcsicoll(
-    ffi.Pointer<ffi.Uint16> _String1,
-    ffi.Pointer<ffi.Uint16> _String2,
+    ffi.Pointer<ffi.WChar> _String1,
+    ffi.Pointer<ffi.WChar> _String2,
   ) {
-    return _wcsicoll_1(
+    return _wcsicoll1(
       _String1,
       _String2,
     );
   }
 
-  late final _wcsicoll_ptr =
-      _lookup<ffi.NativeFunction<_c_wcsicoll>>('wcsicoll');
-  late final _dart_wcsicoll _wcsicoll_1 =
-      _wcsicoll_ptr.asFunction<_dart_wcsicoll>();
+  late final _wcsicollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>>('wcsicoll');
+  late final _wcsicoll1 = _wcsicollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>)>();
 
   int strcpy_s(
-    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Char> _Destination,
     int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Char> _Source,
   ) {
     return _strcpy_s(
       _Destination,
@@ -1295,15 +1535,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strcpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strcpy_s>>('strcpy_s');
-  late final _dart_strcpy_s _strcpy_s =
-      _strcpy_s_ptr.asFunction<_dart_strcpy_s>();
+  late final _strcpy_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, rsize_t,
+              ffi.Pointer<ffi.Char>)>>('strcpy_s');
+  late final _strcpy_s = _strcpy_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
   int strcat_s(
-    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Char> _Destination,
     int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Char> _Source,
   ) {
     return _strcat_s(
       _Destination,
@@ -1312,32 +1554,36 @@ class LabSoundBind {
     );
   }
 
-  late final _strcat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strcat_s>>('strcat_s');
-  late final _dart_strcat_s _strcat_s =
-      _strcat_s_ptr.asFunction<_dart_strcat_s>();
+  late final _strcat_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, rsize_t,
+              ffi.Pointer<ffi.Char>)>>('strcat_s');
+  late final _strcat_s = _strcat_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
   int strerror_s(
-    ffi.Pointer<ffi.Int8> _Buffer,
+    ffi.Pointer<ffi.Char> _Buffer,
     int _SizeInBytes,
     int _ErrorNumber,
   ) {
-    return _strerror_s_1(
+    return _strerror_s1(
       _Buffer,
       _SizeInBytes,
       _ErrorNumber,
     );
   }
 
-  late final _strerror_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strerror_s>>('strerror_s');
-  late final _dart_strerror_s _strerror_s_1 =
-      _strerror_s_ptr.asFunction<_dart_strerror_s>();
+  late final _strerror_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.Char>, ffi.Size, ffi.Int)>>('strerror_s');
+  late final _strerror_s1 = _strerror_sPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
 
   int strncat_s(
-    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Char> _Destination,
     int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Char> _Source,
     int _MaxCount,
   ) {
     return _strncat_s(
@@ -1348,15 +1594,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strncat_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strncat_s>>('strncat_s');
-  late final _dart_strncat_s _strncat_s =
-      _strncat_s_ptr.asFunction<_dart_strncat_s>();
+  late final _strncat_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, rsize_t,
+              ffi.Pointer<ffi.Char>, rsize_t)>>('strncat_s');
+  late final _strncat_s = _strncat_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, int)>();
 
   int strncpy_s(
-    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Char> _Destination,
     int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Char> _Source,
     int _MaxCount,
   ) {
     return _strncpy_s(
@@ -1367,15 +1615,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strncpy_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strncpy_s>>('strncpy_s');
-  late final _dart_strncpy_s _strncpy_s =
-      _strncpy_s_ptr.asFunction<_dart_strncpy_s>();
+  late final _strncpy_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, rsize_t,
+              ffi.Pointer<ffi.Char>, rsize_t)>>('strncpy_s');
+  late final _strncpy_s = _strncpy_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> strtok_s(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Int8> _Delimiter,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
+  ffi.Pointer<ffi.Char> strtok_s(
+    ffi.Pointer<ffi.Char> _String,
+    ffi.Pointer<ffi.Char> _Delimiter,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> _Context,
   ) {
     return _strtok_s(
       _String,
@@ -1384,10 +1634,15 @@ class LabSoundBind {
     );
   }
 
-  late final _strtok_s_ptr =
-      _lookup<ffi.NativeFunction<_c_strtok_s>>('strtok_s');
-  late final _dart_strtok_s _strtok_s =
-      _strtok_s_ptr.asFunction<_dart_strtok_s>();
+  late final _strtok_sPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('strtok_s');
+  late final _strtok_s = _strtok_sPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   ffi.Pointer<ffi.Void> _memccpy(
     ffi.Pointer<ffi.Void> _Dst,
@@ -1403,14 +1658,17 @@ class LabSoundBind {
     );
   }
 
-  late final __memccpy_ptr =
-      _lookup<ffi.NativeFunction<_c__memccpy>>('_memccpy');
-  late final _dart__memccpy __memccpy =
-      __memccpy_ptr.asFunction<_dart__memccpy>();
+  late final __memccpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('_memccpy');
+  late final __memccpy = __memccpyPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int)>();
 
-  ffi.Pointer<ffi.Int8> strcat(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Char> strcat(
+    ffi.Pointer<ffi.Char> _Destination,
+    ffi.Pointer<ffi.Char> _Source,
   ) {
     return _strcat(
       _Destination,
@@ -1418,12 +1676,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strcat_ptr = _lookup<ffi.NativeFunction<_c_strcat>>('strcat');
-  late final _dart_strcat _strcat = _strcat_ptr.asFunction<_dart_strcat>();
+  late final _strcatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcat');
+  late final _strcat = _strcatPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strcmp(
-    ffi.Pointer<ffi.Int8> _Str1,
-    ffi.Pointer<ffi.Int8> _Str2,
+    ffi.Pointer<ffi.Char> _Str1,
+    ffi.Pointer<ffi.Char> _Str2,
   ) {
     return _strcmp(
       _Str1,
@@ -1431,12 +1694,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strcmp_ptr = _lookup<ffi.NativeFunction<_c_strcmp>>('strcmp');
-  late final _dart_strcmp _strcmp = _strcmp_ptr.asFunction<_dart_strcmp>();
+  late final _strcmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcmp');
+  late final _strcmp = _strcmpPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int _strcmpi(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
   ) {
     return __strcmpi(
       _String1,
@@ -1444,14 +1711,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strcmpi_ptr =
-      _lookup<ffi.NativeFunction<_c__strcmpi>>('_strcmpi');
-  late final _dart__strcmpi __strcmpi =
-      __strcmpi_ptr.asFunction<_dart__strcmpi>();
+  late final __strcmpiPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('_strcmpi');
+  late final __strcmpi = __strcmpiPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strcoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
   ) {
     return _strcoll(
       _String1,
@@ -1459,13 +1728,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strcoll_ptr = _lookup<ffi.NativeFunction<_c_strcoll>>('strcoll');
-  late final _dart_strcoll _strcoll = _strcoll_ptr.asFunction<_dart_strcoll>();
+  late final _strcollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcoll');
+  late final _strcoll = _strcollPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int _strcoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
+    _locale_t _Locale,
   ) {
     return __strcoll_l(
       _String1,
@@ -1474,14 +1747,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strcoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strcoll_l>>('_strcoll_l');
-  late final _dart__strcoll_l __strcoll_l =
-      __strcoll_l_ptr.asFunction<_dart__strcoll_l>();
+  late final __strcoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              _locale_t)>>('_strcoll_l');
+  late final __strcoll_l = __strcoll_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, _locale_t)>();
 
-  ffi.Pointer<ffi.Int8> strcpy(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Char> strcpy(
+    ffi.Pointer<ffi.Char> _Destination,
+    ffi.Pointer<ffi.Char> _Source,
   ) {
     return _strcpy(
       _Destination,
@@ -1489,12 +1764,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strcpy_ptr = _lookup<ffi.NativeFunction<_c_strcpy>>('strcpy');
-  late final _dart_strcpy _strcpy = _strcpy_ptr.asFunction<_dart_strcpy>();
+  late final _strcpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcpy');
+  late final _strcpy = _strcpyPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strcspn(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _Control,
+    ffi.Pointer<ffi.Char> _Str,
+    ffi.Pointer<ffi.Char> _Control,
   ) {
     return _strcspn(
       _Str,
@@ -1502,37 +1782,45 @@ class LabSoundBind {
     );
   }
 
-  late final _strcspn_ptr = _lookup<ffi.NativeFunction<_c_strcspn>>('strcspn');
-  late final _dart_strcspn _strcspn = _strcspn_ptr.asFunction<_dart_strcspn>();
+  late final _strcspnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcspn');
+  late final _strcspn = _strcspnPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> _strdup(
-    ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Char> _strdup(
+    ffi.Pointer<ffi.Char> _Source,
   ) {
     return __strdup(
       _Source,
     );
   }
 
-  late final __strdup_ptr = _lookup<ffi.NativeFunction<_c__strdup>>('_strdup');
-  late final _dart__strdup __strdup = __strdup_ptr.asFunction<_dart__strdup>();
+  late final __strdupPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('_strdup');
+  late final __strdup = __strdupPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> _strerror(
-    ffi.Pointer<ffi.Int8> _ErrorMessage,
+  ffi.Pointer<ffi.Char> _strerror(
+    ffi.Pointer<ffi.Char> _ErrorMessage,
   ) {
     return __strerror(
       _ErrorMessage,
     );
   }
 
-  late final __strerror_ptr =
-      _lookup<ffi.NativeFunction<_c__strerror>>('_strerror');
-  late final _dart__strerror __strerror =
-      __strerror_ptr.asFunction<_dart__strerror>();
+  late final __strerrorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('_strerror');
+  late final __strerror = __strerrorPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int _strerror_s(
-    ffi.Pointer<ffi.Int8> _Buffer,
+    ffi.Pointer<ffi.Char> _Buffer,
     int _SizeInBytes,
-    ffi.Pointer<ffi.Int8> _ErrorMessage,
+    ffi.Pointer<ffi.Char> _ErrorMessage,
   ) {
     return __strerror_s(
       _Buffer,
@@ -1541,27 +1829,30 @@ class LabSoundBind {
     );
   }
 
-  late final __strerror_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strerror_s>>('_strerror_s');
-  late final _dart__strerror_s __strerror_s =
-      __strerror_s_ptr.asFunction<_dart__strerror_s>();
+  late final __strerror_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, ffi.Size,
+              ffi.Pointer<ffi.Char>)>>('_strerror_s');
+  late final __strerror_s = __strerror_sPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> strerror(
+  ffi.Pointer<ffi.Char> strerror(
     int _ErrorMessage,
   ) {
-    return _strerror_1(
+    return _strerror1(
       _ErrorMessage,
     );
   }
 
-  late final _strerror_ptr =
-      _lookup<ffi.NativeFunction<_c_strerror>>('strerror');
-  late final _dart_strerror _strerror_1 =
-      _strerror_ptr.asFunction<_dart_strerror>();
+  late final _strerrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>(
+          'strerror');
+  late final _strerror1 =
+      _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   int _stricmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
   ) {
     return __stricmp(
       _String1,
@@ -1569,14 +1860,16 @@ class LabSoundBind {
     );
   }
 
-  late final __stricmp_ptr =
-      _lookup<ffi.NativeFunction<_c__stricmp>>('_stricmp');
-  late final _dart__stricmp __stricmp =
-      __stricmp_ptr.asFunction<_dart__stricmp>();
+  late final __stricmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('_stricmp');
+  late final __stricmp = __stricmpPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int _stricoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
   ) {
     return __stricoll(
       _String1,
@@ -1584,15 +1877,17 @@ class LabSoundBind {
     );
   }
 
-  late final __stricoll_ptr =
-      _lookup<ffi.NativeFunction<_c__stricoll>>('_stricoll');
-  late final _dart__stricoll __stricoll =
-      __stricoll_ptr.asFunction<_dart__stricoll>();
+  late final __stricollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('_stricoll');
+  late final __stricoll = __stricollPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int _stricoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
+    _locale_t _Locale,
   ) {
     return __stricoll_l(
       _String1,
@@ -1601,15 +1896,17 @@ class LabSoundBind {
     );
   }
 
-  late final __stricoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__stricoll_l>>('_stricoll_l');
-  late final _dart__stricoll_l __stricoll_l =
-      __stricoll_l_ptr.asFunction<_dart__stricoll_l>();
+  late final __stricoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              _locale_t)>>('_stricoll_l');
+  late final __stricoll_l = __stricoll_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, _locale_t)>();
 
   int _stricmp_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
+    _locale_t _Locale,
   ) {
     return __stricmp_l(
       _String1,
@@ -1618,24 +1915,29 @@ class LabSoundBind {
     );
   }
 
-  late final __stricmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__stricmp_l>>('_stricmp_l');
-  late final _dart__stricmp_l __stricmp_l =
-      __stricmp_l_ptr.asFunction<_dart__stricmp_l>();
+  late final __stricmp_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              _locale_t)>>('_stricmp_l');
+  late final __stricmp_l = __stricmp_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, _locale_t)>();
 
   int strlen(
-    ffi.Pointer<ffi.Int8> _Str,
+    ffi.Pointer<ffi.Char> _Str,
   ) {
     return _strlen(
       _Str,
     );
   }
 
-  late final _strlen_ptr = _lookup<ffi.NativeFunction<_c_strlen>>('strlen');
-  late final _dart_strlen _strlen = _strlen_ptr.asFunction<_dart_strlen>();
+  late final _strlenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(ffi.Pointer<ffi.Char>)>>('strlen');
+  late final _strlen =
+      _strlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int _strlwr_s(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _Size,
   ) {
     return __strlwr_s(
@@ -1644,26 +1946,30 @@ class LabSoundBind {
     );
   }
 
-  late final __strlwr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strlwr_s>>('_strlwr_s');
-  late final _dart__strlwr_s __strlwr_s =
-      __strlwr_s_ptr.asFunction<_dart__strlwr_s>();
+  late final __strlwr_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('_strlwr_s');
+  late final __strlwr_s =
+      __strlwr_sPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> _strlwr(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> _strlwr(
+    ffi.Pointer<ffi.Char> _String,
   ) {
     return __strlwr(
       _String,
     );
   }
 
-  late final __strlwr_ptr = _lookup<ffi.NativeFunction<_c__strlwr>>('_strlwr');
-  late final _dart__strlwr __strlwr = __strlwr_ptr.asFunction<_dart__strlwr>();
+  late final __strlwrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('_strlwr');
+  late final __strlwr = __strlwrPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int _strlwr_s_l(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strlwr_s_l(
       _String,
@@ -1672,14 +1978,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strlwr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strlwr_s_l>>('_strlwr_s_l');
-  late final _dart__strlwr_s_l __strlwr_s_l =
-      __strlwr_s_l_ptr.asFunction<_dart__strlwr_s_l>();
+  late final __strlwr_s_lPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.Char>, ffi.Size, _locale_t)>>('_strlwr_s_l');
+  late final __strlwr_s_l = __strlwr_s_lPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, int, _locale_t)>();
 
-  ffi.Pointer<ffi.Int8> _strlwr_l(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.Char> _strlwr_l(
+    ffi.Pointer<ffi.Char> _String,
+    _locale_t _Locale,
   ) {
     return __strlwr_l(
       _String,
@@ -1687,14 +1995,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strlwr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strlwr_l>>('_strlwr_l');
-  late final _dart__strlwr_l __strlwr_l =
-      __strlwr_l_ptr.asFunction<_dart__strlwr_l>();
+  late final __strlwr_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, _locale_t)>>('_strlwr_l');
+  late final __strlwr_l = __strlwr_lPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, _locale_t)>();
 
-  ffi.Pointer<ffi.Int8> strncat(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Char> strncat(
+    ffi.Pointer<ffi.Char> _Destination,
+    ffi.Pointer<ffi.Char> _Source,
     int _Count,
   ) {
     return _strncat(
@@ -1704,12 +2014,17 @@ class LabSoundBind {
     );
   }
 
-  late final _strncat_ptr = _lookup<ffi.NativeFunction<_c_strncat>>('strncat');
-  late final _dart_strncat _strncat = _strncat_ptr.asFunction<_dart_strncat>();
+  late final _strncatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>, ffi.Size)>>('strncat');
+  late final _strncat = _strncatPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strncmp(
-    ffi.Pointer<ffi.Int8> _Str1,
-    ffi.Pointer<ffi.Int8> _Str2,
+    ffi.Pointer<ffi.Char> _Str1,
+    ffi.Pointer<ffi.Char> _Str2,
     int _MaxCount,
   ) {
     return _strncmp(
@@ -1719,12 +2034,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strncmp_ptr = _lookup<ffi.NativeFunction<_c_strncmp>>('strncmp');
-  late final _dart_strncmp _strncmp = _strncmp_ptr.asFunction<_dart_strncmp>();
+  late final _strncmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('strncmp');
+  late final _strncmp = _strncmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int _strnicmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
   ) {
     return __strnicmp(
@@ -1734,16 +2053,18 @@ class LabSoundBind {
     );
   }
 
-  late final __strnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicmp>>('_strnicmp');
-  late final _dart__strnicmp __strnicmp =
-      __strnicmp_ptr.asFunction<_dart__strnicmp>();
+  late final __strnicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('_strnicmp');
+  late final __strnicmp = __strnicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int _strnicmp_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strnicmp_l(
       _String1,
@@ -1753,14 +2074,17 @@ class LabSoundBind {
     );
   }
 
-  late final __strnicmp_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicmp_l>>('_strnicmp_l');
-  late final _dart__strnicmp_l __strnicmp_l =
-      __strnicmp_l_ptr.asFunction<_dart__strnicmp_l>();
+  late final __strnicmp_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size, _locale_t)>>('_strnicmp_l');
+  late final __strnicmp_l = __strnicmp_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, _locale_t)>();
 
   int _strnicoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
   ) {
     return __strnicoll(
@@ -1770,16 +2094,18 @@ class LabSoundBind {
     );
   }
 
-  late final __strnicoll_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicoll>>('_strnicoll');
-  late final _dart__strnicoll __strnicoll =
-      __strnicoll_ptr.asFunction<_dart__strnicoll>();
+  late final __strnicollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('_strnicoll');
+  late final __strnicoll = __strnicollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int _strnicoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strnicoll_l(
       _String1,
@@ -1789,14 +2115,17 @@ class LabSoundBind {
     );
   }
 
-  late final __strnicoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strnicoll_l>>('_strnicoll_l');
-  late final _dart__strnicoll_l __strnicoll_l =
-      __strnicoll_l_ptr.asFunction<_dart__strnicoll_l>();
+  late final __strnicoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size, _locale_t)>>('_strnicoll_l');
+  late final __strnicoll_l = __strnicoll_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, _locale_t)>();
 
   int _strncoll(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
   ) {
     return __strncoll(
@@ -1806,16 +2135,18 @@ class LabSoundBind {
     );
   }
 
-  late final __strncoll_ptr =
-      _lookup<ffi.NativeFunction<_c__strncoll>>('_strncoll');
-  late final _dart__strncoll __strncoll =
-      __strncoll_ptr.asFunction<_dart__strncoll>();
+  late final __strncollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('_strncoll');
+  late final __strncoll = __strncollPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int _strncoll_l(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strncoll_l(
       _String1,
@@ -1825,13 +2156,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strncoll_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strncoll_l>>('_strncoll_l');
-  late final _dart__strncoll_l __strncoll_l =
-      __strncoll_l_ptr.asFunction<_dart__strncoll_l>();
+  late final __strncoll_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size, _locale_t)>>('_strncoll_l');
+  late final __strncoll_l = __strncoll_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, _locale_t)>();
 
   int __strncnt(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _Count,
   ) {
     return ___strncnt(
@@ -1840,14 +2174,15 @@ class LabSoundBind {
     );
   }
 
-  late final ___strncnt_ptr =
-      _lookup<ffi.NativeFunction<_c___strncnt>>('__strncnt');
-  late final _dart___strncnt ___strncnt =
-      ___strncnt_ptr.asFunction<_dart___strncnt>();
+  late final ___strncntPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('__strncnt');
+  late final ___strncnt =
+      ___strncntPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> strncpy(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+  ffi.Pointer<ffi.Char> strncpy(
+    ffi.Pointer<ffi.Char> _Destination,
+    ffi.Pointer<ffi.Char> _Source,
     int _Count,
   ) {
     return _strncpy(
@@ -1857,11 +2192,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strncpy_ptr = _lookup<ffi.NativeFunction<_c_strncpy>>('strncpy');
-  late final _dart_strncpy _strncpy = _strncpy_ptr.asFunction<_dart_strncpy>();
+  late final _strncpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>, ffi.Size)>>('strncpy');
+  late final _strncpy = _strncpyPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strnlen(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _MaxCount,
   ) {
     return _strnlen(
@@ -1870,11 +2210,14 @@ class LabSoundBind {
     );
   }
 
-  late final _strnlen_ptr = _lookup<ffi.NativeFunction<_c_strnlen>>('strnlen');
-  late final _dart_strnlen _strnlen = _strnlen_ptr.asFunction<_dart_strnlen>();
+  late final _strnlenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('strnlen');
+  late final _strnlen =
+      _strnlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   int _strnset_s(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _SizeInBytes,
     int _Value,
     int _MaxCount,
@@ -1887,13 +2230,15 @@ class LabSoundBind {
     );
   }
 
-  late final __strnset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strnset_s>>('_strnset_s');
-  late final _dart__strnset_s __strnset_s =
-      __strnset_s_ptr.asFunction<_dart__strnset_s>();
+  late final __strnset_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, ffi.Size, ffi.Int,
+              ffi.Size)>>('_strnset_s');
+  late final __strnset_s = __strnset_sPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, int, int, int)>();
 
-  ffi.Pointer<ffi.Int8> _strnset(
-    ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Char> _strnset(
+    ffi.Pointer<ffi.Char> _Destination,
     int _Value,
     int _Count,
   ) {
@@ -1904,14 +2249,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strnset_ptr =
-      _lookup<ffi.NativeFunction<_c__strnset>>('_strnset');
-  late final _dart__strnset __strnset =
-      __strnset_ptr.asFunction<_dart__strnset>();
+  late final __strnsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Size)>>('_strnset');
+  late final __strnset = __strnsetPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int, int)>();
 
-  ffi.Pointer<ffi.Int8> strpbrk(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _Control,
+  ffi.Pointer<ffi.Char> strpbrk(
+    ffi.Pointer<ffi.Char> _Str,
+    ffi.Pointer<ffi.Char> _Control,
   ) {
     return _strpbrk(
       _Str,
@@ -1919,22 +2266,30 @@ class LabSoundBind {
     );
   }
 
-  late final _strpbrk_ptr = _lookup<ffi.NativeFunction<_c_strpbrk>>('strpbrk');
-  late final _dart_strpbrk _strpbrk = _strpbrk_ptr.asFunction<_dart_strpbrk>();
+  late final _strpbrkPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strpbrk');
+  late final _strpbrk = _strpbrkPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> _strrev(
-    ffi.Pointer<ffi.Int8> _Str,
+  ffi.Pointer<ffi.Char> _strrev(
+    ffi.Pointer<ffi.Char> _Str,
   ) {
     return __strrev(
       _Str,
     );
   }
 
-  late final __strrev_ptr = _lookup<ffi.NativeFunction<_c__strrev>>('_strrev');
-  late final _dart__strrev __strrev = __strrev_ptr.asFunction<_dart__strrev>();
+  late final __strrevPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('_strrev');
+  late final __strrev = __strrevPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int _strset_s(
-    ffi.Pointer<ffi.Int8> _Destination,
+    ffi.Pointer<ffi.Char> _Destination,
     int _DestinationSize,
     int _Value,
   ) {
@@ -1945,13 +2300,15 @@ class LabSoundBind {
     );
   }
 
-  late final __strset_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strset_s>>('_strset_s');
-  late final _dart__strset_s __strset_s =
-      __strset_s_ptr.asFunction<_dart__strset_s>();
+  late final __strset_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.Char>, ffi.Size, ffi.Int)>>('_strset_s');
+  late final __strset_s =
+      __strset_sPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
 
-  ffi.Pointer<ffi.Int8> _strset(
-    ffi.Pointer<ffi.Int8> _Destination,
+  ffi.Pointer<ffi.Char> _strset(
+    ffi.Pointer<ffi.Char> _Destination,
     int _Value,
   ) {
     return __strset(
@@ -1960,12 +2317,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strset_ptr = _lookup<ffi.NativeFunction<_c__strset>>('_strset');
-  late final _dart__strset __strset = __strset_ptr.asFunction<_dart__strset>();
+  late final __strsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int)>>('_strset');
+  late final __strset = __strsetPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   int strspn(
-    ffi.Pointer<ffi.Int8> _Str,
-    ffi.Pointer<ffi.Int8> _Control,
+    ffi.Pointer<ffi.Char> _Str,
+    ffi.Pointer<ffi.Char> _Control,
   ) {
     return _strspn(
       _Str,
@@ -1973,12 +2334,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strspn_ptr = _lookup<ffi.NativeFunction<_c_strspn>>('strspn');
-  late final _dart_strspn _strspn = _strspn_ptr.asFunction<_dart_strspn>();
+  late final _strspnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strspn');
+  late final _strspn = _strspnPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> strtok(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Int8> _Delimiter,
+  ffi.Pointer<ffi.Char> strtok(
+    ffi.Pointer<ffi.Char> _String,
+    ffi.Pointer<ffi.Char> _Delimiter,
   ) {
     return _strtok(
       _String,
@@ -1986,11 +2351,16 @@ class LabSoundBind {
     );
   }
 
-  late final _strtok_ptr = _lookup<ffi.NativeFunction<_c_strtok>>('strtok');
-  late final _dart_strtok _strtok = _strtok_ptr.asFunction<_dart_strtok>();
+  late final _strtokPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strtok');
+  late final _strtok = _strtokPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int _strupr_s(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _Size,
   ) {
     return __strupr_s(
@@ -1999,26 +2369,30 @@ class LabSoundBind {
     );
   }
 
-  late final __strupr_s_ptr =
-      _lookup<ffi.NativeFunction<_c__strupr_s>>('_strupr_s');
-  late final _dart__strupr_s __strupr_s =
-      __strupr_s_ptr.asFunction<_dart__strupr_s>();
+  late final __strupr_sPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('_strupr_s');
+  late final __strupr_s =
+      __strupr_sPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> _strupr(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> _strupr(
+    ffi.Pointer<ffi.Char> _String,
   ) {
     return __strupr(
       _String,
     );
   }
 
-  late final __strupr_ptr = _lookup<ffi.NativeFunction<_c__strupr>>('_strupr');
-  late final _dart__strupr __strupr = __strupr_ptr.asFunction<_dart__strupr>();
+  late final __struprPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('_strupr');
+  late final __strupr = __struprPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int _strupr_s_l(
-    ffi.Pointer<ffi.Int8> _String,
+    ffi.Pointer<ffi.Char> _String,
     int _Size,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strupr_s_l(
       _String,
@@ -2027,14 +2401,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strupr_s_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strupr_s_l>>('_strupr_s_l');
-  late final _dart__strupr_s_l __strupr_s_l =
-      __strupr_s_l_ptr.asFunction<_dart__strupr_s_l>();
+  late final __strupr_s_lPtr = _lookup<
+      ffi.NativeFunction<
+          errno_t Function(
+              ffi.Pointer<ffi.Char>, ffi.Size, _locale_t)>>('_strupr_s_l');
+  late final __strupr_s_l = __strupr_s_lPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, int, _locale_t)>();
 
-  ffi.Pointer<ffi.Int8> _strupr_l(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+  ffi.Pointer<ffi.Char> _strupr_l(
+    ffi.Pointer<ffi.Char> _String,
+    _locale_t _Locale,
   ) {
     return __strupr_l(
       _String,
@@ -2042,14 +2418,16 @@ class LabSoundBind {
     );
   }
 
-  late final __strupr_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strupr_l>>('_strupr_l');
-  late final _dart__strupr_l __strupr_l =
-      __strupr_l_ptr.asFunction<_dart__strupr_l>();
+  late final __strupr_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, _locale_t)>>('_strupr_l');
+  late final __strupr_l = __strupr_lPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, _locale_t)>();
 
   int strxfrm(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Char> _Destination,
+    ffi.Pointer<ffi.Char> _Source,
     int _MaxCount,
   ) {
     return _strxfrm(
@@ -2059,14 +2437,18 @@ class LabSoundBind {
     );
   }
 
-  late final _strxfrm_ptr = _lookup<ffi.NativeFunction<_c_strxfrm>>('strxfrm');
-  late final _dart_strxfrm _strxfrm = _strxfrm_ptr.asFunction<_dart_strxfrm>();
+  late final _strxfrmPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLongLong Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>, ffi.Size)>>('strxfrm');
+  late final _strxfrm = _strxfrmPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int _strxfrm_l(
-    ffi.Pointer<ffi.Int8> _Destination,
-    ffi.Pointer<ffi.Int8> _Source,
+    ffi.Pointer<ffi.Char> _Destination,
+    ffi.Pointer<ffi.Char> _Source,
     int _MaxCount,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strxfrm_l(
       _Destination,
@@ -2076,132 +2458,162 @@ class LabSoundBind {
     );
   }
 
-  late final __strxfrm_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strxfrm_l>>('_strxfrm_l');
-  late final _dart__strxfrm_l __strxfrm_l =
-      __strxfrm_l_ptr.asFunction<_dart__strxfrm_l>();
+  late final __strxfrm_lPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size, _locale_t)>>('_strxfrm_l');
+  late final __strxfrm_l = __strxfrm_lPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, _locale_t)>();
 
-  ffi.Pointer<ffi.Int8> strdup(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> strdup(
+    ffi.Pointer<ffi.Char> _String,
   ) {
-    return _strdup_1(
+    return _strdup1(
       _String,
     );
   }
 
-  late final _strdup_ptr = _lookup<ffi.NativeFunction<_c_strdup>>('strdup');
-  late final _dart_strdup _strdup_1 = _strdup_ptr.asFunction<_dart_strdup>();
+  late final _strdupPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('strdup');
+  late final _strdup1 = _strdupPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int strcmpi(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
   ) {
-    return _strcmpi_1(
+    return _strcmpi1(
       _String1,
       _String2,
     );
   }
 
-  late final _strcmpi_ptr = _lookup<ffi.NativeFunction<_c_strcmpi>>('strcmpi');
-  late final _dart_strcmpi _strcmpi_1 =
-      _strcmpi_ptr.asFunction<_dart_strcmpi>();
+  late final _strcmpiPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcmpi');
+  late final _strcmpi1 = _strcmpiPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int stricmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
   ) {
-    return _stricmp_1(
+    return _stricmp1(
       _String1,
       _String2,
     );
   }
 
-  late final _stricmp_ptr = _lookup<ffi.NativeFunction<_c_stricmp>>('stricmp');
-  late final _dart_stricmp _stricmp_1 =
-      _stricmp_ptr.asFunction<_dart_stricmp>();
+  late final _stricmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('stricmp');
+  late final _stricmp1 = _stricmpPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> strlwr(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> strlwr(
+    ffi.Pointer<ffi.Char> _String,
   ) {
-    return _strlwr_1(
+    return _strlwr1(
       _String,
     );
   }
 
-  late final _strlwr_ptr = _lookup<ffi.NativeFunction<_c_strlwr>>('strlwr');
-  late final _dart_strlwr _strlwr_1 = _strlwr_ptr.asFunction<_dart_strlwr>();
+  late final _strlwrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('strlwr');
+  late final _strlwr1 = _strlwrPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int strnicmp(
-    ffi.Pointer<ffi.Int8> _String1,
-    ffi.Pointer<ffi.Int8> _String2,
+    ffi.Pointer<ffi.Char> _String1,
+    ffi.Pointer<ffi.Char> _String2,
     int _MaxCount,
   ) {
-    return _strnicmp_1(
+    return _strnicmp1(
       _String1,
       _String2,
       _MaxCount,
     );
   }
 
-  late final _strnicmp_ptr =
-      _lookup<ffi.NativeFunction<_c_strnicmp>>('strnicmp');
-  late final _dart_strnicmp _strnicmp_1 =
-      _strnicmp_ptr.asFunction<_dart_strnicmp>();
+  late final _strnicmpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('strnicmp');
+  late final _strnicmp1 = _strnicmpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> strnset(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> strnset(
+    ffi.Pointer<ffi.Char> _String,
     int _Value,
     int _MaxCount,
   ) {
-    return _strnset_1(
+    return _strnset1(
       _String,
       _Value,
       _MaxCount,
     );
   }
 
-  late final _strnset_ptr = _lookup<ffi.NativeFunction<_c_strnset>>('strnset');
-  late final _dart_strnset _strnset_1 =
-      _strnset_ptr.asFunction<_dart_strnset>();
+  late final _strnsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Size)>>('strnset');
+  late final _strnset1 = _strnsetPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int, int)>();
 
-  ffi.Pointer<ffi.Int8> strrev(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> strrev(
+    ffi.Pointer<ffi.Char> _String,
   ) {
-    return _strrev_1(
+    return _strrev1(
       _String,
     );
   }
 
-  late final _strrev_ptr = _lookup<ffi.NativeFunction<_c_strrev>>('strrev');
-  late final _dart_strrev _strrev_1 = _strrev_ptr.asFunction<_dart_strrev>();
+  late final _strrevPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('strrev');
+  late final _strrev1 = _strrevPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Int8> strset(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> strset(
+    ffi.Pointer<ffi.Char> _String,
     int _Value,
   ) {
-    return _strset_1(
+    return _strset1(
       _String,
       _Value,
     );
   }
 
-  late final _strset_ptr = _lookup<ffi.NativeFunction<_c_strset>>('strset');
-  late final _dart_strset _strset_1 = _strset_ptr.asFunction<_dart_strset>();
+  late final _strsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int)>>('strset');
+  late final _strset1 = _strsetPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Int8> strupr(
-    ffi.Pointer<ffi.Int8> _String,
+  ffi.Pointer<ffi.Char> strupr(
+    ffi.Pointer<ffi.Char> _String,
   ) {
-    return _strupr_1(
+    return _strupr1(
       _String,
     );
   }
 
-  late final _strupr_ptr = _lookup<ffi.NativeFunction<_c_strupr>>('strupr');
-  late final _dart_strupr _strupr_1 = _strupr_ptr.asFunction<_dart_strupr>();
+  late final _struprPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('strupr');
+  late final _strupr1 = _struprPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   void _wassert(
-    ffi.Pointer<ffi.Uint16> _Message,
-    ffi.Pointer<ffi.Uint16> _File,
+    ffi.Pointer<ffi.WChar> _Message,
+    ffi.Pointer<ffi.WChar> _File,
     int _Line,
   ) {
     return __wassert(
@@ -2211,10 +2623,12 @@ class LabSoundBind {
     );
   }
 
-  late final __wassert_ptr =
-      _lookup<ffi.NativeFunction<_c__wassert>>('_wassert');
-  late final _dart__wassert __wassert =
-      __wassert_ptr.asFunction<_dart__wassert>();
+  late final __wassertPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>,
+              ffi.UnsignedInt)>>('_wassert');
+  late final __wassert = __wassertPtr.asFunction<
+      void Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.WChar>, int)>();
 
   int imaxabs(
     int _Number,
@@ -2224,10 +2638,11 @@ class LabSoundBind {
     );
   }
 
-  late final _imaxabs_ptr = _lookup<ffi.NativeFunction<_c_imaxabs>>('imaxabs');
-  late final _dart_imaxabs _imaxabs = _imaxabs_ptr.asFunction<_dart_imaxabs>();
+  late final _imaxabsPtr =
+      _lookup<ffi.NativeFunction<intmax_t Function(intmax_t)>>('imaxabs');
+  late final _imaxabs = _imaxabsPtr.asFunction<int Function(int)>();
 
-  _Lldiv_t imaxdiv(
+  imaxdiv_t imaxdiv(
     int _Numerator,
     int _Denominator,
   ) {
@@ -2237,12 +2652,14 @@ class LabSoundBind {
     );
   }
 
-  late final _imaxdiv_ptr = _lookup<ffi.NativeFunction<_c_imaxdiv>>('imaxdiv');
-  late final _dart_imaxdiv _imaxdiv = _imaxdiv_ptr.asFunction<_dart_imaxdiv>();
+  late final _imaxdivPtr =
+      _lookup<ffi.NativeFunction<imaxdiv_t Function(intmax_t, intmax_t)>>(
+          'imaxdiv');
+  late final _imaxdiv = _imaxdivPtr.asFunction<imaxdiv_t Function(int, int)>();
 
   int strtoimax(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    ffi.Pointer<ffi.Char> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> _EndPtr,
     int _Radix,
   ) {
     return _strtoimax(
@@ -2252,16 +2669,19 @@ class LabSoundBind {
     );
   }
 
-  late final _strtoimax_ptr =
-      _lookup<ffi.NativeFunction<_c_strtoimax>>('strtoimax');
-  late final _dart_strtoimax _strtoimax =
-      _strtoimax_ptr.asFunction<_dart_strtoimax>();
+  late final _strtoimaxPtr = _lookup<
+      ffi.NativeFunction<
+          intmax_t Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Int)>>('strtoimax');
+  late final _strtoimax = _strtoimaxPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>, int)>();
 
   int _strtoimax_l(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    ffi.Pointer<ffi.Char> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> _EndPtr,
     int _Radix,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strtoimax_l(
       _String,
@@ -2271,14 +2691,20 @@ class LabSoundBind {
     );
   }
 
-  late final __strtoimax_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strtoimax_l>>('_strtoimax_l');
-  late final _dart__strtoimax_l __strtoimax_l =
-      __strtoimax_l_ptr.asFunction<_dart__strtoimax_l>();
+  late final __strtoimax_lPtr = _lookup<
+      ffi.NativeFunction<
+          intmax_t Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Int,
+              _locale_t)>>('_strtoimax_l');
+  late final __strtoimax_l = __strtoimax_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>,
+          int, _locale_t)>();
 
   int strtoumax(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    ffi.Pointer<ffi.Char> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> _EndPtr,
     int _Radix,
   ) {
     return _strtoumax(
@@ -2288,16 +2714,19 @@ class LabSoundBind {
     );
   }
 
-  late final _strtoumax_ptr =
-      _lookup<ffi.NativeFunction<_c_strtoumax>>('strtoumax');
-  late final _dart_strtoumax _strtoumax =
-      _strtoumax_ptr.asFunction<_dart_strtoumax>();
+  late final _strtoumaxPtr = _lookup<
+      ffi.NativeFunction<
+          uintmax_t Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Int)>>('strtoumax');
+  late final _strtoumax = _strtoumaxPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>, int)>();
 
   int _strtoumax_l(
-    ffi.Pointer<ffi.Int8> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
+    ffi.Pointer<ffi.Char> _String,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> _EndPtr,
     int _Radix,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __strtoumax_l(
       _String,
@@ -2307,14 +2736,20 @@ class LabSoundBind {
     );
   }
 
-  late final __strtoumax_l_ptr =
-      _lookup<ffi.NativeFunction<_c__strtoumax_l>>('_strtoumax_l');
-  late final _dart__strtoumax_l __strtoumax_l =
-      __strtoumax_l_ptr.asFunction<_dart__strtoumax_l>();
+  late final __strtoumax_lPtr = _lookup<
+      ffi.NativeFunction<
+          uintmax_t Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Int,
+              _locale_t)>>('_strtoumax_l');
+  late final __strtoumax_l = __strtoumax_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>,
+          int, _locale_t)>();
 
   int wcstoimax(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.Pointer<ffi.WChar>> _EndPtr,
     int _Radix,
   ) {
     return _wcstoimax(
@@ -2324,16 +2759,19 @@ class LabSoundBind {
     );
   }
 
-  late final _wcstoimax_ptr =
-      _lookup<ffi.NativeFunction<_c_wcstoimax>>('wcstoimax');
-  late final _dart_wcstoimax _wcstoimax =
-      _wcstoimax_ptr.asFunction<_dart_wcstoimax>();
+  late final _wcstoimaxPtr = _lookup<
+      ffi.NativeFunction<
+          intmax_t Function(ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.Pointer<ffi.WChar>>, ffi.Int)>>('wcstoimax');
+  late final _wcstoimax = _wcstoimaxPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.Pointer<ffi.WChar>>, int)>();
 
   int _wcstoimax_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.Pointer<ffi.WChar>> _EndPtr,
     int _Radix,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcstoimax_l(
       _String,
@@ -2343,14 +2781,20 @@ class LabSoundBind {
     );
   }
 
-  late final __wcstoimax_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcstoimax_l>>('_wcstoimax_l');
-  late final _dart__wcstoimax_l __wcstoimax_l =
-      __wcstoimax_l_ptr.asFunction<_dart__wcstoimax_l>();
+  late final __wcstoimax_lPtr = _lookup<
+      ffi.NativeFunction<
+          intmax_t Function(
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.Pointer<ffi.WChar>>,
+              ffi.Int,
+              _locale_t)>>('_wcstoimax_l');
+  late final __wcstoimax_l = __wcstoimax_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.Pointer<ffi.WChar>>,
+          int, _locale_t)>();
 
   int wcstoumax(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.Pointer<ffi.WChar>> _EndPtr,
     int _Radix,
   ) {
     return _wcstoumax(
@@ -2360,16 +2804,19 @@ class LabSoundBind {
     );
   }
 
-  late final _wcstoumax_ptr =
-      _lookup<ffi.NativeFunction<_c_wcstoumax>>('wcstoumax');
-  late final _dart_wcstoumax _wcstoumax =
-      _wcstoumax_ptr.asFunction<_dart_wcstoumax>();
+  late final _wcstoumaxPtr = _lookup<
+      ffi.NativeFunction<
+          uintmax_t Function(ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.Pointer<ffi.WChar>>, ffi.Int)>>('wcstoumax');
+  late final _wcstoumax = _wcstoumaxPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.Pointer<ffi.WChar>>, int)>();
 
   int _wcstoumax_l(
-    ffi.Pointer<ffi.Uint16> _String,
-    ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
+    ffi.Pointer<ffi.WChar> _String,
+    ffi.Pointer<ffi.Pointer<ffi.WChar>> _EndPtr,
     int _Radix,
-    ffi.Pointer<__crt_locale_pointers> _Locale,
+    _locale_t _Locale,
   ) {
     return __wcstoumax_l(
       _String,
@@ -2379,10 +2826,16 @@ class LabSoundBind {
     );
   }
 
-  late final __wcstoumax_l_ptr =
-      _lookup<ffi.NativeFunction<_c__wcstoumax_l>>('_wcstoumax_l');
-  late final _dart__wcstoumax_l __wcstoumax_l =
-      __wcstoumax_l_ptr.asFunction<_dart__wcstoumax_l>();
+  late final __wcstoumax_lPtr = _lookup<
+      ffi.NativeFunction<
+          uintmax_t Function(
+              ffi.Pointer<ffi.WChar>,
+              ffi.Pointer<ffi.Pointer<ffi.WChar>>,
+              ffi.Int,
+              _locale_t)>>('_wcstoumax_l');
+  late final __wcstoumax_l = __wcstoumax_lPtr.asFunction<
+      int Function(ffi.Pointer<ffi.WChar>, ffi.Pointer<ffi.Pointer<ffi.WChar>>,
+          int, _locale_t)>();
 
   /// Is this an error handle?
   ///
@@ -2391,15 +2844,15 @@ class LabSoundBind {
     Object handle,
   ) {
     return _Dart_IsError(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsError>>('Dart_IsError');
-  late final _dart_Dart_IsError _Dart_IsError =
-      _Dart_IsError_ptr.asFunction<_dart_Dart_IsError>();
+  late final _Dart_IsErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsError');
+  late final _Dart_IsError =
+      _Dart_IsErrorPtr.asFunction<bool Function(Object)>();
 
   /// Is this an api error handle?
   ///
@@ -2412,15 +2865,15 @@ class LabSoundBind {
     Object handle,
   ) {
     return _Dart_IsApiError(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsApiError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsApiError>>('Dart_IsApiError');
-  late final _dart_Dart_IsApiError _Dart_IsApiError =
-      _Dart_IsApiError_ptr.asFunction<_dart_Dart_IsApiError>();
+  late final _Dart_IsApiErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsApiError');
+  late final _Dart_IsApiError =
+      _Dart_IsApiErrorPtr.asFunction<bool Function(Object)>();
 
   /// Is this an unhandled exception error handle?
   ///
@@ -2436,17 +2889,15 @@ class LabSoundBind {
     Object handle,
   ) {
     return _Dart_IsUnhandledExceptionError(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsUnhandledExceptionError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsUnhandledExceptionError>>(
+  late final _Dart_IsUnhandledExceptionErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
           'Dart_IsUnhandledExceptionError');
-  late final _dart_Dart_IsUnhandledExceptionError
-      _Dart_IsUnhandledExceptionError = _Dart_IsUnhandledExceptionError_ptr
-          .asFunction<_dart_Dart_IsUnhandledExceptionError>();
+  late final _Dart_IsUnhandledExceptionError =
+      _Dart_IsUnhandledExceptionErrorPtr.asFunction<bool Function(Object)>();
 
   /// Is this a compilation error handle?
   ///
@@ -2459,16 +2910,15 @@ class LabSoundBind {
     Object handle,
   ) {
     return _Dart_IsCompilationError(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsCompilationError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsCompilationError>>(
+  late final _Dart_IsCompilationErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
           'Dart_IsCompilationError');
-  late final _dart_Dart_IsCompilationError _Dart_IsCompilationError =
-      _Dart_IsCompilationError_ptr.asFunction<_dart_Dart_IsCompilationError>();
+  late final _Dart_IsCompilationError =
+      _Dart_IsCompilationErrorPtr.asFunction<bool Function(Object)>();
 
   /// Is this a fatal error handle?
   ///
@@ -2480,15 +2930,15 @@ class LabSoundBind {
     Object handle,
   ) {
     return _Dart_IsFatalError(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsFatalError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsFatalError>>('Dart_IsFatalError');
-  late final _dart_Dart_IsFatalError _Dart_IsFatalError =
-      _Dart_IsFatalError_ptr.asFunction<_dart_Dart_IsFatalError>();
+  late final _Dart_IsFatalErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsFatalError');
+  late final _Dart_IsFatalError =
+      _Dart_IsFatalErrorPtr.asFunction<bool Function(Object)>();
 
   /// Gets the error message from an error handle.
   ///
@@ -2498,7 +2948,7 @@ class LabSoundBind {
   /// error. An empty C string ("") if the handle is valid. This C
   /// String is scope allocated and is only valid until the next call
   /// to Dart_ExitScope.
-  ffi.Pointer<ffi.Int8> Dart_GetError(
+  ffi.Pointer<ffi.Char> Dart_GetError(
     Object handle,
   ) {
     return _Dart_GetError(
@@ -2506,26 +2956,26 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetError>>('Dart_GetError');
-  late final _dart_Dart_GetError _Dart_GetError =
-      _Dart_GetError_ptr.asFunction<_dart_Dart_GetError>();
+  late final _Dart_GetErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Handle)>>(
+          'Dart_GetError');
+  late final _Dart_GetError =
+      _Dart_GetErrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(Object)>();
 
   /// Is this an error handle for an unhandled exception?
   bool Dart_ErrorHasException(
     Object handle,
   ) {
     return _Dart_ErrorHasException(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_ErrorHasException_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ErrorHasException>>(
+  late final _Dart_ErrorHasExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
           'Dart_ErrorHasException');
-  late final _dart_Dart_ErrorHasException _Dart_ErrorHasException =
-      _Dart_ErrorHasException_ptr.asFunction<_dart_Dart_ErrorHasException>();
+  late final _Dart_ErrorHasException =
+      _Dart_ErrorHasExceptionPtr.asFunction<bool Function(Object)>();
 
   /// Gets the exception Object from an unhandled exception error handle.
   Object Dart_ErrorGetException(
@@ -2536,11 +2986,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ErrorGetException_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ErrorGetException>>(
+  late final _Dart_ErrorGetExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_ErrorGetException');
-  late final _dart_Dart_ErrorGetException _Dart_ErrorGetException =
-      _Dart_ErrorGetException_ptr.asFunction<_dart_Dart_ErrorGetException>();
+  late final _Dart_ErrorGetException =
+      _Dart_ErrorGetExceptionPtr.asFunction<Object Function(Object)>();
 
   /// Gets the stack trace Object from an unhandled exception error handle.
   Object Dart_ErrorGetStackTrace(
@@ -2551,11 +3001,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ErrorGetStackTrace_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ErrorGetStackTrace>>(
+  late final _Dart_ErrorGetStackTracePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_ErrorGetStackTrace');
-  late final _dart_Dart_ErrorGetStackTrace _Dart_ErrorGetStackTrace =
-      _Dart_ErrorGetStackTrace_ptr.asFunction<_dart_Dart_ErrorGetStackTrace>();
+  late final _Dart_ErrorGetStackTrace =
+      _Dart_ErrorGetStackTracePtr.asFunction<Object Function(Object)>();
 
   /// Produces an api error handle with the provided error message.
   ///
@@ -2563,32 +3013,32 @@ class LabSoundBind {
   ///
   /// \param error the error message.
   Object Dart_NewApiError(
-    ffi.Pointer<ffi.Int8> error,
+    ffi.Pointer<ffi.Char> error,
   ) {
     return _Dart_NewApiError(
       error,
     );
   }
 
-  late final _Dart_NewApiError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewApiError>>('Dart_NewApiError');
-  late final _dart_Dart_NewApiError _Dart_NewApiError =
-      _Dart_NewApiError_ptr.asFunction<_dart_Dart_NewApiError>();
+  late final _Dart_NewApiErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_NewApiError');
+  late final _Dart_NewApiError =
+      _Dart_NewApiErrorPtr.asFunction<Object Function(ffi.Pointer<ffi.Char>)>();
 
   Object Dart_NewCompilationError(
-    ffi.Pointer<ffi.Int8> error,
+    ffi.Pointer<ffi.Char> error,
   ) {
     return _Dart_NewCompilationError(
       error,
     );
   }
 
-  late final _Dart_NewCompilationError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewCompilationError>>(
+  late final _Dart_NewCompilationErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
           'Dart_NewCompilationError');
-  late final _dart_Dart_NewCompilationError _Dart_NewCompilationError =
-      _Dart_NewCompilationError_ptr.asFunction<
-          _dart_Dart_NewCompilationError>();
+  late final _Dart_NewCompilationError = _Dart_NewCompilationErrorPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Char>)>();
 
   /// Produces a new unhandled exception error handle.
   ///
@@ -2607,12 +3057,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewUnhandledExceptionError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewUnhandledExceptionError>>(
+  late final _Dart_NewUnhandledExceptionErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_NewUnhandledExceptionError');
-  late final _dart_Dart_NewUnhandledExceptionError
-      _Dart_NewUnhandledExceptionError = _Dart_NewUnhandledExceptionError_ptr
-          .asFunction<_dart_Dart_NewUnhandledExceptionError>();
+  late final _Dart_NewUnhandledExceptionError =
+      _Dart_NewUnhandledExceptionErrorPtr.asFunction<Object Function(Object)>();
 
   /// Propagates an error.
   ///
@@ -2646,11 +3095,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_PropagateError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_PropagateError>>(
+  late final _Dart_PropagateErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
           'Dart_PropagateError');
-  late final _dart_Dart_PropagateError _Dart_PropagateError =
-      _Dart_PropagateError_ptr.asFunction<_dart_Dart_PropagateError>();
+  late final _Dart_PropagateError =
+      _Dart_PropagateErrorPtr.asFunction<void Function(Object)>();
 
   /// Converts an object to a string.
   ///
@@ -2667,10 +3116,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ToString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ToString>>('Dart_ToString');
-  late final _dart_Dart_ToString _Dart_ToString =
-      _Dart_ToString_ptr.asFunction<_dart_Dart_ToString>();
+  late final _Dart_ToStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ToString');
+  late final _Dart_ToString =
+      _Dart_ToStringPtr.asFunction<Object Function(Object)>();
 
   /// Checks to see if two handles refer to identically equal objects.
   ///
@@ -2687,17 +3137,16 @@ class LabSoundBind {
     Object obj2,
   ) {
     return _Dart_IdentityEquals(
-          obj1,
-          obj2,
-        ) !=
-        0;
+      obj1,
+      obj2,
+    );
   }
 
-  late final _Dart_IdentityEquals_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IdentityEquals>>(
+  late final _Dart_IdentityEqualsPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle, ffi.Handle)>>(
           'Dart_IdentityEquals');
-  late final _dart_Dart_IdentityEquals _Dart_IdentityEquals =
-      _Dart_IdentityEquals_ptr.asFunction<_dart_Dart_IdentityEquals>();
+  late final _Dart_IdentityEquals =
+      _Dart_IdentityEqualsPtr.asFunction<bool Function(Object, Object)>();
 
   /// Allocates a handle in the current scope from a persistent handle.
   Object Dart_HandleFromPersistent(
@@ -2708,30 +3157,28 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_HandleFromPersistent_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HandleFromPersistent>>(
+  late final _Dart_HandleFromPersistentPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_HandleFromPersistent');
-  late final _dart_Dart_HandleFromPersistent _Dart_HandleFromPersistent =
-      _Dart_HandleFromPersistent_ptr.asFunction<
-          _dart_Dart_HandleFromPersistent>();
+  late final _Dart_HandleFromPersistent =
+      _Dart_HandleFromPersistentPtr.asFunction<Object Function(Object)>();
 
   /// Allocates a handle in the current scope from a weak persistent handle.
   ///
   /// This will be a handle to Dart_Null if the object has been garbage collected.
   Object Dart_HandleFromWeakPersistent(
-    ffi.Pointer<_Dart_WeakPersistentHandle> object,
+    Dart_WeakPersistentHandle object,
   ) {
     return _Dart_HandleFromWeakPersistent(
       object,
     );
   }
 
-  late final _Dart_HandleFromWeakPersistent_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HandleFromWeakPersistent>>(
-          'Dart_HandleFromWeakPersistent');
-  late final _dart_Dart_HandleFromWeakPersistent
-      _Dart_HandleFromWeakPersistent = _Dart_HandleFromWeakPersistent_ptr
-          .asFunction<_dart_Dart_HandleFromWeakPersistent>();
+  late final _Dart_HandleFromWeakPersistentPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_WeakPersistentHandle)>>(
+      'Dart_HandleFromWeakPersistent');
+  late final _Dart_HandleFromWeakPersistent = _Dart_HandleFromWeakPersistentPtr
+      .asFunction<Object Function(Dart_WeakPersistentHandle)>();
 
   /// Allocates a persistent handle for an object.
   ///
@@ -2747,12 +3194,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewPersistentHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewPersistentHandle>>(
+  late final _Dart_NewPersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_NewPersistentHandle');
-  late final _dart_Dart_NewPersistentHandle _Dart_NewPersistentHandle =
-      _Dart_NewPersistentHandle_ptr.asFunction<
-          _dart_Dart_NewPersistentHandle>();
+  late final _Dart_NewPersistentHandle =
+      _Dart_NewPersistentHandlePtr.asFunction<Object Function(Object)>();
 
   /// Assign value of local handle to a persistent handle.
   ///
@@ -2773,12 +3219,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetPersistentHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetPersistentHandle>>(
+  late final _Dart_SetPersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle, ffi.Handle)>>(
           'Dart_SetPersistentHandle');
-  late final _dart_Dart_SetPersistentHandle _Dart_SetPersistentHandle =
-      _Dart_SetPersistentHandle_ptr.asFunction<
-          _dart_Dart_SetPersistentHandle>();
+  late final _Dart_SetPersistentHandle =
+      _Dart_SetPersistentHandlePtr.asFunction<void Function(Object, Object)>();
 
   /// Deallocates a persistent handle.
   ///
@@ -2791,12 +3236,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_DeletePersistentHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DeletePersistentHandle>>(
+  late final _Dart_DeletePersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
           'Dart_DeletePersistentHandle');
-  late final _dart_Dart_DeletePersistentHandle _Dart_DeletePersistentHandle =
-      _Dart_DeletePersistentHandle_ptr.asFunction<
-          _dart_Dart_DeletePersistentHandle>();
+  late final _Dart_DeletePersistentHandle =
+      _Dart_DeletePersistentHandlePtr.asFunction<void Function(Object)>();
 
   /// Allocates a weak persistent handle for an object.
   ///
@@ -2826,11 +3270,11 @@ class LabSoundBind {
   ///
   /// \return The weak persistent handle or NULL. NULL is returned in case of bad
   /// parameters.
-  ffi.Pointer<_Dart_WeakPersistentHandle> Dart_NewWeakPersistentHandle(
+  Dart_WeakPersistentHandle Dart_NewWeakPersistentHandle(
     Object object,
     ffi.Pointer<ffi.Void> peer,
     int external_allocation_size,
-    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+    Dart_HandleFinalizer callback,
   ) {
     return _Dart_NewWeakPersistentHandle(
       object,
@@ -2840,36 +3284,41 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewWeakPersistentHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewWeakPersistentHandle>>(
-          'Dart_NewWeakPersistentHandle');
-  late final _dart_Dart_NewWeakPersistentHandle _Dart_NewWeakPersistentHandle =
-      _Dart_NewWeakPersistentHandle_ptr.asFunction<
-          _dart_Dart_NewWeakPersistentHandle>();
+  late final _Dart_NewWeakPersistentHandlePtr = _lookup<
+      ffi.NativeFunction<
+          Dart_WeakPersistentHandle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewWeakPersistentHandle');
+  late final _Dart_NewWeakPersistentHandle =
+      _Dart_NewWeakPersistentHandlePtr.asFunction<
+          Dart_WeakPersistentHandle Function(
+              Object, ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
 
   /// Deletes the given weak persistent [object] handle.
   ///
   /// Requires there to be a current isolate group.
   void Dart_DeleteWeakPersistentHandle(
-    ffi.Pointer<_Dart_WeakPersistentHandle> object,
+    Dart_WeakPersistentHandle object,
   ) {
     return _Dart_DeleteWeakPersistentHandle(
       object,
     );
   }
 
-  late final _Dart_DeleteWeakPersistentHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DeleteWeakPersistentHandle>>(
+  late final _Dart_DeleteWeakPersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_WeakPersistentHandle)>>(
           'Dart_DeleteWeakPersistentHandle');
-  late final _dart_Dart_DeleteWeakPersistentHandle
-      _Dart_DeleteWeakPersistentHandle = _Dart_DeleteWeakPersistentHandle_ptr
-          .asFunction<_dart_Dart_DeleteWeakPersistentHandle>();
+  late final _Dart_DeleteWeakPersistentHandle =
+      _Dart_DeleteWeakPersistentHandlePtr.asFunction<
+          void Function(Dart_WeakPersistentHandle)>();
 
   /// Updates the external memory size for the given weak persistent handle.
   ///
   /// May trigger garbage collection.
   void Dart_UpdateExternalSize(
-    ffi.Pointer<_Dart_WeakPersistentHandle> object,
+    Dart_WeakPersistentHandle object,
     int external_allocation_size,
   ) {
     return _Dart_UpdateExternalSize(
@@ -2878,11 +3327,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_UpdateExternalSize_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_UpdateExternalSize>>(
-          'Dart_UpdateExternalSize');
-  late final _dart_Dart_UpdateExternalSize _Dart_UpdateExternalSize =
-      _Dart_UpdateExternalSize_ptr.asFunction<_dart_Dart_UpdateExternalSize>();
+  late final _Dart_UpdateExternalSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_WeakPersistentHandle,
+              ffi.IntPtr)>>('Dart_UpdateExternalSize');
+  late final _Dart_UpdateExternalSize = _Dart_UpdateExternalSizePtr.asFunction<
+      void Function(Dart_WeakPersistentHandle, int)>();
 
   /// Allocates a finalizable handle for an object.
   ///
@@ -2916,11 +3366,11 @@ class LabSoundBind {
   ///
   /// \return The finalizable handle or NULL. NULL is returned in case of bad
   /// parameters.
-  ffi.Pointer<_Dart_FinalizableHandle> Dart_NewFinalizableHandle(
+  Dart_FinalizableHandle Dart_NewFinalizableHandle(
     Object object,
     ffi.Pointer<ffi.Void> peer,
     int external_allocation_size,
-    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+    Dart_HandleFinalizer callback,
   ) {
     return _Dart_NewFinalizableHandle(
       object,
@@ -2930,12 +3380,14 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewFinalizableHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewFinalizableHandle>>(
-          'Dart_NewFinalizableHandle');
-  late final _dart_Dart_NewFinalizableHandle _Dart_NewFinalizableHandle =
-      _Dart_NewFinalizableHandle_ptr.asFunction<
-          _dart_Dart_NewFinalizableHandle>();
+  late final _Dart_NewFinalizableHandlePtr = _lookup<
+      ffi.NativeFunction<
+          Dart_FinalizableHandle Function(ffi.Handle, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr, Dart_HandleFinalizer)>>('Dart_NewFinalizableHandle');
+  late final _Dart_NewFinalizableHandle =
+      _Dart_NewFinalizableHandlePtr.asFunction<
+          Dart_FinalizableHandle Function(
+              Object, ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
 
   /// Deletes the given finalizable [object] handle.
   ///
@@ -2944,7 +3396,7 @@ class LabSoundBind {
   ///
   /// Requires there to be a current isolate.
   void Dart_DeleteFinalizableHandle(
-    ffi.Pointer<_Dart_FinalizableHandle> object,
+    Dart_FinalizableHandle object,
     Object strong_ref_to_object,
   ) {
     return _Dart_DeleteFinalizableHandle(
@@ -2953,12 +3405,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_DeleteFinalizableHandle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DeleteFinalizableHandle>>(
-          'Dart_DeleteFinalizableHandle');
-  late final _dart_Dart_DeleteFinalizableHandle _Dart_DeleteFinalizableHandle =
-      _Dart_DeleteFinalizableHandle_ptr.asFunction<
-          _dart_Dart_DeleteFinalizableHandle>();
+  late final _Dart_DeleteFinalizableHandlePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_FinalizableHandle,
+              ffi.Handle)>>('Dart_DeleteFinalizableHandle');
+  late final _Dart_DeleteFinalizableHandle = _Dart_DeleteFinalizableHandlePtr
+      .asFunction<void Function(Dart_FinalizableHandle, Object)>();
 
   /// Updates the external memory size for the given finalizable handle.
   ///
@@ -2967,7 +3419,7 @@ class LabSoundBind {
   ///
   /// May trigger garbage collection.
   void Dart_UpdateFinalizableExternalSize(
-    ffi.Pointer<_Dart_FinalizableHandle> object,
+    Dart_FinalizableHandle object,
     Object strong_ref_to_object,
     int external_allocation_size,
   ) {
@@ -2978,27 +3430,28 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_UpdateFinalizableExternalSize_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_UpdateFinalizableExternalSize>>(
-          'Dart_UpdateFinalizableExternalSize');
-  late final _dart_Dart_UpdateFinalizableExternalSize
-      _Dart_UpdateFinalizableExternalSize =
-      _Dart_UpdateFinalizableExternalSize_ptr.asFunction<
-          _dart_Dart_UpdateFinalizableExternalSize>();
+  late final _Dart_UpdateFinalizableExternalSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_FinalizableHandle, ffi.Handle,
+              ffi.IntPtr)>>('Dart_UpdateFinalizableExternalSize');
+  late final _Dart_UpdateFinalizableExternalSize =
+      _Dart_UpdateFinalizableExternalSizePtr.asFunction<
+          void Function(Dart_FinalizableHandle, Object, int)>();
 
   /// Gets the version string for the Dart VM.
   ///
   /// The version of the Dart VM can be accessed without initializing the VM.
   ///
   /// \return The version string for the embedded Dart VM.
-  ffi.Pointer<ffi.Int8> Dart_VersionString() {
+  ffi.Pointer<ffi.Char> Dart_VersionString() {
     return _Dart_VersionString();
   }
 
-  late final _Dart_VersionString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_VersionString>>('Dart_VersionString');
-  late final _dart_Dart_VersionString _Dart_VersionString =
-      _Dart_VersionString_ptr.asFunction<_dart_Dart_VersionString>();
+  late final _Dart_VersionStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
+          'Dart_VersionString');
+  late final _Dart_VersionString =
+      _Dart_VersionStringPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
 
   /// Initialize Dart_IsolateFlags with correct version and default values.
   void Dart_IsolateFlagsInitialize(
@@ -3009,12 +3462,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IsolateFlagsInitialize_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsolateFlagsInitialize>>(
-          'Dart_IsolateFlagsInitialize');
-  late final _dart_Dart_IsolateFlagsInitialize _Dart_IsolateFlagsInitialize =
-      _Dart_IsolateFlagsInitialize_ptr.asFunction<
-          _dart_Dart_IsolateFlagsInitialize>();
+  late final _Dart_IsolateFlagsInitializePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<Dart_IsolateFlags>)>>('Dart_IsolateFlagsInitialize');
+  late final _Dart_IsolateFlagsInitialize = _Dart_IsolateFlagsInitializePtr
+      .asFunction<void Function(ffi.Pointer<Dart_IsolateFlags>)>();
 
   /// Initializes the VM.
   ///
@@ -3023,7 +3476,7 @@ class LabSoundBind {
   ///
   /// \return NULL if initialization is successful. Returns an error message
   /// otherwise. The caller is responsible for freeing the error message.
-  ffi.Pointer<ffi.Int8> Dart_Initialize(
+  ffi.Pointer<ffi.Char> Dart_Initialize(
     ffi.Pointer<Dart_InitializeParams> params,
   ) {
     return _Dart_Initialize(
@@ -3031,10 +3484,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_Initialize_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Initialize>>('Dart_Initialize');
-  late final _dart_Dart_Initialize _Dart_Initialize =
-      _Dart_Initialize_ptr.asFunction<_dart_Dart_Initialize>();
+  late final _Dart_InitializePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<Dart_InitializeParams>)>>('Dart_Initialize');
+  late final _Dart_Initialize = _Dart_InitializePtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<Dart_InitializeParams>)>();
 
   /// Cleanup state in the VM before process termination.
   ///
@@ -3043,14 +3498,15 @@ class LabSoundBind {
   ///
   /// NOTE: This function must not be called on a thread that was created by the VM
   /// itself.
-  ffi.Pointer<ffi.Int8> Dart_Cleanup() {
+  ffi.Pointer<ffi.Char> Dart_Cleanup() {
     return _Dart_Cleanup();
   }
 
-  late final _Dart_Cleanup_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Cleanup>>('Dart_Cleanup');
-  late final _dart_Dart_Cleanup _Dart_Cleanup =
-      _Dart_Cleanup_ptr.asFunction<_dart_Dart_Cleanup>();
+  late final _Dart_CleanupPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
+          'Dart_Cleanup');
+  late final _Dart_Cleanup =
+      _Dart_CleanupPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
 
   /// Sets command line flags. Should be called before Dart_Initialize.
   ///
@@ -3061,9 +3517,9 @@ class LabSoundBind {
   /// The caller is responsible for freeing the error message.
   ///
   /// NOTE: This call does not store references to the passed in c-strings.
-  ffi.Pointer<ffi.Int8> Dart_SetVMFlags(
+  ffi.Pointer<ffi.Char> Dart_SetVMFlags(
     int argc,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> argv,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> argv,
   ) {
     return _Dart_SetVMFlags(
       argc,
@@ -3071,10 +3527,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetVMFlags_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetVMFlags>>('Dart_SetVMFlags');
-  late final _dart_Dart_SetVMFlags _Dart_SetVMFlags =
-      _Dart_SetVMFlags_ptr.asFunction<_dart_Dart_SetVMFlags>();
+  late final _Dart_SetVMFlagsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_SetVMFlags');
+  late final _Dart_SetVMFlags = _Dart_SetVMFlagsPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Returns true if the named VM flag is of boolean type, specified, and set to
   /// true.
@@ -3082,18 +3541,18 @@ class LabSoundBind {
   /// \param flag_name The name of the flag without leading punctuation
   /// (example: "enable_asserts").
   bool Dart_IsVMFlagSet(
-    ffi.Pointer<ffi.Int8> flag_name,
+    ffi.Pointer<ffi.Char> flag_name,
   ) {
     return _Dart_IsVMFlagSet(
-          flag_name,
-        ) !=
-        0;
+      flag_name,
+    );
   }
 
-  late final _Dart_IsVMFlagSet_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsVMFlagSet>>('Dart_IsVMFlagSet');
-  late final _dart_Dart_IsVMFlagSet _Dart_IsVMFlagSet =
-      _Dart_IsVMFlagSet_ptr.asFunction<_dart_Dart_IsVMFlagSet>();
+  late final _Dart_IsVMFlagSetPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_IsVMFlagSet');
+  late final _Dart_IsVMFlagSet =
+      _Dart_IsVMFlagSetPtr.asFunction<bool Function(ffi.Pointer<ffi.Char>)>();
 
   /// Creates a new isolate. The new isolate becomes the current isolate.
   ///
@@ -3128,15 +3587,15 @@ class LabSoundBind {
   /// message.
   ///
   /// \return The new isolate on success, or NULL if isolate creation failed.
-  ffi.Pointer<_Dart_Isolate> Dart_CreateIsolateGroup(
-    ffi.Pointer<ffi.Int8> script_uri,
-    ffi.Pointer<ffi.Int8> name,
+  Dart_Isolate Dart_CreateIsolateGroup(
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
     ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
     ffi.Pointer<Dart_IsolateFlags> flags,
     ffi.Pointer<ffi.Void> isolate_group_data,
     ffi.Pointer<ffi.Void> isolate_data,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
   ) {
     return _Dart_CreateIsolateGroup(
       script_uri,
@@ -3150,11 +3609,27 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_CreateIsolateGroup_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateIsolateGroup>>(
-          'Dart_CreateIsolateGroup');
-  late final _dart_Dart_CreateIsolateGroup _Dart_CreateIsolateGroup =
-      _Dart_CreateIsolateGroup_ptr.asFunction<_dart_Dart_CreateIsolateGroup>();
+  late final _Dart_CreateIsolateGroupPtr = _lookup<
+      ffi.NativeFunction<
+          Dart_Isolate Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<Dart_IsolateFlags>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_CreateIsolateGroup');
+  late final _Dart_CreateIsolateGroup = _Dart_CreateIsolateGroupPtr.asFunction<
+      Dart_Isolate Function(
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<Dart_IsolateFlags>,
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Creates a new isolate inside the isolate group of [group_member].
   ///
@@ -3177,15 +3652,13 @@ class LabSoundBind {
   /// failed.
   ///
   /// If successful, the newly created isolate will become the current isolate.
-  ffi.Pointer<_Dart_Isolate> Dart_CreateIsolateInGroup(
-    ffi.Pointer<_Dart_Isolate> group_member,
-    ffi.Pointer<ffi.Int8> name,
-    ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
-        shutdown_callback,
-    ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>>
-        cleanup_callback,
+  Dart_Isolate Dart_CreateIsolateInGroup(
+    Dart_Isolate group_member,
+    ffi.Pointer<ffi.Char> name,
+    Dart_IsolateShutdownCallback shutdown_callback,
+    Dart_IsolateCleanupCallback cleanup_callback,
     ffi.Pointer<ffi.Void> child_isolate_data,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
   ) {
     return _Dart_CreateIsolateInGroup(
       group_member,
@@ -3197,12 +3670,25 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_CreateIsolateInGroup_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateIsolateInGroup>>(
-          'Dart_CreateIsolateInGroup');
-  late final _dart_Dart_CreateIsolateInGroup _Dart_CreateIsolateInGroup =
-      _Dart_CreateIsolateInGroup_ptr.asFunction<
-          _dart_Dart_CreateIsolateInGroup>();
+  late final _Dart_CreateIsolateInGroupPtr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  Dart_Isolate,
+                  ffi.Pointer<ffi.Char>,
+                  Dart_IsolateShutdownCallback,
+                  Dart_IsolateCleanupCallback,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'Dart_CreateIsolateInGroup');
+  late final _Dart_CreateIsolateInGroup =
+      _Dart_CreateIsolateInGroupPtr.asFunction<
+          Dart_Isolate Function(
+              Dart_Isolate,
+              ffi.Pointer<ffi.Char>,
+              Dart_IsolateShutdownCallback,
+              Dart_IsolateCleanupCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Creates a new isolate from a Dart Kernel file. The new isolate
   /// becomes the current isolate.
@@ -3231,15 +3717,15 @@ class LabSoundBind {
   /// message.
   ///
   /// \return The new isolate on success, or NULL if isolate creation failed.
-  ffi.Pointer<_Dart_Isolate> Dart_CreateIsolateGroupFromKernel(
-    ffi.Pointer<ffi.Int8> script_uri,
-    ffi.Pointer<ffi.Int8> name,
+  Dart_Isolate Dart_CreateIsolateGroupFromKernel(
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Uint8> kernel_buffer,
     int kernel_buffer_size,
     ffi.Pointer<Dart_IsolateFlags> flags,
     ffi.Pointer<ffi.Void> isolate_group_data,
     ffi.Pointer<ffi.Void> isolate_data,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
   ) {
     return _Dart_CreateIsolateGroupFromKernel(
       script_uri,
@@ -3253,13 +3739,29 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_CreateIsolateGroupFromKernel_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateIsolateGroupFromKernel>>(
-          'Dart_CreateIsolateGroupFromKernel');
-  late final _dart_Dart_CreateIsolateGroupFromKernel
-      _Dart_CreateIsolateGroupFromKernel =
-      _Dart_CreateIsolateGroupFromKernel_ptr.asFunction<
-          _dart_Dart_CreateIsolateGroupFromKernel>();
+  late final _Dart_CreateIsolateGroupFromKernelPtr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  ffi.Pointer<ffi.Char>,
+                  ffi.Pointer<ffi.Char>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.IntPtr,
+                  ffi.Pointer<Dart_IsolateFlags>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'Dart_CreateIsolateGroupFromKernel');
+  late final _Dart_CreateIsolateGroupFromKernel =
+      _Dart_CreateIsolateGroupFromKernelPtr.asFunction<
+          Dart_Isolate Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              int,
+              ffi.Pointer<Dart_IsolateFlags>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Shuts down the current isolate. After this call, the current isolate is NULL.
   /// Any current scopes created by Dart_EnterScope will be exited. Invokes the
@@ -3270,23 +3772,22 @@ class LabSoundBind {
     return _Dart_ShutdownIsolate();
   }
 
-  late final _Dart_ShutdownIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ShutdownIsolate>>(
-          'Dart_ShutdownIsolate');
-  late final _dart_Dart_ShutdownIsolate _Dart_ShutdownIsolate =
-      _Dart_ShutdownIsolate_ptr.asFunction<_dart_Dart_ShutdownIsolate>();
+  late final _Dart_ShutdownIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ShutdownIsolate');
+  late final _Dart_ShutdownIsolate =
+      _Dart_ShutdownIsolatePtr.asFunction<void Function()>();
 
   /// Returns the current isolate. Will return NULL if there is no
   /// current isolate.
-  ffi.Pointer<_Dart_Isolate> Dart_CurrentIsolate() {
+  Dart_Isolate Dart_CurrentIsolate() {
     return _Dart_CurrentIsolate();
   }
 
-  late final _Dart_CurrentIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolate>>(
+  late final _Dart_CurrentIsolatePtr =
+      _lookup<ffi.NativeFunction<Dart_Isolate Function()>>(
           'Dart_CurrentIsolate');
-  late final _dart_Dart_CurrentIsolate _Dart_CurrentIsolate =
-      _Dart_CurrentIsolate_ptr.asFunction<_dart_Dart_CurrentIsolate>();
+  late final _Dart_CurrentIsolate =
+      _Dart_CurrentIsolatePtr.asFunction<Dart_Isolate Function()>();
 
   /// Returns the callback data associated with the current isolate. This
   /// data was set when the isolate got created or initialized.
@@ -3294,39 +3795,39 @@ class LabSoundBind {
     return _Dart_CurrentIsolateData();
   }
 
-  late final _Dart_CurrentIsolateData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolateData>>(
+  late final _Dart_CurrentIsolateDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
           'Dart_CurrentIsolateData');
-  late final _dart_Dart_CurrentIsolateData _Dart_CurrentIsolateData =
-      _Dart_CurrentIsolateData_ptr.asFunction<_dart_Dart_CurrentIsolateData>();
+  late final _Dart_CurrentIsolateData = _Dart_CurrentIsolateDataPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function()>();
 
   /// Returns the callback data associated with the given isolate. This
   /// data was set when the isolate got created or initialized.
   ffi.Pointer<ffi.Void> Dart_IsolateData(
-    ffi.Pointer<_Dart_Isolate> isolate,
+    Dart_Isolate isolate,
   ) {
     return _Dart_IsolateData(
       isolate,
     );
   }
 
-  late final _Dart_IsolateData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsolateData>>('Dart_IsolateData');
-  late final _dart_Dart_IsolateData _Dart_IsolateData =
-      _Dart_IsolateData_ptr.asFunction<_dart_Dart_IsolateData>();
+  late final _Dart_IsolateDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(Dart_Isolate)>>(
+          'Dart_IsolateData');
+  late final _Dart_IsolateData = _Dart_IsolateDataPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(Dart_Isolate)>();
 
   /// Returns the current isolate group. Will return NULL if there is no
   /// current isolate group.
-  ffi.Pointer<_Dart_IsolateGroup> Dart_CurrentIsolateGroup() {
+  Dart_IsolateGroup Dart_CurrentIsolateGroup() {
     return _Dart_CurrentIsolateGroup();
   }
 
-  late final _Dart_CurrentIsolateGroup_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolateGroup>>(
+  late final _Dart_CurrentIsolateGroupPtr =
+      _lookup<ffi.NativeFunction<Dart_IsolateGroup Function()>>(
           'Dart_CurrentIsolateGroup');
-  late final _dart_Dart_CurrentIsolateGroup _Dart_CurrentIsolateGroup =
-      _Dart_CurrentIsolateGroup_ptr.asFunction<
-          _dart_Dart_CurrentIsolateGroup>();
+  late final _Dart_CurrentIsolateGroup =
+      _Dart_CurrentIsolateGroupPtr.asFunction<Dart_IsolateGroup Function()>();
 
   /// Returns the callback data associated with the current isolate group. This
   /// data was passed to the isolate group when it was created.
@@ -3334,30 +3835,29 @@ class LabSoundBind {
     return _Dart_CurrentIsolateGroupData();
   }
 
-  late final _Dart_CurrentIsolateGroupData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CurrentIsolateGroupData>>(
+  late final _Dart_CurrentIsolateGroupDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
           'Dart_CurrentIsolateGroupData');
-  late final _dart_Dart_CurrentIsolateGroupData _Dart_CurrentIsolateGroupData =
-      _Dart_CurrentIsolateGroupData_ptr.asFunction<
-          _dart_Dart_CurrentIsolateGroupData>();
+  late final _Dart_CurrentIsolateGroupData = _Dart_CurrentIsolateGroupDataPtr
+      .asFunction<ffi.Pointer<ffi.Void> Function()>();
 
   /// Returns the callback data associated with the specified isolate group. This
   /// data was passed to the isolate when it was created.
   /// The embedder is responsible for ensuring the consistency of this data
   /// with respect to the lifecycle of an isolate group.
   ffi.Pointer<ffi.Void> Dart_IsolateGroupData(
-    ffi.Pointer<_Dart_Isolate> isolate,
+    Dart_Isolate isolate,
   ) {
     return _Dart_IsolateGroupData(
       isolate,
     );
   }
 
-  late final _Dart_IsolateGroupData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsolateGroupData>>(
+  late final _Dart_IsolateGroupDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(Dart_Isolate)>>(
           'Dart_IsolateGroupData');
-  late final _dart_Dart_IsolateGroupData _Dart_IsolateGroupData =
-      _Dart_IsolateGroupData_ptr.asFunction<_dart_Dart_IsolateGroupData>();
+  late final _Dart_IsolateGroupData = _Dart_IsolateGroupDataPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(Dart_Isolate)>();
 
   /// Returns the debugging name for the current isolate.
   ///
@@ -3367,27 +3867,27 @@ class LabSoundBind {
     return _Dart_DebugName();
   }
 
-  late final _Dart_DebugName_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DebugName>>('Dart_DebugName');
-  late final _dart_Dart_DebugName _Dart_DebugName =
-      _Dart_DebugName_ptr.asFunction<_dart_Dart_DebugName>();
+  late final _Dart_DebugNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_DebugName');
+  late final _Dart_DebugName =
+      _Dart_DebugNamePtr.asFunction<Object Function()>();
 
   /// Returns the ID for an isolate which is used to query the service protocol.
   ///
   /// It is the responsibility of the caller to free the returned ID.
-  ffi.Pointer<ffi.Int8> Dart_IsolateServiceId(
-    ffi.Pointer<_Dart_Isolate> isolate,
+  ffi.Pointer<ffi.Char> Dart_IsolateServiceId(
+    Dart_Isolate isolate,
   ) {
     return _Dart_IsolateServiceId(
       isolate,
     );
   }
 
-  late final _Dart_IsolateServiceId_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsolateServiceId>>(
+  late final _Dart_IsolateServiceIdPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(Dart_Isolate)>>(
           'Dart_IsolateServiceId');
-  late final _dart_Dart_IsolateServiceId _Dart_IsolateServiceId =
-      _Dart_IsolateServiceId_ptr.asFunction<_dart_Dart_IsolateServiceId>();
+  late final _Dart_IsolateServiceId = _Dart_IsolateServiceIdPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(Dart_Isolate)>();
 
   /// Enters an isolate. After calling this function,
   /// the current isolate will be set to the provided isolate.
@@ -3395,17 +3895,18 @@ class LabSoundBind {
   /// Requires there to be no current isolate. Multiple threads may not be in
   /// the same isolate at once.
   void Dart_EnterIsolate(
-    ffi.Pointer<_Dart_Isolate> isolate,
+    Dart_Isolate isolate,
   ) {
     return _Dart_EnterIsolate(
       isolate,
     );
   }
 
-  late final _Dart_EnterIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_EnterIsolate>>('Dart_EnterIsolate');
-  late final _dart_Dart_EnterIsolate _Dart_EnterIsolate =
-      _Dart_EnterIsolate_ptr.asFunction<_dart_Dart_EnterIsolate>();
+  late final _Dart_EnterIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>(
+          'Dart_EnterIsolate');
+  late final _Dart_EnterIsolate =
+      _Dart_EnterIsolatePtr.asFunction<void Function(Dart_Isolate)>();
 
   /// Kills the given isolate.
   ///
@@ -3418,17 +3919,18 @@ class LabSoundBind {
   /// Does not require a current isolate. It is safe to kill the current isolate if
   /// there is one.
   void Dart_KillIsolate(
-    ffi.Pointer<_Dart_Isolate> isolate,
+    Dart_Isolate isolate,
   ) {
     return _Dart_KillIsolate(
       isolate,
     );
   }
 
-  late final _Dart_KillIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_KillIsolate>>('Dart_KillIsolate');
-  late final _dart_Dart_KillIsolate _Dart_KillIsolate =
-      _Dart_KillIsolate_ptr.asFunction<_dart_Dart_KillIsolate>();
+  late final _Dart_KillIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>(
+          'Dart_KillIsolate');
+  late final _Dart_KillIsolate =
+      _Dart_KillIsolatePtr.asFunction<void Function(Dart_Isolate)>();
 
   /// Notifies the VM that the embedder expects |size| bytes of memory have become
   /// unreachable. The VM may use this hint to adjust the garbage collector's
@@ -3446,10 +3948,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_HintFreed_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HintFreed>>('Dart_HintFreed');
-  late final _dart_Dart_HintFreed _Dart_HintFreed =
-      _Dart_HintFreed_ptr.asFunction<_dart_Dart_HintFreed>();
+  late final _Dart_HintFreedPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.IntPtr)>>(
+          'Dart_HintFreed');
+  late final _Dart_HintFreed =
+      _Dart_HintFreedPtr.asFunction<void Function(int)>();
 
   /// Notifies the VM that the embedder expects to be idle until |deadline|. The VM
   /// may use this time to perform garbage collection or other tasks to avoid
@@ -3467,10 +3970,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NotifyIdle_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NotifyIdle>>('Dart_NotifyIdle');
-  late final _dart_Dart_NotifyIdle _Dart_NotifyIdle =
-      _Dart_NotifyIdle_ptr.asFunction<_dart_Dart_NotifyIdle>();
+  late final _Dart_NotifyIdlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
+          'Dart_NotifyIdle');
+  late final _Dart_NotifyIdle =
+      _Dart_NotifyIdlePtr.asFunction<void Function(int)>();
 
   /// Notifies the VM that the system is running low on memory.
   ///
@@ -3479,22 +3983,20 @@ class LabSoundBind {
     return _Dart_NotifyLowMemory();
   }
 
-  late final _Dart_NotifyLowMemory_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NotifyLowMemory>>(
-          'Dart_NotifyLowMemory');
-  late final _dart_Dart_NotifyLowMemory _Dart_NotifyLowMemory =
-      _Dart_NotifyLowMemory_ptr.asFunction<_dart_Dart_NotifyLowMemory>();
+  late final _Dart_NotifyLowMemoryPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_NotifyLowMemory');
+  late final _Dart_NotifyLowMemory =
+      _Dart_NotifyLowMemoryPtr.asFunction<void Function()>();
 
   /// Starts the CPU sampling profiler.
   void Dart_StartProfiling() {
     return _Dart_StartProfiling();
   }
 
-  late final _Dart_StartProfiling_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StartProfiling>>(
-          'Dart_StartProfiling');
-  late final _dart_Dart_StartProfiling _Dart_StartProfiling =
-      _Dart_StartProfiling_ptr.asFunction<_dart_Dart_StartProfiling>();
+  late final _Dart_StartProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_StartProfiling');
+  late final _Dart_StartProfiling =
+      _Dart_StartProfilingPtr.asFunction<void Function()>();
 
   /// Stops the CPU sampling profiler.
   ///
@@ -3505,10 +4007,10 @@ class LabSoundBind {
     return _Dart_StopProfiling();
   }
 
-  late final _Dart_StopProfiling_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StopProfiling>>('Dart_StopProfiling');
-  late final _dart_Dart_StopProfiling _Dart_StopProfiling =
-      _Dart_StopProfiling_ptr.asFunction<_dart_Dart_StopProfiling>();
+  late final _Dart_StopProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_StopProfiling');
+  late final _Dart_StopProfiling =
+      _Dart_StopProfilingPtr.asFunction<void Function()>();
 
   /// Notifies the VM that the current thread should not be profiled until a
   /// matching call to Dart_ThreadEnableProfiling is made.
@@ -3521,12 +4023,11 @@ class LabSoundBind {
     return _Dart_ThreadDisableProfiling();
   }
 
-  late final _Dart_ThreadDisableProfiling_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ThreadDisableProfiling>>(
+  late final _Dart_ThreadDisableProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
           'Dart_ThreadDisableProfiling');
-  late final _dart_Dart_ThreadDisableProfiling _Dart_ThreadDisableProfiling =
-      _Dart_ThreadDisableProfiling_ptr.asFunction<
-          _dart_Dart_ThreadDisableProfiling>();
+  late final _Dart_ThreadDisableProfiling =
+      _Dart_ThreadDisableProfilingPtr.asFunction<void Function()>();
 
   /// Notifies the VM that the current thread should be profiled.
   ///
@@ -3538,19 +4039,18 @@ class LabSoundBind {
     return _Dart_ThreadEnableProfiling();
   }
 
-  late final _Dart_ThreadEnableProfiling_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ThreadEnableProfiling>>(
+  late final _Dart_ThreadEnableProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
           'Dart_ThreadEnableProfiling');
-  late final _dart_Dart_ThreadEnableProfiling _Dart_ThreadEnableProfiling =
-      _Dart_ThreadEnableProfiling_ptr.asFunction<
-          _dart_Dart_ThreadEnableProfiling>();
+  late final _Dart_ThreadEnableProfiling =
+      _Dart_ThreadEnableProfilingPtr.asFunction<void Function()>();
 
   /// Register symbol information for the Dart VM's profiler and crash dumps.
   ///
   /// This consumes the output of //topaz/runtime/dart/profiler_symbols, which
   /// should be treated as opaque.
   void Dart_AddSymbols(
-    ffi.Pointer<ffi.Int8> dso_name,
+    ffi.Pointer<ffi.Char> dso_name,
     ffi.Pointer<ffi.Void> buffer,
     int buffer_size,
   ) {
@@ -3561,10 +4061,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_AddSymbols_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_AddSymbols>>('Dart_AddSymbols');
-  late final _dart_Dart_AddSymbols _Dart_AddSymbols =
-      _Dart_AddSymbols_ptr.asFunction<_dart_Dart_AddSymbols>();
+  late final _Dart_AddSymbolsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr)>>('Dart_AddSymbols');
+  late final _Dart_AddSymbols = _Dart_AddSymbolsPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>, int)>();
 
   /// Exits an isolate. After this call, Dart_CurrentIsolate will
   /// return NULL.
@@ -3574,10 +4076,10 @@ class LabSoundBind {
     return _Dart_ExitIsolate();
   }
 
-  late final _Dart_ExitIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ExitIsolate>>('Dart_ExitIsolate');
-  late final _dart_Dart_ExitIsolate _Dart_ExitIsolate =
-      _Dart_ExitIsolate_ptr.asFunction<_dart_Dart_ExitIsolate>();
+  late final _Dart_ExitIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ExitIsolate');
+  late final _Dart_ExitIsolate =
+      _Dart_ExitIsolatePtr.asFunction<void Function()>();
 
   /// Creates a full snapshot of the current isolate heap.
   ///
@@ -3609,15 +4111,25 @@ class LabSoundBind {
       vm_snapshot_data_size,
       isolate_snapshot_data_buffer,
       isolate_snapshot_data_size,
-      is_core ? 1 : 0,
+      is_core,
     );
   }
 
-  late final _Dart_CreateSnapshot_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateSnapshot>>(
-          'Dart_CreateSnapshot');
-  late final _dart_Dart_CreateSnapshot _Dart_CreateSnapshot =
-      _Dart_CreateSnapshot_ptr.asFunction<_dart_Dart_CreateSnapshot>();
+  late final _Dart_CreateSnapshotPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Bool)>>('Dart_CreateSnapshot');
+  late final _Dart_CreateSnapshot = _Dart_CreateSnapshotPtr.asFunction<
+      Object Function(
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>,
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>,
+          bool)>();
 
   /// Returns whether the buffer contains a kernel file.
   ///
@@ -3630,16 +4142,17 @@ class LabSoundBind {
     int buffer_size,
   ) {
     return _Dart_IsKernel(
-          buffer,
-          buffer_size,
-        ) !=
-        0;
+      buffer,
+      buffer_size,
+    );
   }
 
-  late final _Dart_IsKernel_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsKernel>>('Dart_IsKernel');
-  late final _dart_Dart_IsKernel _Dart_IsKernel =
-      _Dart_IsKernel_ptr.asFunction<_dart_Dart_IsKernel>();
+  late final _Dart_IsKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>('Dart_IsKernel');
+  late final _Dart_IsKernel = _Dart_IsKernelPtr.asFunction<
+      bool Function(ffi.Pointer<ffi.Uint8>, int)>();
 
   /// Make isolate runnable.
   ///
@@ -3652,20 +4165,19 @@ class LabSoundBind {
   ///
   /// \return NULL if successful. Returns an error message otherwise. The caller
   /// is responsible for freeing the error message.
-  ffi.Pointer<ffi.Int8> Dart_IsolateMakeRunnable(
-    ffi.Pointer<_Dart_Isolate> isolate,
+  ffi.Pointer<ffi.Char> Dart_IsolateMakeRunnable(
+    Dart_Isolate isolate,
   ) {
     return _Dart_IsolateMakeRunnable(
       isolate,
     );
   }
 
-  late final _Dart_IsolateMakeRunnable_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsolateMakeRunnable>>(
+  late final _Dart_IsolateMakeRunnablePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(Dart_Isolate)>>(
           'Dart_IsolateMakeRunnable');
-  late final _dart_Dart_IsolateMakeRunnable _Dart_IsolateMakeRunnable =
-      _Dart_IsolateMakeRunnable_ptr.asFunction<
-          _dart_Dart_IsolateMakeRunnable>();
+  late final _Dart_IsolateMakeRunnable = _Dart_IsolateMakeRunnablePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(Dart_Isolate)>();
 
   /// Allows embedders to provide an alternative wakeup mechanism for the
   /// delivery of inter-isolate messages. This setting only applies to
@@ -3675,48 +4187,44 @@ class LabSoundBind {
   /// execution begins. If this function is called after isolate
   /// execution begins, the embedder is responsible for threading issues.
   void Dart_SetMessageNotifyCallback(
-    ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
-        message_notify_callback,
+    Dart_MessageNotifyCallback message_notify_callback,
   ) {
     return _Dart_SetMessageNotifyCallback(
       message_notify_callback,
     );
   }
 
-  late final _Dart_SetMessageNotifyCallback_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetMessageNotifyCallback>>(
-          'Dart_SetMessageNotifyCallback');
-  late final _dart_Dart_SetMessageNotifyCallback
-      _Dart_SetMessageNotifyCallback = _Dart_SetMessageNotifyCallback_ptr
-          .asFunction<_dart_Dart_SetMessageNotifyCallback>();
+  late final _Dart_SetMessageNotifyCallbackPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(Dart_MessageNotifyCallback)>>(
+      'Dart_SetMessageNotifyCallback');
+  late final _Dart_SetMessageNotifyCallback = _Dart_SetMessageNotifyCallbackPtr
+      .asFunction<void Function(Dart_MessageNotifyCallback)>();
 
   /// Query the current message notify callback for the isolate.
   ///
   /// \return The current message notify callback for the isolate.
-  ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
-      Dart_GetMessageNotifyCallback() {
+  Dart_MessageNotifyCallback Dart_GetMessageNotifyCallback() {
     return _Dart_GetMessageNotifyCallback();
   }
 
-  late final _Dart_GetMessageNotifyCallback_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetMessageNotifyCallback>>(
+  late final _Dart_GetMessageNotifyCallbackPtr =
+      _lookup<ffi.NativeFunction<Dart_MessageNotifyCallback Function()>>(
           'Dart_GetMessageNotifyCallback');
-  late final _dart_Dart_GetMessageNotifyCallback
-      _Dart_GetMessageNotifyCallback = _Dart_GetMessageNotifyCallback_ptr
-          .asFunction<_dart_Dart_GetMessageNotifyCallback>();
+  late final _Dart_GetMessageNotifyCallback = _Dart_GetMessageNotifyCallbackPtr
+      .asFunction<Dart_MessageNotifyCallback Function()>();
 
   /// If the VM flag `--pause-isolates-on-start` was passed this will be true.
   ///
   /// \return A boolean value indicating if pause on start was requested.
   bool Dart_ShouldPauseOnStart() {
-    return _Dart_ShouldPauseOnStart() != 0;
+    return _Dart_ShouldPauseOnStart();
   }
 
-  late final _Dart_ShouldPauseOnStart_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ShouldPauseOnStart>>(
+  late final _Dart_ShouldPauseOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
           'Dart_ShouldPauseOnStart');
-  late final _dart_Dart_ShouldPauseOnStart _Dart_ShouldPauseOnStart =
-      _Dart_ShouldPauseOnStart_ptr.asFunction<_dart_Dart_ShouldPauseOnStart>();
+  late final _Dart_ShouldPauseOnStart =
+      _Dart_ShouldPauseOnStartPtr.asFunction<bool Function()>();
 
   /// Override the VM flag `--pause-isolates-on-start` for the current isolate.
   ///
@@ -3727,29 +4235,27 @@ class LabSoundBind {
     bool should_pause,
   ) {
     return _Dart_SetShouldPauseOnStart(
-      should_pause ? 1 : 0,
+      should_pause,
     );
   }
 
-  late final _Dart_SetShouldPauseOnStart_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetShouldPauseOnStart>>(
+  late final _Dart_SetShouldPauseOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Bool)>>(
           'Dart_SetShouldPauseOnStart');
-  late final _dart_Dart_SetShouldPauseOnStart _Dart_SetShouldPauseOnStart =
-      _Dart_SetShouldPauseOnStart_ptr.asFunction<
-          _dart_Dart_SetShouldPauseOnStart>();
+  late final _Dart_SetShouldPauseOnStart =
+      _Dart_SetShouldPauseOnStartPtr.asFunction<void Function(bool)>();
 
   /// Is the current isolate paused on start?
   ///
   /// \return A boolean value indicating if the isolate is paused on start.
   bool Dart_IsPausedOnStart() {
-    return _Dart_IsPausedOnStart() != 0;
+    return _Dart_IsPausedOnStart();
   }
 
-  late final _Dart_IsPausedOnStart_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsPausedOnStart>>(
-          'Dart_IsPausedOnStart');
-  late final _dart_Dart_IsPausedOnStart _Dart_IsPausedOnStart =
-      _Dart_IsPausedOnStart_ptr.asFunction<_dart_Dart_IsPausedOnStart>();
+  late final _Dart_IsPausedOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('Dart_IsPausedOnStart');
+  late final _Dart_IsPausedOnStart =
+      _Dart_IsPausedOnStartPtr.asFunction<bool Function()>();
 
   /// Called when the embedder has paused the current isolate on start and when
   /// the embedder has resumed the isolate.
@@ -3759,28 +4265,28 @@ class LabSoundBind {
     bool paused,
   ) {
     return _Dart_SetPausedOnStart(
-      paused ? 1 : 0,
+      paused,
     );
   }
 
-  late final _Dart_SetPausedOnStart_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetPausedOnStart>>(
+  late final _Dart_SetPausedOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Bool)>>(
           'Dart_SetPausedOnStart');
-  late final _dart_Dart_SetPausedOnStart _Dart_SetPausedOnStart =
-      _Dart_SetPausedOnStart_ptr.asFunction<_dart_Dart_SetPausedOnStart>();
+  late final _Dart_SetPausedOnStart =
+      _Dart_SetPausedOnStartPtr.asFunction<void Function(bool)>();
 
   /// If the VM flag `--pause-isolates-on-exit` was passed this will be true.
   ///
   /// \return A boolean value indicating if pause on exit was requested.
   bool Dart_ShouldPauseOnExit() {
-    return _Dart_ShouldPauseOnExit() != 0;
+    return _Dart_ShouldPauseOnExit();
   }
 
-  late final _Dart_ShouldPauseOnExit_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ShouldPauseOnExit>>(
+  late final _Dart_ShouldPauseOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
           'Dart_ShouldPauseOnExit');
-  late final _dart_Dart_ShouldPauseOnExit _Dart_ShouldPauseOnExit =
-      _Dart_ShouldPauseOnExit_ptr.asFunction<_dart_Dart_ShouldPauseOnExit>();
+  late final _Dart_ShouldPauseOnExit =
+      _Dart_ShouldPauseOnExitPtr.asFunction<bool Function()>();
 
   /// Override the VM flag `--pause-isolates-on-exit` for the current isolate.
   ///
@@ -3789,29 +4295,27 @@ class LabSoundBind {
     bool should_pause,
   ) {
     return _Dart_SetShouldPauseOnExit(
-      should_pause ? 1 : 0,
+      should_pause,
     );
   }
 
-  late final _Dart_SetShouldPauseOnExit_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetShouldPauseOnExit>>(
+  late final _Dart_SetShouldPauseOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Bool)>>(
           'Dart_SetShouldPauseOnExit');
-  late final _dart_Dart_SetShouldPauseOnExit _Dart_SetShouldPauseOnExit =
-      _Dart_SetShouldPauseOnExit_ptr.asFunction<
-          _dart_Dart_SetShouldPauseOnExit>();
+  late final _Dart_SetShouldPauseOnExit =
+      _Dart_SetShouldPauseOnExitPtr.asFunction<void Function(bool)>();
 
   /// Is the current isolate paused on exit?
   ///
   /// \return A boolean value indicating if the isolate is paused on exit.
   bool Dart_IsPausedOnExit() {
-    return _Dart_IsPausedOnExit() != 0;
+    return _Dart_IsPausedOnExit();
   }
 
-  late final _Dart_IsPausedOnExit_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsPausedOnExit>>(
-          'Dart_IsPausedOnExit');
-  late final _dart_Dart_IsPausedOnExit _Dart_IsPausedOnExit =
-      _Dart_IsPausedOnExit_ptr.asFunction<_dart_Dart_IsPausedOnExit>();
+  late final _Dart_IsPausedOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('Dart_IsPausedOnExit');
+  late final _Dart_IsPausedOnExit =
+      _Dart_IsPausedOnExitPtr.asFunction<bool Function()>();
 
   /// Called when the embedder has paused the current isolate on exit and when
   /// the embedder has resumed the isolate.
@@ -3821,15 +4325,15 @@ class LabSoundBind {
     bool paused,
   ) {
     return _Dart_SetPausedOnExit(
-      paused ? 1 : 0,
+      paused,
     );
   }
 
-  late final _Dart_SetPausedOnExit_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetPausedOnExit>>(
+  late final _Dart_SetPausedOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Bool)>>(
           'Dart_SetPausedOnExit');
-  late final _dart_Dart_SetPausedOnExit _Dart_SetPausedOnExit =
-      _Dart_SetPausedOnExit_ptr.asFunction<_dart_Dart_SetPausedOnExit>();
+  late final _Dart_SetPausedOnExit =
+      _Dart_SetPausedOnExitPtr.asFunction<void Function(bool)>();
 
   /// Called when the embedder has caught a top level unhandled exception error
   /// in the current isolate.
@@ -3846,22 +4350,21 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetStickyError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetStickyError>>(
+  late final _Dart_SetStickyErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
           'Dart_SetStickyError');
-  late final _dart_Dart_SetStickyError _Dart_SetStickyError =
-      _Dart_SetStickyError_ptr.asFunction<_dart_Dart_SetStickyError>();
+  late final _Dart_SetStickyError =
+      _Dart_SetStickyErrorPtr.asFunction<void Function(Object)>();
 
   /// Does the current isolate have a sticky error?
   bool Dart_HasStickyError() {
-    return _Dart_HasStickyError() != 0;
+    return _Dart_HasStickyError();
   }
 
-  late final _Dart_HasStickyError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HasStickyError>>(
-          'Dart_HasStickyError');
-  late final _dart_Dart_HasStickyError _Dart_HasStickyError =
-      _Dart_HasStickyError_ptr.asFunction<_dart_Dart_HasStickyError>();
+  late final _Dart_HasStickyErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('Dart_HasStickyError');
+  late final _Dart_HasStickyError =
+      _Dart_HasStickyErrorPtr.asFunction<bool Function()>();
 
   /// Gets the sticky error for the current isolate.
   ///
@@ -3870,11 +4373,10 @@ class LabSoundBind {
     return _Dart_GetStickyError();
   }
 
-  late final _Dart_GetStickyError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetStickyError>>(
-          'Dart_GetStickyError');
-  late final _dart_Dart_GetStickyError _Dart_GetStickyError =
-      _Dart_GetStickyError_ptr.asFunction<_dart_Dart_GetStickyError>();
+  late final _Dart_GetStickyErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_GetStickyError');
+  late final _Dart_GetStickyError =
+      _Dart_GetStickyErrorPtr.asFunction<Object Function()>();
 
   /// Handles the next pending message for the current isolate.
   ///
@@ -3885,10 +4387,10 @@ class LabSoundBind {
     return _Dart_HandleMessage();
   }
 
-  late final _Dart_HandleMessage_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HandleMessage>>('Dart_HandleMessage');
-  late final _dart_Dart_HandleMessage _Dart_HandleMessage =
-      _Dart_HandleMessage_ptr.asFunction<_dart_Dart_HandleMessage>();
+  late final _Dart_HandleMessagePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_HandleMessage');
+  late final _Dart_HandleMessage =
+      _Dart_HandleMessagePtr.asFunction<Object Function()>();
 
   /// Drains the microtask queue, then blocks the calling thread until the current
   /// isolate recieves a message, then handles all messages.
@@ -3904,10 +4406,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_WaitForEvent_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_WaitForEvent>>('Dart_WaitForEvent');
-  late final _dart_Dart_WaitForEvent _Dart_WaitForEvent =
-      _Dart_WaitForEvent_ptr.asFunction<_dart_Dart_WaitForEvent>();
+  late final _Dart_WaitForEventPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int64)>>(
+          'Dart_WaitForEvent');
+  late final _Dart_WaitForEvent =
+      _Dart_WaitForEventPtr.asFunction<Object Function(int)>();
 
   /// Handles any pending messages for the vm service for the current
   /// isolate.
@@ -3921,28 +4424,27 @@ class LabSoundBind {
   /// \return true if the vm service requests the program resume
   /// execution, false otherwise
   bool Dart_HandleServiceMessages() {
-    return _Dart_HandleServiceMessages() != 0;
+    return _Dart_HandleServiceMessages();
   }
 
-  late final _Dart_HandleServiceMessages_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HandleServiceMessages>>(
+  late final _Dart_HandleServiceMessagesPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
           'Dart_HandleServiceMessages');
-  late final _dart_Dart_HandleServiceMessages _Dart_HandleServiceMessages =
-      _Dart_HandleServiceMessages_ptr.asFunction<
-          _dart_Dart_HandleServiceMessages>();
+  late final _Dart_HandleServiceMessages =
+      _Dart_HandleServiceMessagesPtr.asFunction<bool Function()>();
 
   /// Does the current isolate have pending service messages?
   ///
   /// \return true if the isolate has pending service messages, false otherwise.
   bool Dart_HasServiceMessages() {
-    return _Dart_HasServiceMessages() != 0;
+    return _Dart_HasServiceMessages();
   }
 
-  late final _Dart_HasServiceMessages_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HasServiceMessages>>(
+  late final _Dart_HasServiceMessagesPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
           'Dart_HasServiceMessages');
-  late final _dart_Dart_HasServiceMessages _Dart_HasServiceMessages =
-      _Dart_HasServiceMessages_ptr.asFunction<_dart_Dart_HasServiceMessages>();
+  late final _Dart_HasServiceMessages =
+      _Dart_HasServiceMessagesPtr.asFunction<bool Function()>();
 
   /// Processes any incoming messages for the current isolate.
   ///
@@ -3962,10 +4464,9 @@ class LabSoundBind {
     return _Dart_RunLoop();
   }
 
-  late final _Dart_RunLoop_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_RunLoop>>('Dart_RunLoop');
-  late final _dart_Dart_RunLoop _Dart_RunLoop =
-      _Dart_RunLoop_ptr.asFunction<_dart_Dart_RunLoop>();
+  late final _Dart_RunLoopPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_RunLoop');
+  late final _Dart_RunLoop = _Dart_RunLoopPtr.asFunction<Object Function()>();
 
   /// Lets the VM run message processing for the isolate.
   ///
@@ -3987,43 +4488,44 @@ class LabSoundBind {
     bool errors_are_fatal,
     int on_error_port,
     int on_exit_port,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
   ) {
     return _Dart_RunLoopAsync(
-          errors_are_fatal ? 1 : 0,
-          on_error_port,
-          on_exit_port,
-          error,
-        ) !=
-        0;
+      errors_are_fatal,
+      on_error_port,
+      on_exit_port,
+      error,
+    );
   }
 
-  late final _Dart_RunLoopAsync_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_RunLoopAsync>>('Dart_RunLoopAsync');
-  late final _dart_Dart_RunLoopAsync _Dart_RunLoopAsync =
-      _Dart_RunLoopAsync_ptr.asFunction<_dart_Dart_RunLoopAsync>();
+  late final _Dart_RunLoopAsyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Bool, Dart_Port, Dart_Port,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_RunLoopAsync');
+  late final _Dart_RunLoopAsync = _Dart_RunLoopAsyncPtr.asFunction<
+      bool Function(bool, int, int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Gets the main port id for the current isolate.
   int Dart_GetMainPortId() {
     return _Dart_GetMainPortId();
   }
 
-  late final _Dart_GetMainPortId_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetMainPortId>>('Dart_GetMainPortId');
-  late final _dart_Dart_GetMainPortId _Dart_GetMainPortId =
-      _Dart_GetMainPortId_ptr.asFunction<_dart_Dart_GetMainPortId>();
+  late final _Dart_GetMainPortIdPtr =
+      _lookup<ffi.NativeFunction<Dart_Port Function()>>('Dart_GetMainPortId');
+  late final _Dart_GetMainPortId =
+      _Dart_GetMainPortIdPtr.asFunction<int Function()>();
 
   /// Does the current isolate have live ReceivePorts?
   ///
   /// A ReceivePort is live when it has not been closed.
   bool Dart_HasLivePorts() {
-    return _Dart_HasLivePorts() != 0;
+    return _Dart_HasLivePorts();
   }
 
-  late final _Dart_HasLivePorts_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_HasLivePorts>>('Dart_HasLivePorts');
-  late final _dart_Dart_HasLivePorts _Dart_HasLivePorts =
-      _Dart_HasLivePorts_ptr.asFunction<_dart_Dart_HasLivePorts>();
+  late final _Dart_HasLivePortsPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('Dart_HasLivePorts');
+  late final _Dart_HasLivePorts =
+      _Dart_HasLivePortsPtr.asFunction<bool Function()>();
 
   /// Posts a message for some isolate. The message is a serialized
   /// object.
@@ -4039,16 +4541,16 @@ class LabSoundBind {
     Object object,
   ) {
     return _Dart_Post(
-          port_id,
-          object,
-        ) !=
-        0;
+      port_id,
+      object,
+    );
   }
 
-  late final _Dart_Post_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Post>>('Dart_Post');
-  late final _dart_Dart_Post _Dart_Post =
-      _Dart_Post_ptr.asFunction<_dart_Dart_Post>();
+  late final _Dart_PostPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(Dart_Port, ffi.Handle)>>(
+          'Dart_Post');
+  late final _Dart_Post =
+      _Dart_PostPtr.asFunction<bool Function(int, Object)>();
 
   /// Returns a new SendPort with the provided port id.
   ///
@@ -4064,10 +4566,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewSendPort_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewSendPort>>('Dart_NewSendPort');
-  late final _dart_Dart_NewSendPort _Dart_NewSendPort =
-      _Dart_NewSendPort_ptr.asFunction<_dart_Dart_NewSendPort>();
+  late final _Dart_NewSendPortPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(Dart_Port)>>(
+          'Dart_NewSendPort');
+  late final _Dart_NewSendPort =
+      _Dart_NewSendPortPtr.asFunction<Object Function(int)>();
 
   /// Gets the SendPort id for the provided SendPort.
   /// \param port A SendPort object whose id is desired.
@@ -4076,7 +4579,7 @@ class LabSoundBind {
   /// an error handle.
   Object Dart_SendPortGetId(
     Object port,
-    ffi.Pointer<ffi.Int64> port_id,
+    ffi.Pointer<Dart_Port> port_id,
   ) {
     return _Dart_SendPortGetId(
       port,
@@ -4084,10 +4587,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SendPortGetId_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SendPortGetId>>('Dart_SendPortGetId');
-  late final _dart_Dart_SendPortGetId _Dart_SendPortGetId =
-      _Dart_SendPortGetId_ptr.asFunction<_dart_Dart_SendPortGetId>();
+  late final _Dart_SendPortGetIdPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<Dart_Port>)>>('Dart_SendPortGetId');
+  late final _Dart_SendPortGetId = _Dart_SendPortGetIdPtr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_Port>)>();
 
   /// Enters a new scope.
   ///
@@ -4100,10 +4605,10 @@ class LabSoundBind {
     return _Dart_EnterScope();
   }
 
-  late final _Dart_EnterScope_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_EnterScope>>('Dart_EnterScope');
-  late final _dart_Dart_EnterScope _Dart_EnterScope =
-      _Dart_EnterScope_ptr.asFunction<_dart_Dart_EnterScope>();
+  late final _Dart_EnterScopePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_EnterScope');
+  late final _Dart_EnterScope =
+      _Dart_EnterScopePtr.asFunction<void Function()>();
 
   /// Exits a scope.
   ///
@@ -4114,10 +4619,9 @@ class LabSoundBind {
     return _Dart_ExitScope();
   }
 
-  late final _Dart_ExitScope_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ExitScope>>('Dart_ExitScope');
-  late final _dart_Dart_ExitScope _Dart_ExitScope =
-      _Dart_ExitScope_ptr.asFunction<_dart_Dart_ExitScope>();
+  late final _Dart_ExitScopePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ExitScope');
+  late final _Dart_ExitScope = _Dart_ExitScopePtr.asFunction<void Function()>();
 
   /// The Dart VM uses "zone allocation" for temporary structures. Zones
   /// support very fast allocation of small chunks of memory. The chunks
@@ -4147,10 +4651,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ScopeAllocate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ScopeAllocate>>('Dart_ScopeAllocate');
-  late final _dart_Dart_ScopeAllocate _Dart_ScopeAllocate =
-      _Dart_ScopeAllocate_ptr.asFunction<_dart_Dart_ScopeAllocate>();
+  late final _Dart_ScopeAllocatePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Uint8> Function(ffi.IntPtr)>>(
+          'Dart_ScopeAllocate');
+  late final _Dart_ScopeAllocate =
+      _Dart_ScopeAllocatePtr.asFunction<ffi.Pointer<ffi.Uint8> Function(int)>();
 
   /// Returns the null object.
   ///
@@ -4159,25 +4664,22 @@ class LabSoundBind {
     return _Dart_Null();
   }
 
-  late final _Dart_Null_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Null>>('Dart_Null');
-  late final _dart_Dart_Null _Dart_Null =
-      _Dart_Null_ptr.asFunction<_dart_Dart_Null>();
+  late final _Dart_NullPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_Null');
+  late final _Dart_Null = _Dart_NullPtr.asFunction<Object Function()>();
 
   /// Is this object null?
   bool Dart_IsNull(
     Object object,
   ) {
     return _Dart_IsNull(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsNull_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsNull>>('Dart_IsNull');
-  late final _dart_Dart_IsNull _Dart_IsNull =
-      _Dart_IsNull_ptr.asFunction<_dart_Dart_IsNull>();
+  late final _Dart_IsNullPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>('Dart_IsNull');
+  late final _Dart_IsNull = _Dart_IsNullPtr.asFunction<bool Function(Object)>();
 
   /// Returns the empty string object.
   ///
@@ -4186,10 +4688,10 @@ class LabSoundBind {
     return _Dart_EmptyString();
   }
 
-  late final _Dart_EmptyString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_EmptyString>>('Dart_EmptyString');
-  late final _dart_Dart_EmptyString _Dart_EmptyString =
-      _Dart_EmptyString_ptr.asFunction<_dart_Dart_EmptyString>();
+  late final _Dart_EmptyStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_EmptyString');
+  late final _Dart_EmptyString =
+      _Dart_EmptyStringPtr.asFunction<Object Function()>();
 
   /// Returns types that are not classes, and which therefore cannot be looked up
   /// as library members by Dart_GetType.
@@ -4199,28 +4701,27 @@ class LabSoundBind {
     return _Dart_TypeDynamic();
   }
 
-  late final _Dart_TypeDynamic_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypeDynamic>>('Dart_TypeDynamic');
-  late final _dart_Dart_TypeDynamic _Dart_TypeDynamic =
-      _Dart_TypeDynamic_ptr.asFunction<_dart_Dart_TypeDynamic>();
+  late final _Dart_TypeDynamicPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeDynamic');
+  late final _Dart_TypeDynamic =
+      _Dart_TypeDynamicPtr.asFunction<Object Function()>();
 
   Object Dart_TypeVoid() {
     return _Dart_TypeVoid();
   }
 
-  late final _Dart_TypeVoid_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypeVoid>>('Dart_TypeVoid');
-  late final _dart_Dart_TypeVoid _Dart_TypeVoid =
-      _Dart_TypeVoid_ptr.asFunction<_dart_Dart_TypeVoid>();
+  late final _Dart_TypeVoidPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeVoid');
+  late final _Dart_TypeVoid = _Dart_TypeVoidPtr.asFunction<Object Function()>();
 
   Object Dart_TypeNever() {
     return _Dart_TypeNever();
   }
 
-  late final _Dart_TypeNever_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypeNever>>('Dart_TypeNever');
-  late final _dart_Dart_TypeNever _Dart_TypeNever =
-      _Dart_TypeNever_ptr.asFunction<_dart_Dart_TypeNever>();
+  late final _Dart_TypeNeverPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeNever');
+  late final _Dart_TypeNever =
+      _Dart_TypeNeverPtr.asFunction<Object Function()>();
 
   /// Checks if the two objects are equal.
   ///
@@ -4238,7 +4739,7 @@ class LabSoundBind {
   Object Dart_ObjectEquals(
     Object obj1,
     Object obj2,
-    ffi.Pointer<ffi.Uint8> equal,
+    ffi.Pointer<ffi.Bool> equal,
   ) {
     return _Dart_ObjectEquals(
       obj1,
@@ -4247,10 +4748,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ObjectEquals_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ObjectEquals>>('Dart_ObjectEquals');
-  late final _dart_Dart_ObjectEquals _Dart_ObjectEquals =
-      _Dart_ObjectEquals_ptr.asFunction<_dart_Dart_ObjectEquals>();
+  late final _Dart_ObjectEqualsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Pointer<ffi.Bool>)>>('Dart_ObjectEquals');
+  late final _Dart_ObjectEquals = _Dart_ObjectEqualsPtr.asFunction<
+      Object Function(Object, Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Is this object an instance of some type?
   ///
@@ -4265,7 +4768,7 @@ class LabSoundBind {
   Object Dart_ObjectIsType(
     Object object,
     Object type,
-    ffi.Pointer<ffi.Uint8> instanceof,
+    ffi.Pointer<ffi.Bool> instanceof,
   ) {
     return _Dart_ObjectIsType(
       object,
@@ -4274,10 +4777,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ObjectIsType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ObjectIsType>>('Dart_ObjectIsType');
-  late final _dart_Dart_ObjectIsType _Dart_ObjectIsType =
-      _Dart_ObjectIsType_ptr.asFunction<_dart_Dart_ObjectIsType>();
+  late final _Dart_ObjectIsTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Pointer<ffi.Bool>)>>('Dart_ObjectIsType');
+  late final _Dart_ObjectIsType = _Dart_ObjectIsTypePtr.asFunction<
+      Object Function(Object, Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Query object type.
   ///
@@ -4288,270 +4793,261 @@ class LabSoundBind {
     Object object,
   ) {
     return _Dart_IsInstance(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsInstance_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsInstance>>('Dart_IsInstance');
-  late final _dart_Dart_IsInstance _Dart_IsInstance =
-      _Dart_IsInstance_ptr.asFunction<_dart_Dart_IsInstance>();
+  late final _Dart_IsInstancePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsInstance');
+  late final _Dart_IsInstance =
+      _Dart_IsInstancePtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsNumber(
     Object object,
   ) {
     return _Dart_IsNumber(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsNumber_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsNumber>>('Dart_IsNumber');
-  late final _dart_Dart_IsNumber _Dart_IsNumber =
-      _Dart_IsNumber_ptr.asFunction<_dart_Dart_IsNumber>();
+  late final _Dart_IsNumberPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsNumber');
+  late final _Dart_IsNumber =
+      _Dart_IsNumberPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsInteger(
     Object object,
   ) {
     return _Dart_IsInteger(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsInteger_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsInteger>>('Dart_IsInteger');
-  late final _dart_Dart_IsInteger _Dart_IsInteger =
-      _Dart_IsInteger_ptr.asFunction<_dart_Dart_IsInteger>();
+  late final _Dart_IsIntegerPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsInteger');
+  late final _Dart_IsInteger =
+      _Dart_IsIntegerPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsDouble(
     Object object,
   ) {
     return _Dart_IsDouble(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsDouble_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsDouble>>('Dart_IsDouble');
-  late final _dart_Dart_IsDouble _Dart_IsDouble =
-      _Dart_IsDouble_ptr.asFunction<_dart_Dart_IsDouble>();
+  late final _Dart_IsDoublePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsDouble');
+  late final _Dart_IsDouble =
+      _Dart_IsDoublePtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsBoolean(
     Object object,
   ) {
     return _Dart_IsBoolean(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsBoolean_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsBoolean>>('Dart_IsBoolean');
-  late final _dart_Dart_IsBoolean _Dart_IsBoolean =
-      _Dart_IsBoolean_ptr.asFunction<_dart_Dart_IsBoolean>();
+  late final _Dart_IsBooleanPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsBoolean');
+  late final _Dart_IsBoolean =
+      _Dart_IsBooleanPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsString(
     Object object,
   ) {
     return _Dart_IsString(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsString>>('Dart_IsString');
-  late final _dart_Dart_IsString _Dart_IsString =
-      _Dart_IsString_ptr.asFunction<_dart_Dart_IsString>();
+  late final _Dart_IsStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsString');
+  late final _Dart_IsString =
+      _Dart_IsStringPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsStringLatin1(
     Object object,
   ) {
     return _Dart_IsStringLatin1(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsStringLatin1_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsStringLatin1>>(
+  late final _Dart_IsStringLatin1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
           'Dart_IsStringLatin1');
-  late final _dart_Dart_IsStringLatin1 _Dart_IsStringLatin1 =
-      _Dart_IsStringLatin1_ptr.asFunction<_dart_Dart_IsStringLatin1>();
+  late final _Dart_IsStringLatin1 =
+      _Dart_IsStringLatin1Ptr.asFunction<bool Function(Object)>();
 
   bool Dart_IsExternalString(
     Object object,
   ) {
     return _Dart_IsExternalString(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsExternalString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsExternalString>>(
+  late final _Dart_IsExternalStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
           'Dart_IsExternalString');
-  late final _dart_Dart_IsExternalString _Dart_IsExternalString =
-      _Dart_IsExternalString_ptr.asFunction<_dart_Dart_IsExternalString>();
+  late final _Dart_IsExternalString =
+      _Dart_IsExternalStringPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsList(
     Object object,
   ) {
     return _Dart_IsList(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsList_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsList>>('Dart_IsList');
-  late final _dart_Dart_IsList _Dart_IsList =
-      _Dart_IsList_ptr.asFunction<_dart_Dart_IsList>();
+  late final _Dart_IsListPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>('Dart_IsList');
+  late final _Dart_IsList = _Dart_IsListPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsMap(
     Object object,
   ) {
     return _Dart_IsMap(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsMap_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsMap>>('Dart_IsMap');
-  late final _dart_Dart_IsMap _Dart_IsMap =
-      _Dart_IsMap_ptr.asFunction<_dart_Dart_IsMap>();
+  late final _Dart_IsMapPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>('Dart_IsMap');
+  late final _Dart_IsMap = _Dart_IsMapPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsLibrary(
     Object object,
   ) {
     return _Dart_IsLibrary(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsLibrary_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsLibrary>>('Dart_IsLibrary');
-  late final _dart_Dart_IsLibrary _Dart_IsLibrary =
-      _Dart_IsLibrary_ptr.asFunction<_dart_Dart_IsLibrary>();
+  late final _Dart_IsLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsLibrary');
+  late final _Dart_IsLibrary =
+      _Dart_IsLibraryPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsType(
     Object handle,
   ) {
     return _Dart_IsType(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsType>>('Dart_IsType');
-  late final _dart_Dart_IsType _Dart_IsType =
-      _Dart_IsType_ptr.asFunction<_dart_Dart_IsType>();
+  late final _Dart_IsTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>('Dart_IsType');
+  late final _Dart_IsType = _Dart_IsTypePtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsFunction(
     Object handle,
   ) {
     return _Dart_IsFunction(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsFunction_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsFunction>>('Dart_IsFunction');
-  late final _dart_Dart_IsFunction _Dart_IsFunction =
-      _Dart_IsFunction_ptr.asFunction<_dart_Dart_IsFunction>();
+  late final _Dart_IsFunctionPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsFunction');
+  late final _Dart_IsFunction =
+      _Dart_IsFunctionPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsVariable(
     Object handle,
   ) {
     return _Dart_IsVariable(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsVariable_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsVariable>>('Dart_IsVariable');
-  late final _dart_Dart_IsVariable _Dart_IsVariable =
-      _Dart_IsVariable_ptr.asFunction<_dart_Dart_IsVariable>();
+  late final _Dart_IsVariablePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsVariable');
+  late final _Dart_IsVariable =
+      _Dart_IsVariablePtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsTypeVariable(
     Object handle,
   ) {
     return _Dart_IsTypeVariable(
-          handle,
-        ) !=
-        0;
+      handle,
+    );
   }
 
-  late final _Dart_IsTypeVariable_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsTypeVariable>>(
+  late final _Dart_IsTypeVariablePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
           'Dart_IsTypeVariable');
-  late final _dart_Dart_IsTypeVariable _Dart_IsTypeVariable =
-      _Dart_IsTypeVariable_ptr.asFunction<_dart_Dart_IsTypeVariable>();
+  late final _Dart_IsTypeVariable =
+      _Dart_IsTypeVariablePtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsClosure(
     Object object,
   ) {
     return _Dart_IsClosure(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsClosure_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsClosure>>('Dart_IsClosure');
-  late final _dart_Dart_IsClosure _Dart_IsClosure =
-      _Dart_IsClosure_ptr.asFunction<_dart_Dart_IsClosure>();
+  late final _Dart_IsClosurePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsClosure');
+  late final _Dart_IsClosure =
+      _Dart_IsClosurePtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsTypedData(
     Object object,
   ) {
     return _Dart_IsTypedData(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsTypedData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsTypedData>>('Dart_IsTypedData');
-  late final _dart_Dart_IsTypedData _Dart_IsTypedData =
-      _Dart_IsTypedData_ptr.asFunction<_dart_Dart_IsTypedData>();
+  late final _Dart_IsTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsTypedData');
+  late final _Dart_IsTypedData =
+      _Dart_IsTypedDataPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsByteBuffer(
     Object object,
   ) {
     return _Dart_IsByteBuffer(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsByteBuffer_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsByteBuffer>>('Dart_IsByteBuffer');
-  late final _dart_Dart_IsByteBuffer _Dart_IsByteBuffer =
-      _Dart_IsByteBuffer_ptr.asFunction<_dart_Dart_IsByteBuffer>();
+  late final _Dart_IsByteBufferPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsByteBuffer');
+  late final _Dart_IsByteBuffer =
+      _Dart_IsByteBufferPtr.asFunction<bool Function(Object)>();
 
   bool Dart_IsFuture(
     Object object,
   ) {
     return _Dart_IsFuture(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsFuture_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsFuture>>('Dart_IsFuture');
-  late final _dart_Dart_IsFuture _Dart_IsFuture =
-      _Dart_IsFuture_ptr.asFunction<_dart_Dart_IsFuture>();
+  late final _Dart_IsFuturePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsFuture');
+  late final _Dart_IsFuture =
+      _Dart_IsFuturePtr.asFunction<bool Function(Object)>();
 
   /// Gets the type of a Dart language object.
   ///
@@ -4567,11 +5063,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_InstanceGetType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_InstanceGetType>>(
+  late final _Dart_InstanceGetTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_InstanceGetType');
-  late final _dart_Dart_InstanceGetType _Dart_InstanceGetType =
-      _Dart_InstanceGetType_ptr.asFunction<_dart_Dart_InstanceGetType>();
+  late final _Dart_InstanceGetType =
+      _Dart_InstanceGetTypePtr.asFunction<Object Function(Object)>();
 
   /// Returns the name for the provided class type.
   ///
@@ -4585,10 +5081,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ClassName_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ClassName>>('Dart_ClassName');
-  late final _dart_Dart_ClassName _Dart_ClassName =
-      _Dart_ClassName_ptr.asFunction<_dart_Dart_ClassName>();
+  late final _Dart_ClassNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClassName');
+  late final _Dart_ClassName =
+      _Dart_ClassNamePtr.asFunction<Object Function(Object)>();
 
   /// Returns the name for the provided function or method.
   ///
@@ -4602,10 +5099,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_FunctionName_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_FunctionName>>('Dart_FunctionName');
-  late final _dart_Dart_FunctionName _Dart_FunctionName =
-      _Dart_FunctionName_ptr.asFunction<_dart_Dart_FunctionName>();
+  late final _Dart_FunctionNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_FunctionName');
+  late final _Dart_FunctionName =
+      _Dart_FunctionNamePtr.asFunction<Object Function(Object)>();
 
   /// Returns a handle to the owner of a function.
   ///
@@ -4625,10 +5123,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_FunctionOwner_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_FunctionOwner>>('Dart_FunctionOwner');
-  late final _dart_Dart_FunctionOwner _Dart_FunctionOwner =
-      _Dart_FunctionOwner_ptr.asFunction<_dart_Dart_FunctionOwner>();
+  late final _Dart_FunctionOwnerPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_FunctionOwner');
+  late final _Dart_FunctionOwner =
+      _Dart_FunctionOwnerPtr.asFunction<Object Function(Object)>();
 
   /// Determines whether a function handle referes to a static function
   /// of method.
@@ -4642,7 +5141,7 @@ class LabSoundBind {
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_FunctionIsStatic(
     Object function,
-    ffi.Pointer<ffi.Uint8> is_static,
+    ffi.Pointer<ffi.Bool> is_static,
   ) {
     return _Dart_FunctionIsStatic(
       function,
@@ -4650,11 +5149,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_FunctionIsStatic_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_FunctionIsStatic>>(
-          'Dart_FunctionIsStatic');
-  late final _dart_Dart_FunctionIsStatic _Dart_FunctionIsStatic =
-      _Dart_FunctionIsStatic_ptr.asFunction<_dart_Dart_FunctionIsStatic>();
+  late final _Dart_FunctionIsStaticPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Bool>)>>('Dart_FunctionIsStatic');
+  late final _Dart_FunctionIsStatic = _Dart_FunctionIsStaticPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Is this object a closure resulting from a tear-off (closurized method)?
   ///
@@ -4669,15 +5169,15 @@ class LabSoundBind {
     Object object,
   ) {
     return _Dart_IsTearOff(
-          object,
-        ) !=
-        0;
+      object,
+    );
   }
 
-  late final _Dart_IsTearOff_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsTearOff>>('Dart_IsTearOff');
-  late final _dart_Dart_IsTearOff _Dart_IsTearOff =
-      _Dart_IsTearOff_ptr.asFunction<_dart_Dart_IsTearOff>();
+  late final _Dart_IsTearOffPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Handle)>>(
+          'Dart_IsTearOff');
+  late final _Dart_IsTearOff =
+      _Dart_IsTearOffPtr.asFunction<bool Function(Object)>();
 
   /// Retrieves the function of a closure.
   ///
@@ -4691,11 +5191,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ClosureFunction_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ClosureFunction>>(
+  late final _Dart_ClosureFunctionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_ClosureFunction');
-  late final _dart_Dart_ClosureFunction _Dart_ClosureFunction =
-      _Dart_ClosureFunction_ptr.asFunction<_dart_Dart_ClosureFunction>();
+  late final _Dart_ClosureFunction =
+      _Dart_ClosureFunctionPtr.asFunction<Object Function(Object)>();
 
   /// Returns a handle to the library which contains class.
   ///
@@ -4710,10 +5210,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ClassLibrary_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ClassLibrary>>('Dart_ClassLibrary');
-  late final _dart_Dart_ClassLibrary _Dart_ClassLibrary =
-      _Dart_ClassLibrary_ptr.asFunction<_dart_Dart_ClassLibrary>();
+  late final _Dart_ClassLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClassLibrary');
+  late final _Dart_ClassLibrary =
+      _Dart_ClassLibraryPtr.asFunction<Object Function(Object)>();
 
   /// Does this Integer fit into a 64-bit signed integer?
   ///
@@ -4723,7 +5224,7 @@ class LabSoundBind {
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_IntegerFitsIntoInt64(
     Object integer,
-    ffi.Pointer<ffi.Uint8> fits,
+    ffi.Pointer<ffi.Bool> fits,
   ) {
     return _Dart_IntegerFitsIntoInt64(
       integer,
@@ -4731,12 +5232,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IntegerFitsIntoInt64_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IntegerFitsIntoInt64>>(
-          'Dart_IntegerFitsIntoInt64');
-  late final _dart_Dart_IntegerFitsIntoInt64 _Dart_IntegerFitsIntoInt64 =
-      _Dart_IntegerFitsIntoInt64_ptr.asFunction<
-          _dart_Dart_IntegerFitsIntoInt64>();
+  late final _Dart_IntegerFitsIntoInt64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Bool>)>>('Dart_IntegerFitsIntoInt64');
+  late final _Dart_IntegerFitsIntoInt64 = _Dart_IntegerFitsIntoInt64Ptr
+      .asFunction<Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Does this Integer fit into a 64-bit unsigned integer?
   ///
@@ -4746,7 +5247,7 @@ class LabSoundBind {
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_IntegerFitsIntoUint64(
     Object integer,
-    ffi.Pointer<ffi.Uint8> fits,
+    ffi.Pointer<ffi.Bool> fits,
   ) {
     return _Dart_IntegerFitsIntoUint64(
       integer,
@@ -4754,12 +5255,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IntegerFitsIntoUint64_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IntegerFitsIntoUint64>>(
-          'Dart_IntegerFitsIntoUint64');
-  late final _dart_Dart_IntegerFitsIntoUint64 _Dart_IntegerFitsIntoUint64 =
-      _Dart_IntegerFitsIntoUint64_ptr.asFunction<
-          _dart_Dart_IntegerFitsIntoUint64>();
+  late final _Dart_IntegerFitsIntoUint64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Bool>)>>('Dart_IntegerFitsIntoUint64');
+  late final _Dart_IntegerFitsIntoUint64 = _Dart_IntegerFitsIntoUint64Ptr
+      .asFunction<Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Returns an Integer with the provided value.
   ///
@@ -4775,10 +5276,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewInteger_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewInteger>>('Dart_NewInteger');
-  late final _dart_Dart_NewInteger _Dart_NewInteger =
-      _Dart_NewInteger_ptr.asFunction<_dart_Dart_NewInteger>();
+  late final _Dart_NewIntegerPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int64)>>(
+          'Dart_NewInteger');
+  late final _Dart_NewInteger =
+      _Dart_NewIntegerPtr.asFunction<Object Function(int)>();
 
   /// Returns an Integer with the provided value.
   ///
@@ -4794,12 +5296,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewIntegerFromUint64_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewIntegerFromUint64>>(
+  late final _Dart_NewIntegerFromUint64Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint64)>>(
           'Dart_NewIntegerFromUint64');
-  late final _dart_Dart_NewIntegerFromUint64 _Dart_NewIntegerFromUint64 =
-      _Dart_NewIntegerFromUint64_ptr.asFunction<
-          _dart_Dart_NewIntegerFromUint64>();
+  late final _Dart_NewIntegerFromUint64 =
+      _Dart_NewIntegerFromUint64Ptr.asFunction<Object Function(int)>();
 
   /// Returns an Integer with the provided value.
   ///
@@ -4809,19 +5310,18 @@ class LabSoundBind {
   /// \return The Integer object if no error occurs. Otherwise returns
   /// an error handle.
   Object Dart_NewIntegerFromHexCString(
-    ffi.Pointer<ffi.Int8> value,
+    ffi.Pointer<ffi.Char> value,
   ) {
     return _Dart_NewIntegerFromHexCString(
       value,
     );
   }
 
-  late final _Dart_NewIntegerFromHexCString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewIntegerFromHexCString>>(
+  late final _Dart_NewIntegerFromHexCStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
           'Dart_NewIntegerFromHexCString');
-  late final _dart_Dart_NewIntegerFromHexCString
-      _Dart_NewIntegerFromHexCString = _Dart_NewIntegerFromHexCString_ptr
-          .asFunction<_dart_Dart_NewIntegerFromHexCString>();
+  late final _Dart_NewIntegerFromHexCString = _Dart_NewIntegerFromHexCStringPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Char>)>();
 
   /// Gets the value of an Integer.
   ///
@@ -4841,11 +5341,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IntegerToInt64_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IntegerToInt64>>(
-          'Dart_IntegerToInt64');
-  late final _dart_Dart_IntegerToInt64 _Dart_IntegerToInt64 =
-      _Dart_IntegerToInt64_ptr.asFunction<_dart_Dart_IntegerToInt64>();
+  late final _Dart_IntegerToInt64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Int64>)>>('Dart_IntegerToInt64');
+  late final _Dart_IntegerToInt64 = _Dart_IntegerToInt64Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Int64>)>();
 
   /// Gets the value of an Integer.
   ///
@@ -4866,11 +5367,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IntegerToUint64_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IntegerToUint64>>(
-          'Dart_IntegerToUint64');
-  late final _dart_Dart_IntegerToUint64 _Dart_IntegerToUint64 =
-      _Dart_IntegerToUint64_ptr.asFunction<_dart_Dart_IntegerToUint64>();
+  late final _Dart_IntegerToUint64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint64>)>>('Dart_IntegerToUint64');
+  late final _Dart_IntegerToUint64 = _Dart_IntegerToUint64Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint64>)>();
 
   /// Gets the value of an integer as a hexadecimal C string.
   ///
@@ -4882,7 +5384,7 @@ class LabSoundBind {
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_IntegerToHexCString(
     Object integer,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> value,
   ) {
     return _Dart_IntegerToHexCString(
       integer,
@@ -4890,12 +5392,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IntegerToHexCString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IntegerToHexCString>>(
-          'Dart_IntegerToHexCString');
-  late final _dart_Dart_IntegerToHexCString _Dart_IntegerToHexCString =
-      _Dart_IntegerToHexCString_ptr.asFunction<
-          _dart_Dart_IntegerToHexCString>();
+  late final _Dart_IntegerToHexCStringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_IntegerToHexCString');
+  late final _Dart_IntegerToHexCString =
+      _Dart_IntegerToHexCStringPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Returns a Double with the provided value.
   ///
@@ -4911,10 +5414,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewDouble_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewDouble>>('Dart_NewDouble');
-  late final _dart_Dart_NewDouble _Dart_NewDouble =
-      _Dart_NewDouble_ptr.asFunction<_dart_Dart_NewDouble>();
+  late final _Dart_NewDoublePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Double)>>(
+          'Dart_NewDouble');
+  late final _Dart_NewDouble =
+      _Dart_NewDoublePtr.asFunction<Object Function(double)>();
 
   /// Gets the value of a Double
   ///
@@ -4932,10 +5436,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_DoubleValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DoubleValue>>('Dart_DoubleValue');
-  late final _dart_Dart_DoubleValue _Dart_DoubleValue =
-      _Dart_DoubleValue_ptr.asFunction<_dart_Dart_DoubleValue>();
+  late final _Dart_DoubleValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Double>)>>('Dart_DoubleValue');
+  late final _Dart_DoubleValue = _Dart_DoubleValuePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Double>)>();
 
   /// Returns a closure of static function 'function_name' in the class 'class_name'
   /// in the exported namespace of specified 'library'.
@@ -4946,23 +5452,23 @@ class LabSoundBind {
   ///
   /// \return A valid Dart instance if no error occurs during the operation.
   Object Dart_GetStaticMethodClosure(
-    Object library_1,
+    Object library1,
     Object cls_type,
     Object function_name,
   ) {
     return _Dart_GetStaticMethodClosure(
-      library_1,
+      library1,
       cls_type,
       function_name,
     );
   }
 
-  late final _Dart_GetStaticMethodClosure_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetStaticMethodClosure>>(
-          'Dart_GetStaticMethodClosure');
-  late final _dart_Dart_GetStaticMethodClosure _Dart_GetStaticMethodClosure =
-      _Dart_GetStaticMethodClosure_ptr.asFunction<
-          _dart_Dart_GetStaticMethodClosure>();
+  late final _Dart_GetStaticMethodClosurePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Handle)>>('Dart_GetStaticMethodClosure');
+  late final _Dart_GetStaticMethodClosure = _Dart_GetStaticMethodClosurePtr
+      .asFunction<Object Function(Object, Object, Object)>();
 
   /// Returns the True object.
   ///
@@ -4973,10 +5479,9 @@ class LabSoundBind {
     return _Dart_True();
   }
 
-  late final _Dart_True_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_True>>('Dart_True');
-  late final _dart_Dart_True _Dart_True =
-      _Dart_True_ptr.asFunction<_dart_Dart_True>();
+  late final _Dart_TruePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_True');
+  late final _Dart_True = _Dart_TruePtr.asFunction<Object Function()>();
 
   /// Returns the False object.
   ///
@@ -4987,10 +5492,9 @@ class LabSoundBind {
     return _Dart_False();
   }
 
-  late final _Dart_False_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_False>>('Dart_False');
-  late final _dart_Dart_False _Dart_False =
-      _Dart_False_ptr.asFunction<_dart_Dart_False>();
+  late final _Dart_FalsePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_False');
+  late final _Dart_False = _Dart_FalsePtr.asFunction<Object Function()>();
 
   /// Returns a Boolean with the provided value.
   ///
@@ -5002,14 +5506,15 @@ class LabSoundBind {
     bool value,
   ) {
     return _Dart_NewBoolean(
-      value ? 1 : 0,
+      value,
     );
   }
 
-  late final _Dart_NewBoolean_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewBoolean>>('Dart_NewBoolean');
-  late final _dart_Dart_NewBoolean _Dart_NewBoolean =
-      _Dart_NewBoolean_ptr.asFunction<_dart_Dart_NewBoolean>();
+  late final _Dart_NewBooleanPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Bool)>>(
+          'Dart_NewBoolean');
+  late final _Dart_NewBoolean =
+      _Dart_NewBooleanPtr.asFunction<Object Function(bool)>();
 
   /// Gets the value of a Boolean
   ///
@@ -5019,7 +5524,7 @@ class LabSoundBind {
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_BooleanValue(
     Object boolean_obj,
-    ffi.Pointer<ffi.Uint8> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _Dart_BooleanValue(
       boolean_obj,
@@ -5027,10 +5532,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_BooleanValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_BooleanValue>>('Dart_BooleanValue');
-  late final _dart_Dart_BooleanValue _Dart_BooleanValue =
-      _Dart_BooleanValue_ptr.asFunction<_dart_Dart_BooleanValue>();
+  late final _Dart_BooleanValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Bool>)>>('Dart_BooleanValue');
+  late final _Dart_BooleanValue = _Dart_BooleanValuePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets the length of a String.
   ///
@@ -5048,10 +5555,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringLength_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringLength>>('Dart_StringLength');
-  late final _dart_Dart_StringLength _Dart_StringLength =
-      _Dart_StringLength_ptr.asFunction<_dart_Dart_StringLength>();
+  late final _Dart_StringLengthPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_StringLength');
+  late final _Dart_StringLength = _Dart_StringLengthPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Returns a String built from the provided C string
   /// (There is an implicit assumption that the C string passed in contains
@@ -5063,19 +5572,18 @@ class LabSoundBind {
   /// \return The String object if no error occurs. Otherwise returns
   /// an error handle.
   Object Dart_NewStringFromCString(
-    ffi.Pointer<ffi.Int8> str,
+    ffi.Pointer<ffi.Char> str,
   ) {
     return _Dart_NewStringFromCString(
       str,
     );
   }
 
-  late final _Dart_NewStringFromCString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromCString>>(
+  late final _Dart_NewStringFromCStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
           'Dart_NewStringFromCString');
-  late final _dart_Dart_NewStringFromCString _Dart_NewStringFromCString =
-      _Dart_NewStringFromCString_ptr.asFunction<
-          _dart_Dart_NewStringFromCString>();
+  late final _Dart_NewStringFromCString = _Dart_NewStringFromCStringPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Char>)>();
 
   /// Returns a String built from an array of UTF-8 encoded characters.
   ///
@@ -5094,11 +5602,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewStringFromUTF8_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromUTF8>>(
-          'Dart_NewStringFromUTF8');
-  late final _dart_Dart_NewStringFromUTF8 _Dart_NewStringFromUTF8 =
-      _Dart_NewStringFromUTF8_ptr.asFunction<_dart_Dart_NewStringFromUTF8>();
+  late final _Dart_NewStringFromUTF8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>('Dart_NewStringFromUTF8');
+  late final _Dart_NewStringFromUTF8 = _Dart_NewStringFromUTF8Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Uint8>, int)>();
 
   /// Returns a String built from an array of UTF-16 encoded characters.
   ///
@@ -5117,11 +5626,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewStringFromUTF16_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromUTF16>>(
-          'Dart_NewStringFromUTF16');
-  late final _dart_Dart_NewStringFromUTF16 _Dart_NewStringFromUTF16 =
-      _Dart_NewStringFromUTF16_ptr.asFunction<_dart_Dart_NewStringFromUTF16>();
+  late final _Dart_NewStringFromUTF16Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint16>, ffi.IntPtr)>>('Dart_NewStringFromUTF16');
+  late final _Dart_NewStringFromUTF16 = _Dart_NewStringFromUTF16Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Uint16>, int)>();
 
   /// Returns a String built from an array of UTF-32 encoded characters.
   ///
@@ -5140,11 +5650,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewStringFromUTF32_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewStringFromUTF32>>(
-          'Dart_NewStringFromUTF32');
-  late final _dart_Dart_NewStringFromUTF32 _Dart_NewStringFromUTF32 =
-      _Dart_NewStringFromUTF32_ptr.asFunction<_dart_Dart_NewStringFromUTF32>();
+  late final _Dart_NewStringFromUTF32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Int32>, ffi.IntPtr)>>('Dart_NewStringFromUTF32');
+  late final _Dart_NewStringFromUTF32 = _Dart_NewStringFromUTF32Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Int32>, int)>();
 
   /// Returns a String which references an external array of
   /// Latin-1 (ISO-8859-1) encoded characters.
@@ -5163,7 +5674,7 @@ class LabSoundBind {
     int length,
     ffi.Pointer<ffi.Void> peer,
     int external_allocation_size,
-    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+    Dart_HandleFinalizer callback,
   ) {
     return _Dart_NewExternalLatin1String(
       latin1_array,
@@ -5174,12 +5685,18 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewExternalLatin1String_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewExternalLatin1String>>(
-          'Dart_NewExternalLatin1String');
-  late final _dart_Dart_NewExternalLatin1String _Dart_NewExternalLatin1String =
-      _Dart_NewExternalLatin1String_ptr.asFunction<
-          _dart_Dart_NewExternalLatin1String>();
+  late final _Dart_NewExternalLatin1StringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalLatin1String');
+  late final _Dart_NewExternalLatin1String =
+      _Dart_NewExternalLatin1StringPtr.asFunction<
+          Object Function(ffi.Pointer<ffi.Uint8>, int, ffi.Pointer<ffi.Void>,
+              int, Dart_HandleFinalizer)>();
 
   /// Returns a String which references an external array of UTF-16 encoded
   /// characters.
@@ -5198,7 +5715,7 @@ class LabSoundBind {
     int length,
     ffi.Pointer<ffi.Void> peer,
     int external_allocation_size,
-    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+    Dart_HandleFinalizer callback,
   ) {
     return _Dart_NewExternalUTF16String(
       utf16_array,
@@ -5209,12 +5726,18 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewExternalUTF16String_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewExternalUTF16String>>(
-          'Dart_NewExternalUTF16String');
-  late final _dart_Dart_NewExternalUTF16String _Dart_NewExternalUTF16String =
-      _Dart_NewExternalUTF16String_ptr.asFunction<
-          _dart_Dart_NewExternalUTF16String>();
+  late final _Dart_NewExternalUTF16StringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint16>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalUTF16String');
+  late final _Dart_NewExternalUTF16String =
+      _Dart_NewExternalUTF16StringPtr.asFunction<
+          Object Function(ffi.Pointer<ffi.Uint16>, int, ffi.Pointer<ffi.Void>,
+              int, Dart_HandleFinalizer)>();
 
   /// Gets the C string representation of a String.
   /// (It is a sequence of UTF-8 encoded values with a '\0' termination.)
@@ -5227,7 +5750,7 @@ class LabSoundBind {
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_StringToCString(
     Object str,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> cstr,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> cstr,
   ) {
     return _Dart_StringToCString(
       str,
@@ -5235,11 +5758,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringToCString_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringToCString>>(
-          'Dart_StringToCString');
-  late final _dart_Dart_StringToCString _Dart_StringToCString =
-      _Dart_StringToCString_ptr.asFunction<_dart_Dart_StringToCString>();
+  late final _Dart_StringToCStringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_StringToCString');
+  late final _Dart_StringToCString = _Dart_StringToCStringPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Gets a UTF-8 encoded representation of a String.
   ///
@@ -5267,10 +5791,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringToUTF8_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringToUTF8>>('Dart_StringToUTF8');
-  late final _dart_Dart_StringToUTF8 _Dart_StringToUTF8 =
-      _Dart_StringToUTF8_ptr.asFunction<_dart_Dart_StringToUTF8>();
+  late final _Dart_StringToUTF8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToUTF8');
+  late final _Dart_StringToUTF8 = _Dart_StringToUTF8Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>)>();
 
   /// Gets the data corresponding to the string object. This function returns
   /// the data only for Latin-1 (ISO-8859-1) string objects. For all other
@@ -5295,11 +5822,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringToLatin1_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringToLatin1>>(
-          'Dart_StringToLatin1');
-  late final _dart_Dart_StringToLatin1 _Dart_StringToLatin1 =
-      _Dart_StringToLatin1_ptr.asFunction<_dart_Dart_StringToLatin1>();
+  late final _Dart_StringToLatin1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToLatin1');
+  late final _Dart_StringToLatin1 = _Dart_StringToLatin1Ptr.asFunction<
+      Object Function(
+          Object, ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Gets the UTF-16 encoded representation of a string.
   ///
@@ -5322,10 +5851,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringToUTF16_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringToUTF16>>('Dart_StringToUTF16');
-  late final _dart_Dart_StringToUTF16 _Dart_StringToUTF16 =
-      _Dart_StringToUTF16_ptr.asFunction<_dart_Dart_StringToUTF16>();
+  late final _Dart_StringToUTF16Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Uint16>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToUTF16');
+  late final _Dart_StringToUTF16 = _Dart_StringToUTF16Ptr.asFunction<
+      Object Function(
+          Object, ffi.Pointer<ffi.Uint16>, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Gets the storage size in bytes of a String.
   ///
@@ -5344,11 +5876,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringStorageSize_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringStorageSize>>(
-          'Dart_StringStorageSize');
-  late final _dart_Dart_StringStorageSize _Dart_StringStorageSize =
-      _Dart_StringStorageSize_ptr.asFunction<_dart_Dart_StringStorageSize>();
+  late final _Dart_StringStorageSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_StringStorageSize');
+  late final _Dart_StringStorageSize = _Dart_StringStorageSizePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Retrieves some properties associated with a String.
   /// Properties retrieved are:
@@ -5376,12 +5909,17 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_StringGetProperties_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_StringGetProperties>>(
-          'Dart_StringGetProperties');
-  late final _dart_Dart_StringGetProperties _Dart_StringGetProperties =
-      _Dart_StringGetProperties_ptr.asFunction<
-          _dart_Dart_StringGetProperties>();
+  late final _Dart_StringGetPropertiesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('Dart_StringGetProperties');
+  late final _Dart_StringGetProperties =
+      _Dart_StringGetPropertiesPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.IntPtr>, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
 
   /// Returns a List<dynamic> of the desired length.
   ///
@@ -5397,10 +5935,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewList_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewList>>('Dart_NewList');
-  late final _dart_Dart_NewList _Dart_NewList =
-      _Dart_NewList_ptr.asFunction<_dart_Dart_NewList>();
+  late final _Dart_NewListPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>(
+          'Dart_NewList');
+  late final _Dart_NewList =
+      _Dart_NewListPtr.asFunction<Object Function(int)>();
 
   /// Returns a List of the desired length with the desired legacy element type.
   ///
@@ -5419,10 +5958,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewListOf_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewListOf>>('Dart_NewListOf');
-  late final _dart_Dart_NewListOf _Dart_NewListOf =
-      _Dart_NewListOf_ptr.asFunction<_dart_Dart_NewListOf>();
+  late final _Dart_NewListOfPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.IntPtr)>>(
+          'Dart_NewListOf');
+  late final _Dart_NewListOf =
+      _Dart_NewListOfPtr.asFunction<Object Function(int, int)>();
 
   /// Returns a List of the desired length with the desired element type.
   ///
@@ -5443,10 +5983,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewListOfType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewListOfType>>('Dart_NewListOfType');
-  late final _dart_Dart_NewListOfType _Dart_NewListOfType =
-      _Dart_NewListOfType_ptr.asFunction<_dart_Dart_NewListOfType>();
+  late final _Dart_NewListOfTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.IntPtr)>>(
+          'Dart_NewListOfType');
+  late final _Dart_NewListOfType =
+      _Dart_NewListOfTypePtr.asFunction<Object Function(Object, int)>();
 
   /// Returns a List of the desired length with the desired element type, filled
   /// with the provided object.
@@ -5473,12 +6014,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewListOfTypeFilled_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewListOfTypeFilled>>(
-          'Dart_NewListOfTypeFilled');
-  late final _dart_Dart_NewListOfTypeFilled _Dart_NewListOfTypeFilled =
-      _Dart_NewListOfTypeFilled_ptr.asFunction<
-          _dart_Dart_NewListOfTypeFilled>();
+  late final _Dart_NewListOfTypeFilledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Handle, ffi.IntPtr)>>('Dart_NewListOfTypeFilled');
+  late final _Dart_NewListOfTypeFilled = _Dart_NewListOfTypeFilledPtr
+      .asFunction<Object Function(Object, Object, int)>();
 
   /// Gets the length of a List.
   ///
@@ -5498,10 +6039,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ListLength_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ListLength>>('Dart_ListLength');
-  late final _dart_Dart_ListLength _Dart_ListLength =
-      _Dart_ListLength_ptr.asFunction<_dart_Dart_ListLength>();
+  late final _Dart_ListLengthPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_ListLength');
+  late final _Dart_ListLength = _Dart_ListLengthPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Gets the Object at some index of a List.
   ///
@@ -5524,10 +6067,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ListGetAt_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ListGetAt>>('Dart_ListGetAt');
-  late final _dart_Dart_ListGetAt _Dart_ListGetAt =
-      _Dart_ListGetAt_ptr.asFunction<_dart_Dart_ListGetAt>();
+  late final _Dart_ListGetAtPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.IntPtr)>>(
+          'Dart_ListGetAt');
+  late final _Dart_ListGetAt =
+      _Dart_ListGetAtPtr.asFunction<Object Function(Object, int)>();
 
   /// Gets a range of Objects from a List.
   ///
@@ -5555,10 +6099,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ListGetRange_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ListGetRange>>('Dart_ListGetRange');
-  late final _dart_Dart_ListGetRange _Dart_ListGetRange =
-      _Dart_ListGetRange_ptr.asFunction<_dart_Dart_ListGetRange>();
+  late final _Dart_ListGetRangePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_ListGetRange');
+  late final _Dart_ListGetRange = _Dart_ListGetRangePtr.asFunction<
+      Object Function(Object, int, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Sets the Object at some index of a List.
   ///
@@ -5583,10 +6129,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ListSetAt_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ListSetAt>>('Dart_ListSetAt');
-  late final _dart_Dart_ListSetAt _Dart_ListSetAt =
-      _Dart_ListSetAt_ptr.asFunction<_dart_Dart_ListSetAt>();
+  late final _Dart_ListSetAtPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.IntPtr, ffi.Handle)>>('Dart_ListSetAt');
+  late final _Dart_ListSetAt =
+      _Dart_ListSetAtPtr.asFunction<Object Function(Object, int, Object)>();
 
   /// May generate an unhandled exception error.
   Object Dart_ListGetAsBytes(
@@ -5603,11 +6151,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ListGetAsBytes_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ListGetAsBytes>>(
-          'Dart_ListGetAsBytes');
-  late final _dart_Dart_ListGetAsBytes _Dart_ListGetAsBytes =
-      _Dart_ListGetAsBytes_ptr.asFunction<_dart_Dart_ListGetAsBytes>();
+  late final _Dart_ListGetAsBytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_ListGetAsBytes');
+  late final _Dart_ListGetAsBytes = _Dart_ListGetAsBytesPtr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Uint8>, int)>();
 
   /// May generate an unhandled exception error.
   Object Dart_ListSetAsBytes(
@@ -5624,11 +6173,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ListSetAsBytes_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ListSetAsBytes>>(
-          'Dart_ListSetAsBytes');
-  late final _dart_Dart_ListSetAsBytes _Dart_ListSetAsBytes =
-      _Dart_ListSetAsBytes_ptr.asFunction<_dart_Dart_ListSetAsBytes>();
+  late final _Dart_ListSetAsBytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_ListSetAsBytes');
+  late final _Dart_ListSetAsBytes = _Dart_ListSetAsBytesPtr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Uint8>, int)>();
 
   /// Gets the Object at some key of a Map.
   ///
@@ -5649,10 +6199,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_MapGetAt_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_MapGetAt>>('Dart_MapGetAt');
-  late final _dart_Dart_MapGetAt _Dart_MapGetAt =
-      _Dart_MapGetAt_ptr.asFunction<_dart_Dart_MapGetAt>();
+  late final _Dart_MapGetAtPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_MapGetAt');
+  late final _Dart_MapGetAt =
+      _Dart_MapGetAtPtr.asFunction<Object Function(Object, Object)>();
 
   /// Returns whether the Map contains a given key.
   ///
@@ -5672,11 +6223,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_MapContainsKey_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_MapContainsKey>>(
+  late final _Dart_MapContainsKeyPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
           'Dart_MapContainsKey');
-  late final _dart_Dart_MapContainsKey _Dart_MapContainsKey =
-      _Dart_MapContainsKey_ptr.asFunction<_dart_Dart_MapContainsKey>();
+  late final _Dart_MapContainsKey =
+      _Dart_MapContainsKeyPtr.asFunction<Object Function(Object, Object)>();
 
   /// Gets the list of keys of a Map.
   ///
@@ -5694,10 +6245,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_MapKeys_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_MapKeys>>('Dart_MapKeys');
-  late final _dart_Dart_MapKeys _Dart_MapKeys =
-      _Dart_MapKeys_ptr.asFunction<_dart_Dart_MapKeys>();
+  late final _Dart_MapKeysPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_MapKeys');
+  late final _Dart_MapKeys =
+      _Dart_MapKeysPtr.asFunction<Object Function(Object)>();
 
   /// Return type if this object is a TypedData object.
   ///
@@ -5711,11 +6263,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetTypeOfTypedData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetTypeOfTypedData>>(
+  late final _Dart_GetTypeOfTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Handle)>>(
           'Dart_GetTypeOfTypedData');
-  late final _dart_Dart_GetTypeOfTypedData _Dart_GetTypeOfTypedData =
-      _Dart_GetTypeOfTypedData_ptr.asFunction<_dart_Dart_GetTypeOfTypedData>();
+  late final _Dart_GetTypeOfTypedData =
+      _Dart_GetTypeOfTypedDataPtr.asFunction<int Function(Object)>();
 
   /// Return type if this object is an external TypedData object.
   ///
@@ -5729,12 +6281,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetTypeOfExternalTypedData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetTypeOfExternalTypedData>>(
+  late final _Dart_GetTypeOfExternalTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Handle)>>(
           'Dart_GetTypeOfExternalTypedData');
-  late final _dart_Dart_GetTypeOfExternalTypedData
-      _Dart_GetTypeOfExternalTypedData = _Dart_GetTypeOfExternalTypedData_ptr
-          .asFunction<_dart_Dart_GetTypeOfExternalTypedData>();
+  late final _Dart_GetTypeOfExternalTypedData =
+      _Dart_GetTypeOfExternalTypedDataPtr.asFunction<int Function(Object)>();
 
   /// Returns a TypedData object of the desired length and type.
   ///
@@ -5753,10 +6304,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewTypedData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewTypedData>>('Dart_NewTypedData');
-  late final _dart_Dart_NewTypedData _Dart_NewTypedData =
-      _Dart_NewTypedData_ptr.asFunction<_dart_Dart_NewTypedData>();
+  late final _Dart_NewTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.IntPtr)>>(
+          'Dart_NewTypedData');
+  late final _Dart_NewTypedData =
+      _Dart_NewTypedDataPtr.asFunction<Object Function(int, int)>();
 
   /// Returns a TypedData object which references an external data array.
   ///
@@ -5778,12 +6330,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewExternalTypedData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewExternalTypedData>>(
-          'Dart_NewExternalTypedData');
-  late final _dart_Dart_NewExternalTypedData _Dart_NewExternalTypedData =
-      _Dart_NewExternalTypedData_ptr.asFunction<
-          _dart_Dart_NewExternalTypedData>();
+  late final _Dart_NewExternalTypedDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Int32, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr)>>('Dart_NewExternalTypedData');
+  late final _Dart_NewExternalTypedData = _Dart_NewExternalTypedDataPtr
+      .asFunction<Object Function(int, ffi.Pointer<ffi.Void>, int)>();
 
   /// Returns a TypedData object which references an external data array.
   ///
@@ -5806,7 +6358,7 @@ class LabSoundBind {
     int length,
     ffi.Pointer<ffi.Void> peer,
     int external_allocation_size,
-    ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
+    Dart_HandleFinalizer callback,
   ) {
     return _Dart_NewExternalTypedDataWithFinalizer(
       type,
@@ -5818,13 +6370,19 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewExternalTypedDataWithFinalizer_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewExternalTypedDataWithFinalizer>>(
-          'Dart_NewExternalTypedDataWithFinalizer');
-  late final _dart_Dart_NewExternalTypedDataWithFinalizer
-      _Dart_NewExternalTypedDataWithFinalizer =
-      _Dart_NewExternalTypedDataWithFinalizer_ptr.asFunction<
-          _dart_Dart_NewExternalTypedDataWithFinalizer>();
+  late final _Dart_NewExternalTypedDataWithFinalizerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Int32,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalTypedDataWithFinalizer');
+  late final _Dart_NewExternalTypedDataWithFinalizer =
+      _Dart_NewExternalTypedDataWithFinalizerPtr.asFunction<
+          Object Function(int, ffi.Pointer<ffi.Void>, int,
+              ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
 
   /// Returns a ByteBuffer object for the typed data.
   ///
@@ -5840,10 +6398,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_NewByteBuffer_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_NewByteBuffer>>('Dart_NewByteBuffer');
-  late final _dart_Dart_NewByteBuffer _Dart_NewByteBuffer =
-      _Dart_NewByteBuffer_ptr.asFunction<_dart_Dart_NewByteBuffer>();
+  late final _Dart_NewByteBufferPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewByteBuffer');
+  late final _Dart_NewByteBuffer =
+      _Dart_NewByteBufferPtr.asFunction<Object Function(Object)>();
 
   /// Acquires access to the internal data address of a TypedData object.
   ///
@@ -5879,12 +6438,17 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_TypedDataAcquireData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypedDataAcquireData>>(
-          'Dart_TypedDataAcquireData');
-  late final _dart_Dart_TypedDataAcquireData _Dart_TypedDataAcquireData =
-      _Dart_TypedDataAcquireData_ptr.asFunction<
-          _dart_Dart_TypedDataAcquireData>();
+  late final _Dart_TypedDataAcquireDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_TypedDataAcquireData');
+  late final _Dart_TypedDataAcquireData =
+      _Dart_TypedDataAcquireDataPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Releases access to the internal data address that was acquired earlier using
   /// Dart_TypedDataAcquireData.
@@ -5902,12 +6466,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_TypedDataReleaseData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypedDataReleaseData>>(
+  late final _Dart_TypedDataReleaseDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_TypedDataReleaseData');
-  late final _dart_Dart_TypedDataReleaseData _Dart_TypedDataReleaseData =
-      _Dart_TypedDataReleaseData_ptr.asFunction<
-          _dart_Dart_TypedDataReleaseData>();
+  late final _Dart_TypedDataReleaseData =
+      _Dart_TypedDataReleaseDataPtr.asFunction<Object Function(Object)>();
 
   /// Returns the TypedData object associated with the ByteBuffer object.
   ///
@@ -5923,12 +6486,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetDataFromByteBuffer_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetDataFromByteBuffer>>(
+  late final _Dart_GetDataFromByteBufferPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_GetDataFromByteBuffer');
-  late final _dart_Dart_GetDataFromByteBuffer _Dart_GetDataFromByteBuffer =
-      _Dart_GetDataFromByteBuffer_ptr.asFunction<
-          _dart_Dart_GetDataFromByteBuffer>();
+  late final _Dart_GetDataFromByteBuffer =
+      _Dart_GetDataFromByteBufferPtr.asFunction<Object Function(Object)>();
 
   /// Invokes a constructor, creating a new object.
   ///
@@ -5959,10 +6521,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_New_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_New>>('Dart_New');
-  late final _dart_Dart_New _Dart_New =
-      _Dart_New_ptr.asFunction<_dart_Dart_New>();
+  late final _Dart_NewPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_New');
+  late final _Dart_New = _Dart_NewPtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Allocate a new object without invoking a constructor.
   ///
@@ -5978,10 +6542,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_Allocate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Allocate>>('Dart_Allocate');
-  late final _dart_Dart_Allocate _Dart_Allocate =
-      _Dart_Allocate_ptr.asFunction<_dart_Dart_Allocate>();
+  late final _Dart_AllocatePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_Allocate');
+  late final _Dart_Allocate =
+      _Dart_AllocatePtr.asFunction<Object Function(Object)>();
 
   /// Allocate a new object without invoking a constructor, and sets specified
   /// native fields.
@@ -6004,12 +6569,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_AllocateWithNativeFields_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_AllocateWithNativeFields>>(
-          'Dart_AllocateWithNativeFields');
-  late final _dart_Dart_AllocateWithNativeFields
-      _Dart_AllocateWithNativeFields = _Dart_AllocateWithNativeFields_ptr
-          .asFunction<_dart_Dart_AllocateWithNativeFields>();
+  late final _Dart_AllocateWithNativeFieldsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_AllocateWithNativeFields');
+  late final _Dart_AllocateWithNativeFields = _Dart_AllocateWithNativeFieldsPtr
+      .asFunction<Object Function(Object, int, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Invokes a method or function.
   ///
@@ -6046,10 +6611,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_Invoke_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Invoke>>('Dart_Invoke');
-  late final _dart_Dart_Invoke _Dart_Invoke =
-      _Dart_Invoke_ptr.asFunction<_dart_Dart_Invoke>();
+  late final _Dart_InvokePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_Invoke');
+  late final _Dart_Invoke = _Dart_InvokePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Invokes a Closure with the given arguments.
   ///
@@ -6070,10 +6637,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_InvokeClosure_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_InvokeClosure>>('Dart_InvokeClosure');
-  late final _dart_Dart_InvokeClosure _Dart_InvokeClosure =
-      _Dart_InvokeClosure_ptr.asFunction<_dart_Dart_InvokeClosure>();
+  late final _Dart_InvokeClosurePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_InvokeClosure');
+  late final _Dart_InvokeClosure = _Dart_InvokeClosurePtr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Invokes a Generative Constructor on an object that was previously
   /// allocated using Dart_Allocate/Dart_AllocateWithNativeFields.
@@ -6107,11 +6676,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_InvokeConstructor_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_InvokeConstructor>>(
-          'Dart_InvokeConstructor');
-  late final _dart_Dart_InvokeConstructor _Dart_InvokeConstructor =
-      _Dart_InvokeConstructor_ptr.asFunction<_dart_Dart_InvokeConstructor>();
+  late final _Dart_InvokeConstructorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_InvokeConstructor');
+  late final _Dart_InvokeConstructor = _Dart_InvokeConstructorPtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Gets the value of a field.
   ///
@@ -6141,10 +6711,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetField_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetField>>('Dart_GetField');
-  late final _dart_Dart_GetField _Dart_GetField =
-      _Dart_GetField_ptr.asFunction<_dart_Dart_GetField>();
+  late final _Dart_GetFieldPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_GetField');
+  late final _Dart_GetField =
+      _Dart_GetFieldPtr.asFunction<Object Function(Object, Object)>();
 
   /// Sets the value of a field.
   ///
@@ -6176,10 +6747,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetField_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetField>>('Dart_SetField');
-  late final _dart_Dart_SetField _Dart_SetField =
-      _Dart_SetField_ptr.asFunction<_dart_Dart_SetField>();
+  late final _Dart_SetFieldPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Handle, ffi.Handle)>>('Dart_SetField');
+  late final _Dart_SetField =
+      _Dart_SetFieldPtr.asFunction<Object Function(Object, Object, Object)>();
 
   /// Throws an exception.
   ///
@@ -6206,11 +6779,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ThrowException_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ThrowException>>(
+  late final _Dart_ThrowExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_ThrowException');
-  late final _dart_Dart_ThrowException _Dart_ThrowException =
-      _Dart_ThrowException_ptr.asFunction<_dart_Dart_ThrowException>();
+  late final _Dart_ThrowException =
+      _Dart_ThrowExceptionPtr.asFunction<Object Function(Object)>();
 
   /// Rethrows an exception.
   ///
@@ -6231,16 +6804,16 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_ReThrowException_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_ReThrowException>>(
+  late final _Dart_ReThrowExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
           'Dart_ReThrowException');
-  late final _dart_Dart_ReThrowException _Dart_ReThrowException =
-      _Dart_ReThrowException_ptr.asFunction<_dart_Dart_ReThrowException>();
+  late final _Dart_ReThrowException =
+      _Dart_ReThrowExceptionPtr.asFunction<Object Function(Object, Object)>();
 
   /// Gets the number of native instance fields in an object.
   Object Dart_GetNativeInstanceFieldCount(
     Object obj,
-    ffi.Pointer<ffi.Int32> count,
+    ffi.Pointer<ffi.Int> count,
   ) {
     return _Dart_GetNativeInstanceFieldCount(
       obj,
@@ -6248,12 +6821,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeInstanceFieldCount_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeInstanceFieldCount>>(
-          'Dart_GetNativeInstanceFieldCount');
-  late final _dart_Dart_GetNativeInstanceFieldCount
-      _Dart_GetNativeInstanceFieldCount = _Dart_GetNativeInstanceFieldCount_ptr
-          .asFunction<_dart_Dart_GetNativeInstanceFieldCount>();
+  late final _Dart_GetNativeInstanceFieldCountPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Int>)>>('Dart_GetNativeInstanceFieldCount');
+  late final _Dart_GetNativeInstanceFieldCount =
+      _Dart_GetNativeInstanceFieldCountPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Int>)>();
 
   /// Gets the value of a native field.
   ///
@@ -6270,12 +6844,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeInstanceField_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeInstanceField>>(
-          'Dart_GetNativeInstanceField');
-  late final _dart_Dart_GetNativeInstanceField _Dart_GetNativeInstanceField =
-      _Dart_GetNativeInstanceField_ptr.asFunction<
-          _dart_Dart_GetNativeInstanceField>();
+  late final _Dart_GetNativeInstanceFieldPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeInstanceField');
+  late final _Dart_GetNativeInstanceField = _Dart_GetNativeInstanceFieldPtr
+      .asFunction<Object Function(Object, int, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Sets the value of a native field.
   ///
@@ -6292,32 +6866,81 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetNativeInstanceField_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetNativeInstanceField>>(
-          'Dart_SetNativeInstanceField');
-  late final _dart_Dart_SetNativeInstanceField _Dart_SetNativeInstanceField =
-      _Dart_SetNativeInstanceField_ptr.asFunction<
-          _dart_Dart_SetNativeInstanceField>();
+  late final _Dart_SetNativeInstanceFieldPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Int, ffi.IntPtr)>>('Dart_SetNativeInstanceField');
+  late final _Dart_SetNativeInstanceField = _Dart_SetNativeInstanceFieldPtr
+      .asFunction<Object Function(Object, int, int)>();
 
   /// Extracts current isolate group data from the native arguments structure.
   ffi.Pointer<ffi.Void> Dart_GetNativeIsolateGroupData(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
   ) {
     return _Dart_GetNativeIsolateGroupData(
       args,
     );
   }
 
-  late final _Dart_GetNativeIsolateGroupData_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeIsolateGroupData>>(
-          'Dart_GetNativeIsolateGroupData');
-  late final _dart_Dart_GetNativeIsolateGroupData
-      _Dart_GetNativeIsolateGroupData = _Dart_GetNativeIsolateGroupData_ptr
-          .asFunction<_dart_Dart_GetNativeIsolateGroupData>();
+  late final _Dart_GetNativeIsolateGroupDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              Dart_NativeArguments)>>('Dart_GetNativeIsolateGroupData');
+  late final _Dart_GetNativeIsolateGroupData =
+      _Dart_GetNativeIsolateGroupDataPtr.asFunction<
+          ffi.Pointer<ffi.Void> Function(Dart_NativeArguments)>();
+
+  /// Gets the native arguments based on the types passed in and populates
+  /// the passed arguments buffer with appropriate native values.
+  ///
+  /// \param args the Native arguments block passed into the native call.
+  /// \param num_arguments length of argument descriptor array and argument
+  /// values array passed in.
+  /// \param arg_descriptors an array that describes the arguments that
+  /// need to be retrieved. For each argument to be retrieved the descriptor
+  /// contains the argument number (0, 1 etc.) and the argument type
+  /// described using Dart_NativeArgument_Type, e.g:
+  /// DART_NATIVE_ARG_DESCRIPTOR(Dart_NativeArgument_kBool, 1) indicates
+  /// that the first argument is to be retrieved and it should be a boolean.
+  /// \param arg_values array into which the native arguments need to be
+  /// extracted into, the array is allocated by the caller (it could be
+  /// stack allocated to avoid the malloc/free performance overhead).
+  ///
+  /// \return Success if all the arguments could be extracted correctly,
+  /// returns an error handle if there were any errors while extracting the
+  /// arguments (mismatched number of arguments, incorrect types, etc.).
+  Object Dart_GetNativeArguments(
+    Dart_NativeArguments args,
+    int num_arguments,
+    ffi.Pointer<Dart_NativeArgument_Descriptor> arg_descriptors,
+    ffi.Pointer<Dart_NativeArgument_Value> arg_values,
+  ) {
+    return _Dart_GetNativeArguments(
+      args,
+      num_arguments,
+      arg_descriptors,
+      arg_values,
+    );
+  }
+
+  late final _Dart_GetNativeArgumentsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  Dart_NativeArguments,
+                  ffi.Int,
+                  ffi.Pointer<Dart_NativeArgument_Descriptor>,
+                  ffi.Pointer<Dart_NativeArgument_Value>)>>(
+      'Dart_GetNativeArguments');
+  late final _Dart_GetNativeArguments = _Dart_GetNativeArgumentsPtr.asFunction<
+      Object Function(
+          Dart_NativeArguments,
+          int,
+          ffi.Pointer<Dart_NativeArgument_Descriptor>,
+          ffi.Pointer<Dart_NativeArgument_Value>)>();
 
   /// Gets the native argument at some index.
   Object Dart_GetNativeArgument(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int index,
   ) {
     return _Dart_GetNativeArgument(
@@ -6326,27 +6949,27 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeArgument_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeArgument>>(
-          'Dart_GetNativeArgument');
-  late final _dart_Dart_GetNativeArgument _Dart_GetNativeArgument =
-      _Dart_GetNativeArgument_ptr.asFunction<_dart_Dart_GetNativeArgument>();
+  late final _Dart_GetNativeArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_NativeArguments, ffi.Int)>>('Dart_GetNativeArgument');
+  late final _Dart_GetNativeArgument = _Dart_GetNativeArgumentPtr.asFunction<
+      Object Function(Dart_NativeArguments, int)>();
 
   /// Gets the number of native arguments.
   int Dart_GetNativeArgumentCount(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
   ) {
     return _Dart_GetNativeArgumentCount(
       args,
     );
   }
 
-  late final _Dart_GetNativeArgumentCount_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeArgumentCount>>(
+  late final _Dart_GetNativeArgumentCountPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(Dart_NativeArguments)>>(
           'Dart_GetNativeArgumentCount');
-  late final _dart_Dart_GetNativeArgumentCount _Dart_GetNativeArgumentCount =
-      _Dart_GetNativeArgumentCount_ptr.asFunction<
-          _dart_Dart_GetNativeArgumentCount>();
+  late final _Dart_GetNativeArgumentCount = _Dart_GetNativeArgumentCountPtr
+      .asFunction<int Function(Dart_NativeArguments)>();
 
   /// Gets all the native fields of the native argument at some index.
   /// \param args Native arguments structure.
@@ -6359,7 +6982,7 @@ class LabSoundBind {
   /// null object then 0 is copied as the native field values into the
   /// 'field_values' array.
   Object Dart_GetNativeFieldsOfArgument(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int arg_index,
     int num_fields,
     ffi.Pointer<ffi.IntPtr> field_values,
@@ -6372,16 +6995,18 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeFieldsOfArgument_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeFieldsOfArgument>>(
-          'Dart_GetNativeFieldsOfArgument');
-  late final _dart_Dart_GetNativeFieldsOfArgument
-      _Dart_GetNativeFieldsOfArgument = _Dart_GetNativeFieldsOfArgument_ptr
-          .asFunction<_dart_Dart_GetNativeFieldsOfArgument>();
+  late final _Dart_GetNativeFieldsOfArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int, ffi.Int,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeFieldsOfArgument');
+  late final _Dart_GetNativeFieldsOfArgument =
+      _Dart_GetNativeFieldsOfArgumentPtr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, int, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Gets the native field of the receiver.
   Object Dart_GetNativeReceiver(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     ffi.Pointer<ffi.IntPtr> value,
   ) {
     return _Dart_GetNativeReceiver(
@@ -6390,11 +7015,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeReceiver_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeReceiver>>(
-          'Dart_GetNativeReceiver');
-  late final _dart_Dart_GetNativeReceiver _Dart_GetNativeReceiver =
-      _Dart_GetNativeReceiver_ptr.asFunction<_dart_Dart_GetNativeReceiver>();
+  late final _Dart_GetNativeReceiverPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeReceiver');
+  late final _Dart_GetNativeReceiver = _Dart_GetNativeReceiverPtr.asFunction<
+      Object Function(Dart_NativeArguments, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Gets a string native argument at some index.
   /// \param args Native arguments structure.
@@ -6404,7 +7030,7 @@ class LabSoundBind {
   /// have a peer then the String object is returned. Otherwise returns
   /// an error handle (argument is not a String object).
   Object Dart_GetNativeStringArgument(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int arg_index,
     ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
   ) {
@@ -6415,12 +7041,15 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeStringArgument_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeStringArgument>>(
-          'Dart_GetNativeStringArgument');
-  late final _dart_Dart_GetNativeStringArgument _Dart_GetNativeStringArgument =
-      _Dart_GetNativeStringArgument_ptr.asFunction<
-          _dart_Dart_GetNativeStringArgument>();
+  late final _Dart_GetNativeStringArgumentPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'Dart_GetNativeStringArgument');
+  late final _Dart_GetNativeStringArgument =
+      _Dart_GetNativeStringArgumentPtr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
 
   /// Gets an integer native argument at some index.
   /// \param args Native arguments structure.
@@ -6428,7 +7057,7 @@ class LabSoundBind {
   /// \param value Returns the integer value if the argument is an Integer.
   /// \return Success if no error occurs. Otherwise returns an error handle.
   Object Dart_GetNativeIntegerArgument(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int index,
     ffi.Pointer<ffi.Int64> value,
   ) {
@@ -6439,12 +7068,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeIntegerArgument_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeIntegerArgument>>(
-          'Dart_GetNativeIntegerArgument');
-  late final _dart_Dart_GetNativeIntegerArgument
-      _Dart_GetNativeIntegerArgument = _Dart_GetNativeIntegerArgument_ptr
-          .asFunction<_dart_Dart_GetNativeIntegerArgument>();
+  late final _Dart_GetNativeIntegerArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+              ffi.Pointer<ffi.Int64>)>>('Dart_GetNativeIntegerArgument');
+  late final _Dart_GetNativeIntegerArgument =
+      _Dart_GetNativeIntegerArgumentPtr.asFunction<
+          Object Function(Dart_NativeArguments, int, ffi.Pointer<ffi.Int64>)>();
 
   /// Gets a boolean native argument at some index.
   /// \param args Native arguments structure.
@@ -6452,9 +7082,9 @@ class LabSoundBind {
   /// \param value Returns the boolean value if the argument is a Boolean.
   /// \return Success if no error occurs. Otherwise returns an error handle.
   Object Dart_GetNativeBooleanArgument(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int index,
-    ffi.Pointer<ffi.Uint8> value,
+    ffi.Pointer<ffi.Bool> value,
   ) {
     return _Dart_GetNativeBooleanArgument(
       args,
@@ -6463,12 +7093,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeBooleanArgument_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeBooleanArgument>>(
-          'Dart_GetNativeBooleanArgument');
-  late final _dart_Dart_GetNativeBooleanArgument
-      _Dart_GetNativeBooleanArgument = _Dart_GetNativeBooleanArgument_ptr
-          .asFunction<_dart_Dart_GetNativeBooleanArgument>();
+  late final _Dart_GetNativeBooleanArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+              ffi.Pointer<ffi.Bool>)>>('Dart_GetNativeBooleanArgument');
+  late final _Dart_GetNativeBooleanArgument =
+      _Dart_GetNativeBooleanArgumentPtr.asFunction<
+          Object Function(Dart_NativeArguments, int, ffi.Pointer<ffi.Bool>)>();
 
   /// Gets a double native argument at some index.
   /// \param args Native arguments structure.
@@ -6476,7 +7107,7 @@ class LabSoundBind {
   /// \param value Returns the double value if the argument is a double.
   /// \return Success if no error occurs. Otherwise returns an error handle.
   Object Dart_GetNativeDoubleArgument(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int index,
     ffi.Pointer<ffi.Double> value,
   ) {
@@ -6487,12 +7118,14 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetNativeDoubleArgument_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeDoubleArgument>>(
-          'Dart_GetNativeDoubleArgument');
-  late final _dart_Dart_GetNativeDoubleArgument _Dart_GetNativeDoubleArgument =
-      _Dart_GetNativeDoubleArgument_ptr.asFunction<
-          _dart_Dart_GetNativeDoubleArgument>();
+  late final _Dart_GetNativeDoubleArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+              ffi.Pointer<ffi.Double>)>>('Dart_GetNativeDoubleArgument');
+  late final _Dart_GetNativeDoubleArgument =
+      _Dart_GetNativeDoubleArgumentPtr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, ffi.Pointer<ffi.Double>)>();
 
   /// Sets the return value for a native function.
   ///
@@ -6500,7 +7133,7 @@ class LabSoundBind {
   /// the native functions exits. See Dart_PropagateError for a
   /// discussion of how different types of errors are propagated.
   void Dart_SetReturnValue(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     Object retval,
   ) {
     return _Dart_SetReturnValue(
@@ -6509,15 +7142,16 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetReturnValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetReturnValue>>(
-          'Dart_SetReturnValue');
-  late final _dart_Dart_SetReturnValue _Dart_SetReturnValue =
-      _Dart_SetReturnValue_ptr.asFunction<_dart_Dart_SetReturnValue>();
+  late final _Dart_SetReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Handle)>>('Dart_SetReturnValue');
+  late final _Dart_SetReturnValue = _Dart_SetReturnValuePtr.asFunction<
+      void Function(Dart_NativeArguments, Object)>();
 
   void Dart_SetWeakHandleReturnValue(
-    ffi.Pointer<_Dart_NativeArguments> args,
-    ffi.Pointer<_Dart_WeakPersistentHandle> rval,
+    Dart_NativeArguments args,
+    Dart_WeakPersistentHandle rval,
   ) {
     return _Dart_SetWeakHandleReturnValue(
       args,
@@ -6525,32 +7159,33 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetWeakHandleReturnValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetWeakHandleReturnValue>>(
-          'Dart_SetWeakHandleReturnValue');
-  late final _dart_Dart_SetWeakHandleReturnValue
-      _Dart_SetWeakHandleReturnValue = _Dart_SetWeakHandleReturnValue_ptr
-          .asFunction<_dart_Dart_SetWeakHandleReturnValue>();
+  late final _Dart_SetWeakHandleReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_NativeArguments,
+              Dart_WeakPersistentHandle)>>('Dart_SetWeakHandleReturnValue');
+  late final _Dart_SetWeakHandleReturnValue =
+      _Dart_SetWeakHandleReturnValuePtr.asFunction<
+          void Function(Dart_NativeArguments, Dart_WeakPersistentHandle)>();
 
   void Dart_SetBooleanReturnValue(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     bool retval,
   ) {
     return _Dart_SetBooleanReturnValue(
       args,
-      retval ? 1 : 0,
+      retval,
     );
   }
 
-  late final _Dart_SetBooleanReturnValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetBooleanReturnValue>>(
-          'Dart_SetBooleanReturnValue');
-  late final _dart_Dart_SetBooleanReturnValue _Dart_SetBooleanReturnValue =
-      _Dart_SetBooleanReturnValue_ptr.asFunction<
-          _dart_Dart_SetBooleanReturnValue>();
+  late final _Dart_SetBooleanReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Bool)>>('Dart_SetBooleanReturnValue');
+  late final _Dart_SetBooleanReturnValue = _Dart_SetBooleanReturnValuePtr
+      .asFunction<void Function(Dart_NativeArguments, bool)>();
 
   void Dart_SetIntegerReturnValue(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     int retval,
   ) {
     return _Dart_SetIntegerReturnValue(
@@ -6559,15 +7194,15 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetIntegerReturnValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetIntegerReturnValue>>(
-          'Dart_SetIntegerReturnValue');
-  late final _dart_Dart_SetIntegerReturnValue _Dart_SetIntegerReturnValue =
-      _Dart_SetIntegerReturnValue_ptr.asFunction<
-          _dart_Dart_SetIntegerReturnValue>();
+  late final _Dart_SetIntegerReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Int64)>>('Dart_SetIntegerReturnValue');
+  late final _Dart_SetIntegerReturnValue = _Dart_SetIntegerReturnValuePtr
+      .asFunction<void Function(Dart_NativeArguments, int)>();
 
   void Dart_SetDoubleReturnValue(
-    ffi.Pointer<_Dart_NativeArguments> args,
+    Dart_NativeArguments args,
     double retval,
   ) {
     return _Dart_SetDoubleReturnValue(
@@ -6576,12 +7211,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetDoubleReturnValue_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetDoubleReturnValue>>(
-          'Dart_SetDoubleReturnValue');
-  late final _dart_Dart_SetDoubleReturnValue _Dart_SetDoubleReturnValue =
-      _Dart_SetDoubleReturnValue_ptr.asFunction<
-          _dart_Dart_SetDoubleReturnValue>();
+  late final _Dart_SetDoubleReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Double)>>('Dart_SetDoubleReturnValue');
+  late final _Dart_SetDoubleReturnValue = _Dart_SetDoubleReturnValuePtr
+      .asFunction<void Function(Dart_NativeArguments, double)>();
 
   /// Sets the environment callback for the current isolate. This
   /// callback is used to lookup environment values by name in the
@@ -6589,19 +7224,18 @@ class LabSoundBind {
   /// the const constructors bool.fromEnvironment, int.fromEnvironment
   /// and String.fromEnvironment.
   Object Dart_SetEnvironmentCallback(
-    ffi.Pointer<ffi.NativeFunction<Dart_EnvironmentCallback>> callback,
+    Dart_EnvironmentCallback callback,
   ) {
     return _Dart_SetEnvironmentCallback(
       callback,
     );
   }
 
-  late final _Dart_SetEnvironmentCallback_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetEnvironmentCallback>>(
-          'Dart_SetEnvironmentCallback');
-  late final _dart_Dart_SetEnvironmentCallback _Dart_SetEnvironmentCallback =
-      _Dart_SetEnvironmentCallback_ptr.asFunction<
-          _dart_Dart_SetEnvironmentCallback>();
+  late final _Dart_SetEnvironmentCallbackPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_EnvironmentCallback)>>(
+      'Dart_SetEnvironmentCallback');
+  late final _Dart_SetEnvironmentCallback = _Dart_SetEnvironmentCallbackPtr
+      .asFunction<Object Function(Dart_EnvironmentCallback)>();
 
   /// Sets the callback used to resolve native functions for a library.
   ///
@@ -6610,22 +7244,24 @@ class LabSoundBind {
   ///
   /// \return A valid handle if the native resolver was set successfully.
   Object Dart_SetNativeResolver(
-    Object library_1,
-    ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>> resolver,
-    ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>> symbol,
+    Object library1,
+    Dart_NativeEntryResolver resolver,
+    Dart_NativeEntrySymbol symbol,
   ) {
     return _Dart_SetNativeResolver(
-      library_1,
+      library1,
       resolver,
       symbol,
     );
   }
 
-  late final _Dart_SetNativeResolver_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetNativeResolver>>(
-          'Dart_SetNativeResolver');
-  late final _dart_Dart_SetNativeResolver _Dart_SetNativeResolver =
-      _Dart_SetNativeResolver_ptr.asFunction<_dart_Dart_SetNativeResolver>();
+  late final _Dart_SetNativeResolverPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, Dart_NativeEntryResolver,
+              Dart_NativeEntrySymbol)>>('Dart_SetNativeResolver');
+  late final _Dart_SetNativeResolver = _Dart_SetNativeResolverPtr.asFunction<
+      Object Function(
+          Object, Dart_NativeEntryResolver, Dart_NativeEntrySymbol)>();
 
   /// Returns the callback used to resolve native functions for a library.
   ///
@@ -6634,21 +7270,22 @@ class LabSoundBind {
   ///
   /// \return A valid handle if the library was found.
   Object Dart_GetNativeResolver(
-    Object library_1,
-    ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>>>
-        resolver,
+    Object library1,
+    ffi.Pointer<Dart_NativeEntryResolver> resolver,
   ) {
     return _Dart_GetNativeResolver(
-      library_1,
+      library1,
       resolver,
     );
   }
 
-  late final _Dart_GetNativeResolver_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeResolver>>(
-          'Dart_GetNativeResolver');
-  late final _dart_Dart_GetNativeResolver _Dart_GetNativeResolver =
-      _Dart_GetNativeResolver_ptr.asFunction<_dart_Dart_GetNativeResolver>();
+  late final _Dart_GetNativeResolverPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  ffi.Handle, ffi.Pointer<Dart_NativeEntryResolver>)>>(
+      'Dart_GetNativeResolver');
+  late final _Dart_GetNativeResolver = _Dart_GetNativeResolverPtr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_NativeEntryResolver>)>();
 
   /// Returns the callback used to resolve native function symbols for a library.
   ///
@@ -6657,21 +7294,21 @@ class LabSoundBind {
   ///
   /// \return A valid handle if the library was found.
   Object Dart_GetNativeSymbol(
-    Object library_1,
-    ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>>>
-        resolver,
+    Object library1,
+    ffi.Pointer<Dart_NativeEntrySymbol> resolver,
   ) {
     return _Dart_GetNativeSymbol(
-      library_1,
+      library1,
       resolver,
     );
   }
 
-  late final _Dart_GetNativeSymbol_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNativeSymbol>>(
-          'Dart_GetNativeSymbol');
-  late final _dart_Dart_GetNativeSymbol _Dart_GetNativeSymbol =
-      _Dart_GetNativeSymbol_ptr.asFunction<_dart_Dart_GetNativeSymbol>();
+  late final _Dart_GetNativeSymbolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<Dart_NativeEntrySymbol>)>>('Dart_GetNativeSymbol');
+  late final _Dart_GetNativeSymbol = _Dart_GetNativeSymbolPtr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_NativeEntrySymbol>)>();
 
   /// Sets the callback used to resolve FFI native functions for a library.
   /// The resolved functions are expected to be a C function pointer of the
@@ -6685,21 +7322,21 @@ class LabSoundBind {
   ///
   /// \return A valid handle if the native resolver was set successfully.
   Object Dart_SetFfiNativeResolver(
-    Object library_1,
-    ffi.Pointer<ffi.NativeFunction<Dart_FfiNativeResolver>> resolver,
+    Object library1,
+    Dart_FfiNativeResolver resolver,
   ) {
     return _Dart_SetFfiNativeResolver(
-      library_1,
+      library1,
       resolver,
     );
   }
 
-  late final _Dart_SetFfiNativeResolver_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetFfiNativeResolver>>(
-          'Dart_SetFfiNativeResolver');
-  late final _dart_Dart_SetFfiNativeResolver _Dart_SetFfiNativeResolver =
-      _Dart_SetFfiNativeResolver_ptr.asFunction<
-          _dart_Dart_SetFfiNativeResolver>();
+  late final _Dart_SetFfiNativeResolverPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              Dart_FfiNativeResolver)>>('Dart_SetFfiNativeResolver');
+  late final _Dart_SetFfiNativeResolver = _Dart_SetFfiNativeResolverPtr
+      .asFunction<Object Function(Object, Dart_FfiNativeResolver)>();
 
   /// Sets library tag handler for the current isolate. This handler is
   /// used to handle the various tags encountered while loading libraries
@@ -6713,36 +7350,34 @@ class LabSoundBind {
   ///
   /// TODO(turnidge): Document.
   Object Dart_SetLibraryTagHandler(
-    ffi.Pointer<ffi.NativeFunction<Dart_LibraryTagHandler>> handler,
+    Dart_LibraryTagHandler handler,
   ) {
     return _Dart_SetLibraryTagHandler(
       handler,
     );
   }
 
-  late final _Dart_SetLibraryTagHandler_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetLibraryTagHandler>>(
+  late final _Dart_SetLibraryTagHandlerPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(Dart_LibraryTagHandler)>>(
           'Dart_SetLibraryTagHandler');
-  late final _dart_Dart_SetLibraryTagHandler _Dart_SetLibraryTagHandler =
-      _Dart_SetLibraryTagHandler_ptr.asFunction<
-          _dart_Dart_SetLibraryTagHandler>();
+  late final _Dart_SetLibraryTagHandler = _Dart_SetLibraryTagHandlerPtr
+      .asFunction<Object Function(Dart_LibraryTagHandler)>();
 
   /// Sets the deferred load handler for the current isolate. This handler is
   /// used to handle loading deferred imports in an AppJIT or AppAOT program.
   Object Dart_SetDeferredLoadHandler(
-    ffi.Pointer<ffi.NativeFunction<Dart_DeferredLoadHandler>> handler,
+    Dart_DeferredLoadHandler handler,
   ) {
     return _Dart_SetDeferredLoadHandler(
       handler,
     );
   }
 
-  late final _Dart_SetDeferredLoadHandler_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetDeferredLoadHandler>>(
-          'Dart_SetDeferredLoadHandler');
-  late final _dart_Dart_SetDeferredLoadHandler _Dart_SetDeferredLoadHandler =
-      _Dart_SetDeferredLoadHandler_ptr.asFunction<
-          _dart_Dart_SetDeferredLoadHandler>();
+  late final _Dart_SetDeferredLoadHandlerPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_DeferredLoadHandler)>>(
+      'Dart_SetDeferredLoadHandler');
+  late final _Dart_SetDeferredLoadHandler = _Dart_SetDeferredLoadHandlerPtr
+      .asFunction<Object Function(Dart_DeferredLoadHandler)>();
 
   /// Notifies the VM that a deferred load completed successfully. This function
   /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
@@ -6762,12 +7397,14 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_DeferredLoadComplete_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DeferredLoadComplete>>(
-          'Dart_DeferredLoadComplete');
-  late final _dart_Dart_DeferredLoadComplete _Dart_DeferredLoadComplete =
-      _Dart_DeferredLoadComplete_ptr.asFunction<
-          _dart_Dart_DeferredLoadComplete>();
+  late final _Dart_DeferredLoadCompletePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_DeferredLoadComplete');
+  late final _Dart_DeferredLoadComplete =
+      _Dart_DeferredLoadCompletePtr.asFunction<
+          Object Function(
+              int, ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.Uint8>)>();
 
   /// Notifies the VM that a deferred load failed. This function
   /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
@@ -6781,22 +7418,23 @@ class LabSoundBind {
   /// invocation of the Dart_DeferredLoadHandler.
   Object Dart_DeferredLoadCompleteError(
     int loading_unit_id,
-    ffi.Pointer<ffi.Int8> error_message,
+    ffi.Pointer<ffi.Char> error_message,
     bool transient,
   ) {
     return _Dart_DeferredLoadCompleteError(
       loading_unit_id,
       error_message,
-      transient ? 1 : 0,
+      transient,
     );
   }
 
-  late final _Dart_DeferredLoadCompleteError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DeferredLoadCompleteError>>(
-          'Dart_DeferredLoadCompleteError');
-  late final _dart_Dart_DeferredLoadCompleteError
-      _Dart_DeferredLoadCompleteError = _Dart_DeferredLoadCompleteError_ptr
-          .asFunction<_dart_Dart_DeferredLoadCompleteError>();
+  late final _Dart_DeferredLoadCompleteErrorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.IntPtr, ffi.Pointer<ffi.Char>,
+              ffi.Bool)>>('Dart_DeferredLoadCompleteError');
+  late final _Dart_DeferredLoadCompleteError =
+      _Dart_DeferredLoadCompleteErrorPtr.asFunction<
+          Object Function(int, ffi.Pointer<ffi.Char>, bool)>();
 
   /// Canonicalizes a url with respect to some library.
   ///
@@ -6823,12 +7461,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_DefaultCanonicalizeUrl_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DefaultCanonicalizeUrl>>(
+  late final _Dart_DefaultCanonicalizeUrlPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
           'Dart_DefaultCanonicalizeUrl');
-  late final _dart_Dart_DefaultCanonicalizeUrl _Dart_DefaultCanonicalizeUrl =
-      _Dart_DefaultCanonicalizeUrl_ptr.asFunction<
-          _dart_Dart_DefaultCanonicalizeUrl>();
+  late final _Dart_DefaultCanonicalizeUrl = _Dart_DefaultCanonicalizeUrlPtr
+      .asFunction<Object Function(Object, Object)>();
 
   /// Loads the root library for the current isolate.
   ///
@@ -6849,12 +7486,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_LoadScriptFromKernel_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LoadScriptFromKernel>>(
-          'Dart_LoadScriptFromKernel');
-  late final _dart_Dart_LoadScriptFromKernel _Dart_LoadScriptFromKernel =
-      _Dart_LoadScriptFromKernel_ptr.asFunction<
-          _dart_Dart_LoadScriptFromKernel>();
+  late final _Dart_LoadScriptFromKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_LoadScriptFromKernel');
+  late final _Dart_LoadScriptFromKernel = _Dart_LoadScriptFromKernelPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint8>, int)>();
 
   /// Gets the library for the root script for the current isolate.
   ///
@@ -6867,27 +7504,27 @@ class LabSoundBind {
     return _Dart_RootLibrary();
   }
 
-  late final _Dart_RootLibrary_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_RootLibrary>>('Dart_RootLibrary');
-  late final _dart_Dart_RootLibrary _Dart_RootLibrary =
-      _Dart_RootLibrary_ptr.asFunction<_dart_Dart_RootLibrary>();
+  late final _Dart_RootLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_RootLibrary');
+  late final _Dart_RootLibrary =
+      _Dart_RootLibraryPtr.asFunction<Object Function()>();
 
   /// Sets the root library for the current isolate.
   ///
   /// \return Returns an error handle if `library` is not a library handle.
   Object Dart_SetRootLibrary(
-    Object library_1,
+    Object library1,
   ) {
     return _Dart_SetRootLibrary(
-      library_1,
+      library1,
     );
   }
 
-  late final _Dart_SetRootLibrary_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetRootLibrary>>(
+  late final _Dart_SetRootLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_SetRootLibrary');
-  late final _dart_Dart_SetRootLibrary _Dart_SetRootLibrary =
-      _Dart_SetRootLibrary_ptr.asFunction<_dart_Dart_SetRootLibrary>();
+  late final _Dart_SetRootLibrary =
+      _Dart_SetRootLibraryPtr.asFunction<Object Function(Object)>();
 
   /// Lookup or instantiate a legacy type by name and type arguments from a
   /// Library.
@@ -6902,23 +7539,25 @@ class LabSoundBind {
   /// \return If no error occurs, the type is returned.
   /// Otherwise an error handle is returned.
   Object Dart_GetType(
-    Object library_1,
+    Object library1,
     Object class_name,
     int number_of_type_arguments,
     ffi.Pointer<ffi.Handle> type_arguments,
   ) {
     return _Dart_GetType(
-      library_1,
+      library1,
       class_name,
       number_of_type_arguments,
       type_arguments,
     );
   }
 
-  late final _Dart_GetType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetType>>('Dart_GetType');
-  late final _dart_Dart_GetType _Dart_GetType =
-      _Dart_GetType_ptr.asFunction<_dart_Dart_GetType>();
+  late final _Dart_GetTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetType');
+  late final _Dart_GetType = _Dart_GetTypePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Lookup or instantiate a nullable type by name and type arguments from
   /// Library.
@@ -6933,24 +7572,25 @@ class LabSoundBind {
   /// \return If no error occurs, the type is returned.
   /// Otherwise an error handle is returned.
   Object Dart_GetNullableType(
-    Object library_1,
+    Object library1,
     Object class_name,
     int number_of_type_arguments,
     ffi.Pointer<ffi.Handle> type_arguments,
   ) {
     return _Dart_GetNullableType(
-      library_1,
+      library1,
       class_name,
       number_of_type_arguments,
       type_arguments,
     );
   }
 
-  late final _Dart_GetNullableType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNullableType>>(
-          'Dart_GetNullableType');
-  late final _dart_Dart_GetNullableType _Dart_GetNullableType =
-      _Dart_GetNullableType_ptr.asFunction<_dart_Dart_GetNullableType>();
+  late final _Dart_GetNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetNullableType');
+  late final _Dart_GetNullableType = _Dart_GetNullableTypePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Lookup or instantiate a non-nullable type by name and type arguments from
   /// Library.
@@ -6965,24 +7605,25 @@ class LabSoundBind {
   /// \return If no error occurs, the type is returned.
   /// Otherwise an error handle is returned.
   Object Dart_GetNonNullableType(
-    Object library_1,
+    Object library1,
     Object class_name,
     int number_of_type_arguments,
     ffi.Pointer<ffi.Handle> type_arguments,
   ) {
     return _Dart_GetNonNullableType(
-      library_1,
+      library1,
       class_name,
       number_of_type_arguments,
       type_arguments,
     );
   }
 
-  late final _Dart_GetNonNullableType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetNonNullableType>>(
-          'Dart_GetNonNullableType');
-  late final _dart_Dart_GetNonNullableType _Dart_GetNonNullableType =
-      _Dart_GetNonNullableType_ptr.asFunction<_dart_Dart_GetNonNullableType>();
+  late final _Dart_GetNonNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetNonNullableType');
+  late final _Dart_GetNonNullableType = _Dart_GetNonNullableTypePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
 
   /// Creates a nullable version of the provided type.
   ///
@@ -6998,11 +7639,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_TypeToNullableType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypeToNullableType>>(
+  late final _Dart_TypeToNullableTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_TypeToNullableType');
-  late final _dart_Dart_TypeToNullableType _Dart_TypeToNullableType =
-      _Dart_TypeToNullableType_ptr.asFunction<_dart_Dart_TypeToNullableType>();
+  late final _Dart_TypeToNullableType =
+      _Dart_TypeToNullableTypePtr.asFunction<Object Function(Object)>();
 
   /// Creates a non-nullable version of the provided type.
   ///
@@ -7018,12 +7659,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_TypeToNonNullableType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_TypeToNonNullableType>>(
+  late final _Dart_TypeToNonNullableTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_TypeToNonNullableType');
-  late final _dart_Dart_TypeToNonNullableType _Dart_TypeToNonNullableType =
-      _Dart_TypeToNonNullableType_ptr.asFunction<
-          _dart_Dart_TypeToNonNullableType>();
+  late final _Dart_TypeToNonNullableType =
+      _Dart_TypeToNonNullableTypePtr.asFunction<Object Function(Object)>();
 
   /// A type's nullability.
   ///
@@ -7034,7 +7674,7 @@ class LabSoundBind {
   /// \return Returns an error handle if type is not of type Type.
   Object Dart_IsNullableType(
     Object type,
-    ffi.Pointer<ffi.Uint8> result,
+    ffi.Pointer<ffi.Bool> result,
   ) {
     return _Dart_IsNullableType(
       type,
@@ -7042,15 +7682,16 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IsNullableType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsNullableType>>(
-          'Dart_IsNullableType');
-  late final _dart_Dart_IsNullableType _Dart_IsNullableType =
-      _Dart_IsNullableType_ptr.asFunction<_dart_Dart_IsNullableType>();
+  late final _Dart_IsNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Bool>)>>('Dart_IsNullableType');
+  late final _Dart_IsNullableType = _Dart_IsNullableTypePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   Object Dart_IsNonNullableType(
     Object type,
-    ffi.Pointer<ffi.Uint8> result,
+    ffi.Pointer<ffi.Bool> result,
   ) {
     return _Dart_IsNonNullableType(
       type,
@@ -7058,15 +7699,16 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IsNonNullableType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsNonNullableType>>(
-          'Dart_IsNonNullableType');
-  late final _dart_Dart_IsNonNullableType _Dart_IsNonNullableType =
-      _Dart_IsNonNullableType_ptr.asFunction<_dart_Dart_IsNonNullableType>();
+  late final _Dart_IsNonNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Bool>)>>('Dart_IsNonNullableType');
+  late final _Dart_IsNonNullableType = _Dart_IsNonNullableTypePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   Object Dart_IsLegacyType(
     Object type,
-    ffi.Pointer<ffi.Uint8> result,
+    ffi.Pointer<ffi.Bool> result,
   ) {
     return _Dart_IsLegacyType(
       type,
@@ -7074,10 +7716,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_IsLegacyType_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsLegacyType>>('Dart_IsLegacyType');
-  late final _dart_Dart_IsLegacyType _Dart_IsLegacyType =
-      _Dart_IsLegacyType_ptr.asFunction<_dart_Dart_IsLegacyType>();
+  late final _Dart_IsLegacyTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Bool>)>>('Dart_IsLegacyType');
+  late final _Dart_IsLegacyType = _Dart_IsLegacyTypePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Bool>)>();
 
   /// Lookup a class or interface by name from a Library.
   ///
@@ -7087,60 +7731,62 @@ class LabSoundBind {
   /// \return If no error occurs, the class or interface is
   /// returned. Otherwise an error handle is returned.
   Object Dart_GetClass(
-    Object library_1,
+    Object library1,
     Object class_name,
   ) {
     return _Dart_GetClass(
-      library_1,
+      library1,
       class_name,
     );
   }
 
-  late final _Dart_GetClass_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetClass>>('Dart_GetClass');
-  late final _dart_Dart_GetClass _Dart_GetClass =
-      _Dart_GetClass_ptr.asFunction<_dart_Dart_GetClass>();
+  late final _Dart_GetClassPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_GetClass');
+  late final _Dart_GetClass =
+      _Dart_GetClassPtr.asFunction<Object Function(Object, Object)>();
 
   /// Returns an import path to a Library, such as "file:///test.dart" or
   /// "dart:core".
   Object Dart_LibraryUrl(
-    Object library_1,
+    Object library1,
   ) {
     return _Dart_LibraryUrl(
-      library_1,
+      library1,
     );
   }
 
-  late final _Dart_LibraryUrl_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LibraryUrl>>('Dart_LibraryUrl');
-  late final _dart_Dart_LibraryUrl _Dart_LibraryUrl =
-      _Dart_LibraryUrl_ptr.asFunction<_dart_Dart_LibraryUrl>();
+  late final _Dart_LibraryUrlPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LibraryUrl');
+  late final _Dart_LibraryUrl =
+      _Dart_LibraryUrlPtr.asFunction<Object Function(Object)>();
 
   /// Returns a URL from which a Library was loaded.
   Object Dart_LibraryResolvedUrl(
-    Object library_1,
+    Object library1,
   ) {
     return _Dart_LibraryResolvedUrl(
-      library_1,
+      library1,
     );
   }
 
-  late final _Dart_LibraryResolvedUrl_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LibraryResolvedUrl>>(
+  late final _Dart_LibraryResolvedUrlPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_LibraryResolvedUrl');
-  late final _dart_Dart_LibraryResolvedUrl _Dart_LibraryResolvedUrl =
-      _Dart_LibraryResolvedUrl_ptr.asFunction<_dart_Dart_LibraryResolvedUrl>();
+  late final _Dart_LibraryResolvedUrl =
+      _Dart_LibraryResolvedUrlPtr.asFunction<Object Function(Object)>();
 
   /// \return An array of libraries.
   Object Dart_GetLoadedLibraries() {
     return _Dart_GetLoadedLibraries();
   }
 
-  late final _Dart_GetLoadedLibraries_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetLoadedLibraries>>(
+  late final _Dart_GetLoadedLibrariesPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>(
           'Dart_GetLoadedLibraries');
-  late final _dart_Dart_GetLoadedLibraries _Dart_GetLoadedLibraries =
-      _Dart_GetLoadedLibraries_ptr.asFunction<_dart_Dart_GetLoadedLibraries>();
+  late final _Dart_GetLoadedLibraries =
+      _Dart_GetLoadedLibrariesPtr.asFunction<Object Function()>();
 
   Object Dart_LookupLibrary(
     Object url,
@@ -7150,10 +7796,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_LookupLibrary_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LookupLibrary>>('Dart_LookupLibrary');
-  late final _dart_Dart_LookupLibrary _Dart_LookupLibrary =
-      _Dart_LookupLibrary_ptr.asFunction<_dart_Dart_LookupLibrary>();
+  late final _Dart_LookupLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LookupLibrary');
+  late final _Dart_LookupLibrary =
+      _Dart_LookupLibraryPtr.asFunction<Object Function(Object)>();
 
   /// Report an loading error for the library.
   ///
@@ -7164,20 +7811,20 @@ class LabSoundBind {
   /// a null handle. If it doesn't handle the error, the error
   /// object is returned.
   Object Dart_LibraryHandleError(
-    Object library_1,
+    Object library1,
     Object error,
   ) {
     return _Dart_LibraryHandleError(
-      library_1,
+      library1,
       error,
     );
   }
 
-  late final _Dart_LibraryHandleError_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LibraryHandleError>>(
+  late final _Dart_LibraryHandleErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
           'Dart_LibraryHandleError');
-  late final _dart_Dart_LibraryHandleError _Dart_LibraryHandleError =
-      _Dart_LibraryHandleError_ptr.asFunction<_dart_Dart_LibraryHandleError>();
+  late final _Dart_LibraryHandleError =
+      _Dart_LibraryHandleErrorPtr.asFunction<Object Function(Object, Object)>();
 
   /// Called by the embedder to load a partial program. Does not set the root
   /// library.
@@ -7197,12 +7844,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_LoadLibraryFromKernel_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LoadLibraryFromKernel>>(
-          'Dart_LoadLibraryFromKernel');
-  late final _dart_Dart_LoadLibraryFromKernel _Dart_LoadLibraryFromKernel =
-      _Dart_LoadLibraryFromKernel_ptr.asFunction<
-          _dart_Dart_LoadLibraryFromKernel>();
+  late final _Dart_LoadLibraryFromKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_LoadLibraryFromKernel');
+  late final _Dart_LoadLibraryFromKernel = _Dart_LoadLibraryFromKernelPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint8>, int)>();
 
   /// Returns a flattened list of pairs. The first element in each pair is the
   /// importing library and and the second element is the imported library for each
@@ -7219,11 +7866,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetImportsOfScheme_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetImportsOfScheme>>(
+  late final _Dart_GetImportsOfSchemePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
           'Dart_GetImportsOfScheme');
-  late final _dart_Dart_GetImportsOfScheme _Dart_GetImportsOfScheme =
-      _Dart_GetImportsOfScheme_ptr.asFunction<_dart_Dart_GetImportsOfScheme>();
+  late final _Dart_GetImportsOfScheme =
+      _Dart_GetImportsOfSchemePtr.asFunction<Object Function(Object)>();
 
   /// Indicates that all outstanding load requests have been satisfied.
   /// This finalizes all the new classes loaded and optionally completes
@@ -7240,15 +7887,15 @@ class LabSoundBind {
     bool complete_futures,
   ) {
     return _Dart_FinalizeLoading(
-      complete_futures ? 1 : 0,
+      complete_futures,
     );
   }
 
-  late final _Dart_FinalizeLoading_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_FinalizeLoading>>(
+  late final _Dart_FinalizeLoadingPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Bool)>>(
           'Dart_FinalizeLoading');
-  late final _dart_Dart_FinalizeLoading _Dart_FinalizeLoading =
-      _Dart_FinalizeLoading_ptr.asFunction<_dart_Dart_FinalizeLoading>();
+  late final _Dart_FinalizeLoading =
+      _Dart_FinalizeLoadingPtr.asFunction<Object Function(bool)>();
 
   /// Returns the value of peer field of 'object' in 'peer'.
   ///
@@ -7268,10 +7915,12 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetPeer_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetPeer>>('Dart_GetPeer');
-  late final _dart_Dart_GetPeer _Dart_GetPeer =
-      _Dart_GetPeer_ptr.asFunction<_dart_Dart_GetPeer>();
+  late final _Dart_GetPeerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('Dart_GetPeer');
+  late final _Dart_GetPeer = _Dart_GetPeerPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
 
   /// Sets the value of the peer field of 'object' to the value of
   /// 'peer'.
@@ -7291,45 +7940,45 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetPeer_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetPeer>>('Dart_SetPeer');
-  late final _dart_Dart_SetPeer _Dart_SetPeer =
-      _Dart_SetPeer_ptr.asFunction<_dart_Dart_SetPeer>();
+  late final _Dart_SetPeerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Void>)>>('Dart_SetPeer');
+  late final _Dart_SetPeer = _Dart_SetPeerPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Void>)>();
 
   bool Dart_IsKernelIsolate(
-    ffi.Pointer<_Dart_Isolate> isolate,
+    Dart_Isolate isolate,
   ) {
     return _Dart_IsKernelIsolate(
-          isolate,
-        ) !=
-        0;
+      isolate,
+    );
   }
 
-  late final _Dart_IsKernelIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsKernelIsolate>>(
+  late final _Dart_IsKernelIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(Dart_Isolate)>>(
           'Dart_IsKernelIsolate');
-  late final _dart_Dart_IsKernelIsolate _Dart_IsKernelIsolate =
-      _Dart_IsKernelIsolate_ptr.asFunction<_dart_Dart_IsKernelIsolate>();
+  late final _Dart_IsKernelIsolate =
+      _Dart_IsKernelIsolatePtr.asFunction<bool Function(Dart_Isolate)>();
 
   bool Dart_KernelIsolateIsRunning() {
-    return _Dart_KernelIsolateIsRunning() != 0;
+    return _Dart_KernelIsolateIsRunning();
   }
 
-  late final _Dart_KernelIsolateIsRunning_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_KernelIsolateIsRunning>>(
+  late final _Dart_KernelIsolateIsRunningPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
           'Dart_KernelIsolateIsRunning');
-  late final _dart_Dart_KernelIsolateIsRunning _Dart_KernelIsolateIsRunning =
-      _Dart_KernelIsolateIsRunning_ptr.asFunction<
-          _dart_Dart_KernelIsolateIsRunning>();
+  late final _Dart_KernelIsolateIsRunning =
+      _Dart_KernelIsolateIsRunningPtr.asFunction<bool Function()>();
 
   int Dart_KernelPort() {
     return _Dart_KernelPort();
   }
 
-  late final _Dart_KernelPort_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_KernelPort>>('Dart_KernelPort');
-  late final _dart_Dart_KernelPort _Dart_KernelPort =
-      _Dart_KernelPort_ptr.asFunction<_dart_Dart_KernelPort>();
+  late final _Dart_KernelPortPtr =
+      _lookup<ffi.NativeFunction<Dart_Port Function()>>('Dart_KernelPort');
+  late final _Dart_KernelPort =
+      _Dart_KernelPortPtr.asFunction<int Function()>();
 
   /// Compiles the given `script_uri` to a kernel file.
   ///
@@ -7357,41 +8006,54 @@ class LabSoundBind {
   ///
   /// Requires there to be a current isolate.
   Dart_KernelCompilationResult Dart_CompileToKernel(
-    ffi.Pointer<ffi.Int8> script_uri,
+    ffi.Pointer<ffi.Char> script_uri,
     ffi.Pointer<ffi.Uint8> platform_kernel,
     int platform_kernel_size,
     bool incremental_compile,
     bool snapshot_compile,
-    ffi.Pointer<ffi.Int8> package_config,
+    ffi.Pointer<ffi.Char> package_config,
     int verbosity,
   ) {
     return _Dart_CompileToKernel(
       script_uri,
       platform_kernel,
       platform_kernel_size,
-      incremental_compile ? 1 : 0,
-      snapshot_compile ? 1 : 0,
+      incremental_compile,
+      snapshot_compile,
       package_config,
       verbosity,
     );
   }
 
-  late final _Dart_CompileToKernel_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CompileToKernel>>(
-          'Dart_CompileToKernel');
-  late final _dart_Dart_CompileToKernel _Dart_CompileToKernel =
-      _Dart_CompileToKernel_ptr.asFunction<_dart_Dart_CompileToKernel>();
+  late final _Dart_CompileToKernelPtr = _lookup<
+      ffi.NativeFunction<
+          Dart_KernelCompilationResult Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr,
+              ffi.Bool,
+              ffi.Bool,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32)>>('Dart_CompileToKernel');
+  late final _Dart_CompileToKernel = _Dart_CompileToKernelPtr.asFunction<
+      Dart_KernelCompilationResult Function(
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          int,
+          bool,
+          bool,
+          ffi.Pointer<ffi.Char>,
+          int)>();
 
   Dart_KernelCompilationResult Dart_KernelListDependencies() {
     return _Dart_KernelListDependencies();
   }
 
-  late final _Dart_KernelListDependencies_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_KernelListDependencies>>(
+  late final _Dart_KernelListDependenciesPtr =
+      _lookup<ffi.NativeFunction<Dart_KernelCompilationResult Function()>>(
           'Dart_KernelListDependencies');
-  late final _dart_Dart_KernelListDependencies _Dart_KernelListDependencies =
-      _Dart_KernelListDependencies_ptr.asFunction<
-          _dart_Dart_KernelListDependencies>();
+  late final _Dart_KernelListDependencies = _Dart_KernelListDependenciesPtr
+      .asFunction<Dart_KernelCompilationResult Function()>();
 
   /// Sets the kernel buffer which will be used to load Dart SDK sources
   /// dynamically at runtime.
@@ -7410,12 +8072,13 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_SetDartLibrarySourcesKernel_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SetDartLibrarySourcesKernel>>(
-          'Dart_SetDartLibrarySourcesKernel');
-  late final _dart_Dart_SetDartLibrarySourcesKernel
-      _Dart_SetDartLibrarySourcesKernel = _Dart_SetDartLibrarySourcesKernel_ptr
-          .asFunction<_dart_Dart_SetDartLibrarySourcesKernel>();
+  late final _Dart_SetDartLibrarySourcesKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_SetDartLibrarySourcesKernel');
+  late final _Dart_SetDartLibrarySourcesKernel =
+      _Dart_SetDartLibrarySourcesKernelPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Uint8>, int)>();
 
   /// Detect the null safety opt-in status.
   ///
@@ -7450,31 +8113,44 @@ class LabSoundBind {
   /// \return Returns true if the null safety is opted in by the input being
   /// run `script_uri`, `snapshot_data` or `kernel_buffer`.
   bool Dart_DetectNullSafety(
-    ffi.Pointer<ffi.Int8> script_uri,
-    ffi.Pointer<ffi.Int8> package_config,
-    ffi.Pointer<ffi.Int8> original_working_directory,
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Char> package_config,
+    ffi.Pointer<ffi.Char> original_working_directory,
     ffi.Pointer<ffi.Uint8> snapshot_data,
     ffi.Pointer<ffi.Uint8> snapshot_instructions,
     ffi.Pointer<ffi.Uint8> kernel_buffer,
     int kernel_buffer_size,
   ) {
     return _Dart_DetectNullSafety(
-          script_uri,
-          package_config,
-          original_working_directory,
-          snapshot_data,
-          snapshot_instructions,
-          kernel_buffer,
-          kernel_buffer_size,
-        ) !=
-        0;
+      script_uri,
+      package_config,
+      original_working_directory,
+      snapshot_data,
+      snapshot_instructions,
+      kernel_buffer,
+      kernel_buffer_size,
+    );
   }
 
-  late final _Dart_DetectNullSafety_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DetectNullSafety>>(
-          'Dart_DetectNullSafety');
-  late final _dart_Dart_DetectNullSafety _Dart_DetectNullSafety =
-      _Dart_DetectNullSafety_ptr.asFunction<_dart_Dart_DetectNullSafety>();
+  late final _Dart_DetectNullSafetyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_DetectNullSafety');
+  late final _Dart_DetectNullSafety = _Dart_DetectNullSafetyPtr.asFunction<
+      bool Function(
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          int)>();
 
   /// Returns true if isolate is the service isolate.
   ///
@@ -7482,19 +8158,18 @@ class LabSoundBind {
   ///
   /// \return Returns true if 'isolate' is the service isolate.
   bool Dart_IsServiceIsolate(
-    ffi.Pointer<_Dart_Isolate> isolate,
+    Dart_Isolate isolate,
   ) {
     return _Dart_IsServiceIsolate(
-          isolate,
-        ) !=
-        0;
+      isolate,
+    );
   }
 
-  late final _Dart_IsServiceIsolate_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsServiceIsolate>>(
+  late final _Dart_IsServiceIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(Dart_Isolate)>>(
           'Dart_IsServiceIsolate');
-  late final _dart_Dart_IsServiceIsolate _Dart_IsServiceIsolate =
-      _Dart_IsServiceIsolate_ptr.asFunction<_dart_Dart_IsServiceIsolate>();
+  late final _Dart_IsServiceIsolate =
+      _Dart_IsServiceIsolatePtr.asFunction<bool Function(Dart_Isolate)>();
 
   /// Writes the CPU profile to the timeline as a series of 'instant' events.
   ///
@@ -7507,21 +8182,21 @@ class LabSoundBind {
   /// otherwise.
   bool Dart_WriteProfileToTimeline(
     int main_port,
-    ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
   ) {
     return _Dart_WriteProfileToTimeline(
-          main_port,
-          error,
-        ) !=
-        0;
+      main_port,
+      error,
+    );
   }
 
-  late final _Dart_WriteProfileToTimeline_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_WriteProfileToTimeline>>(
-          'Dart_WriteProfileToTimeline');
-  late final _dart_Dart_WriteProfileToTimeline _Dart_WriteProfileToTimeline =
-      _Dart_WriteProfileToTimeline_ptr.asFunction<
-          _dart_Dart_WriteProfileToTimeline>();
+  late final _Dart_WriteProfileToTimelinePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Bool Function(
+                  Dart_Port, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'Dart_WriteProfileToTimeline');
+  late final _Dart_WriteProfileToTimeline = _Dart_WriteProfileToTimelinePtr
+      .asFunction<bool Function(int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   /// Compiles all functions reachable from entry points and marks
   /// the isolate to disallow future compilation.
@@ -7535,10 +8210,10 @@ class LabSoundBind {
     return _Dart_Precompile();
   }
 
-  late final _Dart_Precompile_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_Precompile>>('Dart_Precompile');
-  late final _dart_Dart_Precompile _Dart_Precompile =
-      _Dart_Precompile_ptr.asFunction<_dart_Dart_Precompile>();
+  late final _Dart_PrecompilePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_Precompile');
+  late final _Dart_Precompile =
+      _Dart_PrecompilePtr.asFunction<Object Function()>();
 
   Object Dart_LoadingUnitLibraryUris(
     int loading_unit_id,
@@ -7548,12 +8223,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_LoadingUnitLibraryUris_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_LoadingUnitLibraryUris>>(
+  late final _Dart_LoadingUnitLibraryUrisPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>(
           'Dart_LoadingUnitLibraryUris');
-  late final _dart_Dart_LoadingUnitLibraryUris _Dart_LoadingUnitLibraryUris =
-      _Dart_LoadingUnitLibraryUris_ptr.asFunction<
-          _dart_Dart_LoadingUnitLibraryUris>();
+  late final _Dart_LoadingUnitLibraryUris =
+      _Dart_LoadingUnitLibraryUrisPtr.asFunction<Object Function(int)>();
 
   /// Creates a precompiled snapshot.
   /// - A root library must have been loaded.
@@ -7579,7 +8253,7 @@ class LabSoundBind {
   ///
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_CreateAppAOTSnapshotAsAssembly(
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+    Dart_StreamingWriteCallback callback,
     ffi.Pointer<ffi.Void> callback_data,
     bool stripped,
     ffi.Pointer<ffi.Void> debug_callback_data,
@@ -7587,43 +8261,56 @@ class LabSoundBind {
     return _Dart_CreateAppAOTSnapshotAsAssembly(
       callback,
       callback_data,
-      stripped ? 1 : 0,
+      stripped,
       debug_callback_data,
     );
   }
 
-  late final _Dart_CreateAppAOTSnapshotAsAssembly_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsAssembly>>(
-          'Dart_CreateAppAOTSnapshotAsAssembly');
-  late final _dart_Dart_CreateAppAOTSnapshotAsAssembly
-      _Dart_CreateAppAOTSnapshotAsAssembly =
-      _Dart_CreateAppAOTSnapshotAsAssembly_ptr.asFunction<
-          _dart_Dart_CreateAppAOTSnapshotAsAssembly>();
+  late final _Dart_CreateAppAOTSnapshotAsAssemblyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Bool,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateAppAOTSnapshotAsAssembly');
+  late final _Dart_CreateAppAOTSnapshotAsAssembly =
+      _Dart_CreateAppAOTSnapshotAsAssemblyPtr.asFunction<
+          Object Function(Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>,
+              bool, ffi.Pointer<ffi.Void>)>();
 
   Object Dart_CreateAppAOTSnapshotAsAssemblies(
-    ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>>
-        next_callback,
+    Dart_CreateLoadingUnitCallback next_callback,
     ffi.Pointer<ffi.Void> next_callback_data,
     bool stripped,
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+    Dart_StreamingWriteCallback write_callback,
+    Dart_StreamingCloseCallback close_callback,
   ) {
     return _Dart_CreateAppAOTSnapshotAsAssemblies(
       next_callback,
       next_callback_data,
-      stripped ? 1 : 0,
+      stripped,
       write_callback,
       close_callback,
     );
   }
 
-  late final _Dart_CreateAppAOTSnapshotAsAssemblies_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsAssemblies>>(
-          'Dart_CreateAppAOTSnapshotAsAssemblies');
-  late final _dart_Dart_CreateAppAOTSnapshotAsAssemblies
-      _Dart_CreateAppAOTSnapshotAsAssemblies =
-      _Dart_CreateAppAOTSnapshotAsAssemblies_ptr.asFunction<
-          _dart_Dart_CreateAppAOTSnapshotAsAssemblies>();
+  late final _Dart_CreateAppAOTSnapshotAsAssembliesPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  Dart_CreateLoadingUnitCallback,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Bool,
+                  Dart_StreamingWriteCallback,
+                  Dart_StreamingCloseCallback)>>(
+      'Dart_CreateAppAOTSnapshotAsAssemblies');
+  late final _Dart_CreateAppAOTSnapshotAsAssemblies =
+      _Dart_CreateAppAOTSnapshotAsAssembliesPtr.asFunction<
+          Object Function(
+              Dart_CreateLoadingUnitCallback,
+              ffi.Pointer<ffi.Void>,
+              bool,
+              Dart_StreamingWriteCallback,
+              Dart_StreamingCloseCallback)>();
 
   /// Creates a precompiled snapshot.
   /// - A root library must have been loaded.
@@ -7651,7 +8338,7 @@ class LabSoundBind {
   ///
   /// \return A valid handle if no error occurs during the operation.
   Object Dart_CreateAppAOTSnapshotAsElf(
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+    Dart_StreamingWriteCallback callback,
     ffi.Pointer<ffi.Void> callback_data,
     bool stripped,
     ffi.Pointer<ffi.Void> debug_callback_data,
@@ -7659,48 +8346,62 @@ class LabSoundBind {
     return _Dart_CreateAppAOTSnapshotAsElf(
       callback,
       callback_data,
-      stripped ? 1 : 0,
+      stripped,
       debug_callback_data,
     );
   }
 
-  late final _Dart_CreateAppAOTSnapshotAsElf_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsElf>>(
-          'Dart_CreateAppAOTSnapshotAsElf');
-  late final _dart_Dart_CreateAppAOTSnapshotAsElf
-      _Dart_CreateAppAOTSnapshotAsElf = _Dart_CreateAppAOTSnapshotAsElf_ptr
-          .asFunction<_dart_Dart_CreateAppAOTSnapshotAsElf>();
+  late final _Dart_CreateAppAOTSnapshotAsElfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Bool,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateAppAOTSnapshotAsElf');
+  late final _Dart_CreateAppAOTSnapshotAsElf =
+      _Dart_CreateAppAOTSnapshotAsElfPtr.asFunction<
+          Object Function(Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>,
+              bool, ffi.Pointer<ffi.Void>)>();
 
   Object Dart_CreateAppAOTSnapshotAsElfs(
-    ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>>
-        next_callback,
+    Dart_CreateLoadingUnitCallback next_callback,
     ffi.Pointer<ffi.Void> next_callback_data,
     bool stripped,
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
+    Dart_StreamingWriteCallback write_callback,
+    Dart_StreamingCloseCallback close_callback,
   ) {
     return _Dart_CreateAppAOTSnapshotAsElfs(
       next_callback,
       next_callback_data,
-      stripped ? 1 : 0,
+      stripped,
       write_callback,
       close_callback,
     );
   }
 
-  late final _Dart_CreateAppAOTSnapshotAsElfs_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateAppAOTSnapshotAsElfs>>(
-          'Dart_CreateAppAOTSnapshotAsElfs');
-  late final _dart_Dart_CreateAppAOTSnapshotAsElfs
-      _Dart_CreateAppAOTSnapshotAsElfs = _Dart_CreateAppAOTSnapshotAsElfs_ptr
-          .asFunction<_dart_Dart_CreateAppAOTSnapshotAsElfs>();
+  late final _Dart_CreateAppAOTSnapshotAsElfsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_CreateLoadingUnitCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Bool,
+              Dart_StreamingWriteCallback,
+              Dart_StreamingCloseCallback)>>('Dart_CreateAppAOTSnapshotAsElfs');
+  late final _Dart_CreateAppAOTSnapshotAsElfs =
+      _Dart_CreateAppAOTSnapshotAsElfsPtr.asFunction<
+          Object Function(
+              Dart_CreateLoadingUnitCallback,
+              ffi.Pointer<ffi.Void>,
+              bool,
+              Dart_StreamingWriteCallback,
+              Dart_StreamingCloseCallback)>();
 
   /// Like Dart_CreateAppAOTSnapshotAsAssembly, but only includes
   /// kDartVmSnapshotData and kDartVmSnapshotInstructions. It also does
   /// not strip DWARF information from the generated assembly or allow for
   /// separate debug information.
   Object Dart_CreateVMAOTSnapshotAsAssembly(
-    ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
+    Dart_StreamingWriteCallback callback,
     ffi.Pointer<ffi.Void> callback_data,
   ) {
     return _Dart_CreateVMAOTSnapshotAsAssembly(
@@ -7709,13 +8410,14 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_CreateVMAOTSnapshotAsAssembly_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateVMAOTSnapshotAsAssembly>>(
-          'Dart_CreateVMAOTSnapshotAsAssembly');
-  late final _dart_Dart_CreateVMAOTSnapshotAsAssembly
-      _Dart_CreateVMAOTSnapshotAsAssembly =
-      _Dart_CreateVMAOTSnapshotAsAssembly_ptr.asFunction<
-          _dart_Dart_CreateVMAOTSnapshotAsAssembly>();
+  late final _Dart_CreateVMAOTSnapshotAsAssemblyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateVMAOTSnapshotAsAssembly');
+  late final _Dart_CreateVMAOTSnapshotAsAssembly =
+      _Dart_CreateVMAOTSnapshotAsAssemblyPtr.asFunction<
+          Object Function(
+              Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>)>();
 
   /// Sorts the class-ids in depth first traversal order of the inheritance
   /// tree. This is a costly operation, but it can make method dispatch
@@ -7726,10 +8428,10 @@ class LabSoundBind {
     return _Dart_SortClasses();
   }
 
-  late final _Dart_SortClasses_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_SortClasses>>('Dart_SortClasses');
-  late final _dart_Dart_SortClasses _Dart_SortClasses =
-      _Dart_SortClasses_ptr.asFunction<_dart_Dart_SortClasses>();
+  late final _Dart_SortClassesPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_SortClasses');
+  late final _Dart_SortClasses =
+      _Dart_SortClassesPtr.asFunction<Object Function()>();
 
   /// Creates a snapshot that caches compiled code and type feedback for faster
   /// startup and quicker warmup in a subsequent process.
@@ -7764,12 +8466,20 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_CreateAppJITSnapshotAsBlobs_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateAppJITSnapshotAsBlobs>>(
-          'Dart_CreateAppJITSnapshotAsBlobs');
-  late final _dart_Dart_CreateAppJITSnapshotAsBlobs
-      _Dart_CreateAppJITSnapshotAsBlobs = _Dart_CreateAppJITSnapshotAsBlobs_ptr
-          .asFunction<_dart_Dart_CreateAppJITSnapshotAsBlobs>();
+  late final _Dart_CreateAppJITSnapshotAsBlobsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_CreateAppJITSnapshotAsBlobs');
+  late final _Dart_CreateAppJITSnapshotAsBlobs =
+      _Dart_CreateAppJITSnapshotAsBlobsPtr.asFunction<
+          Object Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>();
 
   /// Like Dart_CreateAppJITSnapshotAsBlobs, but also creates a new VM snapshot.
   Object Dart_CreateCoreJITSnapshotAsBlobs(
@@ -7794,13 +8504,28 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_CreateCoreJITSnapshotAsBlobs_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_CreateCoreJITSnapshotAsBlobs>>(
-          'Dart_CreateCoreJITSnapshotAsBlobs');
-  late final _dart_Dart_CreateCoreJITSnapshotAsBlobs
-      _Dart_CreateCoreJITSnapshotAsBlobs =
-      _Dart_CreateCoreJITSnapshotAsBlobs_ptr.asFunction<
-          _dart_Dart_CreateCoreJITSnapshotAsBlobs>();
+  late final _Dart_CreateCoreJITSnapshotAsBlobsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_CreateCoreJITSnapshotAsBlobs');
+  late final _Dart_CreateCoreJITSnapshotAsBlobs =
+      _Dart_CreateCoreJITSnapshotAsBlobsPtr.asFunction<
+          Object Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>();
 
   /// Get obfuscation map for precompiled code.
   ///
@@ -7819,25 +8544,26 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_GetObfuscationMap_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_GetObfuscationMap>>(
-          'Dart_GetObfuscationMap');
-  late final _dart_Dart_GetObfuscationMap _Dart_GetObfuscationMap =
-      _Dart_GetObfuscationMap_ptr.asFunction<_dart_Dart_GetObfuscationMap>();
+  late final _Dart_GetObfuscationMapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetObfuscationMap');
+  late final _Dart_GetObfuscationMap = _Dart_GetObfuscationMapPtr.asFunction<
+      Object Function(
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>, ffi.Pointer<ffi.IntPtr>)>();
 
   /// Returns whether the VM only supports running from precompiled snapshots and
   /// not from any other kind of snapshot or from source (that is, the VM was
   /// compiled with DART_PRECOMPILED_RUNTIME).
   bool Dart_IsPrecompiledRuntime() {
-    return _Dart_IsPrecompiledRuntime() != 0;
+    return _Dart_IsPrecompiledRuntime();
   }
 
-  late final _Dart_IsPrecompiledRuntime_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_IsPrecompiledRuntime>>(
+  late final _Dart_IsPrecompiledRuntimePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
           'Dart_IsPrecompiledRuntime');
-  late final _dart_Dart_IsPrecompiledRuntime _Dart_IsPrecompiledRuntime =
-      _Dart_IsPrecompiledRuntime_ptr.asFunction<
-          _dart_Dart_IsPrecompiledRuntime>();
+  late final _Dart_IsPrecompiledRuntime =
+      _Dart_IsPrecompiledRuntimePtr.asFunction<bool Function()>();
 
   /// Print a native stack trace. Used for crash handling.
   ///
@@ -7852,12 +8578,11 @@ class LabSoundBind {
     );
   }
 
-  late final _Dart_DumpNativeStackTrace_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_DumpNativeStackTrace>>(
+  late final _Dart_DumpNativeStackTracePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
           'Dart_DumpNativeStackTrace');
-  late final _dart_Dart_DumpNativeStackTrace _Dart_DumpNativeStackTrace =
-      _Dart_DumpNativeStackTrace_ptr.asFunction<
-          _dart_Dart_DumpNativeStackTrace>();
+  late final _Dart_DumpNativeStackTrace = _Dart_DumpNativeStackTracePtr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
   /// Indicate that the process is about to abort, and the Dart VM should not
   /// attempt to cleanup resources.
@@ -7865,46 +8590,42 @@ class LabSoundBind {
     return _Dart_PrepareToAbort();
   }
 
-  late final _Dart_PrepareToAbort_ptr =
-      _lookup<ffi.NativeFunction<_c_Dart_PrepareToAbort>>(
-          'Dart_PrepareToAbort');
-  late final _dart_Dart_PrepareToAbort _Dart_PrepareToAbort =
-      _Dart_PrepareToAbort_ptr.asFunction<_dart_Dart_PrepareToAbort>();
+  late final _Dart_PrepareToAbortPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_PrepareToAbort');
+  late final _Dart_PrepareToAbort =
+      _Dart_PrepareToAbortPtr.asFunction<void Function()>();
 
   AudioDeviceInfoList labSound_MakeAudioDeviceList() {
     return _labSound_MakeAudioDeviceList();
   }
 
-  late final _labSound_MakeAudioDeviceList_ptr =
-      _lookup<ffi.NativeFunction<_c_labSound_MakeAudioDeviceList>>(
+  late final _labSound_MakeAudioDeviceListPtr =
+      _lookup<ffi.NativeFunction<AudioDeviceInfoList Function()>>(
           'labSound_MakeAudioDeviceList');
-  late final _dart_labSound_MakeAudioDeviceList _labSound_MakeAudioDeviceList =
-      _labSound_MakeAudioDeviceList_ptr
-          .asFunction<_dart_labSound_MakeAudioDeviceList>();
+  late final _labSound_MakeAudioDeviceList = _labSound_MakeAudioDeviceListPtr
+      .asFunction<AudioDeviceInfoList Function()>();
 
   AudioDeviceIndex labSound_GetDefaultOutputAudioDeviceIndex() {
     return _labSound_GetDefaultOutputAudioDeviceIndex();
   }
 
-  late final _labSound_GetDefaultOutputAudioDeviceIndex_ptr =
-      _lookup<ffi.NativeFunction<_c_labSound_GetDefaultOutputAudioDeviceIndex>>(
+  late final _labSound_GetDefaultOutputAudioDeviceIndexPtr =
+      _lookup<ffi.NativeFunction<AudioDeviceIndex Function()>>(
           'labSound_GetDefaultOutputAudioDeviceIndex');
-  late final _dart_labSound_GetDefaultOutputAudioDeviceIndex
-      _labSound_GetDefaultOutputAudioDeviceIndex =
-      _labSound_GetDefaultOutputAudioDeviceIndex_ptr
-          .asFunction<_dart_labSound_GetDefaultOutputAudioDeviceIndex>();
+  late final _labSound_GetDefaultOutputAudioDeviceIndex =
+      _labSound_GetDefaultOutputAudioDeviceIndexPtr
+          .asFunction<AudioDeviceIndex Function()>();
 
   AudioDeviceIndex labSound_GetDefaultInputAudioDeviceIndex() {
     return _labSound_GetDefaultInputAudioDeviceIndex();
   }
 
-  late final _labSound_GetDefaultInputAudioDeviceIndex_ptr =
-      _lookup<ffi.NativeFunction<_c_labSound_GetDefaultInputAudioDeviceIndex>>(
+  late final _labSound_GetDefaultInputAudioDeviceIndexPtr =
+      _lookup<ffi.NativeFunction<AudioDeviceIndex Function()>>(
           'labSound_GetDefaultInputAudioDeviceIndex');
-  late final _dart_labSound_GetDefaultInputAudioDeviceIndex
-      _labSound_GetDefaultInputAudioDeviceIndex =
-      _labSound_GetDefaultInputAudioDeviceIndex_ptr
-          .asFunction<_dart_labSound_GetDefaultInputAudioDeviceIndex>();
+  late final _labSound_GetDefaultInputAudioDeviceIndex =
+      _labSound_GetDefaultInputAudioDeviceIndexPtr
+          .asFunction<AudioDeviceIndex Function()>();
 
   int labSound_MakeAudioHardwareInputNode(
     ffi.Pointer<ffi.Void> context,
@@ -7914,39 +8635,34 @@ class LabSoundBind {
     );
   }
 
-  late final _labSound_MakeAudioHardwareInputNode_ptr =
-      _lookup<ffi.NativeFunction<_c_labSound_MakeAudioHardwareInputNode>>(
+  late final _labSound_MakeAudioHardwareInputNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'labSound_MakeAudioHardwareInputNode');
-  late final _dart_labSound_MakeAudioHardwareInputNode
-      _labSound_MakeAudioHardwareInputNode =
-      _labSound_MakeAudioHardwareInputNode_ptr
-          .asFunction<_dart_labSound_MakeAudioHardwareInputNode>();
+  late final _labSound_MakeAudioHardwareInputNode =
+      _labSound_MakeAudioHardwareInputNodePtr
+          .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   AudioStreamConfig labSound_GetDefaultInputAudioDeviceConfiguration() {
     return _labSound_GetDefaultInputAudioDeviceConfiguration();
   }
 
-  late final _labSound_GetDefaultInputAudioDeviceConfiguration_ptr = _lookup<
-          ffi.NativeFunction<
-              _c_labSound_GetDefaultInputAudioDeviceConfiguration>>(
-      'labSound_GetDefaultInputAudioDeviceConfiguration');
-  late final _dart_labSound_GetDefaultInputAudioDeviceConfiguration
-      _labSound_GetDefaultInputAudioDeviceConfiguration =
-      _labSound_GetDefaultInputAudioDeviceConfiguration_ptr
-          .asFunction<_dart_labSound_GetDefaultInputAudioDeviceConfiguration>();
+  late final _labSound_GetDefaultInputAudioDeviceConfigurationPtr =
+      _lookup<ffi.NativeFunction<AudioStreamConfig Function()>>(
+          'labSound_GetDefaultInputAudioDeviceConfiguration');
+  late final _labSound_GetDefaultInputAudioDeviceConfiguration =
+      _labSound_GetDefaultInputAudioDeviceConfigurationPtr
+          .asFunction<AudioStreamConfig Function()>();
 
   AudioStreamConfig labSound_GetDefaultOutputAudioDeviceConfiguration() {
     return _labSound_GetDefaultOutputAudioDeviceConfiguration();
   }
 
-  late final _labSound_GetDefaultOutputAudioDeviceConfiguration_ptr = _lookup<
-          ffi.NativeFunction<
-              _c_labSound_GetDefaultOutputAudioDeviceConfiguration>>(
-      'labSound_GetDefaultOutputAudioDeviceConfiguration');
-  late final _dart_labSound_GetDefaultOutputAudioDeviceConfiguration
-      _labSound_GetDefaultOutputAudioDeviceConfiguration =
-      _labSound_GetDefaultOutputAudioDeviceConfiguration_ptr.asFunction<
-          _dart_labSound_GetDefaultOutputAudioDeviceConfiguration>();
+  late final _labSound_GetDefaultOutputAudioDeviceConfigurationPtr =
+      _lookup<ffi.NativeFunction<AudioStreamConfig Function()>>(
+          'labSound_GetDefaultOutputAudioDeviceConfiguration');
+  late final _labSound_GetDefaultOutputAudioDeviceConfiguration =
+      _labSound_GetDefaultOutputAudioDeviceConfigurationPtr
+          .asFunction<AudioStreamConfig Function()>();
 
   /// /////////
   /// PORT ///
@@ -7959,10 +8675,11 @@ class LabSoundBind {
     );
   }
 
-  late final _InitDartApiDL_ptr =
-      _lookup<ffi.NativeFunction<_c_InitDartApiDL>>('InitDartApiDL');
-  late final _dart_InitDartApiDL _InitDartApiDL =
-      _InitDartApiDL_ptr.asFunction<_dart_InitDartApiDL>();
+  late final _InitDartApiDLPtr =
+      _lookup<ffi.NativeFunction<ffi.IntPtr Function(ffi.Pointer<ffi.Void>)>>(
+          'InitDartApiDL');
+  late final _InitDartApiDL =
+      _InitDartApiDLPtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   void registerDecodeAudioSendPort(
     int sendPort,
@@ -7972,12 +8689,11 @@ class LabSoundBind {
     );
   }
 
-  late final _registerDecodeAudioSendPort_ptr =
-      _lookup<ffi.NativeFunction<_c_registerDecodeAudioSendPort>>(
+  late final _registerDecodeAudioSendPortPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'registerDecodeAudioSendPort');
-  late final _dart_registerDecodeAudioSendPort _registerDecodeAudioSendPort =
-      _registerDecodeAudioSendPort_ptr
-          .asFunction<_dart_registerDecodeAudioSendPort>();
+  late final _registerDecodeAudioSendPort =
+      _registerDecodeAudioSendPortPtr.asFunction<void Function(int)>();
 
   void registerAudioSampleOnEndedSendPort(
     int sendPort,
@@ -7987,13 +8703,11 @@ class LabSoundBind {
     );
   }
 
-  late final _registerAudioSampleOnEndedSendPort_ptr =
-      _lookup<ffi.NativeFunction<_c_registerAudioSampleOnEndedSendPort>>(
+  late final _registerAudioSampleOnEndedSendPortPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'registerAudioSampleOnEndedSendPort');
-  late final _dart_registerAudioSampleOnEndedSendPort
-      _registerAudioSampleOnEndedSendPort =
-      _registerAudioSampleOnEndedSendPort_ptr
-          .asFunction<_dart_registerAudioSampleOnEndedSendPort>();
+  late final _registerAudioSampleOnEndedSendPort =
+      _registerAudioSampleOnEndedSendPortPtr.asFunction<void Function(int)>();
 
   void registerOfflineRenderCompleteSendPort(
     int sendPort,
@@ -8003,13 +8717,12 @@ class LabSoundBind {
     );
   }
 
-  late final _registerOfflineRenderCompleteSendPort_ptr =
-      _lookup<ffi.NativeFunction<_c_registerOfflineRenderCompleteSendPort>>(
+  late final _registerOfflineRenderCompleteSendPortPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'registerOfflineRenderCompleteSendPort');
-  late final _dart_registerOfflineRenderCompleteSendPort
-      _registerOfflineRenderCompleteSendPort =
-      _registerOfflineRenderCompleteSendPort_ptr
-          .asFunction<_dart_registerOfflineRenderCompleteSendPort>();
+  late final _registerOfflineRenderCompleteSendPort =
+      _registerOfflineRenderCompleteSendPortPtr
+          .asFunction<void Function(int)>();
 
   void registerFunctionNodeSendPort(
     int sendPort,
@@ -8019,12 +8732,11 @@ class LabSoundBind {
     );
   }
 
-  late final _registerFunctionNodeSendPort_ptr =
-      _lookup<ffi.NativeFunction<_c_registerFunctionNodeSendPort>>(
+  late final _registerFunctionNodeSendPortPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'registerFunctionNodeSendPort');
-  late final _dart_registerFunctionNodeSendPort _registerFunctionNodeSendPort =
-      _registerFunctionNodeSendPort_ptr
-          .asFunction<_dart_registerFunctionNodeSendPort>();
+  late final _registerFunctionNodeSendPort =
+      _registerFunctionNodeSendPortPtr.asFunction<void Function(int)>();
 
   /// /////////////////
   /// AudioContext ///
@@ -8039,12 +8751,14 @@ class LabSoundBind {
     );
   }
 
-  late final _createRealtimeAudioContext_ptr =
-      _lookup<ffi.NativeFunction<_c_createRealtimeAudioContext>>(
-          'createRealtimeAudioContext');
-  late final _dart_createRealtimeAudioContext _createRealtimeAudioContext =
-      _createRealtimeAudioContext_ptr
-          .asFunction<_dart_createRealtimeAudioContext>();
+  late final _createRealtimeAudioContextPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(AudioStreamConfig,
+              AudioStreamConfig)>>('createRealtimeAudioContext');
+  late final _createRealtimeAudioContext =
+      _createRealtimeAudioContextPtr.asFunction<
+          ffi.Pointer<ffi.Void> Function(
+              AudioStreamConfig, AudioStreamConfig)>();
 
   ffi.Pointer<ffi.Void> createOfflineAudioContext(
     AudioStreamConfig outputConfig,
@@ -8056,12 +8770,12 @@ class LabSoundBind {
     );
   }
 
-  late final _createOfflineAudioContext_ptr =
-      _lookup<ffi.NativeFunction<_c_createOfflineAudioContext>>(
-          'createOfflineAudioContext');
-  late final _dart_createOfflineAudioContext _createOfflineAudioContext =
-      _createOfflineAudioContext_ptr
-          .asFunction<_dart_createOfflineAudioContext>();
+  late final _createOfflineAudioContextPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              AudioStreamConfig, ffi.Double)>>('createOfflineAudioContext');
+  late final _createOfflineAudioContext = _createOfflineAudioContextPtr
+      .asFunction<ffi.Pointer<ffi.Void> Function(AudioStreamConfig, double)>();
 
   int AudioContext_startOfflineRendering(
     ffi.Pointer<ffi.Void> context,
@@ -8071,13 +8785,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_startOfflineRendering_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_startOfflineRendering>>(
+  late final _AudioContext_startOfflineRenderingPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_startOfflineRendering');
-  late final _dart_AudioContext_startOfflineRendering
-      _AudioContext_startOfflineRendering =
-      _AudioContext_startOfflineRendering_ptr.asFunction<
-          _dart_AudioContext_startOfflineRendering>();
+  late final _AudioContext_startOfflineRendering =
+      _AudioContext_startOfflineRenderingPtr.asFunction<
+          int Function(ffi.Pointer<ffi.Void>)>();
 
   int AudioContext_makeAudioHardwareInputNode(
     ffi.Pointer<ffi.Void> context,
@@ -8087,13 +8800,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_makeAudioHardwareInputNode_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_makeAudioHardwareInputNode>>(
+  late final _AudioContext_makeAudioHardwareInputNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_makeAudioHardwareInputNode');
-  late final _dart_AudioContext_makeAudioHardwareInputNode
-      _AudioContext_makeAudioHardwareInputNode =
-      _AudioContext_makeAudioHardwareInputNode_ptr.asFunction<
-          _dart_AudioContext_makeAudioHardwareInputNode>();
+  late final _AudioContext_makeAudioHardwareInputNode =
+      _AudioContext_makeAudioHardwareInputNodePtr.asFunction<
+          int Function(ffi.Pointer<ffi.Void>)>();
 
   void AudioContext_addAutomaticPullNode(
     ffi.Pointer<ffi.Void> context,
@@ -8105,13 +8817,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_addAutomaticPullNode_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_addAutomaticPullNode>>(
-          'AudioContext_addAutomaticPullNode');
-  late final _dart_AudioContext_addAutomaticPullNode
-      _AudioContext_addAutomaticPullNode =
-      _AudioContext_addAutomaticPullNode_ptr.asFunction<
-          _dart_AudioContext_addAutomaticPullNode>();
+  late final _AudioContext_addAutomaticPullNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('AudioContext_addAutomaticPullNode');
+  late final _AudioContext_addAutomaticPullNode =
+      _AudioContext_addAutomaticPullNodePtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>, int)>();
 
   void AudioContext_removeAutomaticPullNode(
     ffi.Pointer<ffi.Void> context,
@@ -8123,13 +8835,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_removeAutomaticPullNode_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_removeAutomaticPullNode>>(
-          'AudioContext_removeAutomaticPullNode');
-  late final _dart_AudioContext_removeAutomaticPullNode
-      _AudioContext_removeAutomaticPullNode =
-      _AudioContext_removeAutomaticPullNode_ptr.asFunction<
-          _dart_AudioContext_removeAutomaticPullNode>();
+  late final _AudioContext_removeAutomaticPullNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('AudioContext_removeAutomaticPullNode');
+  late final _AudioContext_removeAutomaticPullNode =
+      _AudioContext_removeAutomaticPullNodePtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>, int)>();
 
   void AudioContext_processAutomaticPullNodes(
     ffi.Pointer<ffi.Void> context,
@@ -8141,13 +8853,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_processAutomaticPullNodes_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_processAutomaticPullNodes>>(
-          'AudioContext_processAutomaticPullNodes');
-  late final _dart_AudioContext_processAutomaticPullNodes
-      _AudioContext_processAutomaticPullNodes =
-      _AudioContext_processAutomaticPullNodes_ptr.asFunction<
-          _dart_AudioContext_processAutomaticPullNodes>();
+  late final _AudioContext_processAutomaticPullNodesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('AudioContext_processAutomaticPullNodes');
+  late final _AudioContext_processAutomaticPullNodes =
+      _AudioContext_processAutomaticPullNodesPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>, int)>();
 
   void AudioContext_handlePreRenderTasks(
     ffi.Pointer<ffi.Void> context,
@@ -8157,13 +8869,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_handlePreRenderTasks_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_handlePreRenderTasks>>(
+  late final _AudioContext_handlePreRenderTasksPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_handlePreRenderTasks');
-  late final _dart_AudioContext_handlePreRenderTasks
-      _AudioContext_handlePreRenderTasks =
-      _AudioContext_handlePreRenderTasks_ptr.asFunction<
-          _dart_AudioContext_handlePreRenderTasks>();
+  late final _AudioContext_handlePreRenderTasks =
+      _AudioContext_handlePreRenderTasksPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>)>();
 
   void AudioContext_handlePostRenderTasks(
     ffi.Pointer<ffi.Void> context,
@@ -8173,13 +8884,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_handlePostRenderTasks_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_handlePostRenderTasks>>(
+  late final _AudioContext_handlePostRenderTasksPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_handlePostRenderTasks');
-  late final _dart_AudioContext_handlePostRenderTasks
-      _AudioContext_handlePostRenderTasks =
-      _AudioContext_handlePostRenderTasks_ptr.asFunction<
-          _dart_AudioContext_handlePostRenderTasks>();
+  late final _AudioContext_handlePostRenderTasks =
+      _AudioContext_handlePostRenderTasksPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>)>();
 
   void AudioContext_synchronizeConnections(
     ffi.Pointer<ffi.Void> context,
@@ -8191,13 +8901,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_synchronizeConnections_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_synchronizeConnections>>(
-          'AudioContext_synchronizeConnections');
-  late final _dart_AudioContext_synchronizeConnections
-      _AudioContext_synchronizeConnections =
-      _AudioContext_synchronizeConnections_ptr.asFunction<
-          _dart_AudioContext_synchronizeConnections>();
+  late final _AudioContext_synchronizeConnectionsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('AudioContext_synchronizeConnections');
+  late final _AudioContext_synchronizeConnections =
+      _AudioContext_synchronizeConnectionsPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>, int)>();
 
   void AudioContext_suspend(
     ffi.Pointer<ffi.Void> context,
@@ -8207,11 +8917,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_suspend_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_suspend>>(
+  late final _AudioContext_suspendPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_suspend');
-  late final _dart_AudioContext_suspend _AudioContext_suspend =
-      _AudioContext_suspend_ptr.asFunction<_dart_AudioContext_suspend>();
+  late final _AudioContext_suspend = _AudioContext_suspendPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>)>();
 
   void AudioContext_resume(
     ffi.Pointer<ffi.Void> context,
@@ -8221,11 +8931,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_resume_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_resume>>(
+  late final _AudioContext_resumePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_resume');
-  late final _dart_AudioContext_resume _AudioContext_resume =
-      _AudioContext_resume_ptr.asFunction<_dart_AudioContext_resume>();
+  late final _AudioContext_resume = _AudioContext_resumePtr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>)>();
 
   double AudioContext_currentTime(
     ffi.Pointer<ffi.Void> context,
@@ -8235,12 +8945,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_currentTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_currentTime>>(
+  late final _AudioContext_currentTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_currentTime');
-  late final _dart_AudioContext_currentTime _AudioContext_currentTime =
-      _AudioContext_currentTime_ptr.asFunction<
-          _dart_AudioContext_currentTime>();
+  late final _AudioContext_currentTime = _AudioContext_currentTimePtr
+      .asFunction<double Function(ffi.Pointer<ffi.Void>)>();
 
   double AudioContext_predictedCurrentTime(
     ffi.Pointer<ffi.Void> context,
@@ -8250,13 +8959,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_predictedCurrentTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_predictedCurrentTime>>(
+  late final _AudioContext_predictedCurrentTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_predictedCurrentTime');
-  late final _dart_AudioContext_predictedCurrentTime
-      _AudioContext_predictedCurrentTime =
-      _AudioContext_predictedCurrentTime_ptr.asFunction<
-          _dart_AudioContext_predictedCurrentTime>();
+  late final _AudioContext_predictedCurrentTime =
+      _AudioContext_predictedCurrentTimePtr.asFunction<
+          double Function(ffi.Pointer<ffi.Void>)>();
 
   double AudioContext_sampleRate(
     ffi.Pointer<ffi.Void> context,
@@ -8266,11 +8974,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_sampleRate_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_sampleRate>>(
+  late final _AudioContext_sampleRatePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_sampleRate');
-  late final _dart_AudioContext_sampleRate _AudioContext_sampleRate =
-      _AudioContext_sampleRate_ptr.asFunction<_dart_AudioContext_sampleRate>();
+  late final _AudioContext_sampleRate = _AudioContext_sampleRatePtr.asFunction<
+      double Function(ffi.Pointer<ffi.Void>)>();
 
   int AudioContext_listener(
     ffi.Pointer<ffi.Void> context,
@@ -8280,11 +8988,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_listener_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_listener>>(
+  late final _AudioContext_listenerPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_listener');
-  late final _dart_AudioContext_listener _AudioContext_listener =
-      _AudioContext_listener_ptr.asFunction<_dart_AudioContext_listener>();
+  late final _AudioContext_listener = _AudioContext_listenerPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>)>();
 
   int AudioContext_isInitialized(
     ffi.Pointer<ffi.Void> context,
@@ -8294,12 +9002,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_isInitialized_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_isInitialized>>(
+  late final _AudioContext_isInitializedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_isInitialized');
-  late final _dart_AudioContext_isInitialized _AudioContext_isInitialized =
-      _AudioContext_isInitialized_ptr.asFunction<
-          _dart_AudioContext_isInitialized>();
+  late final _AudioContext_isInitialized = _AudioContext_isInitializedPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int AudioContext_isConnected(
     ffi.Pointer<ffi.Void> context,
@@ -8313,12 +9020,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_isConnected_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_isConnected>>(
-          'AudioContext_isConnected');
-  late final _dart_AudioContext_isConnected _AudioContext_isConnected =
-      _AudioContext_isConnected_ptr.asFunction<
-          _dart_AudioContext_isConnected>();
+  late final _AudioContext_isConnectedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Int,
+              ffi.Int)>>('AudioContext_isConnected');
+  late final _AudioContext_isConnected = _AudioContext_isConnectedPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, int, int)>();
 
   void AudioContext_setDeviceNode(
     ffi.Pointer<ffi.Void> context,
@@ -8330,12 +9037,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_setDeviceNode_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_setDeviceNode>>(
-          'AudioContext_setDeviceNode');
-  late final _dart_AudioContext_setDeviceNode _AudioContext_setDeviceNode =
-      _AudioContext_setDeviceNode_ptr.asFunction<
-          _dart_AudioContext_setDeviceNode>();
+  late final _AudioContext_setDeviceNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>, ffi.Int)>>('AudioContext_setDeviceNode');
+  late final _AudioContext_setDeviceNode = _AudioContext_setDeviceNodePtr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
   int AudioContext_device(
     ffi.Pointer<ffi.Void> context,
@@ -8345,11 +9052,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_device_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_device>>(
+  late final _AudioContext_devicePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_device');
-  late final _dart_AudioContext_device _AudioContext_device =
-      _AudioContext_device_ptr.asFunction<_dart_AudioContext_device>();
+  late final _AudioContext_device =
+      _AudioContext_devicePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int AudioContext_isOfflineContext(
     ffi.Pointer<ffi.Void> context,
@@ -8359,12 +9066,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_isOfflineContext_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_isOfflineContext>>(
+  late final _AudioContext_isOfflineContextPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_isOfflineContext');
-  late final _dart_AudioContext_isOfflineContext
-      _AudioContext_isOfflineContext = _AudioContext_isOfflineContext_ptr
-          .asFunction<_dart_AudioContext_isOfflineContext>();
+  late final _AudioContext_isOfflineContext = _AudioContext_isOfflineContextPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int AudioContext_currentSampleFrame(
     ffi.Pointer<ffi.Void> context,
@@ -8374,12 +9080,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_currentSampleFrame_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_currentSampleFrame>>(
+  late final _AudioContext_currentSampleFramePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_currentSampleFrame');
-  late final _dart_AudioContext_currentSampleFrame
-      _AudioContext_currentSampleFrame = _AudioContext_currentSampleFrame_ptr
-          .asFunction<_dart_AudioContext_currentSampleFrame>();
+  late final _AudioContext_currentSampleFrame =
+      _AudioContext_currentSampleFramePtr.asFunction<
+          int Function(ffi.Pointer<ffi.Void>)>();
 
   void AudioContext_connect(
     ffi.Pointer<ffi.Void> context,
@@ -8397,11 +9103,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_connect_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_connect>>(
-          'AudioContext_connect');
-  late final _dart_AudioContext_connect _AudioContext_connect =
-      _AudioContext_connect_ptr.asFunction<_dart_AudioContext_connect>();
+  late final _AudioContext_connectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('AudioContext_connect');
+  late final _AudioContext_connect = _AudioContext_connectPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, int, int, int, int)>();
 
   void AudioContext_disconnect(
     ffi.Pointer<ffi.Void> context,
@@ -8419,11 +9126,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_disconnect_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_disconnect>>(
-          'AudioContext_disconnect');
-  late final _dart_AudioContext_disconnect _AudioContext_disconnect =
-      _AudioContext_disconnect_ptr.asFunction<_dart_AudioContext_disconnect>();
+  late final _AudioContext_disconnectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('AudioContext_disconnect');
+  late final _AudioContext_disconnect = _AudioContext_disconnectPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, int, int, int, int)>();
 
   void AudioContext_disconnectCompletely(
     ffi.Pointer<ffi.Void> context,
@@ -8437,13 +9145,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_disconnectCompletely_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_disconnectCompletely>>(
-          'AudioContext_disconnectCompletely');
-  late final _dart_AudioContext_disconnectCompletely
-      _AudioContext_disconnectCompletely =
-      _AudioContext_disconnectCompletely_ptr.asFunction<
-          _dart_AudioContext_disconnectCompletely>();
+  late final _AudioContext_disconnectCompletelyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int,
+              ffi.Int)>>('AudioContext_disconnectCompletely');
+  late final _AudioContext_disconnectCompletely =
+      _AudioContext_disconnectCompletelyPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>, int, int)>();
 
   void AudioContext_connectParam(
     ffi.Pointer<ffi.Void> context,
@@ -8461,17 +9169,17 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_connectParam_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_connectParam>>(
-          'AudioContext_connectParam');
-  late final _dart_AudioContext_connectParam _AudioContext_connectParam =
-      _AudioContext_connectParam_ptr.asFunction<
-          _dart_AudioContext_connectParam>();
+  late final _AudioContext_connectParamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('AudioContext_connectParam');
+  late final _AudioContext_connectParam = _AudioContext_connectParamPtr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int, int, int, int)>();
 
   void AudioContext_connectParamByName(
     ffi.Pointer<ffi.Void> context,
     int destinationNodeId,
-    ffi.Pointer<ffi.Int8> parameterName,
+    ffi.Pointer<ffi.Char> parameterName,
     int driverNodeId,
     int index,
   ) {
@@ -8484,12 +9192,18 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_connectParamByName_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_connectParamByName>>(
-          'AudioContext_connectParamByName');
-  late final _dart_AudioContext_connectParamByName
-      _AudioContext_connectParamByName = _AudioContext_connectParamByName_ptr
-          .asFunction<_dart_AudioContext_connectParamByName>();
+  late final _AudioContext_connectParamByNamePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>,
+              ffi.Int,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int,
+              ffi.Int)>>('AudioContext_connectParamByName');
+  late final _AudioContext_connectParamByName =
+      _AudioContext_connectParamByNamePtr.asFunction<
+          void Function(
+              ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>, int, int)>();
 
   void AudioContext_disconnectParam(
     ffi.Pointer<ffi.Void> context,
@@ -8507,12 +9221,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_disconnectParam_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_disconnectParam>>(
-          'AudioContext_disconnectParam');
-  late final _dart_AudioContext_disconnectParam _AudioContext_disconnectParam =
-      _AudioContext_disconnectParam_ptr.asFunction<
-          _dart_AudioContext_disconnectParam>();
+  late final _AudioContext_disconnectParamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('AudioContext_disconnectParam');
+  late final _AudioContext_disconnectParam = _AudioContext_disconnectParamPtr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int, int, int, int)>();
 
   void AudioContext_releaseContext(
     ffi.Pointer<ffi.Void> ctx,
@@ -8522,12 +9236,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioContext_releaseContext_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioContext_releaseContext>>(
+  late final _AudioContext_releaseContextPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
           'AudioContext_releaseContext');
-  late final _dart_AudioContext_releaseContext _AudioContext_releaseContext =
-      _AudioContext_releaseContext_ptr.asFunction<
-          _dart_AudioContext_releaseContext>();
+  late final _AudioContext_releaseContext = _AudioContext_releaseContextPtr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
   /// ///////////////
   /// AudioParam ///
@@ -8542,10 +9255,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_value_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_value>>('AudioParam_value');
-  late final _dart_AudioParam_value _AudioParam_value =
-      _AudioParam_value_ptr.asFunction<_dart_AudioParam_value>();
+  late final _AudioParam_valuePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Int)>>(
+          'AudioParam_value');
+  late final _AudioParam_value =
+      _AudioParam_valuePtr.asFunction<double Function(int, int)>();
 
   void AudioParam_setValue(
     int nodeId,
@@ -8559,11 +9273,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_setValue_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_setValue>>(
-          'AudioParam_setValue');
-  late final _dart_AudioParam_setValue _AudioParam_setValue =
-      _AudioParam_setValue_ptr.asFunction<_dart_AudioParam_setValue>();
+  late final _AudioParam_setValuePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int, ffi.Float)>>(
+      'AudioParam_setValue');
+  late final _AudioParam_setValue =
+      _AudioParam_setValuePtr.asFunction<void Function(int, int, double)>();
 
   double AudioParam_finalValue(
     int nodeId,
@@ -8577,11 +9291,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_finalValue_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_finalValue>>(
-          'AudioParam_finalValue');
-  late final _dart_AudioParam_finalValue _AudioParam_finalValue =
-      _AudioParam_finalValue_ptr.asFunction<_dart_AudioParam_finalValue>();
+  late final _AudioParam_finalValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Float Function(ffi.Int, ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('AudioParam_finalValue');
+  late final _AudioParam_finalValue = _AudioParam_finalValuePtr.asFunction<
+      double Function(int, int, ffi.Pointer<ffi.Void>)>();
 
   void AudioParam_setValueCurveAtTime(
     int nodeId,
@@ -8599,12 +9314,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_setValueCurveAtTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_setValueCurveAtTime>>(
-          'AudioParam_setValueCurveAtTime');
-  late final _dart_AudioParam_setValueCurveAtTime
-      _AudioParam_setValueCurveAtTime = _AudioParam_setValueCurveAtTime_ptr
-          .asFunction<_dart_AudioParam_setValueCurveAtTime>();
+  late final _AudioParam_setValueCurveAtTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Pointer<ffi.Float>, ffi.Float,
+              ffi.Float)>>('AudioParam_setValueCurveAtTime');
+  late final _AudioParam_setValueCurveAtTime =
+      _AudioParam_setValueCurveAtTimePtr.asFunction<
+          void Function(int, int, ffi.Pointer<ffi.Float>, double, double)>();
 
   void AudioParam_cancelScheduledValues(
     int nodeId,
@@ -8618,12 +9334,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_cancelScheduledValues_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_cancelScheduledValues>>(
-          'AudioParam_cancelScheduledValues');
-  late final _dart_AudioParam_cancelScheduledValues
-      _AudioParam_cancelScheduledValues = _AudioParam_cancelScheduledValues_ptr
-          .asFunction<_dart_AudioParam_cancelScheduledValues>();
+  late final _AudioParam_cancelScheduledValuesPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int, ffi.Float)>>(
+      'AudioParam_cancelScheduledValues');
+  late final _AudioParam_cancelScheduledValues =
+      _AudioParam_cancelScheduledValuesPtr.asFunction<
+          void Function(int, int, double)>();
 
   void AudioParam_setValueAtTime(
     int nodeId,
@@ -8639,12 +9355,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_setValueAtTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_setValueAtTime>>(
-          'AudioParam_setValueAtTime');
-  late final _dart_AudioParam_setValueAtTime _AudioParam_setValueAtTime =
-      _AudioParam_setValueAtTime_ptr.asFunction<
-          _dart_AudioParam_setValueAtTime>();
+  late final _AudioParam_setValueAtTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Float,
+              ffi.Float)>>('AudioParam_setValueAtTime');
+  late final _AudioParam_setValueAtTime = _AudioParam_setValueAtTimePtr
+      .asFunction<void Function(int, int, double, double)>();
 
   void AudioParam_exponentialRampToValueAtTime(
     int nodeId,
@@ -8660,13 +9376,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_exponentialRampToValueAtTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_exponentialRampToValueAtTime>>(
-          'AudioParam_exponentialRampToValueAtTime');
-  late final _dart_AudioParam_exponentialRampToValueAtTime
-      _AudioParam_exponentialRampToValueAtTime =
-      _AudioParam_exponentialRampToValueAtTime_ptr.asFunction<
-          _dart_AudioParam_exponentialRampToValueAtTime>();
+  late final _AudioParam_exponentialRampToValueAtTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Float,
+              ffi.Float)>>('AudioParam_exponentialRampToValueAtTime');
+  late final _AudioParam_exponentialRampToValueAtTime =
+      _AudioParam_exponentialRampToValueAtTimePtr.asFunction<
+          void Function(int, int, double, double)>();
 
   void AudioParam_linearRampToValueAtTime(
     int nodeId,
@@ -8682,13 +9398,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_linearRampToValueAtTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_linearRampToValueAtTime>>(
-          'AudioParam_linearRampToValueAtTime');
-  late final _dart_AudioParam_linearRampToValueAtTime
-      _AudioParam_linearRampToValueAtTime =
-      _AudioParam_linearRampToValueAtTime_ptr.asFunction<
-          _dart_AudioParam_linearRampToValueAtTime>();
+  late final _AudioParam_linearRampToValueAtTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Float,
+              ffi.Float)>>('AudioParam_linearRampToValueAtTime');
+  late final _AudioParam_linearRampToValueAtTime =
+      _AudioParam_linearRampToValueAtTimePtr.asFunction<
+          void Function(int, int, double, double)>();
 
   void AudioParam_setTargetAtTime(
     int nodeId,
@@ -8706,12 +9422,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_setTargetAtTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_setTargetAtTime>>(
-          'AudioParam_setTargetAtTime');
-  late final _dart_AudioParam_setTargetAtTime _AudioParam_setTargetAtTime =
-      _AudioParam_setTargetAtTime_ptr.asFunction<
-          _dart_AudioParam_setTargetAtTime>();
+  late final _AudioParam_setTargetAtTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('AudioParam_setTargetAtTime');
+  late final _AudioParam_setTargetAtTime = _AudioParam_setTargetAtTimePtr
+      .asFunction<void Function(int, int, double, double, double)>();
 
   double AudioParam_minValue(
     int nodeId,
@@ -8723,11 +9439,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_minValue_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_minValue>>(
+  late final _AudioParam_minValuePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Int)>>(
           'AudioParam_minValue');
-  late final _dart_AudioParam_minValue _AudioParam_minValue =
-      _AudioParam_minValue_ptr.asFunction<_dart_AudioParam_minValue>();
+  late final _AudioParam_minValue =
+      _AudioParam_minValuePtr.asFunction<double Function(int, int)>();
 
   double AudioParam_maxValue(
     int nodeId,
@@ -8739,11 +9455,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_maxValue_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_maxValue>>(
+  late final _AudioParam_maxValuePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Int)>>(
           'AudioParam_maxValue');
-  late final _dart_AudioParam_maxValue _AudioParam_maxValue =
-      _AudioParam_maxValue_ptr.asFunction<_dart_AudioParam_maxValue>();
+  late final _AudioParam_maxValue =
+      _AudioParam_maxValuePtr.asFunction<double Function(int, int)>();
 
   double AudioParam_defaultValue(
     int nodeId,
@@ -8755,11 +9471,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_defaultValue_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_defaultValue>>(
+  late final _AudioParam_defaultValuePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Int)>>(
           'AudioParam_defaultValue');
-  late final _dart_AudioParam_defaultValue _AudioParam_defaultValue =
-      _AudioParam_defaultValue_ptr.asFunction<_dart_AudioParam_defaultValue>();
+  late final _AudioParam_defaultValue =
+      _AudioParam_defaultValuePtr.asFunction<double Function(int, int)>();
 
   void AudioParam_resetSmoothedValue(
     int nodeId,
@@ -8771,12 +9487,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_resetSmoothedValue_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_resetSmoothedValue>>(
+  late final _AudioParam_resetSmoothedValuePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'AudioParam_resetSmoothedValue');
-  late final _dart_AudioParam_resetSmoothedValue
-      _AudioParam_resetSmoothedValue = _AudioParam_resetSmoothedValue_ptr
-          .asFunction<_dart_AudioParam_resetSmoothedValue>();
+  late final _AudioParam_resetSmoothedValue =
+      _AudioParam_resetSmoothedValuePtr.asFunction<void Function(int, int)>();
 
   void AudioParam_setSmoothingConstant(
     int nodeId,
@@ -8790,12 +9505,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_setSmoothingConstant_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_setSmoothingConstant>>(
-          'AudioParam_setSmoothingConstant');
-  late final _dart_AudioParam_setSmoothingConstant
-      _AudioParam_setSmoothingConstant = _AudioParam_setSmoothingConstant_ptr
-          .asFunction<_dart_AudioParam_setSmoothingConstant>();
+  late final _AudioParam_setSmoothingConstantPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int, ffi.Double)>>(
+      'AudioParam_setSmoothingConstant');
+  late final _AudioParam_setSmoothingConstant =
+      _AudioParam_setSmoothingConstantPtr.asFunction<
+          void Function(int, int, double)>();
 
   int AudioParam_hasSampleAccurateValues(
     int nodeId,
@@ -8807,13 +9522,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioParam_hasSampleAccurateValues_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioParam_hasSampleAccurateValues>>(
+  late final _AudioParam_hasSampleAccurateValuesPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
           'AudioParam_hasSampleAccurateValues');
-  late final _dart_AudioParam_hasSampleAccurateValues
-      _AudioParam_hasSampleAccurateValues =
-      _AudioParam_hasSampleAccurateValues_ptr.asFunction<
-          _dart_AudioParam_hasSampleAccurateValues>();
+  late final _AudioParam_hasSampleAccurateValues =
+      _AudioParam_hasSampleAccurateValuesPtr.asFunction<
+          int Function(int, int)>();
 
   /// //////////////
   /// AudioNode ///
@@ -8826,11 +9540,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_initialize_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_initialize>>(
+  late final _AudioNode_initializePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'AudioNode_initialize');
-  late final _dart_AudioNode_initialize _AudioNode_initialize =
-      _AudioNode_initialize_ptr.asFunction<_dart_AudioNode_initialize>();
+  late final _AudioNode_initialize =
+      _AudioNode_initializePtr.asFunction<void Function(int)>();
 
   void AudioNode_uninitialize(
     int nodeId,
@@ -8840,11 +9554,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_uninitialize_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_uninitialize>>(
+  late final _AudioNode_uninitializePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'AudioNode_uninitialize');
-  late final _dart_AudioNode_uninitialize _AudioNode_uninitialize =
-      _AudioNode_uninitialize_ptr.asFunction<_dart_AudioNode_uninitialize>();
+  late final _AudioNode_uninitialize =
+      _AudioNode_uninitializePtr.asFunction<void Function(int)>();
 
   int AudioNode_isScheduledNode(
     int nodeId,
@@ -8854,12 +9568,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_isScheduledNode_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_isScheduledNode>>(
+  late final _AudioNode_isScheduledNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioNode_isScheduledNode');
-  late final _dart_AudioNode_isScheduledNode _AudioNode_isScheduledNode =
-      _AudioNode_isScheduledNode_ptr.asFunction<
-          _dart_AudioNode_isScheduledNode>();
+  late final _AudioNode_isScheduledNode =
+      _AudioNode_isScheduledNodePtr.asFunction<int Function(int)>();
 
   int AudioNode_numberOfInputs(
     int nodeId,
@@ -8869,12 +9582,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_numberOfInputs_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_numberOfInputs>>(
+  late final _AudioNode_numberOfInputsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioNode_numberOfInputs');
-  late final _dart_AudioNode_numberOfInputs _AudioNode_numberOfInputs =
-      _AudioNode_numberOfInputs_ptr.asFunction<
-          _dart_AudioNode_numberOfInputs>();
+  late final _AudioNode_numberOfInputs =
+      _AudioNode_numberOfInputsPtr.asFunction<int Function(int)>();
 
   int AudioNode_numberOfOutputs(
     int nodeId,
@@ -8884,12 +9596,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_numberOfOutputs_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_numberOfOutputs>>(
+  late final _AudioNode_numberOfOutputsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioNode_numberOfOutputs');
-  late final _dart_AudioNode_numberOfOutputs _AudioNode_numberOfOutputs =
-      _AudioNode_numberOfOutputs_ptr.asFunction<
-          _dart_AudioNode_numberOfOutputs>();
+  late final _AudioNode_numberOfOutputs =
+      _AudioNode_numberOfOutputsPtr.asFunction<int Function(int)>();
 
   int AudioNode_channelCount(
     int nodeId,
@@ -8899,11 +9610,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_channelCount_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_channelCount>>(
+  late final _AudioNode_channelCountPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioNode_channelCount');
-  late final _dart_AudioNode_channelCount _AudioNode_channelCount =
-      _AudioNode_channelCount_ptr.asFunction<_dart_AudioNode_channelCount>();
+  late final _AudioNode_channelCount =
+      _AudioNode_channelCountPtr.asFunction<int Function(int)>();
 
   void AudioNode_reset(
     int nodeId,
@@ -8915,12 +9626,14 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_reset_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_reset>>('AudioNode_reset');
-  late final _dart_AudioNode_reset _AudioNode_reset =
-      _AudioNode_reset_ptr.asFunction<_dart_AudioNode_reset>();
+  late final _AudioNode_resetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int, ffi.Pointer<ffi.Void>)>>('AudioNode_reset');
+  late final _AudioNode_reset = _AudioNode_resetPtr.asFunction<
+      void Function(int, ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Int8> AudioNode_name(
+  ffi.Pointer<ffi.Char> AudioNode_name(
     int nodeId,
   ) {
     return _AudioNode_name(
@@ -8928,10 +9641,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_name_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_name>>('AudioNode_name');
-  late final _dart_AudioNode_name _AudioNode_name =
-      _AudioNode_name_ptr.asFunction<_dart_AudioNode_name>();
+  late final _AudioNode_namePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>(
+          'AudioNode_name');
+  late final _AudioNode_name =
+      _AudioNode_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   int AudioNode_useCount(
     int nodeId,
@@ -8941,10 +9655,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_useCount_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_useCount>>('AudioNode_useCount');
-  late final _dart_AudioNode_useCount _AudioNode_useCount =
-      _AudioNode_useCount_ptr.asFunction<_dart_AudioNode_useCount>();
+  late final _AudioNode_useCountPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioNode_useCount');
+  late final _AudioNode_useCount =
+      _AudioNode_useCountPtr.asFunction<int Function(int)>();
 
   void releaseNode(
     int nodeId,
@@ -8954,10 +9669,9 @@ class LabSoundBind {
     );
   }
 
-  late final _releaseNode_ptr =
-      _lookup<ffi.NativeFunction<_c_releaseNode>>('releaseNode');
-  late final _dart_releaseNode _releaseNode =
-      _releaseNode_ptr.asFunction<_dart_releaseNode>();
+  late final _releaseNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('releaseNode');
+  late final _releaseNode = _releaseNodePtr.asFunction<void Function(int)>();
 
   int hasNode(
     int nodeId,
@@ -8967,8 +9681,9 @@ class LabSoundBind {
     );
   }
 
-  late final _hasNode_ptr = _lookup<ffi.NativeFunction<_c_hasNode>>('hasNode');
-  late final _dart_hasNode _hasNode = _hasNode_ptr.asFunction<_dart_hasNode>();
+  late final _hasNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('hasNode');
+  late final _hasNode = _hasNodePtr.asFunction<int Function(int)>();
 
   double AudioNode_tailTime(
     int nodeId,
@@ -8980,10 +9695,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_tailTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_tailTime>>('AudioNode_tailTime');
-  late final _dart_AudioNode_tailTime _AudioNode_tailTime =
-      _AudioNode_tailTime_ptr.asFunction<_dart_AudioNode_tailTime>();
+  late final _AudioNode_tailTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Double Function(
+              ffi.Int, ffi.Pointer<ffi.Void>)>>('AudioNode_tailTime');
+  late final _AudioNode_tailTime = _AudioNode_tailTimePtr.asFunction<
+      double Function(int, ffi.Pointer<ffi.Void>)>();
 
   double AudioNode_latencyTime(
     int nodeId,
@@ -8995,11 +9712,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_latencyTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_latencyTime>>(
-          'AudioNode_latencyTime');
-  late final _dart_AudioNode_latencyTime _AudioNode_latencyTime =
-      _AudioNode_latencyTime_ptr.asFunction<_dart_AudioNode_latencyTime>();
+  late final _AudioNode_latencyTimePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Double Function(
+              ffi.Int, ffi.Pointer<ffi.Void>)>>('AudioNode_latencyTime');
+  late final _AudioNode_latencyTime = _AudioNode_latencyTimePtr.asFunction<
+      double Function(int, ffi.Pointer<ffi.Void>)>();
 
   int AudioNode_isInitialized(
     int nodeId,
@@ -9009,11 +9727,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioNode_isInitialized_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioNode_isInitialized>>(
+  late final _AudioNode_isInitializedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioNode_isInitialized');
-  late final _dart_AudioNode_isInitialized _AudioNode_isInitialized =
-      _AudioNode_isInitialized_ptr.asFunction<_dart_AudioNode_isInitialized>();
+  late final _AudioNode_isInitialized =
+      _AudioNode_isInitializedPtr.asFunction<int Function(int)>();
 
   /// AudioScheduledSourceNode
   int AudioScheduledSourceNode_isPlayingOrScheduled(
@@ -9024,13 +9742,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioScheduledSourceNode_isPlayingOrScheduled_ptr = _lookup<
-          ffi.NativeFunction<_c_AudioScheduledSourceNode_isPlayingOrScheduled>>(
-      'AudioScheduledSourceNode_isPlayingOrScheduled');
-  late final _dart_AudioScheduledSourceNode_isPlayingOrScheduled
-      _AudioScheduledSourceNode_isPlayingOrScheduled =
-      _AudioScheduledSourceNode_isPlayingOrScheduled_ptr.asFunction<
-          _dart_AudioScheduledSourceNode_isPlayingOrScheduled>();
+  late final _AudioScheduledSourceNode_isPlayingOrScheduledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioScheduledSourceNode_isPlayingOrScheduled');
+  late final _AudioScheduledSourceNode_isPlayingOrScheduled =
+      _AudioScheduledSourceNode_isPlayingOrScheduledPtr.asFunction<
+          int Function(int)>();
 
   void AudioScheduledSourceNode_stop(
     int nodeId,
@@ -9042,12 +9759,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioScheduledSourceNode_stop_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioScheduledSourceNode_stop>>(
+  late final _AudioScheduledSourceNode_stopPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'AudioScheduledSourceNode_stop');
-  late final _dart_AudioScheduledSourceNode_stop
-      _AudioScheduledSourceNode_stop = _AudioScheduledSourceNode_stop_ptr
-          .asFunction<_dart_AudioScheduledSourceNode_stop>();
+  late final _AudioScheduledSourceNode_stop = _AudioScheduledSourceNode_stopPtr
+      .asFunction<void Function(int, double)>();
 
   int AudioScheduledSourceNode_hasFinished(
     int nodeId,
@@ -9057,13 +9773,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioScheduledSourceNode_hasFinished_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioScheduledSourceNode_hasFinished>>(
+  late final _AudioScheduledSourceNode_hasFinishedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioScheduledSourceNode_hasFinished');
-  late final _dart_AudioScheduledSourceNode_hasFinished
-      _AudioScheduledSourceNode_hasFinished =
-      _AudioScheduledSourceNode_hasFinished_ptr.asFunction<
-          _dart_AudioScheduledSourceNode_hasFinished>();
+  late final _AudioScheduledSourceNode_hasFinished =
+      _AudioScheduledSourceNode_hasFinishedPtr.asFunction<int Function(int)>();
 
   int AudioScheduledSourceNode_startWhen(
     int nodeId,
@@ -9073,13 +9787,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioScheduledSourceNode_startWhen_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioScheduledSourceNode_startWhen>>(
+  late final _AudioScheduledSourceNode_startWhenPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Int)>>(
           'AudioScheduledSourceNode_startWhen');
-  late final _dart_AudioScheduledSourceNode_startWhen
-      _AudioScheduledSourceNode_startWhen =
-      _AudioScheduledSourceNode_startWhen_ptr.asFunction<
-          _dart_AudioScheduledSourceNode_startWhen>();
+  late final _AudioScheduledSourceNode_startWhen =
+      _AudioScheduledSourceNode_startWhenPtr.asFunction<int Function(int)>();
 
   void AudioScheduledSourceNode_start(
     int nodeId,
@@ -9091,12 +9803,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioScheduledSourceNode_start_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioScheduledSourceNode_start>>(
+  late final _AudioScheduledSourceNode_startPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'AudioScheduledSourceNode_start');
-  late final _dart_AudioScheduledSourceNode_start
-      _AudioScheduledSourceNode_start = _AudioScheduledSourceNode_start_ptr
-          .asFunction<_dart_AudioScheduledSourceNode_start>();
+  late final _AudioScheduledSourceNode_start =
+      _AudioScheduledSourceNode_startPtr.asFunction<
+          void Function(int, double)>();
 
   int AudioScheduledSourceNode_playbackState(
     int nodeId,
@@ -9106,13 +9818,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioScheduledSourceNode_playbackState_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioScheduledSourceNode_playbackState>>(
+  late final _AudioScheduledSourceNode_playbackStatePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioScheduledSourceNode_playbackState');
-  late final _dart_AudioScheduledSourceNode_playbackState
-      _AudioScheduledSourceNode_playbackState =
-      _AudioScheduledSourceNode_playbackState_ptr.asFunction<
-          _dart_AudioScheduledSourceNode_playbackState>();
+  late final _AudioScheduledSourceNode_playbackState =
+      _AudioScheduledSourceNode_playbackStatePtr.asFunction<
+          int Function(int)>();
 
   /// /////////////////////
   /// SampledAudioNode ///
@@ -9125,11 +9836,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createAudioSampleNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createAudioSampleNode>>(
+  late final _createAudioSampleNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createAudioSampleNode');
-  late final _dart_createAudioSampleNode _createAudioSampleNode =
-      _createAudioSampleNode_ptr.asFunction<_dart_createAudioSampleNode>();
+  late final _createAudioSampleNode = _createAudioSampleNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   void SampledAudioNode_setBus(
     int nodeId,
@@ -9143,11 +9854,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_setBus_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_setBus>>(
-          'SampledAudioNode_setBus');
-  late final _dart_SampledAudioNode_setBus _SampledAudioNode_setBus =
-      _SampledAudioNode_setBus_ptr.asFunction<_dart_SampledAudioNode_setBus>();
+  late final _SampledAudioNode_setBusPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('SampledAudioNode_setBus');
+  late final _SampledAudioNode_setBus = _SampledAudioNode_setBusPtr.asFunction<
+      void Function(int, ffi.Pointer<ffi.Void>, int)>();
 
   void SampledAudioNode_schedule(
     int nodeId,
@@ -9159,12 +9871,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_schedule_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_schedule>>(
+  late final _SampledAudioNode_schedulePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double)>>(
           'SampledAudioNode_schedule');
-  late final _dart_SampledAudioNode_schedule _SampledAudioNode_schedule =
-      _SampledAudioNode_schedule_ptr.asFunction<
-          _dart_SampledAudioNode_schedule>();
+  late final _SampledAudioNode_schedule =
+      _SampledAudioNode_schedulePtr.asFunction<void Function(int, double)>();
 
   void SampledAudioNode_schedule2(
     int nodeId,
@@ -9178,12 +9889,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_schedule2_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_schedule2>>(
-          'SampledAudioNode_schedule2');
-  late final _dart_SampledAudioNode_schedule2 _SampledAudioNode_schedule2 =
-      _SampledAudioNode_schedule2_ptr.asFunction<
-          _dart_SampledAudioNode_schedule2>();
+  late final _SampledAudioNode_schedule2Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double, ffi.Int)>>(
+      'SampledAudioNode_schedule2');
+  late final _SampledAudioNode_schedule2 = _SampledAudioNode_schedule2Ptr
+      .asFunction<void Function(int, double, int)>();
 
   void SampledAudioNode_schedule3(
     int nodeId,
@@ -9199,12 +9909,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_schedule3_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_schedule3>>(
-          'SampledAudioNode_schedule3');
-  late final _dart_SampledAudioNode_schedule3 _SampledAudioNode_schedule3 =
-      _SampledAudioNode_schedule3_ptr.asFunction<
-          _dart_SampledAudioNode_schedule3>();
+  late final _SampledAudioNode_schedule3Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Double, ffi.Double,
+              ffi.Int)>>('SampledAudioNode_schedule3');
+  late final _SampledAudioNode_schedule3 = _SampledAudioNode_schedule3Ptr
+      .asFunction<void Function(int, double, double, int)>();
 
   void SampledAudioNode_schedule4(
     int nodeId,
@@ -9222,12 +9932,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_schedule4_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_schedule4>>(
-          'SampledAudioNode_schedule4');
-  late final _dart_SampledAudioNode_schedule4 _SampledAudioNode_schedule4 =
-      _SampledAudioNode_schedule4_ptr.asFunction<
-          _dart_SampledAudioNode_schedule4>();
+  late final _SampledAudioNode_schedule4Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Double, ffi.Double, ffi.Double,
+              ffi.Int)>>('SampledAudioNode_schedule4');
+  late final _SampledAudioNode_schedule4 = _SampledAudioNode_schedule4Ptr
+      .asFunction<void Function(int, double, double, double, int)>();
 
   void SampledAudioNode_clearSchedules(
     int nodeId,
@@ -9237,12 +9947,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_clearSchedules_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_clearSchedules>>(
+  late final _SampledAudioNode_clearSchedulesPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'SampledAudioNode_clearSchedules');
-  late final _dart_SampledAudioNode_clearSchedules
-      _SampledAudioNode_clearSchedules = _SampledAudioNode_clearSchedules_ptr
-          .asFunction<_dart_SampledAudioNode_clearSchedules>();
+  late final _SampledAudioNode_clearSchedules =
+      _SampledAudioNode_clearSchedulesPtr.asFunction<void Function(int)>();
 
   void SampledAudioNode_start(
     int nodeId,
@@ -9254,11 +9963,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_start_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start>>(
+  late final _SampledAudioNode_startPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double)>>(
           'SampledAudioNode_start');
-  late final _dart_SampledAudioNode_start _SampledAudioNode_start =
-      _SampledAudioNode_start_ptr.asFunction<_dart_SampledAudioNode_start>();
+  late final _SampledAudioNode_start =
+      _SampledAudioNode_startPtr.asFunction<void Function(int, double)>();
 
   void SampledAudioNode_start2(
     int nodeId,
@@ -9272,11 +9981,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_start2_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start2>>(
-          'SampledAudioNode_start2');
-  late final _dart_SampledAudioNode_start2 _SampledAudioNode_start2 =
-      _SampledAudioNode_start2_ptr.asFunction<_dart_SampledAudioNode_start2>();
+  late final _SampledAudioNode_start2Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double, ffi.Int)>>(
+      'SampledAudioNode_start2');
+  late final _SampledAudioNode_start2 =
+      _SampledAudioNode_start2Ptr.asFunction<void Function(int, double, int)>();
 
   void SampledAudioNode_start3(
     int nodeId,
@@ -9292,11 +10001,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_start3_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start3>>(
-          'SampledAudioNode_start3');
-  late final _dart_SampledAudioNode_start3 _SampledAudioNode_start3 =
-      _SampledAudioNode_start3_ptr.asFunction<_dart_SampledAudioNode_start3>();
+  late final _SampledAudioNode_start3Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Double, ffi.Double,
+              ffi.Int)>>('SampledAudioNode_start3');
+  late final _SampledAudioNode_start3 = _SampledAudioNode_start3Ptr.asFunction<
+      void Function(int, double, double, int)>();
 
   void SampledAudioNode_start4(
     int nodeId,
@@ -9314,11 +10024,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_start4_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_start4>>(
-          'SampledAudioNode_start4');
-  late final _dart_SampledAudioNode_start4 _SampledAudioNode_start4 =
-      _SampledAudioNode_start4_ptr.asFunction<_dart_SampledAudioNode_start4>();
+  late final _SampledAudioNode_start4Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Double, ffi.Double, ffi.Double,
+              ffi.Int)>>('SampledAudioNode_start4');
+  late final _SampledAudioNode_start4 = _SampledAudioNode_start4Ptr.asFunction<
+      void Function(int, double, double, double, int)>();
 
   int SampledAudioNode_getCursor(
     int index,
@@ -9328,12 +10039,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_getCursor_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_getCursor>>(
+  late final _SampledAudioNode_getCursorPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SampledAudioNode_getCursor');
-  late final _dart_SampledAudioNode_getCursor _SampledAudioNode_getCursor =
-      _SampledAudioNode_getCursor_ptr.asFunction<
-          _dart_SampledAudioNode_getCursor>();
+  late final _SampledAudioNode_getCursor =
+      _SampledAudioNode_getCursorPtr.asFunction<int Function(int)>();
 
   int SampledAudioNode_playbackRate(
     int index,
@@ -9343,12 +10053,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_playbackRate_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_playbackRate>>(
+  late final _SampledAudioNode_playbackRatePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SampledAudioNode_playbackRate');
-  late final _dart_SampledAudioNode_playbackRate
-      _SampledAudioNode_playbackRate = _SampledAudioNode_playbackRate_ptr
-          .asFunction<_dart_SampledAudioNode_playbackRate>();
+  late final _SampledAudioNode_playbackRate =
+      _SampledAudioNode_playbackRatePtr.asFunction<int Function(int)>();
 
   int SampledAudioNode_detune(
     int index,
@@ -9358,17 +10067,17 @@ class LabSoundBind {
     );
   }
 
-  late final _SampledAudioNode_detune_ptr =
-      _lookup<ffi.NativeFunction<_c_SampledAudioNode_detune>>(
+  late final _SampledAudioNode_detunePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SampledAudioNode_detune');
-  late final _dart_SampledAudioNode_detune _SampledAudioNode_detune =
-      _SampledAudioNode_detune_ptr.asFunction<_dart_SampledAudioNode_detune>();
+  late final _SampledAudioNode_detune =
+      _SampledAudioNode_detunePtr.asFunction<int Function(int)>();
 
   /// /////////////
   /// AudioBus ///
   /// /////////////
   int makeBusFromFile(
-    ffi.Pointer<ffi.Int8> file,
+    ffi.Pointer<ffi.Char> file,
     int mixToMono,
     double targetSampleRate,
   ) {
@@ -9379,29 +10088,33 @@ class LabSoundBind {
     );
   }
 
-  late final _makeBusFromFile_ptr =
-      _lookup<ffi.NativeFunction<_c_makeBusFromFile>>('makeBusFromFile');
-  late final _dart_makeBusFromFile _makeBusFromFile =
-      _makeBusFromFile_ptr.asFunction<_dart_makeBusFromFile>();
+  late final _makeBusFromFilePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Float)>>('makeBusFromFile');
+  late final _makeBusFromFile = _makeBusFromFilePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, int, double)>();
 
   int makeBusFromMemory(
     ffi.Pointer<ffi.Uint8> buffer,
     int bufferLen,
-    ffi.Pointer<ffi.Int8> extension_1,
+    ffi.Pointer<ffi.Char> extension1,
     int mixToMono,
   ) {
     return _makeBusFromMemory(
       buffer,
       bufferLen,
-      extension_1,
+      extension1,
       mixToMono,
     );
   }
 
-  late final _makeBusFromMemory_ptr =
-      _lookup<ffi.NativeFunction<_c_makeBusFromMemory>>('makeBusFromMemory');
-  late final _dart_makeBusFromMemory _makeBusFromMemory =
-      _makeBusFromMemory_ptr.asFunction<_dart_makeBusFromMemory>();
+  late final _makeBusFromMemoryPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Uint8>, ffi.Int,
+              ffi.Pointer<ffi.Char>, ffi.Int)>>('makeBusFromMemory');
+  late final _makeBusFromMemory = _makeBusFromMemoryPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Uint8>, int, ffi.Pointer<ffi.Char>, int)>();
 
   int audioBusHasCheck(
     int busId,
@@ -9411,10 +10124,11 @@ class LabSoundBind {
     );
   }
 
-  late final _audioBusHasCheck_ptr =
-      _lookup<ffi.NativeFunction<_c_audioBusHasCheck>>('audioBusHasCheck');
-  late final _dart_audioBusHasCheck _audioBusHasCheck =
-      _audioBusHasCheck_ptr.asFunction<_dart_audioBusHasCheck>();
+  late final _audioBusHasCheckPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'audioBusHasCheck');
+  late final _audioBusHasCheck =
+      _audioBusHasCheckPtr.asFunction<int Function(int)>();
 
   int createAudioBus(
     int numberOfChannels,
@@ -9428,12 +10142,13 @@ class LabSoundBind {
     );
   }
 
-  late final _createAudioBus_ptr =
-      _lookup<ffi.NativeFunction<_c_createAudioBus>>('createAudioBus');
-  late final _dart_createAudioBus _createAudioBus =
-      _createAudioBus_ptr.asFunction<_dart_createAudioBus>();
+  late final _createAudioBusPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int, ffi.Int)>>(
+          'createAudioBus');
+  late final _createAudioBus =
+      _createAudioBusPtr.asFunction<int Function(int, int, int)>();
 
-  void AudioBus_setChannelMemory(
+  int AudioBus_setChannelMemory(
     int busId,
     int channelIndex,
     ffi.Pointer<ffi.Float> storage,
@@ -9447,12 +10162,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_setChannelMemory_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_setChannelMemory>>(
-          'AudioBus_setChannelMemory');
-  late final _dart_AudioBus_setChannelMemory _AudioBus_setChannelMemory =
-      _AudioBus_setChannelMemory_ptr.asFunction<
-          _dart_AudioBus_setChannelMemory>();
+  late final _AudioBus_setChannelMemoryPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer<ffi.Float>,
+              ffi.Int)>>('AudioBus_setChannelMemory');
+  late final _AudioBus_setChannelMemory = _AudioBus_setChannelMemoryPtr
+      .asFunction<int Function(int, int, ffi.Pointer<ffi.Float>, int)>();
 
   int AudioBus_numberOfChannels(
     int busIndex,
@@ -9462,12 +10177,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_numberOfChannels_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_numberOfChannels>>(
+  late final _AudioBus_numberOfChannelsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioBus_numberOfChannels');
-  late final _dart_AudioBus_numberOfChannels _AudioBus_numberOfChannels =
-      _AudioBus_numberOfChannels_ptr.asFunction<
-          _dart_AudioBus_numberOfChannels>();
+  late final _AudioBus_numberOfChannels =
+      _AudioBus_numberOfChannelsPtr.asFunction<int Function(int)>();
 
   int AudioBus_length(
     int busIndex,
@@ -9477,10 +10191,10 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_length_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_length>>('AudioBus_length');
-  late final _dart_AudioBus_length _AudioBus_length =
-      _AudioBus_length_ptr.asFunction<_dart_AudioBus_length>();
+  late final _AudioBus_lengthPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('AudioBus_length');
+  late final _AudioBus_length =
+      _AudioBus_lengthPtr.asFunction<int Function(int)>();
 
   double AudioBus_sampleRate(
     int busIndex,
@@ -9490,11 +10204,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_sampleRate_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_sampleRate>>(
+  late final _AudioBus_sampleRatePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'AudioBus_sampleRate');
-  late final _dart_AudioBus_sampleRate _AudioBus_sampleRate =
-      _AudioBus_sampleRate_ptr.asFunction<_dart_AudioBus_sampleRate>();
+  late final _AudioBus_sampleRate =
+      _AudioBus_sampleRatePtr.asFunction<double Function(int)>();
 
   void AudioBus_setSampleRate(
     int busIndex,
@@ -9506,11 +10220,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_setSampleRate_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_setSampleRate>>(
+  late final _AudioBus_setSampleRatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'AudioBus_setSampleRate');
-  late final _dart_AudioBus_setSampleRate _AudioBus_setSampleRate =
-      _AudioBus_setSampleRate_ptr.asFunction<_dart_AudioBus_setSampleRate>();
+  late final _AudioBus_setSampleRate =
+      _AudioBus_setSampleRatePtr.asFunction<void Function(int, double)>();
 
   void AudioBus_zero(
     int busIndex,
@@ -9520,10 +10234,10 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_zero_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_zero>>('AudioBus_zero');
-  late final _dart_AudioBus_zero _AudioBus_zero =
-      _AudioBus_zero_ptr.asFunction<_dart_AudioBus_zero>();
+  late final _AudioBus_zeroPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('AudioBus_zero');
+  late final _AudioBus_zero =
+      _AudioBus_zeroPtr.asFunction<void Function(int)>();
 
   void AudioBus_clearSilentFlag(
     int busIndex,
@@ -9533,12 +10247,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_clearSilentFlag_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_clearSilentFlag>>(
+  late final _AudioBus_clearSilentFlagPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'AudioBus_clearSilentFlag');
-  late final _dart_AudioBus_clearSilentFlag _AudioBus_clearSilentFlag =
-      _AudioBus_clearSilentFlag_ptr.asFunction<
-          _dart_AudioBus_clearSilentFlag>();
+  late final _AudioBus_clearSilentFlag =
+      _AudioBus_clearSilentFlagPtr.asFunction<void Function(int)>();
 
   void AudioBus_scale(
     int busIndex,
@@ -9550,10 +10263,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_scale_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_scale>>('AudioBus_scale');
-  late final _dart_AudioBus_scale _AudioBus_scale =
-      _AudioBus_scale_ptr.asFunction<_dart_AudioBus_scale>();
+  late final _AudioBus_scalePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
+          'AudioBus_scale');
+  late final _AudioBus_scale =
+      _AudioBus_scalePtr.asFunction<void Function(int, double)>();
 
   void AudioBus_reset(
     int busIndex,
@@ -9563,10 +10277,10 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_reset_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_reset>>('AudioBus_reset');
-  late final _dart_AudioBus_reset _AudioBus_reset =
-      _AudioBus_reset_ptr.asFunction<_dart_AudioBus_reset>();
+  late final _AudioBus_resetPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('AudioBus_reset');
+  late final _AudioBus_reset =
+      _AudioBus_resetPtr.asFunction<void Function(int)>();
 
   int AudioBus_isSilent(
     int busIndex,
@@ -9576,10 +10290,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_isSilent_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_isSilent>>('AudioBus_isSilent');
-  late final _dart_AudioBus_isSilent _AudioBus_isSilent =
-      _AudioBus_isSilent_ptr.asFunction<_dart_AudioBus_isSilent>();
+  late final _AudioBus_isSilentPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioBus_isSilent');
+  late final _AudioBus_isSilent =
+      _AudioBus_isSilentPtr.asFunction<int Function(int)>();
 
   int AudioBus_isFirstTime(
     int busIndex,
@@ -9589,11 +10304,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_isFirstTime_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_isFirstTime>>(
+  late final _AudioBus_isFirstTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioBus_isFirstTime');
-  late final _dart_AudioBus_isFirstTime _AudioBus_isFirstTime =
-      _AudioBus_isFirstTime_ptr.asFunction<_dart_AudioBus_isFirstTime>();
+  late final _AudioBus_isFirstTime =
+      _AudioBus_isFirstTimePtr.asFunction<int Function(int)>();
 
   void releaseAudioBus(
     int index,
@@ -9603,10 +10318,11 @@ class LabSoundBind {
     );
   }
 
-  late final _releaseAudioBus_ptr =
-      _lookup<ffi.NativeFunction<_c_releaseAudioBus>>('releaseAudioBus');
-  late final _dart_releaseAudioBus _releaseAudioBus =
-      _releaseAudioBus_ptr.asFunction<_dart_releaseAudioBus>();
+  late final _releaseAudioBusPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'releaseAudioBus');
+  late final _releaseAudioBus =
+      _releaseAudioBusPtr.asFunction<void Function(int)>();
 
   ffi.Pointer<ffi.Void> AudioBus_channel(
     int busId,
@@ -9618,10 +10334,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioBus_channel_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioBus_channel>>('AudioBus_channel');
-  late final _dart_AudioBus_channel _AudioBus_channel =
-      _AudioBus_channel_ptr.asFunction<_dart_AudioBus_channel>();
+  late final _AudioBus_channelPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Int, ffi.Int)>>(
+      'AudioBus_channel');
+  late final _AudioBus_channel = _AudioBus_channelPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int, int)>();
 
   int AudioChannel_length(
     ffi.Pointer<ffi.Void> channel,
@@ -9631,11 +10348,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioChannel_length_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioChannel_length>>(
+  late final _AudioChannel_lengthPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'AudioChannel_length');
-  late final _dart_AudioChannel_length _AudioChannel_length =
-      _AudioChannel_length_ptr.asFunction<_dart_AudioChannel_length>();
+  late final _AudioChannel_length =
+      _AudioChannel_lengthPtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   ffi.Pointer<ffi.Float> AudioChannel_data(
     ffi.Pointer<ffi.Void> channel,
@@ -9645,10 +10362,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioChannel_data_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioChannel_data>>('AudioChannel_data');
-  late final _dart_AudioChannel_data _AudioChannel_data =
-      _AudioChannel_data_ptr.asFunction<_dart_AudioChannel_data>();
+  late final _AudioChannel_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(
+              ffi.Pointer<ffi.Void>)>>('AudioChannel_data');
+  late final _AudioChannel_data = _AudioChannel_dataPtr.asFunction<
+      ffi.Pointer<ffi.Float> Function(ffi.Pointer<ffi.Void>)>();
 
   /// /////////////
   /// GainNode ///
@@ -9661,10 +10380,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createGain_ptr =
-      _lookup<ffi.NativeFunction<_c_createGain>>('createGain');
-  late final _dart_createGain _createGain =
-      _createGain_ptr.asFunction<_dart_createGain>();
+  late final _createGainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createGain');
+  late final _createGain =
+      _createGainPtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int GainNode_gain(
     int nodeId,
@@ -9674,10 +10394,9 @@ class LabSoundBind {
     );
   }
 
-  late final _GainNode_gain_ptr =
-      _lookup<ffi.NativeFunction<_c_GainNode_gain>>('GainNode_gain');
-  late final _dart_GainNode_gain _GainNode_gain =
-      _GainNode_gain_ptr.asFunction<_dart_GainNode_gain>();
+  late final _GainNode_gainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('GainNode_gain');
+  late final _GainNode_gain = _GainNode_gainPtr.asFunction<int Function(int)>();
 
   /// /////////////////
   /// RecorderNode ///
@@ -9692,10 +10411,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createRecorderNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createRecorderNode>>('createRecorderNode');
-  late final _dart_createRecorderNode _createRecorderNode =
-      _createRecorderNode_ptr.asFunction<_dart_createRecorderNode>();
+  late final _createRecorderNodePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
+      'createRecorderNode');
+  late final _createRecorderNode = _createRecorderNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
   int createRecorderNodeByConfig(
     ffi.Pointer<ffi.Void> context,
@@ -9707,12 +10427,12 @@ class LabSoundBind {
     );
   }
 
-  late final _createRecorderNodeByConfig_ptr =
-      _lookup<ffi.NativeFunction<_c_createRecorderNodeByConfig>>(
-          'createRecorderNodeByConfig');
-  late final _dart_createRecorderNodeByConfig _createRecorderNodeByConfig =
-      _createRecorderNodeByConfig_ptr
-          .asFunction<_dart_createRecorderNodeByConfig>();
+  late final _createRecorderNodeByConfigPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>,
+              AudioStreamConfig)>>('createRecorderNodeByConfig');
+  late final _createRecorderNodeByConfig = _createRecorderNodeByConfigPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, AudioStreamConfig)>();
 
   void RecorderNode_startRecording(
     int nodeId,
@@ -9722,12 +10442,11 @@ class LabSoundBind {
     );
   }
 
-  late final _RecorderNode_startRecording_ptr =
-      _lookup<ffi.NativeFunction<_c_RecorderNode_startRecording>>(
+  late final _RecorderNode_startRecordingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'RecorderNode_startRecording');
-  late final _dart_RecorderNode_startRecording _RecorderNode_startRecording =
-      _RecorderNode_startRecording_ptr.asFunction<
-          _dart_RecorderNode_startRecording>();
+  late final _RecorderNode_startRecording =
+      _RecorderNode_startRecordingPtr.asFunction<void Function(int)>();
 
   void RecorderNode_stopRecording(
     int nodeId,
@@ -9737,12 +10456,11 @@ class LabSoundBind {
     );
   }
 
-  late final _RecorderNode_stopRecording_ptr =
-      _lookup<ffi.NativeFunction<_c_RecorderNode_stopRecording>>(
+  late final _RecorderNode_stopRecordingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'RecorderNode_stopRecording');
-  late final _dart_RecorderNode_stopRecording _RecorderNode_stopRecording =
-      _RecorderNode_stopRecording_ptr.asFunction<
-          _dart_RecorderNode_stopRecording>();
+  late final _RecorderNode_stopRecording =
+      _RecorderNode_stopRecordingPtr.asFunction<void Function(int)>();
 
   double RecorderNode_recordedLengthInSeconds(
     int nodeId,
@@ -9752,13 +10470,12 @@ class LabSoundBind {
     );
   }
 
-  late final _RecorderNode_recordedLengthInSeconds_ptr =
-      _lookup<ffi.NativeFunction<_c_RecorderNode_recordedLengthInSeconds>>(
+  late final _RecorderNode_recordedLengthInSecondsPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'RecorderNode_recordedLengthInSeconds');
-  late final _dart_RecorderNode_recordedLengthInSeconds
-      _RecorderNode_recordedLengthInSeconds =
-      _RecorderNode_recordedLengthInSeconds_ptr.asFunction<
-          _dart_RecorderNode_recordedLengthInSeconds>();
+  late final _RecorderNode_recordedLengthInSeconds =
+      _RecorderNode_recordedLengthInSecondsPtr.asFunction<
+          double Function(int)>();
 
   int RecorderNode_createBusFromRecording(
     int nodeId,
@@ -9770,17 +10487,16 @@ class LabSoundBind {
     );
   }
 
-  late final _RecorderNode_createBusFromRecording_ptr =
-      _lookup<ffi.NativeFunction<_c_RecorderNode_createBusFromRecording>>(
+  late final _RecorderNode_createBusFromRecordingPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
           'RecorderNode_createBusFromRecording');
-  late final _dart_RecorderNode_createBusFromRecording
-      _RecorderNode_createBusFromRecording =
-      _RecorderNode_createBusFromRecording_ptr.asFunction<
-          _dart_RecorderNode_createBusFromRecording>();
+  late final _RecorderNode_createBusFromRecording =
+      _RecorderNode_createBusFromRecordingPtr.asFunction<
+          int Function(int, int)>();
 
   int RecorderNode_writeRecordingToWav(
     int nodeId,
-    ffi.Pointer<ffi.Int8> file,
+    ffi.Pointer<ffi.Char> file,
     int mixToMono,
   ) {
     return _RecorderNode_writeRecordingToWav(
@@ -9790,12 +10506,13 @@ class LabSoundBind {
     );
   }
 
-  late final _RecorderNode_writeRecordingToWav_ptr =
-      _lookup<ffi.NativeFunction<_c_RecorderNode_writeRecordingToWav>>(
-          'RecorderNode_writeRecordingToWav');
-  late final _dart_RecorderNode_writeRecordingToWav
-      _RecorderNode_writeRecordingToWav = _RecorderNode_writeRecordingToWav_ptr
-          .asFunction<_dart_RecorderNode_writeRecordingToWav>();
+  late final _RecorderNode_writeRecordingToWavPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('RecorderNode_writeRecordingToWav');
+  late final _RecorderNode_writeRecordingToWav =
+      _RecorderNode_writeRecordingToWavPtr.asFunction<
+          int Function(int, ffi.Pointer<ffi.Char>, int)>();
 
   /// /////////////////
   /// AnalyserNode ///
@@ -9808,10 +10525,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createAnalyserNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createAnalyserNode>>('createAnalyserNode');
-  late final _dart_createAnalyserNode _createAnalyserNode =
-      _createAnalyserNode_ptr.asFunction<_dart_createAnalyserNode>();
+  late final _createAnalyserNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createAnalyserNode');
+  late final _createAnalyserNode =
+      _createAnalyserNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int createAnalyserNodeFftSize(
     ffi.Pointer<ffi.Void> context,
@@ -9823,12 +10541,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createAnalyserNodeFftSize_ptr =
-      _lookup<ffi.NativeFunction<_c_createAnalyserNodeFftSize>>(
-          'createAnalyserNodeFftSize');
-  late final _dart_createAnalyserNodeFftSize _createAnalyserNodeFftSize =
-      _createAnalyserNodeFftSize_ptr
-          .asFunction<_dart_createAnalyserNodeFftSize>();
+  late final _createAnalyserNodeFftSizePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
+      'createAnalyserNodeFftSize');
+  late final _createAnalyserNodeFftSize = _createAnalyserNodeFftSizePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
   void AnalyserNode_setFftSize(
     int nodeId,
@@ -9842,11 +10559,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_setFftSize_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_setFftSize>>(
-          'AnalyserNode_setFftSize');
-  late final _dart_AnalyserNode_setFftSize _AnalyserNode_setFftSize =
-      _AnalyserNode_setFftSize_ptr.asFunction<_dart_AnalyserNode_setFftSize>();
+  late final _AnalyserNode_setFftSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('AnalyserNode_setFftSize');
+  late final _AnalyserNode_setFftSize = _AnalyserNode_setFftSizePtr.asFunction<
+      void Function(int, ffi.Pointer<ffi.Void>, int)>();
 
   int AnalyserNode_fftSize(
     int nodeId,
@@ -9856,11 +10574,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_fftSize_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_fftSize>>(
+  late final _AnalyserNode_fftSizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AnalyserNode_fftSize');
-  late final _dart_AnalyserNode_fftSize _AnalyserNode_fftSize =
-      _AnalyserNode_fftSize_ptr.asFunction<_dart_AnalyserNode_fftSize>();
+  late final _AnalyserNode_fftSize =
+      _AnalyserNode_fftSizePtr.asFunction<int Function(int)>();
 
   int AnalyserNode_frequencyBinCount(
     int nodeId,
@@ -9870,12 +10588,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_frequencyBinCount_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_frequencyBinCount>>(
+  late final _AnalyserNode_frequencyBinCountPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AnalyserNode_frequencyBinCount');
-  late final _dart_AnalyserNode_frequencyBinCount
-      _AnalyserNode_frequencyBinCount = _AnalyserNode_frequencyBinCount_ptr
-          .asFunction<_dart_AnalyserNode_frequencyBinCount>();
+  late final _AnalyserNode_frequencyBinCount =
+      _AnalyserNode_frequencyBinCountPtr.asFunction<int Function(int)>();
 
   void AnalyserNode_setMinDecibels(
     int nodeId,
@@ -9887,12 +10604,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_setMinDecibels_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_setMinDecibels>>(
+  late final _AnalyserNode_setMinDecibelsPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double)>>(
           'AnalyserNode_setMinDecibels');
-  late final _dart_AnalyserNode_setMinDecibels _AnalyserNode_setMinDecibels =
-      _AnalyserNode_setMinDecibels_ptr.asFunction<
-          _dart_AnalyserNode_setMinDecibels>();
+  late final _AnalyserNode_setMinDecibels =
+      _AnalyserNode_setMinDecibelsPtr.asFunction<void Function(int, double)>();
 
   int AnalyserNode_minDecibels(
     int nodeId,
@@ -9902,12 +10618,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_minDecibels_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_minDecibels>>(
+  late final _AnalyserNode_minDecibelsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AnalyserNode_minDecibels');
-  late final _dart_AnalyserNode_minDecibels _AnalyserNode_minDecibels =
-      _AnalyserNode_minDecibels_ptr.asFunction<
-          _dart_AnalyserNode_minDecibels>();
+  late final _AnalyserNode_minDecibels =
+      _AnalyserNode_minDecibelsPtr.asFunction<int Function(int)>();
 
   void AnalyserNode_setMaxDecibels(
     int nodeId,
@@ -9919,12 +10634,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_setMaxDecibels_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_setMaxDecibels>>(
+  late final _AnalyserNode_setMaxDecibelsPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double)>>(
           'AnalyserNode_setMaxDecibels');
-  late final _dart_AnalyserNode_setMaxDecibels _AnalyserNode_setMaxDecibels =
-      _AnalyserNode_setMaxDecibels_ptr.asFunction<
-          _dart_AnalyserNode_setMaxDecibels>();
+  late final _AnalyserNode_setMaxDecibels =
+      _AnalyserNode_setMaxDecibelsPtr.asFunction<void Function(int, double)>();
 
   int AnalyserNode_maxDecibels(
     int nodeId,
@@ -9934,12 +10648,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_maxDecibels_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_maxDecibels>>(
+  late final _AnalyserNode_maxDecibelsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AnalyserNode_maxDecibels');
-  late final _dart_AnalyserNode_maxDecibels _AnalyserNode_maxDecibels =
-      _AnalyserNode_maxDecibels_ptr.asFunction<
-          _dart_AnalyserNode_maxDecibels>();
+  late final _AnalyserNode_maxDecibels =
+      _AnalyserNode_maxDecibelsPtr.asFunction<int Function(int)>();
 
   void AnalyserNode_setSmoothingTimeConstant(
     int nodeId,
@@ -9951,13 +10664,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_setSmoothingTimeConstant_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_setSmoothingTimeConstant>>(
+  late final _AnalyserNode_setSmoothingTimeConstantPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Double)>>(
           'AnalyserNode_setSmoothingTimeConstant');
-  late final _dart_AnalyserNode_setSmoothingTimeConstant
-      _AnalyserNode_setSmoothingTimeConstant =
-      _AnalyserNode_setSmoothingTimeConstant_ptr.asFunction<
-          _dart_AnalyserNode_setSmoothingTimeConstant>();
+  late final _AnalyserNode_setSmoothingTimeConstant =
+      _AnalyserNode_setSmoothingTimeConstantPtr.asFunction<
+          void Function(int, double)>();
 
   int AnalyserNode_smoothingTimeConstant(
     int nodeId,
@@ -9967,13 +10679,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_smoothingTimeConstant_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_smoothingTimeConstant>>(
+  late final _AnalyserNode_smoothingTimeConstantPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AnalyserNode_smoothingTimeConstant');
-  late final _dart_AnalyserNode_smoothingTimeConstant
-      _AnalyserNode_smoothingTimeConstant =
-      _AnalyserNode_smoothingTimeConstant_ptr.asFunction<
-          _dart_AnalyserNode_smoothingTimeConstant>();
+  late final _AnalyserNode_smoothingTimeConstant =
+      _AnalyserNode_smoothingTimeConstantPtr.asFunction<int Function(int)>();
 
   void AnalyserNode_getFloatFrequencyData(
     int nodeId,
@@ -9985,13 +10695,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_getFloatFrequencyData_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_getFloatFrequencyData>>(
-          'AnalyserNode_getFloatFrequencyData');
-  late final _dart_AnalyserNode_getFloatFrequencyData
-      _AnalyserNode_getFloatFrequencyData =
-      _AnalyserNode_getFloatFrequencyData_ptr.asFunction<
-          _dart_AnalyserNode_getFloatFrequencyData>();
+  late final _AnalyserNode_getFloatFrequencyDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int,
+              ffi.Pointer<ffi.Float>)>>('AnalyserNode_getFloatFrequencyData');
+  late final _AnalyserNode_getFloatFrequencyData =
+      _AnalyserNode_getFloatFrequencyDataPtr.asFunction<
+          void Function(int, ffi.Pointer<ffi.Float>)>();
 
   void AnalyserNode_getByteFrequencyData(
     int nodeId,
@@ -10005,13 +10715,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_getByteFrequencyData_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_getByteFrequencyData>>(
-          'AnalyserNode_getByteFrequencyData');
-  late final _dart_AnalyserNode_getByteFrequencyData
-      _AnalyserNode_getByteFrequencyData =
-      _AnalyserNode_getByteFrequencyData_ptr.asFunction<
-          _dart_AnalyserNode_getByteFrequencyData>();
+  late final _AnalyserNode_getByteFrequencyDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Uint8>,
+              ffi.Int)>>('AnalyserNode_getByteFrequencyData');
+  late final _AnalyserNode_getByteFrequencyData =
+      _AnalyserNode_getByteFrequencyDataPtr.asFunction<
+          void Function(int, ffi.Pointer<ffi.Uint8>, int)>();
 
   void AnalyserNode_getFloatTimeDomainData(
     int nodeId,
@@ -10023,13 +10733,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_getFloatTimeDomainData_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_getFloatTimeDomainData>>(
-          'AnalyserNode_getFloatTimeDomainData');
-  late final _dart_AnalyserNode_getFloatTimeDomainData
-      _AnalyserNode_getFloatTimeDomainData =
-      _AnalyserNode_getFloatTimeDomainData_ptr.asFunction<
-          _dart_AnalyserNode_getFloatTimeDomainData>();
+  late final _AnalyserNode_getFloatTimeDomainDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int,
+              ffi.Pointer<ffi.Float>)>>('AnalyserNode_getFloatTimeDomainData');
+  late final _AnalyserNode_getFloatTimeDomainData =
+      _AnalyserNode_getFloatTimeDomainDataPtr.asFunction<
+          void Function(int, ffi.Pointer<ffi.Float>)>();
 
   void AnalyserNode_getByteTimeDomainData(
     int nodeId,
@@ -10041,13 +10751,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AnalyserNode_getByteTimeDomainData_ptr =
-      _lookup<ffi.NativeFunction<_c_AnalyserNode_getByteTimeDomainData>>(
-          'AnalyserNode_getByteTimeDomainData');
-  late final _dart_AnalyserNode_getByteTimeDomainData
-      _AnalyserNode_getByteTimeDomainData =
-      _AnalyserNode_getByteTimeDomainData_ptr.asFunction<
-          _dart_AnalyserNode_getByteTimeDomainData>();
+  late final _AnalyserNode_getByteTimeDomainDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int,
+              ffi.Pointer<ffi.Uint8>)>>('AnalyserNode_getByteTimeDomainData');
+  late final _AnalyserNode_getByteTimeDomainData =
+      _AnalyserNode_getByteTimeDomainDataPtr.asFunction<
+          void Function(int, ffi.Pointer<ffi.Uint8>)>();
 
   /// ///////////////////
   /// OscillatorNode ///
@@ -10060,11 +10770,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createOscillatorNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createOscillatorNode>>(
+  late final _createOscillatorNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createOscillatorNode');
-  late final _dart_createOscillatorNode _createOscillatorNode =
-      _createOscillatorNode_ptr.asFunction<_dart_createOscillatorNode>();
+  late final _createOscillatorNode = _createOscillatorNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int OscillatorNode_type(
     int nodeId,
@@ -10074,11 +10784,11 @@ class LabSoundBind {
     );
   }
 
-  late final _OscillatorNode_type_ptr =
-      _lookup<ffi.NativeFunction<_c_OscillatorNode_type>>(
+  late final _OscillatorNode_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'OscillatorNode_type');
-  late final _dart_OscillatorNode_type _OscillatorNode_type =
-      _OscillatorNode_type_ptr.asFunction<_dart_OscillatorNode_type>();
+  late final _OscillatorNode_type =
+      _OscillatorNode_typePtr.asFunction<int Function(int)>();
 
   void OscillatorNode_setType(
     int nodeId,
@@ -10090,11 +10800,11 @@ class LabSoundBind {
     );
   }
 
-  late final _OscillatorNode_setType_ptr =
-      _lookup<ffi.NativeFunction<_c_OscillatorNode_setType>>(
+  late final _OscillatorNode_setTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'OscillatorNode_setType');
-  late final _dart_OscillatorNode_setType _OscillatorNode_setType =
-      _OscillatorNode_setType_ptr.asFunction<_dart_OscillatorNode_setType>();
+  late final _OscillatorNode_setType =
+      _OscillatorNode_setTypePtr.asFunction<void Function(int, int)>();
 
   int OscillatorNode_amplitude(
     int nodeId,
@@ -10104,12 +10814,11 @@ class LabSoundBind {
     );
   }
 
-  late final _OscillatorNode_amplitude_ptr =
-      _lookup<ffi.NativeFunction<_c_OscillatorNode_amplitude>>(
+  late final _OscillatorNode_amplitudePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'OscillatorNode_amplitude');
-  late final _dart_OscillatorNode_amplitude _OscillatorNode_amplitude =
-      _OscillatorNode_amplitude_ptr.asFunction<
-          _dart_OscillatorNode_amplitude>();
+  late final _OscillatorNode_amplitude =
+      _OscillatorNode_amplitudePtr.asFunction<int Function(int)>();
 
   int OscillatorNode_frequency(
     int nodeId,
@@ -10119,12 +10828,11 @@ class LabSoundBind {
     );
   }
 
-  late final _OscillatorNode_frequency_ptr =
-      _lookup<ffi.NativeFunction<_c_OscillatorNode_frequency>>(
+  late final _OscillatorNode_frequencyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'OscillatorNode_frequency');
-  late final _dart_OscillatorNode_frequency _OscillatorNode_frequency =
-      _OscillatorNode_frequency_ptr.asFunction<
-          _dart_OscillatorNode_frequency>();
+  late final _OscillatorNode_frequency =
+      _OscillatorNode_frequencyPtr.asFunction<int Function(int)>();
 
   int OscillatorNode_bias(
     int nodeId,
@@ -10134,11 +10842,11 @@ class LabSoundBind {
     );
   }
 
-  late final _OscillatorNode_bias_ptr =
-      _lookup<ffi.NativeFunction<_c_OscillatorNode_bias>>(
+  late final _OscillatorNode_biasPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'OscillatorNode_bias');
-  late final _dart_OscillatorNode_bias _OscillatorNode_bias =
-      _OscillatorNode_bias_ptr.asFunction<_dart_OscillatorNode_bias>();
+  late final _OscillatorNode_bias =
+      _OscillatorNode_biasPtr.asFunction<int Function(int)>();
 
   int OscillatorNode_detune(
     int nodeId,
@@ -10148,11 +10856,11 @@ class LabSoundBind {
     );
   }
 
-  late final _OscillatorNode_detune_ptr =
-      _lookup<ffi.NativeFunction<_c_OscillatorNode_detune>>(
+  late final _OscillatorNode_detunePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'OscillatorNode_detune');
-  late final _dart_OscillatorNode_detune _OscillatorNode_detune =
-      _OscillatorNode_detune_ptr.asFunction<_dart_OscillatorNode_detune>();
+  late final _OscillatorNode_detune =
+      _OscillatorNode_detunePtr.asFunction<int Function(int)>();
 
   /// BiquadFilterNode
   int createBiquadFilterNode(
@@ -10163,11 +10871,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createBiquadFilterNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createBiquadFilterNode>>(
+  late final _createBiquadFilterNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createBiquadFilterNode');
-  late final _dart_createBiquadFilterNode _createBiquadFilterNode =
-      _createBiquadFilterNode_ptr.asFunction<_dart_createBiquadFilterNode>();
+  late final _createBiquadFilterNode = _createBiquadFilterNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int BiquadFilterNode_type(
     int nodeId,
@@ -10177,11 +10885,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BiquadFilterNode_type_ptr =
-      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_type>>(
+  late final _BiquadFilterNode_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'BiquadFilterNode_type');
-  late final _dart_BiquadFilterNode_type _BiquadFilterNode_type =
-      _BiquadFilterNode_type_ptr.asFunction<_dart_BiquadFilterNode_type>();
+  late final _BiquadFilterNode_type =
+      _BiquadFilterNode_typePtr.asFunction<int Function(int)>();
 
   void BiquadFilterNode_setType(
     int nodeId,
@@ -10193,12 +10901,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BiquadFilterNode_setType_ptr =
-      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_setType>>(
+  late final _BiquadFilterNode_setTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'BiquadFilterNode_setType');
-  late final _dart_BiquadFilterNode_setType _BiquadFilterNode_setType =
-      _BiquadFilterNode_setType_ptr.asFunction<
-          _dart_BiquadFilterNode_setType>();
+  late final _BiquadFilterNode_setType =
+      _BiquadFilterNode_setTypePtr.asFunction<void Function(int, int)>();
 
   int BiquadFilterNode_frequency(
     int nodeId,
@@ -10208,12 +10915,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BiquadFilterNode_frequency_ptr =
-      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_frequency>>(
+  late final _BiquadFilterNode_frequencyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'BiquadFilterNode_frequency');
-  late final _dart_BiquadFilterNode_frequency _BiquadFilterNode_frequency =
-      _BiquadFilterNode_frequency_ptr.asFunction<
-          _dart_BiquadFilterNode_frequency>();
+  late final _BiquadFilterNode_frequency =
+      _BiquadFilterNode_frequencyPtr.asFunction<int Function(int)>();
 
   int BiquadFilterNode_q(
     int nodeId,
@@ -10223,10 +10929,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BiquadFilterNode_q_ptr =
-      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_q>>('BiquadFilterNode_q');
-  late final _dart_BiquadFilterNode_q _BiquadFilterNode_q =
-      _BiquadFilterNode_q_ptr.asFunction<_dart_BiquadFilterNode_q>();
+  late final _BiquadFilterNode_qPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'BiquadFilterNode_q');
+  late final _BiquadFilterNode_q =
+      _BiquadFilterNode_qPtr.asFunction<int Function(int)>();
 
   int BiquadFilterNode_gain(
     int nodeId,
@@ -10236,11 +10943,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BiquadFilterNode_gain_ptr =
-      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_gain>>(
+  late final _BiquadFilterNode_gainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'BiquadFilterNode_gain');
-  late final _dart_BiquadFilterNode_gain _BiquadFilterNode_gain =
-      _BiquadFilterNode_gain_ptr.asFunction<_dart_BiquadFilterNode_gain>();
+  late final _BiquadFilterNode_gain =
+      _BiquadFilterNode_gainPtr.asFunction<int Function(int)>();
 
   int BiquadFilterNode_detune(
     int nodeId,
@@ -10250,11 +10957,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BiquadFilterNode_detune_ptr =
-      _lookup<ffi.NativeFunction<_c_BiquadFilterNode_detune>>(
+  late final _BiquadFilterNode_detunePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'BiquadFilterNode_detune');
-  late final _dart_BiquadFilterNode_detune _BiquadFilterNode_detune =
-      _BiquadFilterNode_detune_ptr.asFunction<_dart_BiquadFilterNode_detune>();
+  late final _BiquadFilterNode_detune =
+      _BiquadFilterNode_detunePtr.asFunction<int Function(int)>();
 
   /// ///////////////
   /// PannerNode ///
@@ -10267,10 +10974,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createPannerNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createPannerNode>>('createPannerNode');
-  late final _dart_createPannerNode _createPannerNode =
-      _createPannerNode_ptr.asFunction<_dart_createPannerNode>();
+  late final _createPannerNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createPannerNode');
+  late final _createPannerNode =
+      _createPannerNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int PannerNode_panningModel(
     int nodeId,
@@ -10280,11 +10988,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_panningModel_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_panningModel>>(
+  late final _PannerNode_panningModelPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_panningModel');
-  late final _dart_PannerNode_panningModel _PannerNode_panningModel =
-      _PannerNode_panningModel_ptr.asFunction<_dart_PannerNode_panningModel>();
+  late final _PannerNode_panningModel =
+      _PannerNode_panningModelPtr.asFunction<int Function(int)>();
 
   void PannerNode_setPanningModel(
     int nodeId,
@@ -10296,12 +11004,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setPanningModel_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setPanningModel>>(
+  late final _PannerNode_setPanningModelPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'PannerNode_setPanningModel');
-  late final _dart_PannerNode_setPanningModel _PannerNode_setPanningModel =
-      _PannerNode_setPanningModel_ptr.asFunction<
-          _dart_PannerNode_setPanningModel>();
+  late final _PannerNode_setPanningModel =
+      _PannerNode_setPanningModelPtr.asFunction<void Function(int, int)>();
 
   int PannerNode_distanceModel(
     int nodeId,
@@ -10311,12 +11018,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_distanceModel_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_distanceModel>>(
+  late final _PannerNode_distanceModelPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_distanceModel');
-  late final _dart_PannerNode_distanceModel _PannerNode_distanceModel =
-      _PannerNode_distanceModel_ptr.asFunction<
-          _dart_PannerNode_distanceModel>();
+  late final _PannerNode_distanceModel =
+      _PannerNode_distanceModelPtr.asFunction<int Function(int)>();
 
   void PannerNode_setDistanceModel(
     int nodeId,
@@ -10328,12 +11034,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setDistanceModel_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setDistanceModel>>(
+  late final _PannerNode_setDistanceModelPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'PannerNode_setDistanceModel');
-  late final _dart_PannerNode_setDistanceModel _PannerNode_setDistanceModel =
-      _PannerNode_setDistanceModel_ptr.asFunction<
-          _dart_PannerNode_setDistanceModel>();
+  late final _PannerNode_setDistanceModel =
+      _PannerNode_setDistanceModelPtr.asFunction<void Function(int, int)>();
 
   void PannerNode_setPosition(
     int nodeId,
@@ -10349,11 +11054,12 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setPosition_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setPosition>>(
-          'PannerNode_setPosition');
-  late final _dart_PannerNode_setPosition _PannerNode_setPosition =
-      _PannerNode_setPosition_ptr.asFunction<_dart_PannerNode_setPosition>();
+  late final _PannerNode_setPositionPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('PannerNode_setPosition');
+  late final _PannerNode_setPosition = _PannerNode_setPositionPtr.asFunction<
+      void Function(int, double, double, double)>();
 
   int PannerNode_positionX(
     int nodeId,
@@ -10363,11 +11069,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_positionX_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_positionX>>(
+  late final _PannerNode_positionXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_positionX');
-  late final _dart_PannerNode_positionX _PannerNode_positionX =
-      _PannerNode_positionX_ptr.asFunction<_dart_PannerNode_positionX>();
+  late final _PannerNode_positionX =
+      _PannerNode_positionXPtr.asFunction<int Function(int)>();
 
   int PannerNode_positionY(
     int nodeId,
@@ -10377,11 +11083,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_positionY_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_positionY>>(
+  late final _PannerNode_positionYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_positionY');
-  late final _dart_PannerNode_positionY _PannerNode_positionY =
-      _PannerNode_positionY_ptr.asFunction<_dart_PannerNode_positionY>();
+  late final _PannerNode_positionY =
+      _PannerNode_positionYPtr.asFunction<int Function(int)>();
 
   int PannerNode_positionZ(
     int nodeId,
@@ -10391,11 +11097,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_positionZ_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_positionZ>>(
+  late final _PannerNode_positionZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_positionZ');
-  late final _dart_PannerNode_positionZ _PannerNode_positionZ =
-      _PannerNode_positionZ_ptr.asFunction<_dart_PannerNode_positionZ>();
+  late final _PannerNode_positionZ =
+      _PannerNode_positionZPtr.asFunction<int Function(int)>();
 
   void PannerNode_setOrientation(
     int nodeId,
@@ -10411,12 +11117,12 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setOrientation_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setOrientation>>(
-          'PannerNode_setOrientation');
-  late final _dart_PannerNode_setOrientation _PannerNode_setOrientation =
-      _PannerNode_setOrientation_ptr.asFunction<
-          _dart_PannerNode_setOrientation>();
+  late final _PannerNode_setOrientationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('PannerNode_setOrientation');
+  late final _PannerNode_setOrientation = _PannerNode_setOrientationPtr
+      .asFunction<void Function(int, double, double, double)>();
 
   int PannerNode_orientationX(
     int nodeId,
@@ -10426,11 +11132,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_orientationX_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_orientationX>>(
+  late final _PannerNode_orientationXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_orientationX');
-  late final _dart_PannerNode_orientationX _PannerNode_orientationX =
-      _PannerNode_orientationX_ptr.asFunction<_dart_PannerNode_orientationX>();
+  late final _PannerNode_orientationX =
+      _PannerNode_orientationXPtr.asFunction<int Function(int)>();
 
   int PannerNode_orientationY(
     int nodeId,
@@ -10440,11 +11146,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_orientationY_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_orientationY>>(
+  late final _PannerNode_orientationYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_orientationY');
-  late final _dart_PannerNode_orientationY _PannerNode_orientationY =
-      _PannerNode_orientationY_ptr.asFunction<_dart_PannerNode_orientationY>();
+  late final _PannerNode_orientationY =
+      _PannerNode_orientationYPtr.asFunction<int Function(int)>();
 
   int PannerNode_orientationZ(
     int nodeId,
@@ -10454,11 +11160,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_orientationZ_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_orientationZ>>(
+  late final _PannerNode_orientationZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_orientationZ');
-  late final _dart_PannerNode_orientationZ _PannerNode_orientationZ =
-      _PannerNode_orientationZ_ptr.asFunction<_dart_PannerNode_orientationZ>();
+  late final _PannerNode_orientationZ =
+      _PannerNode_orientationZPtr.asFunction<int Function(int)>();
 
   void PannerNode_setVelocity(
     int nodeId,
@@ -10474,11 +11180,12 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setVelocity_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setVelocity>>(
-          'PannerNode_setVelocity');
-  late final _dart_PannerNode_setVelocity _PannerNode_setVelocity =
-      _PannerNode_setVelocity_ptr.asFunction<_dart_PannerNode_setVelocity>();
+  late final _PannerNode_setVelocityPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('PannerNode_setVelocity');
+  late final _PannerNode_setVelocity = _PannerNode_setVelocityPtr.asFunction<
+      void Function(int, double, double, double)>();
 
   int PannerNode_velocityX(
     int nodeId,
@@ -10488,11 +11195,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_velocityX_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_velocityX>>(
+  late final _PannerNode_velocityXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_velocityX');
-  late final _dart_PannerNode_velocityX _PannerNode_velocityX =
-      _PannerNode_velocityX_ptr.asFunction<_dart_PannerNode_velocityX>();
+  late final _PannerNode_velocityX =
+      _PannerNode_velocityXPtr.asFunction<int Function(int)>();
 
   int PannerNode_velocityY(
     int nodeId,
@@ -10502,11 +11209,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_velocityY_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_velocityY>>(
+  late final _PannerNode_velocityYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_velocityY');
-  late final _dart_PannerNode_velocityY _PannerNode_velocityY =
-      _PannerNode_velocityY_ptr.asFunction<_dart_PannerNode_velocityY>();
+  late final _PannerNode_velocityY =
+      _PannerNode_velocityYPtr.asFunction<int Function(int)>();
 
   int PannerNode_velocityZ(
     int nodeId,
@@ -10516,11 +11223,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_velocityZ_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_velocityZ>>(
+  late final _PannerNode_velocityZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_velocityZ');
-  late final _dart_PannerNode_velocityZ _PannerNode_velocityZ =
-      _PannerNode_velocityZ_ptr.asFunction<_dart_PannerNode_velocityZ>();
+  late final _PannerNode_velocityZ =
+      _PannerNode_velocityZPtr.asFunction<int Function(int)>();
 
   int PannerNode_distanceGain(
     int nodeId,
@@ -10530,11 +11237,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_distanceGain_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_distanceGain>>(
+  late final _PannerNode_distanceGainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_distanceGain');
-  late final _dart_PannerNode_distanceGain _PannerNode_distanceGain =
-      _PannerNode_distanceGain_ptr.asFunction<_dart_PannerNode_distanceGain>();
+  late final _PannerNode_distanceGain =
+      _PannerNode_distanceGainPtr.asFunction<int Function(int)>();
 
   int PannerNode_coneGain(
     int nodeId,
@@ -10544,11 +11251,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_coneGain_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_coneGain>>(
+  late final _PannerNode_coneGainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PannerNode_coneGain');
-  late final _dart_PannerNode_coneGain _PannerNode_coneGain =
-      _PannerNode_coneGain_ptr.asFunction<_dart_PannerNode_coneGain>();
+  late final _PannerNode_coneGain =
+      _PannerNode_coneGainPtr.asFunction<int Function(int)>();
 
   double PannerNode_refDistance(
     int nodeId,
@@ -10558,11 +11265,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_refDistance_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_refDistance>>(
+  late final _PannerNode_refDistancePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PannerNode_refDistance');
-  late final _dart_PannerNode_refDistance _PannerNode_refDistance =
-      _PannerNode_refDistance_ptr.asFunction<_dart_PannerNode_refDistance>();
+  late final _PannerNode_refDistance =
+      _PannerNode_refDistancePtr.asFunction<double Function(int)>();
 
   void PannerNode_setRefDistance(
     int nodeId,
@@ -10574,12 +11281,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setRefDistance_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setRefDistance>>(
+  late final _PannerNode_setRefDistancePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'PannerNode_setRefDistance');
-  late final _dart_PannerNode_setRefDistance _PannerNode_setRefDistance =
-      _PannerNode_setRefDistance_ptr.asFunction<
-          _dart_PannerNode_setRefDistance>();
+  late final _PannerNode_setRefDistance =
+      _PannerNode_setRefDistancePtr.asFunction<void Function(int, double)>();
 
   double PannerNode_maxDistance(
     int nodeId,
@@ -10589,11 +11295,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_maxDistance_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_maxDistance>>(
+  late final _PannerNode_maxDistancePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PannerNode_maxDistance');
-  late final _dart_PannerNode_maxDistance _PannerNode_maxDistance =
-      _PannerNode_maxDistance_ptr.asFunction<_dart_PannerNode_maxDistance>();
+  late final _PannerNode_maxDistance =
+      _PannerNode_maxDistancePtr.asFunction<double Function(int)>();
 
   void PannerNode_setMaxDistance(
     int nodeId,
@@ -10605,12 +11311,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setMaxDistance_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setMaxDistance>>(
+  late final _PannerNode_setMaxDistancePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'PannerNode_setMaxDistance');
-  late final _dart_PannerNode_setMaxDistance _PannerNode_setMaxDistance =
-      _PannerNode_setMaxDistance_ptr.asFunction<
-          _dart_PannerNode_setMaxDistance>();
+  late final _PannerNode_setMaxDistance =
+      _PannerNode_setMaxDistancePtr.asFunction<void Function(int, double)>();
 
   double PannerNode_rolloffFactor(
     int nodeId,
@@ -10620,12 +11325,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_rolloffFactor_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_rolloffFactor>>(
+  late final _PannerNode_rolloffFactorPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PannerNode_rolloffFactor');
-  late final _dart_PannerNode_rolloffFactor _PannerNode_rolloffFactor =
-      _PannerNode_rolloffFactor_ptr.asFunction<
-          _dart_PannerNode_rolloffFactor>();
+  late final _PannerNode_rolloffFactor =
+      _PannerNode_rolloffFactorPtr.asFunction<double Function(int)>();
 
   void PannerNode_setRolloffFactor(
     int nodeId,
@@ -10637,12 +11341,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setRolloffFactor_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setRolloffFactor>>(
+  late final _PannerNode_setRolloffFactorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'PannerNode_setRolloffFactor');
-  late final _dart_PannerNode_setRolloffFactor _PannerNode_setRolloffFactor =
-      _PannerNode_setRolloffFactor_ptr.asFunction<
-          _dart_PannerNode_setRolloffFactor>();
+  late final _PannerNode_setRolloffFactor =
+      _PannerNode_setRolloffFactorPtr.asFunction<void Function(int, double)>();
 
   double PannerNode_coneInnerAngle(
     int nodeId,
@@ -10652,12 +11355,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_coneInnerAngle_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_coneInnerAngle>>(
+  late final _PannerNode_coneInnerAnglePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PannerNode_coneInnerAngle');
-  late final _dart_PannerNode_coneInnerAngle _PannerNode_coneInnerAngle =
-      _PannerNode_coneInnerAngle_ptr.asFunction<
-          _dart_PannerNode_coneInnerAngle>();
+  late final _PannerNode_coneInnerAngle =
+      _PannerNode_coneInnerAnglePtr.asFunction<double Function(int)>();
 
   void PannerNode_setConeInnerAngle(
     int nodeId,
@@ -10669,12 +11371,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setConeInnerAngle_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setConeInnerAngle>>(
+  late final _PannerNode_setConeInnerAnglePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'PannerNode_setConeInnerAngle');
-  late final _dart_PannerNode_setConeInnerAngle _PannerNode_setConeInnerAngle =
-      _PannerNode_setConeInnerAngle_ptr.asFunction<
-          _dart_PannerNode_setConeInnerAngle>();
+  late final _PannerNode_setConeInnerAngle =
+      _PannerNode_setConeInnerAnglePtr.asFunction<void Function(int, double)>();
 
   double PannerNode_coneOuterAngle(
     int nodeId,
@@ -10684,12 +11385,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_coneOuterAngle_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_coneOuterAngle>>(
+  late final _PannerNode_coneOuterAnglePtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PannerNode_coneOuterAngle');
-  late final _dart_PannerNode_coneOuterAngle _PannerNode_coneOuterAngle =
-      _PannerNode_coneOuterAngle_ptr.asFunction<
-          _dart_PannerNode_coneOuterAngle>();
+  late final _PannerNode_coneOuterAngle =
+      _PannerNode_coneOuterAnglePtr.asFunction<double Function(int)>();
 
   void PannerNode_setConeOuterAngle(
     int nodeId,
@@ -10701,12 +11401,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setConeOuterAngle_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setConeOuterAngle>>(
+  late final _PannerNode_setConeOuterAnglePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'PannerNode_setConeOuterAngle');
-  late final _dart_PannerNode_setConeOuterAngle _PannerNode_setConeOuterAngle =
-      _PannerNode_setConeOuterAngle_ptr.asFunction<
-          _dart_PannerNode_setConeOuterAngle>();
+  late final _PannerNode_setConeOuterAngle =
+      _PannerNode_setConeOuterAnglePtr.asFunction<void Function(int, double)>();
 
   double PannerNode_coneOuterGain(
     int nodeId,
@@ -10716,12 +11415,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_coneOuterGain_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_coneOuterGain>>(
+  late final _PannerNode_coneOuterGainPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PannerNode_coneOuterGain');
-  late final _dart_PannerNode_coneOuterGain _PannerNode_coneOuterGain =
-      _PannerNode_coneOuterGain_ptr.asFunction<
-          _dart_PannerNode_coneOuterGain>();
+  late final _PannerNode_coneOuterGain =
+      _PannerNode_coneOuterGainPtr.asFunction<double Function(int)>();
 
   void PannerNode_setConeOuterGain(
     int nodeId,
@@ -10733,12 +11431,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_setConeOuterGain_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_setConeOuterGain>>(
+  late final _PannerNode_setConeOuterGainPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'PannerNode_setConeOuterGain');
-  late final _dart_PannerNode_setConeOuterGain _PannerNode_setConeOuterGain =
-      _PannerNode_setConeOuterGain_ptr.asFunction<
-          _dart_PannerNode_setConeOuterGain>();
+  late final _PannerNode_setConeOuterGain =
+      _PannerNode_setConeOuterGainPtr.asFunction<void Function(int, double)>();
 
   void PannerNode_getAzimuthElevation(
     int nodeId,
@@ -10754,12 +11451,17 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_getAzimuthElevation_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_getAzimuthElevation>>(
-          'PannerNode_getAzimuthElevation');
-  late final _dart_PannerNode_getAzimuthElevation
-      _PannerNode_getAzimuthElevation = _PannerNode_getAzimuthElevation_ptr
-          .asFunction<_dart_PannerNode_getAzimuthElevation>();
+  late final _PannerNode_getAzimuthElevationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>>('PannerNode_getAzimuthElevation');
+  late final _PannerNode_getAzimuthElevation =
+      _PannerNode_getAzimuthElevationPtr.asFunction<
+          void Function(int, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>();
 
   void PannerNode_dopplerRate(
     int nodeId,
@@ -10771,29 +11473,31 @@ class LabSoundBind {
     );
   }
 
-  late final _PannerNode_dopplerRate_ptr =
-      _lookup<ffi.NativeFunction<_c_PannerNode_dopplerRate>>(
-          'PannerNode_dopplerRate');
-  late final _dart_PannerNode_dopplerRate _PannerNode_dopplerRate =
-      _PannerNode_dopplerRate_ptr.asFunction<_dart_PannerNode_dopplerRate>();
+  late final _PannerNode_dopplerRatePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int, ffi.Pointer<ffi.Void>)>>('PannerNode_dopplerRate');
+  late final _PannerNode_dopplerRate = _PannerNode_dopplerRatePtr.asFunction<
+      void Function(int, ffi.Pointer<ffi.Void>)>();
 
   /// ////////////////////////
   /// ChannelSplitterNode ///
   /// ////////////////////////
   int createChannelSplitterNode(
     ffi.Pointer<ffi.Void> context,
+    int numberOfOutputs,
   ) {
     return _createChannelSplitterNode(
       context,
+      numberOfOutputs,
     );
   }
 
-  late final _createChannelSplitterNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createChannelSplitterNode>>(
-          'createChannelSplitterNode');
-  late final _dart_createChannelSplitterNode _createChannelSplitterNode =
-      _createChannelSplitterNode_ptr
-          .asFunction<_dart_createChannelSplitterNode>();
+  late final _createChannelSplitterNodePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
+      'createChannelSplitterNode');
+  late final _createChannelSplitterNode = _createChannelSplitterNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
   void ChannelSplitterNode_addOutputs(
     int nodeId,
@@ -10805,29 +11509,30 @@ class LabSoundBind {
     );
   }
 
-  late final _ChannelSplitterNode_addOutputs_ptr =
-      _lookup<ffi.NativeFunction<_c_ChannelSplitterNode_addOutputs>>(
+  late final _ChannelSplitterNode_addOutputsPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'ChannelSplitterNode_addOutputs');
-  late final _dart_ChannelSplitterNode_addOutputs
-      _ChannelSplitterNode_addOutputs = _ChannelSplitterNode_addOutputs_ptr
-          .asFunction<_dart_ChannelSplitterNode_addOutputs>();
+  late final _ChannelSplitterNode_addOutputs =
+      _ChannelSplitterNode_addOutputsPtr.asFunction<void Function(int, int)>();
 
   /// //////////////////////
   /// ChannelMergerNode ///
   /// //////////////////////
   int createChannelMergerNode(
     ffi.Pointer<ffi.Void> context,
+    int numberOfInputs,
   ) {
     return _createChannelMergerNode(
       context,
+      numberOfInputs,
     );
   }
 
-  late final _createChannelMergerNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createChannelMergerNode>>(
-          'createChannelMergerNode');
-  late final _dart_createChannelMergerNode _createChannelMergerNode =
-      _createChannelMergerNode_ptr.asFunction<_dart_createChannelMergerNode>();
+  late final _createChannelMergerNodePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
+      'createChannelMergerNode');
+  late final _createChannelMergerNode = _createChannelMergerNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
   void ChannelMergerNode_addInputs(
     int nodeId,
@@ -10839,12 +11544,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ChannelMergerNode_addInputs_ptr =
-      _lookup<ffi.NativeFunction<_c_ChannelMergerNode_addInputs>>(
+  late final _ChannelMergerNode_addInputsPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'ChannelMergerNode_addInputs');
-  late final _dart_ChannelMergerNode_addInputs _ChannelMergerNode_addInputs =
-      _ChannelMergerNode_addInputs_ptr.asFunction<
-          _dart_ChannelMergerNode_addInputs>();
+  late final _ChannelMergerNode_addInputs =
+      _ChannelMergerNode_addInputsPtr.asFunction<void Function(int, int)>();
 
   void ChannelMergerNode_setOutputChannelCount(
     int nodeId,
@@ -10856,13 +11560,12 @@ class LabSoundBind {
     );
   }
 
-  late final _ChannelMergerNode_setOutputChannelCount_ptr =
-      _lookup<ffi.NativeFunction<_c_ChannelMergerNode_setOutputChannelCount>>(
+  late final _ChannelMergerNode_setOutputChannelCountPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'ChannelMergerNode_setOutputChannelCount');
-  late final _dart_ChannelMergerNode_setOutputChannelCount
-      _ChannelMergerNode_setOutputChannelCount =
-      _ChannelMergerNode_setOutputChannelCount_ptr.asFunction<
-          _dart_ChannelMergerNode_setOutputChannelCount>();
+  late final _ChannelMergerNode_setOutputChannelCount =
+      _ChannelMergerNode_setOutputChannelCountPtr.asFunction<
+          void Function(int, int)>();
 
   /// ////////////////////////////
   /// AudioHardwareDeviceNode ///
@@ -10879,12 +11582,14 @@ class LabSoundBind {
     );
   }
 
-  late final _createAudioHardwareDeviceNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createAudioHardwareDeviceNode>>(
-          'createAudioHardwareDeviceNode');
-  late final _dart_createAudioHardwareDeviceNode
-      _createAudioHardwareDeviceNode = _createAudioHardwareDeviceNode_ptr
-          .asFunction<_dart_createAudioHardwareDeviceNode>();
+  late final _createAudioHardwareDeviceNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, AudioStreamConfig,
+              AudioStreamConfig)>>('createAudioHardwareDeviceNode');
+  late final _createAudioHardwareDeviceNode =
+      _createAudioHardwareDeviceNodePtr.asFunction<
+          int Function(
+              ffi.Pointer<ffi.Void>, AudioStreamConfig, AudioStreamConfig)>();
 
   void AudioHardwareDeviceNode_start(
     int nodeId,
@@ -10894,12 +11599,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioHardwareDeviceNode_start_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_start>>(
+  late final _AudioHardwareDeviceNode_startPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'AudioHardwareDeviceNode_start');
-  late final _dart_AudioHardwareDeviceNode_start
-      _AudioHardwareDeviceNode_start = _AudioHardwareDeviceNode_start_ptr
-          .asFunction<_dart_AudioHardwareDeviceNode_start>();
+  late final _AudioHardwareDeviceNode_start =
+      _AudioHardwareDeviceNode_startPtr.asFunction<void Function(int)>();
 
   void AudioHardwareDeviceNode_stop(
     int nodeId,
@@ -10909,12 +11613,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioHardwareDeviceNode_stop_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_stop>>(
+  late final _AudioHardwareDeviceNode_stopPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'AudioHardwareDeviceNode_stop');
-  late final _dart_AudioHardwareDeviceNode_stop _AudioHardwareDeviceNode_stop =
-      _AudioHardwareDeviceNode_stop_ptr.asFunction<
-          _dart_AudioHardwareDeviceNode_stop>();
+  late final _AudioHardwareDeviceNode_stop =
+      _AudioHardwareDeviceNode_stopPtr.asFunction<void Function(int)>();
 
   int AudioHardwareDeviceNode_isRunning(
     int nodeId,
@@ -10924,13 +11627,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioHardwareDeviceNode_isRunning_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_isRunning>>(
+  late final _AudioHardwareDeviceNode_isRunningPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioHardwareDeviceNode_isRunning');
-  late final _dart_AudioHardwareDeviceNode_isRunning
-      _AudioHardwareDeviceNode_isRunning =
-      _AudioHardwareDeviceNode_isRunning_ptr.asFunction<
-          _dart_AudioHardwareDeviceNode_isRunning>();
+  late final _AudioHardwareDeviceNode_isRunning =
+      _AudioHardwareDeviceNode_isRunningPtr.asFunction<int Function(int)>();
 
   AudioStreamConfig AudioHardwareDeviceNode_getOutputConfig(
     int nodeId,
@@ -10940,13 +11641,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioHardwareDeviceNode_getOutputConfig_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_getOutputConfig>>(
+  late final _AudioHardwareDeviceNode_getOutputConfigPtr =
+      _lookup<ffi.NativeFunction<AudioStreamConfig Function(ffi.Int)>>(
           'AudioHardwareDeviceNode_getOutputConfig');
-  late final _dart_AudioHardwareDeviceNode_getOutputConfig
-      _AudioHardwareDeviceNode_getOutputConfig =
-      _AudioHardwareDeviceNode_getOutputConfig_ptr.asFunction<
-          _dart_AudioHardwareDeviceNode_getOutputConfig>();
+  late final _AudioHardwareDeviceNode_getOutputConfig =
+      _AudioHardwareDeviceNode_getOutputConfigPtr.asFunction<
+          AudioStreamConfig Function(int)>();
 
   AudioStreamConfig AudioHardwareDeviceNode_getInputConfig(
     int nodeId,
@@ -10956,13 +11656,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioHardwareDeviceNode_getInputConfig_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioHardwareDeviceNode_getInputConfig>>(
+  late final _AudioHardwareDeviceNode_getInputConfigPtr =
+      _lookup<ffi.NativeFunction<AudioStreamConfig Function(ffi.Int)>>(
           'AudioHardwareDeviceNode_getInputConfig');
-  late final _dart_AudioHardwareDeviceNode_getInputConfig
-      _AudioHardwareDeviceNode_getInputConfig =
-      _AudioHardwareDeviceNode_getInputConfig_ptr.asFunction<
-          _dart_AudioHardwareDeviceNode_getInputConfig>();
+  late final _AudioHardwareDeviceNode_getInputConfig =
+      _AudioHardwareDeviceNode_getInputConfigPtr.asFunction<
+          AudioStreamConfig Function(int)>();
 
   AudioStreamConfig createAudioStreamConfig(
     int device_index,
@@ -10976,11 +11675,12 @@ class LabSoundBind {
     );
   }
 
-  late final _createAudioStreamConfig_ptr =
-      _lookup<ffi.NativeFunction<_c_createAudioStreamConfig>>(
-          'createAudioStreamConfig');
-  late final _dart_createAudioStreamConfig _createAudioStreamConfig =
-      _createAudioStreamConfig_ptr.asFunction<_dart_createAudioStreamConfig>();
+  late final _createAudioStreamConfigPtr = _lookup<
+      ffi.NativeFunction<
+          AudioStreamConfig Function(
+              ffi.Int, ffi.Uint32, ffi.Float)>>('createAudioStreamConfig');
+  late final _createAudioStreamConfig = _createAudioStreamConfigPtr
+      .asFunction<AudioStreamConfig Function(int, int, double)>();
 
   void AudioHardwareDeviceNode_backendReinitialize(
     int nodeId,
@@ -10990,13 +11690,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioHardwareDeviceNode_backendReinitialize_ptr = _lookup<
-          ffi.NativeFunction<_c_AudioHardwareDeviceNode_backendReinitialize>>(
-      'AudioHardwareDeviceNode_backendReinitialize');
-  late final _dart_AudioHardwareDeviceNode_backendReinitialize
-      _AudioHardwareDeviceNode_backendReinitialize =
-      _AudioHardwareDeviceNode_backendReinitialize_ptr.asFunction<
-          _dart_AudioHardwareDeviceNode_backendReinitialize>();
+  late final _AudioHardwareDeviceNode_backendReinitializePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'AudioHardwareDeviceNode_backendReinitialize');
+  late final _AudioHardwareDeviceNode_backendReinitialize =
+      _AudioHardwareDeviceNode_backendReinitializePtr.asFunction<
+          void Function(int)>();
 
   /// ///////////////////////////
   /// DynamicsCompressorNode ///
@@ -11009,12 +11708,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createDynamicsCompressorNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createDynamicsCompressorNode>>(
+  late final _createDynamicsCompressorNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createDynamicsCompressorNode');
-  late final _dart_createDynamicsCompressorNode _createDynamicsCompressorNode =
-      _createDynamicsCompressorNode_ptr
-          .asFunction<_dart_createDynamicsCompressorNode>();
+  late final _createDynamicsCompressorNode = _createDynamicsCompressorNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int DynamicsCompressorNode_threshold(
     int nodeId,
@@ -11024,12 +11722,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DynamicsCompressorNode_threshold_ptr =
-      _lookup<ffi.NativeFunction<_c_DynamicsCompressorNode_threshold>>(
+  late final _DynamicsCompressorNode_thresholdPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DynamicsCompressorNode_threshold');
-  late final _dart_DynamicsCompressorNode_threshold
-      _DynamicsCompressorNode_threshold = _DynamicsCompressorNode_threshold_ptr
-          .asFunction<_dart_DynamicsCompressorNode_threshold>();
+  late final _DynamicsCompressorNode_threshold =
+      _DynamicsCompressorNode_thresholdPtr.asFunction<int Function(int)>();
 
   int DynamicsCompressorNode_knee(
     int nodeId,
@@ -11039,12 +11736,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DynamicsCompressorNode_knee_ptr =
-      _lookup<ffi.NativeFunction<_c_DynamicsCompressorNode_knee>>(
+  late final _DynamicsCompressorNode_kneePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DynamicsCompressorNode_knee');
-  late final _dart_DynamicsCompressorNode_knee _DynamicsCompressorNode_knee =
-      _DynamicsCompressorNode_knee_ptr.asFunction<
-          _dart_DynamicsCompressorNode_knee>();
+  late final _DynamicsCompressorNode_knee =
+      _DynamicsCompressorNode_kneePtr.asFunction<int Function(int)>();
 
   int DynamicsCompressorNode_ratio(
     int nodeId,
@@ -11054,12 +11750,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DynamicsCompressorNode_ratio_ptr =
-      _lookup<ffi.NativeFunction<_c_DynamicsCompressorNode_ratio>>(
+  late final _DynamicsCompressorNode_ratioPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DynamicsCompressorNode_ratio');
-  late final _dart_DynamicsCompressorNode_ratio _DynamicsCompressorNode_ratio =
-      _DynamicsCompressorNode_ratio_ptr.asFunction<
-          _dart_DynamicsCompressorNode_ratio>();
+  late final _DynamicsCompressorNode_ratio =
+      _DynamicsCompressorNode_ratioPtr.asFunction<int Function(int)>();
 
   int DynamicsCompressorNode_attack(
     int nodeId,
@@ -11069,12 +11764,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DynamicsCompressorNode_attack_ptr =
-      _lookup<ffi.NativeFunction<_c_DynamicsCompressorNode_attack>>(
+  late final _DynamicsCompressorNode_attackPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DynamicsCompressorNode_attack');
-  late final _dart_DynamicsCompressorNode_attack
-      _DynamicsCompressorNode_attack = _DynamicsCompressorNode_attack_ptr
-          .asFunction<_dart_DynamicsCompressorNode_attack>();
+  late final _DynamicsCompressorNode_attack =
+      _DynamicsCompressorNode_attackPtr.asFunction<int Function(int)>();
 
   int DynamicsCompressorNode_release(
     int nodeId,
@@ -11084,12 +11778,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DynamicsCompressorNode_release_ptr =
-      _lookup<ffi.NativeFunction<_c_DynamicsCompressorNode_release>>(
+  late final _DynamicsCompressorNode_releasePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DynamicsCompressorNode_release');
-  late final _dart_DynamicsCompressorNode_release
-      _DynamicsCompressorNode_release = _DynamicsCompressorNode_release_ptr
-          .asFunction<_dart_DynamicsCompressorNode_release>();
+  late final _DynamicsCompressorNode_release =
+      _DynamicsCompressorNode_releasePtr.asFunction<int Function(int)>();
 
   int DynamicsCompressorNode_reduction(
     int nodeId,
@@ -11099,12 +11792,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DynamicsCompressorNode_reduction_ptr =
-      _lookup<ffi.NativeFunction<_c_DynamicsCompressorNode_reduction>>(
+  late final _DynamicsCompressorNode_reductionPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DynamicsCompressorNode_reduction');
-  late final _dart_DynamicsCompressorNode_reduction
-      _DynamicsCompressorNode_reduction = _DynamicsCompressorNode_reduction_ptr
-          .asFunction<_dart_DynamicsCompressorNode_reduction>();
+  late final _DynamicsCompressorNode_reduction =
+      _DynamicsCompressorNode_reductionPtr.asFunction<int Function(int)>();
 
   /// /////////////
   /// ADSRNode ///
@@ -11117,10 +11809,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createADSRNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createADSRNode>>('createADSRNode');
-  late final _dart_createADSRNode _createADSRNode =
-      _createADSRNode_ptr.asFunction<_dart_createADSRNode>();
+  late final _createADSRNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createADSRNode');
+  late final _createADSRNode =
+      _createADSRNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int ADSRNode_finished(
     int nodeId,
@@ -11132,10 +11825,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_finished_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_finished>>('ADSRNode_finished');
-  late final _dart_ADSRNode_finished _ADSRNode_finished =
-      _ADSRNode_finished_ptr.asFunction<_dart_ADSRNode_finished>();
+  late final _ADSRNode_finishedPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Void>)>>(
+      'ADSRNode_finished');
+  late final _ADSRNode_finished = _ADSRNode_finishedPtr.asFunction<
+      int Function(int, ffi.Pointer<ffi.Void>)>();
 
   void ADSRNode_set(
     int nodeId,
@@ -11157,10 +11851,12 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_set_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_set>>('ADSRNode_set');
-  late final _dart_ADSRNode_set _ADSRNode_set =
-      _ADSRNode_set_ptr.asFunction<_dart_ADSRNode_set>();
+  late final _ADSRNode_setPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float,
+              ffi.Float, ffi.Float)>>('ADSRNode_set');
+  late final _ADSRNode_set = _ADSRNode_setPtr.asFunction<
+      void Function(int, double, double, double, double, double, double)>();
 
   int ADSRNode_gate(
     int nodeId,
@@ -11170,10 +11866,9 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_gate_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_gate>>('ADSRNode_gate');
-  late final _dart_ADSRNode_gate _ADSRNode_gate =
-      _ADSRNode_gate_ptr.asFunction<_dart_ADSRNode_gate>();
+  late final _ADSRNode_gatePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('ADSRNode_gate');
+  late final _ADSRNode_gate = _ADSRNode_gatePtr.asFunction<int Function(int)>();
 
   int ADSRNode_oneShot(
     int nodeId,
@@ -11183,10 +11878,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_oneShot_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_oneShot>>('ADSRNode_oneShot');
-  late final _dart_ADSRNode_oneShot _ADSRNode_oneShot =
-      _ADSRNode_oneShot_ptr.asFunction<_dart_ADSRNode_oneShot>();
+  late final _ADSRNode_oneShotPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'ADSRNode_oneShot');
+  late final _ADSRNode_oneShot =
+      _ADSRNode_oneShotPtr.asFunction<int Function(int)>();
 
   int ADSRNode_attackTime(
     int nodeId,
@@ -11196,11 +11892,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_attackTime_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_attackTime>>(
+  late final _ADSRNode_attackTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'ADSRNode_attackTime');
-  late final _dart_ADSRNode_attackTime _ADSRNode_attackTime =
-      _ADSRNode_attackTime_ptr.asFunction<_dart_ADSRNode_attackTime>();
+  late final _ADSRNode_attackTime =
+      _ADSRNode_attackTimePtr.asFunction<int Function(int)>();
 
   int ADSRNode_attackLevel(
     int nodeId,
@@ -11210,11 +11906,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_attackLevel_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_attackLevel>>(
+  late final _ADSRNode_attackLevelPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'ADSRNode_attackLevel');
-  late final _dart_ADSRNode_attackLevel _ADSRNode_attackLevel =
-      _ADSRNode_attackLevel_ptr.asFunction<_dart_ADSRNode_attackLevel>();
+  late final _ADSRNode_attackLevel =
+      _ADSRNode_attackLevelPtr.asFunction<int Function(int)>();
 
   int ADSRNode_decayTime(
     int nodeId,
@@ -11224,10 +11920,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_decayTime_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_decayTime>>('ADSRNode_decayTime');
-  late final _dart_ADSRNode_decayTime _ADSRNode_decayTime =
-      _ADSRNode_decayTime_ptr.asFunction<_dart_ADSRNode_decayTime>();
+  late final _ADSRNode_decayTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'ADSRNode_decayTime');
+  late final _ADSRNode_decayTime =
+      _ADSRNode_decayTimePtr.asFunction<int Function(int)>();
 
   int ADSRNode_sustainTime(
     int nodeId,
@@ -11237,11 +11934,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_sustainTime_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_sustainTime>>(
+  late final _ADSRNode_sustainTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'ADSRNode_sustainTime');
-  late final _dart_ADSRNode_sustainTime _ADSRNode_sustainTime =
-      _ADSRNode_sustainTime_ptr.asFunction<_dart_ADSRNode_sustainTime>();
+  late final _ADSRNode_sustainTime =
+      _ADSRNode_sustainTimePtr.asFunction<int Function(int)>();
 
   int ADSRNode_sustainLevel(
     int nodeId,
@@ -11251,11 +11948,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_sustainLevel_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_sustainLevel>>(
+  late final _ADSRNode_sustainLevelPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'ADSRNode_sustainLevel');
-  late final _dart_ADSRNode_sustainLevel _ADSRNode_sustainLevel =
-      _ADSRNode_sustainLevel_ptr.asFunction<_dart_ADSRNode_sustainLevel>();
+  late final _ADSRNode_sustainLevel =
+      _ADSRNode_sustainLevelPtr.asFunction<int Function(int)>();
 
   int ADSRNode_releaseTime(
     int nodeId,
@@ -11265,11 +11962,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ADSRNode_releaseTime_ptr =
-      _lookup<ffi.NativeFunction<_c_ADSRNode_releaseTime>>(
+  late final _ADSRNode_releaseTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'ADSRNode_releaseTime');
-  late final _dart_ADSRNode_releaseTime _ADSRNode_releaseTime =
-      _ADSRNode_releaseTime_ptr.asFunction<_dart_ADSRNode_releaseTime>();
+  late final _ADSRNode_releaseTime =
+      _ADSRNode_releaseTimePtr.asFunction<int Function(int)>();
 
   /// ///////////////////
   /// WaveShaperNode ///
@@ -11282,11 +11979,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createWaveShaperNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createWaveShaperNode>>(
+  late final _createWaveShaperNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createWaveShaperNode');
-  late final _dart_createWaveShaperNode _createWaveShaperNode =
-      _createWaveShaperNode_ptr.asFunction<_dart_createWaveShaperNode>();
+  late final _createWaveShaperNode = _createWaveShaperNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   void WaveShaperNode_setCurve(
     int nodeId,
@@ -11300,11 +11997,12 @@ class LabSoundBind {
     );
   }
 
-  late final _WaveShaperNode_setCurve_ptr =
-      _lookup<ffi.NativeFunction<_c_WaveShaperNode_setCurve>>(
-          'WaveShaperNode_setCurve');
-  late final _dart_WaveShaperNode_setCurve _WaveShaperNode_setCurve =
-      _WaveShaperNode_setCurve_ptr.asFunction<_dart_WaveShaperNode_setCurve>();
+  late final _WaveShaperNode_setCurvePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int,
+              ffi.Pointer<ffi.Float>)>>('WaveShaperNode_setCurve');
+  late final _WaveShaperNode_setCurve = _WaveShaperNode_setCurvePtr.asFunction<
+      void Function(int, int, ffi.Pointer<ffi.Float>)>();
 
   /// //////////////
   /// NoiseNode ///
@@ -11317,10 +12015,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createNoiseNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createNoiseNode>>('createNoiseNode');
-  late final _dart_createNoiseNode _createNoiseNode =
-      _createNoiseNode_ptr.asFunction<_dart_createNoiseNode>();
+  late final _createNoiseNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createNoiseNode');
+  late final _createNoiseNode =
+      _createNoiseNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int NoiseNode_type(
     int nodeId,
@@ -11330,10 +12029,10 @@ class LabSoundBind {
     );
   }
 
-  late final _NoiseNode_type_ptr =
-      _lookup<ffi.NativeFunction<_c_NoiseNode_type>>('NoiseNode_type');
-  late final _dart_NoiseNode_type _NoiseNode_type =
-      _NoiseNode_type_ptr.asFunction<_dart_NoiseNode_type>();
+  late final _NoiseNode_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('NoiseNode_type');
+  late final _NoiseNode_type =
+      _NoiseNode_typePtr.asFunction<int Function(int)>();
 
   void NoiseNode_setType(
     int nodeId,
@@ -11345,10 +12044,11 @@ class LabSoundBind {
     );
   }
 
-  late final _NoiseNode_setType_ptr =
-      _lookup<ffi.NativeFunction<_c_NoiseNode_setType>>('NoiseNode_setType');
-  late final _dart_NoiseNode_setType _NoiseNode_setType =
-      _NoiseNode_setType_ptr.asFunction<_dart_NoiseNode_setType>();
+  late final _NoiseNode_setTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
+          'NoiseNode_setType');
+  late final _NoiseNode_setType =
+      _NoiseNode_setTypePtr.asFunction<void Function(int, int)>();
 
   /// /////////////////
   /// PolyBLEPNode ///
@@ -11361,10 +12061,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createPolyBLEPNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createPolyBLEPNode>>('createPolyBLEPNode');
-  late final _dart_createPolyBLEPNode _createPolyBLEPNode =
-      _createPolyBLEPNode_ptr.asFunction<_dart_createPolyBLEPNode>();
+  late final _createPolyBLEPNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createPolyBLEPNode');
+  late final _createPolyBLEPNode =
+      _createPolyBLEPNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int PolyBLEPNode_type(
     int nodeId,
@@ -11374,10 +12075,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PolyBLEPNode_type_ptr =
-      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_type>>('PolyBLEPNode_type');
-  late final _dart_PolyBLEPNode_type _PolyBLEPNode_type =
-      _PolyBLEPNode_type_ptr.asFunction<_dart_PolyBLEPNode_type>();
+  late final _PolyBLEPNode_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'PolyBLEPNode_type');
+  late final _PolyBLEPNode_type =
+      _PolyBLEPNode_typePtr.asFunction<int Function(int)>();
 
   void PolyBLEPNode_setType(
     int nodeId,
@@ -11389,11 +12091,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PolyBLEPNode_setType_ptr =
-      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_setType>>(
+  late final _PolyBLEPNode_setTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'PolyBLEPNode_setType');
-  late final _dart_PolyBLEPNode_setType _PolyBLEPNode_setType =
-      _PolyBLEPNode_setType_ptr.asFunction<_dart_PolyBLEPNode_setType>();
+  late final _PolyBLEPNode_setType =
+      _PolyBLEPNode_setTypePtr.asFunction<void Function(int, int)>();
 
   int PolyBLEPNode_amplitude(
     int nodeId,
@@ -11403,11 +12105,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PolyBLEPNode_amplitude_ptr =
-      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_amplitude>>(
+  late final _PolyBLEPNode_amplitudePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PolyBLEPNode_amplitude');
-  late final _dart_PolyBLEPNode_amplitude _PolyBLEPNode_amplitude =
-      _PolyBLEPNode_amplitude_ptr.asFunction<_dart_PolyBLEPNode_amplitude>();
+  late final _PolyBLEPNode_amplitude =
+      _PolyBLEPNode_amplitudePtr.asFunction<int Function(int)>();
 
   int PolyBLEPNode_frequency(
     int nodeId,
@@ -11417,11 +12119,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PolyBLEPNode_frequency_ptr =
-      _lookup<ffi.NativeFunction<_c_PolyBLEPNode_frequency>>(
+  late final _PolyBLEPNode_frequencyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PolyBLEPNode_frequency');
-  late final _dart_PolyBLEPNode_frequency _PolyBLEPNode_frequency =
-      _PolyBLEPNode_frequency_ptr.asFunction<_dart_PolyBLEPNode_frequency>();
+  late final _PolyBLEPNode_frequency =
+      _PolyBLEPNode_frequencyPtr.asFunction<int Function(int)>();
 
   /// //////////////
   /// DelayNode ///
@@ -11436,10 +12138,12 @@ class LabSoundBind {
     );
   }
 
-  late final _createDelayNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createDelayNode>>('createDelayNode');
-  late final _dart_createDelayNode _createDelayNode =
-      _createDelayNode_ptr.asFunction<_dart_createDelayNode>();
+  late final _createDelayNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Void>, ffi.Double)>>('createDelayNode');
+  late final _createDelayNode = _createDelayNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, double)>();
 
   int DelayNode_delayTime(
     int nodeId,
@@ -11449,11 +12153,11 @@ class LabSoundBind {
     );
   }
 
-  late final _DelayNode_delayTime_ptr =
-      _lookup<ffi.NativeFunction<_c_DelayNode_delayTime>>(
+  late final _DelayNode_delayTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'DelayNode_delayTime');
-  late final _dart_DelayNode_delayTime _DelayNode_delayTime =
-      _DelayNode_delayTime_ptr.asFunction<_dart_DelayNode_delayTime>();
+  late final _DelayNode_delayTime =
+      _DelayNode_delayTimePtr.asFunction<int Function(int)>();
 
   /// /////////////////
   /// BPMDelayNode ///
@@ -11468,10 +12172,12 @@ class LabSoundBind {
     );
   }
 
-  late final _createBPMDelayNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createBPMDelayNode>>('createBPMDelayNode');
-  late final _dart_createBPMDelayNode _createBPMDelayNode =
-      _createBPMDelayNode_ptr.asFunction<_dart_createBPMDelayNode>();
+  late final _createBPMDelayNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Void>, ffi.Float)>>('createBPMDelayNode');
+  late final _createBPMDelayNode = _createBPMDelayNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, double)>();
 
   void BPMDelayNode_setTempo(
     int nodeId,
@@ -11483,11 +12189,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BPMDelayNode_setTempo_ptr =
-      _lookup<ffi.NativeFunction<_c_BPMDelayNode_setTempo>>(
+  late final _BPMDelayNode_setTempoPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'BPMDelayNode_setTempo');
-  late final _dart_BPMDelayNode_setTempo _BPMDelayNode_setTempo =
-      _BPMDelayNode_setTempo_ptr.asFunction<_dart_BPMDelayNode_setTempo>();
+  late final _BPMDelayNode_setTempo =
+      _BPMDelayNode_setTempoPtr.asFunction<void Function(int, double)>();
 
   void BPMDelayNode_setDelayIndex(
     int nodeId,
@@ -11499,12 +12205,11 @@ class LabSoundBind {
     );
   }
 
-  late final _BPMDelayNode_setDelayIndex_ptr =
-      _lookup<ffi.NativeFunction<_c_BPMDelayNode_setDelayIndex>>(
+  late final _BPMDelayNode_setDelayIndexPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'BPMDelayNode_setDelayIndex');
-  late final _dart_BPMDelayNode_setDelayIndex _BPMDelayNode_setDelayIndex =
-      _BPMDelayNode_setDelayIndex_ptr.asFunction<
-          _dart_BPMDelayNode_setDelayIndex>();
+  late final _BPMDelayNode_setDelayIndex =
+      _BPMDelayNode_setDelayIndexPtr.asFunction<void Function(int, int)>();
 
   /// //////////////////
   /// ConvolverNode ///
@@ -11517,11 +12222,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createConvolverNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createConvolverNode>>(
+  late final _createConvolverNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createConvolverNode');
-  late final _dart_createConvolverNode _createConvolverNode =
-      _createConvolverNode_ptr.asFunction<_dart_createConvolverNode>();
+  late final _createConvolverNode =
+      _createConvolverNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int ConvolverNode_normalize(
     int nodeId,
@@ -11531,11 +12236,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ConvolverNode_normalize_ptr =
-      _lookup<ffi.NativeFunction<_c_ConvolverNode_normalize>>(
+  late final _ConvolverNode_normalizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'ConvolverNode_normalize');
-  late final _dart_ConvolverNode_normalize _ConvolverNode_normalize =
-      _ConvolverNode_normalize_ptr.asFunction<_dart_ConvolverNode_normalize>();
+  late final _ConvolverNode_normalize =
+      _ConvolverNode_normalizePtr.asFunction<int Function(int)>();
 
   void ConvolverNode_setNormalize(
     int nodeId,
@@ -11547,12 +12252,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ConvolverNode_setNormalize_ptr =
-      _lookup<ffi.NativeFunction<_c_ConvolverNode_setNormalize>>(
+  late final _ConvolverNode_setNormalizePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'ConvolverNode_setNormalize');
-  late final _dart_ConvolverNode_setNormalize _ConvolverNode_setNormalize =
-      _ConvolverNode_setNormalize_ptr.asFunction<
-          _dart_ConvolverNode_setNormalize>();
+  late final _ConvolverNode_setNormalize =
+      _ConvolverNode_setNormalizePtr.asFunction<void Function(int, int)>();
 
   void ConvolverNode_setImpulse(
     int nodeId,
@@ -11564,12 +12268,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ConvolverNode_setImpulse_ptr =
-      _lookup<ffi.NativeFunction<_c_ConvolverNode_setImpulse>>(
+  late final _ConvolverNode_setImpulsePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'ConvolverNode_setImpulse');
-  late final _dart_ConvolverNode_setImpulse _ConvolverNode_setImpulse =
-      _ConvolverNode_setImpulse_ptr.asFunction<
-          _dart_ConvolverNode_setImpulse>();
+  late final _ConvolverNode_setImpulse =
+      _ConvolverNode_setImpulsePtr.asFunction<void Function(int, int)>();
 
   /// /////////////////////
   /// StereoPannerNode ///
@@ -11582,11 +12285,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createStereoPannerNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createStereoPannerNode>>(
+  late final _createStereoPannerNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createStereoPannerNode');
-  late final _dart_createStereoPannerNode _createStereoPannerNode =
-      _createStereoPannerNode_ptr.asFunction<_dart_createStereoPannerNode>();
+  late final _createStereoPannerNode = _createStereoPannerNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int StereoPannerNode_pan(
     int nodeId,
@@ -11596,11 +12299,11 @@ class LabSoundBind {
     );
   }
 
-  late final _StereoPannerNode_pan_ptr =
-      _lookup<ffi.NativeFunction<_c_StereoPannerNode_pan>>(
+  late final _StereoPannerNode_panPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'StereoPannerNode_pan');
-  late final _dart_StereoPannerNode_pan _StereoPannerNode_pan =
-      _StereoPannerNode_pan_ptr.asFunction<_dart_StereoPannerNode_pan>();
+  late final _StereoPannerNode_pan =
+      _StereoPannerNode_panPtr.asFunction<int Function(int)>();
 
   /// /////////////////////
   /// PowerMonitorNode ///
@@ -11613,11 +12316,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createPowerMonitorNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createPowerMonitorNode>>(
+  late final _createPowerMonitorNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createPowerMonitorNode');
-  late final _dart_createPowerMonitorNode _createPowerMonitorNode =
-      _createPowerMonitorNode_ptr.asFunction<_dart_createPowerMonitorNode>();
+  late final _createPowerMonitorNode = _createPowerMonitorNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int PowerMonitorNode_windowSize(
     int nodeId,
@@ -11627,12 +12330,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PowerMonitorNode_windowSize_ptr =
-      _lookup<ffi.NativeFunction<_c_PowerMonitorNode_windowSize>>(
+  late final _PowerMonitorNode_windowSizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'PowerMonitorNode_windowSize');
-  late final _dart_PowerMonitorNode_windowSize _PowerMonitorNode_windowSize =
-      _PowerMonitorNode_windowSize_ptr.asFunction<
-          _dart_PowerMonitorNode_windowSize>();
+  late final _PowerMonitorNode_windowSize =
+      _PowerMonitorNode_windowSizePtr.asFunction<int Function(int)>();
 
   double PowerMonitorNode_db(
     int nodeId,
@@ -11642,11 +12344,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PowerMonitorNode_db_ptr =
-      _lookup<ffi.NativeFunction<_c_PowerMonitorNode_db>>(
+  late final _PowerMonitorNode_dbPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int)>>(
           'PowerMonitorNode_db');
-  late final _dart_PowerMonitorNode_db _PowerMonitorNode_db =
-      _PowerMonitorNode_db_ptr.asFunction<_dart_PowerMonitorNode_db>();
+  late final _PowerMonitorNode_db =
+      _PowerMonitorNode_dbPtr.asFunction<double Function(int)>();
 
   void PowerMonitorNode_setWindowSize(
     int nodeId,
@@ -11658,12 +12360,11 @@ class LabSoundBind {
     );
   }
 
-  late final _PowerMonitorNode_setWindowSize_ptr =
-      _lookup<ffi.NativeFunction<_c_PowerMonitorNode_setWindowSize>>(
+  late final _PowerMonitorNode_setWindowSizePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
           'PowerMonitorNode_setWindowSize');
-  late final _dart_PowerMonitorNode_setWindowSize
-      _PowerMonitorNode_setWindowSize = _PowerMonitorNode_setWindowSize_ptr
-          .asFunction<_dart_PowerMonitorNode_setWindowSize>();
+  late final _PowerMonitorNode_setWindowSize =
+      _PowerMonitorNode_setWindowSizePtr.asFunction<void Function(int, int)>();
 
   /// /////////////
   /// SfxrNode ///
@@ -11676,10 +12377,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createSfxrNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createSfxrNode>>('createSfxrNode');
-  late final _dart_createSfxrNode _createSfxrNode =
-      _createSfxrNode_ptr.asFunction<_dart_createSfxrNode>();
+  late final _createSfxrNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createSfxrNode');
+  late final _createSfxrNode =
+      _createSfxrNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   int SfxrNode_waveType(
     int nodeId,
@@ -11689,10 +12391,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_waveType_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_waveType>>('SfxrNode_waveType');
-  late final _dart_SfxrNode_waveType _SfxrNode_waveType =
-      _SfxrNode_waveType_ptr.asFunction<_dart_SfxrNode_waveType>();
+  late final _SfxrNode_waveTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'SfxrNode_waveType');
+  late final _SfxrNode_waveType =
+      _SfxrNode_waveTypePtr.asFunction<int Function(int)>();
 
   int SfxrNode_attackTime(
     int nodeId,
@@ -11702,11 +12405,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_attackTime_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_attackTime>>(
+  late final _SfxrNode_attackTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_attackTime');
-  late final _dart_SfxrNode_attackTime _SfxrNode_attackTime =
-      _SfxrNode_attackTime_ptr.asFunction<_dart_SfxrNode_attackTime>();
+  late final _SfxrNode_attackTime =
+      _SfxrNode_attackTimePtr.asFunction<int Function(int)>();
 
   int SfxrNode_sustainTime(
     int nodeId,
@@ -11716,11 +12419,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_sustainTime_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_sustainTime>>(
+  late final _SfxrNode_sustainTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_sustainTime');
-  late final _dart_SfxrNode_sustainTime _SfxrNode_sustainTime =
-      _SfxrNode_sustainTime_ptr.asFunction<_dart_SfxrNode_sustainTime>();
+  late final _SfxrNode_sustainTime =
+      _SfxrNode_sustainTimePtr.asFunction<int Function(int)>();
 
   int SfxrNode_sustainPunch(
     int nodeId,
@@ -11730,11 +12433,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_sustainPunch_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_sustainPunch>>(
+  late final _SfxrNode_sustainPunchPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_sustainPunch');
-  late final _dart_SfxrNode_sustainPunch _SfxrNode_sustainPunch =
-      _SfxrNode_sustainPunch_ptr.asFunction<_dart_SfxrNode_sustainPunch>();
+  late final _SfxrNode_sustainPunch =
+      _SfxrNode_sustainPunchPtr.asFunction<int Function(int)>();
 
   int SfxrNode_decayTime(
     int nodeId,
@@ -11744,10 +12447,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_decayTime_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_decayTime>>('SfxrNode_decayTime');
-  late final _dart_SfxrNode_decayTime _SfxrNode_decayTime =
-      _SfxrNode_decayTime_ptr.asFunction<_dart_SfxrNode_decayTime>();
+  late final _SfxrNode_decayTimePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'SfxrNode_decayTime');
+  late final _SfxrNode_decayTime =
+      _SfxrNode_decayTimePtr.asFunction<int Function(int)>();
 
   int SfxrNode_startFrequency(
     int nodeId,
@@ -11757,11 +12461,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_startFrequency_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_startFrequency>>(
+  late final _SfxrNode_startFrequencyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_startFrequency');
-  late final _dart_SfxrNode_startFrequency _SfxrNode_startFrequency =
-      _SfxrNode_startFrequency_ptr.asFunction<_dart_SfxrNode_startFrequency>();
+  late final _SfxrNode_startFrequency =
+      _SfxrNode_startFrequencyPtr.asFunction<int Function(int)>();
 
   int SfxrNode_minFrequency(
     int nodeId,
@@ -11771,11 +12475,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_minFrequency_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_minFrequency>>(
+  late final _SfxrNode_minFrequencyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_minFrequency');
-  late final _dart_SfxrNode_minFrequency _SfxrNode_minFrequency =
-      _SfxrNode_minFrequency_ptr.asFunction<_dart_SfxrNode_minFrequency>();
+  late final _SfxrNode_minFrequency =
+      _SfxrNode_minFrequencyPtr.asFunction<int Function(int)>();
 
   int SfxrNode_slide(
     int nodeId,
@@ -11785,10 +12489,10 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_slide_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_slide>>('SfxrNode_slide');
-  late final _dart_SfxrNode_slide _SfxrNode_slide =
-      _SfxrNode_slide_ptr.asFunction<_dart_SfxrNode_slide>();
+  late final _SfxrNode_slidePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('SfxrNode_slide');
+  late final _SfxrNode_slide =
+      _SfxrNode_slidePtr.asFunction<int Function(int)>();
 
   int SfxrNode_deltaSlide(
     int nodeId,
@@ -11798,11 +12502,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_deltaSlide_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_deltaSlide>>(
+  late final _SfxrNode_deltaSlidePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_deltaSlide');
-  late final _dart_SfxrNode_deltaSlide _SfxrNode_deltaSlide =
-      _SfxrNode_deltaSlide_ptr.asFunction<_dart_SfxrNode_deltaSlide>();
+  late final _SfxrNode_deltaSlide =
+      _SfxrNode_deltaSlidePtr.asFunction<int Function(int)>();
 
   int SfxrNode_vibratoDepth(
     int nodeId,
@@ -11812,11 +12516,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_vibratoDepth_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoDepth>>(
+  late final _SfxrNode_vibratoDepthPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_vibratoDepth');
-  late final _dart_SfxrNode_vibratoDepth _SfxrNode_vibratoDepth =
-      _SfxrNode_vibratoDepth_ptr.asFunction<_dart_SfxrNode_vibratoDepth>();
+  late final _SfxrNode_vibratoDepth =
+      _SfxrNode_vibratoDepthPtr.asFunction<int Function(int)>();
 
   int SfxrNode_vibratoSpeed(
     int nodeId,
@@ -11826,11 +12530,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_vibratoSpeed_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoSpeed>>(
+  late final _SfxrNode_vibratoSpeedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_vibratoSpeed');
-  late final _dart_SfxrNode_vibratoSpeed _SfxrNode_vibratoSpeed =
-      _SfxrNode_vibratoSpeed_ptr.asFunction<_dart_SfxrNode_vibratoSpeed>();
+  late final _SfxrNode_vibratoSpeed =
+      _SfxrNode_vibratoSpeedPtr.asFunction<int Function(int)>();
 
   int SfxrNode_changeAmount(
     int nodeId,
@@ -11840,11 +12544,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_changeAmount_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_changeAmount>>(
+  late final _SfxrNode_changeAmountPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_changeAmount');
-  late final _dart_SfxrNode_changeAmount _SfxrNode_changeAmount =
-      _SfxrNode_changeAmount_ptr.asFunction<_dart_SfxrNode_changeAmount>();
+  late final _SfxrNode_changeAmount =
+      _SfxrNode_changeAmountPtr.asFunction<int Function(int)>();
 
   int SfxrNode_changeSpeed(
     int nodeId,
@@ -11854,11 +12558,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_changeSpeed_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_changeSpeed>>(
+  late final _SfxrNode_changeSpeedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_changeSpeed');
-  late final _dart_SfxrNode_changeSpeed _SfxrNode_changeSpeed =
-      _SfxrNode_changeSpeed_ptr.asFunction<_dart_SfxrNode_changeSpeed>();
+  late final _SfxrNode_changeSpeed =
+      _SfxrNode_changeSpeedPtr.asFunction<int Function(int)>();
 
   int SfxrNode_squareDuty(
     int nodeId,
@@ -11868,11 +12572,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_squareDuty_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_squareDuty>>(
+  late final _SfxrNode_squareDutyPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_squareDuty');
-  late final _dart_SfxrNode_squareDuty _SfxrNode_squareDuty =
-      _SfxrNode_squareDuty_ptr.asFunction<_dart_SfxrNode_squareDuty>();
+  late final _SfxrNode_squareDuty =
+      _SfxrNode_squareDutyPtr.asFunction<int Function(int)>();
 
   int SfxrNode_dutySweep(
     int nodeId,
@@ -11882,10 +12586,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_dutySweep_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_dutySweep>>('SfxrNode_dutySweep');
-  late final _dart_SfxrNode_dutySweep _SfxrNode_dutySweep =
-      _SfxrNode_dutySweep_ptr.asFunction<_dart_SfxrNode_dutySweep>();
+  late final _SfxrNode_dutySweepPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'SfxrNode_dutySweep');
+  late final _SfxrNode_dutySweep =
+      _SfxrNode_dutySweepPtr.asFunction<int Function(int)>();
 
   int SfxrNode_repeatSpeed(
     int nodeId,
@@ -11895,11 +12600,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_repeatSpeed_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_repeatSpeed>>(
+  late final _SfxrNode_repeatSpeedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_repeatSpeed');
-  late final _dart_SfxrNode_repeatSpeed _SfxrNode_repeatSpeed =
-      _SfxrNode_repeatSpeed_ptr.asFunction<_dart_SfxrNode_repeatSpeed>();
+  late final _SfxrNode_repeatSpeed =
+      _SfxrNode_repeatSpeedPtr.asFunction<int Function(int)>();
 
   int SfxrNode_phaserOffset(
     int nodeId,
@@ -11909,11 +12614,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_phaserOffset_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_phaserOffset>>(
+  late final _SfxrNode_phaserOffsetPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_phaserOffset');
-  late final _dart_SfxrNode_phaserOffset _SfxrNode_phaserOffset =
-      _SfxrNode_phaserOffset_ptr.asFunction<_dart_SfxrNode_phaserOffset>();
+  late final _SfxrNode_phaserOffset =
+      _SfxrNode_phaserOffsetPtr.asFunction<int Function(int)>();
 
   int SfxrNode_phaserSweep(
     int nodeId,
@@ -11923,11 +12628,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_phaserSweep_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_phaserSweep>>(
+  late final _SfxrNode_phaserSweepPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_phaserSweep');
-  late final _dart_SfxrNode_phaserSweep _SfxrNode_phaserSweep =
-      _SfxrNode_phaserSweep_ptr.asFunction<_dart_SfxrNode_phaserSweep>();
+  late final _SfxrNode_phaserSweep =
+      _SfxrNode_phaserSweepPtr.asFunction<int Function(int)>();
 
   int SfxrNode_lpFilterCutoff(
     int nodeId,
@@ -11937,11 +12642,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_lpFilterCutoff_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_lpFilterCutoff>>(
+  late final _SfxrNode_lpFilterCutoffPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_lpFilterCutoff');
-  late final _dart_SfxrNode_lpFilterCutoff _SfxrNode_lpFilterCutoff =
-      _SfxrNode_lpFilterCutoff_ptr.asFunction<_dart_SfxrNode_lpFilterCutoff>();
+  late final _SfxrNode_lpFilterCutoff =
+      _SfxrNode_lpFilterCutoffPtr.asFunction<int Function(int)>();
 
   int SfxrNode_lpFilterCutoffSweep(
     int nodeId,
@@ -11951,12 +12656,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_lpFilterCutoffSweep_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_lpFilterCutoffSweep>>(
+  late final _SfxrNode_lpFilterCutoffSweepPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_lpFilterCutoffSweep');
-  late final _dart_SfxrNode_lpFilterCutoffSweep _SfxrNode_lpFilterCutoffSweep =
-      _SfxrNode_lpFilterCutoffSweep_ptr.asFunction<
-          _dart_SfxrNode_lpFilterCutoffSweep>();
+  late final _SfxrNode_lpFilterCutoffSweep =
+      _SfxrNode_lpFilterCutoffSweepPtr.asFunction<int Function(int)>();
 
   int SfxrNode_lpFiterResonance(
     int nodeId,
@@ -11966,12 +12670,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_lpFiterResonance_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_lpFiterResonance>>(
+  late final _SfxrNode_lpFiterResonancePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_lpFiterResonance');
-  late final _dart_SfxrNode_lpFiterResonance _SfxrNode_lpFiterResonance =
-      _SfxrNode_lpFiterResonance_ptr.asFunction<
-          _dart_SfxrNode_lpFiterResonance>();
+  late final _SfxrNode_lpFiterResonance =
+      _SfxrNode_lpFiterResonancePtr.asFunction<int Function(int)>();
 
   int SfxrNode_hpFilterCutoff(
     int nodeId,
@@ -11981,11 +12684,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_hpFilterCutoff_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_hpFilterCutoff>>(
+  late final _SfxrNode_hpFilterCutoffPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_hpFilterCutoff');
-  late final _dart_SfxrNode_hpFilterCutoff _SfxrNode_hpFilterCutoff =
-      _SfxrNode_hpFilterCutoff_ptr.asFunction<_dart_SfxrNode_hpFilterCutoff>();
+  late final _SfxrNode_hpFilterCutoff =
+      _SfxrNode_hpFilterCutoffPtr.asFunction<int Function(int)>();
 
   int SfxrNode_hpFilterCutoffSweep(
     int nodeId,
@@ -11995,12 +12698,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_hpFilterCutoffSweep_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_hpFilterCutoffSweep>>(
+  late final _SfxrNode_hpFilterCutoffSweepPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'SfxrNode_hpFilterCutoffSweep');
-  late final _dart_SfxrNode_hpFilterCutoffSweep _SfxrNode_hpFilterCutoffSweep =
-      _SfxrNode_hpFilterCutoffSweep_ptr.asFunction<
-          _dart_SfxrNode_hpFilterCutoffSweep>();
+  late final _SfxrNode_hpFilterCutoffSweep =
+      _SfxrNode_hpFilterCutoffSweepPtr.asFunction<int Function(int)>();
 
   void SfxrNode_setStartFrequencyInHz(
     int nodeId,
@@ -12012,12 +12714,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_setStartFrequencyInHz_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_setStartFrequencyInHz>>(
+  late final _SfxrNode_setStartFrequencyInHzPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_setStartFrequencyInHz');
-  late final _dart_SfxrNode_setStartFrequencyInHz
-      _SfxrNode_setStartFrequencyInHz = _SfxrNode_setStartFrequencyInHz_ptr
-          .asFunction<_dart_SfxrNode_setStartFrequencyInHz>();
+  late final _SfxrNode_setStartFrequencyInHz =
+      _SfxrNode_setStartFrequencyInHzPtr.asFunction<
+          void Function(int, double)>();
 
   void SfxrNode_setVibratoSpeedInHz(
     int nodeId,
@@ -12029,12 +12731,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_setVibratoSpeedInHz_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_setVibratoSpeedInHz>>(
+  late final _SfxrNode_setVibratoSpeedInHzPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_setVibratoSpeedInHz');
-  late final _dart_SfxrNode_setVibratoSpeedInHz _SfxrNode_setVibratoSpeedInHz =
-      _SfxrNode_setVibratoSpeedInHz_ptr.asFunction<
-          _dart_SfxrNode_setVibratoSpeedInHz>();
+  late final _SfxrNode_setVibratoSpeedInHz =
+      _SfxrNode_setVibratoSpeedInHzPtr.asFunction<void Function(int, double)>();
 
   double SfxrNode_envelopeTimeInSeconds(
     int nodeId,
@@ -12046,12 +12747,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_envelopeTimeInSeconds_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_envelopeTimeInSeconds>>(
+  late final _SfxrNode_envelopeTimeInSecondsPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_envelopeTimeInSeconds');
-  late final _dart_SfxrNode_envelopeTimeInSeconds
-      _SfxrNode_envelopeTimeInSeconds = _SfxrNode_envelopeTimeInSeconds_ptr
-          .asFunction<_dart_SfxrNode_envelopeTimeInSeconds>();
+  late final _SfxrNode_envelopeTimeInSeconds =
+      _SfxrNode_envelopeTimeInSecondsPtr.asFunction<
+          double Function(int, double)>();
 
   double SfxrNode_envelopeTimeInSfxrUnits(
     int nodeId,
@@ -12063,12 +12764,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_envelopeTimeInSfxrUnits_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_envelopeTimeInSfxrUnits>>(
+  late final _SfxrNode_envelopeTimeInSfxrUnitsPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_envelopeTimeInSfxrUnits');
-  late final _dart_SfxrNode_envelopeTimeInSfxrUnits
-      _SfxrNode_envelopeTimeInSfxrUnits = _SfxrNode_envelopeTimeInSfxrUnits_ptr
-          .asFunction<_dart_SfxrNode_envelopeTimeInSfxrUnits>();
+  late final _SfxrNode_envelopeTimeInSfxrUnits =
+      _SfxrNode_envelopeTimeInSfxrUnitsPtr.asFunction<
+          double Function(int, double)>();
 
   double SfxrNode_frequencyInSfxrUnits(
     int nodeId,
@@ -12080,12 +12781,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_frequencyInSfxrUnits_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_frequencyInSfxrUnits>>(
+  late final _SfxrNode_frequencyInSfxrUnitsPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_frequencyInSfxrUnits');
-  late final _dart_SfxrNode_frequencyInSfxrUnits
-      _SfxrNode_frequencyInSfxrUnits = _SfxrNode_frequencyInSfxrUnits_ptr
-          .asFunction<_dart_SfxrNode_frequencyInSfxrUnits>();
+  late final _SfxrNode_frequencyInSfxrUnits = _SfxrNode_frequencyInSfxrUnitsPtr
+      .asFunction<double Function(int, double)>();
 
   double SfxrNode_frequencyInHz(
     int nodeId,
@@ -12097,11 +12797,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_frequencyInHz_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_frequencyInHz>>(
+  late final _SfxrNode_frequencyInHzPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_frequencyInHz');
-  late final _dart_SfxrNode_frequencyInHz _SfxrNode_frequencyInHz =
-      _SfxrNode_frequencyInHz_ptr.asFunction<_dart_SfxrNode_frequencyInHz>();
+  late final _SfxrNode_frequencyInHz =
+      _SfxrNode_frequencyInHzPtr.asFunction<double Function(int, double)>();
 
   double SfxrNode_vibratoInSfxrUnits(
     int nodeId,
@@ -12113,12 +12813,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_vibratoInSfxrUnits_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoInSfxrUnits>>(
+  late final _SfxrNode_vibratoInSfxrUnitsPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_vibratoInSfxrUnits');
-  late final _dart_SfxrNode_vibratoInSfxrUnits _SfxrNode_vibratoInSfxrUnits =
-      _SfxrNode_vibratoInSfxrUnits_ptr.asFunction<
-          _dart_SfxrNode_vibratoInSfxrUnits>();
+  late final _SfxrNode_vibratoInSfxrUnits = _SfxrNode_vibratoInSfxrUnitsPtr
+      .asFunction<double Function(int, double)>();
 
   double SfxrNode_vibratoInHz(
     int nodeId,
@@ -12130,11 +12829,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_vibratoInHz_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_vibratoInHz>>(
+  late final _SfxrNode_vibratoInHzPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_vibratoInHz');
-  late final _dart_SfxrNode_vibratoInHz _SfxrNode_vibratoInHz =
-      _SfxrNode_vibratoInHz_ptr.asFunction<_dart_SfxrNode_vibratoInHz>();
+  late final _SfxrNode_vibratoInHz =
+      _SfxrNode_vibratoInHzPtr.asFunction<double Function(int, double)>();
 
   double SfxrNode_filterFreqInHz(
     int nodeId,
@@ -12146,11 +12845,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_filterFreqInHz_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_filterFreqInHz>>(
+  late final _SfxrNode_filterFreqInHzPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_filterFreqInHz');
-  late final _dart_SfxrNode_filterFreqInHz _SfxrNode_filterFreqInHz =
-      _SfxrNode_filterFreqInHz_ptr.asFunction<_dart_SfxrNode_filterFreqInHz>();
+  late final _SfxrNode_filterFreqInHz =
+      _SfxrNode_filterFreqInHzPtr.asFunction<double Function(int, double)>();
 
   double SfxrNode_filterFreqInSfxrUnits(
     int nodeId,
@@ -12162,12 +12861,12 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_filterFreqInSfxrUnits_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_filterFreqInSfxrUnits>>(
+  late final _SfxrNode_filterFreqInSfxrUnitsPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Float)>>(
           'SfxrNode_filterFreqInSfxrUnits');
-  late final _dart_SfxrNode_filterFreqInSfxrUnits
-      _SfxrNode_filterFreqInSfxrUnits = _SfxrNode_filterFreqInSfxrUnits_ptr
-          .asFunction<_dart_SfxrNode_filterFreqInSfxrUnits>();
+  late final _SfxrNode_filterFreqInSfxrUnits =
+      _SfxrNode_filterFreqInSfxrUnitsPtr.asFunction<
+          double Function(int, double)>();
 
   void SfxrNode_setDefaultBeep(
     int nodeId,
@@ -12177,11 +12876,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_setDefaultBeep_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_setDefaultBeep>>(
+  late final _SfxrNode_setDefaultBeepPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'SfxrNode_setDefaultBeep');
-  late final _dart_SfxrNode_setDefaultBeep _SfxrNode_setDefaultBeep =
-      _SfxrNode_setDefaultBeep_ptr.asFunction<_dart_SfxrNode_setDefaultBeep>();
+  late final _SfxrNode_setDefaultBeep =
+      _SfxrNode_setDefaultBeepPtr.asFunction<void Function(int)>();
 
   void SfxrNode_coin(
     int nodeId,
@@ -12191,10 +12890,10 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_coin_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_coin>>('SfxrNode_coin');
-  late final _dart_SfxrNode_coin _SfxrNode_coin =
-      _SfxrNode_coin_ptr.asFunction<_dart_SfxrNode_coin>();
+  late final _SfxrNode_coinPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('SfxrNode_coin');
+  late final _SfxrNode_coin =
+      _SfxrNode_coinPtr.asFunction<void Function(int)>();
 
   void SfxrNode_laser(
     int nodeId,
@@ -12204,10 +12903,10 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_laser_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_laser>>('SfxrNode_laser');
-  late final _dart_SfxrNode_laser _SfxrNode_laser =
-      _SfxrNode_laser_ptr.asFunction<_dart_SfxrNode_laser>();
+  late final _SfxrNode_laserPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('SfxrNode_laser');
+  late final _SfxrNode_laser =
+      _SfxrNode_laserPtr.asFunction<void Function(int)>();
 
   void SfxrNode_explosion(
     int nodeId,
@@ -12217,10 +12916,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_explosion_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_explosion>>('SfxrNode_explosion');
-  late final _dart_SfxrNode_explosion _SfxrNode_explosion =
-      _SfxrNode_explosion_ptr.asFunction<_dart_SfxrNode_explosion>();
+  late final _SfxrNode_explosionPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'SfxrNode_explosion');
+  late final _SfxrNode_explosion =
+      _SfxrNode_explosionPtr.asFunction<void Function(int)>();
 
   void SfxrNode_powerUp(
     int nodeId,
@@ -12230,10 +12930,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_powerUp_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_powerUp>>('SfxrNode_powerUp');
-  late final _dart_SfxrNode_powerUp _SfxrNode_powerUp =
-      _SfxrNode_powerUp_ptr.asFunction<_dart_SfxrNode_powerUp>();
+  late final _SfxrNode_powerUpPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'SfxrNode_powerUp');
+  late final _SfxrNode_powerUp =
+      _SfxrNode_powerUpPtr.asFunction<void Function(int)>();
 
   void SfxrNode_hit(
     int nodeId,
@@ -12243,10 +12944,9 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_hit_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_hit>>('SfxrNode_hit');
-  late final _dart_SfxrNode_hit _SfxrNode_hit =
-      _SfxrNode_hit_ptr.asFunction<_dart_SfxrNode_hit>();
+  late final _SfxrNode_hitPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('SfxrNode_hit');
+  late final _SfxrNode_hit = _SfxrNode_hitPtr.asFunction<void Function(int)>();
 
   void SfxrNode_jump(
     int nodeId,
@@ -12256,10 +12956,10 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_jump_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_jump>>('SfxrNode_jump');
-  late final _dart_SfxrNode_jump _SfxrNode_jump =
-      _SfxrNode_jump_ptr.asFunction<_dart_SfxrNode_jump>();
+  late final _SfxrNode_jumpPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('SfxrNode_jump');
+  late final _SfxrNode_jump =
+      _SfxrNode_jumpPtr.asFunction<void Function(int)>();
 
   void SfxrNode_select(
     int nodeId,
@@ -12269,10 +12969,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_select_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_select>>('SfxrNode_select');
-  late final _dart_SfxrNode_select _SfxrNode_select =
-      _SfxrNode_select_ptr.asFunction<_dart_SfxrNode_select>();
+  late final _SfxrNode_selectPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'SfxrNode_select');
+  late final _SfxrNode_select =
+      _SfxrNode_selectPtr.asFunction<void Function(int)>();
 
   void SfxrNode_mutate(
     int nodeId,
@@ -12282,10 +12983,11 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_mutate_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_mutate>>('SfxrNode_mutate');
-  late final _dart_SfxrNode_mutate _SfxrNode_mutate =
-      _SfxrNode_mutate_ptr.asFunction<_dart_SfxrNode_mutate>();
+  late final _SfxrNode_mutatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'SfxrNode_mutate');
+  late final _SfxrNode_mutate =
+      _SfxrNode_mutatePtr.asFunction<void Function(int)>();
 
   void SfxrNode_randomize(
     int nodeId,
@@ -12295,15 +12997,16 @@ class LabSoundBind {
     );
   }
 
-  late final _SfxrNode_randomize_ptr =
-      _lookup<ffi.NativeFunction<_c_SfxrNode_randomize>>('SfxrNode_randomize');
-  late final _dart_SfxrNode_randomize _SfxrNode_randomize =
-      _SfxrNode_randomize_ptr.asFunction<_dart_SfxrNode_randomize>();
+  late final _SfxrNode_randomizePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
+          'SfxrNode_randomize');
+  late final _SfxrNode_randomize =
+      _SfxrNode_randomizePtr.asFunction<void Function(int)>();
 
   /// /////////////////
   /// AudioSetting ///
   /// /////////////////
-  ffi.Pointer<ffi.Int8> AudioSetting_name(
+  ffi.Pointer<ffi.Char> AudioSetting_name(
     int nodeId,
     int settingIndex,
   ) {
@@ -12313,12 +13016,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_name_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_name>>('AudioSetting_name');
-  late final _dart_AudioSetting_name _AudioSetting_name =
-      _AudioSetting_name_ptr.asFunction<_dart_AudioSetting_name>();
+  late final _AudioSetting_namePtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int, ffi.Int)>>(
+      'AudioSetting_name');
+  late final _AudioSetting_name = _AudioSetting_namePtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(int, int)>();
 
-  ffi.Pointer<ffi.Int8> AudioSetting_shortName(
+  ffi.Pointer<ffi.Char> AudioSetting_shortName(
     int nodeId,
     int settingIndex,
   ) {
@@ -12328,11 +13032,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_shortName_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_shortName>>(
-          'AudioSetting_shortName');
-  late final _dart_AudioSetting_shortName _AudioSetting_shortName =
-      _AudioSetting_shortName_ptr.asFunction<_dart_AudioSetting_shortName>();
+  late final _AudioSetting_shortNamePtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int, ffi.Int)>>(
+      'AudioSetting_shortName');
+  late final _AudioSetting_shortName = _AudioSetting_shortNamePtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(int, int)>();
 
   int AudioSetting_type(
     int nodeId,
@@ -12344,10 +13048,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_type_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_type>>('AudioSetting_type');
-  late final _dart_AudioSetting_type _AudioSetting_type =
-      _AudioSetting_type_ptr.asFunction<_dart_AudioSetting_type>();
+  late final _AudioSetting_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
+          'AudioSetting_type');
+  late final _AudioSetting_type =
+      _AudioSetting_typePtr.asFunction<int Function(int, int)>();
 
   int AudioSetting_valueBool(
     int nodeId,
@@ -12359,11 +13064,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_valueBool_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_valueBool>>(
+  late final _AudioSetting_valueBoolPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
           'AudioSetting_valueBool');
-  late final _dart_AudioSetting_valueBool _AudioSetting_valueBool =
-      _AudioSetting_valueBool_ptr.asFunction<_dart_AudioSetting_valueBool>();
+  late final _AudioSetting_valueBool =
+      _AudioSetting_valueBoolPtr.asFunction<int Function(int, int)>();
 
   double AudioSetting_valueFloat(
     int nodeId,
@@ -12375,11 +13080,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_valueFloat_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_valueFloat>>(
+  late final _AudioSetting_valueFloatPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Int, ffi.Int)>>(
           'AudioSetting_valueFloat');
-  late final _dart_AudioSetting_valueFloat _AudioSetting_valueFloat =
-      _AudioSetting_valueFloat_ptr.asFunction<_dart_AudioSetting_valueFloat>();
+  late final _AudioSetting_valueFloat =
+      _AudioSetting_valueFloatPtr.asFunction<double Function(int, int)>();
 
   int AudioSetting_valueUint32(
     int nodeId,
@@ -12391,12 +13096,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_valueUint32_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_valueUint32>>(
+  late final _AudioSetting_valueUint32Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int, ffi.Int)>>(
           'AudioSetting_valueUint32');
-  late final _dart_AudioSetting_valueUint32 _AudioSetting_valueUint32 =
-      _AudioSetting_valueUint32_ptr.asFunction<
-          _dart_AudioSetting_valueUint32>();
+  late final _AudioSetting_valueUint32 =
+      _AudioSetting_valueUint32Ptr.asFunction<int Function(int, int)>();
 
   int AudioSetting_valueBus(
     int nodeId,
@@ -12408,11 +13112,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_valueBus_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_valueBus>>(
+  late final _AudioSetting_valueBusPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
           'AudioSetting_valueBus');
-  late final _dart_AudioSetting_valueBus _AudioSetting_valueBus =
-      _AudioSetting_valueBus_ptr.asFunction<_dart_AudioSetting_valueBus>();
+  late final _AudioSetting_valueBus =
+      _AudioSetting_valueBusPtr.asFunction<int Function(int, int)>();
 
   void AudioSetting_setBool(
     int nodeId,
@@ -12428,11 +13132,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_setBool_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_setBool>>(
-          'AudioSetting_setBool');
-  late final _dart_AudioSetting_setBool _AudioSetting_setBool =
-      _AudioSetting_setBool_ptr.asFunction<_dart_AudioSetting_setBool>();
+  late final _AudioSetting_setBoolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('AudioSetting_setBool');
+  late final _AudioSetting_setBool =
+      _AudioSetting_setBoolPtr.asFunction<void Function(int, int, int, int)>();
 
   void AudioSetting_setFloat(
     int nodeId,
@@ -12448,11 +13153,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_setFloat_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_setFloat>>(
-          'AudioSetting_setFloat');
-  late final _dart_AudioSetting_setFloat _AudioSetting_setFloat =
-      _AudioSetting_setFloat_ptr.asFunction<_dart_AudioSetting_setFloat>();
+  late final _AudioSetting_setFloatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int, ffi.Int, ffi.Float, ffi.Int)>>('AudioSetting_setFloat');
+  late final _AudioSetting_setFloat = _AudioSetting_setFloatPtr.asFunction<
+      void Function(int, int, double, int)>();
 
   void AudioSetting_setUint32(
     int nodeId,
@@ -12468,11 +13174,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_setUint32_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_setUint32>>(
-          'AudioSetting_setUint32');
-  late final _dart_AudioSetting_setUint32 _AudioSetting_setUint32 =
-      _AudioSetting_setUint32_ptr.asFunction<_dart_AudioSetting_setUint32>();
+  late final _AudioSetting_setUint32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Uint32,
+              ffi.Int)>>('AudioSetting_setUint32');
+  late final _AudioSetting_setUint32 = _AudioSetting_setUint32Ptr.asFunction<
+      void Function(int, int, int, int)>();
 
   void AudioSetting_setEnumeration(
     int nodeId,
@@ -12488,17 +13195,17 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_setEnumeration_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_setEnumeration>>(
-          'AudioSetting_setEnumeration');
-  late final _dart_AudioSetting_setEnumeration _AudioSetting_setEnumeration =
-      _AudioSetting_setEnumeration_ptr.asFunction<
-          _dart_AudioSetting_setEnumeration>();
+  late final _AudioSetting_setEnumerationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('AudioSetting_setEnumeration');
+  late final _AudioSetting_setEnumeration = _AudioSetting_setEnumerationPtr
+      .asFunction<void Function(int, int, int, int)>();
 
   void AudioSetting_setString(
     int nodeId,
     int settingIndex,
-    ffi.Pointer<ffi.Int8> v,
+    ffi.Pointer<ffi.Char> v,
     int notify,
   ) {
     return _AudioSetting_setString(
@@ -12509,11 +13216,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_setString_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_setString>>(
-          'AudioSetting_setString');
-  late final _dart_AudioSetting_setString _AudioSetting_setString =
-      _AudioSetting_setString_ptr.asFunction<_dart_AudioSetting_setString>();
+  late final _AudioSetting_setStringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('AudioSetting_setString');
+  late final _AudioSetting_setString = _AudioSetting_setStringPtr.asFunction<
+      void Function(int, int, ffi.Pointer<ffi.Char>, int)>();
 
   void AudioSetting_setBus(
     int nodeId,
@@ -12529,11 +13237,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioSetting_setBus_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioSetting_setBus>>(
-          'AudioSetting_setBus');
-  late final _dart_AudioSetting_setBus _AudioSetting_setBus =
-      _AudioSetting_setBus_ptr.asFunction<_dart_AudioSetting_setBus>();
+  late final _AudioSetting_setBusPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('AudioSetting_setBus');
+  late final _AudioSetting_setBus =
+      _AudioSetting_setBusPtr.asFunction<void Function(int, int, int, int)>();
 
   /// //////////////////////
   /// ///AudioListener//////
@@ -12546,11 +13255,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createAudioListener_ptr =
-      _lookup<ffi.NativeFunction<_c_createAudioListener>>(
+  late final _createAudioListenerPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createAudioListener');
-  late final _dart_createAudioListener _createAudioListener =
-      _createAudioListener_ptr.asFunction<_dart_createAudioListener>();
+  late final _createAudioListener =
+      _createAudioListenerPtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   void AudioListener_setPosition(
     int id,
@@ -12566,12 +13275,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setPosition_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setPosition>>(
-          'AudioListener_setPosition');
-  late final _dart_AudioListener_setPosition _AudioListener_setPosition =
-      _AudioListener_setPosition_ptr.asFunction<
-          _dart_AudioListener_setPosition>();
+  late final _AudioListener_setPositionPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('AudioListener_setPosition');
+  late final _AudioListener_setPosition = _AudioListener_setPositionPtr
+      .asFunction<void Function(int, double, double, double)>();
 
   int AudioListener_positionX(
     int id,
@@ -12581,11 +13290,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_positionX_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_positionX>>(
+  late final _AudioListener_positionXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_positionX');
-  late final _dart_AudioListener_positionX _AudioListener_positionX =
-      _AudioListener_positionX_ptr.asFunction<_dart_AudioListener_positionX>();
+  late final _AudioListener_positionX =
+      _AudioListener_positionXPtr.asFunction<int Function(int)>();
 
   int AudioListener_positionY(
     int id,
@@ -12595,11 +13304,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_positionY_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_positionY>>(
+  late final _AudioListener_positionYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_positionY');
-  late final _dart_AudioListener_positionY _AudioListener_positionY =
-      _AudioListener_positionY_ptr.asFunction<_dart_AudioListener_positionY>();
+  late final _AudioListener_positionY =
+      _AudioListener_positionYPtr.asFunction<int Function(int)>();
 
   int AudioListener_positionZ(
     int id,
@@ -12609,11 +13318,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_positionZ_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_positionZ>>(
+  late final _AudioListener_positionZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_positionZ');
-  late final _dart_AudioListener_positionZ _AudioListener_positionZ =
-      _AudioListener_positionZ_ptr.asFunction<_dart_AudioListener_positionZ>();
+  late final _AudioListener_positionZ =
+      _AudioListener_positionZPtr.asFunction<int Function(int)>();
 
   void AudioListener_setOrientation(
     int id,
@@ -12635,12 +13344,13 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setOrientation_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setOrientation>>(
-          'AudioListener_setOrientation');
-  late final _dart_AudioListener_setOrientation _AudioListener_setOrientation =
-      _AudioListener_setOrientation_ptr.asFunction<
-          _dart_AudioListener_setOrientation>();
+  late final _AudioListener_setOrientationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float,
+              ffi.Float, ffi.Float)>>('AudioListener_setOrientation');
+  late final _AudioListener_setOrientation =
+      _AudioListener_setOrientationPtr.asFunction<
+          void Function(int, double, double, double, double, double, double)>();
 
   void AudioListener_setForward(
     int id,
@@ -12656,12 +13366,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setForward_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setForward>>(
-          'AudioListener_setForward');
-  late final _dart_AudioListener_setForward _AudioListener_setForward =
-      _AudioListener_setForward_ptr.asFunction<
-          _dart_AudioListener_setForward>();
+  late final _AudioListener_setForwardPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('AudioListener_setForward');
+  late final _AudioListener_setForward = _AudioListener_setForwardPtr
+      .asFunction<void Function(int, double, double, double)>();
 
   int AudioListener_forwardX(
     int id,
@@ -12671,11 +13381,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_forwardX_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_forwardX>>(
+  late final _AudioListener_forwardXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_forwardX');
-  late final _dart_AudioListener_forwardX _AudioListener_forwardX =
-      _AudioListener_forwardX_ptr.asFunction<_dart_AudioListener_forwardX>();
+  late final _AudioListener_forwardX =
+      _AudioListener_forwardXPtr.asFunction<int Function(int)>();
 
   int AudioListener_forwardY(
     int id,
@@ -12685,11 +13395,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_forwardY_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_forwardY>>(
+  late final _AudioListener_forwardYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_forwardY');
-  late final _dart_AudioListener_forwardY _AudioListener_forwardY =
-      _AudioListener_forwardY_ptr.asFunction<_dart_AudioListener_forwardY>();
+  late final _AudioListener_forwardY =
+      _AudioListener_forwardYPtr.asFunction<int Function(int)>();
 
   int AudioListener_forwardZ(
     int id,
@@ -12699,11 +13409,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_forwardZ_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_forwardZ>>(
+  late final _AudioListener_forwardZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_forwardZ');
-  late final _dart_AudioListener_forwardZ _AudioListener_forwardZ =
-      _AudioListener_forwardZ_ptr.asFunction<_dart_AudioListener_forwardZ>();
+  late final _AudioListener_forwardZ =
+      _AudioListener_forwardZPtr.asFunction<int Function(int)>();
 
   void AudioListener_setUpVector(
     int id,
@@ -12719,12 +13429,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setUpVector_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setUpVector>>(
-          'AudioListener_setUpVector');
-  late final _dart_AudioListener_setUpVector _AudioListener_setUpVector =
-      _AudioListener_setUpVector_ptr.asFunction<
-          _dart_AudioListener_setUpVector>();
+  late final _AudioListener_setUpVectorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('AudioListener_setUpVector');
+  late final _AudioListener_setUpVector = _AudioListener_setUpVectorPtr
+      .asFunction<void Function(int, double, double, double)>();
 
   int AudioListener_upX(
     int id,
@@ -12734,10 +13444,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_upX_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_upX>>('AudioListener_upX');
-  late final _dart_AudioListener_upX _AudioListener_upX =
-      _AudioListener_upX_ptr.asFunction<_dart_AudioListener_upX>();
+  late final _AudioListener_upXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioListener_upX');
+  late final _AudioListener_upX =
+      _AudioListener_upXPtr.asFunction<int Function(int)>();
 
   int AudioListener_upY(
     int id,
@@ -12747,10 +13458,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_upY_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_upY>>('AudioListener_upY');
-  late final _dart_AudioListener_upY _AudioListener_upY =
-      _AudioListener_upY_ptr.asFunction<_dart_AudioListener_upY>();
+  late final _AudioListener_upYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioListener_upY');
+  late final _AudioListener_upY =
+      _AudioListener_upYPtr.asFunction<int Function(int)>();
 
   int AudioListener_upZ(
     int id,
@@ -12760,10 +13472,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_upZ_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_upZ>>('AudioListener_upZ');
-  late final _dart_AudioListener_upZ _AudioListener_upZ =
-      _AudioListener_upZ_ptr.asFunction<_dart_AudioListener_upZ>();
+  late final _AudioListener_upZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioListener_upZ');
+  late final _AudioListener_upZ =
+      _AudioListener_upZPtr.asFunction<int Function(int)>();
 
   void AudioListener_setVelocity(
     int id,
@@ -12779,12 +13492,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setVelocity_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setVelocity>>(
-          'AudioListener_setVelocity');
-  late final _dart_AudioListener_setVelocity _AudioListener_setVelocity =
-      _AudioListener_setVelocity_ptr.asFunction<
-          _dart_AudioListener_setVelocity>();
+  late final _AudioListener_setVelocityPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Float, ffi.Float,
+              ffi.Float)>>('AudioListener_setVelocity');
+  late final _AudioListener_setVelocity = _AudioListener_setVelocityPtr
+      .asFunction<void Function(int, double, double, double)>();
 
   int AudioListener_velocityX(
     int id,
@@ -12794,11 +13507,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_velocityX_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_velocityX>>(
+  late final _AudioListener_velocityXPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_velocityX');
-  late final _dart_AudioListener_velocityX _AudioListener_velocityX =
-      _AudioListener_velocityX_ptr.asFunction<_dart_AudioListener_velocityX>();
+  late final _AudioListener_velocityX =
+      _AudioListener_velocityXPtr.asFunction<int Function(int)>();
 
   int AudioListener_velocityY(
     int id,
@@ -12808,11 +13521,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_velocityY_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_velocityY>>(
+  late final _AudioListener_velocityYPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_velocityY');
-  late final _dart_AudioListener_velocityY _AudioListener_velocityY =
-      _AudioListener_velocityY_ptr.asFunction<_dart_AudioListener_velocityY>();
+  late final _AudioListener_velocityY =
+      _AudioListener_velocityYPtr.asFunction<int Function(int)>();
 
   int AudioListener_velocityZ(
     int id,
@@ -12822,11 +13535,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_velocityZ_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_velocityZ>>(
+  late final _AudioListener_velocityZPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_velocityZ');
-  late final _dart_AudioListener_velocityZ _AudioListener_velocityZ =
-      _AudioListener_velocityZ_ptr.asFunction<_dart_AudioListener_velocityZ>();
+  late final _AudioListener_velocityZ =
+      _AudioListener_velocityZPtr.asFunction<int Function(int)>();
 
   void AudioListener_setDopplerFactor(
     int id,
@@ -12838,12 +13551,12 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setDopplerFactor_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setDopplerFactor>>(
+  late final _AudioListener_setDopplerFactorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'AudioListener_setDopplerFactor');
-  late final _dart_AudioListener_setDopplerFactor
-      _AudioListener_setDopplerFactor = _AudioListener_setDopplerFactor_ptr
-          .asFunction<_dart_AudioListener_setDopplerFactor>();
+  late final _AudioListener_setDopplerFactor =
+      _AudioListener_setDopplerFactorPtr.asFunction<
+          void Function(int, double)>();
 
   int AudioListener_dopplerFactor(
     int id,
@@ -12853,12 +13566,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_dopplerFactor_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_dopplerFactor>>(
+  late final _AudioListener_dopplerFactorPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_dopplerFactor');
-  late final _dart_AudioListener_dopplerFactor _AudioListener_dopplerFactor =
-      _AudioListener_dopplerFactor_ptr.asFunction<
-          _dart_AudioListener_dopplerFactor>();
+  late final _AudioListener_dopplerFactor =
+      _AudioListener_dopplerFactorPtr.asFunction<int Function(int)>();
 
   void AudioListener_setSpeedOfSound(
     int id,
@@ -12870,12 +13582,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_setSpeedOfSound_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_setSpeedOfSound>>(
+  late final _AudioListener_setSpeedOfSoundPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Float)>>(
           'AudioListener_setSpeedOfSound');
-  late final _dart_AudioListener_setSpeedOfSound
-      _AudioListener_setSpeedOfSound = _AudioListener_setSpeedOfSound_ptr
-          .asFunction<_dart_AudioListener_setSpeedOfSound>();
+  late final _AudioListener_setSpeedOfSound = _AudioListener_setSpeedOfSoundPtr
+      .asFunction<void Function(int, double)>();
 
   int AudioListener_speedOfSound(
     int id,
@@ -12885,12 +13596,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_speedOfSound_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_speedOfSound>>(
+  late final _AudioListener_speedOfSoundPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'AudioListener_speedOfSound');
-  late final _dart_AudioListener_speedOfSound _AudioListener_speedOfSound =
-      _AudioListener_speedOfSound_ptr.asFunction<
-          _dart_AudioListener_speedOfSound>();
+  late final _AudioListener_speedOfSound =
+      _AudioListener_speedOfSoundPtr.asFunction<int Function(int)>();
 
   void AudioListener_release(
     int id,
@@ -12900,11 +13610,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_release_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_release>>(
+  late final _AudioListener_releasePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'AudioListener_release');
-  late final _dart_AudioListener_release _AudioListener_release =
-      _AudioListener_release_ptr.asFunction<_dart_AudioListener_release>();
+  late final _AudioListener_release =
+      _AudioListener_releasePtr.asFunction<void Function(int)>();
 
   int AudioListener_has(
     int id,
@@ -12914,10 +13624,11 @@ class LabSoundBind {
     );
   }
 
-  late final _AudioListener_has_ptr =
-      _lookup<ffi.NativeFunction<_c_AudioListener_has>>('AudioListener_has');
-  late final _dart_AudioListener_has _AudioListener_has =
-      _AudioListener_has_ptr.asFunction<_dart_AudioListener_has>();
+  late final _AudioListener_hasPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'AudioListener_has');
+  late final _AudioListener_has =
+      _AudioListener_hasPtr.asFunction<int Function(int)>();
 
   /// //////////////////////////
   /// /// GranulationNode //////
@@ -12930,11 +13641,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createGranulationNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createGranulationNode>>(
+  late final _createGranulationNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
           'createGranulationNode');
-  late final _dart_createGranulationNode _createGranulationNode =
-      _createGranulationNode_ptr.asFunction<_dart_createGranulationNode>();
+  late final _createGranulationNode = _createGranulationNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   void GranulationNode_setGrainSource(
     int nodeId,
@@ -12948,12 +13659,13 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_setGrainSource_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_setGrainSource>>(
-          'GranulationNode_setGrainSource');
-  late final _dart_GranulationNode_setGrainSource
-      _GranulationNode_setGrainSource = _GranulationNode_setGrainSource_ptr
-          .asFunction<_dart_GranulationNode_setGrainSource>();
+  late final _GranulationNode_setGrainSourcePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Void>,
+              ffi.Int)>>('GranulationNode_setGrainSource');
+  late final _GranulationNode_setGrainSource =
+      _GranulationNode_setGrainSourcePtr.asFunction<
+          void Function(int, ffi.Pointer<ffi.Void>, int)>();
 
   int GranulationNode_getGrainSource(
     int nodeId,
@@ -12963,12 +13675,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_getGrainSource_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_getGrainSource>>(
+  late final _GranulationNode_getGrainSourcePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_getGrainSource');
-  late final _dart_GranulationNode_getGrainSource
-      _GranulationNode_getGrainSource = _GranulationNode_getGrainSource_ptr
-          .asFunction<_dart_GranulationNode_getGrainSource>();
+  late final _GranulationNode_getGrainSource =
+      _GranulationNode_getGrainSourcePtr.asFunction<int Function(int)>();
 
   int GranulationNode_grainSourceBus(
     int nodeId,
@@ -12978,12 +13689,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_grainSourceBus_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_grainSourceBus>>(
+  late final _GranulationNode_grainSourceBusPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_grainSourceBus');
-  late final _dart_GranulationNode_grainSourceBus
-      _GranulationNode_grainSourceBus = _GranulationNode_grainSourceBus_ptr
-          .asFunction<_dart_GranulationNode_grainSourceBus>();
+  late final _GranulationNode_grainSourceBus =
+      _GranulationNode_grainSourceBusPtr.asFunction<int Function(int)>();
 
   int GranulationNode_windowFunc(
     int nodeId,
@@ -12993,12 +13703,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_windowFunc_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_windowFunc>>(
+  late final _GranulationNode_windowFuncPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_windowFunc');
-  late final _dart_GranulationNode_windowFunc _GranulationNode_windowFunc =
-      _GranulationNode_windowFunc_ptr.asFunction<
-          _dart_GranulationNode_windowFunc>();
+  late final _GranulationNode_windowFunc =
+      _GranulationNode_windowFuncPtr.asFunction<int Function(int)>();
 
   int GranulationNode_numGrains(
     int nodeId,
@@ -13008,12 +13717,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_numGrains_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_numGrains>>(
+  late final _GranulationNode_numGrainsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_numGrains');
-  late final _dart_GranulationNode_numGrains _GranulationNode_numGrains =
-      _GranulationNode_numGrains_ptr.asFunction<
-          _dart_GranulationNode_numGrains>();
+  late final _GranulationNode_numGrains =
+      _GranulationNode_numGrainsPtr.asFunction<int Function(int)>();
 
   int GranulationNode_grainDuration(
     int nodeId,
@@ -13023,12 +13731,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_grainDuration_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_grainDuration>>(
+  late final _GranulationNode_grainDurationPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_grainDuration');
-  late final _dart_GranulationNode_grainDuration
-      _GranulationNode_grainDuration = _GranulationNode_grainDuration_ptr
-          .asFunction<_dart_GranulationNode_grainDuration>();
+  late final _GranulationNode_grainDuration =
+      _GranulationNode_grainDurationPtr.asFunction<int Function(int)>();
 
   int GranulationNode_grainPositionMin(
     int nodeId,
@@ -13038,12 +13745,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_grainPositionMin_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_grainPositionMin>>(
+  late final _GranulationNode_grainPositionMinPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_grainPositionMin');
-  late final _dart_GranulationNode_grainPositionMin
-      _GranulationNode_grainPositionMin = _GranulationNode_grainPositionMin_ptr
-          .asFunction<_dart_GranulationNode_grainPositionMin>();
+  late final _GranulationNode_grainPositionMin =
+      _GranulationNode_grainPositionMinPtr.asFunction<int Function(int)>();
 
   int GranulationNode_grainPositionMax(
     int nodeId,
@@ -13053,12 +13759,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_grainPositionMax_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_grainPositionMax>>(
+  late final _GranulationNode_grainPositionMaxPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_grainPositionMax');
-  late final _dart_GranulationNode_grainPositionMax
-      _GranulationNode_grainPositionMax = _GranulationNode_grainPositionMax_ptr
-          .asFunction<_dart_GranulationNode_grainPositionMax>();
+  late final _GranulationNode_grainPositionMax =
+      _GranulationNode_grainPositionMaxPtr.asFunction<int Function(int)>();
 
   int GranulationNode_grainPlaybackFreq(
     int nodeId,
@@ -13068,13 +13773,11 @@ class LabSoundBind {
     );
   }
 
-  late final _GranulationNode_grainPlaybackFreq_ptr =
-      _lookup<ffi.NativeFunction<_c_GranulationNode_grainPlaybackFreq>>(
+  late final _GranulationNode_grainPlaybackFreqPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
           'GranulationNode_grainPlaybackFreq');
-  late final _dart_GranulationNode_grainPlaybackFreq
-      _GranulationNode_grainPlaybackFreq =
-      _GranulationNode_grainPlaybackFreq_ptr.asFunction<
-          _dart_GranulationNode_grainPlaybackFreq>();
+  late final _GranulationNode_grainPlaybackFreq =
+      _GranulationNode_grainPlaybackFreqPtr.asFunction<int Function(int)>();
 
   /// //////////////////
   /// /   PWMNode   ////
@@ -13087,10 +13790,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createPWMNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createPWMNode>>('createPWMNode');
-  late final _dart_createPWMNode _createPWMNode =
-      _createPWMNode_ptr.asFunction<_dart_createPWMNode>();
+  late final _createPWMNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createPWMNode');
+  late final _createPWMNode =
+      _createPWMNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   /// /////////////////////
   /// / NullDeviceNode ////
@@ -13107,11 +13811,12 @@ class LabSoundBind {
     );
   }
 
-  late final _createNullDeviceNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createNullDeviceNode>>(
-          'createNullDeviceNode');
-  late final _dart_createNullDeviceNode _createNullDeviceNode =
-      _createNullDeviceNode_ptr.asFunction<_dart_createNullDeviceNode>();
+  late final _createNullDeviceNodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Void>, AudioStreamConfig,
+              ffi.Double)>>('createNullDeviceNode');
+  late final _createNullDeviceNode = _createNullDeviceNodePtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, AudioStreamConfig, double)>();
 
   /// ///////////////
   /// / ClipNode ////
@@ -13124,10 +13829,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createClipNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createClipNode>>('createClipNode');
-  late final _dart_createClipNode _createClipNode =
-      _createClipNode_ptr.asFunction<_dart_createClipNode>();
+  late final _createClipNodePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
+          'createClipNode');
+  late final _createClipNode =
+      _createClipNodePtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
   void ClipNode_setMode(
     int nodeId,
@@ -13139,10 +13845,11 @@ class LabSoundBind {
     );
   }
 
-  late final _ClipNode_setMode_ptr =
-      _lookup<ffi.NativeFunction<_c_ClipNode_setMode>>('ClipNode_setMode');
-  late final _dart_ClipNode_setMode _ClipNode_setMode =
-      _ClipNode_setMode_ptr.asFunction<_dart_ClipNode_setMode>();
+  late final _ClipNode_setModePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int)>>(
+          'ClipNode_setMode');
+  late final _ClipNode_setMode =
+      _ClipNode_setModePtr.asFunction<void Function(int, int)>();
 
   int ClipNode_aVal(
     int nodeId,
@@ -13152,10 +13859,9 @@ class LabSoundBind {
     );
   }
 
-  late final _ClipNode_aVal_ptr =
-      _lookup<ffi.NativeFunction<_c_ClipNode_aVal>>('ClipNode_aVal');
-  late final _dart_ClipNode_aVal _ClipNode_aVal =
-      _ClipNode_aVal_ptr.asFunction<_dart_ClipNode_aVal>();
+  late final _ClipNode_aValPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('ClipNode_aVal');
+  late final _ClipNode_aVal = _ClipNode_aValPtr.asFunction<int Function(int)>();
 
   int ClipNode_bVal(
     int nodeId,
@@ -13165,28 +13871,42 @@ class LabSoundBind {
     );
   }
 
-  late final _ClipNode_bVal_ptr =
-      _lookup<ffi.NativeFunction<_c_ClipNode_bVal>>('ClipNode_bVal');
-  late final _dart_ClipNode_bVal _ClipNode_bVal =
-      _ClipNode_bVal_ptr.asFunction<_dart_ClipNode_bVal>();
+  late final _ClipNode_bValPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('ClipNode_bVal');
+  late final _ClipNode_bVal = _ClipNode_bValPtr.asFunction<int Function(int)>();
 
   /// ///////////////////
   /// / FunctionNode ////
   /// ///////////////////
   void setFunctionNodeChannelFn(
-    ffi.Pointer<ffi.NativeFunction<_typedefC_1>> fn,
+    ffi.Pointer<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Int, ffi.Int, ffi.Pointer<ffi.Float>, ffi.Int)>>
+        fn,
   ) {
     return _setFunctionNodeChannelFn(
       fn,
     );
   }
 
-  late final _setFunctionNodeChannelFn_ptr =
-      _lookup<ffi.NativeFunction<_c_setFunctionNodeChannelFn>>(
-          'setFunctionNodeChannelFn');
-  late final _dart_setFunctionNodeChannelFn _setFunctionNodeChannelFn =
-      _setFunctionNodeChannelFn_ptr
-          .asFunction<_dart_setFunctionNodeChannelFn>();
+  late final _setFunctionNodeChannelFnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<
+                  ffi.NativeFunction<
+                      ffi.Void Function(
+                          ffi.Int,
+                          ffi.Int,
+                          ffi.Pointer<ffi.Float>,
+                          ffi.Int)>>)>>('setFunctionNodeChannelFn');
+  late final _setFunctionNodeChannelFn =
+      _setFunctionNodeChannelFnPtr.asFunction<
+          void Function(
+              ffi.Pointer<
+                  ffi.NativeFunction<
+                      ffi.Void Function(ffi.Int, ffi.Int,
+                          ffi.Pointer<ffi.Float>, ffi.Int)>>)>();
 
   int createFunctionNode(
     ffi.Pointer<ffi.Void> context,
@@ -13198,10 +13918,11 @@ class LabSoundBind {
     );
   }
 
-  late final _createFunctionNode_ptr =
-      _lookup<ffi.NativeFunction<_c_createFunctionNode>>('createFunctionNode');
-  late final _dart_createFunctionNode _createFunctionNode =
-      _createFunctionNode_ptr.asFunction<_dart_createFunctionNode>();
+  late final _createFunctionNodePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
+      'createFunctionNode');
+  late final _createFunctionNode = _createFunctionNodePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
   double FunctionNode_now(
     int nodeId,
@@ -13211,10 +13932,11 @@ class LabSoundBind {
     );
   }
 
-  late final _FunctionNode_now_ptr =
-      _lookup<ffi.NativeFunction<_c_FunctionNode_now>>('FunctionNode_now');
-  late final _dart_FunctionNode_now _FunctionNode_now =
-      _FunctionNode_now_ptr.asFunction<_dart_FunctionNode_now>();
+  late final _FunctionNode_nowPtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int)>>(
+          'FunctionNode_now');
+  late final _FunctionNode_now =
+      _FunctionNode_nowPtr.asFunction<double Function(int)>();
 
   void FunctionNode_setFunction(
     int nodeId,
@@ -13224,27 +13946,24 @@ class LabSoundBind {
     );
   }
 
-  late final _FunctionNode_setFunction_ptr =
-      _lookup<ffi.NativeFunction<_c_FunctionNode_setFunction>>(
+  late final _FunctionNode_setFunctionPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
           'FunctionNode_setFunction');
-  late final _dart_FunctionNode_setFunction _FunctionNode_setFunction =
-      _FunctionNode_setFunction_ptr.asFunction<
-          _dart_FunctionNode_setFunction>();
+  late final _FunctionNode_setFunction =
+      _FunctionNode_setFunctionPtr.asFunction<void Function(int)>();
 }
+
+typedef va_list = ffi.Pointer<ffi.Char>;
 
 class __crt_locale_data_public extends ffi.Struct {
-  external ffi.Pointer<ffi.Uint16> _locale_pctype;
+  external ffi.Pointer<ffi.UnsignedShort> _locale_pctype;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int _locale_mb_cur_max;
 
-  @ffi.Uint32()
+  @ffi.UnsignedInt()
   external int _locale_lc_codepage;
 }
-
-class __crt_locale_data extends ffi.Opaque {}
-
-class __crt_multibyte_data extends ffi.Opaque {}
 
 class __crt_locale_pointers extends ffi.Struct {
   external ffi.Pointer<__crt_locale_data> locinfo;
@@ -13252,51 +13971,59 @@ class __crt_locale_pointers extends ffi.Struct {
   external ffi.Pointer<__crt_multibyte_data> mbcinfo;
 }
 
+class __crt_locale_data extends ffi.Opaque {}
+
+class __crt_multibyte_data extends ffi.Opaque {}
+
 class _Mbstatet extends ffi.Struct {
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int _Wchar;
 
-  @ffi.Uint16()
+  @ffi.UnsignedShort()
   external int _Byte;
 
-  @ffi.Uint16()
+  @ffi.UnsignedShort()
   external int _State;
 }
 
-class CharArray extends ffi.Struct {
-  external ffi.Pointer<ffi.Int8> string;
+typedef errno_t = ffi.Int;
+typedef _locale_t = ffi.Pointer<__crt_locale_pointers>;
+typedef rsize_t = ffi.Size;
 
-  @ffi.Int32()
+class CharArray extends ffi.Struct {
+  external ffi.Pointer<ffi.Char> string;
+
+  @ffi.Int()
   external int len;
 }
 
 class FloatArray extends ffi.Struct {
   external ffi.Pointer<ffi.Float> array;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int len;
 }
 
 class IntArray extends ffi.Struct {
-  external ffi.Pointer<ffi.Int32> array;
+  external ffi.Pointer<ffi.Int> array;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int len;
 }
 
 class AudioDeviceInfoBridge extends ffi.Struct {
-  @ffi.Int32()
+  @ffi.Int()
   external int index;
 
-  external ffi.Pointer<ffi.Int8> identifier;
+  external ffi.Pointer<ffi.Char> identifier;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int identifier_len;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int num_output_channels;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int num_input_channels;
 
   external FloatArray supported_samplerates;
@@ -13304,27 +14031,31 @@ class AudioDeviceInfoBridge extends ffi.Struct {
   @ffi.Float()
   external double nominal_samplerate;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int is_default_output;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int is_default_input;
 }
 
 class AudioDeviceInfoList extends ffi.Struct {
   external ffi.Pointer<AudioDeviceInfoBridge> audioDeviceList;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int length;
 }
 
 class _Lldiv_t extends ffi.Struct {
-  @ffi.Int64()
+  @intmax_t()
   external int quot;
 
-  @ffi.Int64()
+  @intmax_t()
   external int rem;
 }
+
+typedef intmax_t = ffi.LongLong;
+typedef imaxdiv_t = _Lldiv_t;
+typedef uintmax_t = ffi.UnsignedLongLong;
 
 class _Dart_Isolate extends ffi.Opaque {}
 
@@ -13336,41 +14067,60 @@ class _Dart_WeakPersistentHandle extends ffi.Opaque {}
 
 class _Dart_FinalizableHandle extends ffi.Opaque {}
 
+typedef Dart_WeakPersistentHandle = ffi.Pointer<_Dart_WeakPersistentHandle>;
+typedef Dart_HandleFinalizer = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>;
+typedef Dart_FinalizableHandle = ffi.Pointer<_Dart_FinalizableHandle>;
+
 class Dart_IsolateFlags extends ffi.Struct {
   @ffi.Int32()
   external int version;
 
-  @ffi.Uint8()
-  external int enable_asserts;
+  @ffi.Bool()
+  external bool enable_asserts;
 
-  @ffi.Uint8()
-  external int use_field_guards;
+  @ffi.Bool()
+  external bool use_field_guards;
 
-  @ffi.Uint8()
-  external int use_osr;
+  @ffi.Bool()
+  external bool use_osr;
 
-  @ffi.Uint8()
-  external int obfuscate;
+  @ffi.Bool()
+  external bool obfuscate;
 
-  @ffi.Uint8()
-  external int load_vmservice_library;
+  @ffi.Bool()
+  external bool load_vmservice_library;
 
-  @ffi.Uint8()
-  external int copy_parent_code;
+  @ffi.Bool()
+  external bool copy_parent_code;
 
-  @ffi.Uint8()
-  external int null_safety;
+  @ffi.Bool()
+  external bool null_safety;
 
-  @ffi.Uint8()
-  external int is_system_isolate;
+  @ffi.Bool()
+  external bool is_system_isolate;
 }
 
 /// Forward declaration
 class Dart_CodeObserver extends ffi.Struct {
   external ffi.Pointer<ffi.Void> data;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_OnNewCodeCallback>> on_new_code;
+  external Dart_OnNewCodeCallback on_new_code;
 }
+
+/// Callback provided by the embedder that is used by the VM to notify on code
+/// object creation, *before* it is invoked the first time.
+/// This is useful for embedders wanting to e.g. keep track of PCs beyond
+/// the lifetime of the garbage collected code objects.
+/// Note that an address range may be used by more than one code object over the
+/// lifecycle of a process. Clients of this function should record timestamps for
+/// these compilation events and when collecting PCs to disambiguate reused
+/// address ranges.
+typedef Dart_OnNewCodeCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<Dart_CodeObserver>, ffi.Pointer<ffi.Char>,
+            ffi.UintPtr, ffi.UintPtr)>>;
 
 /// Describes how to initialize the VM. Used with Dart_Initialize.
 ///
@@ -13406,41 +14156,257 @@ class Dart_InitializeParams extends ffi.Struct {
 
   external ffi.Pointer<ffi.Uint8> vm_snapshot_instructions;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateGroupCreateCallback>>
-      create_group;
+  external Dart_IsolateGroupCreateCallback create_group;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_InitializeIsolateCallback>>
-      initialize_isolate;
+  external Dart_InitializeIsolateCallback initialize_isolate;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
-      shutdown_isolate;
+  external Dart_IsolateShutdownCallback shutdown_isolate;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>>
-      cleanup_isolate;
+  external Dart_IsolateCleanupCallback cleanup_isolate;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_IsolateGroupCleanupCallback>>
-      cleanup_group;
+  external Dart_IsolateGroupCleanupCallback cleanup_group;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_ThreadExitCallback>> thread_exit;
+  external Dart_ThreadExitCallback thread_exit;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_FileOpenCallback>> file_open;
+  external Dart_FileOpenCallback file_open;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_FileReadCallback>> file_read;
+  external Dart_FileReadCallback file_read;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_FileWriteCallback>> file_write;
+  external Dart_FileWriteCallback file_write;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_FileCloseCallback>> file_close;
+  external Dart_FileCloseCallback file_close;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_EntropySource>> entropy_source;
+  external Dart_EntropySource entropy_source;
 
-  external ffi.Pointer<ffi.NativeFunction<Dart_GetVMServiceAssetsArchive>>
-      get_service_assets;
+  external Dart_GetVMServiceAssetsArchive get_service_assets;
 
-  @ffi.Uint8()
-  external int start_kernel_isolate;
+  @ffi.Bool()
+  external bool start_kernel_isolate;
 
   external ffi.Pointer<Dart_CodeObserver> code_observer;
 }
+
+/// An isolate creation and initialization callback function.
+///
+/// This callback, provided by the embedder, is called when the VM
+/// needs to create an isolate. The callback should create an isolate
+/// by calling Dart_CreateIsolateGroup and load any scripts required for
+/// execution.
+///
+/// This callback may be called on a different thread than the one
+/// running the parent isolate.
+///
+/// When the function returns NULL, it is the responsibility of this
+/// function to ensure that Dart_ShutdownIsolate has been called if
+/// required (for example, if the isolate was created successfully by
+/// Dart_CreateIsolateGroup() but the root library fails to load
+/// successfully, then the function should call Dart_ShutdownIsolate
+/// before returning).
+///
+/// When the function returns NULL, the function should set *error to
+/// a malloc-allocated buffer containing a useful error message.  The
+/// caller of this function (the VM) will make sure that the buffer is
+/// freed.
+///
+/// \param script_uri The uri of the main source file or snapshot to load.
+/// Either the URI of the parent isolate set in Dart_CreateIsolateGroup for
+/// Isolate.spawn, or the argument to Isolate.spawnUri canonicalized by the
+/// library tag handler of the parent isolate.
+/// The callback is responsible for loading the program by a call to
+/// Dart_LoadScriptFromKernel.
+/// \param main The name of the main entry point this isolate will
+/// eventually run.  This is provided for advisory purposes only to
+/// improve debugging messages.  The main function is not invoked by
+/// this function.
+/// \param package_root Ignored.
+/// \param package_config Uri of the package configuration file (either in format
+/// of .packages or .dart_tool/package_config.json) for this isolate
+/// to resolve package imports against. If this parameter is not passed the
+/// package resolution of the parent isolate should be used.
+/// \param flags Default flags for this isolate being spawned. Either inherited
+/// from the spawning isolate or passed as parameters when spawning the
+/// isolate from Dart code.
+/// \param isolate_data The isolate data which was passed to the
+/// parent isolate when it was created by calling Dart_CreateIsolateGroup().
+/// \param error A structure into which the embedder can place a
+/// C string containing an error message in the case of failures.
+///
+/// \return The embedder returns NULL if the creation and
+/// initialization was not successful and the isolate if successful.
+typedef Dart_IsolateGroupCreateCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_Isolate Function(
+            ffi.Pointer<ffi.Char>,
+            ffi.Pointer<ffi.Char>,
+            ffi.Pointer<ffi.Char>,
+            ffi.Pointer<ffi.Char>,
+            ffi.Pointer<Dart_IsolateFlags>,
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<ffi.Pointer<ffi.Char>>)>>;
+
+/// An isolate is the unit of concurrency in Dart. Each isolate has
+/// its own memory and thread of control. No state is shared between
+/// isolates. Instead, isolates communicate by message passing.
+///
+/// Each thread keeps track of its current isolate, which is the
+/// isolate which is ready to execute on the current thread. The
+/// current isolate may be NULL, in which case no isolate is ready to
+/// execute. Most of the Dart apis require there to be a current
+/// isolate in order to function without error. The current isolate is
+/// set by any call to Dart_CreateIsolateGroup or Dart_EnterIsolate.
+typedef Dart_Isolate = ffi.Pointer<_Dart_Isolate>;
+
+/// An isolate initialization callback function.
+///
+/// This callback, provided by the embedder, is called when the VM has created an
+/// isolate within an existing isolate group (i.e. from the same source as an
+/// existing isolate).
+///
+/// The callback should setup native resolvers and might want to set a custom
+/// message handler via [Dart_SetMessageNotifyCallback] and mark the isolate as
+/// runnable.
+///
+/// This callback may be called on a different thread than the one
+/// running the parent isolate.
+///
+/// When the function returns `false`, it is the responsibility of this
+/// function to ensure that `Dart_ShutdownIsolate` has been called.
+///
+/// When the function returns `false`, the function should set *error to
+/// a malloc-allocated buffer containing a useful error message.  The
+/// caller of this function (the VM) will make sure that the buffer is
+/// freed.
+///
+/// \param child_isolate_data The callback data to associate with the new
+/// child isolate.
+/// \param error A structure into which the embedder can place a
+/// C string containing an error message in the case the initialization fails.
+///
+/// \return The embedder returns true if the initialization was successful and
+/// false otherwise (in which case the VM will terminate the isolate).
+typedef Dart_InitializeIsolateCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Bool Function(ffi.Pointer<ffi.Pointer<ffi.Void>>,
+            ffi.Pointer<ffi.Pointer<ffi.Char>>)>>;
+
+/// An isolate shutdown callback function.
+///
+/// This callback, provided by the embedder, is called before the vm
+/// shuts down an isolate.  The isolate being shutdown will be the current
+/// isolate. It is safe to run Dart code.
+///
+/// This function should be used to dispose of native resources that
+/// are allocated to an isolate in order to avoid leaks.
+///
+/// \param isolate_group_data The same callback data which was passed to the
+/// isolate group when it was created.
+/// \param isolate_data The same callback data which was passed to the isolate
+/// when it was created.
+typedef Dart_IsolateShutdownCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>;
+
+/// An isolate cleanup callback function.
+///
+/// This callback, provided by the embedder, is called after the vm
+/// shuts down an isolate. There will be no current isolate and it is *not*
+/// safe to run Dart code.
+///
+/// This function should be used to dispose of native resources that
+/// are allocated to an isolate in order to avoid leaks.
+///
+/// \param isolate_group_data The same callback data which was passed to the
+/// isolate group when it was created.
+/// \param isolate_data The same callback data which was passed to the isolate
+/// when it was created.
+typedef Dart_IsolateCleanupCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>;
+
+/// An isolate group cleanup callback function.
+///
+/// This callback, provided by the embedder, is called after the vm
+/// shuts down an isolate group.
+///
+/// This function should be used to dispose of native resources that
+/// are allocated to an isolate in order to avoid leaks.
+///
+/// \param isolate_group_data The same callback data which was passed to the
+/// isolate group when it was created.
+typedef Dart_IsolateGroupCleanupCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>;
+
+/// A thread death callback function.
+/// This callback, provided by the embedder, is called before a thread in the
+/// vm thread pool exits.
+/// This function could be used to dispose of native resources that
+/// are associated and attached to the thread, in order to avoid leaks.
+typedef Dart_ThreadExitCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>>;
+
+/// Callbacks provided by the embedder for file operations. If the
+/// embedder does not allow file operations these callbacks can be
+/// NULL.
+///
+/// Dart_FileOpenCallback - opens a file for reading or writing.
+/// \param name The name of the file to open.
+/// \param write A boolean variable which indicates if the file is to
+/// opened for writing. If there is an existing file it needs to truncated.
+///
+/// Dart_FileReadCallback - Read contents of file.
+/// \param data Buffer allocated in the callback into which the contents
+/// of the file are read into. It is the responsibility of the caller to
+/// free this buffer.
+/// \param file_length A variable into which the length of the file is returned.
+/// In the case of an error this value would be -1.
+/// \param stream Handle to the opened file.
+///
+/// Dart_FileWriteCallback - Write data into file.
+/// \param data Buffer which needs to be written into the file.
+/// \param length Length of the buffer.
+/// \param stream Handle to the opened file.
+///
+/// Dart_FileCloseCallback - Closes the opened file.
+/// \param stream Handle to the opened file.
+typedef Dart_FileOpenCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Char>, ffi.Bool)>>;
+typedef Dart_FileReadCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+            ffi.Pointer<ffi.IntPtr>, ffi.Pointer<ffi.Void>)>>;
+typedef Dart_FileWriteCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(
+            ffi.Pointer<ffi.Void>, ffi.IntPtr, ffi.Pointer<ffi.Void>)>>;
+typedef Dart_FileCloseCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>;
+typedef Dart_EntropySource = ffi.Pointer<
+    ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>;
+
+/// Callback provided by the embedder that is used by the vmservice isolate
+/// to request the asset archive. The asset archive must be an uncompressed tar
+/// archive that is stored in a Uint8List.
+///
+/// If the embedder has no vmservice isolate assets, the callback can be NULL.
+///
+/// \return The embedder must return a handle to a Uint8List containing an
+/// uncompressed tar archive or null.
+typedef Dart_GetVMServiceAssetsArchive
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function()>>;
+typedef Dart_IsolateGroup = ffi.Pointer<_Dart_IsolateGroup>;
+
+/// A message notification callback.
+///
+/// This callback allows the embedder to provide an alternate wakeup
+/// mechanism for the delivery of inter-isolate messages.  It is the
+/// responsibility of the embedder to call Dart_HandleMessage to
+/// process the message.
+typedef Dart_MessageNotifyCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>;
+
+/// A port is used to send or receive inter-isolate messages
+typedef Dart_Port = ffi.Int64;
 
 abstract class Dart_CoreType_Id {
   static const int Dart_CoreType_Dynamic = 0;
@@ -13469,6 +14435,14 @@ abstract class Dart_TypedData_Type {
 
 class _Dart_NativeArguments extends ffi.Opaque {}
 
+/// The arguments to a native function.
+///
+/// This object is passed to a native function to represent its
+/// arguments and return value. It allows access to the arguments to a
+/// native function by index. It also allows the return value of a
+/// native function to be set.
+typedef Dart_NativeArguments = ffi.Pointer<_Dart_NativeArguments>;
+
 abstract class Dart_NativeArgument_Type {
   static const int Dart_NativeArgument_kBool = 0;
   static const int Dart_NativeArgument_kInt32 = 1;
@@ -13481,7 +14455,7 @@ abstract class Dart_NativeArgument_Type {
   static const int Dart_NativeArgument_kNativeFields = 8;
 }
 
-class Dart_NativeArgument_Descriptor extends ffi.Struct {
+class _Dart_NativeArgument_Descriptor extends ffi.Struct {
   @ffi.Uint8()
   external int type;
 
@@ -13489,12 +14463,133 @@ class Dart_NativeArgument_Descriptor extends ffi.Struct {
   external int index;
 }
 
+class _Dart_NativeArgument_Value extends ffi.Opaque {}
+
+typedef Dart_NativeArgument_Descriptor = _Dart_NativeArgument_Descriptor;
+typedef Dart_NativeArgument_Value = _Dart_NativeArgument_Value;
+
+/// An environment lookup callback function.
+///
+/// \param name The name of the value to lookup in the environment.
+///
+/// \return A valid handle to a string if the name exists in the
+/// current environment or Dart_Null() if not.
+typedef Dart_EnvironmentCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+
+/// Native entry resolution callback.
+///
+/// For libraries and scripts which have native functions, the embedder
+/// can provide a native entry resolver. This callback is used to map a
+/// name/arity to a Dart_NativeFunction. If no function is found, the
+/// callback should return NULL.
+///
+/// The parameters to the native resolver function are:
+/// \param name a Dart string which is the name of the native function.
+/// \param num_of_arguments is the number of arguments expected by the
+/// native function.
+/// \param auto_setup_scope is a boolean flag that can be set by the resolver
+/// to indicate if this function needs a Dart API scope (see Dart_EnterScope/
+/// Dart_ExitScope) to be setup automatically by the VM before calling into
+/// the native function. By default most native functions would require this
+/// to be true but some light weight native functions which do not call back
+/// into the VM through the Dart API may not require a Dart scope to be
+/// setup automatically.
+///
+/// \return A valid Dart_NativeFunction which resolves to a native entry point
+/// for the native function.
+///
+/// See Dart_SetNativeResolver.
+typedef Dart_NativeEntryResolver = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_NativeFunction Function(
+            ffi.Handle, ffi.Int, ffi.Pointer<ffi.Bool>)>>;
+
+/// A native function.
+typedef Dart_NativeFunction
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(Dart_NativeArguments)>>;
+
+/// Native entry symbol lookup callback.
+///
+/// For libraries and scripts which have native functions, the embedder
+/// can provide a callback for mapping a native entry to a symbol. This callback
+/// maps a native function entry PC to the native function name. If no native
+/// entry symbol can be found, the callback should return NULL.
+///
+/// The parameters to the native reverse resolver function are:
+/// \param nf A Dart_NativeFunction.
+///
+/// \return A const UTF-8 string containing the symbol name or NULL.
+///
+/// See Dart_SetNativeResolver.
+typedef Dart_NativeEntrySymbol = ffi.Pointer<
+    ffi.NativeFunction<ffi.Pointer<ffi.Uint8> Function(Dart_NativeFunction)>>;
+
+/// FFI Native C function pointer resolver callback.
+///
+/// See Dart_SetFfiNativeResolver.
+typedef Dart_FfiNativeResolver = ffi.Pointer<
+    ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Char>)>>;
+
 abstract class Dart_LibraryTag {
   static const int Dart_kCanonicalizeUrl = 0;
   static const int Dart_kImportTag = 1;
   static const int Dart_kKernelTag = 2;
   static const int Dart_kImportExtensionTag = 3;
 }
+
+/// The library tag handler is a multi-purpose callback provided by the
+/// embedder to the Dart VM. The embedder implements the tag handler to
+/// provide the ability to load Dart scripts and imports.
+///
+/// -- TAGS --
+///
+/// Dart_kCanonicalizeUrl
+///
+/// This tag indicates that the embedder should canonicalize 'url' with
+/// respect to 'library'.  For most embedders, the
+/// Dart_DefaultCanonicalizeUrl function is a sufficient implementation
+/// of this tag.  The return value should be a string holding the
+/// canonicalized url.
+///
+/// Dart_kImportTag
+///
+/// This tag is used to load a library from IsolateMirror.loadUri. The embedder
+/// should call Dart_LoadLibraryFromKernel to provide the library to the VM. The
+/// return value should be an error or library (the result from
+/// Dart_LoadLibraryFromKernel).
+///
+/// Dart_kKernelTag
+///
+/// This tag is used to load the intermediate file (kernel) generated by
+/// the Dart front end. This tag is typically used when a 'hot-reload'
+/// of an application is needed and the VM is 'use dart front end' mode.
+/// The dart front end typically compiles all the scripts, imports and part
+/// files into one intermediate file hence we don't use the source/import or
+/// script tags. The return value should be an error or a TypedData containing
+/// the kernel bytes.
+///
+/// Dart_kImportExtensionTag
+///
+/// This tag is used to load an external import (shared object file). The
+/// extension path must have the scheme 'dart-ext:'.
+typedef Dart_LibraryTagHandler = ffi.Pointer<
+    ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.Handle, ffi.Handle)>>;
+
+/// Handles deferred loading requests. When this handler is invoked, it should
+/// eventually load the deferred loading unit with the given id and call
+/// Dart_DeferredLoadComplete or Dart_DeferredLoadCompleteError. It is
+/// recommended that the loading occur asynchronously, but it is permitted to
+/// call Dart_DeferredLoadComplete or Dart_DeferredLoadCompleteError before the
+/// handler returns.
+///
+/// If an error is returned, it will be propogated through
+/// `prefix.loadLibrary()`. This is useful for synchronous
+/// implementations, which must propogate any unwind errors from
+/// Dart_DeferredLoadComplete or Dart_DeferredLoadComplete. Otherwise the handler
+/// should return a non-error such as `Dart_Null()`.
+typedef Dart_DeferredLoadHandler
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>;
 
 /// Experimental support for Dart to Kernel parser isolate.
 ///
@@ -13510,10 +14605,10 @@ class Dart_KernelCompilationResult extends ffi.Struct {
   @ffi.Int32()
   external int status;
 
-  @ffi.Uint8()
-  external int null_safety;
+  @ffi.Bool()
+  external bool null_safety;
 
-  external ffi.Pointer<ffi.Int8> error;
+  external ffi.Pointer<ffi.Char> error;
 
   external ffi.Pointer<ffi.Uint8> kernel;
 
@@ -13529,10 +14624,24 @@ abstract class Dart_KernelCompilationVerbosityLevel {
 }
 
 class Dart_SourceFile extends ffi.Struct {
-  external ffi.Pointer<ffi.Int8> uri;
+  external ffi.Pointer<ffi.Char> uri;
 
-  external ffi.Pointer<ffi.Int8> source;
+  external ffi.Pointer<ffi.Char> source;
 }
+
+typedef Dart_StreamingWriteCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(
+            ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>;
+typedef Dart_CreateLoadingUnitCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.IntPtr,
+            ffi.Pointer<ffi.Pointer<ffi.Void>>,
+            ffi.Pointer<ffi.Pointer<ffi.Void>>)>>;
+typedef Dart_StreamingCloseCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>;
 
 class AudioStreamConfig extends ffi.Struct {
   @ffi.Int32()
@@ -13549,7 +14658,7 @@ class AudioDeviceIndex extends ffi.Struct {
   @ffi.Uint32()
   external int index;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int valid;
 }
 
@@ -13584,6 +14693,8 @@ const int NULL = 0;
 const int _HAS_CXX17 = 0;
 
 const int _HAS_CXX20 = 0;
+
+const int _HAS_CXX23 = 0;
 
 const int _HAS_NODISCARD = 1;
 
@@ -13689,6 +14800,10 @@ const int WINT_MIN = 0;
 
 const int WINT_MAX = 65535;
 
+const int _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE = 1;
+
+const int _CRT_BUILD_DESKTOP_APP = 1;
+
 const int _UCRT_DISABLED_WARNINGS = 4324;
 
 const int _ARGMAX = 100;
@@ -13699,15 +14814,13 @@ const int _CRT_INT_MAX = 2147483647;
 
 const int _CRT_SIZE_MAX = -1;
 
-const String __FILEW__ = 't';
+const String __FILEW__ = 'C';
 
 const int _CRT_FUNCTIONS_REQUIRED = 1;
 
 const int _CRT_HAS_CXX17 = 0;
 
-const int _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE = 1;
-
-const int _CRT_BUILD_DESKTOP_APP = 1;
+const int _CRT_HAS_C11 = 0;
 
 const int _CRT_INTERNAL_NONSTDC_NAMES = 1;
 
@@ -13895,9 +15008,9 @@ const int _NLSCMPERROR = 2147483647;
 
 const int __bool_true_false_are_defined = 1;
 
-const int false_1 = 0;
+const int false1 = 0;
 
-const int true_1 = 1;
+const int true1 = 1;
 
 const String PRId8 = 'hhd';
 
@@ -14211,8 +15324,6 @@ const int DART_FLAGS_CURRENT_VERSION = 12;
 
 const int DART_INITIALIZE_PARAMS_CURRENT_VERSION = 4;
 
-const int ILLEGAL_PORT = 0;
-
 const String DART_KERNEL_ISOLATE_NAME = 'kernel-service';
 
 const String DART_VM_SERVICE_ISOLATE_NAME = 'vm-service';
@@ -14246,7249 +15357,3 @@ const String kIsolateSnapshotInstructionsAsmSymbol =
     '_kDartIsolateSnapshotInstructions';
 
 const String kIsolateSnapshotBssAsmSymbol = '_kDartIsolateSnapshotBss';
-
-typedef _c___va_start = ffi.Void Function(
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
-);
-
-typedef _dart___va_start = void Function(
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> arg0,
-);
-
-typedef _c___security_init_cookie = ffi.Void Function();
-
-typedef _dart___security_init_cookie = void Function();
-
-typedef _c___security_check_cookie = ffi.Void Function(
-  ffi.Uint64 _StackCookie,
-);
-
-typedef _dart___security_check_cookie = void Function(
-  int _StackCookie,
-);
-
-typedef _c___report_gsfailure = ffi.Void Function(
-  ffi.Uint64 _StackCookie,
-);
-
-typedef _dart___report_gsfailure = void Function(
-  int _StackCookie,
-);
-
-typedef _c__invalid_parameter_noinfo = ffi.Void Function();
-
-typedef _dart__invalid_parameter_noinfo = void Function();
-
-typedef _c__invalid_parameter_noinfo_noreturn = ffi.Void Function();
-
-typedef _dart__invalid_parameter_noinfo_noreturn = void Function();
-
-typedef _c__invoke_watson = ffi.Void Function(
-  ffi.Pointer<ffi.Uint16> _Expression,
-  ffi.Pointer<ffi.Uint16> _FunctionName,
-  ffi.Pointer<ffi.Uint16> _FileName,
-  ffi.Uint32 _LineNo,
-  ffi.Uint64 _Reserved,
-);
-
-typedef _dart__invoke_watson = void Function(
-  ffi.Pointer<ffi.Uint16> _Expression,
-  ffi.Pointer<ffi.Uint16> _FunctionName,
-  ffi.Pointer<ffi.Uint16> _FileName,
-  int _LineNo,
-  int _Reserved,
-);
-
-typedef _c__errno = ffi.Pointer<ffi.Int32> Function();
-
-typedef _dart__errno = ffi.Pointer<ffi.Int32> Function();
-
-typedef _c__set_errno = ffi.Int32 Function(
-  ffi.Int32 _Value,
-);
-
-typedef _dart__set_errno = int Function(
-  int _Value,
-);
-
-typedef _c__get_errno = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int32> _Value,
-);
-
-typedef _dart__get_errno = int Function(
-  ffi.Pointer<ffi.Int32> _Value,
-);
-
-typedef _c___doserrno = ffi.Pointer<ffi.Uint64> Function();
-
-typedef _dart___doserrno = ffi.Pointer<ffi.Uint64> Function();
-
-typedef _c__set_doserrno = ffi.Int32 Function(
-  ffi.Uint64 _Value,
-);
-
-typedef _dart__set_doserrno = int Function(
-  int _Value,
-);
-
-typedef _c__get_doserrno = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint64> _Value,
-);
-
-typedef _dart__get_doserrno = int Function(
-  ffi.Pointer<ffi.Uint64> _Value,
-);
-
-typedef _c_memchr = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Buf,
-  ffi.Int32 _Val,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_memchr = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Buf,
-  int _Val,
-  int _MaxCount,
-);
-
-typedef _c_memcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memcmp = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-);
-
-typedef _c_memcpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memcpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Size,
-);
-
-typedef _c_memmove = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memmove = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Size,
-);
-
-typedef _c_memset = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Int32 _Val,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memset = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  int _Val,
-  int _Size,
-);
-
-typedef _c_strchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Int32 _Val,
-);
-
-typedef _dart_strchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  int _Val,
-);
-
-typedef _c_strrchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Int32 _Ch,
-);
-
-typedef _dart_strrchr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  int _Ch,
-);
-
-typedef _c_strstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _SubStr,
-);
-
-typedef _dart_strstr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _SubStr,
-);
-
-typedef _c_wcschr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Uint16 _Ch,
-);
-
-typedef _dart_wcschr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  int _Ch,
-);
-
-typedef _c_wcsrchr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Uint16 _Ch,
-);
-
-typedef _dart_wcsrchr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  int _Ch,
-);
-
-typedef _c_wcsstr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Pointer<ffi.Uint16> _SubStr,
-);
-
-typedef _dart_wcsstr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Str,
-  ffi.Pointer<ffi.Uint16> _SubStr,
-);
-
-typedef _c__memicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__memicmp = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-);
-
-typedef _c__memicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__memicmp_l = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Int32 _Val,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Val,
-  int _Size,
-);
-
-typedef _c_memicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart_memicmp = int Function(
-  ffi.Pointer<ffi.Void> _Buf1,
-  ffi.Pointer<ffi.Void> _Buf2,
-  int _Size,
-);
-
-typedef _c_wcscat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscat_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcscpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscpy_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcsncat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsncat_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c_wcsncpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsncpy_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c_wcstok_s = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _dart_wcstok_s = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _c__wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcscat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcscmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcscmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c_wcscpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _dart_wcscpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-);
-
-typedef _c_wcscspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _dart_wcscspn = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _c_wcslen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcslen = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsnlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsnlen = int Function(
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c_wcsncat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart_wcsncat = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _Count,
-);
-
-typedef _c_wcsncmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsncmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c_wcsncpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart_wcsncpy = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _Count,
-);
-
-typedef _c_wcspbrk = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _dart_wcspbrk = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _c_wcsspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _dart_wcsspn = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Control,
-);
-
-typedef _c_wcstok = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _dart_wcstok = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Uint16> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _Context,
-);
-
-typedef _c__wcserror = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Int32 _ErrorNumber,
-);
-
-typedef _dart__wcserror = ffi.Pointer<ffi.Uint16> Function(
-  int _ErrorNumber,
-);
-
-typedef _c__wcserror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  ffi.Uint64 _SizeInWords,
-  ffi.Int32 _ErrorNumber,
-);
-
-typedef _dart__wcserror_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  int _SizeInWords,
-  int _ErrorNumber,
-);
-
-typedef _c___wcserror = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart___wcserror = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c___wcserror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _ErrorMessage,
-);
-
-typedef _dart___wcserror_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Buffer,
-  int _SizeInWords,
-  ffi.Pointer<ffi.Uint16> _ErrorMessage,
-);
-
-typedef _c__wcsicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart__wcsicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c__wcsicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsicmp_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c__wcsnicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsnicmp_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsnset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Uint16 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnset_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c__wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c__wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c__wcsset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Uint64 _SizeInWords,
-  ffi.Uint16 _Value,
-);
-
-typedef _dart__wcsset_s = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  int _SizeInWords,
-  int _Value,
-);
-
-typedef _c__wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-);
-
-typedef _dart__wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-);
-
-typedef _c__wcslwr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _SizeInWords,
-);
-
-typedef _dart__wcslwr_s = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _SizeInWords,
-);
-
-typedef _c__wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c__wcslwr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _SizeInWords,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcslwr_s_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _SizeInWords,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcslwr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcslwr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsupr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__wcsupr_s = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Size,
-);
-
-typedef _c__wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart__wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c__wcsupr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsupr_s_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsupr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsupr_l = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcsxfrm = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsxfrm = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-);
-
-typedef _c__wcsxfrm_l = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsxfrm_l = int Function(
-  ffi.Pointer<ffi.Uint16> _Destination,
-  ffi.Pointer<ffi.Uint16> _Source,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcscoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcscoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c__wcscoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcscoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart__wcsicoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c__wcsicoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsicoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsncoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsncoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c__wcsncoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsncoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__wcsnicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__wcsnicoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c__wcsnicoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcsnicoll_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcsdup = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcsicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c_wcsnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsnicmp = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-  int _MaxCount,
-);
-
-typedef _c_wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_wcsnset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c_wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcsrev = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Uint16 _Value,
-);
-
-typedef _dart_wcsset = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  int _Value,
-);
-
-typedef _c_wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcslwr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _dart_wcsupr = ffi.Pointer<ffi.Uint16> Function(
-  ffi.Pointer<ffi.Uint16> _String,
-);
-
-typedef _c_wcsicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _dart_wcsicoll = int Function(
-  ffi.Pointer<ffi.Uint16> _String1,
-  ffi.Pointer<ffi.Uint16> _String2,
-);
-
-typedef _c_strcpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart_strcpy_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c_strcat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart_strcat_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c_strerror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Int32 _ErrorNumber,
-);
-
-typedef _dart_strerror_s = int Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  int _SizeInBytes,
-  int _ErrorNumber,
-);
-
-typedef _c_strncat_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strncat_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-);
-
-typedef _c_strncpy_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strncpy_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-);
-
-typedef _c_strtok_s = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
-);
-
-typedef _dart_strtok_s = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _Context,
-);
-
-typedef _c__memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  ffi.Int32 _Val,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__memccpy = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> _Dst,
-  ffi.Pointer<ffi.Void> _Src,
-  int _Val,
-  int _MaxCount,
-);
-
-typedef _c_strcat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart_strcat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c_strcmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-);
-
-typedef _dart_strcmp = int Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-);
-
-typedef _c__strcmpi = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart__strcmpi = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c_strcoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart_strcoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c__strcoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strcoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_strcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart_strcpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c_strcspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _dart_strcspn = int Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _c__strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _dart__strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Source,
-);
-
-typedef _c__strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _dart__strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _c__strerror_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _dart__strerror_s = int Function(
-  ffi.Pointer<ffi.Int8> _Buffer,
-  int _SizeInBytes,
-  ffi.Pointer<ffi.Int8> _ErrorMessage,
-);
-
-typedef _c_strerror = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 _ErrorMessage,
-);
-
-typedef _dart_strerror = ffi.Pointer<ffi.Int8> Function(
-  int _ErrorMessage,
-);
-
-typedef _c__stricmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart__stricmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c__stricoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart__stricoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c__stricoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__stricoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__stricmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__stricmp_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_strlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Str,
-);
-
-typedef _dart_strlen = int Function(
-  ffi.Pointer<ffi.Int8> _Str,
-);
-
-typedef _c__strlwr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__strlwr_s = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-);
-
-typedef _c__strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart__strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c__strlwr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strlwr_s_l = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strlwr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strlwr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_strncat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart_strncat = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _Count,
-);
-
-typedef _c_strncmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strncmp = int Function(
-  ffi.Pointer<ffi.Int8> _Str1,
-  ffi.Pointer<ffi.Int8> _Str2,
-  int _MaxCount,
-);
-
-typedef _c__strnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strnicmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c__strnicmp_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strnicmp_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strnicoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strnicoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c__strnicoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strnicoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strncoll = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strncoll = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c__strncoll_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strncoll_l = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c___strncnt = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart___strncnt = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Count,
-);
-
-typedef _c_strncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart_strncpy = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _Count,
-);
-
-typedef _c_strnlen = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strnlen = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _MaxCount,
-);
-
-typedef _c__strnset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _SizeInBytes,
-  ffi.Int32 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart__strnset_s = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _SizeInBytes,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c__strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Int32 _Value,
-  ffi.Uint64 _Count,
-);
-
-typedef _dart__strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _Value,
-  int _Count,
-);
-
-typedef _c_strpbrk = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _dart_strpbrk = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _c__strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-);
-
-typedef _dart__strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Str,
-);
-
-typedef _c__strset_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Uint64 _DestinationSize,
-  ffi.Int32 _Value,
-);
-
-typedef _dart__strset_s = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _DestinationSize,
-  int _Value,
-);
-
-typedef _c__strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Int32 _Value,
-);
-
-typedef _dart__strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  int _Value,
-);
-
-typedef _c_strspn = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _dart_strspn = int Function(
-  ffi.Pointer<ffi.Int8> _Str,
-  ffi.Pointer<ffi.Int8> _Control,
-);
-
-typedef _c_strtok = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-);
-
-typedef _dart_strtok = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Int8> _Delimiter,
-);
-
-typedef _c__strupr_s = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-);
-
-typedef _dart__strupr_s = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-);
-
-typedef _c__strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart__strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c__strupr_s_l = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Uint64 _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strupr_s_l = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Size,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c__strupr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strupr_l = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_strxfrm = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strxfrm = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-);
-
-typedef _c__strxfrm_l = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  ffi.Uint64 _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strxfrm_l = int Function(
-  ffi.Pointer<ffi.Int8> _Destination,
-  ffi.Pointer<ffi.Int8> _Source,
-  int _MaxCount,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart_strdup = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c_strcmpi = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart_strcmpi = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c_stricmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _dart_stricmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-);
-
-typedef _c_strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart_strlwr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c_strnicmp = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strnicmp = int Function(
-  ffi.Pointer<ffi.Int8> _String1,
-  ffi.Pointer<ffi.Int8> _String2,
-  int _MaxCount,
-);
-
-typedef _c_strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Int32 _Value,
-  ffi.Uint64 _MaxCount,
-);
-
-typedef _dart_strnset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Value,
-  int _MaxCount,
-);
-
-typedef _c_strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart_strrev = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c_strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Int32 _Value,
-);
-
-typedef _dart_strset = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-  int _Value,
-);
-
-typedef _c_strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _dart_strupr = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<ffi.Int8> _String,
-);
-
-typedef _c__wassert = ffi.Void Function(
-  ffi.Pointer<ffi.Uint16> _Message,
-  ffi.Pointer<ffi.Uint16> _File,
-  ffi.Uint32 _Line,
-);
-
-typedef _dart__wassert = void Function(
-  ffi.Pointer<ffi.Uint16> _Message,
-  ffi.Pointer<ffi.Uint16> _File,
-  int _Line,
-);
-
-typedef _c_imaxabs = ffi.Int64 Function(
-  ffi.Int64 _Number,
-);
-
-typedef _dart_imaxabs = int Function(
-  int _Number,
-);
-
-typedef _c_imaxdiv = _Lldiv_t Function(
-  ffi.Int64 _Numerator,
-  ffi.Int64 _Denominator,
-);
-
-typedef _dart_imaxdiv = _Lldiv_t Function(
-  int _Numerator,
-  int _Denominator,
-);
-
-typedef _c_strtoimax = ffi.Int64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  ffi.Int32 _Radix,
-);
-
-typedef _dart_strtoimax = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  int _Radix,
-);
-
-typedef _c__strtoimax_l = ffi.Int64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  ffi.Int32 _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strtoimax_l = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  int _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_strtoumax = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  ffi.Int32 _Radix,
-);
-
-typedef _dart_strtoumax = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  int _Radix,
-);
-
-typedef _c__strtoumax_l = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  ffi.Int32 _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__strtoumax_l = int Function(
-  ffi.Pointer<ffi.Int8> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> _EndPtr,
-  int _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcstoimax = ffi.Int64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  ffi.Int32 _Radix,
-);
-
-typedef _dart_wcstoimax = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  int _Radix,
-);
-
-typedef _c__wcstoimax_l = ffi.Int64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  ffi.Int32 _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcstoimax_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  int _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_wcstoumax = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  ffi.Int32 _Radix,
-);
-
-typedef _dart_wcstoumax = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  int _Radix,
-);
-
-typedef _c__wcstoumax_l = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  ffi.Int32 _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _dart__wcstoumax_l = int Function(
-  ffi.Pointer<ffi.Uint16> _String,
-  ffi.Pointer<ffi.Pointer<ffi.Uint16>> _EndPtr,
-  int _Radix,
-  ffi.Pointer<__crt_locale_pointers> _Locale,
-);
-
-typedef _c_Dart_IsError = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsError = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsApiError = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsApiError = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsUnhandledExceptionError = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsUnhandledExceptionError = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsCompilationError = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsCompilationError = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsFatalError = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsFatalError = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_GetError = ffi.Pointer<ffi.Int8> Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_GetError = ffi.Pointer<ffi.Int8> Function(
-  Object handle,
-);
-
-typedef _c_Dart_ErrorHasException = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_ErrorHasException = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_ErrorGetException = ffi.Handle Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_ErrorGetException = Object Function(
-  Object handle,
-);
-
-typedef _c_Dart_ErrorGetStackTrace = ffi.Handle Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_ErrorGetStackTrace = Object Function(
-  Object handle,
-);
-
-typedef _c_Dart_NewApiError = ffi.Handle Function(
-  ffi.Pointer<ffi.Int8> error,
-);
-
-typedef _dart_Dart_NewApiError = Object Function(
-  ffi.Pointer<ffi.Int8> error,
-);
-
-typedef _c_Dart_NewCompilationError = ffi.Handle Function(
-  ffi.Pointer<ffi.Int8> error,
-);
-
-typedef _dart_Dart_NewCompilationError = Object Function(
-  ffi.Pointer<ffi.Int8> error,
-);
-
-typedef _c_Dart_NewUnhandledExceptionError = ffi.Handle Function(
-  ffi.Handle exception,
-);
-
-typedef _dart_Dart_NewUnhandledExceptionError = Object Function(
-  Object exception,
-);
-
-typedef _c_Dart_PropagateError = ffi.Void Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_PropagateError = void Function(
-  Object handle,
-);
-
-typedef _c_Dart_ToString = ffi.Handle Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_ToString = Object Function(
-  Object object,
-);
-
-typedef _c_Dart_IdentityEquals = ffi.Uint8 Function(
-  ffi.Handle obj1,
-  ffi.Handle obj2,
-);
-
-typedef _dart_Dart_IdentityEquals = int Function(
-  Object obj1,
-  Object obj2,
-);
-
-typedef _c_Dart_HandleFromPersistent = ffi.Handle Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_HandleFromPersistent = Object Function(
-  Object object,
-);
-
-typedef _c_Dart_HandleFromWeakPersistent = ffi.Handle Function(
-  ffi.Pointer<_Dart_WeakPersistentHandle> object,
-);
-
-typedef _dart_Dart_HandleFromWeakPersistent = Object Function(
-  ffi.Pointer<_Dart_WeakPersistentHandle> object,
-);
-
-typedef _c_Dart_NewPersistentHandle = ffi.Handle Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_NewPersistentHandle = Object Function(
-  Object object,
-);
-
-typedef _c_Dart_SetPersistentHandle = ffi.Void Function(
-  ffi.Handle obj1,
-  ffi.Handle obj2,
-);
-
-typedef _dart_Dart_SetPersistentHandle = void Function(
-  Object obj1,
-  Object obj2,
-);
-
-typedef _c_Dart_DeletePersistentHandle = ffi.Void Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_DeletePersistentHandle = void Function(
-  Object object,
-);
-
-typedef Dart_HandleFinalizer = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef _c_Dart_NewWeakPersistentHandle
-    = ffi.Pointer<_Dart_WeakPersistentHandle> Function(
-  ffi.Handle object,
-  ffi.Pointer<ffi.Void> peer,
-  ffi.IntPtr external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _dart_Dart_NewWeakPersistentHandle
-    = ffi.Pointer<_Dart_WeakPersistentHandle> Function(
-  Object object,
-  ffi.Pointer<ffi.Void> peer,
-  int external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _c_Dart_DeleteWeakPersistentHandle = ffi.Void Function(
-  ffi.Pointer<_Dart_WeakPersistentHandle> object,
-);
-
-typedef _dart_Dart_DeleteWeakPersistentHandle = void Function(
-  ffi.Pointer<_Dart_WeakPersistentHandle> object,
-);
-
-typedef _c_Dart_UpdateExternalSize = ffi.Void Function(
-  ffi.Pointer<_Dart_WeakPersistentHandle> object,
-  ffi.IntPtr external_allocation_size,
-);
-
-typedef _dart_Dart_UpdateExternalSize = void Function(
-  ffi.Pointer<_Dart_WeakPersistentHandle> object,
-  int external_allocation_size,
-);
-
-typedef _c_Dart_NewFinalizableHandle = ffi.Pointer<_Dart_FinalizableHandle>
-    Function(
-  ffi.Handle object,
-  ffi.Pointer<ffi.Void> peer,
-  ffi.IntPtr external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _dart_Dart_NewFinalizableHandle = ffi.Pointer<_Dart_FinalizableHandle>
-    Function(
-  Object object,
-  ffi.Pointer<ffi.Void> peer,
-  int external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _c_Dart_DeleteFinalizableHandle = ffi.Void Function(
-  ffi.Pointer<_Dart_FinalizableHandle> object,
-  ffi.Handle strong_ref_to_object,
-);
-
-typedef _dart_Dart_DeleteFinalizableHandle = void Function(
-  ffi.Pointer<_Dart_FinalizableHandle> object,
-  Object strong_ref_to_object,
-);
-
-typedef _c_Dart_UpdateFinalizableExternalSize = ffi.Void Function(
-  ffi.Pointer<_Dart_FinalizableHandle> object,
-  ffi.Handle strong_ref_to_object,
-  ffi.IntPtr external_allocation_size,
-);
-
-typedef _dart_Dart_UpdateFinalizableExternalSize = void Function(
-  ffi.Pointer<_Dart_FinalizableHandle> object,
-  Object strong_ref_to_object,
-  int external_allocation_size,
-);
-
-typedef _c_Dart_VersionString = ffi.Pointer<ffi.Int8> Function();
-
-typedef _dart_Dart_VersionString = ffi.Pointer<ffi.Int8> Function();
-
-typedef _c_Dart_IsolateFlagsInitialize = ffi.Void Function(
-  ffi.Pointer<Dart_IsolateFlags> flags,
-);
-
-typedef _dart_Dart_IsolateFlagsInitialize = void Function(
-  ffi.Pointer<Dart_IsolateFlags> flags,
-);
-
-typedef _c_Dart_Initialize = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<Dart_InitializeParams> params,
-);
-
-typedef _dart_Dart_Initialize = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<Dart_InitializeParams> params,
-);
-
-typedef _c_Dart_Cleanup = ffi.Pointer<ffi.Int8> Function();
-
-typedef _dart_Dart_Cleanup = ffi.Pointer<ffi.Int8> Function();
-
-typedef _c_Dart_SetVMFlags = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 argc,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> argv,
-);
-
-typedef _dart_Dart_SetVMFlags = ffi.Pointer<ffi.Int8> Function(
-  int argc,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> argv,
-);
-
-typedef _c_Dart_IsVMFlagSet = ffi.Uint8 Function(
-  ffi.Pointer<ffi.Int8> flag_name,
-);
-
-typedef _dart_Dart_IsVMFlagSet = int Function(
-  ffi.Pointer<ffi.Int8> flag_name,
-);
-
-typedef _c_Dart_CreateIsolateGroup = ffi.Pointer<_Dart_Isolate> Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Int8> name,
-  ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
-  ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
-  ffi.Pointer<Dart_IsolateFlags> flags,
-  ffi.Pointer<ffi.Void> isolate_group_data,
-  ffi.Pointer<ffi.Void> isolate_data,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _dart_Dart_CreateIsolateGroup = ffi.Pointer<_Dart_Isolate> Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Int8> name,
-  ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
-  ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
-  ffi.Pointer<Dart_IsolateFlags> flags,
-  ffi.Pointer<ffi.Void> isolate_group_data,
-  ffi.Pointer<ffi.Void> isolate_data,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef Dart_IsolateShutdownCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef Dart_IsolateCleanupCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef _c_Dart_CreateIsolateInGroup = ffi.Pointer<_Dart_Isolate> Function(
-  ffi.Pointer<_Dart_Isolate> group_member,
-  ffi.Pointer<ffi.Int8> name,
-  ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
-      shutdown_callback,
-  ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>> cleanup_callback,
-  ffi.Pointer<ffi.Void> child_isolate_data,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _dart_Dart_CreateIsolateInGroup = ffi.Pointer<_Dart_Isolate> Function(
-  ffi.Pointer<_Dart_Isolate> group_member,
-  ffi.Pointer<ffi.Int8> name,
-  ffi.Pointer<ffi.NativeFunction<Dart_IsolateShutdownCallback>>
-      shutdown_callback,
-  ffi.Pointer<ffi.NativeFunction<Dart_IsolateCleanupCallback>> cleanup_callback,
-  ffi.Pointer<ffi.Void> child_isolate_data,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _c_Dart_CreateIsolateGroupFromKernel = ffi.Pointer<_Dart_Isolate>
-    Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Int8> name,
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  ffi.IntPtr kernel_buffer_size,
-  ffi.Pointer<Dart_IsolateFlags> flags,
-  ffi.Pointer<ffi.Void> isolate_group_data,
-  ffi.Pointer<ffi.Void> isolate_data,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _dart_Dart_CreateIsolateGroupFromKernel = ffi.Pointer<_Dart_Isolate>
-    Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Int8> name,
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  int kernel_buffer_size,
-  ffi.Pointer<Dart_IsolateFlags> flags,
-  ffi.Pointer<ffi.Void> isolate_group_data,
-  ffi.Pointer<ffi.Void> isolate_data,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _c_Dart_ShutdownIsolate = ffi.Void Function();
-
-typedef _dart_Dart_ShutdownIsolate = void Function();
-
-typedef _c_Dart_CurrentIsolate = ffi.Pointer<_Dart_Isolate> Function();
-
-typedef _dart_Dart_CurrentIsolate = ffi.Pointer<_Dart_Isolate> Function();
-
-typedef _c_Dart_CurrentIsolateData = ffi.Pointer<ffi.Void> Function();
-
-typedef _dart_Dart_CurrentIsolateData = ffi.Pointer<ffi.Void> Function();
-
-typedef _c_Dart_IsolateData = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_IsolateData = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_CurrentIsolateGroup = ffi.Pointer<_Dart_IsolateGroup>
-    Function();
-
-typedef _dart_Dart_CurrentIsolateGroup = ffi.Pointer<_Dart_IsolateGroup>
-    Function();
-
-typedef _c_Dart_CurrentIsolateGroupData = ffi.Pointer<ffi.Void> Function();
-
-typedef _dart_Dart_CurrentIsolateGroupData = ffi.Pointer<ffi.Void> Function();
-
-typedef _c_Dart_IsolateGroupData = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_IsolateGroupData = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_DebugName = ffi.Handle Function();
-
-typedef _dart_Dart_DebugName = Object Function();
-
-typedef _c_Dart_IsolateServiceId = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_IsolateServiceId = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_EnterIsolate = ffi.Void Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_EnterIsolate = void Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_KillIsolate = ffi.Void Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_KillIsolate = void Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_HintFreed = ffi.Void Function(
-  ffi.IntPtr size,
-);
-
-typedef _dart_Dart_HintFreed = void Function(
-  int size,
-);
-
-typedef _c_Dart_NotifyIdle = ffi.Void Function(
-  ffi.Int64 deadline,
-);
-
-typedef _dart_Dart_NotifyIdle = void Function(
-  int deadline,
-);
-
-typedef _c_Dart_NotifyLowMemory = ffi.Void Function();
-
-typedef _dart_Dart_NotifyLowMemory = void Function();
-
-typedef _c_Dart_StartProfiling = ffi.Void Function();
-
-typedef _dart_Dart_StartProfiling = void Function();
-
-typedef _c_Dart_StopProfiling = ffi.Void Function();
-
-typedef _dart_Dart_StopProfiling = void Function();
-
-typedef _c_Dart_ThreadDisableProfiling = ffi.Void Function();
-
-typedef _dart_Dart_ThreadDisableProfiling = void Function();
-
-typedef _c_Dart_ThreadEnableProfiling = ffi.Void Function();
-
-typedef _dart_Dart_ThreadEnableProfiling = void Function();
-
-typedef _c_Dart_AddSymbols = ffi.Void Function(
-  ffi.Pointer<ffi.Int8> dso_name,
-  ffi.Pointer<ffi.Void> buffer,
-  ffi.IntPtr buffer_size,
-);
-
-typedef _dart_Dart_AddSymbols = void Function(
-  ffi.Pointer<ffi.Int8> dso_name,
-  ffi.Pointer<ffi.Void> buffer,
-  int buffer_size,
-);
-
-typedef _c_Dart_ExitIsolate = ffi.Void Function();
-
-typedef _dart_Dart_ExitIsolate = void Function();
-
-typedef _c_Dart_CreateSnapshot = ffi.Handle Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
-  ffi.Uint8 is_core,
-);
-
-typedef _dart_Dart_CreateSnapshot = Object Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
-  int is_core,
-);
-
-typedef _c_Dart_IsKernel = ffi.Uint8 Function(
-  ffi.Pointer<ffi.Uint8> buffer,
-  ffi.IntPtr buffer_size,
-);
-
-typedef _dart_Dart_IsKernel = int Function(
-  ffi.Pointer<ffi.Uint8> buffer,
-  int buffer_size,
-);
-
-typedef _c_Dart_IsolateMakeRunnable = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_IsolateMakeRunnable = ffi.Pointer<ffi.Int8> Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef Dart_MessageNotifyCallback = ffi.Void Function(
-  ffi.Pointer<_Dart_Isolate>,
-);
-
-typedef _c_Dart_SetMessageNotifyCallback = ffi.Void Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
-      message_notify_callback,
-);
-
-typedef _dart_Dart_SetMessageNotifyCallback = void Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>>
-      message_notify_callback,
-);
-
-typedef _c_Dart_GetMessageNotifyCallback
-    = ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>> Function();
-
-typedef _dart_Dart_GetMessageNotifyCallback
-    = ffi.Pointer<ffi.NativeFunction<Dart_MessageNotifyCallback>> Function();
-
-typedef _c_Dart_ShouldPauseOnStart = ffi.Uint8 Function();
-
-typedef _dart_Dart_ShouldPauseOnStart = int Function();
-
-typedef _c_Dart_SetShouldPauseOnStart = ffi.Void Function(
-  ffi.Uint8 should_pause,
-);
-
-typedef _dart_Dart_SetShouldPauseOnStart = void Function(
-  int should_pause,
-);
-
-typedef _c_Dart_IsPausedOnStart = ffi.Uint8 Function();
-
-typedef _dart_Dart_IsPausedOnStart = int Function();
-
-typedef _c_Dart_SetPausedOnStart = ffi.Void Function(
-  ffi.Uint8 paused,
-);
-
-typedef _dart_Dart_SetPausedOnStart = void Function(
-  int paused,
-);
-
-typedef _c_Dart_ShouldPauseOnExit = ffi.Uint8 Function();
-
-typedef _dart_Dart_ShouldPauseOnExit = int Function();
-
-typedef _c_Dart_SetShouldPauseOnExit = ffi.Void Function(
-  ffi.Uint8 should_pause,
-);
-
-typedef _dart_Dart_SetShouldPauseOnExit = void Function(
-  int should_pause,
-);
-
-typedef _c_Dart_IsPausedOnExit = ffi.Uint8 Function();
-
-typedef _dart_Dart_IsPausedOnExit = int Function();
-
-typedef _c_Dart_SetPausedOnExit = ffi.Void Function(
-  ffi.Uint8 paused,
-);
-
-typedef _dart_Dart_SetPausedOnExit = void Function(
-  int paused,
-);
-
-typedef _c_Dart_SetStickyError = ffi.Void Function(
-  ffi.Handle error,
-);
-
-typedef _dart_Dart_SetStickyError = void Function(
-  Object error,
-);
-
-typedef _c_Dart_HasStickyError = ffi.Uint8 Function();
-
-typedef _dart_Dart_HasStickyError = int Function();
-
-typedef _c_Dart_GetStickyError = ffi.Handle Function();
-
-typedef _dart_Dart_GetStickyError = Object Function();
-
-typedef _c_Dart_HandleMessage = ffi.Handle Function();
-
-typedef _dart_Dart_HandleMessage = Object Function();
-
-typedef _c_Dart_WaitForEvent = ffi.Handle Function(
-  ffi.Int64 timeout_millis,
-);
-
-typedef _dart_Dart_WaitForEvent = Object Function(
-  int timeout_millis,
-);
-
-typedef _c_Dart_HandleServiceMessages = ffi.Uint8 Function();
-
-typedef _dart_Dart_HandleServiceMessages = int Function();
-
-typedef _c_Dart_HasServiceMessages = ffi.Uint8 Function();
-
-typedef _dart_Dart_HasServiceMessages = int Function();
-
-typedef _c_Dart_RunLoop = ffi.Handle Function();
-
-typedef _dart_Dart_RunLoop = Object Function();
-
-typedef _c_Dart_RunLoopAsync = ffi.Uint8 Function(
-  ffi.Uint8 errors_are_fatal,
-  ffi.Int64 on_error_port,
-  ffi.Int64 on_exit_port,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _dart_Dart_RunLoopAsync = int Function(
-  int errors_are_fatal,
-  int on_error_port,
-  int on_exit_port,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _c_Dart_GetMainPortId = ffi.Int64 Function();
-
-typedef _dart_Dart_GetMainPortId = int Function();
-
-typedef _c_Dart_HasLivePorts = ffi.Uint8 Function();
-
-typedef _dart_Dart_HasLivePorts = int Function();
-
-typedef _c_Dart_Post = ffi.Uint8 Function(
-  ffi.Int64 port_id,
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_Post = int Function(
-  int port_id,
-  Object object,
-);
-
-typedef _c_Dart_NewSendPort = ffi.Handle Function(
-  ffi.Int64 port_id,
-);
-
-typedef _dart_Dart_NewSendPort = Object Function(
-  int port_id,
-);
-
-typedef _c_Dart_SendPortGetId = ffi.Handle Function(
-  ffi.Handle port,
-  ffi.Pointer<ffi.Int64> port_id,
-);
-
-typedef _dart_Dart_SendPortGetId = Object Function(
-  Object port,
-  ffi.Pointer<ffi.Int64> port_id,
-);
-
-typedef _c_Dart_EnterScope = ffi.Void Function();
-
-typedef _dart_Dart_EnterScope = void Function();
-
-typedef _c_Dart_ExitScope = ffi.Void Function();
-
-typedef _dart_Dart_ExitScope = void Function();
-
-typedef _c_Dart_ScopeAllocate = ffi.Pointer<ffi.Uint8> Function(
-  ffi.IntPtr size,
-);
-
-typedef _dart_Dart_ScopeAllocate = ffi.Pointer<ffi.Uint8> Function(
-  int size,
-);
-
-typedef _c_Dart_Null = ffi.Handle Function();
-
-typedef _dart_Dart_Null = Object Function();
-
-typedef _c_Dart_IsNull = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsNull = int Function(
-  Object object,
-);
-
-typedef _c_Dart_EmptyString = ffi.Handle Function();
-
-typedef _dart_Dart_EmptyString = Object Function();
-
-typedef _c_Dart_TypeDynamic = ffi.Handle Function();
-
-typedef _dart_Dart_TypeDynamic = Object Function();
-
-typedef _c_Dart_TypeVoid = ffi.Handle Function();
-
-typedef _dart_Dart_TypeVoid = Object Function();
-
-typedef _c_Dart_TypeNever = ffi.Handle Function();
-
-typedef _dart_Dart_TypeNever = Object Function();
-
-typedef _c_Dart_ObjectEquals = ffi.Handle Function(
-  ffi.Handle obj1,
-  ffi.Handle obj2,
-  ffi.Pointer<ffi.Uint8> equal,
-);
-
-typedef _dart_Dart_ObjectEquals = Object Function(
-  Object obj1,
-  Object obj2,
-  ffi.Pointer<ffi.Uint8> equal,
-);
-
-typedef _c_Dart_ObjectIsType = ffi.Handle Function(
-  ffi.Handle object,
-  ffi.Handle type,
-  ffi.Pointer<ffi.Uint8> instanceof,
-);
-
-typedef _dart_Dart_ObjectIsType = Object Function(
-  Object object,
-  Object type,
-  ffi.Pointer<ffi.Uint8> instanceof,
-);
-
-typedef _c_Dart_IsInstance = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsInstance = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsNumber = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsNumber = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsInteger = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsInteger = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsDouble = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsDouble = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsBoolean = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsBoolean = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsString = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsString = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsStringLatin1 = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsStringLatin1 = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsExternalString = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsExternalString = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsList = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsList = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsMap = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsMap = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsLibrary = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsLibrary = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsType = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsType = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsFunction = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsFunction = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsVariable = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsVariable = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsTypeVariable = ffi.Uint8 Function(
-  ffi.Handle handle,
-);
-
-typedef _dart_Dart_IsTypeVariable = int Function(
-  Object handle,
-);
-
-typedef _c_Dart_IsClosure = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsClosure = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsTypedData = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsTypedData = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsByteBuffer = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsByteBuffer = int Function(
-  Object object,
-);
-
-typedef _c_Dart_IsFuture = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsFuture = int Function(
-  Object object,
-);
-
-typedef _c_Dart_InstanceGetType = ffi.Handle Function(
-  ffi.Handle instance,
-);
-
-typedef _dart_Dart_InstanceGetType = Object Function(
-  Object instance,
-);
-
-typedef _c_Dart_ClassName = ffi.Handle Function(
-  ffi.Handle cls_type,
-);
-
-typedef _dart_Dart_ClassName = Object Function(
-  Object cls_type,
-);
-
-typedef _c_Dart_FunctionName = ffi.Handle Function(
-  ffi.Handle function,
-);
-
-typedef _dart_Dart_FunctionName = Object Function(
-  Object function,
-);
-
-typedef _c_Dart_FunctionOwner = ffi.Handle Function(
-  ffi.Handle function,
-);
-
-typedef _dart_Dart_FunctionOwner = Object Function(
-  Object function,
-);
-
-typedef _c_Dart_FunctionIsStatic = ffi.Handle Function(
-  ffi.Handle function,
-  ffi.Pointer<ffi.Uint8> is_static,
-);
-
-typedef _dart_Dart_FunctionIsStatic = Object Function(
-  Object function,
-  ffi.Pointer<ffi.Uint8> is_static,
-);
-
-typedef _c_Dart_IsTearOff = ffi.Uint8 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_IsTearOff = int Function(
-  Object object,
-);
-
-typedef _c_Dart_ClosureFunction = ffi.Handle Function(
-  ffi.Handle closure,
-);
-
-typedef _dart_Dart_ClosureFunction = Object Function(
-  Object closure,
-);
-
-typedef _c_Dart_ClassLibrary = ffi.Handle Function(
-  ffi.Handle cls_type,
-);
-
-typedef _dart_Dart_ClassLibrary = Object Function(
-  Object cls_type,
-);
-
-typedef _c_Dart_IntegerFitsIntoInt64 = ffi.Handle Function(
-  ffi.Handle integer,
-  ffi.Pointer<ffi.Uint8> fits,
-);
-
-typedef _dart_Dart_IntegerFitsIntoInt64 = Object Function(
-  Object integer,
-  ffi.Pointer<ffi.Uint8> fits,
-);
-
-typedef _c_Dart_IntegerFitsIntoUint64 = ffi.Handle Function(
-  ffi.Handle integer,
-  ffi.Pointer<ffi.Uint8> fits,
-);
-
-typedef _dart_Dart_IntegerFitsIntoUint64 = Object Function(
-  Object integer,
-  ffi.Pointer<ffi.Uint8> fits,
-);
-
-typedef _c_Dart_NewInteger = ffi.Handle Function(
-  ffi.Int64 value,
-);
-
-typedef _dart_Dart_NewInteger = Object Function(
-  int value,
-);
-
-typedef _c_Dart_NewIntegerFromUint64 = ffi.Handle Function(
-  ffi.Uint64 value,
-);
-
-typedef _dart_Dart_NewIntegerFromUint64 = Object Function(
-  int value,
-);
-
-typedef _c_Dart_NewIntegerFromHexCString = ffi.Handle Function(
-  ffi.Pointer<ffi.Int8> value,
-);
-
-typedef _dart_Dart_NewIntegerFromHexCString = Object Function(
-  ffi.Pointer<ffi.Int8> value,
-);
-
-typedef _c_Dart_IntegerToInt64 = ffi.Handle Function(
-  ffi.Handle integer,
-  ffi.Pointer<ffi.Int64> value,
-);
-
-typedef _dart_Dart_IntegerToInt64 = Object Function(
-  Object integer,
-  ffi.Pointer<ffi.Int64> value,
-);
-
-typedef _c_Dart_IntegerToUint64 = ffi.Handle Function(
-  ffi.Handle integer,
-  ffi.Pointer<ffi.Uint64> value,
-);
-
-typedef _dart_Dart_IntegerToUint64 = Object Function(
-  Object integer,
-  ffi.Pointer<ffi.Uint64> value,
-);
-
-typedef _c_Dart_IntegerToHexCString = ffi.Handle Function(
-  ffi.Handle integer,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
-);
-
-typedef _dart_Dart_IntegerToHexCString = Object Function(
-  Object integer,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
-);
-
-typedef _c_Dart_NewDouble = ffi.Handle Function(
-  ffi.Double value,
-);
-
-typedef _dart_Dart_NewDouble = Object Function(
-  double value,
-);
-
-typedef _c_Dart_DoubleValue = ffi.Handle Function(
-  ffi.Handle double_obj,
-  ffi.Pointer<ffi.Double> value,
-);
-
-typedef _dart_Dart_DoubleValue = Object Function(
-  Object double_obj,
-  ffi.Pointer<ffi.Double> value,
-);
-
-typedef _c_Dart_GetStaticMethodClosure = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Handle cls_type,
-  ffi.Handle function_name,
-);
-
-typedef _dart_Dart_GetStaticMethodClosure = Object Function(
-  Object library_1,
-  Object cls_type,
-  Object function_name,
-);
-
-typedef _c_Dart_True = ffi.Handle Function();
-
-typedef _dart_Dart_True = Object Function();
-
-typedef _c_Dart_False = ffi.Handle Function();
-
-typedef _dart_Dart_False = Object Function();
-
-typedef _c_Dart_NewBoolean = ffi.Handle Function(
-  ffi.Uint8 value,
-);
-
-typedef _dart_Dart_NewBoolean = Object Function(
-  int value,
-);
-
-typedef _c_Dart_BooleanValue = ffi.Handle Function(
-  ffi.Handle boolean_obj,
-  ffi.Pointer<ffi.Uint8> value,
-);
-
-typedef _dart_Dart_BooleanValue = Object Function(
-  Object boolean_obj,
-  ffi.Pointer<ffi.Uint8> value,
-);
-
-typedef _c_Dart_StringLength = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _dart_Dart_StringLength = Object Function(
-  Object str,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _c_Dart_NewStringFromCString = ffi.Handle Function(
-  ffi.Pointer<ffi.Int8> str,
-);
-
-typedef _dart_Dart_NewStringFromCString = Object Function(
-  ffi.Pointer<ffi.Int8> str,
-);
-
-typedef _c_Dart_NewStringFromUTF8 = ffi.Handle Function(
-  ffi.Pointer<ffi.Uint8> utf8_array,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewStringFromUTF8 = Object Function(
-  ffi.Pointer<ffi.Uint8> utf8_array,
-  int length,
-);
-
-typedef _c_Dart_NewStringFromUTF16 = ffi.Handle Function(
-  ffi.Pointer<ffi.Uint16> utf16_array,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewStringFromUTF16 = Object Function(
-  ffi.Pointer<ffi.Uint16> utf16_array,
-  int length,
-);
-
-typedef _c_Dart_NewStringFromUTF32 = ffi.Handle Function(
-  ffi.Pointer<ffi.Int32> utf32_array,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewStringFromUTF32 = Object Function(
-  ffi.Pointer<ffi.Int32> utf32_array,
-  int length,
-);
-
-typedef _c_Dart_NewExternalLatin1String = ffi.Handle Function(
-  ffi.Pointer<ffi.Uint8> latin1_array,
-  ffi.IntPtr length,
-  ffi.Pointer<ffi.Void> peer,
-  ffi.IntPtr external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _dart_Dart_NewExternalLatin1String = Object Function(
-  ffi.Pointer<ffi.Uint8> latin1_array,
-  int length,
-  ffi.Pointer<ffi.Void> peer,
-  int external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _c_Dart_NewExternalUTF16String = ffi.Handle Function(
-  ffi.Pointer<ffi.Uint16> utf16_array,
-  ffi.IntPtr length,
-  ffi.Pointer<ffi.Void> peer,
-  ffi.IntPtr external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _dart_Dart_NewExternalUTF16String = Object Function(
-  ffi.Pointer<ffi.Uint16> utf16_array,
-  int length,
-  ffi.Pointer<ffi.Void> peer,
-  int external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _c_Dart_StringToCString = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> cstr,
-);
-
-typedef _dart_Dart_StringToCString = Object Function(
-  Object str,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> cstr,
-);
-
-typedef _c_Dart_StringToUTF8 = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _dart_Dart_StringToUTF8 = Object Function(
-  Object str,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _c_Dart_StringToLatin1 = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.Uint8> latin1_array,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _dart_Dart_StringToLatin1 = Object Function(
-  Object str,
-  ffi.Pointer<ffi.Uint8> latin1_array,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _c_Dart_StringToUTF16 = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.Uint16> utf16_array,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _dart_Dart_StringToUTF16 = Object Function(
-  Object str,
-  ffi.Pointer<ffi.Uint16> utf16_array,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _c_Dart_StringStorageSize = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.IntPtr> size,
-);
-
-typedef _dart_Dart_StringStorageSize = Object Function(
-  Object str,
-  ffi.Pointer<ffi.IntPtr> size,
-);
-
-typedef _c_Dart_StringGetProperties = ffi.Handle Function(
-  ffi.Handle str,
-  ffi.Pointer<ffi.IntPtr> char_size,
-  ffi.Pointer<ffi.IntPtr> str_len,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
-);
-
-typedef _dart_Dart_StringGetProperties = Object Function(
-  Object str,
-  ffi.Pointer<ffi.IntPtr> char_size,
-  ffi.Pointer<ffi.IntPtr> str_len,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
-);
-
-typedef _c_Dart_NewList = ffi.Handle Function(
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewList = Object Function(
-  int length,
-);
-
-typedef _c_Dart_NewListOf = ffi.Handle Function(
-  ffi.Int32 element_type_id,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewListOf = Object Function(
-  int element_type_id,
-  int length,
-);
-
-typedef _c_Dart_NewListOfType = ffi.Handle Function(
-  ffi.Handle element_type,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewListOfType = Object Function(
-  Object element_type,
-  int length,
-);
-
-typedef _c_Dart_NewListOfTypeFilled = ffi.Handle Function(
-  ffi.Handle element_type,
-  ffi.Handle fill_object,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewListOfTypeFilled = Object Function(
-  Object element_type,
-  Object fill_object,
-  int length,
-);
-
-typedef _c_Dart_ListLength = ffi.Handle Function(
-  ffi.Handle list,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _dart_Dart_ListLength = Object Function(
-  Object list,
-  ffi.Pointer<ffi.IntPtr> length,
-);
-
-typedef _c_Dart_ListGetAt = ffi.Handle Function(
-  ffi.Handle list,
-  ffi.IntPtr index,
-);
-
-typedef _dart_Dart_ListGetAt = Object Function(
-  Object list,
-  int index,
-);
-
-typedef _c_Dart_ListGetRange = ffi.Handle Function(
-  ffi.Handle list,
-  ffi.IntPtr offset,
-  ffi.IntPtr length,
-  ffi.Pointer<ffi.Handle> result,
-);
-
-typedef _dart_Dart_ListGetRange = Object Function(
-  Object list,
-  int offset,
-  int length,
-  ffi.Pointer<ffi.Handle> result,
-);
-
-typedef _c_Dart_ListSetAt = ffi.Handle Function(
-  ffi.Handle list,
-  ffi.IntPtr index,
-  ffi.Handle value,
-);
-
-typedef _dart_Dart_ListSetAt = Object Function(
-  Object list,
-  int index,
-  Object value,
-);
-
-typedef _c_Dart_ListGetAsBytes = ffi.Handle Function(
-  ffi.Handle list,
-  ffi.IntPtr offset,
-  ffi.Pointer<ffi.Uint8> native_array,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_ListGetAsBytes = Object Function(
-  Object list,
-  int offset,
-  ffi.Pointer<ffi.Uint8> native_array,
-  int length,
-);
-
-typedef _c_Dart_ListSetAsBytes = ffi.Handle Function(
-  ffi.Handle list,
-  ffi.IntPtr offset,
-  ffi.Pointer<ffi.Uint8> native_array,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_ListSetAsBytes = Object Function(
-  Object list,
-  int offset,
-  ffi.Pointer<ffi.Uint8> native_array,
-  int length,
-);
-
-typedef _c_Dart_MapGetAt = ffi.Handle Function(
-  ffi.Handle map,
-  ffi.Handle key,
-);
-
-typedef _dart_Dart_MapGetAt = Object Function(
-  Object map,
-  Object key,
-);
-
-typedef _c_Dart_MapContainsKey = ffi.Handle Function(
-  ffi.Handle map,
-  ffi.Handle key,
-);
-
-typedef _dart_Dart_MapContainsKey = Object Function(
-  Object map,
-  Object key,
-);
-
-typedef _c_Dart_MapKeys = ffi.Handle Function(
-  ffi.Handle map,
-);
-
-typedef _dart_Dart_MapKeys = Object Function(
-  Object map,
-);
-
-typedef _c_Dart_GetTypeOfTypedData = ffi.Int32 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_GetTypeOfTypedData = int Function(
-  Object object,
-);
-
-typedef _c_Dart_GetTypeOfExternalTypedData = ffi.Int32 Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_GetTypeOfExternalTypedData = int Function(
-  Object object,
-);
-
-typedef _c_Dart_NewTypedData = ffi.Handle Function(
-  ffi.Int32 type,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewTypedData = Object Function(
-  int type,
-  int length,
-);
-
-typedef _c_Dart_NewExternalTypedData = ffi.Handle Function(
-  ffi.Int32 type,
-  ffi.Pointer<ffi.Void> data,
-  ffi.IntPtr length,
-);
-
-typedef _dart_Dart_NewExternalTypedData = Object Function(
-  int type,
-  ffi.Pointer<ffi.Void> data,
-  int length,
-);
-
-typedef _c_Dart_NewExternalTypedDataWithFinalizer = ffi.Handle Function(
-  ffi.Int32 type,
-  ffi.Pointer<ffi.Void> data,
-  ffi.IntPtr length,
-  ffi.Pointer<ffi.Void> peer,
-  ffi.IntPtr external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _dart_Dart_NewExternalTypedDataWithFinalizer = Object Function(
-  int type,
-  ffi.Pointer<ffi.Void> data,
-  int length,
-  ffi.Pointer<ffi.Void> peer,
-  int external_allocation_size,
-  ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizer>> callback,
-);
-
-typedef _c_Dart_NewByteBuffer = ffi.Handle Function(
-  ffi.Handle typed_data,
-);
-
-typedef _dart_Dart_NewByteBuffer = Object Function(
-  Object typed_data,
-);
-
-typedef _c_Dart_TypedDataAcquireData = ffi.Handle Function(
-  ffi.Handle object,
-  ffi.Pointer<ffi.Int32> type,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> data,
-  ffi.Pointer<ffi.IntPtr> len,
-);
-
-typedef _dart_Dart_TypedDataAcquireData = Object Function(
-  Object object,
-  ffi.Pointer<ffi.Int32> type,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> data,
-  ffi.Pointer<ffi.IntPtr> len,
-);
-
-typedef _c_Dart_TypedDataReleaseData = ffi.Handle Function(
-  ffi.Handle object,
-);
-
-typedef _dart_Dart_TypedDataReleaseData = Object Function(
-  Object object,
-);
-
-typedef _c_Dart_GetDataFromByteBuffer = ffi.Handle Function(
-  ffi.Handle byte_buffer,
-);
-
-typedef _dart_Dart_GetDataFromByteBuffer = Object Function(
-  Object byte_buffer,
-);
-
-typedef _c_Dart_New = ffi.Handle Function(
-  ffi.Handle type,
-  ffi.Handle constructor_name,
-  ffi.Int32 number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _dart_Dart_New = Object Function(
-  Object type,
-  Object constructor_name,
-  int number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _c_Dart_Allocate = ffi.Handle Function(
-  ffi.Handle type,
-);
-
-typedef _dart_Dart_Allocate = Object Function(
-  Object type,
-);
-
-typedef _c_Dart_AllocateWithNativeFields = ffi.Handle Function(
-  ffi.Handle type,
-  ffi.IntPtr num_native_fields,
-  ffi.Pointer<ffi.IntPtr> native_fields,
-);
-
-typedef _dart_Dart_AllocateWithNativeFields = Object Function(
-  Object type,
-  int num_native_fields,
-  ffi.Pointer<ffi.IntPtr> native_fields,
-);
-
-typedef _c_Dart_Invoke = ffi.Handle Function(
-  ffi.Handle target,
-  ffi.Handle name,
-  ffi.Int32 number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _dart_Dart_Invoke = Object Function(
-  Object target,
-  Object name,
-  int number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _c_Dart_InvokeClosure = ffi.Handle Function(
-  ffi.Handle closure,
-  ffi.Int32 number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _dart_Dart_InvokeClosure = Object Function(
-  Object closure,
-  int number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _c_Dart_InvokeConstructor = ffi.Handle Function(
-  ffi.Handle object,
-  ffi.Handle name,
-  ffi.Int32 number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _dart_Dart_InvokeConstructor = Object Function(
-  Object object,
-  Object name,
-  int number_of_arguments,
-  ffi.Pointer<ffi.Handle> arguments,
-);
-
-typedef _c_Dart_GetField = ffi.Handle Function(
-  ffi.Handle container,
-  ffi.Handle name,
-);
-
-typedef _dart_Dart_GetField = Object Function(
-  Object container,
-  Object name,
-);
-
-typedef _c_Dart_SetField = ffi.Handle Function(
-  ffi.Handle container,
-  ffi.Handle name,
-  ffi.Handle value,
-);
-
-typedef _dart_Dart_SetField = Object Function(
-  Object container,
-  Object name,
-  Object value,
-);
-
-typedef _c_Dart_ThrowException = ffi.Handle Function(
-  ffi.Handle exception,
-);
-
-typedef _dart_Dart_ThrowException = Object Function(
-  Object exception,
-);
-
-typedef _c_Dart_ReThrowException = ffi.Handle Function(
-  ffi.Handle exception,
-  ffi.Handle stacktrace,
-);
-
-typedef _dart_Dart_ReThrowException = Object Function(
-  Object exception,
-  Object stacktrace,
-);
-
-typedef _c_Dart_GetNativeInstanceFieldCount = ffi.Handle Function(
-  ffi.Handle obj,
-  ffi.Pointer<ffi.Int32> count,
-);
-
-typedef _dart_Dart_GetNativeInstanceFieldCount = Object Function(
-  Object obj,
-  ffi.Pointer<ffi.Int32> count,
-);
-
-typedef _c_Dart_GetNativeInstanceField = ffi.Handle Function(
-  ffi.Handle obj,
-  ffi.Int32 index,
-  ffi.Pointer<ffi.IntPtr> value,
-);
-
-typedef _dart_Dart_GetNativeInstanceField = Object Function(
-  Object obj,
-  int index,
-  ffi.Pointer<ffi.IntPtr> value,
-);
-
-typedef _c_Dart_SetNativeInstanceField = ffi.Handle Function(
-  ffi.Handle obj,
-  ffi.Int32 index,
-  ffi.IntPtr value,
-);
-
-typedef _dart_Dart_SetNativeInstanceField = Object Function(
-  Object obj,
-  int index,
-  int value,
-);
-
-typedef _c_Dart_GetNativeIsolateGroupData = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-);
-
-typedef _dart_Dart_GetNativeIsolateGroupData = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-);
-
-typedef _c_Dart_GetNativeArgument = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int32 index,
-);
-
-typedef _dart_Dart_GetNativeArgument = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int index,
-);
-
-typedef _c_Dart_GetNativeArgumentCount = ffi.Int32 Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-);
-
-typedef _dart_Dart_GetNativeArgumentCount = int Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-);
-
-typedef _c_Dart_GetNativeFieldsOfArgument = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int32 arg_index,
-  ffi.Int32 num_fields,
-  ffi.Pointer<ffi.IntPtr> field_values,
-);
-
-typedef _dart_Dart_GetNativeFieldsOfArgument = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int arg_index,
-  int num_fields,
-  ffi.Pointer<ffi.IntPtr> field_values,
-);
-
-typedef _c_Dart_GetNativeReceiver = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Pointer<ffi.IntPtr> value,
-);
-
-typedef _dart_Dart_GetNativeReceiver = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Pointer<ffi.IntPtr> value,
-);
-
-typedef _c_Dart_GetNativeStringArgument = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int32 arg_index,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
-);
-
-typedef _dart_Dart_GetNativeStringArgument = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int arg_index,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
-);
-
-typedef _c_Dart_GetNativeIntegerArgument = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int32 index,
-  ffi.Pointer<ffi.Int64> value,
-);
-
-typedef _dart_Dart_GetNativeIntegerArgument = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int index,
-  ffi.Pointer<ffi.Int64> value,
-);
-
-typedef _c_Dart_GetNativeBooleanArgument = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int32 index,
-  ffi.Pointer<ffi.Uint8> value,
-);
-
-typedef _dart_Dart_GetNativeBooleanArgument = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int index,
-  ffi.Pointer<ffi.Uint8> value,
-);
-
-typedef _c_Dart_GetNativeDoubleArgument = ffi.Handle Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int32 index,
-  ffi.Pointer<ffi.Double> value,
-);
-
-typedef _dart_Dart_GetNativeDoubleArgument = Object Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int index,
-  ffi.Pointer<ffi.Double> value,
-);
-
-typedef _c_Dart_SetReturnValue = ffi.Void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Handle retval,
-);
-
-typedef _dart_Dart_SetReturnValue = void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  Object retval,
-);
-
-typedef _c_Dart_SetWeakHandleReturnValue = ffi.Void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Pointer<_Dart_WeakPersistentHandle> rval,
-);
-
-typedef _dart_Dart_SetWeakHandleReturnValue = void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Pointer<_Dart_WeakPersistentHandle> rval,
-);
-
-typedef _c_Dart_SetBooleanReturnValue = ffi.Void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Uint8 retval,
-);
-
-typedef _dart_Dart_SetBooleanReturnValue = void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int retval,
-);
-
-typedef _c_Dart_SetIntegerReturnValue = ffi.Void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Int64 retval,
-);
-
-typedef _dart_Dart_SetIntegerReturnValue = void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  int retval,
-);
-
-typedef _c_Dart_SetDoubleReturnValue = ffi.Void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  ffi.Double retval,
-);
-
-typedef _dart_Dart_SetDoubleReturnValue = void Function(
-  ffi.Pointer<_Dart_NativeArguments> args,
-  double retval,
-);
-
-typedef Dart_EnvironmentCallback = ffi.Handle Function(
-  ffi.Handle,
-);
-
-typedef _c_Dart_SetEnvironmentCallback = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_EnvironmentCallback>> callback,
-);
-
-typedef _dart_Dart_SetEnvironmentCallback = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_EnvironmentCallback>> callback,
-);
-
-typedef Dart_NativeFunction = ffi.Void Function(
-  ffi.Pointer<_Dart_NativeArguments>,
-);
-
-typedef Dart_NativeEntryResolver
-    = ffi.Pointer<ffi.NativeFunction<Dart_NativeFunction>> Function(
-  ffi.Handle,
-  ffi.Int32,
-  ffi.Pointer<ffi.Uint8>,
-);
-
-typedef Dart_NativeEntrySymbol = ffi.Pointer<ffi.Uint8> Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_NativeFunction>>,
-);
-
-typedef _c_Dart_SetNativeResolver = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>> resolver,
-  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>> symbol,
-);
-
-typedef _dart_Dart_SetNativeResolver = Object Function(
-  Object library_1,
-  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>> resolver,
-  ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>> symbol,
-);
-
-typedef _c_Dart_GetNativeResolver = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>>>
-      resolver,
-);
-
-typedef _dart_Dart_GetNativeResolver = Object Function(
-  Object library_1,
-  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntryResolver>>>
-      resolver,
-);
-
-typedef _c_Dart_GetNativeSymbol = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>>> resolver,
-);
-
-typedef _dart_Dart_GetNativeSymbol = Object Function(
-  Object library_1,
-  ffi.Pointer<ffi.Pointer<ffi.NativeFunction<Dart_NativeEntrySymbol>>> resolver,
-);
-
-typedef Dart_FfiNativeResolver = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Int8>,
-);
-
-typedef _c_Dart_SetFfiNativeResolver = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Pointer<ffi.NativeFunction<Dart_FfiNativeResolver>> resolver,
-);
-
-typedef _dart_Dart_SetFfiNativeResolver = Object Function(
-  Object library_1,
-  ffi.Pointer<ffi.NativeFunction<Dart_FfiNativeResolver>> resolver,
-);
-
-typedef Dart_LibraryTagHandler = ffi.Handle Function(
-  ffi.Int32,
-  ffi.Handle,
-  ffi.Handle,
-);
-
-typedef _c_Dart_SetLibraryTagHandler = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_LibraryTagHandler>> handler,
-);
-
-typedef _dart_Dart_SetLibraryTagHandler = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_LibraryTagHandler>> handler,
-);
-
-typedef Dart_DeferredLoadHandler = ffi.Handle Function(
-  ffi.IntPtr,
-);
-
-typedef _c_Dart_SetDeferredLoadHandler = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_DeferredLoadHandler>> handler,
-);
-
-typedef _dart_Dart_SetDeferredLoadHandler = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_DeferredLoadHandler>> handler,
-);
-
-typedef _c_Dart_DeferredLoadComplete = ffi.Handle Function(
-  ffi.IntPtr loading_unit_id,
-  ffi.Pointer<ffi.Uint8> snapshot_data,
-  ffi.Pointer<ffi.Uint8> snapshot_instructions,
-);
-
-typedef _dart_Dart_DeferredLoadComplete = Object Function(
-  int loading_unit_id,
-  ffi.Pointer<ffi.Uint8> snapshot_data,
-  ffi.Pointer<ffi.Uint8> snapshot_instructions,
-);
-
-typedef _c_Dart_DeferredLoadCompleteError = ffi.Handle Function(
-  ffi.IntPtr loading_unit_id,
-  ffi.Pointer<ffi.Int8> error_message,
-  ffi.Uint8 transient,
-);
-
-typedef _dart_Dart_DeferredLoadCompleteError = Object Function(
-  int loading_unit_id,
-  ffi.Pointer<ffi.Int8> error_message,
-  int transient,
-);
-
-typedef _c_Dart_DefaultCanonicalizeUrl = ffi.Handle Function(
-  ffi.Handle base_url,
-  ffi.Handle url,
-);
-
-typedef _dart_Dart_DefaultCanonicalizeUrl = Object Function(
-  Object base_url,
-  Object url,
-);
-
-typedef _c_Dart_LoadScriptFromKernel = ffi.Handle Function(
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  ffi.IntPtr kernel_size,
-);
-
-typedef _dart_Dart_LoadScriptFromKernel = Object Function(
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  int kernel_size,
-);
-
-typedef _c_Dart_RootLibrary = ffi.Handle Function();
-
-typedef _dart_Dart_RootLibrary = Object Function();
-
-typedef _c_Dart_SetRootLibrary = ffi.Handle Function(
-  ffi.Handle library_1,
-);
-
-typedef _dart_Dart_SetRootLibrary = Object Function(
-  Object library_1,
-);
-
-typedef _c_Dart_GetType = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Handle class_name,
-  ffi.IntPtr number_of_type_arguments,
-  ffi.Pointer<ffi.Handle> type_arguments,
-);
-
-typedef _dart_Dart_GetType = Object Function(
-  Object library_1,
-  Object class_name,
-  int number_of_type_arguments,
-  ffi.Pointer<ffi.Handle> type_arguments,
-);
-
-typedef _c_Dart_GetNullableType = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Handle class_name,
-  ffi.IntPtr number_of_type_arguments,
-  ffi.Pointer<ffi.Handle> type_arguments,
-);
-
-typedef _dart_Dart_GetNullableType = Object Function(
-  Object library_1,
-  Object class_name,
-  int number_of_type_arguments,
-  ffi.Pointer<ffi.Handle> type_arguments,
-);
-
-typedef _c_Dart_GetNonNullableType = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Handle class_name,
-  ffi.IntPtr number_of_type_arguments,
-  ffi.Pointer<ffi.Handle> type_arguments,
-);
-
-typedef _dart_Dart_GetNonNullableType = Object Function(
-  Object library_1,
-  Object class_name,
-  int number_of_type_arguments,
-  ffi.Pointer<ffi.Handle> type_arguments,
-);
-
-typedef _c_Dart_TypeToNullableType = ffi.Handle Function(
-  ffi.Handle type,
-);
-
-typedef _dart_Dart_TypeToNullableType = Object Function(
-  Object type,
-);
-
-typedef _c_Dart_TypeToNonNullableType = ffi.Handle Function(
-  ffi.Handle type,
-);
-
-typedef _dart_Dart_TypeToNonNullableType = Object Function(
-  Object type,
-);
-
-typedef _c_Dart_IsNullableType = ffi.Handle Function(
-  ffi.Handle type,
-  ffi.Pointer<ffi.Uint8> result,
-);
-
-typedef _dart_Dart_IsNullableType = Object Function(
-  Object type,
-  ffi.Pointer<ffi.Uint8> result,
-);
-
-typedef _c_Dart_IsNonNullableType = ffi.Handle Function(
-  ffi.Handle type,
-  ffi.Pointer<ffi.Uint8> result,
-);
-
-typedef _dart_Dart_IsNonNullableType = Object Function(
-  Object type,
-  ffi.Pointer<ffi.Uint8> result,
-);
-
-typedef _c_Dart_IsLegacyType = ffi.Handle Function(
-  ffi.Handle type,
-  ffi.Pointer<ffi.Uint8> result,
-);
-
-typedef _dart_Dart_IsLegacyType = Object Function(
-  Object type,
-  ffi.Pointer<ffi.Uint8> result,
-);
-
-typedef _c_Dart_GetClass = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Handle class_name,
-);
-
-typedef _dart_Dart_GetClass = Object Function(
-  Object library_1,
-  Object class_name,
-);
-
-typedef _c_Dart_LibraryUrl = ffi.Handle Function(
-  ffi.Handle library_1,
-);
-
-typedef _dart_Dart_LibraryUrl = Object Function(
-  Object library_1,
-);
-
-typedef _c_Dart_LibraryResolvedUrl = ffi.Handle Function(
-  ffi.Handle library_1,
-);
-
-typedef _dart_Dart_LibraryResolvedUrl = Object Function(
-  Object library_1,
-);
-
-typedef _c_Dart_GetLoadedLibraries = ffi.Handle Function();
-
-typedef _dart_Dart_GetLoadedLibraries = Object Function();
-
-typedef _c_Dart_LookupLibrary = ffi.Handle Function(
-  ffi.Handle url,
-);
-
-typedef _dart_Dart_LookupLibrary = Object Function(
-  Object url,
-);
-
-typedef _c_Dart_LibraryHandleError = ffi.Handle Function(
-  ffi.Handle library_1,
-  ffi.Handle error,
-);
-
-typedef _dart_Dart_LibraryHandleError = Object Function(
-  Object library_1,
-  Object error,
-);
-
-typedef _c_Dart_LoadLibraryFromKernel = ffi.Handle Function(
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  ffi.IntPtr kernel_buffer_size,
-);
-
-typedef _dart_Dart_LoadLibraryFromKernel = Object Function(
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  int kernel_buffer_size,
-);
-
-typedef _c_Dart_GetImportsOfScheme = ffi.Handle Function(
-  ffi.Handle scheme,
-);
-
-typedef _dart_Dart_GetImportsOfScheme = Object Function(
-  Object scheme,
-);
-
-typedef _c_Dart_FinalizeLoading = ffi.Handle Function(
-  ffi.Uint8 complete_futures,
-);
-
-typedef _dart_Dart_FinalizeLoading = Object Function(
-  int complete_futures,
-);
-
-typedef _c_Dart_GetPeer = ffi.Handle Function(
-  ffi.Handle object,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
-);
-
-typedef _dart_Dart_GetPeer = Object Function(
-  Object object,
-  ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
-);
-
-typedef _c_Dart_SetPeer = ffi.Handle Function(
-  ffi.Handle object,
-  ffi.Pointer<ffi.Void> peer,
-);
-
-typedef _dart_Dart_SetPeer = Object Function(
-  Object object,
-  ffi.Pointer<ffi.Void> peer,
-);
-
-typedef _c_Dart_IsKernelIsolate = ffi.Uint8 Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_IsKernelIsolate = int Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_KernelIsolateIsRunning = ffi.Uint8 Function();
-
-typedef _dart_Dart_KernelIsolateIsRunning = int Function();
-
-typedef _c_Dart_KernelPort = ffi.Int64 Function();
-
-typedef _dart_Dart_KernelPort = int Function();
-
-typedef _c_Dart_CompileToKernel = Dart_KernelCompilationResult Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Uint8> platform_kernel,
-  ffi.IntPtr platform_kernel_size,
-  ffi.Uint8 incremental_compile,
-  ffi.Uint8 snapshot_compile,
-  ffi.Pointer<ffi.Int8> package_config,
-  ffi.Int32 verbosity,
-);
-
-typedef _dart_Dart_CompileToKernel = Dart_KernelCompilationResult Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Uint8> platform_kernel,
-  int platform_kernel_size,
-  int incremental_compile,
-  int snapshot_compile,
-  ffi.Pointer<ffi.Int8> package_config,
-  int verbosity,
-);
-
-typedef _c_Dart_KernelListDependencies = Dart_KernelCompilationResult
-    Function();
-
-typedef _dart_Dart_KernelListDependencies = Dart_KernelCompilationResult
-    Function();
-
-typedef _c_Dart_SetDartLibrarySourcesKernel = ffi.Void Function(
-  ffi.Pointer<ffi.Uint8> platform_kernel,
-  ffi.IntPtr platform_kernel_size,
-);
-
-typedef _dart_Dart_SetDartLibrarySourcesKernel = void Function(
-  ffi.Pointer<ffi.Uint8> platform_kernel,
-  int platform_kernel_size,
-);
-
-typedef _c_Dart_DetectNullSafety = ffi.Uint8 Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Int8> package_config,
-  ffi.Pointer<ffi.Int8> original_working_directory,
-  ffi.Pointer<ffi.Uint8> snapshot_data,
-  ffi.Pointer<ffi.Uint8> snapshot_instructions,
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  ffi.IntPtr kernel_buffer_size,
-);
-
-typedef _dart_Dart_DetectNullSafety = int Function(
-  ffi.Pointer<ffi.Int8> script_uri,
-  ffi.Pointer<ffi.Int8> package_config,
-  ffi.Pointer<ffi.Int8> original_working_directory,
-  ffi.Pointer<ffi.Uint8> snapshot_data,
-  ffi.Pointer<ffi.Uint8> snapshot_instructions,
-  ffi.Pointer<ffi.Uint8> kernel_buffer,
-  int kernel_buffer_size,
-);
-
-typedef _c_Dart_IsServiceIsolate = ffi.Uint8 Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _dart_Dart_IsServiceIsolate = int Function(
-  ffi.Pointer<_Dart_Isolate> isolate,
-);
-
-typedef _c_Dart_WriteProfileToTimeline = ffi.Uint8 Function(
-  ffi.Int64 main_port,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _dart_Dart_WriteProfileToTimeline = int Function(
-  int main_port,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>> error,
-);
-
-typedef _c_Dart_Precompile = ffi.Handle Function();
-
-typedef _dart_Dart_Precompile = Object Function();
-
-typedef _c_Dart_LoadingUnitLibraryUris = ffi.Handle Function(
-  ffi.IntPtr loading_unit_id,
-);
-
-typedef _dart_Dart_LoadingUnitLibraryUris = Object Function(
-  int loading_unit_id,
-);
-
-typedef Dart_StreamingWriteCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-  ffi.Pointer<ffi.Uint8>,
-  ffi.IntPtr,
-);
-
-typedef _c_Dart_CreateAppAOTSnapshotAsAssembly = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
-  ffi.Pointer<ffi.Void> callback_data,
-  ffi.Uint8 stripped,
-  ffi.Pointer<ffi.Void> debug_callback_data,
-);
-
-typedef _dart_Dart_CreateAppAOTSnapshotAsAssembly = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
-  ffi.Pointer<ffi.Void> callback_data,
-  int stripped,
-  ffi.Pointer<ffi.Void> debug_callback_data,
-);
-
-typedef Dart_CreateLoadingUnitCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-  ffi.IntPtr,
-  ffi.Pointer<ffi.Pointer<ffi.Void>>,
-  ffi.Pointer<ffi.Pointer<ffi.Void>>,
-);
-
-typedef Dart_StreamingCloseCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef _c_Dart_CreateAppAOTSnapshotAsAssemblies = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
-  ffi.Pointer<ffi.Void> next_callback_data,
-  ffi.Uint8 stripped,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
-);
-
-typedef _dart_Dart_CreateAppAOTSnapshotAsAssemblies = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
-  ffi.Pointer<ffi.Void> next_callback_data,
-  int stripped,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
-);
-
-typedef _c_Dart_CreateAppAOTSnapshotAsElf = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
-  ffi.Pointer<ffi.Void> callback_data,
-  ffi.Uint8 stripped,
-  ffi.Pointer<ffi.Void> debug_callback_data,
-);
-
-typedef _dart_Dart_CreateAppAOTSnapshotAsElf = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
-  ffi.Pointer<ffi.Void> callback_data,
-  int stripped,
-  ffi.Pointer<ffi.Void> debug_callback_data,
-);
-
-typedef _c_Dart_CreateAppAOTSnapshotAsElfs = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
-  ffi.Pointer<ffi.Void> next_callback_data,
-  ffi.Uint8 stripped,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
-);
-
-typedef _dart_Dart_CreateAppAOTSnapshotAsElfs = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_CreateLoadingUnitCallback>> next_callback,
-  ffi.Pointer<ffi.Void> next_callback_data,
-  int stripped,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> write_callback,
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingCloseCallback>> close_callback,
-);
-
-typedef _c_Dart_CreateVMAOTSnapshotAsAssembly = ffi.Handle Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
-  ffi.Pointer<ffi.Void> callback_data,
-);
-
-typedef _dart_Dart_CreateVMAOTSnapshotAsAssembly = Object Function(
-  ffi.Pointer<ffi.NativeFunction<Dart_StreamingWriteCallback>> callback,
-  ffi.Pointer<ffi.Void> callback_data,
-);
-
-typedef _c_Dart_SortClasses = ffi.Handle Function();
-
-typedef _dart_Dart_SortClasses = Object Function();
-
-typedef _c_Dart_CreateAppJITSnapshotAsBlobs = ffi.Handle Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
-);
-
-typedef _dart_Dart_CreateAppJITSnapshotAsBlobs = Object Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
-);
-
-typedef _c_Dart_CreateCoreJITSnapshotAsBlobs = ffi.Handle Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
-  ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
-);
-
-typedef _dart_Dart_CreateCoreJITSnapshotAsBlobs = Object Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
-  ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
-  ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
-);
-
-typedef _c_Dart_GetObfuscationMap = ffi.Handle Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
-  ffi.Pointer<ffi.IntPtr> buffer_length,
-);
-
-typedef _dart_Dart_GetObfuscationMap = Object Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
-  ffi.Pointer<ffi.IntPtr> buffer_length,
-);
-
-typedef _c_Dart_IsPrecompiledRuntime = ffi.Uint8 Function();
-
-typedef _dart_Dart_IsPrecompiledRuntime = int Function();
-
-typedef _c_Dart_DumpNativeStackTrace = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_Dart_DumpNativeStackTrace = void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_Dart_PrepareToAbort = ffi.Void Function();
-
-typedef _dart_Dart_PrepareToAbort = void Function();
-
-typedef _c_labSound_MakeAudioDeviceList = AudioDeviceInfoList Function();
-
-typedef _dart_labSound_MakeAudioDeviceList = AudioDeviceInfoList Function();
-
-typedef _c_labSound_GetDefaultOutputAudioDeviceIndex = AudioDeviceIndex
-    Function();
-
-typedef _dart_labSound_GetDefaultOutputAudioDeviceIndex = AudioDeviceIndex
-    Function();
-
-typedef _c_labSound_GetDefaultInputAudioDeviceIndex = AudioDeviceIndex
-    Function();
-
-typedef _dart_labSound_GetDefaultInputAudioDeviceIndex = AudioDeviceIndex
-    Function();
-
-typedef _c_labSound_MakeAudioHardwareInputNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_labSound_MakeAudioHardwareInputNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_labSound_GetDefaultInputAudioDeviceConfiguration = AudioStreamConfig
-    Function();
-
-typedef _dart_labSound_GetDefaultInputAudioDeviceConfiguration
-    = AudioStreamConfig Function();
-
-typedef _c_labSound_GetDefaultOutputAudioDeviceConfiguration = AudioStreamConfig
-    Function();
-
-typedef _dart_labSound_GetDefaultOutputAudioDeviceConfiguration
-    = AudioStreamConfig Function();
-
-typedef _c_InitDartApiDL = ffi.IntPtr Function(
-  ffi.Pointer<ffi.Void> data,
-);
-
-typedef _dart_InitDartApiDL = int Function(
-  ffi.Pointer<ffi.Void> data,
-);
-
-typedef _c_registerDecodeAudioSendPort = ffi.Void Function(
-  ffi.Int32 sendPort,
-);
-
-typedef _dart_registerDecodeAudioSendPort = void Function(
-  int sendPort,
-);
-
-typedef _c_registerAudioSampleOnEndedSendPort = ffi.Void Function(
-  ffi.Int32 sendPort,
-);
-
-typedef _dart_registerAudioSampleOnEndedSendPort = void Function(
-  int sendPort,
-);
-
-typedef _c_registerOfflineRenderCompleteSendPort = ffi.Void Function(
-  ffi.Int32 sendPort,
-);
-
-typedef _dart_registerOfflineRenderCompleteSendPort = void Function(
-  int sendPort,
-);
-
-typedef _c_registerFunctionNodeSendPort = ffi.Void Function(
-  ffi.Int32 sendPort,
-);
-
-typedef _dart_registerFunctionNodeSendPort = void Function(
-  int sendPort,
-);
-
-typedef _c_createRealtimeAudioContext = ffi.Pointer<ffi.Void> Function(
-  AudioStreamConfig outputConfig,
-  AudioStreamConfig inputConfig,
-);
-
-typedef _dart_createRealtimeAudioContext = ffi.Pointer<ffi.Void> Function(
-  AudioStreamConfig outputConfig,
-  AudioStreamConfig inputConfig,
-);
-
-typedef _c_createOfflineAudioContext = ffi.Pointer<ffi.Void> Function(
-  AudioStreamConfig outputConfig,
-  ffi.Double recordTimeMilliseconds,
-);
-
-typedef _dart_createOfflineAudioContext = ffi.Pointer<ffi.Void> Function(
-  AudioStreamConfig outputConfig,
-  double recordTimeMilliseconds,
-);
-
-typedef _c_AudioContext_startOfflineRendering = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_startOfflineRendering = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_makeAudioHardwareInputNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_makeAudioHardwareInputNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_addAutomaticPullNode = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioContext_addAutomaticPullNode = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int nodeId,
-);
-
-typedef _c_AudioContext_removeAutomaticPullNode = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioContext_removeAutomaticPullNode = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int nodeId,
-);
-
-typedef _c_AudioContext_processAutomaticPullNodes = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 framesToProcess,
-);
-
-typedef _dart_AudioContext_processAutomaticPullNodes = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int framesToProcess,
-);
-
-typedef _c_AudioContext_handlePreRenderTasks = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_handlePreRenderTasks = void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_handlePostRenderTasks = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_handlePostRenderTasks = void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_synchronizeConnections = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 timeOut_ms,
-);
-
-typedef _dart_AudioContext_synchronizeConnections = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int timeOut_ms,
-);
-
-typedef _c_AudioContext_suspend = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_suspend = void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_resume = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_resume = void Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_currentTime = ffi.Double Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_currentTime = double Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_predictedCurrentTime = ffi.Double Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_predictedCurrentTime = double Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_sampleRate = ffi.Float Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_sampleRate = double Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_listener = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_listener = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_isInitialized = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_isInitialized = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_isConnected = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 destinationIndex,
-  ffi.Int32 sourceIndex,
-);
-
-typedef _dart_AudioContext_isConnected = int Function(
-  ffi.Pointer<ffi.Void> context,
-  int destinationIndex,
-  int sourceIndex,
-);
-
-typedef _c_AudioContext_setDeviceNode = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioContext_setDeviceNode = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int nodeId,
-);
-
-typedef _c_AudioContext_device = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_device = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_isOfflineContext = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_isOfflineContext = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_currentSampleFrame = ffi.Uint64 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioContext_currentSampleFrame = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioContext_connect = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 destination,
-  ffi.Int32 source,
-  ffi.Int32 destIdx,
-  ffi.Int32 srcIdx,
-);
-
-typedef _dart_AudioContext_connect = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int destination,
-  int source,
-  int destIdx,
-  int srcIdx,
-);
-
-typedef _c_AudioContext_disconnect = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 destination,
-  ffi.Int32 source,
-  ffi.Int32 destIdx,
-  ffi.Int32 srcIdx,
-);
-
-typedef _dart_AudioContext_disconnect = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int destination,
-  int source,
-  int destIdx,
-  int srcIdx,
-);
-
-typedef _c_AudioContext_disconnectCompletely = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 node,
-  ffi.Int32 destIdx,
-);
-
-typedef _dart_AudioContext_disconnectCompletely = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int node,
-  int destIdx,
-);
-
-typedef _c_AudioContext_connectParam = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 paramNodeId,
-  ffi.Int32 paramId,
-  ffi.Int32 driverNodeId,
-  ffi.Int32 index,
-);
-
-typedef _dart_AudioContext_connectParam = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int paramNodeId,
-  int paramId,
-  int driverNodeId,
-  int index,
-);
-
-typedef _c_AudioContext_connectParamByName = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 destinationNodeId,
-  ffi.Pointer<ffi.Int8> parameterName,
-  ffi.Int32 driverNodeId,
-  ffi.Int32 index,
-);
-
-typedef _dart_AudioContext_connectParamByName = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int destinationNodeId,
-  ffi.Pointer<ffi.Int8> parameterName,
-  int driverNodeId,
-  int index,
-);
-
-typedef _c_AudioContext_disconnectParam = ffi.Void Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 paramNodeId,
-  ffi.Int32 paramId,
-  ffi.Int32 driverNodeId,
-  ffi.Int32 index,
-);
-
-typedef _dart_AudioContext_disconnectParam = void Function(
-  ffi.Pointer<ffi.Void> context,
-  int paramNodeId,
-  int paramId,
-  int driverNodeId,
-  int index,
-);
-
-typedef _c_AudioContext_releaseContext = ffi.Void Function(
-  ffi.Pointer<ffi.Void> ctx,
-);
-
-typedef _dart_AudioContext_releaseContext = void Function(
-  ffi.Pointer<ffi.Void> ctx,
-);
-
-typedef _c_AudioParam_value = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-);
-
-typedef _dart_AudioParam_value = double Function(
-  int nodeId,
-  int paramIndex,
-);
-
-typedef _c_AudioParam_setValue = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Float value,
-);
-
-typedef _dart_AudioParam_setValue = void Function(
-  int nodeId,
-  int paramIndex,
-  double value,
-);
-
-typedef _c_AudioParam_finalValue = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioParam_finalValue = double Function(
-  int nodeId,
-  int paramIndex,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioParam_setValueCurveAtTime = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Pointer<ffi.Float> curve,
-  ffi.Float time,
-  ffi.Float duration,
-);
-
-typedef _dart_AudioParam_setValueCurveAtTime = void Function(
-  int nodeId,
-  int paramIndex,
-  ffi.Pointer<ffi.Float> curve,
-  double time,
-  double duration,
-);
-
-typedef _c_AudioParam_cancelScheduledValues = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Float startTime,
-);
-
-typedef _dart_AudioParam_cancelScheduledValues = void Function(
-  int nodeId,
-  int paramIndex,
-  double startTime,
-);
-
-typedef _c_AudioParam_setValueAtTime = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Float value,
-  ffi.Float time,
-);
-
-typedef _dart_AudioParam_setValueAtTime = void Function(
-  int nodeId,
-  int paramIndex,
-  double value,
-  double time,
-);
-
-typedef _c_AudioParam_exponentialRampToValueAtTime = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Float value,
-  ffi.Float time,
-);
-
-typedef _dart_AudioParam_exponentialRampToValueAtTime = void Function(
-  int nodeId,
-  int paramIndex,
-  double value,
-  double time,
-);
-
-typedef _c_AudioParam_linearRampToValueAtTime = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Float value,
-  ffi.Float time,
-);
-
-typedef _dart_AudioParam_linearRampToValueAtTime = void Function(
-  int nodeId,
-  int paramIndex,
-  double value,
-  double time,
-);
-
-typedef _c_AudioParam_setTargetAtTime = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Float target,
-  ffi.Float time,
-  ffi.Float timeConstant,
-);
-
-typedef _dart_AudioParam_setTargetAtTime = void Function(
-  int nodeId,
-  int paramIndex,
-  double target,
-  double time,
-  double timeConstant,
-);
-
-typedef _c_AudioParam_minValue = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-);
-
-typedef _dart_AudioParam_minValue = double Function(
-  int nodeId,
-  int paramIndex,
-);
-
-typedef _c_AudioParam_maxValue = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-);
-
-typedef _dart_AudioParam_maxValue = double Function(
-  int nodeId,
-  int paramIndex,
-);
-
-typedef _c_AudioParam_defaultValue = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-);
-
-typedef _dart_AudioParam_defaultValue = double Function(
-  int nodeId,
-  int paramIndex,
-);
-
-typedef _c_AudioParam_resetSmoothedValue = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-);
-
-typedef _dart_AudioParam_resetSmoothedValue = void Function(
-  int nodeId,
-  int paramIndex,
-);
-
-typedef _c_AudioParam_setSmoothingConstant = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-  ffi.Double k,
-);
-
-typedef _dart_AudioParam_setSmoothingConstant = void Function(
-  int nodeId,
-  int paramIndex,
-  double k,
-);
-
-typedef _c_AudioParam_hasSampleAccurateValues = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 paramIndex,
-);
-
-typedef _dart_AudioParam_hasSampleAccurateValues = int Function(
-  int nodeId,
-  int paramIndex,
-);
-
-typedef _c_AudioNode_initialize = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_initialize = void Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_uninitialize = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_uninitialize = void Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_isScheduledNode = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_isScheduledNode = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_numberOfInputs = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_numberOfInputs = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_numberOfOutputs = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_numberOfOutputs = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_channelCount = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_channelCount = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_reset = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioNode_reset = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioNode_name = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_name = ffi.Pointer<ffi.Int8> Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_useCount = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_useCount = int Function(
-  int nodeId,
-);
-
-typedef _c_releaseNode = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_releaseNode = void Function(
-  int nodeId,
-);
-
-typedef _c_hasNode = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_hasNode = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioNode_tailTime = ffi.Double Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioNode_tailTime = double Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioNode_latencyTime = ffi.Double Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_AudioNode_latencyTime = double Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioNode_isInitialized = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioNode_isInitialized = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioScheduledSourceNode_isPlayingOrScheduled = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioScheduledSourceNode_isPlayingOrScheduled = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioScheduledSourceNode_stop = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float when,
-);
-
-typedef _dart_AudioScheduledSourceNode_stop = void Function(
-  int nodeId,
-  double when,
-);
-
-typedef _c_AudioScheduledSourceNode_hasFinished = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioScheduledSourceNode_hasFinished = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioScheduledSourceNode_startWhen = ffi.Uint64 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioScheduledSourceNode_startWhen = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioScheduledSourceNode_start = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float when,
-);
-
-typedef _dart_AudioScheduledSourceNode_start = void Function(
-  int nodeId,
-  double when,
-);
-
-typedef _c_AudioScheduledSourceNode_playbackState = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioScheduledSourceNode_playbackState = int Function(
-  int nodeId,
-);
-
-typedef _c_createAudioSampleNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createAudioSampleNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_SampledAudioNode_setBus = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_SampledAudioNode_setBus = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-  int busIndex,
-);
-
-typedef _c_SampledAudioNode_schedule = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-);
-
-typedef _dart_SampledAudioNode_schedule = void Function(
-  int nodeId,
-  double when,
-);
-
-typedef _c_SampledAudioNode_schedule2 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-  ffi.Int32 loopCount,
-);
-
-typedef _dart_SampledAudioNode_schedule2 = void Function(
-  int nodeId,
-  double when,
-  int loopCount,
-);
-
-typedef _c_SampledAudioNode_schedule3 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-  ffi.Double grainOffset,
-  ffi.Int32 loopCount,
-);
-
-typedef _dart_SampledAudioNode_schedule3 = void Function(
-  int nodeId,
-  double when,
-  double grainOffset,
-  int loopCount,
-);
-
-typedef _c_SampledAudioNode_schedule4 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-  ffi.Double grainOffset,
-  ffi.Double grainDuration,
-  ffi.Int32 loopCount,
-);
-
-typedef _dart_SampledAudioNode_schedule4 = void Function(
-  int nodeId,
-  double when,
-  double grainOffset,
-  double grainDuration,
-  int loopCount,
-);
-
-typedef _c_SampledAudioNode_clearSchedules = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SampledAudioNode_clearSchedules = void Function(
-  int nodeId,
-);
-
-typedef _c_SampledAudioNode_start = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-);
-
-typedef _dart_SampledAudioNode_start = void Function(
-  int nodeId,
-  double when,
-);
-
-typedef _c_SampledAudioNode_start2 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-  ffi.Int32 loopCount,
-);
-
-typedef _dart_SampledAudioNode_start2 = void Function(
-  int nodeId,
-  double when,
-  int loopCount,
-);
-
-typedef _c_SampledAudioNode_start3 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-  ffi.Double grainOffset,
-  ffi.Int32 loopCount,
-);
-
-typedef _dart_SampledAudioNode_start3 = void Function(
-  int nodeId,
-  double when,
-  double grainOffset,
-  int loopCount,
-);
-
-typedef _c_SampledAudioNode_start4 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double when,
-  ffi.Double grainOffset,
-  ffi.Double grainDuration,
-  ffi.Int32 loopCount,
-);
-
-typedef _dart_SampledAudioNode_start4 = void Function(
-  int nodeId,
-  double when,
-  double grainOffset,
-  double grainDuration,
-  int loopCount,
-);
-
-typedef _c_SampledAudioNode_getCursor = ffi.Int32 Function(
-  ffi.Int32 index,
-);
-
-typedef _dart_SampledAudioNode_getCursor = int Function(
-  int index,
-);
-
-typedef _c_SampledAudioNode_playbackRate = ffi.Int32 Function(
-  ffi.Int32 index,
-);
-
-typedef _dart_SampledAudioNode_playbackRate = int Function(
-  int index,
-);
-
-typedef _c_SampledAudioNode_detune = ffi.Int32 Function(
-  ffi.Int32 index,
-);
-
-typedef _dart_SampledAudioNode_detune = int Function(
-  int index,
-);
-
-typedef _c_makeBusFromFile = ffi.Int32 Function(
-  ffi.Pointer<ffi.Int8> file,
-  ffi.Int32 mixToMono,
-  ffi.Float targetSampleRate,
-);
-
-typedef _dart_makeBusFromFile = int Function(
-  ffi.Pointer<ffi.Int8> file,
-  int mixToMono,
-  double targetSampleRate,
-);
-
-typedef _c_makeBusFromMemory = ffi.Int32 Function(
-  ffi.Pointer<ffi.Uint8> buffer,
-  ffi.Int32 bufferLen,
-  ffi.Pointer<ffi.Int8> extension_1,
-  ffi.Int32 mixToMono,
-);
-
-typedef _dart_makeBusFromMemory = int Function(
-  ffi.Pointer<ffi.Uint8> buffer,
-  int bufferLen,
-  ffi.Pointer<ffi.Int8> extension_1,
-  int mixToMono,
-);
-
-typedef _c_audioBusHasCheck = ffi.Int32 Function(
-  ffi.Int32 busId,
-);
-
-typedef _dart_audioBusHasCheck = int Function(
-  int busId,
-);
-
-typedef _c_createAudioBus = ffi.Int32 Function(
-  ffi.Int32 numberOfChannels,
-  ffi.Int32 length,
-  ffi.Int32 allocate,
-);
-
-typedef _dart_createAudioBus = int Function(
-  int numberOfChannels,
-  int length,
-  int allocate,
-);
-
-typedef _c_AudioBus_setChannelMemory = ffi.Void Function(
-  ffi.Int32 busId,
-  ffi.Int32 channelIndex,
-  ffi.Pointer<ffi.Float> storage,
-  ffi.Int32 length,
-);
-
-typedef _dart_AudioBus_setChannelMemory = void Function(
-  int busId,
-  int channelIndex,
-  ffi.Pointer<ffi.Float> storage,
-  int length,
-);
-
-typedef _c_AudioBus_numberOfChannels = ffi.Int32 Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_numberOfChannels = int Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_length = ffi.Int32 Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_length = int Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_sampleRate = ffi.Float Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_sampleRate = double Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_setSampleRate = ffi.Void Function(
-  ffi.Int32 busIndex,
-  ffi.Float sampleRate,
-);
-
-typedef _dart_AudioBus_setSampleRate = void Function(
-  int busIndex,
-  double sampleRate,
-);
-
-typedef _c_AudioBus_zero = ffi.Void Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_zero = void Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_clearSilentFlag = ffi.Void Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_clearSilentFlag = void Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_scale = ffi.Void Function(
-  ffi.Int32 busIndex,
-  ffi.Float scale,
-);
-
-typedef _dart_AudioBus_scale = void Function(
-  int busIndex,
-  double scale,
-);
-
-typedef _c_AudioBus_reset = ffi.Void Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_reset = void Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_isSilent = ffi.Int32 Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_isSilent = int Function(
-  int busIndex,
-);
-
-typedef _c_AudioBus_isFirstTime = ffi.Int32 Function(
-  ffi.Int32 busIndex,
-);
-
-typedef _dart_AudioBus_isFirstTime = int Function(
-  int busIndex,
-);
-
-typedef _c_releaseAudioBus = ffi.Void Function(
-  ffi.Int32 index,
-);
-
-typedef _dart_releaseAudioBus = void Function(
-  int index,
-);
-
-typedef _c_AudioBus_channel = ffi.Pointer<ffi.Void> Function(
-  ffi.Int32 busId,
-  ffi.Int32 channelIndex,
-);
-
-typedef _dart_AudioBus_channel = ffi.Pointer<ffi.Void> Function(
-  int busId,
-  int channelIndex,
-);
-
-typedef _c_AudioChannel_length = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> channel,
-);
-
-typedef _dart_AudioChannel_length = int Function(
-  ffi.Pointer<ffi.Void> channel,
-);
-
-typedef _c_AudioChannel_data = ffi.Pointer<ffi.Float> Function(
-  ffi.Pointer<ffi.Void> channel,
-);
-
-typedef _dart_AudioChannel_data = ffi.Pointer<ffi.Float> Function(
-  ffi.Pointer<ffi.Void> channel,
-);
-
-typedef _c_createGain = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createGain = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_GainNode_gain = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GainNode_gain = int Function(
-  int nodeId,
-);
-
-typedef _c_createRecorderNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 channelCount,
-);
-
-typedef _dart_createRecorderNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-  int channelCount,
-);
-
-typedef _c_createRecorderNodeByConfig = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  AudioStreamConfig outputConfig,
-);
-
-typedef _dart_createRecorderNodeByConfig = int Function(
-  ffi.Pointer<ffi.Void> context,
-  AudioStreamConfig outputConfig,
-);
-
-typedef _c_RecorderNode_startRecording = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_RecorderNode_startRecording = void Function(
-  int nodeId,
-);
-
-typedef _c_RecorderNode_stopRecording = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_RecorderNode_stopRecording = void Function(
-  int nodeId,
-);
-
-typedef _c_RecorderNode_recordedLengthInSeconds = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_RecorderNode_recordedLengthInSeconds = double Function(
-  int nodeId,
-);
-
-typedef _c_RecorderNode_createBusFromRecording = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 mixToMono,
-);
-
-typedef _dart_RecorderNode_createBusFromRecording = int Function(
-  int nodeId,
-  int mixToMono,
-);
-
-typedef _c_RecorderNode_writeRecordingToWav = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Int8> file,
-  ffi.Int32 mixToMono,
-);
-
-typedef _dart_RecorderNode_writeRecordingToWav = int Function(
-  int nodeId,
-  ffi.Pointer<ffi.Int8> file,
-  int mixToMono,
-);
-
-typedef _c_createAnalyserNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createAnalyserNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_createAnalyserNodeFftSize = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 fftSize,
-);
-
-typedef _dart_createAnalyserNodeFftSize = int Function(
-  ffi.Pointer<ffi.Void> context,
-  int fftSize,
-);
-
-typedef _c_AnalyserNode_setFftSize = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 fftSize,
-);
-
-typedef _dart_AnalyserNode_setFftSize = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-  int fftSize,
-);
-
-typedef _c_AnalyserNode_fftSize = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AnalyserNode_fftSize = int Function(
-  int nodeId,
-);
-
-typedef _c_AnalyserNode_frequencyBinCount = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AnalyserNode_frequencyBinCount = int Function(
-  int nodeId,
-);
-
-typedef _c_AnalyserNode_setMinDecibels = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double k,
-);
-
-typedef _dart_AnalyserNode_setMinDecibels = void Function(
-  int nodeId,
-  double k,
-);
-
-typedef _c_AnalyserNode_minDecibels = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AnalyserNode_minDecibels = int Function(
-  int nodeId,
-);
-
-typedef _c_AnalyserNode_setMaxDecibels = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double k,
-);
-
-typedef _dart_AnalyserNode_setMaxDecibels = void Function(
-  int nodeId,
-  double k,
-);
-
-typedef _c_AnalyserNode_maxDecibels = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AnalyserNode_maxDecibels = int Function(
-  int nodeId,
-);
-
-typedef _c_AnalyserNode_setSmoothingTimeConstant = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Double k,
-);
-
-typedef _dart_AnalyserNode_setSmoothingTimeConstant = void Function(
-  int nodeId,
-  double k,
-);
-
-typedef _c_AnalyserNode_smoothingTimeConstant = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AnalyserNode_smoothingTimeConstant = int Function(
-  int nodeId,
-);
-
-typedef _c_AnalyserNode_getFloatFrequencyData = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Float> array,
-);
-
-typedef _dart_AnalyserNode_getFloatFrequencyData = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Float> array,
-);
-
-typedef _c_AnalyserNode_getByteFrequencyData = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Uint8> array,
-  ffi.Int32 resample,
-);
-
-typedef _dart_AnalyserNode_getByteFrequencyData = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Uint8> array,
-  int resample,
-);
-
-typedef _c_AnalyserNode_getFloatTimeDomainData = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Float> array,
-);
-
-typedef _dart_AnalyserNode_getFloatTimeDomainData = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Float> array,
-);
-
-typedef _c_AnalyserNode_getByteTimeDomainData = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Uint8> array,
-);
-
-typedef _dart_AnalyserNode_getByteTimeDomainData = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Uint8> array,
-);
-
-typedef _c_createOscillatorNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createOscillatorNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_OscillatorNode_type = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_OscillatorNode_type = int Function(
-  int nodeId,
-);
-
-typedef _c_OscillatorNode_setType = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 type,
-);
-
-typedef _dart_OscillatorNode_setType = void Function(
-  int nodeId,
-  int type,
-);
-
-typedef _c_OscillatorNode_amplitude = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_OscillatorNode_amplitude = int Function(
-  int nodeId,
-);
-
-typedef _c_OscillatorNode_frequency = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_OscillatorNode_frequency = int Function(
-  int nodeId,
-);
-
-typedef _c_OscillatorNode_bias = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_OscillatorNode_bias = int Function(
-  int nodeId,
-);
-
-typedef _c_OscillatorNode_detune = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_OscillatorNode_detune = int Function(
-  int nodeId,
-);
-
-typedef _c_createBiquadFilterNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createBiquadFilterNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_BiquadFilterNode_type = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_BiquadFilterNode_type = int Function(
-  int nodeId,
-);
-
-typedef _c_BiquadFilterNode_setType = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 type,
-);
-
-typedef _dart_BiquadFilterNode_setType = void Function(
-  int nodeId,
-  int type,
-);
-
-typedef _c_BiquadFilterNode_frequency = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_BiquadFilterNode_frequency = int Function(
-  int nodeId,
-);
-
-typedef _c_BiquadFilterNode_q = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_BiquadFilterNode_q = int Function(
-  int nodeId,
-);
-
-typedef _c_BiquadFilterNode_gain = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_BiquadFilterNode_gain = int Function(
-  int nodeId,
-);
-
-typedef _c_BiquadFilterNode_detune = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_BiquadFilterNode_detune = int Function(
-  int nodeId,
-);
-
-typedef _c_createPannerNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createPannerNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_PannerNode_panningModel = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_panningModel = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setPanningModel = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 m,
-);
-
-typedef _dart_PannerNode_setPanningModel = void Function(
-  int nodeId,
-  int m,
-);
-
-typedef _c_PannerNode_distanceModel = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_distanceModel = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setDistanceModel = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 m,
-);
-
-typedef _dart_PannerNode_setDistanceModel = void Function(
-  int nodeId,
-  int m,
-);
-
-typedef _c_PannerNode_setPosition = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_PannerNode_setPosition = void Function(
-  int nodeId,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_PannerNode_positionX = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_positionX = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_positionY = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_positionY = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_positionZ = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_positionZ = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setOrientation = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_PannerNode_setOrientation = void Function(
-  int nodeId,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_PannerNode_orientationX = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_orientationX = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_orientationY = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_orientationY = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_orientationZ = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_orientationZ = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setVelocity = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_PannerNode_setVelocity = void Function(
-  int nodeId,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_PannerNode_velocityX = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_velocityX = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_velocityY = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_velocityY = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_velocityZ = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_velocityZ = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_distanceGain = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_distanceGain = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_coneGain = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_coneGain = int Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_refDistance = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_refDistance = double Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setRefDistance = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float refDistance,
-);
-
-typedef _dart_PannerNode_setRefDistance = void Function(
-  int nodeId,
-  double refDistance,
-);
-
-typedef _c_PannerNode_maxDistance = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_maxDistance = double Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setMaxDistance = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float maxDistance,
-);
-
-typedef _dart_PannerNode_setMaxDistance = void Function(
-  int nodeId,
-  double maxDistance,
-);
-
-typedef _c_PannerNode_rolloffFactor = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_rolloffFactor = double Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setRolloffFactor = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float rolloffFactor,
-);
-
-typedef _dart_PannerNode_setRolloffFactor = void Function(
-  int nodeId,
-  double rolloffFactor,
-);
-
-typedef _c_PannerNode_coneInnerAngle = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_coneInnerAngle = double Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setConeInnerAngle = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float angle,
-);
-
-typedef _dart_PannerNode_setConeInnerAngle = void Function(
-  int nodeId,
-  double angle,
-);
-
-typedef _c_PannerNode_coneOuterAngle = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_coneOuterAngle = double Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setConeOuterAngle = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float angle,
-);
-
-typedef _dart_PannerNode_setConeOuterAngle = void Function(
-  int nodeId,
-  double angle,
-);
-
-typedef _c_PannerNode_coneOuterGain = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PannerNode_coneOuterGain = double Function(
-  int nodeId,
-);
-
-typedef _c_PannerNode_setConeOuterGain = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float angle,
-);
-
-typedef _dart_PannerNode_setConeOuterGain = void Function(
-  int nodeId,
-  double angle,
-);
-
-typedef _c_PannerNode_getAzimuthElevation = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-  ffi.Pointer<ffi.Double> outAzimuth,
-  ffi.Pointer<ffi.Double> outElevation,
-);
-
-typedef _dart_PannerNode_getAzimuthElevation = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-  ffi.Pointer<ffi.Double> outAzimuth,
-  ffi.Pointer<ffi.Double> outElevation,
-);
-
-typedef _c_PannerNode_dopplerRate = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_PannerNode_dopplerRate = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_createChannelSplitterNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createChannelSplitterNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_ChannelSplitterNode_addOutputs = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 n,
-);
-
-typedef _dart_ChannelSplitterNode_addOutputs = void Function(
-  int nodeId,
-  int n,
-);
-
-typedef _c_createChannelMergerNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createChannelMergerNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_ChannelMergerNode_addInputs = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 n,
-);
-
-typedef _dart_ChannelMergerNode_addInputs = void Function(
-  int nodeId,
-  int n,
-);
-
-typedef _c_ChannelMergerNode_setOutputChannelCount = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 n,
-);
-
-typedef _dart_ChannelMergerNode_setOutputChannelCount = void Function(
-  int nodeId,
-  int n,
-);
-
-typedef _c_createAudioHardwareDeviceNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  AudioStreamConfig outputConfig,
-  AudioStreamConfig inputConfig,
-);
-
-typedef _dart_createAudioHardwareDeviceNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-  AudioStreamConfig outputConfig,
-  AudioStreamConfig inputConfig,
-);
-
-typedef _c_AudioHardwareDeviceNode_start = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioHardwareDeviceNode_start = void Function(
-  int nodeId,
-);
-
-typedef _c_AudioHardwareDeviceNode_stop = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioHardwareDeviceNode_stop = void Function(
-  int nodeId,
-);
-
-typedef _c_AudioHardwareDeviceNode_isRunning = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioHardwareDeviceNode_isRunning = int Function(
-  int nodeId,
-);
-
-typedef _c_AudioHardwareDeviceNode_getOutputConfig = AudioStreamConfig Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioHardwareDeviceNode_getOutputConfig = AudioStreamConfig
-    Function(
-  int nodeId,
-);
-
-typedef _c_AudioHardwareDeviceNode_getInputConfig = AudioStreamConfig Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioHardwareDeviceNode_getInputConfig = AudioStreamConfig
-    Function(
-  int nodeId,
-);
-
-typedef _c_createAudioStreamConfig = AudioStreamConfig Function(
-  ffi.Int32 device_index,
-  ffi.Uint32 desired_channels,
-  ffi.Float desired_samplerate,
-);
-
-typedef _dart_createAudioStreamConfig = AudioStreamConfig Function(
-  int device_index,
-  int desired_channels,
-  double desired_samplerate,
-);
-
-typedef _c_AudioHardwareDeviceNode_backendReinitialize = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_AudioHardwareDeviceNode_backendReinitialize = void Function(
-  int nodeId,
-);
-
-typedef _c_createDynamicsCompressorNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createDynamicsCompressorNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_DynamicsCompressorNode_threshold = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DynamicsCompressorNode_threshold = int Function(
-  int nodeId,
-);
-
-typedef _c_DynamicsCompressorNode_knee = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DynamicsCompressorNode_knee = int Function(
-  int nodeId,
-);
-
-typedef _c_DynamicsCompressorNode_ratio = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DynamicsCompressorNode_ratio = int Function(
-  int nodeId,
-);
-
-typedef _c_DynamicsCompressorNode_attack = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DynamicsCompressorNode_attack = int Function(
-  int nodeId,
-);
-
-typedef _c_DynamicsCompressorNode_release = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DynamicsCompressorNode_release = int Function(
-  int nodeId,
-);
-
-typedef _c_DynamicsCompressorNode_reduction = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DynamicsCompressorNode_reduction = int Function(
-  int nodeId,
-);
-
-typedef _c_createADSRNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createADSRNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_ADSRNode_finished = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_ADSRNode_finished = int Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_ADSRNode_set = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float attack_time,
-  ffi.Float attack_level,
-  ffi.Float decay_time,
-  ffi.Float sustain_time,
-  ffi.Float sustain_level,
-  ffi.Float release_time,
-);
-
-typedef _dart_ADSRNode_set = void Function(
-  int nodeId,
-  double attack_time,
-  double attack_level,
-  double decay_time,
-  double sustain_time,
-  double sustain_level,
-  double release_time,
-);
-
-typedef _c_ADSRNode_gate = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_gate = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_oneShot = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_oneShot = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_attackTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_attackTime = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_attackLevel = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_attackLevel = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_decayTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_decayTime = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_sustainTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_sustainTime = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_sustainLevel = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_sustainLevel = int Function(
-  int nodeId,
-);
-
-typedef _c_ADSRNode_releaseTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ADSRNode_releaseTime = int Function(
-  int nodeId,
-);
-
-typedef _c_createWaveShaperNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createWaveShaperNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_WaveShaperNode_setCurve = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 curveLen,
-  ffi.Pointer<ffi.Float> curve,
-);
-
-typedef _dart_WaveShaperNode_setCurve = void Function(
-  int nodeId,
-  int curveLen,
-  ffi.Pointer<ffi.Float> curve,
-);
-
-typedef _c_createNoiseNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createNoiseNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_NoiseNode_type = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_NoiseNode_type = int Function(
-  int nodeId,
-);
-
-typedef _c_NoiseNode_setType = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 type,
-);
-
-typedef _dart_NoiseNode_setType = void Function(
-  int nodeId,
-  int type,
-);
-
-typedef _c_createPolyBLEPNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createPolyBLEPNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_PolyBLEPNode_type = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PolyBLEPNode_type = int Function(
-  int nodeId,
-);
-
-typedef _c_PolyBLEPNode_setType = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 type,
-);
-
-typedef _dart_PolyBLEPNode_setType = void Function(
-  int nodeId,
-  int type,
-);
-
-typedef _c_PolyBLEPNode_amplitude = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PolyBLEPNode_amplitude = int Function(
-  int nodeId,
-);
-
-typedef _c_PolyBLEPNode_frequency = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PolyBLEPNode_frequency = int Function(
-  int nodeId,
-);
-
-typedef _c_createDelayNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Double maxDelayTime,
-);
-
-typedef _dart_createDelayNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-  double maxDelayTime,
-);
-
-typedef _c_DelayNode_delayTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_DelayNode_delayTime = int Function(
-  int nodeId,
-);
-
-typedef _c_createBPMDelayNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Float tempo,
-);
-
-typedef _dart_createBPMDelayNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-  double tempo,
-);
-
-typedef _c_BPMDelayNode_setTempo = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float newTempo,
-);
-
-typedef _dart_BPMDelayNode_setTempo = void Function(
-  int nodeId,
-  double newTempo,
-);
-
-typedef _c_BPMDelayNode_setDelayIndex = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 value,
-);
-
-typedef _dart_BPMDelayNode_setDelayIndex = void Function(
-  int nodeId,
-  int value,
-);
-
-typedef _c_createConvolverNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createConvolverNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_ConvolverNode_normalize = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ConvolverNode_normalize = int Function(
-  int nodeId,
-);
-
-typedef _c_ConvolverNode_setNormalize = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 newN,
-);
-
-typedef _dart_ConvolverNode_setNormalize = void Function(
-  int nodeId,
-  int newN,
-);
-
-typedef _c_ConvolverNode_setImpulse = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 busId,
-);
-
-typedef _dart_ConvolverNode_setImpulse = void Function(
-  int nodeId,
-  int busId,
-);
-
-typedef _c_createStereoPannerNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createStereoPannerNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_StereoPannerNode_pan = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_StereoPannerNode_pan = int Function(
-  int nodeId,
-);
-
-typedef _c_createPowerMonitorNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createPowerMonitorNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_PowerMonitorNode_windowSize = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PowerMonitorNode_windowSize = int Function(
-  int nodeId,
-);
-
-typedef _c_PowerMonitorNode_db = ffi.Float Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_PowerMonitorNode_db = double Function(
-  int nodeId,
-);
-
-typedef _c_PowerMonitorNode_setWindowSize = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 ws,
-);
-
-typedef _dart_PowerMonitorNode_setWindowSize = void Function(
-  int nodeId,
-  int ws,
-);
-
-typedef _c_createSfxrNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createSfxrNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_SfxrNode_waveType = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_waveType = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_attackTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_attackTime = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_sustainTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_sustainTime = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_sustainPunch = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_sustainPunch = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_decayTime = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_decayTime = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_startFrequency = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_startFrequency = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_minFrequency = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_minFrequency = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_slide = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_slide = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_deltaSlide = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_deltaSlide = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_vibratoDepth = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_vibratoDepth = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_vibratoSpeed = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_vibratoSpeed = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_changeAmount = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_changeAmount = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_changeSpeed = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_changeSpeed = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_squareDuty = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_squareDuty = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_dutySweep = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_dutySweep = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_repeatSpeed = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_repeatSpeed = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_phaserOffset = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_phaserOffset = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_phaserSweep = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_phaserSweep = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_lpFilterCutoff = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_lpFilterCutoff = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_lpFilterCutoffSweep = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_lpFilterCutoffSweep = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_lpFiterResonance = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_lpFiterResonance = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_hpFilterCutoff = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_hpFilterCutoff = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_hpFilterCutoffSweep = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_hpFilterCutoffSweep = int Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_setStartFrequencyInHz = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float value,
-);
-
-typedef _dart_SfxrNode_setStartFrequencyInHz = void Function(
-  int nodeId,
-  double value,
-);
-
-typedef _c_SfxrNode_setVibratoSpeedInHz = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Float value,
-);
-
-typedef _dart_SfxrNode_setVibratoSpeedInHz = void Function(
-  int nodeId,
-  double value,
-);
-
-typedef _c_SfxrNode_envelopeTimeInSeconds = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float sfxrEnvTime,
-);
-
-typedef _dart_SfxrNode_envelopeTimeInSeconds = double Function(
-  int nodeId,
-  double sfxrEnvTime,
-);
-
-typedef _c_SfxrNode_envelopeTimeInSfxrUnits = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float t,
-);
-
-typedef _dart_SfxrNode_envelopeTimeInSfxrUnits = double Function(
-  int nodeId,
-  double t,
-);
-
-typedef _c_SfxrNode_frequencyInSfxrUnits = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float hz,
-);
-
-typedef _dart_SfxrNode_frequencyInSfxrUnits = double Function(
-  int nodeId,
-  double hz,
-);
-
-typedef _c_SfxrNode_frequencyInHz = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float sfxr,
-);
-
-typedef _dart_SfxrNode_frequencyInHz = double Function(
-  int nodeId,
-  double sfxr,
-);
-
-typedef _c_SfxrNode_vibratoInSfxrUnits = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float hz,
-);
-
-typedef _dart_SfxrNode_vibratoInSfxrUnits = double Function(
-  int nodeId,
-  double hz,
-);
-
-typedef _c_SfxrNode_vibratoInHz = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float sfxr,
-);
-
-typedef _dart_SfxrNode_vibratoInHz = double Function(
-  int nodeId,
-  double sfxr,
-);
-
-typedef _c_SfxrNode_filterFreqInHz = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float sfxr,
-);
-
-typedef _dart_SfxrNode_filterFreqInHz = double Function(
-  int nodeId,
-  double sfxr,
-);
-
-typedef _c_SfxrNode_filterFreqInSfxrUnits = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Float hz,
-);
-
-typedef _dart_SfxrNode_filterFreqInSfxrUnits = double Function(
-  int nodeId,
-  double hz,
-);
-
-typedef _c_SfxrNode_setDefaultBeep = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_setDefaultBeep = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_coin = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_coin = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_laser = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_laser = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_explosion = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_explosion = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_powerUp = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_powerUp = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_hit = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_hit = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_jump = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_jump = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_select = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_select = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_mutate = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_mutate = void Function(
-  int nodeId,
-);
-
-typedef _c_SfxrNode_randomize = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_SfxrNode_randomize = void Function(
-  int nodeId,
-);
-
-typedef _c_AudioSetting_name = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_name = ffi.Pointer<ffi.Int8> Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_shortName = ffi.Pointer<ffi.Int8> Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_shortName = ffi.Pointer<ffi.Int8> Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_type = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_type = int Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_valueBool = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_valueBool = int Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_valueFloat = ffi.Float Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_valueFloat = double Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_valueUint32 = ffi.Uint32 Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_valueUint32 = int Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_valueBus = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-);
-
-typedef _dart_AudioSetting_valueBus = int Function(
-  int nodeId,
-  int settingIndex,
-);
-
-typedef _c_AudioSetting_setBool = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-  ffi.Int32 v,
-  ffi.Int32 notify,
-);
-
-typedef _dart_AudioSetting_setBool = void Function(
-  int nodeId,
-  int settingIndex,
-  int v,
-  int notify,
-);
-
-typedef _c_AudioSetting_setFloat = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-  ffi.Float v,
-  ffi.Int32 notify,
-);
-
-typedef _dart_AudioSetting_setFloat = void Function(
-  int nodeId,
-  int settingIndex,
-  double v,
-  int notify,
-);
-
-typedef _c_AudioSetting_setUint32 = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-  ffi.Uint32 v,
-  ffi.Int32 notify,
-);
-
-typedef _dart_AudioSetting_setUint32 = void Function(
-  int nodeId,
-  int settingIndex,
-  int v,
-  int notify,
-);
-
-typedef _c_AudioSetting_setEnumeration = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-  ffi.Int32 v,
-  ffi.Int32 notify,
-);
-
-typedef _dart_AudioSetting_setEnumeration = void Function(
-  int nodeId,
-  int settingIndex,
-  int v,
-  int notify,
-);
-
-typedef _c_AudioSetting_setString = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-  ffi.Pointer<ffi.Int8> v,
-  ffi.Int32 notify,
-);
-
-typedef _dart_AudioSetting_setString = void Function(
-  int nodeId,
-  int settingIndex,
-  ffi.Pointer<ffi.Int8> v,
-  int notify,
-);
-
-typedef _c_AudioSetting_setBus = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 settingIndex,
-  ffi.Int32 busId,
-  ffi.Int32 notify,
-);
-
-typedef _dart_AudioSetting_setBus = void Function(
-  int nodeId,
-  int settingIndex,
-  int busId,
-  int notify,
-);
-
-typedef _c_createAudioListener = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createAudioListener = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_AudioListener_setPosition = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_AudioListener_setPosition = void Function(
-  int id,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_AudioListener_positionX = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_positionX = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_positionY = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_positionY = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_positionZ = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_positionZ = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_setOrientation = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-  ffi.Float upX,
-  ffi.Float upY,
-  ffi.Float upZ,
-);
-
-typedef _dart_AudioListener_setOrientation = void Function(
-  int id,
-  double x,
-  double y,
-  double z,
-  double upX,
-  double upY,
-  double upZ,
-);
-
-typedef _c_AudioListener_setForward = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_AudioListener_setForward = void Function(
-  int id,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_AudioListener_forwardX = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_forwardX = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_forwardY = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_forwardY = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_forwardZ = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_forwardZ = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_setUpVector = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_AudioListener_setUpVector = void Function(
-  int id,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_AudioListener_upX = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_upX = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_upY = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_upY = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_upZ = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_upZ = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_setVelocity = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float x,
-  ffi.Float y,
-  ffi.Float z,
-);
-
-typedef _dart_AudioListener_setVelocity = void Function(
-  int id,
-  double x,
-  double y,
-  double z,
-);
-
-typedef _c_AudioListener_velocityX = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_velocityX = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_velocityY = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_velocityY = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_velocityZ = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_velocityZ = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_setDopplerFactor = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float dopplerFactor,
-);
-
-typedef _dart_AudioListener_setDopplerFactor = void Function(
-  int id,
-  double dopplerFactor,
-);
-
-typedef _c_AudioListener_dopplerFactor = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_dopplerFactor = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_setSpeedOfSound = ffi.Void Function(
-  ffi.Int32 id,
-  ffi.Float speedOfSound,
-);
-
-typedef _dart_AudioListener_setSpeedOfSound = void Function(
-  int id,
-  double speedOfSound,
-);
-
-typedef _c_AudioListener_speedOfSound = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_speedOfSound = int Function(
-  int id,
-);
-
-typedef _c_AudioListener_release = ffi.Void Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_release = void Function(
-  int id,
-);
-
-typedef _c_AudioListener_has = ffi.Int32 Function(
-  ffi.Int32 id,
-);
-
-typedef _dart_AudioListener_has = int Function(
-  int id,
-);
-
-typedef _c_createGranulationNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createGranulationNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_GranulationNode_setGrainSource = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 busId,
-);
-
-typedef _dart_GranulationNode_setGrainSource = void Function(
-  int nodeId,
-  ffi.Pointer<ffi.Void> context,
-  int busId,
-);
-
-typedef _c_GranulationNode_getGrainSource = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_getGrainSource = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_grainSourceBus = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_grainSourceBus = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_windowFunc = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_windowFunc = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_numGrains = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_numGrains = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_grainDuration = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_grainDuration = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_grainPositionMin = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_grainPositionMin = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_grainPositionMax = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_grainPositionMax = int Function(
-  int nodeId,
-);
-
-typedef _c_GranulationNode_grainPlaybackFreq = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_GranulationNode_grainPlaybackFreq = int Function(
-  int nodeId,
-);
-
-typedef _c_createPWMNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createPWMNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_createNullDeviceNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  AudioStreamConfig outputConfig,
-  ffi.Double lengthSeconds,
-);
-
-typedef _dart_createNullDeviceNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-  AudioStreamConfig outputConfig,
-  double lengthSeconds,
-);
-
-typedef _c_createClipNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _dart_createClipNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-);
-
-typedef _c_ClipNode_setMode = ffi.Void Function(
-  ffi.Int32 nodeId,
-  ffi.Int32 type,
-);
-
-typedef _dart_ClipNode_setMode = void Function(
-  int nodeId,
-  int type,
-);
-
-typedef _c_ClipNode_aVal = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ClipNode_aVal = int Function(
-  int nodeId,
-);
-
-typedef _c_ClipNode_bVal = ffi.Int32 Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_ClipNode_bVal = int Function(
-  int nodeId,
-);
-
-typedef _typedefC_1 = ffi.Void Function(
-  ffi.Int32,
-  ffi.Int32,
-  ffi.Pointer<ffi.Float>,
-  ffi.Int32,
-);
-
-typedef _c_setFunctionNodeChannelFn = ffi.Void Function(
-  ffi.Pointer<ffi.NativeFunction<_typedefC_1>> fn,
-);
-
-typedef _dart_setFunctionNodeChannelFn = void Function(
-  ffi.Pointer<ffi.NativeFunction<_typedefC_1>> fn,
-);
-
-typedef _c_createFunctionNode = ffi.Int32 Function(
-  ffi.Pointer<ffi.Void> context,
-  ffi.Int32 channels,
-);
-
-typedef _dart_createFunctionNode = int Function(
-  ffi.Pointer<ffi.Void> context,
-  int channels,
-);
-
-typedef _c_FunctionNode_now = ffi.Double Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_FunctionNode_now = double Function(
-  int nodeId,
-);
-
-typedef _c_FunctionNode_setFunction = ffi.Void Function(
-  ffi.Int32 nodeId,
-);
-
-typedef _dart_FunctionNode_setFunction = void Function(
-  int nodeId,
-);
-
-typedef Dart_OnNewCodeCallback = ffi.Void Function(
-  ffi.Pointer<Dart_CodeObserver>,
-  ffi.Pointer<ffi.Int8>,
-  ffi.Uint64,
-  ffi.Uint64,
-);
-
-typedef Dart_IsolateGroupCreateCallback = ffi.Pointer<_Dart_Isolate> Function(
-  ffi.Pointer<ffi.Int8>,
-  ffi.Pointer<ffi.Int8>,
-  ffi.Pointer<ffi.Int8>,
-  ffi.Pointer<ffi.Int8>,
-  ffi.Pointer<Dart_IsolateFlags>,
-  ffi.Pointer<ffi.Void>,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>>,
-);
-
-typedef Dart_InitializeIsolateCallback = ffi.Uint8 Function(
-  ffi.Pointer<ffi.Pointer<ffi.Void>>,
-  ffi.Pointer<ffi.Pointer<ffi.Int8>>,
-);
-
-typedef Dart_IsolateGroupCleanupCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef Dart_ThreadExitCallback = ffi.Void Function();
-
-typedef Dart_FileOpenCallback = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Int8>,
-  ffi.Uint8,
-);
-
-typedef Dart_FileReadCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
-  ffi.Pointer<ffi.IntPtr>,
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef Dart_FileWriteCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-  ffi.IntPtr,
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef Dart_FileCloseCallback = ffi.Void Function(
-  ffi.Pointer<ffi.Void>,
-);
-
-typedef Dart_EntropySource = ffi.Uint8 Function(
-  ffi.Pointer<ffi.Uint8>,
-  ffi.IntPtr,
-);
-
-typedef Dart_GetVMServiceAssetsArchive = ffi.Handle Function();

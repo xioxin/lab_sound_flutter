@@ -51,12 +51,12 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 
 //    fragColor = vec4(c,1);
 
-    // 背景色
-    vec4 bg = vec4(0.5, 0.2, 0.1, 1.0);
-
-    // 前景
-    vec4 fg = vec4(c, 1.0);
-    fragColor = vec4(1.0) - (vec4(1.0) - fg) * (vec4(1.0) - bg);
+//    // 背景色
+//    vec4 bg = vec4(0.5, 0.2, 0.1, 1.0);
+//    // 前景
+//    vec4 fg = vec4(c, 1.0);
+    float a = max(max(c.r, c.g), c.b);
+    fragColor = vec4(c, a);
 }
 
 void main() {

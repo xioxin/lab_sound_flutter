@@ -1,3 +1,3 @@
-# lab_sound_platform_interface
+# lab_sound_web
 
 TODO

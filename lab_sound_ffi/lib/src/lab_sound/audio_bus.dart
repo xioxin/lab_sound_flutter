@@ -12,9 +12,9 @@ import 'audio_channel.dart';
 class AudioBus {
   static final Map<int, WeakReference<AudioBus>> busMap = {};
 
-  static final Finalizer<AudioBus> finalizer = Finalizer((bus) {
+  static final Finalizer<int> finalizer = Finalizer((bus) {
     print('AudioBus Finalizer: $bus');
-    bus.dispose();
+    LabSound().releaseAudioBus(bus);
   });
 
   String? debugName;
@@ -33,7 +33,7 @@ class AudioBus {
   AudioBus(int numberOfChannels, int length, {bool allocate = true})
       : resourceId = LabSound()
             .createAudioBus(numberOfChannels, length, allocate ? 1 : 0) {
-    finalizer.attach(this, this, detach: this);
+    finalizer.attach(this, resourceId, detach: this);
     busMap[resourceId] = WeakReference(this);
   }
 
@@ -56,8 +56,8 @@ class AudioBus {
   AudioBus._loadByFile(this.filePath,
       {this.debugName, bool mixToMono = false, double targetSampleRate = 0.0})
       : resourceId = LabSound().makeBusFromFile(
-            filePath.toInt8(), mixToMono ? 1 : 0, targetSampleRate) {
-    finalizer.attach(this, this, detach: this);
+            filePath.toChar(), mixToMono ? 1 : 0, targetSampleRate) {
+    finalizer.attach(this, resourceId, detach: this);
     busMap[resourceId] = WeakReference(this);
 
     debugName ??= basename(filePath);
@@ -82,8 +82,8 @@ class AudioBus {
     bool mixToMono = false,
   })  : filePath = '',
         resourceId = LabSound().makeBusFromMemory(
-            bufferPtr, bufferLen, extension.toInt8(), mixToMono ? 1 : 0) {
-    finalizer.attach(this, this, detach: this);
+            bufferPtr, bufferLen, extension.toChar(), mixToMono ? 1 : 0) {
+    finalizer.attach(this, resourceId, detach: this);
     busMap[resourceId] = WeakReference(this);
 
     debugName ??= basename(filePath);
@@ -146,7 +146,7 @@ class AudioBus {
   }
 
   AudioBus._fromId(this.resourceId, {this.debugName}) : filePath = '' {
-    finalizer.attach(this, this, detach: this);
+    finalizer.attach(this, resourceId, detach: this);
     busMap[resourceId] = WeakReference(this);
   }
 

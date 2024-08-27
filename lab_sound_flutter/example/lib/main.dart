@@ -11,8 +11,10 @@ import 'demos/sfxr.dart';
 import 'demos/zelda.dart';
 import 'package:lab_sound_inspector/lab_sound_inspector.dart';
 
+import 'fragment_shader/fragment_shader.dart';
 import 'lab808/lab808.dart';
 import 'labsound/labsound_examples.dart';
+import 'oscillofun/oscillofun.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -24,6 +26,24 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Widget shaderButton(String fragName, [String? musicPath]) {
+    return ListTile(
+        title: Text('Shader: ' + fragName),
+        subtitle: Text(musicPath ?? "./assets/music4.mp3"),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FragmentShaderDemo(
+                      path: musicPath ?? "./assets/music4.mp3",
+                      shaderAssetKey: "shaders/$fragName.frag",
+                    )),
+          );
+        });
+  }
+
+  String? musicName = 'music1.mp3';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +57,50 @@ class _MyAppState extends State<MyApp> {
                     MaterialPageRoute(builder: (context) => DebugGraph()),
                   );
                 },
-                icon: Icon(Icons.bug_report))
+                icon: Icon(Icons.bug_report)),
+            DropdownButton<String>(
+                value: musicName,
+                items: [
+                  DropdownMenuItem(
+                    child: Text("stereo-music-clip.wav"),
+                    value: "stereo-music-clip.wav",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("music1.mp3"),
+                    value: "music1.mp3",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("music2.mp3"),
+                    value: "music2.mp3",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("music3.mp3"),
+                    value: "music3.mp3",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("music4.mp3"),
+                    value: "music4.mp3",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("oscillofun.wav"),
+                    value: "oscillofun.wav",
+                  ),
+                  DropdownMenuItem(
+                    child: Text("Attack Vector.wav"),
+                    value: "Attack Vector.wav",
+                  ),
+                  DropdownMenuItem(
+                    child: Text(
+                        "Jerobeam Fenderson - How To Draw Mushrooms On An Oscilloscope With Sound.mp3"),
+                    value:
+                        "Jerobeam Fenderson - How To Draw Mushrooms On An Oscilloscope With Sound.mp3",
+                  ),
+                ],
+                onChanged: (value) {
+                  setState(() {
+                    musicName = value;
+                  });
+                })
           ],
         ),
         body: ListView(
@@ -83,6 +146,29 @@ class _MyAppState extends State<MyApp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Lab808()),
+                  );
+                }),
+
+            if(musicName != null)shaderButton('audio_eclipse', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('sound_eclipse', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('audio_surf', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('2d_led_spectrum', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('polar_react', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('2d_audio_visualizer_v2', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('mf_audio_visualizer', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('blast_radius', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('procedural_gradient_visualiser', "./assets/" + musicName!),
+            if(musicName != null)shaderButton('inercia_intended_one', "./assets/" + musicName!),
+
+            if(musicName != null) ListTile(
+                title: Text("Oscillofun"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Oscillofun(
+                              path: "./assets/" + musicName!
+                            )),
                   );
                 }),
 
