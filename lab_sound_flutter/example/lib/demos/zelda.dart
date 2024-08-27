@@ -86,8 +86,6 @@ class _ZeldaState extends State<Zelda> {
 
   late DynamicsCompressorNode dynamicsCompressor;
 
-  late ConvolverNode convolver;
-
   bool loaded = false;
 
   @override
@@ -109,7 +107,6 @@ class _ZeldaState extends State<Zelda> {
     analyser4.dispose();
     analyser5.dispose();
     dynamicsCompressor.dispose();
-    convolver.dispose();
 
     ctx.dispose();
     super.dispose();
@@ -117,12 +114,6 @@ class _ZeldaState extends State<Zelda> {
 
   init() async {
     ctx = AudioContext();
-    // final adsr = ADSRNode(ctx);
-    // print("ADSRNode: ${adsr.attackLevel} ${adsr.attackTime} ${adsr.oneShot}");
-
-    convolver = ConvolverNode(ctx);
-    convolver.setImpulse(
-        await audioBusFromAsset("assets/impulse/cardiod-rear-levelled.wav"));
 
     analyser1 = AnalyserNode(ctx);
     analyser2 = AnalyserNode(ctx);
@@ -164,7 +155,8 @@ class _ZeldaState extends State<Zelda> {
     pulseShaper >> analyser2 >> dynamicsCompressor;
     triangle >> analyser3 >> dynamicsCompressor;
     noise >> noiseGain >> analyser4 >> dynamicsCompressor;
-    dynamicsCompressor >> convolver >> analyser5 >> ctx.device;
+
+    dynamicsCompressor >> analyser5 >> ctx.device;
     setState(() {
       loaded = true;
     });
@@ -196,7 +188,6 @@ class _ZeldaState extends State<Zelda> {
     square.amplitude.resetSmoothedValue();
     square.start();
     noise.start();
-    // ctx.resume();
   }
 
   stop() {
@@ -210,7 +201,6 @@ class _ZeldaState extends State<Zelda> {
     pulse.reset();
     square.reset();
     noise.reset();
-    //ctx.suspend();
   }
 
   @override
